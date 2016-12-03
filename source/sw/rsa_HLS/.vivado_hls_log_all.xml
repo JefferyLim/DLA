@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SCHED 204-21] The critical path consists of the following:&#xA;&#x9;wire read on port 'key' (0 ns)&#xA;&#x9;'urem' operation ('tmp', rsa_HLS/solution1/main.cpp:11) (27.2 ns)" projectName="rsa_HLS" solutionName="solution1" date="2016-11-15T15:50:18.351-0700" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-21] Estimated clock period (27.2ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns)." projectName="rsa_HLS" solutionName="solution1" date="2016-11-15T15:50:18.339-0700" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-21] Estimated delay (27.2ns) of 'urem' operation ('tmp', rsa_HLS/solution1/main.cpp:11) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns)." projectName="rsa_HLS" solutionName="solution1" date="2016-11-15T15:50:18.302-0700" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

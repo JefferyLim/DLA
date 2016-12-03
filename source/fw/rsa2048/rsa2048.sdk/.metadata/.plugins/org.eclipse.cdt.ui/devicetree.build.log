@@ -1,0 +1,6 @@
+14:38:46 **** Build of project devicetree ****
+make -k all 
+make: Nothing to be done for `all'.
+
+14:38:46 Build Finished (took 95ms)
+

@@ -1,0 +1,220 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Sat Nov 19 09:20:17 2016
+# Process ID: 2511
+# Current directory: /home/jlim/Documents/school/DLA/source/fw/rsa2048
+# Command line: vivado
+# Log file: /home/jlim/Documents/school/DLA/source/fw/rsa2048/vivado.log
+# Journal file: /home/jlim/Documents/school/DLA/source/fw/rsa2048/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2016.2/data/ip'.
+open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:14 . Memory (MB): peak = 5886.160 ; gain = 152.297 ; free physical = 5044 ; free virtual = 14369
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 09:48:00 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 09:48:00 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:03 ; elapsed = 00:01:01 . Memory (MB): peak = 5937.734 ; gain = 42.551 ; free physical = 3661 ; free virtual = 13577
+file copy -force /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/top.bit /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.bit
+open_bd_design {/home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/xc7z020.bd}
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:axi_bram_ctrl:4.0 - axi_bram_ctrl_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_processing_system7_0_100M
+Adding cell -- xilinx.com:ip:blk_mem_gen:8.3 - axi_bram_ctrl_0_bram
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Successfully read diagram <xc7z020> from BD file </home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/xc7z020.bd>
+open_bd_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 5991.914 ; gain = 43.031 ; free physical = 3842 ; free virtual = 13949
+update_compile_order -fileset sources_1
+startgroup
+set_property -dict [list CONFIG.PCW_QSPI_GRP_SINGLE_SS_ENABLE {1} CONFIG.PCW_UART1_PERIPHERAL_ENABLE {0}] [get_bd_cells processing_system7_0]
+endgroup
+generate_target all [get_files  /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/xc7z020.bd]
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_bram_ctrl_0_bram/addra'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(13) - Only lower order bits will be connected.
+VHDL Output written to : /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/hdl/xc7z020.vhd
+VHDL Output written to : /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/hdl/xc7z020_wrapper.vhd
+Wrote  : </home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/xc7z020.bd> 
+WARNING: [xilinx.com:ip:processing_system7:5.5-1] xc7z020_processing_system7_0_1: The Zynq BFM requires an AXI BFM license to run. Please ensure that you have purchased and setup the AXI BFM license prior to running simulation with this block. Please contact your Xilinx sales office for more information on purchasing this license
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_bram_ctrl_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_bram_ctrl_0_bram .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_pc .
+Exporting to file /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/hw_handoff/xc7z020.hwh
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.0-2] test_ip: In IP Integrator, please note that memory depth value gets calculated based on the Data Width of the IP and Address range selected in the Address Editor.Incase a validation error occured on the range of this parameter, please check if the selected Data width and the Address Range are valid. For valid Data width and memory depth values, please refer to the AXI BRAM Controller Product Guide.
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.0-1] test_ip: In IP Integrator, The Maximum address range supported is 2G. Selecting the address range more than 2G in the address editor may resets the value of Memory depth to default value (1024). please refer to the AXI BRAM Controller Product Guide.
+Generated Block Design Tcl file /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/hw_handoff/xc7z020_bd.tcl
+Generated Hardware Definition File /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/hdl/xc7z020.hwdef
+generate_target: Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 6270.422 ; gain = 174.305 ; free physical = 3374 ; free virtual = 13611
+export_ip_user_files -of_objects [get_files /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/xc7z020.bd] -no_script -force -quiet
+export_simulation -of_objects [get_files /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/xc7z020.bd] -directory /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.ip_user_files/sim_scripts -ip_user_files_dir /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.ip_user_files -ipstatic_source_dir /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.ip_user_files/ipstatic -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 11:41:15 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 11:41:15 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:00 . Memory (MB): peak = 6276.848 ; gain = 0.000 ; free physical = 2223 ; free virtual = 12493
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 12:34:16 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 12:34:16 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00.79 ; elapsed = 00:01:00 . Memory (MB): peak = 6276.867 ; gain = 0.000 ; free physical = 3542 ; free virtual = 12516
+reset_run synth_1
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 13:24:48 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 13:24:48 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:00 . Memory (MB): peak = 6276.867 ; gain = 0.000 ; free physical = 4269 ; free virtual = 13149
+open_run impl_1
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Netlist 29-17] Analyzing 36 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:01 ; elapsed = 00:00:41 . Memory (MB): peak = 6284.859 ; gain = 7.992 ; free physical = 4651 ; free virtual = 13612
+INFO: [Common 17-344] 'open_run' was cancelled
+write_hwdef -force  -file /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.hdf
+file copy -force /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/top.bit /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.bit
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 14:04:37 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 14:04:37 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:02 ; elapsed = 00:01:00 . Memory (MB): peak = 6290.789 ; gain = 3.980 ; free physical = 3240 ; free virtual = 12549
+file copy -force /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/top.bit /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.bit
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 14:22:56 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 14:22:56 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:02 ; elapsed = 00:01:00 . Memory (MB): peak = 6311.277 ; gain = 0.000 ; free physical = 3250 ; free virtual = 12559
+file copy -force /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/top.bit /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.bit
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 14:45:26 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 14:45:27 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00.67 ; elapsed = 00:01:00 . Memory (MB): peak = 6311.871 ; gain = 0.000 ; free physical = 3249 ; free virtual = 12569
+open_hw
+file copy -force /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/top.bit /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.bit
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 15:05:25 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 15:05:25 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00.66 ; elapsed = 00:01:00 . Memory (MB): peak = 6325.523 ; gain = 0.000 ; free physical = 3229 ; free virtual = 12563
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 15:10:39 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 15:10:39 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:00 . Memory (MB): peak = 6325.523 ; gain = 0.000 ; free physical = 3228 ; free virtual = 12565
+file copy -force /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/top.bit /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.bit
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 15:24:34 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 15:24:34 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00.76 ; elapsed = 00:01:00 . Memory (MB): peak = 6325.523 ; gain = 0.000 ; free physical = 3222 ; free virtual = 12558
+file copy -force /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/top.bit /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.bit
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 15:35:14 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 15:35:14 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:00 . Memory (MB): peak = 6325.523 ; gain = 0.000 ; free physical = 3205 ; free virtual = 12552
+file copy -force /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/top.bit /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.bit
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 15:46:13 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 15:46:13 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00.75 ; elapsed = 00:01:00 . Memory (MB): peak = 6325.523 ; gain = 0.000 ; free physical = 3195 ; free virtual = 12547
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 15:47:56 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 15:47:56 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00.81 ; elapsed = 00:01:00 . Memory (MB): peak = 6326.910 ; gain = 0.000 ; free physical = 3197 ; free virtual = 12545
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 15:49:42 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 15:49:42 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:00 . Memory (MB): peak = 6326.930 ; gain = 0.000 ; free physical = 3197 ; free virtual = 12544
+file copy -force /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/top.bit /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.bit
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 16:06:32 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 16:06:32 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00.85 ; elapsed = 00:01:00 . Memory (MB): peak = 6327.523 ; gain = 0.000 ; free physical = 3191 ; free virtual = 12537
+file copy -force /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/top.bit /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.bit
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 16:30:37 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 16:30:37 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:00 . Memory (MB): peak = 6327.523 ; gain = 0.000 ; free physical = 3184 ; free virtual = 12538
+reset_run impl_1 -prev_step 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 16:36:43 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 16:36:43 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00.72 ; elapsed = 00:01:00 . Memory (MB): peak = 6327.523 ; gain = 0.000 ; free physical = 3178 ; free virtual = 12533
+file copy -force /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/top.bit /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.bit
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 16:44:36 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 16:44:36 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:00 . Memory (MB): peak = 6327.523 ; gain = 0.000 ; free physical = 3169 ; free virtual = 12526
+open_bd_design {/home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/xc7z020.bd}
+file copy -force /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/top.bit /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.bit
+file copy -force /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/top.bit /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.bit
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sat Nov 19 17:05:27 2016] Launched synth_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log
+[Sat Nov 19 17:05:27 2016] Launched impl_1...
+Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log
+file copy -force /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/top.bit /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.bit

@@ -1,0 +1,51 @@
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vivado_HLS/2016.2/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'jlim' on host 'Inspiron-5547' (Linux_x86_64 version 4.2.0-27-generic) on Tue Nov 15 15:50:12 MST 2016
+INFO: [HLS 200-10] On os Ubuntu 14.04.4 LTS
+INFO: [HLS 200-10] In directory '/home/jlim/Documents/school/DLA/source/sw'
+INFO: [HLS 200-10] Opening project '/home/jlim/Documents/school/DLA/source/sw/rsa_HLS'.
+INFO: [HLS 200-10] Adding design file 'rsa_HLS/solution1/main.cpp' to the project
+INFO: [HLS 200-10] Opening solution '/home/jlim/Documents/school/DLA/source/sw/rsa_HLS/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [HLS 200-10] Analyzing design file 'rsa_HLS/solution1/main.cpp' ... 
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Elapsed time: 1.10391 seconds; current memory usage: 53.7 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'encrypt' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'encrypt' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-21] Estimated delay (27.2ns) of 'urem' operation ('tmp', rsa_HLS/solution1/main.cpp:11) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns).
+WARNING: [SCHED 204-21] Estimated clock period (27.2ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path consists of the following:
+	wire read on port 'key' (0 ns)
+	'urem' operation ('tmp', rsa_HLS/solution1/main.cpp:11) (27.2 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.022718 seconds; current memory usage: 56.2 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'encrypt' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.255626 seconds; current memory usage: 58.3 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'encrypt' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'encrypt/key' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'encrypt/exponent' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'encrypt' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'encrypt_urem_512ns_512ns_512_516': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'encrypt'.
+INFO: [HLS 200-111] Elapsed time: 0.160922 seconds; current memory usage: 60.6 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'encrypt_urem_512ns_512ns_512_516_div'
+INFO: [HLS 200-10] Finished generating all RTL models.
+INFO: [SYSC 207-301] Generating SystemC RTL for encrypt.
+INFO: [VHDL 208-304] Generating VHDL RTL for encrypt.
+INFO: [VLOG 209-307] Generating Verilog RTL for encrypt.
+INFO: [HLS 200-112] Total elapsed time: 6.852 seconds; peak memory usage: 60.6 MB.

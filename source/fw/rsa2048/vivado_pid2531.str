@@ -1,0 +1,230 @@
+/*
+
+Vivado v2016.2 (64-bit)
+SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+Process ID: 2531
+
+Current time: 	11/15/16 3:17:39 PM MST
+Time zone: 	Mountain Standard Time (America/Denver)
+
+OS: DISTRIB_ID=Ubuntu
+Version: 4.2.0-27-generic
+Architecture: amd64
+Available processors (cores): 4
+
+DISPLAY: :0
+Screen size: 1360x768
+Screen resolution (DPI): 95
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	/opt/Xilinx/Vivado/2016.2/tps/lnx64/jre
+
+User name: 	jlim
+User home directory: /home/jlim
+User working directory: /home/jlim/Documents/school/DLA/source/fw/rsa2048
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI Base root directory: /opt/Xilinx/Vivado
+RDI Data directory: /opt/Xilinx/Vivado/2016.2/data
+RDI Bin directory: /opt/Xilinx/Vivado/2016.2/bin
+
+Vivado preferences path: /home/jlim/.Xilinx/Vivado/2016.2/vivado.ini
+Vivado layouts directory: /home/jlim/.Xilinx/Vivado/2016.2/layouts
+
+GUI allocated memory:	153 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 4,836 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// [GUI Memory]: 30 MB (+28702kb) [00:00:11]
+// [Engine Memory]: 4,836 MB (+4918917kb) [00:00:11]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,841 MB. GUI used memory: 22 MB. Current time: 11/15/16 3:17:41 PM MST
+selectList(PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, "/home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.xpr", 0); // q:v (JViewport:JComponent, cv:JFrame)
+// bL:g (cv:JFrame):  Open Project : addNotify
+// Opening Vivado Project: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.xpr. Version: Vivado v2016.2 
+// Tcl Message: open_project /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.xpr 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,865 MB. GUI used memory: 22 MB. Current time: 11/15/16 3:18:51 PM MST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 51 MB (+20915kb) [00:01:33]
+// [GUI Memory]: 55 MB (+776kb) [00:01:35]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: open_project /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2016.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: rsa2048; location: /home/jlim/Documents/school/DLA/source/fw/rsa2048; part: xc7z020clg484-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 5866.152 ; gain = 133.449 ; free physical = 5341 ; free virtual = 14621 
+// Elapsed time: 13 seconds
+dismissDialog("Open Project"); // bL:g (cv:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,996 MB. GUI used memory: 27 MB. Current time: 11/15/16 3:19:06 PM MST
+// PAPropertyPanels.initPanels (top.vhd) elapsed time: 0.3s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - STRUCTURE (top.vhd)]", 1, true); // z:k (G:JPanel, cv:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - STRUCTURE (top.vhd)]", 1, true); // z:k (G:JPanel, cv:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - STRUCTURE (top.vhd)]", 1, true, false, false, false, false, true); // z:k (G:JPanel, cv:JFrame) - Double Click - Node
+selectCodeEditor("top.vhd", 381, 196); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 381, 196); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 381, 196); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 381, 196); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 381, 196); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 381, 196); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 381, 196); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 381, 196); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 381, 196); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 381, 196); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 327, 219); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 277, 219); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 254, 229); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 252, 164); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 264, 178); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 231, 187); // bH:N (JPanel:JComponent, cv:JFrame)
+// [GUI Memory]: 59 MB (+1691kb) [00:02:06]
+selectCodeEditor("top.vhd", 293, 162); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 293, 162); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 293, 162); // bH:N (JPanel:JComponent, cv:JFrame)
+// [GUI Memory]: 63 MB (+1474kb) [00:02:11]
+selectCodeEditor("top.vhd", 301, 179); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 338, 165); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 407, 160); // bH:N (JPanel:JComponent, cv:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// [GUI Memory]: 68 MB (+1123kb) [00:07:59]
+// [GUI Memory]: 71 MB (+364kb) [00:11:54]
+// Elapsed time: 738 seconds
+selectButton(PAResourceQtoS.StateMonitor_CANCEL, "Cancel"); // a:JButton (r:JPanel, cv:JFrame)
+// bL:g (cv:JFrame):  Resetting Runs : addNotify
+selectButton("PAResourceQtoS.StateMonitor_YOU_ABOUT_TO_CANCEL_YOUR_RUNNING_Delete Files", "Delete Files"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bL:g (cv:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,017 MB. GUI used memory: 30 MB. Current time: 11/15/16 3:32:01 PM MST
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 25, false); // x:Y (w:G, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aV:y (cv:JFrame): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a:JButton (JPanel:JComponent, aV:y)
+// bL:g (cv:JFrame):  Save Constraints : addNotify
+// TclEventType: DG_GRAPH_STALE
+// bL:g (cv:JFrame):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aV:y (cv:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Resetting Runs"); // bL:g (cv:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_LAUNCH
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_LAUNCH
+// bL:g (cv:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 2 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Tue Nov 15 15:32:06 2016] Launched synth_1... Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/runme.log [Tue Nov 15 15:32:06 2016] Launched impl_1... Run output will be captured here: /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bL:g (cv:JFrame)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// [GUI Memory]: 76 MB (+1115kb) [00:17:28]
+// TclEventType: RUN_COMPLETED
+// ap:G (cv:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 210 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, ap:G)
+dismissDialog("Bitstream Generation Completed"); // ap:G (cv:JFrame)
+selectCodeEditor("top.vhd", 96, 314); // bH:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor("top.vhd", 83, 265); // bH:N (JPanel:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // af:JMenuItem (JPopupMenu:JComponent, cv:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// af:x (cv:JFrame): Export Hardware: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, af:x)
+selectComboBox(PAResourceItoN.NewExportHardwareDialog_EXPORT_TO, "Choose Location...", 1); // f:JComboBox (JPanel:JComponent, af:x)
+setFolderChooser("/home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0");
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, af:x)
+// 'n' command handler elapsed time: 13 seconds
+selectButton("PAResourceItoN.NewExportHardwareDialog_EXPORTED_FILE_FOR_THIS_MODULE_WAS_Yes", "Yes"); // JButton:AbstractButton (JPanel:JComponent, U:JDialog)
+dismissDialog("Export Hardware"); // af:x (cv:JFrame)
+// Tcl Message: write_hwdef -force  -file /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.hdf 
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_SIMULATION, "Export Simulation..."); // af:JMenuItem (JPopupMenu:JComponent, cv:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_SIMULATION
+// K:x (cv:JFrame): Export Simulation Files: addNotify
+setText(PAResourceEtoH.ExportSimulationDialog_SCRIPT_DIRECTORY_PATH, "/home/jlim/Documents/school/DLA/source/fw/rsa2048"); // aq:ao (ap:JPanel, K:x)
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, K:x)
+dismissDialog("Export Simulation Files"); // K:x (cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES, "Export Bitstream File..."); // af:JMenuItem (JPopupMenu:JComponent, cv:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES
+setFileChooser("/home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.bit");
+// 'a' command handler elapsed time: 3 seconds
+selectButton("RDIResource.HChooserHelpers_FILE_ALREADY_EXISTS_OK_TO_OVERWRITE_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+// Tcl Message: file copy -force /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1/top.bit /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.bit 
+selectButton("PAResourceEtoH.ExportBitstreamFile_BITSTREAM_EXPORT_SUCCESSFUL_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 601 seconds
+selectCodeEditor("top.vhd", 187, 284); // bH:N (JPanel:JComponent, cv:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// HMemoryUtils.trashcanNow. Engine heap size: 5,033 MB. GUI used memory: 37 MB. Current time: 11/15/16 4:02:01 PM MST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,033 MB. GUI used memory: 34 MB. Current time: 11/15/16 4:32:01 PM MST
+// [GUI Memory]: 80 MB (+25kb) [01:29:57]

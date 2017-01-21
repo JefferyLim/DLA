@@ -1,7 +1,7 @@
 //arch = zynq; split = false; format = BIN
 the_ROM_image:
 {
-	[bootloader]/home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/FSBL/Debug/FSBL.elf
-	/home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.bit
-	/home/jlim/Downloads/u-boot.elf
+	[bootloader]/home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.sdk/FSBL/Debug/FSBL.elf
+	/home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/top.bit
+	/home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.sdk/bootimage/u-boot.elf
 }

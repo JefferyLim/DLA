@@ -1,10 +1,10 @@
 # This script segment is generated automatically by AutoPilot
 
 set id 1
-set name encrypt_urem_512ns_512ns_512_516
-set corename simcore_urem
-set op urem
-set stage_num 516
+set name encrypt_add_512ns_512ns_512_3
+set corename simcore_add
+set op add
+set stage_num 3
 set max_latency -1
 set registered_input 1
 set in0_width 512
@@ -13,8 +13,8 @@ set in1_width 512
 set in1_signed 0
 set out_width 512
 if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_urem] == "ap_gen_simcore_urem"} {
-eval "ap_gen_simcore_urem { \
+if {[info proc ap_gen_simcore_add] == "ap_gen_simcore_add"} {
+eval "ap_gen_simcore_add { \
     id ${id} \
     name ${name} \
     corename ${corename} \
@@ -31,7 +31,7 @@ eval "ap_gen_simcore_urem { \
     out_width ${out_width} \
 }"
 } else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_urem, check your AutoPilot builtin lib"
+puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_add, check your AutoPilot builtin lib"
 }
 }
 
@@ -41,11 +41,11 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-set op urem
-set corename DivnS
+set op add
+set corename AddSubnS
 if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_div] == "::AESL_LIB_VIRTEX::xil_gen_div"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_div { \
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_pipeaddsub] == "::AESL_LIB_VIRTEX::xil_gen_pipeaddsub"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_pipeaddsub { \
     id ${id} \
     name ${name} \
     corename ${corename} \
@@ -62,7 +62,7 @@ eval "::AESL_LIB_VIRTEX::xil_gen_div { \
     out_width ${out_width} \
 }"
 } else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_div, check your platform lib"
+puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipeaddsub, check your platform lib"
 }
 }
 
@@ -74,62 +74,47 @@ if {${::AESL::PGuard_autoexp_gen}} {
     AESL_LIB_XILADAPTER::native_axis_begin
 }
 
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 2 \
-    name key \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_key \
-    op interface \
-    ports { key { I 512 vector } } \
-} "
+set port_PERIPH_BUS {
+ap_start { }
+ap_done { }
+ap_ready { }
+ap_idle { }
+key_V { 
+	dir I
+	width 512
+	depth 1
+	mode ap_none
+	offset 16
+	offset_end 83
+}
+output_V { 
+	dir O
+	width 512
+	depth 1
+	mode ap_vld
+	offset 84
+	offset_end 151
+}
 }
 
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 3 \
-    name exponent \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_exponent \
-    op interface \
-    ports { exponent { I 512 vector } } \
-} "
+
+# Native S_AXILite:
+if {${::AESL::PGuard_simmodel_gen}} {
+	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
+		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
+			id 2 \
+			corename encrypt_PERIPH_BUS_axilite \
+			name encrypt_PERIPH_BUS_s_axi \
+			ports {$port_PERIPH_BUS} \
+			op interface \
+		} "
+	} else {
+		puts "@W \[IMPL-110\] Cannot find AXI Lite interface model in the library. Ignored generation of AXI Lite  interface for 'PERIPH_BUS'"
+	}
 }
 
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id -1 \
-    name ap_ctrl \
-    type ap_ctrl \
-    reset_level 1 \
-    sync_rst true \
-    corename ap_ctrl \
-    op interface \
-    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id -2 \
-    name ap_return \
-    type ap_return \
-    reset_level 1 \
-    sync_rst true \
-    corename ap_return \
-    op interface \
-    ports { ap_return { O 512 vector } } \
-} "
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler encrypt_PERIPH_BUS_s_axi
 }
 
 
@@ -139,9 +124,9 @@ set DataWd 1
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc cg_default_interface_gen_clock] == "cg_default_interface_gen_clock"} {
 eval "cg_default_interface_gen_clock { \
-    id -3 \
+    id -1 \
     name ${PortName} \
-    reset_level 1 \
+    reset_level 0 \
     sync_rst true \
     corename apif_ap_clk \
     data_wd ${DataWd} \
@@ -154,16 +139,16 @@ puts "@W \[IMPL-113\] Cannot find bus interface model in the library. Ignored ge
 
 
 # Adapter definition:
-set PortName ap_rst
+set PortName ap_rst_n
 set DataWd 1 
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc cg_default_interface_gen_reset] == "cg_default_interface_gen_reset"} {
 eval "cg_default_interface_gen_reset { \
-    id -4 \
+    id -2 \
     name ${PortName} \
-    reset_level 1 \
+    reset_level 0 \
     sync_rst true \
-    corename apif_ap_rst \
+    corename apif_ap_rst_n \
     data_wd ${DataWd} \
     op interface \
 }"

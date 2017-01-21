@@ -7,45 +7,4 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 @I [SYN-201] Setting up clock 'default' with a period of 10ns.
 @I [HLS-10] Setting target device to 'xc7z020clg484-1'
-@I [HLS-10] Analyzing design file 'rsa_HLS/solution1/main.cpp' ... 
-@I [HLS-10] Validating synthesis directives ...
-@I [HLS-10] Starting code transformations ...
-@I [HLS-10] Checking synthesizability ...
-@I [HLS-111] Elapsed time: 1.10391 seconds; current memory usage: 53.7 MB.
-@I [HLS-10] Starting hardware synthesis ...
-@I [HLS-10] Synthesizing 'encrypt' ...
-@I [HLS-10] ----------------------------------------------------------------
-@I [HLS-10] -- Scheduling module 'encrypt' 
-@I [HLS-10] ----------------------------------------------------------------
-@I [SCHED-11] Starting scheduling ...
-@W [SCHED-21] Estimated delay (27.2ns) of 'urem' operation ('tmp', rsa_HLS/solution1/main.cpp:11) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns).
-@W [SCHED-21] Estimated clock period (27.2ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
-@W [SCHED-21] The critical path consists of the following:
-	wire read on port 'key' (0 ns)
-	'urem' operation ('tmp', rsa_HLS/solution1/main.cpp:11) (27.2 ns)
-@I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.022718 seconds; current memory usage: 56.2 MB.
-@I [HLS-10] ----------------------------------------------------------------
-@I [HLS-10] -- Exploring micro-architecture for module 'encrypt' 
-@I [HLS-10] ----------------------------------------------------------------
-@I [BIND-100] Starting micro-architecture generation ...
-@I [BIND-101] Performing variable lifetime analysis.
-@I [BIND-101] Exploring resource sharing.
-@I [BIND-101] Binding ...
-@I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.255626 seconds; current memory usage: 58.3 MB.
-@I [HLS-10] ----------------------------------------------------------------
-@I [HLS-10] -- Generating RTL for module 'encrypt' 
-@I [HLS-10] ----------------------------------------------------------------
-@I [RTGEN-500] Setting interface mode on port 'encrypt/key' to 'ap_none'.
-@I [RTGEN-500] Setting interface mode on port 'encrypt/exponent' to 'ap_none'.
-@I [RTGEN-500] Setting interface mode on function 'encrypt' to 'ap_ctrl_hs'.
-@I [RTGEN-100] Generating core module 'encrypt_urem_512ns_512ns_512_516': 1 instance(s).
-@I [RTGEN-100] Finished creating RTL model for 'encrypt'.
-@I [HLS-111] Elapsed time: 0.160922 seconds; current memory usage: 60.6 MB.
-@I [RTMG-282] Generating pipelined core: 'encrypt_urem_512ns_512ns_512_516_div'
-@I [HLS-10] Finished generating all RTL models.
-@I [SYSC-301] Generating SystemC RTL for encrypt.
-@I [VHDL-304] Generating VHDL RTL for encrypt.
-@I [VLOG-307] Generating Verilog RTL for encrypt.
-@I [HLS-112] Total elapsed time: 6.852 seconds; peak memory usage: 60.6 MB.
+@I [IMPL-8] Exporting RTL as an IP in IP-XACT.

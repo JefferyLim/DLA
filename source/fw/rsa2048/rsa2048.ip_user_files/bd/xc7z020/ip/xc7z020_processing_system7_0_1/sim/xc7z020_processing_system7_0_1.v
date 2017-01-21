@@ -56,9 +56,6 @@
 `timescale 1ns/1ps
 
 module xc7z020_processing_system7_0_1 (
-TTC0_WAVE0_OUT, 
-TTC0_WAVE1_OUT, 
-TTC0_WAVE2_OUT, 
 TTC1_WAVE0_OUT, 
 TTC1_WAVE1_OUT, 
 TTC1_WAVE2_OUT, 
@@ -102,6 +99,7 @@ M_AXI_GP0_RID,
 M_AXI_GP0_BRESP, 
 M_AXI_GP0_RRESP, 
 M_AXI_GP0_RDATA, 
+IRQ_F2P, 
 FCLK_CLK0, 
 FCLK_CLK1, 
 FCLK_CLK2, 
@@ -129,9 +127,6 @@ PS_SRSTB,
 PS_CLK, 
 PS_PORB 
 );
-output TTC0_WAVE0_OUT;
-output TTC0_WAVE1_OUT;
-output TTC0_WAVE2_OUT;
 output TTC1_WAVE0_OUT;
 output TTC1_WAVE1_OUT;
 output TTC1_WAVE2_OUT;
@@ -175,6 +170,7 @@ input [11 : 0] M_AXI_GP0_RID;
 input [1 : 0] M_AXI_GP0_BRESP;
 input [1 : 0] M_AXI_GP0_RRESP;
 input [31 : 0] M_AXI_GP0_RDATA;
+input [0 : 0] IRQ_F2P;
 output FCLK_CLK0;
 output FCLK_CLK1;
 output FCLK_CLK2;
@@ -590,7 +586,7 @@ input PS_PORB;
     .FCLK_RESET1_N(),
     .FCLK_RESET2_N(),
     .FCLK_RESET3_N(),
-    .IRQ_F2P(16'B0),
+    .IRQ_F2P(IRQ_F2P),
     .PS_SRSTB(PS_SRSTB),
     .PS_CLK(PS_CLK),
     .PS_PORB(PS_PORB)

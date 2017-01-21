@@ -2,44 +2,12 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="xc7z020" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1479580532"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1479580532"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1479580532"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1484270055"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1484270055"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1484270055"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip/xc7z020_processing_system7_0_1/xc7z020_processing_system7_0_1.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/xc7z020_axi_bram_ctrl_0_0/xc7z020_axi_bram_ctrl_0_0.xci" Type="IP">
-        <Instance HierarchyPath="axi_bram_ctrl_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/xc7z020_axi_mem_intercon_0/xc7z020_axi_mem_intercon_0.xci" Type="IP">
-        <Instance HierarchyPath="axi_mem_intercon"/>
-        <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/xc7z020_rst_processing_system7_0_100M_0/xc7z020_rst_processing_system7_0_100M_0.xci" Type="IP">
-        <Instance HierarchyPath="rst_processing_system7_0_100M"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/xc7z020_axi_bram_ctrl_0_bram_0/xc7z020_axi_bram_ctrl_0_bram_0.xci" Type="IP">
-        <Instance HierarchyPath="axi_bram_ctrl_0_bram"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -52,8 +20,24 @@
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/xc7z020_xbar_0/xc7z020_xbar_0.xci" Type="IP">
-        <Instance HierarchyPath="axi_mem_intercon/xbar"/>
+      <File Name="ip/xc7z020_encrypt_0_7/xc7z020_encrypt_0_7.xci" Type="IP">
+        <Instance HierarchyPath="encrypt_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/xc7z020_processing_system7_0_axi_periph_1/xc7z020_processing_system7_0_axi_periph_1.xci" Type="IP">
+        <Instance HierarchyPath="processing_system7_0_axi_periph"/>
+        <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/xc7z020_rst_processing_system7_0_100M_2/xc7z020_rst_processing_system7_0_100M_2.xci" Type="IP">
+        <Instance HierarchyPath="rst_processing_system7_0_100M"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -61,16 +45,10 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip/xc7z020_auto_pc_0/xc7z020_auto_pc_0.xci" Type="IP">
-        <Instance HierarchyPath="axi_mem_intercon/s00_couplers/auto_pc"/>
+        <Instance HierarchyPath="processing_system7_0_axi_periph/s00_couplers/auto_pc"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="xc7z020.bmm" Type="BMM">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>

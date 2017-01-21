@@ -42,7 +42,6 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
 
@@ -53,21 +52,22 @@ set rc [catch {
   set_property board_part em.avnet.com:zed:part0:1.3 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.cache/wt [current_project]
-  set_property parent.project_path /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.xpr [current_project]
-  set_property ip_repo_paths /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.cache/ip [current_project]
-  set_property ip_output_repo /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.cache/wt [current_project]
+  set_property parent.project_path /home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.xpr [current_project]
+  set_property ip_repo_paths {
+  /home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.cache/ip
+  /home/linux/Documents/DLA/source/sw/rsa_HLS
+} [current_project]
+  set_property ip_output_repo /home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.cache/ip [current_project]
   set_property XPM_LIBRARIES XPM_MEMORY [current_project]
-  add_files -quiet /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/top.dcp
-  add_files /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/xc7z020.bmm
-  set_property SCOPED_TO_REF xc7z020 [get_files -all /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/xc7z020.bmm]
-  read_xdc -ref xc7z020_processing_system7_0_1 -cells inst /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/ip/xc7z020_processing_system7_0_1/xc7z020_processing_system7_0_1.xdc
-  set_property processing_order EARLY [get_files /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/ip/xc7z020_processing_system7_0_1/xc7z020_processing_system7_0_1.xdc]
-  read_xdc -prop_thru_buffers -ref xc7z020_rst_processing_system7_0_100M_0 -cells U0 /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_0/xc7z020_rst_processing_system7_0_100M_0_board.xdc
-  set_property processing_order EARLY [get_files /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_0/xc7z020_rst_processing_system7_0_100M_0_board.xdc]
-  read_xdc -ref xc7z020_rst_processing_system7_0_100M_0 -cells U0 /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_0/xc7z020_rst_processing_system7_0_100M_0.xdc
-  set_property processing_order EARLY [get_files /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_0/xc7z020_rst_processing_system7_0_100M_0.xdc]
-  read_xdc /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/new/zedboard_master_XDC_RevC_D_v3.xdc
+  add_files -quiet /home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.runs/synth_1/top.dcp
+  read_xdc -ref xc7z020_processing_system7_0_1 -cells inst /home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/ip/xc7z020_processing_system7_0_1/xc7z020_processing_system7_0_1.xdc
+  set_property processing_order EARLY [get_files /home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/ip/xc7z020_processing_system7_0_1/xc7z020_processing_system7_0_1.xdc]
+  read_xdc -prop_thru_buffers -ref xc7z020_rst_processing_system7_0_100M_2 -cells U0 /home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_2/xc7z020_rst_processing_system7_0_100M_2_board.xdc
+  set_property processing_order EARLY [get_files /home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_2/xc7z020_rst_processing_system7_0_100M_2_board.xdc]
+  read_xdc -ref xc7z020_rst_processing_system7_0_100M_2 -cells U0 /home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_2/xc7z020_rst_processing_system7_0_100M_2.xdc
+  set_property processing_order EARLY [get_files /home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_2/xc7z020_rst_processing_system7_0_100M_2.xdc]
+  read_xdc /home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.srcs/sources_1/new/zedboard_master_XDC_RevC_D_v3.xdc
   link_design -top top -part xc7z020clg484-1
   write_hwdef -file top.hwdef
   close_msg_db -file init_design.pb
@@ -135,7 +135,6 @@ start_step write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   catch { write_mem_info -force top.mmi }
-  catch { write_bmm -force top_bd.bmm }
   write_bitstream -force top.bit 
   catch { write_sysdef -hwdef top.hwdef -bitfile top.bit -meminfo top.mmi -file top.sysdef }
   catch {write_debug_probes -quiet -force debug_nets}

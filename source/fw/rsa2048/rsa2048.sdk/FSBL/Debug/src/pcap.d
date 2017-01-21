@@ -15,7 +15,7 @@ src/pcap.o src/pcap.o: ../src/pcap.c ../src/pcap.h \
  ../../zynq_bsp/ps7_cortexa9_0/include/xparameters.h \
  ../../zynq_bsp/ps7_cortexa9_0/include/xpseudo_asm.h \
  ../../zynq_bsp/ps7_cortexa9_0/include/xil_printf.h ../src/fsbl_debug.h \
- /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/ps7_init.h \
+ /home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/ps7_init.h \
  ../src/image_mover.h \
  ../../zynq_bsp/ps7_cortexa9_0/include/xil_exception.h \
  ../../zynq_bsp/ps7_cortexa9_0/include/sleep.h \
@@ -62,7 +62,7 @@ src/pcap.o src/pcap.o: ../src/pcap.c ../src/pcap.h \
 
 ../src/fsbl_debug.h:
 
-/home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/ps7_init.h:
+/home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/ps7_init.h:
 
 ../src/image_mover.h:
 

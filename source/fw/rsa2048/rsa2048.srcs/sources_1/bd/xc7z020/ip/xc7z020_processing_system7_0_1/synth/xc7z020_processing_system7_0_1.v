@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2016 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2017 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -57,9 +57,6 @@
 XI_GP1_THREAD_ID_WIDTH=12,C_NUM_F2P_INTR_INPUTS=1,C_IRQ_F2P_MODE=DIRECT,C_DQ_WIDTH=32,C_DQS_WIDTH=4,C_DM_WIDTH=4,C_MIO_PRIMITIVE=54,C_TRACE_INTERNAL_WIDTH=2,C_USE_AXI_NONSECURE=0,C_USE_M_AXI_GP0=1,C_USE_M_AXI_GP1=0,C_USE_S_AXI_GP0=0,C_USE_S_AXI_HP0=0,C_USE_S_AXI_HP1=0,C_USE_S_AXI_HP2=0,C_USE_S_AXI_HP3=0,C_USE_S_AXI_ACP=0,C_PS7_SI_REV=PRODUCTION,C_FCLK_CLK0_BUF=true,C_FCLK_CLK1_BUF=true,C_FCLK_CLK2_BUF=true,C_FCLK_CLK3_BUF=true,C_PACKAGE_NAME=clg484}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module xc7z020_processing_system7_0_1 (
-  TTC0_WAVE0_OUT,
-  TTC0_WAVE1_OUT,
-  TTC0_WAVE2_OUT,
   TTC1_WAVE0_OUT,
   TTC1_WAVE1_OUT,
   TTC1_WAVE2_OUT,
@@ -103,6 +100,7 @@ module xc7z020_processing_system7_0_1 (
   M_AXI_GP0_BRESP,
   M_AXI_GP0_RRESP,
   M_AXI_GP0_RDATA,
+  IRQ_F2P,
   FCLK_CLK0,
   FCLK_CLK1,
   FCLK_CLK2,
@@ -131,9 +129,6 @@ module xc7z020_processing_system7_0_1 (
   PS_PORB
 );
 
-output wire TTC0_WAVE0_OUT;
-output wire TTC0_WAVE1_OUT;
-output wire TTC0_WAVE2_OUT;
 output wire TTC1_WAVE0_OUT;
 output wire TTC1_WAVE1_OUT;
 output wire TTC1_WAVE2_OUT;
@@ -216,6 +211,8 @@ input wire [1 : 0] M_AXI_GP0_BRESP;
 input wire [1 : 0] M_AXI_GP0_RRESP;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_GP0 RDATA" *)
 input wire [31 : 0] M_AXI_GP0_RDATA;
+(* X_INTERFACE_INFO = "xilinx.com:signal:interrupt:1.0 IRQ_F2P INTERRUPT" *)
+input wire [0 : 0] IRQ_F2P;
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 FCLK_CLK0 CLK" *)
 output wire FCLK_CLK0;
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 FCLK_CLK1 CLK" *)
@@ -467,9 +464,9 @@ inout wire PS_PORB;
     .UART1_DSRN(1'B0),
     .UART1_RIN(1'B0),
     .UART1_RX(1'B1),
-    .TTC0_WAVE0_OUT(TTC0_WAVE0_OUT),
-    .TTC0_WAVE1_OUT(TTC0_WAVE1_OUT),
-    .TTC0_WAVE2_OUT(TTC0_WAVE2_OUT),
+    .TTC0_WAVE0_OUT(),
+    .TTC0_WAVE1_OUT(),
+    .TTC0_WAVE2_OUT(),
     .TTC0_CLK0_IN(1'B0),
     .TTC0_CLK1_IN(1'B0),
     .TTC0_CLK2_IN(1'B0),
@@ -898,7 +895,7 @@ inout wire PS_PORB;
     .IRQ_P2F_SPI1(),
     .IRQ_P2F_UART1(),
     .IRQ_P2F_CAN1(),
-    .IRQ_F2P(1'B0),
+    .IRQ_F2P(IRQ_F2P),
     .Core0_nFIQ(1'B0),
     .Core0_nIRQ(1'B0),
     .Core1_nFIQ(1'B0),

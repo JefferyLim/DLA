@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="main.cpp" path="/home/jlim/Documents/school/DLA/source/sw/rsa_HLS/solution1/main.cpp"/>
+    <originFiles name="main.cpp" path="/home/linux/Documents/DLA/source/sw/rsa_HLS/solution1/main.cpp"/>
+    <originFiles name="main.h" path="/home/linux/Documents/DLA/source/sw/rsa_HLS/.apc/main.h"/>
   </source>
-  <testbench/>
+  <testbench>
+    <originFiles name="test.cpp" path="/home/linux/Documents/DLA/source/sw/rsa_HLS/.apc/test.cpp"/>
+    <originFiles name="test.cpp" path="/home/linux/Documents/DLA/source/sw/rsa_HLS/.apc/test.cpp"/>
+  </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

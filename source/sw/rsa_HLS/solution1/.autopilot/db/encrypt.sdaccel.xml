@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'encrypt'" level="0">
-<item name = "Date">Tue Nov 15 15:50:18 2016
+<item name = "Date">Thu Jan 12 15:28:08 2017
 </item>
 <item name = "Version">2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)</item>
 <item name = "Project">rsa_HLS</item>
@@ -15,14 +15,14 @@
 <section name = "" level="1">
 <item name = "Target clock period (ns)">10.00</item>
 <item name = "Clock uncertainty (ns)">1.25</item>
-<item name = "Estimated clock period (ns)">27.15</item>
+<item name = "Estimated clock period (ns)">7.69</item>
 </section>
 </item>
 <item name = "Latency (clock cycles)">
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">516, 516, 517, 517, none</column>
+<column name="">2, 2, 3, 3, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -45,21 +45,22 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
-<column name="Expression">-, -, 0, 794</column>
+<column name="Expression">-, -, -, -</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">-, -, 512000, 512000</column>
+<column name="Instance">0, -, 3376, 2600</column>
 <column name="Memory">-, -, -, -</column>
-<column name="Multiplexer">-, -, -, 1690</column>
-<column name="Register">-, -, 1029, -</column>
+<column name="Multiplexer">-, -, -, 1</column>
+<column name="Register">-, -, 3, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
-<specialColumn name="Utilization (%)">0, 0, 482, 967</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, 3, 4</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
-<column name="encrypt_urem_512ns_512ns_512_516_U1">encrypt_urem_512ns_512ns_512_516, 0, 0, 512000, 512000</column>
+<column name="encrypt_PERIPH_BUS_s_axi_U">encrypt_PERIPH_BUS_s_axi, 0, 0, 1072, 2088</column>
+<column name="encrypt_add_512ns_512ns_512_3_U1">encrypt_add_512ns_512ns_512_3, 0, 0, 2304, 512</column>
 </table>
 </item>
 <item name = "DSP48"><table name="" hasTotal="0">
@@ -76,18 +77,16 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="cyper_fu_28_p2">xor, 0, 0, 794, 512, 7</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">1690, 518, 1, 518</column>
+<column name="ap_NS_fsm">1, 4, 1, 4</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_CS_fsm">517, 0, 517, 0</column>
-<column name="cyper_reg_39">512, 0, 512, 0</column>
+<column name="ap_CS_fsm">3, 0, 3, 0</column>
 </table>
 </item>
 </section>
@@ -97,25 +96,36 @@
 <section name = "Interface" level="0">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="s_axi_PERIPH_BUS_AWVALID">in, 1, s_axi, PERIPH_BUS, pointer</column>
+<column name="s_axi_PERIPH_BUS_AWREADY">out, 1, s_axi, PERIPH_BUS, pointer</column>
+<column name="s_axi_PERIPH_BUS_AWADDR">in, 8, s_axi, PERIPH_BUS, pointer</column>
+<column name="s_axi_PERIPH_BUS_WVALID">in, 1, s_axi, PERIPH_BUS, pointer</column>
+<column name="s_axi_PERIPH_BUS_WREADY">out, 1, s_axi, PERIPH_BUS, pointer</column>
+<column name="s_axi_PERIPH_BUS_WDATA">in, 32, s_axi, PERIPH_BUS, pointer</column>
+<column name="s_axi_PERIPH_BUS_WSTRB">in, 4, s_axi, PERIPH_BUS, pointer</column>
+<column name="s_axi_PERIPH_BUS_ARVALID">in, 1, s_axi, PERIPH_BUS, pointer</column>
+<column name="s_axi_PERIPH_BUS_ARREADY">out, 1, s_axi, PERIPH_BUS, pointer</column>
+<column name="s_axi_PERIPH_BUS_ARADDR">in, 8, s_axi, PERIPH_BUS, pointer</column>
+<column name="s_axi_PERIPH_BUS_RVALID">out, 1, s_axi, PERIPH_BUS, pointer</column>
+<column name="s_axi_PERIPH_BUS_RREADY">in, 1, s_axi, PERIPH_BUS, pointer</column>
+<column name="s_axi_PERIPH_BUS_RDATA">out, 32, s_axi, PERIPH_BUS, pointer</column>
+<column name="s_axi_PERIPH_BUS_RRESP">out, 2, s_axi, PERIPH_BUS, pointer</column>
+<column name="s_axi_PERIPH_BUS_BVALID">out, 1, s_axi, PERIPH_BUS, pointer</column>
+<column name="s_axi_PERIPH_BUS_BREADY">in, 1, s_axi, PERIPH_BUS, pointer</column>
+<column name="s_axi_PERIPH_BUS_BRESP">out, 2, s_axi, PERIPH_BUS, pointer</column>
 <column name="ap_clk">in, 1, ap_ctrl_hs, encrypt, return value</column>
-<column name="ap_rst">in, 1, ap_ctrl_hs, encrypt, return value</column>
-<column name="ap_start">in, 1, ap_ctrl_hs, encrypt, return value</column>
-<column name="ap_done">out, 1, ap_ctrl_hs, encrypt, return value</column>
-<column name="ap_idle">out, 1, ap_ctrl_hs, encrypt, return value</column>
-<column name="ap_ready">out, 1, ap_ctrl_hs, encrypt, return value</column>
-<column name="ap_return">out, 512, ap_ctrl_hs, encrypt, return value</column>
-<column name="key">in, 512, ap_none, key, scalar</column>
-<column name="exponent">in, 512, ap_none, exponent, scalar</column>
+<column name="ap_rst_n">in, 1, ap_ctrl_hs, encrypt, return value</column>
+<column name="interrupt">out, 1, ap_ctrl_hs, encrypt, return value</column>
 </table>
 </item>
 </section>
 
 <section name = "Critical Path" level="0">
-<item name = "Max Delay">27.15</item>
+<item name = "Max Delay">7.69</item>
 <item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
 <keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
-<column name="'key'">read, 0.00, 0.00, -, -, -, wire, read, &apos;key&apos;, -, -, -, -, -</column>
-<column name="'tmp', rsa_HLS/solution1/main.cpp:11">urem, 27.15, 27.15, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'key_V_read'">read, 1.00, 1.00, -, -, -, s_axi, read, &apos;key_V&apos;, -, -, -, -, -</column>
+<column name="'output_V_assign', rsa_HLS/solution1/main.cpp:18">add, 6.69, 7.69, -, -, -, -, -, -, -, -, -, -, -</column>
 </table>
 </item>
 </section>

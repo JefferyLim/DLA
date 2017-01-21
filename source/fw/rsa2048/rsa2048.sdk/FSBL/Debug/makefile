@@ -38,7 +38,7 @@ main-build: FSBL.elf secondary-outputs
 FSBL.elf: $(OBJS) ../src/lscript.ld $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM v7 gcc linker'
-	arm-none-eabi-gcc -L"/home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/FSBL/src" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../zynq_bsp/ps7_cortexa9_0/lib -o "FSBL.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -L"/home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.sdk/FSBL/src" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../zynq_bsp/ps7_cortexa9_0/lib -o "FSBL.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

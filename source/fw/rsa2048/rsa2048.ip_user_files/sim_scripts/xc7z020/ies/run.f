@@ -1,14 +1,14 @@
 -makelib ies/xil_defaultlib -sv \
-  "/opt/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_base.sv" \
-  "/opt/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_dpdistram.sv" \
-  "/opt/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_dprom.sv" \
-  "/opt/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_sdpram.sv" \
-  "/opt/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_spram.sv" \
-  "/opt/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_sprom.sv" \
-  "/opt/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_tdpram.sv" \
+  "/home/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_base.sv" \
+  "/home/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_dpdistram.sv" \
+  "/home/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_dprom.sv" \
+  "/home/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_sdpram.sv" \
+  "/home/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_spram.sv" \
+  "/home/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_sprom.sv" \
+  "/home/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_tdpram.sv" \
 -endlib
 -makelib ies/xpm \
-  "/opt/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_VCOMP.vhd" \
+  "/home/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_VCOMP.vhd" \
 -endlib
 -makelib ies/processing_system7_bfm_v2_0_5 \
   "../../../ipstatic/processing_system7_bfm_v2_0/hdl/processing_system7_bfm_v2_0_arb_wr.v" \
@@ -38,34 +38,12 @@
 -makelib ies/xil_defaultlib \
   "../../../bd/xc7z020/ip/xc7z020_processing_system7_0_1/sim/xc7z020_processing_system7_0_1.v" \
 -endlib
--makelib ies/blk_mem_gen_v8_3_3 \
-  "../../../ipstatic/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v" \
--endlib
--makelib ies/axi_bram_ctrl_v4_0_8 \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/srl_fifo.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/axi_bram_ctrl_funcs.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/coregen_comp_defs.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/axi_lite_if.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/checkbit_handler_64.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/checkbit_handler.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/correct_one_bit_64.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/correct_one_bit.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/xor18.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/parity.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/ecc_gen.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/lite_ecc_reg.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/axi_lite.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/sng_port_arb.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/ua_narrow.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/wrap_brst.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/rd_chnl.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/wr_chnl.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/full_axi.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/axi_bram_ctrl_top.vhd" \
-  "../../../ipstatic/axi_bram_ctrl_v4_0/hdl/vhdl/axi_bram_ctrl.vhd" \
--endlib
 -makelib ies/xil_defaultlib \
-  "../../../bd/xc7z020/ip/xc7z020_axi_bram_ctrl_0_0/sim/xc7z020_axi_bram_ctrl_0_0.vhd" \
+  "../../../bd/xc7z020/hdl/xc7z020.vhd" \
+  "../../../ipstatic/encrypt_v1_0/hdl/vhdl/encrypt_add_512ns_512ns_512_3.vhd" \
+  "../../../ipstatic/encrypt_v1_0/hdl/vhdl/encrypt.vhd" \
+  "../../../ipstatic/encrypt_v1_0/hdl/vhdl/encrypt_PERIPH_BUS_s_axi.vhd" \
+  "../../../bd/xc7z020/ip/xc7z020_encrypt_0_7/sim/xc7z020_encrypt_0_7.vhd" \
 -endlib
 -makelib ies/lib_cdc_v1_0_2 \
   "../../../ipstatic/lib_cdc_v1_0/hdl/src/vhdl/cdc_sync.vhd" \
@@ -77,13 +55,7 @@
   "../../../ipstatic/proc_sys_reset_v5_0/hdl/src/vhdl/proc_sys_reset.vhd" \
 -endlib
 -makelib ies/xil_defaultlib \
-  "../../../bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_0/sim/xc7z020_rst_processing_system7_0_100M_0.vhd" \
--endlib
--makelib ies/xil_defaultlib \
-  "../../../bd/xc7z020/ip/xc7z020_axi_bram_ctrl_0_bram_0/sim/xc7z020_axi_bram_ctrl_0_bram_0.v" \
--endlib
--makelib ies/xil_defaultlib \
-  "../../../bd/xc7z020/hdl/xc7z020.vhd" \
+  "../../../bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_2/sim/xc7z020_rst_processing_system7_0_100M_2.vhd" \
 -endlib
 -makelib ies/generic_baseblocks_v2_1_0 \
   "../../../ipstatic/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_carry_and.v" \
@@ -104,15 +76,6 @@
   "../../../ipstatic/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_mux.v" \
   "../../../ipstatic/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_nto1_mux.v" \
 -endlib
--makelib ies/axi_infrastructure_v1_1_0 \
-  "../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_axi2vector.v" \
-  "../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_axic_srl_fifo.v" \
-  "../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_vector2axi.v" \
--endlib
--makelib ies/axi_register_slice_v2_1_9 \
-  "../../../ipstatic/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v" \
-  "../../../ipstatic/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axi_register_slice.v" \
--endlib
 -makelib ies/fifo_generator_v13_1_1 \
   "../../../ipstatic/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v" \
 -endlib
@@ -130,22 +93,14 @@
   "../../../ipstatic/axi_data_fifo_v2_1/hdl/verilog/axi_data_fifo_v2_1_ndeep_srl.v" \
   "../../../ipstatic/axi_data_fifo_v2_1/hdl/verilog/axi_data_fifo_v2_1_axi_data_fifo.v" \
 -endlib
--makelib ies/axi_crossbar_v2_1_10 \
-  "../../../ipstatic/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_addr_arbiter_sasd.v" \
-  "../../../ipstatic/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_addr_arbiter.v" \
-  "../../../ipstatic/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_addr_decoder.v" \
-  "../../../ipstatic/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_arbiter_resp.v" \
-  "../../../ipstatic/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_crossbar_sasd.v" \
-  "../../../ipstatic/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_crossbar.v" \
-  "../../../ipstatic/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_decerr_slave.v" \
-  "../../../ipstatic/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_si_transactor.v" \
-  "../../../ipstatic/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_splitter.v" \
-  "../../../ipstatic/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_wdata_mux.v" \
-  "../../../ipstatic/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_wdata_router.v" \
-  "../../../ipstatic/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_axi_crossbar.v" \
+-makelib ies/axi_infrastructure_v1_1_0 \
+  "../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_axi2vector.v" \
+  "../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_axic_srl_fifo.v" \
+  "../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_vector2axi.v" \
 -endlib
--makelib ies/xil_defaultlib \
-  "../../../bd/xc7z020/ip/xc7z020_xbar_0/sim/xc7z020_xbar_0.v" \
+-makelib ies/axi_register_slice_v2_1_9 \
+  "../../../ipstatic/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v" \
+  "../../../ipstatic/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axi_register_slice.v" \
 -endlib
 -makelib ies/axi_protocol_converter_v2_1_9 \
   "../../../ipstatic/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_a_axi3_conv.v" \

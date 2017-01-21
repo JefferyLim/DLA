@@ -1,8 +1,8 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
---Date        : Sat Nov 19 11:35:12 2016
---Host        : Inspiron-5547 running 64-bit Ubuntu 14.04.4 LTS
+--Date        : Thu Jan 12 18:13:33 2017
+--Host        : linux-Inspiron-5565 running 64-bit Ubuntu 14.04.5 LTS
 --Command     : generate_target xc7z020_wrapper.bd
 --Design      : xc7z020_wrapper
 --Purpose     : IP block netlist
@@ -13,13 +13,6 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity xc7z020_wrapper is
   port (
-    BRAM_PORTB_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    BRAM_PORTB_clk : in STD_LOGIC;
-    BRAM_PORTB_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    BRAM_PORTB_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    BRAM_PORTB_en : in STD_LOGIC;
-    BRAM_PORTB_rst : in STD_LOGIC;
-    BRAM_PORTB_we : in STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );
     DDR_ba : inout STD_LOGIC_VECTOR ( 2 downto 0 );
     DDR_cas_n : inout STD_LOGIC;
@@ -71,13 +64,6 @@ architecture STRUCTURE of xc7z020_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    BRAM_PORTB_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    BRAM_PORTB_clk : in STD_LOGIC;
-    BRAM_PORTB_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    BRAM_PORTB_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    BRAM_PORTB_en : in STD_LOGIC;
-    BRAM_PORTB_rst : in STD_LOGIC;
-    BRAM_PORTB_we : in STD_LOGIC_VECTOR ( 3 downto 0 );
     clk_200Mhz : out STD_LOGIC;
     clk_125Mhz : out STD_LOGIC;
     clk_50Mhz : out STD_LOGIC
@@ -86,13 +72,6 @@ architecture STRUCTURE of xc7z020_wrapper is
 begin
 xc7z020_i: component xc7z020
      port map (
-      BRAM_PORTB_addr(31 downto 0) => BRAM_PORTB_addr(31 downto 0),
-      BRAM_PORTB_clk => BRAM_PORTB_clk,
-      BRAM_PORTB_din(31 downto 0) => BRAM_PORTB_din(31 downto 0),
-      BRAM_PORTB_dout(31 downto 0) => BRAM_PORTB_dout(31 downto 0),
-      BRAM_PORTB_en => BRAM_PORTB_en,
-      BRAM_PORTB_rst => BRAM_PORTB_rst,
-      BRAM_PORTB_we(3 downto 0) => BRAM_PORTB_we(3 downto 0),
       DDR_addr(14 downto 0) => DDR_addr(14 downto 0),
       DDR_ba(2 downto 0) => DDR_ba(2 downto 0),
       DDR_cas_n => DDR_cas_n,

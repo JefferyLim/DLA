@@ -4,31 +4,7 @@ set moduleIsExternC "0"
 set rawDecl ""
 set globalVariable ""
 set PortList ""
-set PortName1 "key"
-set BitWidth1 "512"
-set ArrayOpt1 ""
-set Const1 "0"
-set Volatile1 "0"
-set Pointer1 "0"
-set Reference1 "0"
-set Dims1 [list 0]
-set Interface1 "wire"
-set DataType1 "uint512"
-set Port1 [list $PortName1 $Interface1 $DataType1 $Pointer1 $Dims1 $Const1 $Volatile1 $ArrayOpt1]
-lappend PortList $Port1
-set PortName2 "exponent"
-set BitWidth2 "512"
-set ArrayOpt2 ""
-set Const2 "0"
-set Volatile2 "0"
-set Pointer2 "0"
-set Reference2 "0"
-set Dims2 [list 0]
-set Interface2 "wire"
-set DataType2 "uint512"
-set Port2 [list $PortName2 $Interface2 $DataType2 $Pointer2 $Dims2 $Const2 $Volatile2 $ArrayOpt2]
-lappend PortList $Port2
-set PortName0 "return"
+set PortName0 "key"
 set BitWidth0 "512"
 set ArrayOpt0 ""
 set Const0 "0"
@@ -37,13 +13,25 @@ set Pointer0 "0"
 set Reference0 "0"
 set Dims0 [list 0]
 set Interface0 "wire"
-set DataType0 "uint512"
+set DataType0 "[list ap_uint 512 ]"
 set Port0 [list $PortName0 $Interface0 $DataType0 $Pointer0 $Dims0 $Const0 $Volatile0 $ArrayOpt0]
 lappend PortList $Port0
+set PortName1 "output"
+set BitWidth1 "64"
+set ArrayOpt1 ""
+set Const1 "0"
+set Volatile1 "0"
+set Pointer1 "1"
+set Reference1 "0"
+set Dims1 [list 0]
+set Interface1 "wire"
+set DataType1 "[list ap_uint 512 ]"
+set Port1 [list $PortName1 $Interface1 $DataType1 $Pointer1 $Dims1 $Const1 $Volatile1 $ArrayOpt1]
+lappend PortList $Port1
 set globalAPint "" 
 set returnAPInt "" 
-set hasCPPAPInt 0 
-set argAPInt [list  uint512 ]
+set hasCPPAPInt 1 
+set argAPInt "" 
 set hasCPPAPFix 0 
 set hasSCFix 0 
 set hasCBool 0 

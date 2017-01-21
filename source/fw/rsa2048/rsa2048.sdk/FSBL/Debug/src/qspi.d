@@ -15,7 +15,7 @@ src/qspi.o src/qspi.o: ../src/qspi.c ../src/qspi.h ../src/fsbl.h \
  ../../zynq_bsp/ps7_cortexa9_0/include/xil_io.h \
  ../../zynq_bsp/ps7_cortexa9_0/include/xstatus.h \
  ../../zynq_bsp/ps7_cortexa9_0/include/xil_assert.h ../src/fsbl_debug.h \
- /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/ps7_init.h \
+ /home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/ps7_init.h \
  ../src/image_mover.h ../../zynq_bsp/ps7_cortexa9_0/include/xqspips_hw.h \
  ../../zynq_bsp/ps7_cortexa9_0/include/xqspips.h \
  ../../zynq_bsp/ps7_cortexa9_0/include/xqspips_hw.h
@@ -60,7 +60,7 @@ src/qspi.o src/qspi.o: ../src/qspi.c ../src/qspi.h ../src/fsbl.h \
 
 ../src/fsbl_debug.h:
 
-/home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/ps7_init.h:
+/home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/ps7_init.h:
 
 ../src/image_mover.h:
 

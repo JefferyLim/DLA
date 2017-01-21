@@ -5,7 +5,7 @@
 * Version: 
 * DO NOT EDIT.
 *
-* Copyright (C) 2010-2016 Xilinx, Inc. All Rights Reserved.*
+* Copyright (C) 2010-2017 Xilinx, Inc. All Rights Reserved.*
 *Permission is hereby granted, free of charge, to any person obtaining a copy
 *of this software and associated documentation files (the Software), to deal
 *in the Software without restriction, including without limitation the rights
@@ -60,21 +60,6 @@ XTtcPs_Config XTtcPs_ConfigTable[] =
 		XPAR_PS7_TTC_2_DEVICE_ID,
 		XPAR_PS7_TTC_2_BASEADDR,
 		XPAR_PS7_TTC_2_TTC_CLK_FREQ_HZ
-	},
-	{
-		XPAR_PS7_TTC_3_DEVICE_ID,
-		XPAR_PS7_TTC_3_BASEADDR,
-		XPAR_PS7_TTC_3_TTC_CLK_FREQ_HZ
-	},
-	{
-		XPAR_PS7_TTC_4_DEVICE_ID,
-		XPAR_PS7_TTC_4_BASEADDR,
-		XPAR_PS7_TTC_4_TTC_CLK_FREQ_HZ
-	},
-	{
-		XPAR_PS7_TTC_5_DEVICE_ID,
-		XPAR_PS7_TTC_5_BASEADDR,
-		XPAR_PS7_TTC_5_TTC_CLK_FREQ_HZ
 	}
 };
 

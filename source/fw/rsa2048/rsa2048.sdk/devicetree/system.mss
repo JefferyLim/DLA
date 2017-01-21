@@ -18,21 +18,13 @@ END
 
 BEGIN DRIVER
  PARAMETER DRIVER_NAME = generic
- PARAMETER HW_INSTANCE = axi_bram_ctrl_0
- PARAMETER compatible = xlnx,axi-bram-ctrl-4.0
- PARAMETER reg = 0x40000000 0x2000
- PARAMETER xlnx,bram-addr-width = 11
- PARAMETER xlnx,bram-inst-mode = EXTERNAL
- PARAMETER xlnx,ecc = 0
- PARAMETER xlnx,ecc-onoff-reset-value = 0
- PARAMETER xlnx,ecc-type = 0
- PARAMETER xlnx,fault-inject = 0
- PARAMETER xlnx,memory-depth = 2048
- PARAMETER xlnx,s-axi-ctrl-addr-width = 32
- PARAMETER xlnx,s-axi-ctrl-data-width = 32
- PARAMETER xlnx,s-axi-id-width = 12
- PARAMETER xlnx,s-axi-supports-narrow-burst = 0
- PARAMETER xlnx,single-port-bram = 1
+ PARAMETER HW_INSTANCE = encrypt_0
+ PARAMETER compatible = xlnx,encrypt-1.0
+ PARAMETER interrupt-parent = intc
+ PARAMETER interrupts = 0 29 4
+ PARAMETER reg = 0x43c00000 0x10000
+ PARAMETER xlnx,s-axi-periph-bus-addr-width = 8
+ PARAMETER xlnx,s-axi-periph-bus-data-width = 32
 END
 
 BEGIN DRIVER
@@ -193,11 +185,6 @@ END
 BEGIN DRIVER
  PARAMETER DRIVER_NAME = slcrps
  PARAMETER HW_INSTANCE = ps7_slcr_0
-END
-
-BEGIN DRIVER
- PARAMETER DRIVER_NAME = ttcps
- PARAMETER HW_INSTANCE = ps7_ttc_0
 END
 
 BEGIN DRIVER

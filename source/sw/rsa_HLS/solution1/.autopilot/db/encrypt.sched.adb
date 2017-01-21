@@ -6,7 +6,7 @@
 	<userIPName></userIPName>
 	<cdfg class_id="1" tracking_level="1" version="0" object_id="_0">
 		<name>encrypt</name>
-		<ret_bitwidth>512</ret_bitwidth>
+		<ret_bitwidth>0</ret_bitwidth>
 		<ports class_id="2" tracking_level="0" version="0">
 			<count>2</count>
 			<item_version>0</item_version>
@@ -15,7 +15,7 @@
 					<Obj class_id="5" tracking_level="0" version="0">
 						<type>1</type>
 						<id>1</id>
-						<name>key</name>
+						<name>key_V</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -24,7 +24,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>key</originalName>
+						<originalName></originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -43,7 +43,7 @@
 					<Obj>
 						<type>1</type>
 						<id>2</id>
-						<name>exponent</name>
+						<name>output_V</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -52,13 +52,13 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>exponent</originalName>
+						<originalName>output.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
 					<bitwidth>512</bitwidth>
 				</Value>
-				<direction>0</direction>
+				<direction>1</direction>
 				<if_type>0</if_type>
 				<array_size>0</array_size>
 				<bit_vecs>
@@ -68,14 +68,14 @@
 			</item>
 		</ports>
 		<nodes class_id="8" tracking_level="0" version="0">
-			<count>5</count>
+			<count>4</count>
 			<item_version>0</item_version>
 			<item class_id="9" tracking_level="1" version="0" object_id="_3">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>7</id>
-						<name>exponent_read</name>
+						<id>6</id>
+						<name>key_V_read</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -84,7 +84,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>exponent</originalName>
+						<originalName></originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -93,8 +93,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>14</item>
 					<item>15</item>
+					<item>16</item>
 				</oprand_edges>
 				<opcode>read</opcode>
 			</item>
@@ -102,45 +102,17 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>8</id>
-						<name>key_read</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName>key</originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>512</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>16</item>
-					<item>17</item>
-				</oprand_edges>
-				<opcode>read</opcode>
-			</item>
-			<item class_id_reference="9" object_id="_5">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>9</id>
-						<name>cyper</name>
+						<id>10</id>
+						<name>output_V_assign</name>
 						<fileName>rsa_HLS/solution1/main.cpp</fileName>
-						<fileDirectory>/home/jlim/Documents/school/DLA/source/sw</fileDirectory>
-						<lineNumber>9</lineNumber>
+						<fileDirectory>/home/linux/Documents/DLA/source/sw</fileDirectory>
+						<lineNumber>18</lineNumber>
 						<contextFuncName>encrypt</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item class_id="11" tracking_level="0" version="0">
-								<first>/home/jlim/Documents/school/DLA/source/sw</first>
+								<first>/home/linux/Documents/DLA/source/sw</first>
 								<second class_id="12" tracking_level="0" version="0">
 									<count>1</count>
 									<item_version>0</item_version>
@@ -149,49 +121,7 @@
 											<first>rsa_HLS/solution1/main.cpp</first>
 											<second>encrypt</second>
 										</first>
-										<second>9</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName>cyper</originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>512</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>18</item>
-					<item>20</item>
-				</oprand_edges>
-				<opcode>xor</opcode>
-			</item>
-			<item class_id_reference="9" object_id="_6">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>10</id>
-						<name>tmp</name>
-						<fileName>rsa_HLS/solution1/main.cpp</fileName>
-						<fileDirectory>/home/jlim/Documents/school/DLA/source/sw</fileDirectory>
-						<lineNumber>11</lineNumber>
-						<contextFuncName>encrypt</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/jlim/Documents/school/DLA/source/sw</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>rsa_HLS/solution1/main.cpp</first>
-											<second>encrypt</second>
-										</first>
-										<second>11</second>
+										<second>18</second>
 									</item>
 								</second>
 							</item>
@@ -205,26 +135,26 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>21</item>
-					<item>22</item>
+					<item>17</item>
+					<item>19</item>
 				</oprand_edges>
-				<opcode>urem</opcode>
+				<opcode>add</opcode>
 			</item>
-			<item class_id_reference="9" object_id="_7">
+			<item class_id_reference="9" object_id="_5">
 				<Value>
 					<Obj>
 						<type>0</type>
 						<id>11</id>
 						<name></name>
 						<fileName>rsa_HLS/solution1/main.cpp</fileName>
-						<fileDirectory>/home/jlim/Documents/school/DLA/source/sw</fileDirectory>
-						<lineNumber>11</lineNumber>
+						<fileDirectory>/home/linux/Documents/DLA/source/sw</fileDirectory>
+						<lineNumber>18</lineNumber>
 						<contextFuncName>encrypt</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/jlim/Documents/school/DLA/source/sw</first>
+								<first>/home/linux/Documents/DLA/source/sw</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -233,7 +163,7 @@
 											<first>rsa_HLS/solution1/main.cpp</first>
 											<second>encrypt</second>
 										</first>
-										<second>11</second>
+										<second>18</second>
 									</item>
 								</second>
 							</item>
@@ -245,9 +175,51 @@
 					<bitwidth>0</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>1</count>
+					<count>3</count>
 					<item_version>0</item_version>
+					<item>21</item>
+					<item>22</item>
 					<item>23</item>
+				</oprand_edges>
+				<opcode>write</opcode>
+			</item>
+			<item class_id_reference="9" object_id="_6">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>12</id>
+						<name></name>
+						<fileName>rsa_HLS/solution1/main.cpp</fileName>
+						<fileDirectory>/home/linux/Documents/DLA/source/sw</fileDirectory>
+						<lineNumber>20</lineNumber>
+						<contextFuncName>encrypt</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/linux/Documents/DLA/source/sw</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>rsa_HLS/solution1/main.cpp</first>
+											<second>encrypt</second>
+										</first>
+										<second>20</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>0</count>
+					<item_version>0</item_version>
 				</oprand_edges>
 				<opcode>ret</opcode>
 			</item>
@@ -255,11 +227,11 @@
 		<consts class_id="15" tracking_level="0" version="0">
 			<count>1</count>
 			<item_version>0</item_version>
-			<item class_id="16" tracking_level="1" version="0" object_id="_8">
+			<item class_id="16" tracking_level="1" version="0" object_id="_7">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>19</id>
+						<id>18</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -276,16 +248,16 @@
 					<bitwidth>512</bitwidth>
 				</Value>
 				<const_type>0</const_type>
-				<content>100</content>
+				<content>5</content>
 			</item>
 		</consts>
 		<blocks class_id="17" tracking_level="0" version="0">
 			<count>1</count>
 			<item_version>0</item_version>
-			<item class_id="18" tracking_level="1" version="0" object_id="_9">
+			<item class_id="18" tracking_level="1" version="0" object_id="_8">
 				<Obj>
 					<type>3</type>
-					<id>12</id>
+					<id>13</id>
 					<name>encrypt</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
@@ -300,56 +272,43 @@
 					<coreName></coreName>
 				</Obj>
 				<node_objs>
-					<count>5</count>
+					<count>4</count>
 					<item_version>0</item_version>
-					<item>7</item>
-					<item>8</item>
-					<item>9</item>
+					<item>6</item>
 					<item>10</item>
 					<item>11</item>
+					<item>12</item>
 				</node_objs>
 			</item>
 		</blocks>
 		<edges class_id="19" tracking_level="0" version="0">
-			<count>7</count>
+			<count>5</count>
 			<item_version>0</item_version>
-			<item class_id="20" tracking_level="1" version="0" object_id="_10">
-				<id>15</id>
-				<edge_type>1</edge_type>
-				<source_obj>2</source_obj>
-				<sink_obj>7</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_11">
-				<id>17</id>
+			<item class_id="20" tracking_level="1" version="0" object_id="_9">
+				<id>16</id>
 				<edge_type>1</edge_type>
 				<source_obj>1</source_obj>
-				<sink_obj>8</sink_obj>
+				<sink_obj>6</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_10">
+				<id>17</id>
+				<edge_type>1</edge_type>
+				<source_obj>6</source_obj>
+				<sink_obj>10</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_11">
+				<id>19</id>
+				<edge_type>1</edge_type>
+				<source_obj>18</source_obj>
+				<sink_obj>10</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_12">
-				<id>18</id>
-				<edge_type>1</edge_type>
-				<source_obj>7</source_obj>
-				<sink_obj>9</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_13">
-				<id>20</id>
-				<edge_type>1</edge_type>
-				<source_obj>19</source_obj>
-				<sink_obj>9</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_14">
-				<id>21</id>
-				<edge_type>1</edge_type>
-				<source_obj>9</source_obj>
-				<sink_obj>10</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_15">
 				<id>22</id>
 				<edge_type>1</edge_type>
-				<source_obj>8</source_obj>
-				<sink_obj>10</sink_obj>
+				<source_obj>2</source_obj>
+				<sink_obj>11</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_16">
+			<item class_id_reference="20" object_id="_13">
 				<id>23</id>
 				<edge_type>1</edge_type>
 				<source_obj>10</source_obj>
@@ -360,7 +319,7 @@
 	<cdfg_regions class_id="21" tracking_level="0" version="0">
 		<count>1</count>
 		<item_version>0</item_version>
-		<item class_id="22" tracking_level="1" version="0" object_id="_17">
+		<item class_id="22" tracking_level="1" version="0" object_id="_14">
 			<mId>1</mId>
 			<mTag>encrypt</mTag>
 			<mType>0</mType>
@@ -371,13 +330,13 @@
 			<basic_blocks>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>12</item>
+				<item>13</item>
 			</basic_blocks>
 			<mII>-1</mII>
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>516</mMinLatency>
+			<mMinLatency>2</mMinLatency>
 			<mMaxLatency>-1</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
@@ -386,25 +345,11 @@
 	<fsm class_id="-1"></fsm>
 	<res class_id="-1"></res>
 	<node_label_latency class_id="26" tracking_level="0" version="0">
-		<count>5</count>
+		<count>4</count>
 		<item_version>0</item_version>
 		<item class_id="27" tracking_level="0" version="0">
-			<first>7</first>
+			<first>6</first>
 			<second class_id="28" tracking_level="0" version="0">
-				<first>0</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>8</first>
-			<second>
-				<first>1</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>9</first>
-			<second>
 				<first>0</first>
 				<second>0</second>
 			</second>
@@ -412,14 +357,21 @@
 		<item>
 			<first>10</first>
 			<second>
-				<first>1</first>
-				<second>515</second>
+				<first>0</first>
+				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>11</first>
 			<second>
-				<first>516</first>
+				<first>2</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>12</first>
+			<second>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -428,10 +380,10 @@
 		<count>1</count>
 		<item_version>0</item_version>
 		<item class_id="30" tracking_level="0" version="0">
-			<first>12</first>
+			<first>13</first>
 			<second class_id="31" tracking_level="0" version="0">
 				<first>0</first>
-				<second>516</second>
+				<second>2</second>
 			</second>
 		</item>
 	</bblk_ent_exit>

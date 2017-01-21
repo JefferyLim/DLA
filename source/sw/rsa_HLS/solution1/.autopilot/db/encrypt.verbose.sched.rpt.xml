@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'encrypt'" level="0">
-<item name = "Date">Tue Nov 15 15:50:18 2016
+<item name = "Date">Thu Jan 12 15:28:08 2017
 </item>
 <item name = "Version">2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)</item>
 <item name = "Project">rsa_HLS</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 27.15, 1.25</column>
+<column name="ap_clk">10.00, 7.69, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">516, 516, 517, 517, none</column>
+<column name="">2, 2, 3, 3, none</column>
 </table>
 </item>
 <item name = "Detail">

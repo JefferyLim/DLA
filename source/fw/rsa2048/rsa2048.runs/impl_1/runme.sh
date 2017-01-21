@@ -7,20 +7,20 @@
 # 
 
 if [ -z "$PATH" ]; then
-  PATH=/opt/Xilinx/SDK/2016.2/bin:/opt/Xilinx/Vivado/2016.2/ids_lite/ISE/bin/lin64:/opt/Xilinx/Vivado/2016.2/bin
+  PATH=/home/Xilinx/SDK/2016.2/bin:/home/Xilinx/Vivado/2016.2/ids_lite/ISE/bin/lin64:/home/Xilinx/Vivado/2016.2/bin
 else
-  PATH=/opt/Xilinx/SDK/2016.2/bin:/opt/Xilinx/Vivado/2016.2/ids_lite/ISE/bin/lin64:/opt/Xilinx/Vivado/2016.2/bin:$PATH
+  PATH=/home/Xilinx/SDK/2016.2/bin:/home/Xilinx/Vivado/2016.2/ids_lite/ISE/bin/lin64:/home/Xilinx/Vivado/2016.2/bin:$PATH
 fi
 export PATH
 
 if [ -z "$LD_LIBRARY_PATH" ]; then
-  LD_LIBRARY_PATH=/opt/Xilinx/Vivado/2016.2/ids_lite/ISE/lib/lin64
+  LD_LIBRARY_PATH=/home/Xilinx/Vivado/2016.2/ids_lite/ISE/lib/lin64
 else
-  LD_LIBRARY_PATH=/opt/Xilinx/Vivado/2016.2/ids_lite/ISE/lib/lin64:$LD_LIBRARY_PATH
+  LD_LIBRARY_PATH=/home/Xilinx/Vivado/2016.2/ids_lite/ISE/lib/lin64:$LD_LIBRARY_PATH
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.runs/impl_1'
+HD_PWD='/home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

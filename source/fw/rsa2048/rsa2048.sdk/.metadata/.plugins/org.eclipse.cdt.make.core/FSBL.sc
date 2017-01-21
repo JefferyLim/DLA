@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?scdStore version="2"?><scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
-<instance id="xilinx.gnu.armv7.exe.debug.650256516;xilinx.gnu.armv7.exe.debug.650256516.">
+<instance id="xilinx.gnu.armv7.exe.debug.725727214;xilinx.gnu.armv7.exe.debug.725727214.">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
-<includePath path="/opt/Xilinx/SDK/2016.2/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/include"/>
-<includePath path="/opt/Xilinx/SDK/2016.2/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/include-fixed"/>
-<includePath path="/opt/Xilinx/SDK/2016.2/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/include"/>
+<includePath path="/home/Xilinx/SDK/2016.2/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/include"/>
+<includePath path="/home/Xilinx/SDK/2016.2/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/include-fixed"/>
+<includePath path="/home/Xilinx/SDK/2016.2/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/include"/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>
 <definedSymbol symbol="__GNUC__=4"/>
@@ -347,11 +347,11 @@
 <definedSymbol symbol="__USES_INITFINI__=1"/>
 </collector>
 </instance>
-<instance id="xilinx.gnu.armv7.exe.release.779392924;xilinx.gnu.armv7.exe.release.779392924.">
+<instance id="xilinx.gnu.armv7.exe.release.208170273;xilinx.gnu.armv7.exe.release.208170273.">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
-<includePath path="/opt/Xilinx/SDK/2016.2/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/include"/>
-<includePath path="/opt/Xilinx/SDK/2016.2/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/include-fixed"/>
-<includePath path="/opt/Xilinx/SDK/2016.2/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/include"/>
+<includePath path="/home/Xilinx/SDK/2016.2/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/include"/>
+<includePath path="/home/Xilinx/SDK/2016.2/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/include-fixed"/>
+<includePath path="/home/Xilinx/SDK/2016.2/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/include"/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>
 <definedSymbol symbol="__GNUC__=4"/>

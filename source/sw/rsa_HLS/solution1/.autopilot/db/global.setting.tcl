@@ -15,7 +15,7 @@ set NbRWValue 0
 set intNbAccess 0
 set NewDSPMapping 1
 set HasDSPModule 0
-set ResetLevelFlag 1
+set ResetLevelFlag 0
 set ResetStyle "control"
 set ResetSyncFlag 1
 set ResetRegisterFlag 0
@@ -43,17 +43,17 @@ set SCTraceOption "all"
 set TargetInfo "xc7z020:clg484:-1"
 set SourceFiles {sc {} c main.cpp}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile {/home/jlim/Documents/school/DLA/source/sw/rsa_HLS/solution1/solution1.directive}
-set TBFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
+set DirectiveFile {/home/linux/Documents/DLA/source/sw/rsa_HLS/solution1/solution1.directive}
+set TBFiles {verilog ../.apc/test.cpp bc ../.apc/test.cpp sc ../.apc/test.cpp vhdl ../.apc/test.cpp c {} cas ../.apc/test.cpp}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
-set TBTops {bc "" c "" sc "" cas "" vhdl "" verilog ""}
-set TBInstNames {bc "" c "" sc "" cas "" vhdl "" verilog ""}
+set TBTops {verilog {} bc {} sc {} vhdl {} c {} cas {}}
+set TBInstNames {verilog {} bc {} sc {} vhdl {} c {} cas {}}
 set ExtraGlobalOptions {"area_timing" 1 "clock_gate" 1 "impl_flow" map "power_gate" 0}
 set PlatformFiles {{DefaultPlatform {xilinx/zynq/zynq xilinx/zynq/zynq_fpv6}}}
 set DefaultPlatform "DefaultPlatform"
-set TBTVFileNotFound ""
+set TBTVFileNotFound "test.cpp"
 set AppFile "../vivado_hls.app"
 set ApsFile "solution1.aps"
 set AvePath "../.."

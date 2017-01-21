@@ -6,11 +6,14 @@
 open_project rsa_HLS
 set_top encrypt
 add_files rsa_HLS/solution1/main.cpp
+add_files rsa_HLS/.apc/main.h
+add_files -tb rsa_HLS/.apc/test.cpp
+add_files -tb rsa_HLS/.apc/test.cpp
 open_solution "solution1"
 set_part {xc7z020clg484-1} -tool vivado
 create_clock -period 10 -name default
 #source "./rsa_HLS/solution1/directives.tcl"
-#csim_design
+csim_design
 csynth_design
-#cosim_design
+cosim_design
 export_design -format ip_catalog

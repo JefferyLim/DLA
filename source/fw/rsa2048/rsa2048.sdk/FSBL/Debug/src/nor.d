@@ -15,7 +15,7 @@ src/nor.o src/nor.o: ../src/nor.c ../src/fsbl.h \
  ../../zynq_bsp/ps7_cortexa9_0/include/xil_io.h \
  ../../zynq_bsp/ps7_cortexa9_0/include/xstatus.h \
  ../../zynq_bsp/ps7_cortexa9_0/include/xil_assert.h ../src/fsbl_debug.h \
- /home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/ps7_init.h \
+ /home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/ps7_init.h \
  ../src/nor.h ../../zynq_bsp/ps7_cortexa9_0/include/xstatus.h
 
 ../src/fsbl.h:
@@ -56,7 +56,7 @@ src/nor.o src/nor.o: ../src/nor.c ../src/fsbl.h \
 
 ../src/fsbl_debug.h:
 
-/home/jlim/Documents/school/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/ps7_init.h:
+/home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.sdk/top_hw_platform_0/ps7_init.h:
 
 ../src/nor.h:
 

@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]/home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/FSBL/Debug/FSBL.elf
+	/home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/top.bit
+	/home/linux/Documents/DLA/source/fw/rsa2048/rsa2048.sdk/bootimage/u-boot.elf
+}

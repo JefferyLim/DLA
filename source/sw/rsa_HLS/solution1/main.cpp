@@ -3,9 +3,9 @@
 
 #include "ap_utils.h"
 #include "ap_int.h"
-typedef ap_uint<512>  uintMem;
+typedef ap_uint<1024>  uintMem;
 
-void encrypt(uintMem key, uintMem* output){
+void BIGINT_Math(uintMem key, uintMem* output){
 
 #pragma HLS INTERFACE s_axilite port=return bundle=PERIPH_BUS
 #pragma HLS INTERFACE s_axilite port=key bundle=PERIPH_BUS

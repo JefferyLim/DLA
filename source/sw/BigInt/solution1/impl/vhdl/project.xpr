@@ -6,7 +6,7 @@
 <Project Version="7" Minor="14" Path="/home/linux/Documents/DLA/source/sw/BigInt/solution1/impl/vhdl/project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="a4d204e0d7264dd78502bde697aa8a7b"/>
+    <Option Name="Id" Val="101ca9cd09e244e9b242390540c33603"/>
     <Option Name="Part" Val="xc7z020clg484-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -50,6 +50,12 @@
         </FileInfo>
       </File>
       <File Path="$PPRDIR/bigint_math.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/bigint_math_add_2048ns_2048ns_2048_9.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>

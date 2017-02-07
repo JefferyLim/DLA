@@ -26,13 +26,6 @@
 -makelib ies/xil_defaultlib \
   "../../../bd/xc7z020/ip/xc7z020_processing_system7_0_1/sim/xc7z020_processing_system7_0_1.v" \
 -endlib
--makelib ies/xil_defaultlib \
-  "../../../bd/xc7z020/hdl/xc7z020.vhd" \
-  "../../../ipstatic/encrypt_v1_0/hdl/vhdl/encrypt_add_512ns_512ns_512_3.vhd" \
-  "../../../ipstatic/encrypt_v1_0/hdl/vhdl/encrypt.vhd" \
-  "../../../ipstatic/encrypt_v1_0/hdl/vhdl/encrypt_PERIPH_BUS_s_axi.vhd" \
-  "../../../bd/xc7z020/ip/xc7z020_encrypt_0_7/sim/xc7z020_encrypt_0_7.vhd" \
--endlib
 -makelib ies/lib_cdc_v1_0_2 \
   "../../../ipstatic/lib_cdc_v1_0/hdl/src/vhdl/cdc_sync.vhd" \
 -endlib
@@ -44,6 +37,13 @@
 -endlib
 -makelib ies/xil_defaultlib \
   "../../../bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_2/sim/xc7z020_rst_processing_system7_0_100M_2.vhd" \
+-endlib
+-makelib ies/xil_defaultlib \
+  "../../../bd/xc7z020/hdl/xc7z020.v" \
+  "../../../ipstatic/bigint_math_v1_0/hdl/verilog/bigint_math_PERIPH_BUS_s_axi.v" \
+  "../../../ipstatic/bigint_math_v1_0/hdl/verilog/bigint_math.v" \
+  "../../../ipstatic/bigint_math_v1_0/hdl/verilog/bigint_math_add_2048ns_2048ns_2048_9.v" \
+  "../../../bd/xc7z020/ip/xc7z020_bigint_math_0_1/sim/xc7z020_bigint_math_0_1.v" \
 -endlib
 -makelib ies/generic_baseblocks_v2_1_0 \
   "../../../ipstatic/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_carry_and.v" \

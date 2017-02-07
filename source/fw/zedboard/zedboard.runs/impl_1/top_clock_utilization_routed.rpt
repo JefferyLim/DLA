@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date              : Tue Jan 24 22:08:57 2017
+| Date              : Wed Feb  1 19:19:28 2017
 | Host              : linux-Inspiron-5565 running 64-bit Ubuntu 14.04.5 LTS
 | Command           : report_clock_utilization -file top_clock_utilization_routed.rpt
 | Design            : top
@@ -20,11 +20,13 @@ Table of Contents
 4. Local Clock Details
 5. Clock Regions: Key Resource Utilization
 6. Clock Regions : Global Clock Summary
-7. Cell Type Counts per Global Clock: Region X0Y1
-8. Cell Type Counts per Global Clock: Region X1Y1
-9. Cell Type Counts per Global Clock: Region X0Y2
-10. Cell Type Counts per Global Clock: Region X1Y2
-11. Load Cell Placement Summary for Global Clock g0
+7. Cell Type Counts per Global Clock: Region X0Y0
+8. Cell Type Counts per Global Clock: Region X1Y0
+9. Cell Type Counts per Global Clock: Region X0Y1
+10. Cell Type Counts per Global Clock: Region X1Y1
+11. Cell Type Counts per Global Clock: Region X0Y2
+12. Cell Type Counts per Global Clock: Region X1Y2
+13. Load Cell Placement Summary for Global Clock g0
 
 1. Clock Primitive Utilization
 ------------------------------
@@ -48,7 +50,7 @@ Table of Contents
 +-------+-------+-----------------+------------+----------------+--------------+------+-------------------+---------------+-------------+-----------------+--------------+------------+-------------------------------------------------------------------------+-----------------------------------------------+
 | GlbID | SrcId | Driver Type/Pin | Constraint | Site           | Clock Region | Root | Clock Delay Group | Clock Regions | Clock Loads | Non-Clock Loads | Clock Period | Clock      | Driver Pin                                                              | Net                                           |
 +-------+-------+-----------------+------------+----------------+--------------+------+-------------------+---------------+-------------+-----------------+--------------+------------+-------------------------------------------------------------------------+-----------------------------------------------+
-| g0    | src0  | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |      |                   |             4 |        6801 |               0 |       10.000 | clk_fpga_0 | xc7z020_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O | xc7z020_i/processing_system7_0/inst/FCLK_CLK0 |
+| g0    | src0  | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |      |                   |             6 |       23355 |               0 |       10.000 | clk_fpga_0 | xc7z020_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O | xc7z020_i/processing_system7_0/inst/FCLK_CLK0 |
 +-------+-------+-----------------+------------+----------------+--------------+------+-------------------+---------------+-------------+-----------------+--------------+------------+-------------------------------------------------------------------------+-----------------------------------------------+
 * Note: Multiple constraint types applied to the driver. Please check for potential conflicts.
 
@@ -81,12 +83,12 @@ Table of Contents
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
-| X0Y0              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 20000 |    0 |  4000 |    0 |     0 |    0 |    30 |    0 |    60 |
-| X1Y0              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 25600 |    0 |  3400 |    0 |     0 |    0 |    30 |    0 |    40 |
-| X0Y1              |    1 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |  433 |  9600 |   16 |  1600 |    0 |     0 |    0 |    10 |    0 |    20 |
-| X1Y1              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   39 | 20800 |    1 |  3400 |    0 |     0 |    0 |    30 |    0 |    40 |
-| X0Y2              |    1 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 | 2112 |  9600 |    3 |  1600 |    0 |     0 |    0 |    10 |    0 |    20 |
-| X1Y2              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 2208 | 20800 |    1 |  3400 |    0 |     0 |    0 |    30 |    0 |    40 |
+| X0Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 1192 | 20000 |    4 |  4000 |    0 |     0 |    0 |    30 |    0 |    60 |
+| X1Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   22 | 25600 |    2 |  3400 |    0 |     0 |    0 |    30 |    0 |    40 |
+| X0Y1              |    1 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 | 3272 |  9600 |   21 |  1600 |    0 |     0 |    2 |    10 |    0 |    20 |
+| X1Y1              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 2363 | 20800 |    3 |  3400 |    0 |     0 |    0 |    30 |    0 |    40 |
+| X0Y2              |    1 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 | 2977 |  9600 |    4 |  1600 |    0 |     0 |    0 |    10 |    0 |    20 |
+| X1Y2              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 2327 | 20800 |    3 |  3400 |    0 |     0 |    0 |    30 |    0 |    40 |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 * Used Global Clocks includes only global clock resources based on load placement but does not consider global clock resources used to traverse a clock region. Therefore the actual total of Used Global Clocks may be higher.
 ** RAMB36 site can be used as two RAMB18/FIFO18 sites.
@@ -100,71 +102,93 @@ Table of Contents
 +----+----+----+
 | Y2 |  1 |  1 |
 | Y1 |  1 |  1 |
-| Y0 |  0 |  0 |
+| Y0 |  1 |  1 |
 +----+----+----+
 * Used Global Clocks includes only global clock resources based on load placement but does not consider global clock resources used to traverse a clock region. Therefore the actual total of Used Global Clocks may be higher.
 
 
-7. Cell Type Counts per Global Clock: Region X0Y1
+7. Cell Type Counts per Global Clock: Region X0Y0
 -------------------------------------------------
 
-+-------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
-| GlbID | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                           |
-+-------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
-| g0    | n/a   | BUFG/O          | None       |           0 |             433 | 433 |     16 |    0 |   0 |  0 |    0 |   0 |       0 | xc7z020_i/processing_system7_0/inst/FCLK_CLK0 |
-+-------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
+| GlbID | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                           |
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
+| g0    | n/a   | BUFG/O          | None       |           0 |            1192 | 1192 |      4 |    0 |   0 |  0 |    0 |   0 |       0 | xc7z020_i/processing_system7_0/inst/FCLK_CLK0 |
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
 * Note: Multiple constraint types applied to the driver. Please check for potential conflicts.
 
 
-8. Cell Type Counts per Global Clock: Region X1Y1
+8. Cell Type Counts per Global Clock: Region X1Y0
 -------------------------------------------------
 
 +-------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
 | GlbID | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                           |
 +-------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
-| g0    | n/a   | BUFG/O          | None       |           0 |              39 | 39 |      1 |    0 |   0 |  0 |    0 |   0 |       0 | xc7z020_i/processing_system7_0/inst/FCLK_CLK0 |
+| g0    | n/a   | BUFG/O          | None       |           0 |              22 | 22 |      2 |    0 |   0 |  0 |    0 |   0 |       0 | xc7z020_i/processing_system7_0/inst/FCLK_CLK0 |
 +-------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
 * Note: Multiple constraint types applied to the driver. Please check for potential conflicts.
 
 
-9. Cell Type Counts per Global Clock: Region X0Y2
+9. Cell Type Counts per Global Clock: Region X0Y1
 -------------------------------------------------
 
 +-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
 | GlbID | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                           |
 +-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
-| g0    | n/a   | BUFG/O          | None       |           0 |            2113 | 2112 |      3 |    0 |   0 |  0 |    0 |   0 |       0 | xc7z020_i/processing_system7_0/inst/FCLK_CLK0 |
+| g0    | n/a   | BUFG/O          | None       |           0 |            3274 | 3272 |     21 |    2 |   0 |  0 |    0 |   0 |       0 | xc7z020_i/processing_system7_0/inst/FCLK_CLK0 |
 +-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
 * Note: Multiple constraint types applied to the driver. Please check for potential conflicts.
 
 
-10. Cell Type Counts per Global Clock: Region X1Y2
+10. Cell Type Counts per Global Clock: Region X1Y1
 --------------------------------------------------
 
 +-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
 | GlbID | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                           |
 +-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
-| g0    | n/a   | BUFG/O          | None       |           0 |            2208 | 2208 |      1 |    0 |   0 |  0 |    0 |   0 |       0 | xc7z020_i/processing_system7_0/inst/FCLK_CLK0 |
+| g0    | n/a   | BUFG/O          | None       |           0 |            2363 | 2363 |      3 |    0 |   0 |  0 |    0 |   0 |       0 | xc7z020_i/processing_system7_0/inst/FCLK_CLK0 |
 +-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
 * Note: Multiple constraint types applied to the driver. Please check for potential conflicts.
 
 
-11. Load Cell Placement Summary for Global Clock g0
+11. Cell Type Counts per Global Clock: Region X0Y2
+--------------------------------------------------
+
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
+| GlbID | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                           |
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
+| g0    | n/a   | BUFG/O          | None       |           0 |            2978 | 2977 |      4 |    0 |   0 |  0 |    0 |   0 |       0 | xc7z020_i/processing_system7_0/inst/FCLK_CLK0 |
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
+* Note: Multiple constraint types applied to the driver. Please check for potential conflicts.
+
+
+12. Cell Type Counts per Global Clock: Region X1Y2
+--------------------------------------------------
+
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
+| GlbID | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                           |
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
+| g0    | n/a   | BUFG/O          | None       |           0 |            2327 | 2327 |      3 |    0 |   0 |  0 |    0 |   0 |       0 | xc7z020_i/processing_system7_0/inst/FCLK_CLK0 |
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------+
+* Note: Multiple constraint types applied to the driver. Please check for potential conflicts.
+
+
+13. Load Cell Placement Summary for Global Clock g0
 ---------------------------------------------------
 
 +-------+-----------------+-------------------+------------+-------------+---------------+----------+-------------+----------+-------------+----+-----------------------------------------------+
 | GlbID | Driver Type/Pin | Driver Region (D) | Clock      | Period (ns) | Waveform (ns) | Root (R) | Slice Loads | IO Loads | Clock Loads | GT | Net                                           |
 +-------+-----------------+-------------------+------------+-------------+---------------+----------+-------------+----------+-------------+----+-----------------------------------------------+
-| g0    | BUFG/O          | n/a               | clk_fpga_0 |      10.000 | {0.000 5.000} |          |        4793 |        0 |           0 |  0 | xc7z020_i/processing_system7_0/inst/FCLK_CLK0 |
+| g0    | BUFG/O          | n/a               | clk_fpga_0 |      10.000 | {0.000 5.000} |          |       12156 |        0 |           0 |  0 | xc7z020_i/processing_system7_0/inst/FCLK_CLK0 |
 +-------+-----------------+-------------------+------------+-------------+---------------+----------+-------------+----------+-------------+----+-----------------------------------------------+
 
 
 +----+-------+-------+
 |    | X0    | X1    |
 +----+-------+-------+
-| Y2 |  2113 |  2208 |
-| Y1 |   433 |    39 |
-| Y0 |     0 |     0 |
+| Y2 |  2978 |  2327 |
+| Y1 |  3274 |  2363 |
+| Y0 |  1192 |    22 |
 +----+-------+-------+
 
 
@@ -180,5 +204,5 @@ set_property LOC BUFGCTRL_X0Y16 [get_cells xc7z020_i/processing_system7_0/inst/b
 #startgroup
 create_pblock {CLKAG_xc7z020_i/processing_system7_0/inst/FCLK_CLK0}
 add_cells_to_pblock [get_pblocks  {CLKAG_xc7z020_i/processing_system7_0/inst/FCLK_CLK0}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="xc7z020_i/processing_system7_0/inst/FCLK_CLK0"}]]]
-resize_pblock [get_pblocks {CLKAG_xc7z020_i/processing_system7_0/inst/FCLK_CLK0}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+resize_pblock [get_pblocks {CLKAG_xc7z020_i/processing_system7_0/inst/FCLK_CLK0}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
 #endgroup

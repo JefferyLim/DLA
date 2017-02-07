@@ -51,13 +51,6 @@ vlog -work processing_system7_bfm_v2_0_5 -64 "+incdir+../../../ipstatic/axi_infr
 vlog -work xil_defaultlib -64 "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
 "../../../bd/xc7z020/ip/xc7z020_processing_system7_0_1/sim/xc7z020_processing_system7_0_1.v" \
 
-vcom -work xil_defaultlib -64 \
-"../../../bd/xc7z020/hdl/xc7z020.vhd" \
-"../../../ipstatic/encrypt_v1_0/hdl/vhdl/encrypt_add_512ns_512ns_512_3.vhd" \
-"../../../ipstatic/encrypt_v1_0/hdl/vhdl/encrypt.vhd" \
-"../../../ipstatic/encrypt_v1_0/hdl/vhdl/encrypt_PERIPH_BUS_s_axi.vhd" \
-"../../../bd/xc7z020/ip/xc7z020_encrypt_0_7/sim/xc7z020_encrypt_0_7.vhd" \
-
 vcom -work lib_cdc_v1_0_2 -64 \
 "../../../ipstatic/lib_cdc_v1_0/hdl/src/vhdl/cdc_sync.vhd" \
 
@@ -69,6 +62,13 @@ vcom -work proc_sys_reset_v5_0_9 -64 \
 
 vcom -work xil_defaultlib -64 \
 "../../../bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_2/sim/xc7z020_rst_processing_system7_0_100M_2.vhd" \
+
+vlog -work xil_defaultlib -64 "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
+"../../../bd/xc7z020/hdl/xc7z020.v" \
+"../../../ipstatic/bigint_math_v1_0/hdl/verilog/bigint_math_PERIPH_BUS_s_axi.v" \
+"../../../ipstatic/bigint_math_v1_0/hdl/verilog/bigint_math.v" \
+"../../../ipstatic/bigint_math_v1_0/hdl/verilog/bigint_math_add_2048ns_2048ns_2048_9.v" \
+"../../../bd/xc7z020/ip/xc7z020_bigint_math_0_1/sim/xc7z020_bigint_math_0_1.v" \
 
 vlog -work generic_baseblocks_v2_1_0 -64 "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
 "../../../ipstatic/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_carry_and.v" \

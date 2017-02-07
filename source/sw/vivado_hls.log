@@ -1,22 +1,302 @@
 INFO: [HLS 200-10] Running '/home/Xilinx/Vivado_HLS/2016.2/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'linux' on host 'linux-Inspiron-5565' (Linux_x86_64 version 4.4.0-53-generic) on Tue Jan 24 21:58:06 MST 2017
+INFO: [HLS 200-10] For user 'linux' on host 'linux-Inspiron-5565' (Linux_x86_64 version 4.4.0-62-generic) on Tue Feb 07 15:56:58 MST 2017
 INFO: [HLS 200-10] On os Ubuntu 14.04.5 LTS
 INFO: [HLS 200-10] In directory '/home/linux/Documents/DLA/source/sw'
 INFO: [HLS 200-10] Opening project '/home/linux/Documents/DLA/source/sw/BigInt'.
+INFO: [HLS 200-10] Adding design file 'BigInt/solution1/main.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'BigInt/solution1/bigint/BigUnsignedInABase.cc' to the project
+INFO: [HLS 200-10] Adding design file 'BigInt/solution1/bigint/BigUnsigned.cc' to the project
+INFO: [HLS 200-10] Adding design file 'BigInt/solution1/bigint/BigIntegerUtils.cc' to the project
+INFO: [HLS 200-10] Adding design file 'BigInt/solution1/bigint/BigIntegerAlgorithms.cc' to the project
+INFO: [HLS 200-10] Adding design file 'BigInt/solution1/bigint/BigInteger.cc' to the project
 INFO: [HLS 200-10] Opening solution '/home/linux/Documents/DLA/source/sw/BigInt/solution1'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
-INFO: [IMPL 213-8] Exporting RTL as an IP in IP-XACT.
-
-****** Vivado v2016.2 (64-bit)
-  **** SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
-  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
-
-source run_ippack.tcl -notrace
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/Xilinx/Vivado/2016.2/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Tue Jan 24 21:58:28 2017...
-WARNING: [IMPL 213-201] IO timing constraints are not applied without adding IO buffers.
-WARNING: [IMPL 213-201] IO timing constraints are not applied without adding IO buffers.
+INFO: [HLS 200-10] Analyzing design file 'BigInt/solution1/bigint/BigInteger.cc' ... 
+In file included from BigInt/solution1/bigint/BigInteger.cc:1:
+In file included from /home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigInteger.hh:4:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:23:24: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Blk>::N;
+                              ^
+        using        
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:87:24: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Blk>::getCapacity;
+                              ^
+        using        
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:88:24: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Blk>::getLength;
+                              ^
+        using        
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:402:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+BigInt/solution1/bigint/BigInteger.cc:91:11: note: in instantiation of function template specialization 'BigUnsigned::convertToPrimitive<unsigned long>' requested here
+        return a.convertToPrimitive<X>();
+                 ^
+BigInt/solution1/bigint/BigInteger.cc:100:10: note: in instantiation of function template specialization 'convertBigUnsignedToPrimitiveAccess<unsigned long>' requested here
+                return convertBigUnsignedToPrimitiveAccess<X>(mag);
+                       ^
+BigInt/solution1/bigint/BigInteger.cc:129:61: note: in instantiation of function template specialization 'BigInteger::convertToUnsignedPrimitive<unsigned long>' requested here
+unsigned long  BigInteger::toUnsignedLong () const { return convertToUnsignedPrimitive<unsigned long >       (); }
+                                                            ^
+In file included from BigInt/solution1/bigint/BigInteger.cc:1:
+In file included from /home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigInteger.hh:4:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:402:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+BigInt/solution1/bigint/BigInteger.cc:91:11: note: in instantiation of function template specialization 'BigUnsigned::convertToPrimitive<unsigned int>' requested here
+        return a.convertToPrimitive<X>();
+                 ^
+BigInt/solution1/bigint/BigInteger.cc:100:10: note: in instantiation of function template specialization 'convertBigUnsignedToPrimitiveAccess<unsigned int>' requested here
+                return convertBigUnsignedToPrimitiveAccess<X>(mag);
+                       ^
+BigInt/solution1/bigint/BigInteger.cc:130:61: note: in instantiation of function template specialization 'BigInteger::convertToUnsignedPrimitive<unsigned int>' requested here
+unsigned int   BigInteger::toUnsignedInt  () const { return convertToUnsignedPrimitive<unsigned int  >       (); }
+                                                            ^
+In file included from BigInt/solution1/bigint/BigInteger.cc:1:
+In file included from /home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigInteger.hh:4:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:402:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+BigInt/solution1/bigint/BigInteger.cc:91:11: note: in instantiation of function template specialization 'BigUnsigned::convertToPrimitive<unsigned short>' requested here
+        return a.convertToPrimitive<X>();
+                 ^
+BigInt/solution1/bigint/BigInteger.cc:100:10: note: in instantiation of function template specialization 'convertBigUnsignedToPrimitiveAccess<unsigned short>' requested here
+                return convertBigUnsignedToPrimitiveAccess<X>(mag);
+                       ^
+BigInt/solution1/bigint/BigInteger.cc:131:61: note: in instantiation of function template specialization 'BigInteger::convertToUnsignedPrimitive<unsigned short>' requested here
+unsigned short BigInteger::toUnsignedShort() const { return convertToUnsignedPrimitive<unsigned short>       (); }
+                                                            ^
+BigInt/solution1/bigint/BigInteger.cc:127:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+BigInt/solution1/bigint/BigInteger.cc:132:61: note: in instantiation of function template specialization 'BigInteger::convertToSignedPrimitive<long, unsigned long>' requested here
+long           BigInteger::toLong         () const { return convertToSignedPrimitive  <long , unsigned long> (); }
+                                                            ^
+BigInt/solution1/bigint/BigInteger.cc:127:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+BigInt/solution1/bigint/BigInteger.cc:133:61: note: in instantiation of function template specialization 'BigInteger::convertToSignedPrimitive<int, unsigned int>' requested here
+int            BigInteger::toInt          () const { return convertToSignedPrimitive  <int  , unsigned int>  (); }
+                                                            ^
+BigInt/solution1/bigint/BigInteger.cc:127:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+BigInt/solution1/bigint/BigInteger.cc:134:61: note: in instantiation of function template specialization 'BigInteger::convertToSignedPrimitive<short, unsigned short>' requested here
+short          BigInteger::toShort        () const { return convertToSignedPrimitive  <short, unsigned short>(); }
+                                                            ^
+9 warnings generated.
+INFO: [HLS 200-10] Analyzing design file 'BigInt/solution1/bigint/BigIntegerAlgorithms.cc' ... 
+In file included from BigInt/solution1/bigint/BigIntegerAlgorithms.cc:1:
+In file included from /home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigIntegerAlgorithms.hh:4:
+In file included from /home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigInteger.hh:4:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:23:24: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Blk>::N;
+                              ^
+        using        
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:87:24: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Blk>::getCapacity;
+                              ^
+        using        
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:88:24: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Blk>::getLength;
+                              ^
+        using        
+BigInt/solution1/bigint/BigIntegerAlgorithms.cc:51:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+4 warnings generated.
+INFO: [HLS 200-10] Analyzing design file 'BigInt/solution1/bigint/BigIntegerUtils.cc' ... 
+In file included from BigInt/solution1/bigint/BigIntegerUtils.cc:1:
+In file included from /home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigIntegerUtils.hh:4:
+In file included from /home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigInteger.hh:4:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:23:24: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Blk>::N;
+                              ^
+        using        
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:87:24: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Blk>::getCapacity;
+                              ^
+        using        
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:88:24: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Blk>::getLength;
+                              ^
+        using        
+In file included from BigInt/solution1/bigint/BigIntegerUtils.cc:2:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsignedInABase.hh:103:26: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Digit>::getCapacity;
+                                ^
+        using        
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsignedInABase.hh:104:26: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Digit>::getLength;
+                                ^
+        using        
+5 warnings generated.
+INFO: [HLS 200-10] Analyzing design file 'BigInt/solution1/bigint/BigUnsigned.cc' ... 
+In file included from BigInt/solution1/bigint/BigUnsigned.cc:1:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:23:24: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Blk>::N;
+                              ^
+        using        
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:87:24: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Blk>::getCapacity;
+                              ^
+        using        
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:88:24: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Blk>::getLength;
+                              ^
+        using        
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:402:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+BigInt/solution1/bigint/BigUnsigned.cc:15:62: note: in instantiation of function template specialization 'BigUnsigned::convertToPrimitive<unsigned long>' requested here
+unsigned long  BigUnsigned::toUnsignedLong () const { return convertToPrimitive      <unsigned long >(); }
+                                                             ^
+In file included from BigInt/solution1/bigint/BigUnsigned.cc:1:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:402:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+BigInt/solution1/bigint/BigUnsigned.cc:16:62: note: in instantiation of function template specialization 'BigUnsigned::convertToPrimitive<unsigned int>' requested here
+unsigned int   BigUnsigned::toUnsignedInt  () const { return convertToPrimitive      <unsigned int  >(); }
+                                                             ^
+In file included from BigInt/solution1/bigint/BigUnsigned.cc:1:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:402:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+BigInt/solution1/bigint/BigUnsigned.cc:17:62: note: in instantiation of function template specialization 'BigUnsigned::convertToPrimitive<unsigned short>' requested here
+unsigned short BigUnsigned::toUnsignedShort() const { return convertToPrimitive      <unsigned short>(); }
+                                                             ^
+In file included from BigInt/solution1/bigint/BigUnsigned.cc:1:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:416:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+BigInt/solution1/bigint/BigUnsigned.cc:18:62: note: in instantiation of function template specialization 'BigUnsigned::convertToSignedPrimitive<long>' requested here
+long           BigUnsigned::toLong         () const { return convertToSignedPrimitive<         long >(); }
+                                                             ^
+In file included from BigInt/solution1/bigint/BigUnsigned.cc:1:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:402:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:410:8: note: in instantiation of function template specialization 'BigUnsigned::convertToPrimitive<long>' requested here
+        X x = convertToPrimitive<X>();
+              ^
+BigInt/solution1/bigint/BigUnsigned.cc:18:62: note: in instantiation of function template specialization 'BigUnsigned::convertToSignedPrimitive<long>' requested here
+long           BigUnsigned::toLong         () const { return convertToSignedPrimitive<         long >(); }
+                                                             ^
+In file included from BigInt/solution1/bigint/BigUnsigned.cc:1:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:416:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+BigInt/solution1/bigint/BigUnsigned.cc:19:62: note: in instantiation of function template specialization 'BigUnsigned::convertToSignedPrimitive<int>' requested here
+int            BigUnsigned::toInt          () const { return convertToSignedPrimitive<         int  >(); }
+                                                             ^
+In file included from BigInt/solution1/bigint/BigUnsigned.cc:1:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:402:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:410:8: note: in instantiation of function template specialization 'BigUnsigned::convertToPrimitive<int>' requested here
+        X x = convertToPrimitive<X>();
+              ^
+BigInt/solution1/bigint/BigUnsigned.cc:19:62: note: in instantiation of function template specialization 'BigUnsigned::convertToSignedPrimitive<int>' requested here
+int            BigUnsigned::toInt          () const { return convertToSignedPrimitive<         int  >(); }
+                                                             ^
+In file included from BigInt/solution1/bigint/BigUnsigned.cc:1:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:416:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+BigInt/solution1/bigint/BigUnsigned.cc:20:62: note: in instantiation of function template specialization 'BigUnsigned::convertToSignedPrimitive<short>' requested here
+short          BigUnsigned::toShort        () const { return convertToSignedPrimitive<         short>(); }
+                                                             ^
+In file included from BigInt/solution1/bigint/BigUnsigned.cc:1:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:402:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:410:8: note: in instantiation of function template specialization 'BigUnsigned::convertToPrimitive<short>' requested here
+        X x = convertToPrimitive<X>();
+              ^
+BigInt/solution1/bigint/BigUnsigned.cc:20:62: note: in instantiation of function template specialization 'BigUnsigned::convertToSignedPrimitive<short>' requested here
+short          BigUnsigned::toShort        () const { return convertToSignedPrimitive<         short>(); }
+                                                             ^
+12 warnings generated.
+INFO: [HLS 200-10] Analyzing design file 'BigInt/solution1/bigint/BigUnsignedInABase.cc' ... 
+In file included from BigInt/solution1/bigint/BigUnsignedInABase.cc:1:
+In file included from /home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsignedInABase.hh:5:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:23:24: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Blk>::N;
+                              ^
+        using        
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:87:24: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Blk>::getCapacity;
+                              ^
+        using        
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:88:24: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Blk>::getLength;
+                              ^
+        using        
+In file included from BigInt/solution1/bigint/BigUnsignedInABase.cc:1:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsignedInABase.hh:103:26: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Digit>::getCapacity;
+                                ^
+        using        
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsignedInABase.hh:104:26: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Digit>::getLength;
+                                ^
+        using        
+5 warnings generated.
+INFO: [HLS 200-10] Analyzing design file 'BigInt/solution1/main.cpp' ... 
+In file included from BigInt/solution1/main.cpp:5:
+In file included from /home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigIntegerLibrary.hh:4:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:23:24: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Blk>::N;
+                              ^
+        using        
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:87:24: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Blk>::getCapacity;
+                              ^
+        using        
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:88:24: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Blk>::getLength;
+                              ^
+        using        
+In file included from BigInt/solution1/main.cpp:5:
+In file included from /home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigIntegerLibrary.hh:7:
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsignedInABase.hh:103:26: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Digit>::getCapacity;
+                                ^
+        using        
+/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsignedInABase.hh:104:26: warning: access declarations are deprecated; use using declarations instead [-Wdeprecated]
+        NumberlikeArray<Digit>::getLength;
+                                ^
+        using        
+5 warnings generated.
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'BigUnsigned::initFromPrimitive<int>' into 'BigUnsigned::initFromSignedPrimitive<int>' (/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:378) automatically.
+INFO: [XFORM 203-602] Inlining function 'BigUnsigned::zapLeadingZeros' into 'BigUnsigned::subtract' (BigInt/solution1/bigint/BigUnsigned.cc:232) automatically.
+INFO: [XFORM 203-602] Inlining function 'BigUnsigned::compareTo' into 'BigInteger::add' (BigInt/solution1/bigint/BigInteger.cc:186) automatically.
+INFO: [XFORM 203-602] Inlining function 'BigUnsigned::initFromSignedPrimitive<int>' into 'BigInteger::add' (BigInt/solution1/bigint/BigUnsigned.cc:12->BigInt/solution1/bigint/BigInteger.cc:189) automatically.
+INFO: [XFORM 203-602] Inlining function '(anonymous namespace)::magOf<int, unsigned int>' into 'bigint_math' (BigInt/solution1/bigint/BigInteger.cc:80->BigInt/solution1/main.cpp:22) automatically.
+INFO: [XFORM 203-602] Inlining function 'BigInteger::operator+' into 'bigint_math' (BigInt/solution1/main.cpp:28) automatically.
+CRITICAL WARNING: [SYNCHK 200-43] /home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./NumberlikeArray.hh:51: use or assignment of a non-static pointer 'b.1' (this pointer may refer to different memory locations).
+CRITICAL WARNING: [SYNCHK 200-71] /home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:362: function 'operator new[](unsigned long)' has no function body.
+CRITICAL WARNING: [SYNCHK 200-41] /home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:362: unsupported pointer reinterpretation from type 'i8*' to type 'BigInteger'.
+CRITICAL WARNING: [SYNCHK 200-61] /home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh:357: unsupported memory access on variable which is (or contains) an array with unknown size at compile time.
+CRITICAL WARNING: [SYNCHK 200-42] /home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./NumberlikeArray.hh:98: pointer comparison is not supported.
+CRITICAL WARNING: [SYNCHK 200-71] /home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./NumberlikeArray.hh:98: function 'operator delete[](void*)' has no function body.
+WARNING: [SYNCHK 200-77] The top function 'bigint_math' (BigInt/solution1/main.cpp:14) has no outputs. Possible cause(s) are: (1) Output parameters are passed by value; (2) intended outputs (parameters or global variables) are never written; (3) there are infinite loops.
+INFO: [SYNCHK 200-10] 6 error(s), 1 warning(s).
+CRITICAL WARNING: [HLS 200-70] Synthesizability check failed.
+INFO: [HLS 200-111] Elapsed time: 8.34351 seconds; current memory usage: 60.8 MB.
+command 'ap_source' returned error code
+    while executing
+"source /home/linux/Documents/DLA/source/sw/BigInt/solution1/csynth.tcl"
+    invoked from within
+"hls::main /home/linux/Documents/DLA/source/sw/BigInt/solution1/csynth.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$args"
+    (procedure "hls_proc" line 5)
+    invoked from within
+"hls_proc $argv"
+INFO: [HLS 200-112] Total elapsed time: 94.605 seconds; peak memory usage: 60.8 MB.

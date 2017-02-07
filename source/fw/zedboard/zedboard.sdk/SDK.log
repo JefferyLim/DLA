@@ -3,3 +3,10 @@
 22:11:37 INFO  : Restoring global repository preferences: 
 		 /home/linux/Documents/Xilinx/device-tree-xlnx
 22:11:37 INFO  : Processing command line option -hwspec /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top.hdf.
+15:37:39 INFO  : Launching XSDB server: xsdb -n -interactive /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/temp_xsdb_launch_script.tcl
+15:37:41 INFO  : XSDB server has started successfully.
+15:37:47 INFO  : Restoring global repository preferences: 
+		 /home/linux/Documents/Xilinx/device-tree-xlnx
+15:37:57 INFO  : Processing command line option -hwspec /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top.hdf.
+15:38:03 INFO  : Checking for hwspec changes in the project top_hw_platform_0.
+15:38:10 INFO  : BSP Project P/devicetree has been successfully migrated.

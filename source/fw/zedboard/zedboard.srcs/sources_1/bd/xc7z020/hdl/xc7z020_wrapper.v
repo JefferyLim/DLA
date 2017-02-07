@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-//Date        : Tue Jan 24 22:00:54 2017
+//Date        : Wed Feb  1 18:52:57 2017
 //Host        : linux-Inspiron-5565 running 64-bit Ubuntu 14.04.5 LTS
 //Command     : generate_target xc7z020_wrapper.bd
 //Design      : xc7z020_wrapper

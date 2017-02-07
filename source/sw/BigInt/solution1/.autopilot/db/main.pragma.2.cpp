@@ -4386,7 +4386,6 @@ extern int getloadavg (double __loadavg[], int __nelem)
 # 968 "/usr/include/stdlib.h" 3 4
 }
 # 3 "BigInt/solution1/main.cpp" 2
-
 # 1 "/home/Xilinx/Vivado_HLS/2016.2/common/technology/autopilot/ap_utils.h" 1
 /* ap_utils.h */
 /*
@@ -5044,119 +5043,859 @@ enum SsdmRegionTypes {
 
 
 // XSIP watermark, do not delete 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689
-# 5 "BigInt/solution1/main.cpp" 2
+# 4 "BigInt/solution1/main.cpp" 2
+
+# 1 "/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigIntegerLibrary.hh" 1
+// This header file includes all of the library header files.
 
 
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/common/technology/autopilot/ap_int.h" 1
-// -*- c++ -*-
-/*
-#-  (c) Copyright 2011-2016 Xilinx, Inc. All rights reserved.
-#-
-#-  This file contains confidential and proprietary information
-#-  of Xilinx, Inc. and is protected under U.S. and
-#-  international copyright and other intellectual property
-#-  laws.
-#-
-#-  DISCLAIMER
-#-  This disclaimer is not a license and does not grant any
-#-  rights to the materials distributed herewith. Except as
-#-  otherwise provided in a valid license issued to you by
-#-  Xilinx, and to the maximum extent permitted by applicable
-#-  law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
-#-  WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
-#-  AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
-#-  BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
-#-  INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
-#-  (2) Xilinx shall not be liable (whether in contract or tort,
-#-  including negligence, or under any other theory of
-#-  liability) for any loss or damage of any kind or nature
-#-  related to, arising under or in connection with these
-#-  materials, including for any direct, or any indirect,
-#-  special, incidental, or consequential loss or damage
-#-  (including loss of data, profits, goodwill, or any type of
-#-  loss or damage suffered as a result of any action brought
-#-  by a third party) even if such damage or loss was
-#-  reasonably foreseeable or Xilinx had been advised of the
-#-  possibility of the same.
-#-
-#-  CRITICAL APPLICATIONS
-#-  Xilinx products are not designed or intended to be fail-
-#-  safe, or for use in any application requiring fail-safe
-#-  performance, such as life-support or safety devices or
-#-  systems, Class III medical devices, nuclear facilities,
-#-  applications related to the deployment of airbags, or any
-#-  other applications that could lead to death, personal
-#-  injury, or severe property or environmental damage
-#-  (individually and collectively, "Critical
-#-  Applications"). Customer assumes the sole risk and
-#-  liability of any use of Xilinx products in Critical
-#-  Applications, subject only to applicable laws and
-#-  regulations governing limitations on product liability.
-#-
-#-  THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
-#-  PART OF THIS FILE AT ALL TIMES. 
-#- ************************************************************************
 
+# 1 "/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./NumberlikeArray.hh" 1
+
+
+
+// Make sure we have NULL.
+
+
+
+
+/* A NumberlikeArray<Blk> object holds a heap-allocated array of Blk with a
+ * length and a capacity and provides basic memory management features.
+ * BigUnsigned and BigUnsignedInABase both subclass it.
  *
- */
-# 60 "/home/Xilinx/Vivado_HLS/2016.2/common/technology/autopilot/ap_int.h"
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/common/technology/autopilot/ap_int_syn.h" 1
-/* -*- c++ -*-*/
-/*
-#-  (c) Copyright 2011-2016 Xilinx, Inc. All rights reserved.
-#-
-#-  This file contains confidential and proprietary information
-#-  of Xilinx, Inc. and is protected under U.S. and
-#-  international copyright and other intellectual property
-#-  laws.
-#-
-#-  DISCLAIMER
-#-  This disclaimer is not a license and does not grant any
-#-  rights to the materials distributed herewith. Except as
-#-  otherwise provided in a valid license issued to you by
-#-  Xilinx, and to the maximum extent permitted by applicable
-#-  law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
-#-  WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
-#-  AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
-#-  BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
-#-  INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
-#-  (2) Xilinx shall not be liable (whether in contract or tort,
-#-  including negligence, or under any other theory of
-#-  liability) for any loss or damage of any kind or nature
-#-  related to, arising under or in connection with these
-#-  materials, including for any direct, or any indirect,
-#-  special, incidental, or consequential loss or damage
-#-  (including loss of data, profits, goodwill, or any type of
-#-  loss or damage suffered as a result of any action brought
-#-  by a third party) even if such damage or loss was
-#-  reasonably foreseeable or Xilinx had been advised of the
-#-  possibility of the same.
-#-
-#-  CRITICAL APPLICATIONS
-#-  Xilinx products are not designed or intended to be fail-
-#-  safe, or for use in any application requiring fail-safe
-#-  performance, such as life-support or safety devices or
-#-  systems, Class III medical devices, nuclear facilities,
-#-  applications related to the deployment of airbags, or any
-#-  other applications that could lead to death, personal
-#-  injury, or severe property or environmental damage
-#-  (individually and collectively, "Critical
-#-  Applications"). Customer assumes the sole risk and
-#-  liability of any use of Xilinx products in Critical
-#-  Applications, subject only to applicable laws and
-#-  regulations governing limitations on product liability.
-#-
-#-  THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
-#-  PART OF THIS FILE AT ALL TIMES. 
-#- ************************************************************************
-
+ * NumberlikeArray provides no information hiding.  Subclasses should use
+ * nonpublic inheritance and manually expose members as desired using
+ * declarations like this:
  *
+ * public:
+ *     NumberlikeArray< the-type-argument >::getLength;
  */
-# 68 "/home/Xilinx/Vivado_HLS/2016.2/common/technology/autopilot/ap_int_syn.h"
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/iostream" 1 3
-// Standard iostream objects -*- C++ -*-
+template <class Blk>
+class NumberlikeArray {
+public:
 
-// Copyright (C) 1997, 1998, 1999, 2001, 2002, 2005, 2008, 2009, 2010
+ // Type for the index of a block in the array
+ typedef unsigned int Index;
+ // The number of bits in a block, defined below.
+ static const unsigned int N;
+
+ // The current allocated capacity of this NumberlikeArray (in blocks)
+ Index cap;
+ // The actual length of the value stored in this NumberlikeArray (in blocks)
+ Index len;
+ // Heap-allocated array of the blocks (can be NULL if len == 0)
+ Blk *blk;
+
+ // Constructs a ``zero'' NumberlikeArray with the given capacity.
+ NumberlikeArray(Index c) : cap(c), len(0) {
+  blk = (cap > 0) ? (new Blk[cap]) : __null;
+ }
+
+ /* Constructs a zero NumberlikeArray without allocating a backing array.
+	 * A subclass that doesn't know the needed capacity at initialization
+	 * time can use this constructor and then overwrite blk without first
+	 * deleting it. */
+ NumberlikeArray() : cap(0), len(0) {
+  blk = __null;
+ }
+
+ // Destructor.  Note that `delete NULL' is a no-op.
+ ~NumberlikeArray() {
+  delete [] blk;
+ }
+
+ /* Ensures that the array has at least the requested capacity; may
+	 * destroy the contents. */
+ void allocate(Index c);
+
+ /* Ensures that the array has at least the requested capacity; does not
+	 * destroy the contents. */
+ void allocateAndCopy(Index c);
+
+ // Copy constructor
+ NumberlikeArray(const NumberlikeArray<Blk> &x);
+
+ // Assignment operator
+ void operator=(const NumberlikeArray<Blk> &x);
+
+ // Constructor that copies from a given array of blocks
+ NumberlikeArray(const Blk *b, Index blen);
+
+ // ACCESSORS
+ Index getCapacity() const { return cap; }
+ Index getLength() const { return len; }
+ Blk getBlock(Index i) const { return blk[i]; }
+ bool isEmpty() const { return len == 0; }
+
+ /* Equality comparison: checks if both objects have the same length and
+	 * equal (==) array elements to that length.  Subclasses may wish to
+	 * override. */
+ bool operator ==(const NumberlikeArray<Blk> &x) const;
+
+ bool operator !=(const NumberlikeArray<Blk> &x) const {
+  return !operator ==(x);
+ }
+};
+
+/* BEGIN TEMPLATE DEFINITIONS.  They are present here so that source files that
+ * include this header file can generate the necessary real definitions. */
+
+template <class Blk>
+const unsigned int NumberlikeArray<Blk>::N = 8 * sizeof(Blk);
+
+template <class Blk>
+void NumberlikeArray<Blk>::allocate(Index c) {
+ // If the requested capacity is more than the current capacity...
+ if (c > cap) {
+  // Delete the old number array
+  delete [] blk;
+  // Allocate the new array
+  cap = c;
+  blk = new Blk[cap];
+ }
+}
+
+template <class Blk>
+void NumberlikeArray<Blk>::allocateAndCopy(Index c) {
+ // If the requested capacity is more than the current capacity...
+ if (c > cap) {
+  Blk *oldBlk = blk;
+  // Allocate the new number array
+  cap = c;
+  blk = new Blk[cap];
+  // Copy number blocks
+  Index i;
+  for (i = 0; i < len; i++)
+   blk[i] = oldBlk[i];
+  // Delete the old array
+  delete [] oldBlk;
+ }
+}
+
+template <class Blk>
+NumberlikeArray<Blk>::NumberlikeArray(const NumberlikeArray<Blk> &x)
+  : len(x.len) {
+ // Create array
+ cap = len;
+ blk = new Blk[cap];
+ // Copy blocks
+ Index i;
+ for (i = 0; i < len; i++)
+  blk[i] = x.blk[i];
+}
+
+template <class Blk>
+void NumberlikeArray<Blk>::operator=(const NumberlikeArray<Blk> &x) {
+ /* Calls like a = a have no effect; catch them before the aliasing
+	 * causes a problem */
+ if (this == &x)
+  return;
+ // Copy length
+ len = x.len;
+ // Expand array if necessary
+ allocate(len);
+ // Copy number blocks
+ Index i;
+ for (i = 0; i < len; i++)
+  blk[i] = x.blk[i];
+}
+
+template <class Blk>
+NumberlikeArray<Blk>::NumberlikeArray(const Blk *b, Index blen)
+  : cap(blen), len(blen) {_ssdm_SpecConstant(&N);
+ // Create array
+ blk = new Blk[cap];
+ // Copy blocks
+ Index i;
+ for (i = 0; i < len; i++)
+  blk[i] = b[i];
+}
+
+template <class Blk>
+bool NumberlikeArray<Blk>::operator ==(const NumberlikeArray<Blk> &x) const {
+ if (len != x.len)
+  // Definitely unequal.
+  return false;
+ else {
+  // Compare corresponding blocks one by one.
+  Index i;
+  for (i = 0; i < len; i++)
+   if (blk[i] != x.blk[i])
+    return false;
+  // No blocks differed, so the objects are equal.
+  return true;
+ }
+}
+# 4 "/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigIntegerLibrary.hh" 2
+# 1 "/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsigned.hh" 1
+
+
+
+
+
+/* A BigUnsigned object represents a nonnegative integer of size limited only by
+ * available memory.  BigUnsigneds support most mathematical operators and can
+ * be converted to and from most primitive integer types.
+ *
+ * The number is stored as a NumberlikeArray of unsigned longs as if it were
+ * written in base 256^sizeof(unsigned long).  The least significant block is
+ * first, and the length is such that the most significant block is nonzero. */
+class BigUnsigned : protected NumberlikeArray<unsigned long> {
+
+public:
+ // Enumeration for the result of a comparison.
+ enum CmpRes { less = -1, equal = 0, greater = 1 };
+
+ // BigUnsigneds are built with a Blk type of unsigned long.
+ typedef unsigned long Blk;
+
+ typedef NumberlikeArray<Blk>::Index Index;
+ NumberlikeArray<Blk>::N;
+
+protected:
+ // Creates a BigUnsigned with a capacity; for internal use.
+ BigUnsigned(int, Index c) : NumberlikeArray<Blk>(0, c) {}
+
+ // Decreases len to eliminate any leading zero blocks.
+ void zapLeadingZeros() {
+  while (len > 0 && blk[len - 1] == 0)
+   len--;
+ }
+
+public:
+ // Constructs zero.
+ BigUnsigned() : NumberlikeArray<Blk>() {}
+
+ // Copy constructor
+ BigUnsigned(const BigUnsigned &x) : NumberlikeArray<Blk>(x) {}
+
+ // Assignment operator
+ void operator=(const BigUnsigned &x) {
+  NumberlikeArray<Blk>::operator =(x);
+ }
+
+ // Constructor that copies from a given array of blocks.
+ BigUnsigned(const Blk *b, Index blen) : NumberlikeArray<Blk>(b, blen) {
+  // Eliminate any leading zeros we may have been passed.
+  zapLeadingZeros();
+ }
+
+ // Destructor.  NumberlikeArray does the delete for us.
+ ~BigUnsigned() {}
+
+ // Constructors from primitive integer types
+ BigUnsigned(unsigned long x);
+ BigUnsigned( long x);
+ BigUnsigned(unsigned int x);
+ BigUnsigned( int x);
+ BigUnsigned(unsigned short x);
+ BigUnsigned( short x);
+protected:
+ // Helpers
+ template <class X> void initFromPrimitive (X x);
+ template <class X> void initFromSignedPrimitive(X x);
+public:
+
+ /* Converters to primitive integer types
+	 * The implicit conversion operators caused trouble, so these are now
+	 * named. */
+ unsigned long toUnsignedLong () const;
+ long toLong () const;
+ unsigned int toUnsignedInt () const;
+ int toInt () const;
+ unsigned short toUnsignedShort() const;
+ short toShort () const;
+protected:
+ // Helpers
+ template <class X> X convertToSignedPrimitive() const;
+ template <class X> X convertToPrimitive () const;
+public:
+
+ // BIT/BLOCK ACCESSORS
+
+ // Expose these from NumberlikeArray directly.
+ NumberlikeArray<Blk>::getCapacity;
+ NumberlikeArray<Blk>::getLength;
+
+ /* Returns the requested block, or 0 if it is beyond the length (as if
+	 * the number had 0s infinitely to the left). */
+ Blk getBlock(Index i) const { return i >= len ? 0 : blk[i]; }
+ /* Sets the requested block.  The number grows or shrinks as necessary. */
+ void setBlock(Index i, Blk newBlock);
+
+ // The number is zero if and only if the canonical length is zero.
+ bool isZero() const { return NumberlikeArray<Blk>::isEmpty(); }
+
+ /* Returns the length of the number in bits, i.e., zero if the number
+	 * is zero and otherwise one more than the largest value of bi for
+	 * which getBit(bi) returns true. */
+ Index bitLength() const;
+ /* Get the state of bit bi, which has value 2^bi.  Bits beyond the
+	 * number's length are considered to be 0. */
+ bool getBit(Index bi) const {
+  return (getBlock(bi / N) & (Blk(1) << (bi % N))) != 0;
+ }
+ /* Sets the state of bit bi to newBit.  The number grows or shrinks as
+	 * necessary. */
+ void setBit(Index bi, bool newBit);
+
+ // COMPARISONS
+
+ // Compares this to x like Perl's <=>
+ CmpRes compareTo(const BigUnsigned &x) const;
+
+ // Ordinary comparison operators
+ bool operator ==(const BigUnsigned &x) const {
+  return NumberlikeArray<Blk>::operator ==(x);
+ }
+ bool operator !=(const BigUnsigned &x) const {
+  return NumberlikeArray<Blk>::operator !=(x);
+ }
+ bool operator < (const BigUnsigned &x) const { return compareTo(x) == less ; }
+ bool operator <=(const BigUnsigned &x) const { return compareTo(x) != greater; }
+ bool operator >=(const BigUnsigned &x) const { return compareTo(x) != less ; }
+ bool operator > (const BigUnsigned &x) const { return compareTo(x) == greater; }
+
+ /*
+	 * BigUnsigned and BigInteger both provide three kinds of operators.
+	 * Here ``big-integer'' refers to BigInteger or BigUnsigned.
+	 *
+	 * (1) Overloaded ``return-by-value'' operators:
+	 *     +, -, *, /, %, unary -, &, |, ^, <<, >>.
+	 * Big-integer code using these operators looks identical to code using
+	 * the primitive integer types.  These operators take one or two
+	 * big-integer inputs and return a big-integer result, which can then
+	 * be assigned to a BigInteger variable or used in an expression.
+	 * Example:
+	 *     BigInteger a(1), b = 1;
+	 *     BigInteger c = a + b;
+	 *
+	 * (2) Overloaded assignment operators:
+	 *     +=, -=, *=, /=, %=, flipSign, &=, |=, ^=, <<=, >>=, ++, --.
+	 * Again, these are used on big integers just like on ints.  They take
+	 * one writable big integer that both provides an operand and receives a
+	 * result.  Most also take a second read-only operand.
+	 * Example:
+	 *     BigInteger a(1), b(1);
+	 *     a += b;
+	 *
+	 * (3) Copy-less operations: `add', `subtract', etc.
+	 * These named methods take operands as arguments and store the result
+	 * in the receiver (*this), avoiding unnecessary copies and allocations.
+	 * `divideWithRemainder' is special: it both takes the dividend from and
+	 * stores the remainder into the receiver, and it takes a separate
+	 * object in which to store the quotient.  NOTE: If you are wondering
+	 * why these don't return a value, you probably mean to use the
+	 * overloaded return-by-value operators instead.
+	 * 
+	 * Examples:
+	 *     BigInteger a(43), b(7), c, d;
+	 *
+	 *     c = a + b;   // Now c == 50.
+	 *     c.add(a, b); // Same effect but without the two copies.
+	 *
+	 *     c.divideWithRemainder(b, d);
+	 *     // 50 / 7; now d == 7 (quotient) and c == 1 (remainder).
+	 *
+	 *     // ``Aliased'' calls now do the right thing using a temporary
+	 *     // copy, but see note on `divideWithRemainder'.
+	 *     a.add(a, b); 
+	 */
+
+ // COPY-LESS OPERATIONS
+
+ // These 8: Arguments are read-only operands, result is saved in *this.
+ void add(const BigUnsigned &a, const BigUnsigned &b);
+ void subtract(const BigUnsigned &a, const BigUnsigned &b);
+ void multiply(const BigUnsigned &a, const BigUnsigned &b);
+ void bitAnd(const BigUnsigned &a, const BigUnsigned &b);
+ void bitOr(const BigUnsigned &a, const BigUnsigned &b);
+ void bitXor(const BigUnsigned &a, const BigUnsigned &b);
+ /* Negative shift amounts translate to opposite-direction shifts,
+	 * except for -2^(8*sizeof(int)-1) which is unimplemented. */
+ void bitShiftLeft(const BigUnsigned &a, int b);
+ void bitShiftRight(const BigUnsigned &a, int b);
+
+ /* `a.divideWithRemainder(b, q)' is like `q = a / b, a %= b'.
+	 * / and % use semantics similar to Knuth's, which differ from the
+	 * primitive integer semantics under division by zero.  See the
+	 * implementation in BigUnsigned.cc for details.
+	 * `a.divideWithRemainder(b, a)' throws an exception: it doesn't make
+	 * sense to write quotient and remainder into the same variable. */
+ void divideWithRemainder(const BigUnsigned &b, BigUnsigned &q);
+
+ /* `divide' and `modulo' are no longer offered.  Use
+	 * `divideWithRemainder' instead. */
+
+ // OVERLOADED RETURN-BY-VALUE OPERATORS
+ BigUnsigned operator +(const BigUnsigned &x) const;
+ BigUnsigned operator -(const BigUnsigned &x) const;
+ BigUnsigned operator *(const BigUnsigned &x) const;
+ BigUnsigned operator /(const BigUnsigned &x) const;
+ BigUnsigned operator %(const BigUnsigned &x) const;
+ /* OK, maybe unary minus could succeed in one case, but it really
+	 * shouldn't be used, so it isn't provided. */
+ BigUnsigned operator &(const BigUnsigned &x) const;
+ BigUnsigned operator |(const BigUnsigned &x) const;
+ BigUnsigned operator ^(const BigUnsigned &x) const;
+ BigUnsigned operator <<(int b) const;
+ BigUnsigned operator >>(int b) const;
+
+ // OVERLOADED ASSIGNMENT OPERATORS
+ void operator +=(const BigUnsigned &x);
+ void operator -=(const BigUnsigned &x);
+ void operator *=(const BigUnsigned &x);
+ void operator /=(const BigUnsigned &x);
+ void operator %=(const BigUnsigned &x);
+ void operator &=(const BigUnsigned &x);
+ void operator |=(const BigUnsigned &x);
+ void operator ^=(const BigUnsigned &x);
+ void operator <<=(int b);
+ void operator >>=(int b);
+
+ /* INCREMENT/DECREMENT OPERATORS
+	 * To discourage messy coding, these do not return *this, so prefix
+	 * and postfix behave the same. */
+ void operator ++( );
+ void operator ++(int);
+ void operator --( );
+ void operator --(int);
+
+ // Helper function that needs access to BigUnsigned internals
+ friend Blk getShiftedBlock(const BigUnsigned &num, Index x,
+   unsigned int y);
+
+ // See BigInteger.cc.
+ template <class X>
+ friend X convertBigUnsignedToPrimitiveAccess(const BigUnsigned &a);
+};
+
+/* Implementing the return-by-value and assignment operators in terms of the
+ * copy-less operations.  The copy-less operations are responsible for making
+ * any necessary temporary copies to work around aliasing. */
+
+inline BigUnsigned BigUnsigned::operator +(const BigUnsigned &x) const {
+ BigUnsigned ans;
+ ans.add(*this, x);
+ return ans;
+}
+inline BigUnsigned BigUnsigned::operator -(const BigUnsigned &x) const {
+ BigUnsigned ans;
+ ans.subtract(*this, x);
+ return ans;
+}
+inline BigUnsigned BigUnsigned::operator *(const BigUnsigned &x) const {
+ BigUnsigned ans;
+ ans.multiply(*this, x);
+ return ans;
+}
+inline BigUnsigned BigUnsigned::operator /(const BigUnsigned &x) const {
+ //if (x.isZero()) throw "BigUnsigned::operator /: division by zero";
+ BigUnsigned q, r;
+ r = *this;
+ r.divideWithRemainder(x, q);
+ return q;
+}
+inline BigUnsigned BigUnsigned::operator %(const BigUnsigned &x) const {
+ //if (x.isZero()) throw "BigUnsigned::operator %: division by zero";
+ BigUnsigned q, r;
+ r = *this;
+ r.divideWithRemainder(x, q);
+ return r;
+}
+inline BigUnsigned BigUnsigned::operator &(const BigUnsigned &x) const {
+ BigUnsigned ans;
+ ans.bitAnd(*this, x);
+ return ans;
+}
+inline BigUnsigned BigUnsigned::operator |(const BigUnsigned &x) const {
+ BigUnsigned ans;
+ ans.bitOr(*this, x);
+ return ans;
+}
+inline BigUnsigned BigUnsigned::operator ^(const BigUnsigned &x) const {
+ BigUnsigned ans;
+ ans.bitXor(*this, x);
+ return ans;
+}
+inline BigUnsigned BigUnsigned::operator <<(int b) const {
+ BigUnsigned ans;
+ ans.bitShiftLeft(*this, b);
+ return ans;
+}
+inline BigUnsigned BigUnsigned::operator >>(int b) const {
+ BigUnsigned ans;
+ ans.bitShiftRight(*this, b);
+ return ans;
+}
+
+inline void BigUnsigned::operator +=(const BigUnsigned &x) {
+ add(*this, x);
+}
+inline void BigUnsigned::operator -=(const BigUnsigned &x) {
+ subtract(*this, x);
+}
+inline void BigUnsigned::operator *=(const BigUnsigned &x) {
+ multiply(*this, x);
+}
+inline void BigUnsigned::operator /=(const BigUnsigned &x) {
+ //if (x.isZero()) throw "BigUnsigned::operator /=: division by zero";
+ /* The following technique is slightly faster than copying *this first
+	 * when x is large. */
+ BigUnsigned q;
+ divideWithRemainder(x, q);
+ // *this contains the remainder, but we overwrite it with the quotient.
+ *this = q;
+}
+inline void BigUnsigned::operator %=(const BigUnsigned &x) {
+ //if (x.isZero()) throw "BigUnsigned::operator %=: division by zero";
+ BigUnsigned q;
+ // Mods *this by x.  Don't care about quotient left in q.
+ divideWithRemainder(x, q);
+}
+inline void BigUnsigned::operator &=(const BigUnsigned &x) {
+ bitAnd(*this, x);
+}
+inline void BigUnsigned::operator |=(const BigUnsigned &x) {
+ bitOr(*this, x);
+}
+inline void BigUnsigned::operator ^=(const BigUnsigned &x) {
+ bitXor(*this, x);
+}
+inline void BigUnsigned::operator <<=(int b) {
+ bitShiftLeft(*this, b);
+}
+inline void BigUnsigned::operator >>=(int b) {
+ bitShiftRight(*this, b);
+}
+
+/* Templates for conversions of BigUnsigned to and from primitive integers.
+ * BigInteger.cc needs to instantiate convertToPrimitive, and the uses in
+ * BigUnsigned.cc didn't do the trick; I think g++ inlined convertToPrimitive
+ * instead of generating linkable instantiations.  So for consistency, I put
+ * all the templates here. */
+
+// CONSTRUCTION FROM PRIMITIVE INTEGERS
+
+/* Initialize this BigUnsigned from the given primitive integer.  The same
+ * pattern works for all primitive integer types, so I put it into a template to
+ * reduce code duplication.  (Don't worry: this is protected and we instantiate
+ * it only with primitive integer types.)  Type X could be signed, but x is
+ * known to be nonnegative. */
+template <class X>
+void BigUnsigned::initFromPrimitive(X x) {
+ if (x == 0)
+  ; // NumberlikeArray already initialized us to zero.
+ else {
+  // Create a single block.  blk is NULL; no need to delete it.
+  cap = 1;
+  blk = new Blk[1];
+  len = 1;
+  blk[0] = Blk(x);
+ }
+}
+
+/* Ditto, but first check that x is nonnegative.  I could have put the check in
+ * initFromPrimitive and let the compiler optimize it out for unsigned-type
+ * instantiations, but I wanted to avoid the warning stupidly issued by g++ for
+ * a condition that is constant in *any* instantiation, even if not in all. */
+template <class X>
+void BigUnsigned::initFromSignedPrimitive(X x) {
+//	if (x < 0)
+//		throw "BigUnsigned constructor: "
+//			"Cannot construct a BigUnsigned from a negative number";
+//	else
+  initFromPrimitive(x);
+}
+
+// CONVERSION TO PRIMITIVE INTEGERS
+
+/* Template with the same idea as initFromPrimitive.  This might be slightly
+ * slower than the previous version with the masks, but it's much shorter and
+ * clearer, which is the library's stated goal. */
+template <class X>
+X BigUnsigned::convertToPrimitive() const {
+ if (len == 0)
+  // The number is zero; return zero.
+  return 0;
+ else if (len == 1) {
+  // The single block might fit in an X.  Try the conversion.
+  X x = X(blk[0]);
+  // Make sure the result accurately represents the block.
+  if (Blk(x) == blk[0])
+   // Successful conversion.
+   return x;
+  // Otherwise fall through.
+ }
+ //throw "BigUnsigned::to<Primitive>: "
+ //	"Value is too big to fit in the requested type";
+}
+
+/* Wrap the above in an x >= 0 test to make sure we got a nonnegative result,
+ * not a negative one that happened to convert back into the correct nonnegative
+ * one.  (E.g., catch incorrect conversion of 2^31 to the long -2^31.)  Again,
+ * separated to avoid a g++ warning. */
+template <class X>
+X BigUnsigned::convertToSignedPrimitive() const {
+ X x = convertToPrimitive<X>();
+ if (x >= 0)
+  return x;
+ //else
+  //throw "BigUnsigned::to(Primitive): "
+  //	"Value is too big to fit in the requested type";
+}
+# 5 "/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigIntegerLibrary.hh" 2
+# 1 "/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigInteger.hh" 1
+
+
+
+
+
+/* A BigInteger object represents a signed integer of size limited only by
+ * available memory.  BigUnsigneds support most mathematical operators and can
+ * be converted to and from most primitive integer types.
+ *
+ * A BigInteger is just an aggregate of a BigUnsigned and a sign.  (It is no
+ * longer derived from BigUnsigned because that led to harmful implicit
+ * conversions.) */
+class BigInteger {
+
+public:
+ typedef BigUnsigned::Blk Blk;
+ typedef BigUnsigned::Index Index;
+ typedef BigUnsigned::CmpRes CmpRes;
+ static const CmpRes
+  less = BigUnsigned::less ,
+  equal = BigUnsigned::equal ,
+  greater = BigUnsigned::greater;
+ // Enumeration for the sign of a BigInteger.
+ enum Sign { negative = -1, zero = 0, positive = 1 };
+
+protected:
+ Sign sign;
+ BigUnsigned mag;
+
+public:
+ // Constructs zero.
+ BigInteger() : sign(zero), mag() {}
+
+ // Copy constructor
+ BigInteger(const BigInteger &x) : sign(x.sign), mag(x.mag) {};
+
+ // Assignment operator
+ void operator=(const BigInteger &x);
+
+ // Constructor that copies from a given array of blocks with a sign.
+ BigInteger(const Blk *b, Index blen, Sign s);
+
+ // Nonnegative constructor that copies from a given array of blocks.
+ BigInteger(const Blk *b, Index blen) : mag(b, blen) {
+  sign = mag.isZero() ? zero : positive;
+ }
+
+ // Constructor from a BigUnsigned and a sign
+ BigInteger(const BigUnsigned &x, Sign s);
+
+ // Nonnegative constructor from a BigUnsigned
+ BigInteger(const BigUnsigned &x) : mag(x) {
+  sign = mag.isZero() ? zero : positive;
+ }
+
+ // Constructors from primitive integer types
+ BigInteger(unsigned long x);
+ BigInteger( long x);
+ BigInteger(unsigned int x);
+ BigInteger( int x);
+ BigInteger(unsigned short x);
+ BigInteger( short x);
+
+ /* Converters to primitive integer types
+	 * The implicit conversion operators caused trouble, so these are now
+	 * named. */
+ unsigned long toUnsignedLong () const;
+ long toLong () const;
+ unsigned int toUnsignedInt () const;
+ int toInt () const;
+ unsigned short toUnsignedShort() const;
+ short toShort () const;
+protected:
+ // Helper
+ template <class X> X convertToUnsignedPrimitive() const;
+ template <class X, class UX> X convertToSignedPrimitive() const;
+public:
+
+ // ACCESSORS
+ Sign getSign() const { return sign; }
+ /* The client can't do any harm by holding a read-only reference to the
+	 * magnitude. */
+ const BigUnsigned &getMagnitude() const { return mag; }
+
+ // Some accessors that go through to the magnitude
+ Index getLength() const { return mag.getLength(); }
+ Index getCapacity() const { return mag.getCapacity(); }
+ Blk getBlock(Index i) const { return mag.getBlock(i); }
+ bool isZero() const { return sign == zero; } // A bit special
+
+ // COMPARISONS
+
+ // Compares this to x like Perl's <=>
+ CmpRes compareTo(const BigInteger &x) const;
+
+ // Ordinary comparison operators
+ bool operator ==(const BigInteger &x) const {
+  return sign == x.sign && mag == x.mag;
+ }
+ bool operator !=(const BigInteger &x) const { return !operator ==(x); };
+ bool operator < (const BigInteger &x) const { return compareTo(x) == less ; }
+ bool operator <=(const BigInteger &x) const { return compareTo(x) != greater; }
+ bool operator >=(const BigInteger &x) const { return compareTo(x) != less ; }
+ bool operator > (const BigInteger &x) const { return compareTo(x) == greater; }
+
+ // OPERATORS -- See the discussion in BigUnsigned.hh.
+ void add (const BigInteger &a, const BigInteger &b);
+ void subtract(const BigInteger &a, const BigInteger &b);
+ void multiply(const BigInteger &a, const BigInteger &b);
+ /* See the comment on BigUnsigned::divideWithRemainder.  Semantics
+	 * differ from those of primitive integers when negatives and/or zeros
+	 * are involved. */
+ void divideWithRemainder(const BigInteger &b, BigInteger &q);
+ void negate(const BigInteger &a);
+
+ /* Bitwise operators are not provided for BigIntegers.  Use
+	 * getMagnitude to get the magnitude and operate on that instead. */
+
+ BigInteger operator +(const BigInteger &x) const;
+ BigInteger operator -(const BigInteger &x) const;
+ BigInteger operator *(const BigInteger &x) const;
+ BigInteger operator /(const BigInteger &x) const;
+ BigInteger operator %(const BigInteger &x) const;
+ BigInteger operator -() const;
+
+ void operator +=(const BigInteger &x);
+ void operator -=(const BigInteger &x);
+ void operator *=(const BigInteger &x);
+ void operator /=(const BigInteger &x);
+ void operator %=(const BigInteger &x);
+ void flipSign();
+
+ // INCREMENT/DECREMENT OPERATORS
+ void operator ++( );
+ void operator ++(int);
+ void operator --( );
+ void operator --(int);
+};
+
+// NORMAL OPERATORS
+/* These create an object to hold the result and invoke
+ * the appropriate put-here operation on it, passing
+ * this and x.  The new object is then returned. */
+inline BigInteger BigInteger::operator +(const BigInteger &x) const {
+ BigInteger ans;
+ ans.add(*this, x);
+ return ans;
+}
+inline BigInteger BigInteger::operator -(const BigInteger &x) const {
+ BigInteger ans;
+ ans.subtract(*this, x);
+ return ans;
+}
+inline BigInteger BigInteger::operator *(const BigInteger &x) const {
+ BigInteger ans;
+ ans.multiply(*this, x);
+ return ans;
+}
+inline BigInteger BigInteger::operator /(const BigInteger &x) const {
+ //if (x.isZero()) throw "BigInteger::operator /: division by zero";
+ BigInteger q, r;
+ r = *this;
+ r.divideWithRemainder(x, q);
+ return q;
+}
+inline BigInteger BigInteger::operator %(const BigInteger &x) const {
+ //if (x.isZero()) throw "BigInteger::operator %: division by zero";
+ BigInteger q, r;
+ r = *this;
+ r.divideWithRemainder(x, q);
+ return r;
+}
+inline BigInteger BigInteger::operator -() const {
+ BigInteger ans;
+ ans.negate(*this);
+ return ans;
+}
+
+/*
+ * ASSIGNMENT OPERATORS
+ * 
+ * Now the responsibility for making a temporary copy if necessary
+ * belongs to the put-here operations.  See Assignment Operators in
+ * BigUnsigned.hh.
+ */
+inline void BigInteger::operator +=(const BigInteger &x) {
+ add(*this, x);
+}
+inline void BigInteger::operator -=(const BigInteger &x) {
+ subtract(*this, x);
+}
+inline void BigInteger::operator *=(const BigInteger &x) {
+ multiply(*this, x);
+}
+inline void BigInteger::operator /=(const BigInteger &x) {
+ //if (x.isZero()) throw "BigInteger::operator /=: division by zero";
+ /* The following technique is slightly faster than copying *this first
+	 * when x is large. */
+ BigInteger q;
+ divideWithRemainder(x, q);
+ // *this contains the remainder, but we overwrite it with the quotient.
+ *this = q;
+}
+inline void BigInteger::operator %=(const BigInteger &x) {
+ //if (x.isZero()) throw "BigInteger::operator %=: division by zero";
+ BigInteger q;
+ // Mods *this by x.  Don't care about quotient left in q.
+ divideWithRemainder(x, q);
+}
+// This one is trivial
+inline void BigInteger::flipSign() {
+ sign = Sign(-sign);
+}
+# 6 "/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigIntegerLibrary.hh" 2
+# 1 "/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigIntegerAlgorithms.hh" 1
+
+
+
+
+
+/* Some mathematical algorithms for big integers.
+ * This code is new and, as such, experimental. */
+
+// Returns the greatest common divisor of a and b.
+BigUnsigned gcd(BigUnsigned a, BigUnsigned b);
+
+/* Extended Euclidean algorithm.
+ * Given m and n, finds gcd g and numbers r, s such that r*m + s*n == g. */
+void extendedEuclidean(BigInteger m, BigInteger n,
+  BigInteger &g, BigInteger &r, BigInteger &s);
+
+/* Returns the multiplicative inverse of x modulo n, or throws an exception if
+ * they have a common factor. */
+BigUnsigned modinv(const BigInteger &x, const BigUnsigned &n);
+
+// Returns (base ^ exponent) % modulus.
+BigUnsigned modexp(const BigInteger &base, const BigUnsigned &exponent,
+  const BigUnsigned &modulus);
+# 7 "/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigIntegerLibrary.hh" 2
+# 1 "/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsignedInABase.hh" 1
+
+
+
+
+
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/string" 1 3
+// Components for manipulating sequences of characters -*- C++ -*-
+
+// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004,
+// 2005, 2006, 2007, 2009, 2010, 2011
 // Free Software Foundation, Inc.
 //
 // This file is part of the GNU ISO C++ Library.  This library is free
@@ -5179,14 +5918,14 @@ enum SsdmRegionTypes {
 // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
 // <http://www.gnu.org/licenses/>.
 
-/** @file include/iostream
+/** @file include/string
  *  This is a Standard C++ Library header.
  */
 
 //
-// ISO C++ 14882: 27.3  Standard iostream objects
+// ISO C++ 14882: 21  Strings library
 //
-# 37 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/iostream" 3
+# 38 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/string" 3
 
 # 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/x86_64-unknown-linux-gnu/bits/c++config.h" 1 3
 // Predefined symbols and macros -*- C++ -*-
@@ -6288,115 +7027,7 @@ namespace std
 /* #undef _GLIBCXX_USE_SCHED_YIELD */
 
 /* Define if code specialized for wchar_t should be used. */
-# 39 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/iostream" 2 3
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ostream" 1 3
-// Output streams -*- C++ -*-
-
-// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005,
-// 2006, 2007, 2008, 2009, 2010, 2011
-// Free Software Foundation, Inc.
-//
-// This file is part of the GNU ISO C++ Library.  This library is free
-// software; you can redistribute it and/or modify it under the
-// terms of the GNU General Public License as published by the
-// Free Software Foundation; either version 3, or (at your option)
-// any later version.
-
-// This library is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-/** @file include/ostream
- *  This is a Standard C++ Library header.
- */
-
-//
-// ISO C++ 14882: 27.6.2  Output streams
-//
-# 38 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ostream" 3
-
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ios" 1 3
-// Iostreams base classes -*- C++ -*-
-
-// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004,
-// 2005, 2006, 2007, 2009, 2010 Free Software Foundation, Inc.
-//
-// This file is part of the GNU ISO C++ Library.  This library is free
-// software; you can redistribute it and/or modify it under the
-// terms of the GNU General Public License as published by the
-// Free Software Foundation; either version 3, or (at your option)
-// any later version.
-
-// This library is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-/** @file include/ios
- *  This is a Standard C++ Library header.
- */
-
-//
-// ISO C++ 14882: 27.4  Iostreams base classes
-//
-# 37 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ios" 3
-
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/iosfwd" 1 3
-// Forwarding declarations -*- C++ -*-
-
-// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005,
-// 2006, 2007, 2009, 2010
-// Free Software Foundation, Inc.
-//
-// This file is part of the GNU ISO C++ Library.  This library is free
-// software; you can redistribute it and/or modify it under the
-// terms of the GNU General Public License as published by the
-// Free Software Foundation; either version 3, or (at your option)
-// any later version.
-
-// This library is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-/** @file include/iosfwd
- *  This is a Standard C++ Library header.
- */
-
-//
-// ISO C++ 14882: 27.2  Forward declarations
-//
-# 38 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/iosfwd" 3
-
-
+# 40 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/string" 2 3
 # 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/stringfwd.h" 1 3
 // String support -*- C++ -*-
 
@@ -6469,1507 +7100,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 } // namespace
-# 41 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/iosfwd" 2 3
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/postypes.h" 1 3
-// Position types -*- C++ -*-
-
-// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005,
-// 2006, 2007, 2008, 2009, 2010
-// Free Software Foundation, Inc.
-//
-// This file is part of the GNU ISO C++ Library.  This library is free
-// software; you can redistribute it and/or modify it under the
-// terms of the GNU General Public License as published by the
-// Free Software Foundation; either version 3, or (at your option)
-// any later version.
-
-// This library is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-/** @file bits/postypes.h
- *  This is an internal header file, included by other library headers.
- *  Do not attempt to use it directly. @headername{iosfwd}
- */
-
-//
-// ISO C++ 14882: 27.4.1 - Types
-// ISO C++ 14882: 27.4.3 - Template class fpos
-//
-# 40 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/postypes.h" 3
-
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwchar" 1 3
-// -*- C++ -*- forwarding header.
-
-// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005,
-// 2006, 2007, 2008, 2009, 2010
-// Free Software Foundation, Inc.
-//
-// This file is part of the GNU ISO C++ Library.  This library is free
-// software; you can redistribute it and/or modify it under the
-// terms of the GNU General Public License as published by the
-// Free Software Foundation; either version 3, or (at your option)
-// any later version.
-
-// This library is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-/** @file include/cwchar
- *  This is a Standard C++ Library file.  You should @c \#include this file
- *  in your programs, rather than any of the @a *.h implementation files.
- *
- *  This is the C++ version of the Standard C Library header @c wchar.h,
- *  and its contents are (mostly) the same as that header, but are all
- *  contained in the namespace @c std (except for names which are defined
- *  as macros in C).
- */
-
-//
-// ISO C++ 14882: 21.4
-//
-# 41 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwchar" 3
-
-
-
-
-# 1 "/usr/include/wchar.h" 1 3 4
-/* Copyright (C) 1995-2014 Free Software Foundation, Inc.
-   This file is part of the GNU C Library.
-
-   The GNU C Library is free software; you can redistribute it and/or
-   modify it under the terms of the GNU Lesser General Public
-   License as published by the Free Software Foundation; either
-   version 2.1 of the License, or (at your option) any later version.
-
-   The GNU C Library is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-   Lesser General Public License for more details.
-
-   You should have received a copy of the GNU Lesser General Public
-   License along with the GNU C Library; if not, see
-   <http://www.gnu.org/licenses/>.  */
-
-/*
- *      ISO C99 Standard: 7.24
- *	Extended multibyte and wide character utilities	<wchar.h>
- */
-# 31 "/usr/include/wchar.h" 3 4
-/* Get FILE definition.  */
-
-
-
-
-
-/* Get va_list definition.  */
-
-
-
-
-
-# 1 "/usr/include/x86_64-linux-gnu/bits/wchar.h" 1 3 4
-/* wchar_t type related definitions.
-   Copyright (C) 2000-2014 Free Software Foundation, Inc.
-   This file is part of the GNU C Library.
-
-   The GNU C Library is free software; you can redistribute it and/or
-   modify it under the terms of the GNU Lesser General Public
-   License as published by the Free Software Foundation; either
-   version 2.1 of the License, or (at your option) any later version.
-
-   The GNU C Library is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-   Lesser General Public License for more details.
-
-   You should have received a copy of the GNU Lesser General Public
-   License along with the GNU C Library; if not, see
-   <http://www.gnu.org/licenses/>.  */
-
-
-
-
-/* The fallback definitions, for when __WCHAR_MAX__ or __WCHAR_MIN__
-   are not defined, give the right value and type as long as both int
-   and wchar_t are 32-bit types.  Adding L'\0' to a constant value
-   ensures that the type is correct; it is necessary to use (L'\0' +
-   0) rather than just L'\0' so that the type in C++ is the promoted
-   version of wchar_t rather than the distinct wchar_t type itself.
-   Because wchar_t in preprocessor #if expressions is treated as
-   intmax_t or uintmax_t, the expression (L'\0' - 1) would have the
-   wrong value for WCHAR_MAX in such expressions and so cannot be used
-   to define __WCHAR_MAX in the unsigned case.  */
-# 42 "/usr/include/wchar.h" 2 3 4
-
-/* Get size_t, wchar_t, wint_t and NULL from <stddef.h>.  */
-# 52 "/usr/include/wchar.h" 3 4
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/clang/bin/../lib/clang/3.1/include/stddef.h" 1 3 4
-/*===---- stddef.h - Basic type definitions --------------------------------===
- *
- * Copyright (c) 2008 Eli Friedman
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- *
- *===-----------------------------------------------------------------------===
- */
-# 56 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/clang/bin/../lib/clang/3.1/include/stddef.h" 3 4
-/* Some C libraries expect to see a wint_t here. Others (notably MinGW) will use
-__WINT_TYPE__ directly; accommodate both by requiring __need_wint_t */
-
-
-
-typedef unsigned int wint_t;
-# 52 "/usr/include/wchar.h" 2 3 4
-
-/* We try to get wint_t from <stddef.h>, but not all GCC versions define it
-   there.  So define it ourselves if it remains undefined.  */
-# 63 "/usr/include/wchar.h" 3 4
-/* Work around problems with the <stddef.h> file which doesn't put
-   wint_t in the std namespace.  */
-# 73 "/usr/include/wchar.h" 3 4
-/* Tell the caller that we provide correct C++ prototypes.  */
-# 99 "/usr/include/wchar.h" 3 4
-/* The rest of the file is only used if used if __need_mbstate_t is not
-   defined.  */
-
-
-
-
-/* Public type.  */
-typedef __mbstate_t mbstate_t;
-# 116 "/usr/include/wchar.h" 3 4
-/* These constants might also be defined in <inttypes.h>.  */
-# 125 "/usr/include/wchar.h" 3 4
-/* For XPG4 compliance we have to define the stuff from <wctype.h> here
-   as well.  */
-
-
-
-
-
-extern "C" {
-
-
-/* This incomplete type is defined in <time.h> but needed here because
-   of `wcsftime'.  */
-struct tm;
-
-/* XXX We have to clean this up at some point.  Since tm is in the std
-   namespace but wcsftime is in __c99 the type wouldn't be found
-   without inserting it in the global namespace.  */
-
-
-
-
-/* Copy SRC to DEST.  */
-extern wchar_t *wcscpy (wchar_t *__restrict __dest,
-   const wchar_t *__restrict __src) throw ();
-/* Copy no more than N wide-characters of SRC to DEST.  */
-extern wchar_t *wcsncpy (wchar_t *__restrict __dest,
-    const wchar_t *__restrict __src, size_t __n)
-     throw ();
-
-/* Append SRC onto DEST.  */
-extern wchar_t *wcscat (wchar_t *__restrict __dest,
-   const wchar_t *__restrict __src) throw ();
-/* Append no more than N wide-characters of SRC onto DEST.  */
-extern wchar_t *wcsncat (wchar_t *__restrict __dest,
-    const wchar_t *__restrict __src, size_t __n)
-     throw ();
-
-/* Compare S1 and S2.  */
-extern int wcscmp (const wchar_t *__s1, const wchar_t *__s2)
-     throw () __attribute__ ((__pure__));
-/* Compare N wide-characters of S1 and S2.  */
-extern int wcsncmp (const wchar_t *__s1, const wchar_t *__s2, size_t __n)
-     throw () __attribute__ ((__pure__));
-
-
-
-/* Compare S1 and S2, ignoring case.  */
-extern int wcscasecmp (const wchar_t *__s1, const wchar_t *__s2) throw ();
-
-/* Compare no more than N chars of S1 and S2, ignoring case.  */
-extern int wcsncasecmp (const wchar_t *__s1, const wchar_t *__s2,
-   size_t __n) throw ();
-
-/* Similar to the two functions above but take the information from
-   the provided locale and not the global locale.  */
-
-
-extern int wcscasecmp_l (const wchar_t *__s1, const wchar_t *__s2,
-    __locale_t __loc) throw ();
-
-extern int wcsncasecmp_l (const wchar_t *__s1, const wchar_t *__s2,
-     size_t __n, __locale_t __loc) throw ();
-
-
-
-/* Compare S1 and S2, both interpreted as appropriate to the
-   LC_COLLATE category of the current locale.  */
-extern int wcscoll (const wchar_t *__s1, const wchar_t *__s2) throw ();
-/* Transform S2 into array pointed to by S1 such that if wcscmp is
-   applied to two transformed strings the result is the as applying
-   `wcscoll' to the original strings.  */
-extern size_t wcsxfrm (wchar_t *__restrict __s1,
-         const wchar_t *__restrict __s2, size_t __n) throw ();
-
-
-
-/* Similar to the two functions above but take the information from
-   the provided locale and not the global locale.  */
-
-/* Compare S1 and S2, both interpreted as appropriate to the
-   LC_COLLATE category of the given locale.  */
-extern int wcscoll_l (const wchar_t *__s1, const wchar_t *__s2,
-        __locale_t __loc) throw ();
-
-/* Transform S2 into array pointed to by S1 such that if wcscmp is
-   applied to two transformed strings the result is the as applying
-   `wcscoll' to the original strings.  */
-extern size_t wcsxfrm_l (wchar_t *__s1, const wchar_t *__s2,
-    size_t __n, __locale_t __loc) throw ();
-
-/* Duplicate S, returning an identical malloc'd string.  */
-extern wchar_t *wcsdup (const wchar_t *__s) throw () __attribute__ ((__malloc__));
-
-
-
-/* Find the first occurrence of WC in WCS.  */
-
-
-
-
-
-
-extern wchar_t *wcschr (const wchar_t *__wcs, wchar_t __wc)
-     throw () __attribute__ ((__pure__));
-
-/* Find the last occurrence of WC in WCS.  */
-
-
-
-
-
-
-extern wchar_t *wcsrchr (const wchar_t *__wcs, wchar_t __wc)
-     throw () __attribute__ ((__pure__));
-
-
-
-
-/* This function is similar to `wcschr'.  But it returns a pointer to
-   the closing NUL wide character in case C is not found in S.  */
-extern wchar_t *wcschrnul (const wchar_t *__s, wchar_t __wc)
-     throw () __attribute__ ((__pure__));
-
-
-
-/* Return the length of the initial segmet of WCS which
-   consists entirely of wide characters not in REJECT.  */
-extern size_t wcscspn (const wchar_t *__wcs, const wchar_t *__reject)
-     throw () __attribute__ ((__pure__));
-/* Return the length of the initial segmet of WCS which
-   consists entirely of wide characters in  ACCEPT.  */
-extern size_t wcsspn (const wchar_t *__wcs, const wchar_t *__accept)
-     throw () __attribute__ ((__pure__));
-/* Find the first occurrence in WCS of any character in ACCEPT.  */
-
-
-
-
-
-
-
-extern wchar_t *wcspbrk (const wchar_t *__wcs, const wchar_t *__accept)
-     throw () __attribute__ ((__pure__));
-
-/* Find the first occurrence of NEEDLE in HAYSTACK.  */
-
-
-
-
-
-
-
-extern wchar_t *wcsstr (const wchar_t *__haystack, const wchar_t *__needle)
-     throw () __attribute__ ((__pure__));
-
-
-/* Divide WCS into tokens separated by characters in DELIM.  */
-extern wchar_t *wcstok (wchar_t *__restrict __s,
-   const wchar_t *__restrict __delim,
-   wchar_t **__restrict __ptr) throw ();
-
-/* Return the number of wide characters in S.  */
-extern size_t wcslen (const wchar_t *__s) throw () __attribute__ ((__pure__));
-
-
-
-/* Another name for `wcsstr' from XPG4.  */
-
-
-
-
-
-
-
-extern wchar_t *wcswcs (const wchar_t *__haystack, const wchar_t *__needle)
-     throw () __attribute__ ((__pure__));
-
-
-
-
-/* Return the number of wide characters in S, but at most MAXLEN.  */
-extern size_t wcsnlen (const wchar_t *__s, size_t __maxlen)
-     throw () __attribute__ ((__pure__));
-
-
-
-
-/* Search N wide characters of S for C.  */
-
-
-
-
-
-
-
-extern wchar_t *wmemchr (const wchar_t *__s, wchar_t __c, size_t __n)
-     throw () __attribute__ ((__pure__));
-
-
-/* Compare N wide characters of S1 and S2.  */
-extern int wmemcmp (const wchar_t *__s1, const wchar_t *__s2, size_t __n)
-     throw () __attribute__ ((__pure__));
-
-/* Copy N wide characters of SRC to DEST.  */
-extern wchar_t *wmemcpy (wchar_t *__restrict __s1,
-    const wchar_t *__restrict __s2, size_t __n) throw ();
-
-/* Copy N wide characters of SRC to DEST, guaranteeing
-   correct behavior for overlapping strings.  */
-extern wchar_t *wmemmove (wchar_t *__s1, const wchar_t *__s2, size_t __n)
-     throw ();
-
-/* Set N wide characters of S to C.  */
-extern wchar_t *wmemset (wchar_t *__s, wchar_t __c, size_t __n) throw ();
-
-
-
-/* Copy N wide characters of SRC to DEST and return pointer to following
-   wide character.  */
-extern wchar_t *wmempcpy (wchar_t *__restrict __s1,
-     const wchar_t *__restrict __s2, size_t __n)
-     throw ();
-
-
-
-
-/* Determine whether C constitutes a valid (one-byte) multibyte
-   character.  */
-extern wint_t btowc (int __c) throw ();
-
-/* Determine whether C corresponds to a member of the extended
-   character set whose multibyte representation is a single byte.  */
-extern int wctob (wint_t __c) throw ();
-
-/* Determine whether PS points to an object representing the initial
-   state.  */
-extern int mbsinit (const mbstate_t *__ps) throw () __attribute__ ((__pure__));
-
-/* Write wide character representation of multibyte character pointed
-   to by S to PWC.  */
-extern size_t mbrtowc (wchar_t *__restrict __pwc,
-         const char *__restrict __s, size_t __n,
-         mbstate_t *__restrict __p) throw ();
-
-/* Write multibyte representation of wide character WC to S.  */
-extern size_t wcrtomb (char *__restrict __s, wchar_t __wc,
-         mbstate_t *__restrict __ps) throw ();
-
-/* Return number of bytes in multibyte character pointed to by S.  */
-extern size_t __mbrlen (const char *__restrict __s, size_t __n,
-   mbstate_t *__restrict __ps) throw ();
-extern size_t mbrlen (const char *__restrict __s, size_t __n,
-        mbstate_t *__restrict __ps) throw ();
-# 406 "/usr/include/wchar.h" 3 4
-/* Write wide character representation of multibyte character string
-   SRC to DST.  */
-extern size_t mbsrtowcs (wchar_t *__restrict __dst,
-    const char **__restrict __src, size_t __len,
-    mbstate_t *__restrict __ps) throw ();
-
-/* Write multibyte character representation of wide character string
-   SRC to DST.  */
-extern size_t wcsrtombs (char *__restrict __dst,
-    const wchar_t **__restrict __src, size_t __len,
-    mbstate_t *__restrict __ps) throw ();
-
-
-
-
-/* Write wide character representation of at most NMC bytes of the
-   multibyte character string SRC to DST.  */
-extern size_t mbsnrtowcs (wchar_t *__restrict __dst,
-     const char **__restrict __src, size_t __nmc,
-     size_t __len, mbstate_t *__restrict __ps) throw ();
-
-/* Write multibyte character representation of at most NWC characters
-   from the wide character string SRC to DST.  */
-extern size_t wcsnrtombs (char *__restrict __dst,
-     const wchar_t **__restrict __src,
-     size_t __nwc, size_t __len,
-     mbstate_t *__restrict __ps) throw ();
-
-
-
-/* The following functions are extensions found in X/Open CAE.  */
-
-/* Determine number of column positions required for C.  */
-extern int wcwidth (wchar_t __c) throw ();
-
-/* Determine number of column positions required for first N wide
-   characters (or fewer if S ends before this) in S.  */
-extern int wcswidth (const wchar_t *__s, size_t __n) throw ();
-
-
-
-
-/* Convert initial portion of the wide string NPTR to `double'
-   representation.  */
-extern double wcstod (const wchar_t *__restrict __nptr,
-        wchar_t **__restrict __endptr) throw ();
-
-
-
-
-/* Likewise for `float' and `long double' sizes of floating-point numbers.  */
-extern float wcstof (const wchar_t *__restrict __nptr,
-       wchar_t **__restrict __endptr) throw ();
-extern long double wcstold (const wchar_t *__restrict __nptr,
-       wchar_t **__restrict __endptr) throw ();
-
-
-
-
-
-/* Convert initial portion of wide string NPTR to `long int'
-   representation.  */
-extern long int wcstol (const wchar_t *__restrict __nptr,
-   wchar_t **__restrict __endptr, int __base) throw ();
-
-/* Convert initial portion of wide string NPTR to `unsigned long int'
-   representation.  */
-extern unsigned long int wcstoul (const wchar_t *__restrict __nptr,
-      wchar_t **__restrict __endptr, int __base)
-     throw ();
-
-
-
-
-/* Convert initial portion of wide string NPTR to `long long int'
-   representation.  */
-__extension__
-extern long long int wcstoll (const wchar_t *__restrict __nptr,
-         wchar_t **__restrict __endptr, int __base)
-     throw ();
-
-/* Convert initial portion of wide string NPTR to `unsigned long long int'
-   representation.  */
-__extension__
-extern unsigned long long int wcstoull (const wchar_t *__restrict __nptr,
-     wchar_t **__restrict __endptr,
-     int __base) throw ();
-
-
-
-
-/* Convert initial portion of wide string NPTR to `long long int'
-   representation.  */
-__extension__
-extern long long int wcstoq (const wchar_t *__restrict __nptr,
-        wchar_t **__restrict __endptr, int __base)
-     throw ();
-
-/* Convert initial portion of wide string NPTR to `unsigned long long int'
-   representation.  */
-__extension__
-extern unsigned long long int wcstouq (const wchar_t *__restrict __nptr,
-           wchar_t **__restrict __endptr,
-           int __base) throw ();
-
-
-
-/* The concept of one static locale per category is not very well
-   thought out.  Many applications will need to process its data using
-   information from several different locales.  Another application is
-   the implementation of the internationalization handling in the
-   upcoming ISO C++ standard library.  To support this another set of
-   the functions using locale data exist which have an additional
-   argument.
-
-   Attention: all these functions are *not* standardized in any form.
-   This is a proof-of-concept implementation.  */
-
-/* Structure for reentrant locale using functions.  This is an
-   (almost) opaque type for the user level programs.  */
-
-
-/* Special versions of the functions above which take the locale to
-   use as an additional parameter.  */
-extern long int wcstol_l (const wchar_t *__restrict __nptr,
-     wchar_t **__restrict __endptr, int __base,
-     __locale_t __loc) throw ();
-
-extern unsigned long int wcstoul_l (const wchar_t *__restrict __nptr,
-        wchar_t **__restrict __endptr,
-        int __base, __locale_t __loc) throw ();
-
-__extension__
-extern long long int wcstoll_l (const wchar_t *__restrict __nptr,
-    wchar_t **__restrict __endptr,
-    int __base, __locale_t __loc) throw ();
-
-__extension__
-extern unsigned long long int wcstoull_l (const wchar_t *__restrict __nptr,
-       wchar_t **__restrict __endptr,
-       int __base, __locale_t __loc)
-     throw ();
-
-extern double wcstod_l (const wchar_t *__restrict __nptr,
-   wchar_t **__restrict __endptr, __locale_t __loc)
-     throw ();
-
-extern float wcstof_l (const wchar_t *__restrict __nptr,
-         wchar_t **__restrict __endptr, __locale_t __loc)
-     throw ();
-
-extern long double wcstold_l (const wchar_t *__restrict __nptr,
-         wchar_t **__restrict __endptr,
-         __locale_t __loc) throw ();
-
-
-
-
-/* Copy SRC to DEST, returning the address of the terminating L'\0' in
-   DEST.  */
-extern wchar_t *wcpcpy (wchar_t *__restrict __dest,
-   const wchar_t *__restrict __src) throw ();
-
-/* Copy no more than N characters of SRC to DEST, returning the address of
-   the last character written into DEST.  */
-extern wchar_t *wcpncpy (wchar_t *__restrict __dest,
-    const wchar_t *__restrict __src, size_t __n)
-     throw ();
-
-
-/* Wide character I/O functions.  */
-
-/* Like OPEN_MEMSTREAM, but the stream is wide oriented and produces
-   a wide character string.  */
-extern __FILE *open_wmemstream (wchar_t **__bufloc, size_t *__sizeloc) throw ();
-
-
-
-
-
-/* Select orientation for stream.  */
-extern int fwide (__FILE *__fp, int __mode) throw ();
-
-
-/* Write formatted output to STREAM.
-
-   This function is a possible cancellation point and therefore not
-   marked with __THROW.  */
-extern int fwprintf (__FILE *__restrict __stream,
-       const wchar_t *__restrict __format, ...)
-     /* __attribute__ ((__format__ (__wprintf__, 2, 3))) */;
-/* Write formatted output to stdout.
-
-   This function is a possible cancellation point and therefore not
-   marked with __THROW.  */
-extern int wprintf (const wchar_t *__restrict __format, ...)
-     /* __attribute__ ((__format__ (__wprintf__, 1, 2))) */;
-/* Write formatted output of at most N characters to S.  */
-extern int swprintf (wchar_t *__restrict __s, size_t __n,
-       const wchar_t *__restrict __format, ...)
-     throw () /* __attribute__ ((__format__ (__wprintf__, 3, 4))) */;
-
-/* Write formatted output to S from argument list ARG.
-
-   This function is a possible cancellation point and therefore not
-   marked with __THROW.  */
-extern int vfwprintf (__FILE *__restrict __s,
-        const wchar_t *__restrict __format,
-        __gnuc_va_list __arg)
-     /* __attribute__ ((__format__ (__wprintf__, 2, 0))) */;
-/* Write formatted output to stdout from argument list ARG.
-
-   This function is a possible cancellation point and therefore not
-   marked with __THROW.  */
-extern int vwprintf (const wchar_t *__restrict __format,
-       __gnuc_va_list __arg)
-     /* __attribute__ ((__format__ (__wprintf__, 1, 0))) */;
-/* Write formatted output of at most N character to S from argument
-   list ARG.  */
-extern int vswprintf (wchar_t *__restrict __s, size_t __n,
-        const wchar_t *__restrict __format,
-        __gnuc_va_list __arg)
-     throw () /* __attribute__ ((__format__ (__wprintf__, 3, 0))) */;
-
-
-/* Read formatted input from STREAM.
-
-   This function is a possible cancellation point and therefore not
-   marked with __THROW.  */
-extern int fwscanf (__FILE *__restrict __stream,
-      const wchar_t *__restrict __format, ...)
-     /* __attribute__ ((__format__ (__wscanf__, 2, 3))) */;
-/* Read formatted input from stdin.
-
-   This function is a possible cancellation point and therefore not
-   marked with __THROW.  */
-extern int wscanf (const wchar_t *__restrict __format, ...)
-     /* __attribute__ ((__format__ (__wscanf__, 1, 2))) */;
-/* Read formatted input from S.  */
-extern int swscanf (const wchar_t *__restrict __s,
-      const wchar_t *__restrict __format, ...)
-     throw () /* __attribute__ ((__format__ (__wscanf__, 2, 3))) */;
-# 685 "/usr/include/wchar.h" 3 4
-/* Read formatted input from S into argument list ARG.
-
-   This function is a possible cancellation point and therefore not
-   marked with __THROW.  */
-extern int vfwscanf (__FILE *__restrict __s,
-       const wchar_t *__restrict __format,
-       __gnuc_va_list __arg)
-     /* __attribute__ ((__format__ (__wscanf__, 2, 0))) */;
-/* Read formatted input from stdin into argument list ARG.
-
-   This function is a possible cancellation point and therefore not
-   marked with __THROW.  */
-extern int vwscanf (const wchar_t *__restrict __format,
-      __gnuc_va_list __arg)
-     /* __attribute__ ((__format__ (__wscanf__, 1, 0))) */;
-/* Read formatted input from S into argument list ARG.  */
-extern int vswscanf (const wchar_t *__restrict __s,
-       const wchar_t *__restrict __format,
-       __gnuc_va_list __arg)
-     throw () /* __attribute__ ((__format__ (__wscanf__, 2, 0))) */;
-# 741 "/usr/include/wchar.h" 3 4
-/* Read a character from STREAM.
-
-   These functions are possible cancellation points and therefore not
-   marked with __THROW.  */
-extern wint_t fgetwc (__FILE *__stream);
-extern wint_t getwc (__FILE *__stream);
-
-/* Read a character from stdin.
-
-   This function is a possible cancellation point and therefore not
-   marked with __THROW.  */
-extern wint_t getwchar (void);
-
-
-/* Write a character to STREAM.
-
-   These functions are possible cancellation points and therefore not
-   marked with __THROW.  */
-extern wint_t fputwc (wchar_t __wc, __FILE *__stream);
-extern wint_t putwc (wchar_t __wc, __FILE *__stream);
-
-/* Write a character to stdout.
-
-   This function is a possible cancellation point and therefore not
-   marked with __THROW.  */
-extern wint_t putwchar (wchar_t __wc);
-
-
-/* Get a newline-terminated wide character string of finite length
-   from STREAM.
-
-   This function is a possible cancellation point and therefore not
-   marked with __THROW.  */
-extern wchar_t *fgetws (wchar_t *__restrict __ws, int __n,
-   __FILE *__restrict __stream);
-
-/* Write a string to STREAM.
-
-   This function is a possible cancellation point and therefore not
-   marked with __THROW.  */
-extern int fputws (const wchar_t *__restrict __ws,
-     __FILE *__restrict __stream);
-
-
-/* Push a character back onto the input buffer of STREAM.
-
-   This function is a possible cancellation point and therefore not
-   marked with __THROW.  */
-extern wint_t ungetwc (wint_t __wc, __FILE *__stream);
-
-
-
-
-/* These are defined to be equivalent to the `char' functions defined
-   in POSIX.1:1996.
-
-   These functions are not part of POSIX and therefore no official
-   cancellation point.  But due to similarity with an POSIX interface
-   or due to the implementation they are cancellation points and
-   therefore not marked with __THROW.  */
-extern wint_t getwc_unlocked (__FILE *__stream);
-extern wint_t getwchar_unlocked (void);
-
-/* This is the wide character version of a GNU extension.
-
-   This function is not part of POSIX and therefore no official
-   cancellation point.  But due to similarity with an POSIX interface
-   or due to the implementation it is a cancellation point and
-   therefore not marked with __THROW.  */
-extern wint_t fgetwc_unlocked (__FILE *__stream);
-
-/* Faster version when locking is not necessary.
-
-   This function is not part of POSIX and therefore no official
-   cancellation point.  But due to similarity with an POSIX interface
-   or due to the implementation it is a cancellation point and
-   therefore not marked with __THROW.  */
-extern wint_t fputwc_unlocked (wchar_t __wc, __FILE *__stream);
-
-/* These are defined to be equivalent to the `char' functions defined
-   in POSIX.1:1996.
-
-   These functions are not part of POSIX and therefore no official
-   cancellation point.  But due to similarity with an POSIX interface
-   or due to the implementation they are cancellation points and
-   therefore not marked with __THROW.  */
-extern wint_t putwc_unlocked (wchar_t __wc, __FILE *__stream);
-extern wint_t putwchar_unlocked (wchar_t __wc);
-
-
-/* This function does the same as `fgetws' but does not lock the stream.
-
-   This function is not part of POSIX and therefore no official
-   cancellation point.  But due to similarity with an POSIX interface
-   or due to the implementation it is a cancellation point and
-   therefore not marked with __THROW.  */
-extern wchar_t *fgetws_unlocked (wchar_t *__restrict __ws, int __n,
-     __FILE *__restrict __stream);
-
-/* This function does the same as `fputws' but does not lock the stream.
-
-   This function is not part of POSIX and therefore no official
-   cancellation point.  But due to similarity with an POSIX interface
-   or due to the implementation it is a cancellation point and
-   therefore not marked with __THROW.  */
-extern int fputws_unlocked (const wchar_t *__restrict __ws,
-       __FILE *__restrict __stream);
-
-
-
-
-/* Format TP into S according to FORMAT.
-   Write no more than MAXSIZE wide characters and return the number
-   of wide characters written, or 0 if it would exceed MAXSIZE.  */
-extern size_t wcsftime (wchar_t *__restrict __s, size_t __maxsize,
-   const wchar_t *__restrict __format,
-   const struct tm *__restrict __tp) throw ();
-
-
-
-
-
-/* Similar to `wcsftime' but takes the information from
-   the provided locale and not the global locale.  */
-extern size_t wcsftime_l (wchar_t *__restrict __s, size_t __maxsize,
-     const wchar_t *__restrict __format,
-     const struct tm *__restrict __tp,
-     __locale_t __loc) throw ();
-
-
-/* The X/Open standard demands that most of the functions defined in
-   the <wctype.h> header must also appear here.  This is probably
-   because some X/Open members wrote their implementation before the
-   ISO C standard was published and introduced the better solution.
-   We have to provide these definitions for compliance reasons but we
-   do this nonsense only if really necessary.  */
-
-
-
-
-
-/* Define some macros helping to catch buffer overflows.  */
-# 891 "/usr/include/wchar.h" 3 4
-}
-
-
-
-
-
-/* Undefine all __need_* constants in case we are included to get those
-   constants but the whole file was already read.  */
-# 46 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwchar" 2 3
-
-
-
-
-
-// Need to do a bit of trickery here with mbstate_t as char_traits
-// assumes it is in wchar.h, regardless of wchar_t specializations.
-# 63 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwchar" 3
-namespace std
-{
-  using ::mbstate_t;
-} // namespace std
-
-// Get rid of those macros defined in <wchar.h> in lieu of real functions.
-# 136 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwchar" 3
-namespace std __attribute__ ((__visibility__ ("default")))
-{
-
-
-  using ::wint_t;
-
-  using ::btowc;
-  using ::fgetwc;
-  using ::fgetws;
-  using ::fputwc;
-  using ::fputws;
-  using ::fwide;
-  using ::fwprintf;
-  using ::fwscanf;
-  using ::getwc;
-  using ::getwchar;
-  using ::mbrlen;
-  using ::mbrtowc;
-  using ::mbsinit;
-  using ::mbsrtowcs;
-  using ::putwc;
-  using ::putwchar;
-
-  using ::swprintf;
-
-  using ::swscanf;
-  using ::ungetwc;
-  using ::vfwprintf;
-
-  using ::vfwscanf;
-
-
-  using ::vswprintf;
-
-
-  using ::vswscanf;
-
-  using ::vwprintf;
-
-  using ::vwscanf;
-
-  using ::wcrtomb;
-  using ::wcscat;
-  using ::wcscmp;
-  using ::wcscoll;
-  using ::wcscpy;
-  using ::wcscspn;
-  using ::wcsftime;
-  using ::wcslen;
-  using ::wcsncat;
-  using ::wcsncmp;
-  using ::wcsncpy;
-  using ::wcsrtombs;
-  using ::wcsspn;
-  using ::wcstod;
-
-  using ::wcstof;
-
-  using ::wcstok;
-  using ::wcstol;
-  using ::wcstoul;
-  using ::wcsxfrm;
-  using ::wctob;
-  using ::wmemcmp;
-  using ::wmemcpy;
-  using ::wmemmove;
-  using ::wmemset;
-  using ::wprintf;
-  using ::wscanf;
-  using ::wcschr;
-  using ::wcspbrk;
-  using ::wcsrchr;
-  using ::wcsstr;
-  using ::wmemchr;
-
-
-  inline wchar_t*
-  wcschr(wchar_t* __p, wchar_t __c)
-  { return wcschr(const_cast<const wchar_t*>(__p), __c); }
-
-  inline wchar_t*
-  wcspbrk(wchar_t* __s1, const wchar_t* __s2)
-  { return wcspbrk(const_cast<const wchar_t*>(__s1), __s2); }
-
-  inline wchar_t*
-  wcsrchr(wchar_t* __p, wchar_t __c)
-  { return wcsrchr(const_cast<const wchar_t*>(__p), __c); }
-
-  inline wchar_t*
-  wcsstr(wchar_t* __s1, const wchar_t* __s2)
-  { return wcsstr(const_cast<const wchar_t*>(__s1), __s2); }
-
-  inline wchar_t*
-  wmemchr(wchar_t* __p, wchar_t __c, size_t __n)
-  { return wmemchr(const_cast<const wchar_t*>(__p), __c, __n); }
-
-
-
-} // namespace
-
-
-
-
-
-
-
-namespace __gnu_cxx
-{
-
-
-
-
-
-  using ::wcstold;
-# 258 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwchar" 3
- using ::wcstoll;
-  using ::wcstoull;
-
-} // namespace __gnu_cxx
-
-namespace std
-{
-  using ::__gnu_cxx::wcstold;
-  using ::__gnu_cxx::wcstoll;
-  using ::__gnu_cxx::wcstoull;
-} // namespace
-# 42 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/postypes.h" 2 3
-
-// XXX If <stdint.h> is really needed, make sure to define the macros
-// before including it, in order not to break <tr1/cstdint> (and <cstdint>
-// in C++0x).  Reconsider all this as soon as possible...
-# 69 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/postypes.h" 3
-namespace std __attribute__ ((__visibility__ ("default")))
-{
-
-
-  // The types streamoff, streampos and wstreampos and the class
-  // template fpos<> are described in clauses 21.1.2, 21.1.3, 27.1.2,
-  // 27.2, 27.4.1, 27.4.3 and D.6. Despite all this verbiage, the
-  // behaviour of these types is mostly implementation defined or
-  // unspecified. The behaviour in this implementation is as noted
-  // below.
-
-  /**
-   *  @brief  Type used by fpos, char_traits<char>, and char_traits<wchar_t>.
-   *
-   *  In clauses 21.1.3.1 and 27.4.1 streamoff is described as an
-   *  implementation defined type.
-   *  Note: In versions of GCC up to and including GCC 3.3, streamoff
-   *  was typedef long.
-  */
-
-  typedef long streamoff;
-# 98 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/postypes.h" 3
- /// Integral type for I/O operation counts and buffer sizes.
-  typedef ptrdiff_t streamsize; // Signed integral type
-
-  /**
-   *  @brief  Class representing stream positions.
-   *
-   *  The standard places no requirements upon the template parameter StateT.
-   *  In this implementation StateT must be DefaultConstructible,
-   *  CopyConstructible and Assignable.  The standard only requires that fpos
-   *  should contain a member of type StateT. In this implementation it also
-   *  contains an offset stored as a signed integer.
-   *
-   *  @param  StateT  Type passed to and returned from state().
-   */
-  template<typename _StateT>
-    class fpos
-    {
-    private:
-      streamoff _M_off;
-      _StateT _M_state;
-
-    public:
-      // The standard doesn't require that fpos objects can be default
-      // constructed. This implementation provides a default
-      // constructor that initializes the offset to 0 and default
-      // constructs the state.
-      fpos()
-      : _M_off(0), _M_state() { }
-
-      // The standard requires that fpos objects can be constructed
-      // from streamoff objects using the constructor syntax, and
-      // fails to give any meaningful semantics. In this
-      // implementation implicit conversion is also allowed, and this
-      // constructor stores the streamoff as the offset and default
-      // constructs the state.
-      /// Construct position from offset.
-      fpos(streamoff __off)
-      : _M_off(__off), _M_state() { }
-
-      /// Convert to streamoff.
-      operator streamoff() const { return _M_off; }
-
-      /// Remember the value of @a st.
-      void
-      state(_StateT __st)
-      { _M_state = __st; }
-
-      /// Return the last set value of @a st.
-      _StateT
-      state() const
-      { return _M_state; }
-
-      // The standard requires that this operator must be defined, but
-      // gives no semantics. In this implementation it just adds its
-      // argument to the stored offset and returns *this.
-      /// Add offset to this position.
-      fpos&
-      operator+=(streamoff __off)
-      {
- _M_off += __off;
- return *this;
-      }
-
-      // The standard requires that this operator must be defined, but
-      // gives no semantics. In this implementation it just subtracts
-      // its argument from the stored offset and returns *this.
-      /// Subtract offset from this position.
-      fpos&
-      operator-=(streamoff __off)
-      {
- _M_off -= __off;
- return *this;
-      }
-
-      // The standard requires that this operator must be defined, but
-      // defines its semantics only in terms of operator-. In this
-      // implementation it constructs a copy of *this, adds the
-      // argument to that copy using operator+= and then returns the
-      // copy.
-      /// Add position and offset.
-      fpos
-      operator+(streamoff __off) const
-      {
- fpos __pos(*this);
- __pos += __off;
- return __pos;
-      }
-
-      // The standard requires that this operator must be defined, but
-      // defines its semantics only in terms of operator+. In this
-      // implementation it constructs a copy of *this, subtracts the
-      // argument from that copy using operator-= and then returns the
-      // copy.
-      /// Subtract offset from position.
-      fpos
-      operator-(streamoff __off) const
-      {
- fpos __pos(*this);
- __pos -= __off;
- return __pos;
-      }
-
-      // The standard requires that this operator must be defined, but
-      // defines its semantics only in terms of operator+. In this
-      // implementation it returns the difference between the offset
-      // stored in *this and in the argument.
-      /// Subtract position to return offset.
-      streamoff
-      operator-(const fpos& __other) const
-      { return _M_off - __other._M_off; }
-    };
-
-  // The standard only requires that operator== must be an
-  // equivalence relation. In this implementation two fpos<StateT>
-  // objects belong to the same equivalence class if the contained
-  // offsets compare equal.
-  /// Test if equivalent to another position.
-  template<typename _StateT>
-    inline bool
-    operator==(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
-    { return streamoff(__lhs) == streamoff(__rhs); }
-
-  template<typename _StateT>
-    inline bool
-    operator!=(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
-    { return streamoff(__lhs) != streamoff(__rhs); }
-
-  // Clauses 21.1.3.1 and 21.1.3.2 describe streampos and wstreampos
-  // as implementation defined types, but clause 27.2 requires that
-  // they must both be typedefs for fpos<mbstate_t>
-  /// File position for char streams.
-  typedef fpos<mbstate_t> streampos;
-  /// File position for wchar_t streams.
-  typedef fpos<mbstate_t> wstreampos;
-# 241 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/postypes.h" 3
-} // namespace
-# 42 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/iosfwd" 2 3
-
-namespace std __attribute__ ((__visibility__ ("default")))
-{
-
-
-  /**
-   *  @defgroup io I/O
-   *
-   *  Nearly all of the I/O classes are parameterized on the type of
-   *  characters they read and write.  (The major exception is ios_base at
-   *  the top of the hierarchy.)  This is a change from pre-Standard
-   *  streams, which were not templates.
-   *
-   *  For ease of use and compatibility, all of the basic_* I/O-related
-   *  classes are given typedef names for both of the builtin character
-   *  widths (wide and narrow).  The typedefs are the same as the
-   *  pre-Standard names, for example:
-   *
-   *  @code
-   *     typedef basic_ifstream<char>  ifstream;
-   *  @endcode
-   *
-   *  Because properly forward-declaring these classes can be difficult, you
-   *  should not do it yourself.  Instead, include the &lt;iosfwd&gt;
-   *  header, which contains only declarations of all the I/O classes as
-   *  well as the typedefs.  Trying to forward-declare the typedefs
-   *  themselves (e.g., <code>class ostream;</code>) is not valid ISO C++.
-   *
-   *  For more specific declarations, see
-   *  http://gcc.gnu.org/onlinedocs/libstdc++/manual/bk01pt11ch24.html
-   *
-   *  @{
-  */
-  class ios_base;
-
-  template<typename _CharT, typename _Traits = char_traits<_CharT> >
-    class basic_ios;
-
-  template<typename _CharT, typename _Traits = char_traits<_CharT> >
-    class basic_streambuf;
-
-  template<typename _CharT, typename _Traits = char_traits<_CharT> >
-    class basic_istream;
-
-  template<typename _CharT, typename _Traits = char_traits<_CharT> >
-    class basic_ostream;
-
-  template<typename _CharT, typename _Traits = char_traits<_CharT> >
-    class basic_iostream;
-
-  template<typename _CharT, typename _Traits = char_traits<_CharT>,
-     typename _Alloc = allocator<_CharT> >
-    class basic_stringbuf;
-
-  template<typename _CharT, typename _Traits = char_traits<_CharT>,
-    typename _Alloc = allocator<_CharT> >
-    class basic_istringstream;
-
-  template<typename _CharT, typename _Traits = char_traits<_CharT>,
-    typename _Alloc = allocator<_CharT> >
-    class basic_ostringstream;
-
-  template<typename _CharT, typename _Traits = char_traits<_CharT>,
-    typename _Alloc = allocator<_CharT> >
-    class basic_stringstream;
-
-  template<typename _CharT, typename _Traits = char_traits<_CharT> >
-    class basic_filebuf;
-
-  template<typename _CharT, typename _Traits = char_traits<_CharT> >
-    class basic_ifstream;
-
-  template<typename _CharT, typename _Traits = char_traits<_CharT> >
-    class basic_ofstream;
-
-  template<typename _CharT, typename _Traits = char_traits<_CharT> >
-    class basic_fstream;
-
-  template<typename _CharT, typename _Traits = char_traits<_CharT> >
-    class istreambuf_iterator;
-
-  template<typename _CharT, typename _Traits = char_traits<_CharT> >
-    class ostreambuf_iterator;
-
-
-  /// Base class for @c char streams.
-  typedef basic_ios<char> ios;
-
-  /// Base class for @c char buffers.
-  typedef basic_streambuf<char> streambuf;
-
-  /// Base class for @c char input streams.
-  typedef basic_istream<char> istream;
-
-  /// Base class for @c char output streams.
-  typedef basic_ostream<char> ostream;
-
-  /// Base class for @c char mixed input and output streams.
-  typedef basic_iostream<char> iostream;
-
-  /// Class for @c char memory buffers.
-  typedef basic_stringbuf<char> stringbuf;
-
-  /// Class for @c char input memory streams.
-  typedef basic_istringstream<char> istringstream;
-
-  /// Class for @c char output memory streams.
-  typedef basic_ostringstream<char> ostringstream;
-
-  /// Class for @c char mixed input and output memory streams.
-  typedef basic_stringstream<char> stringstream;
-
-  /// Class for @c char file buffers.
-  typedef basic_filebuf<char> filebuf;
-
-  /// Class for @c char input file streams.
-  typedef basic_ifstream<char> ifstream;
-
-  /// Class for @c char output file streams.
-  typedef basic_ofstream<char> ofstream;
-
-  /// Class for @c char mixed input and output file streams.
-  typedef basic_fstream<char> fstream;
-
-
-  /// Base class for @c wchar_t streams.
-  typedef basic_ios<wchar_t> wios;
-
-  /// Base class for @c wchar_t buffers.
-  typedef basic_streambuf<wchar_t> wstreambuf;
-
-  /// Base class for @c wchar_t input streams.
-  typedef basic_istream<wchar_t> wistream;
-
-  /// Base class for @c wchar_t output streams.
-  typedef basic_ostream<wchar_t> wostream;
-
-  /// Base class for @c wchar_t mixed input and output streams.
-  typedef basic_iostream<wchar_t> wiostream;
-
-  /// Class for @c wchar_t memory buffers.
-  typedef basic_stringbuf<wchar_t> wstringbuf;
-
-  /// Class for @c wchar_t input memory streams.
-  typedef basic_istringstream<wchar_t> wistringstream;
-
-  /// Class for @c wchar_t output memory streams.
-  typedef basic_ostringstream<wchar_t> wostringstream;
-
-  /// Class for @c wchar_t mixed input and output memory streams.
-  typedef basic_stringstream<wchar_t> wstringstream;
-
-  /// Class for @c wchar_t file buffers.
-  typedef basic_filebuf<wchar_t> wfilebuf;
-
-  /// Class for @c wchar_t input file streams.
-  typedef basic_ifstream<wchar_t> wifstream;
-
-  /// Class for @c wchar_t output file streams.
-  typedef basic_ofstream<wchar_t> wofstream;
-
-  /// Class for @c wchar_t mixed input and output file streams.
-  typedef basic_fstream<wchar_t> wfstream;
-
-  /** @}  */
-
-
-} // namespace
-# 39 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ios" 2 3
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/exception" 1 3
-// Exception Handling support header for -*- C++ -*-
-
-// Copyright (C) 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003,
-// 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011
-// Free Software Foundation
-//
-// This file is part of GCC.
-//
-// GCC is free software; you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation; either version 3, or (at your option)
-// any later version.
-//
-// GCC is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-/** @file exception
- *  This is a Standard C++ Library header.
- */
-# 35 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/exception" 3
-
-#pragma GCC visibility push(default)
-
-
-
-extern "C++" {
-
-namespace std
-{
-  /**
-   * @defgroup exceptions Exceptions
-   * @ingroup diagnostics
-   *
-   * Classes and functions for reporting errors via exception classes.
-   * @{
-   */
-
-  /**
-   *  @brief Base class for all library exceptions.
-   *
-   *  This is the base class for all exceptions thrown by the standard
-   *  library, and by certain language expressions.  You are free to derive
-   *  your own %exception classes, or use a different hierarchy, or to
-   *  throw non-class data (e.g., fundamental types).
-   */
-  class exception
-  {
-  public:
-    exception() throw() { }
-    virtual ~exception() throw();
-
-    /** Returns a C-style character string describing the general cause
-     *  of the current error.  */
-    virtual const char* what() const throw();
-  };
-
-  /** If an %exception is thrown which is not listed in a function's
-   *  %exception specification, one of these may be thrown.  */
-  class bad_exception : public exception
-  {
-  public:
-    bad_exception() throw() { }
-
-    // This declaration is not useless:
-    // http://gcc.gnu.org/onlinedocs/gcc-3.0.2/gcc_6.html#SEC118
-    virtual ~bad_exception() throw();
-
-    // See comment in eh_exception.cc.
-    virtual const char* what() const throw();
-  };
-
-  /// If you write a replacement %terminate handler, it must be of this type.
-  typedef void (*terminate_handler) ();
-
-  /// If you write a replacement %unexpected handler, it must be of this type.
-  typedef void (*unexpected_handler) ();
-
-  /// Takes a new handler function as an argument, returns the old function.
-  terminate_handler set_terminate(terminate_handler) throw();
-
-  /** The runtime will call this function if %exception handling must be
-   *  abandoned for any reason.  It can also be called by the user.  */
-  void terminate() throw() __attribute__ ((__noreturn__));
-
-  /// Takes a new handler function as an argument, returns the old function.
-  unexpected_handler set_unexpected(unexpected_handler) throw();
-
-  /** The runtime will call this function if an %exception is thrown which
-   *  violates the function's %exception specification.  */
-  void unexpected() __attribute__ ((__noreturn__));
-
-  /** [18.6.4]/1:  'Returns true after completing evaluation of a
-   *  throw-expression until either completing initialization of the
-   *  exception-declaration in the matching handler or entering @c unexpected()
-   *  due to the throw; or after entering @c terminate() for any reason
-   *  other than an explicit call to @c terminate().  [Note: This includes
-   *  stack unwinding [15.2].  end note]'
-   *
-   *  2: 'When @c uncaught_exception() is true, throwing an
-   *  %exception can result in a call of @c terminate()
-   *  (15.5.1).'
-   */
-  bool uncaught_exception() throw() __attribute__ ((__pure__));
-
-  // @} group exceptions
-} // namespace std
-
-namespace __gnu_cxx
-{
-
-
-  /**
-   *  @brief A replacement for the standard terminate_handler which
-   *  prints more information about the terminating exception (if any)
-   *  on stderr.
-   *
-   *  @ingroup exceptions
-   *
-   *  Call
-   *   @code
-   *     std::set_terminate(__gnu_cxx::__verbose_terminate_handler)
-   *   @endcode
-   *  to use.  For more info, see
-   *  http://gcc.gnu.org/onlinedocs/libstdc++/manual/bk01pt02ch06s02.html
-   *
-   *  In 3.4 and later, this is on by default.
-   */
-  void __verbose_terminate_handler();
-
-
-} // namespace
-
-} // extern "C++"
-
-#pragma GCC visibility pop
-# 40 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ios" 2 3
+# 41 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/string" 2 3
 # 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/char_traits.h" 1 3
 // Character Traits for use by standard string and iostream -*- C++ -*-
 
@@ -11477,7 +10608,1189 @@ namespace std __attribute__ ((__visibility__ ("default")))
 // of getting the base algorithms. So, make sure that parallel bits
 // come in too if requested. 
 # 41 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/char_traits.h" 2 3
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/postypes.h" 1 3
+// Position types -*- C++ -*-
 
+// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005,
+// 2006, 2007, 2008, 2009, 2010
+// Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+/** @file bits/postypes.h
+ *  This is an internal header file, included by other library headers.
+ *  Do not attempt to use it directly. @headername{iosfwd}
+ */
+
+//
+// ISO C++ 14882: 27.4.1 - Types
+// ISO C++ 14882: 27.4.3 - Template class fpos
+//
+# 40 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/postypes.h" 3
+
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwchar" 1 3
+// -*- C++ -*- forwarding header.
+
+// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005,
+// 2006, 2007, 2008, 2009, 2010
+// Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+/** @file include/cwchar
+ *  This is a Standard C++ Library file.  You should @c \#include this file
+ *  in your programs, rather than any of the @a *.h implementation files.
+ *
+ *  This is the C++ version of the Standard C Library header @c wchar.h,
+ *  and its contents are (mostly) the same as that header, but are all
+ *  contained in the namespace @c std (except for names which are defined
+ *  as macros in C).
+ */
+
+//
+// ISO C++ 14882: 21.4
+//
+# 41 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwchar" 3
+
+
+
+
+# 1 "/usr/include/wchar.h" 1 3 4
+/* Copyright (C) 1995-2014 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   <http://www.gnu.org/licenses/>.  */
+
+/*
+ *      ISO C99 Standard: 7.24
+ *	Extended multibyte and wide character utilities	<wchar.h>
+ */
+# 31 "/usr/include/wchar.h" 3 4
+/* Get FILE definition.  */
+
+
+
+
+
+/* Get va_list definition.  */
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/wchar.h" 1 3 4
+/* wchar_t type related definitions.
+   Copyright (C) 2000-2014 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   <http://www.gnu.org/licenses/>.  */
+
+
+
+
+/* The fallback definitions, for when __WCHAR_MAX__ or __WCHAR_MIN__
+   are not defined, give the right value and type as long as both int
+   and wchar_t are 32-bit types.  Adding L'\0' to a constant value
+   ensures that the type is correct; it is necessary to use (L'\0' +
+   0) rather than just L'\0' so that the type in C++ is the promoted
+   version of wchar_t rather than the distinct wchar_t type itself.
+   Because wchar_t in preprocessor #if expressions is treated as
+   intmax_t or uintmax_t, the expression (L'\0' - 1) would have the
+   wrong value for WCHAR_MAX in such expressions and so cannot be used
+   to define __WCHAR_MAX in the unsigned case.  */
+# 42 "/usr/include/wchar.h" 2 3 4
+
+/* Get size_t, wchar_t, wint_t and NULL from <stddef.h>.  */
+# 52 "/usr/include/wchar.h" 3 4
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/clang/bin/../lib/clang/3.1/include/stddef.h" 1 3 4
+/*===---- stddef.h - Basic type definitions --------------------------------===
+ *
+ * Copyright (c) 2008 Eli Friedman
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ *===-----------------------------------------------------------------------===
+ */
+# 56 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/clang/bin/../lib/clang/3.1/include/stddef.h" 3 4
+/* Some C libraries expect to see a wint_t here. Others (notably MinGW) will use
+__WINT_TYPE__ directly; accommodate both by requiring __need_wint_t */
+
+
+
+typedef unsigned int wint_t;
+# 52 "/usr/include/wchar.h" 2 3 4
+
+/* We try to get wint_t from <stddef.h>, but not all GCC versions define it
+   there.  So define it ourselves if it remains undefined.  */
+# 63 "/usr/include/wchar.h" 3 4
+/* Work around problems with the <stddef.h> file which doesn't put
+   wint_t in the std namespace.  */
+# 73 "/usr/include/wchar.h" 3 4
+/* Tell the caller that we provide correct C++ prototypes.  */
+# 99 "/usr/include/wchar.h" 3 4
+/* The rest of the file is only used if used if __need_mbstate_t is not
+   defined.  */
+
+
+
+
+/* Public type.  */
+typedef __mbstate_t mbstate_t;
+# 116 "/usr/include/wchar.h" 3 4
+/* These constants might also be defined in <inttypes.h>.  */
+# 125 "/usr/include/wchar.h" 3 4
+/* For XPG4 compliance we have to define the stuff from <wctype.h> here
+   as well.  */
+
+
+
+
+
+extern "C" {
+
+
+/* This incomplete type is defined in <time.h> but needed here because
+   of `wcsftime'.  */
+struct tm;
+
+/* XXX We have to clean this up at some point.  Since tm is in the std
+   namespace but wcsftime is in __c99 the type wouldn't be found
+   without inserting it in the global namespace.  */
+
+
+
+
+/* Copy SRC to DEST.  */
+extern wchar_t *wcscpy (wchar_t *__restrict __dest,
+   const wchar_t *__restrict __src) throw ();
+/* Copy no more than N wide-characters of SRC to DEST.  */
+extern wchar_t *wcsncpy (wchar_t *__restrict __dest,
+    const wchar_t *__restrict __src, size_t __n)
+     throw ();
+
+/* Append SRC onto DEST.  */
+extern wchar_t *wcscat (wchar_t *__restrict __dest,
+   const wchar_t *__restrict __src) throw ();
+/* Append no more than N wide-characters of SRC onto DEST.  */
+extern wchar_t *wcsncat (wchar_t *__restrict __dest,
+    const wchar_t *__restrict __src, size_t __n)
+     throw ();
+
+/* Compare S1 and S2.  */
+extern int wcscmp (const wchar_t *__s1, const wchar_t *__s2)
+     throw () __attribute__ ((__pure__));
+/* Compare N wide-characters of S1 and S2.  */
+extern int wcsncmp (const wchar_t *__s1, const wchar_t *__s2, size_t __n)
+     throw () __attribute__ ((__pure__));
+
+
+
+/* Compare S1 and S2, ignoring case.  */
+extern int wcscasecmp (const wchar_t *__s1, const wchar_t *__s2) throw ();
+
+/* Compare no more than N chars of S1 and S2, ignoring case.  */
+extern int wcsncasecmp (const wchar_t *__s1, const wchar_t *__s2,
+   size_t __n) throw ();
+
+/* Similar to the two functions above but take the information from
+   the provided locale and not the global locale.  */
+
+
+extern int wcscasecmp_l (const wchar_t *__s1, const wchar_t *__s2,
+    __locale_t __loc) throw ();
+
+extern int wcsncasecmp_l (const wchar_t *__s1, const wchar_t *__s2,
+     size_t __n, __locale_t __loc) throw ();
+
+
+
+/* Compare S1 and S2, both interpreted as appropriate to the
+   LC_COLLATE category of the current locale.  */
+extern int wcscoll (const wchar_t *__s1, const wchar_t *__s2) throw ();
+/* Transform S2 into array pointed to by S1 such that if wcscmp is
+   applied to two transformed strings the result is the as applying
+   `wcscoll' to the original strings.  */
+extern size_t wcsxfrm (wchar_t *__restrict __s1,
+         const wchar_t *__restrict __s2, size_t __n) throw ();
+
+
+
+/* Similar to the two functions above but take the information from
+   the provided locale and not the global locale.  */
+
+/* Compare S1 and S2, both interpreted as appropriate to the
+   LC_COLLATE category of the given locale.  */
+extern int wcscoll_l (const wchar_t *__s1, const wchar_t *__s2,
+        __locale_t __loc) throw ();
+
+/* Transform S2 into array pointed to by S1 such that if wcscmp is
+   applied to two transformed strings the result is the as applying
+   `wcscoll' to the original strings.  */
+extern size_t wcsxfrm_l (wchar_t *__s1, const wchar_t *__s2,
+    size_t __n, __locale_t __loc) throw ();
+
+/* Duplicate S, returning an identical malloc'd string.  */
+extern wchar_t *wcsdup (const wchar_t *__s) throw () __attribute__ ((__malloc__));
+
+
+
+/* Find the first occurrence of WC in WCS.  */
+
+
+
+
+
+
+extern wchar_t *wcschr (const wchar_t *__wcs, wchar_t __wc)
+     throw () __attribute__ ((__pure__));
+
+/* Find the last occurrence of WC in WCS.  */
+
+
+
+
+
+
+extern wchar_t *wcsrchr (const wchar_t *__wcs, wchar_t __wc)
+     throw () __attribute__ ((__pure__));
+
+
+
+
+/* This function is similar to `wcschr'.  But it returns a pointer to
+   the closing NUL wide character in case C is not found in S.  */
+extern wchar_t *wcschrnul (const wchar_t *__s, wchar_t __wc)
+     throw () __attribute__ ((__pure__));
+
+
+
+/* Return the length of the initial segmet of WCS which
+   consists entirely of wide characters not in REJECT.  */
+extern size_t wcscspn (const wchar_t *__wcs, const wchar_t *__reject)
+     throw () __attribute__ ((__pure__));
+/* Return the length of the initial segmet of WCS which
+   consists entirely of wide characters in  ACCEPT.  */
+extern size_t wcsspn (const wchar_t *__wcs, const wchar_t *__accept)
+     throw () __attribute__ ((__pure__));
+/* Find the first occurrence in WCS of any character in ACCEPT.  */
+
+
+
+
+
+
+
+extern wchar_t *wcspbrk (const wchar_t *__wcs, const wchar_t *__accept)
+     throw () __attribute__ ((__pure__));
+
+/* Find the first occurrence of NEEDLE in HAYSTACK.  */
+
+
+
+
+
+
+
+extern wchar_t *wcsstr (const wchar_t *__haystack, const wchar_t *__needle)
+     throw () __attribute__ ((__pure__));
+
+
+/* Divide WCS into tokens separated by characters in DELIM.  */
+extern wchar_t *wcstok (wchar_t *__restrict __s,
+   const wchar_t *__restrict __delim,
+   wchar_t **__restrict __ptr) throw ();
+
+/* Return the number of wide characters in S.  */
+extern size_t wcslen (const wchar_t *__s) throw () __attribute__ ((__pure__));
+
+
+
+/* Another name for `wcsstr' from XPG4.  */
+
+
+
+
+
+
+
+extern wchar_t *wcswcs (const wchar_t *__haystack, const wchar_t *__needle)
+     throw () __attribute__ ((__pure__));
+
+
+
+
+/* Return the number of wide characters in S, but at most MAXLEN.  */
+extern size_t wcsnlen (const wchar_t *__s, size_t __maxlen)
+     throw () __attribute__ ((__pure__));
+
+
+
+
+/* Search N wide characters of S for C.  */
+
+
+
+
+
+
+
+extern wchar_t *wmemchr (const wchar_t *__s, wchar_t __c, size_t __n)
+     throw () __attribute__ ((__pure__));
+
+
+/* Compare N wide characters of S1 and S2.  */
+extern int wmemcmp (const wchar_t *__s1, const wchar_t *__s2, size_t __n)
+     throw () __attribute__ ((__pure__));
+
+/* Copy N wide characters of SRC to DEST.  */
+extern wchar_t *wmemcpy (wchar_t *__restrict __s1,
+    const wchar_t *__restrict __s2, size_t __n) throw ();
+
+/* Copy N wide characters of SRC to DEST, guaranteeing
+   correct behavior for overlapping strings.  */
+extern wchar_t *wmemmove (wchar_t *__s1, const wchar_t *__s2, size_t __n)
+     throw ();
+
+/* Set N wide characters of S to C.  */
+extern wchar_t *wmemset (wchar_t *__s, wchar_t __c, size_t __n) throw ();
+
+
+
+/* Copy N wide characters of SRC to DEST and return pointer to following
+   wide character.  */
+extern wchar_t *wmempcpy (wchar_t *__restrict __s1,
+     const wchar_t *__restrict __s2, size_t __n)
+     throw ();
+
+
+
+
+/* Determine whether C constitutes a valid (one-byte) multibyte
+   character.  */
+extern wint_t btowc (int __c) throw ();
+
+/* Determine whether C corresponds to a member of the extended
+   character set whose multibyte representation is a single byte.  */
+extern int wctob (wint_t __c) throw ();
+
+/* Determine whether PS points to an object representing the initial
+   state.  */
+extern int mbsinit (const mbstate_t *__ps) throw () __attribute__ ((__pure__));
+
+/* Write wide character representation of multibyte character pointed
+   to by S to PWC.  */
+extern size_t mbrtowc (wchar_t *__restrict __pwc,
+         const char *__restrict __s, size_t __n,
+         mbstate_t *__restrict __p) throw ();
+
+/* Write multibyte representation of wide character WC to S.  */
+extern size_t wcrtomb (char *__restrict __s, wchar_t __wc,
+         mbstate_t *__restrict __ps) throw ();
+
+/* Return number of bytes in multibyte character pointed to by S.  */
+extern size_t __mbrlen (const char *__restrict __s, size_t __n,
+   mbstate_t *__restrict __ps) throw ();
+extern size_t mbrlen (const char *__restrict __s, size_t __n,
+        mbstate_t *__restrict __ps) throw ();
+# 406 "/usr/include/wchar.h" 3 4
+/* Write wide character representation of multibyte character string
+   SRC to DST.  */
+extern size_t mbsrtowcs (wchar_t *__restrict __dst,
+    const char **__restrict __src, size_t __len,
+    mbstate_t *__restrict __ps) throw ();
+
+/* Write multibyte character representation of wide character string
+   SRC to DST.  */
+extern size_t wcsrtombs (char *__restrict __dst,
+    const wchar_t **__restrict __src, size_t __len,
+    mbstate_t *__restrict __ps) throw ();
+
+
+
+
+/* Write wide character representation of at most NMC bytes of the
+   multibyte character string SRC to DST.  */
+extern size_t mbsnrtowcs (wchar_t *__restrict __dst,
+     const char **__restrict __src, size_t __nmc,
+     size_t __len, mbstate_t *__restrict __ps) throw ();
+
+/* Write multibyte character representation of at most NWC characters
+   from the wide character string SRC to DST.  */
+extern size_t wcsnrtombs (char *__restrict __dst,
+     const wchar_t **__restrict __src,
+     size_t __nwc, size_t __len,
+     mbstate_t *__restrict __ps) throw ();
+
+
+
+/* The following functions are extensions found in X/Open CAE.  */
+
+/* Determine number of column positions required for C.  */
+extern int wcwidth (wchar_t __c) throw ();
+
+/* Determine number of column positions required for first N wide
+   characters (or fewer if S ends before this) in S.  */
+extern int wcswidth (const wchar_t *__s, size_t __n) throw ();
+
+
+
+
+/* Convert initial portion of the wide string NPTR to `double'
+   representation.  */
+extern double wcstod (const wchar_t *__restrict __nptr,
+        wchar_t **__restrict __endptr) throw ();
+
+
+
+
+/* Likewise for `float' and `long double' sizes of floating-point numbers.  */
+extern float wcstof (const wchar_t *__restrict __nptr,
+       wchar_t **__restrict __endptr) throw ();
+extern long double wcstold (const wchar_t *__restrict __nptr,
+       wchar_t **__restrict __endptr) throw ();
+
+
+
+
+
+/* Convert initial portion of wide string NPTR to `long int'
+   representation.  */
+extern long int wcstol (const wchar_t *__restrict __nptr,
+   wchar_t **__restrict __endptr, int __base) throw ();
+
+/* Convert initial portion of wide string NPTR to `unsigned long int'
+   representation.  */
+extern unsigned long int wcstoul (const wchar_t *__restrict __nptr,
+      wchar_t **__restrict __endptr, int __base)
+     throw ();
+
+
+
+
+/* Convert initial portion of wide string NPTR to `long long int'
+   representation.  */
+__extension__
+extern long long int wcstoll (const wchar_t *__restrict __nptr,
+         wchar_t **__restrict __endptr, int __base)
+     throw ();
+
+/* Convert initial portion of wide string NPTR to `unsigned long long int'
+   representation.  */
+__extension__
+extern unsigned long long int wcstoull (const wchar_t *__restrict __nptr,
+     wchar_t **__restrict __endptr,
+     int __base) throw ();
+
+
+
+
+/* Convert initial portion of wide string NPTR to `long long int'
+   representation.  */
+__extension__
+extern long long int wcstoq (const wchar_t *__restrict __nptr,
+        wchar_t **__restrict __endptr, int __base)
+     throw ();
+
+/* Convert initial portion of wide string NPTR to `unsigned long long int'
+   representation.  */
+__extension__
+extern unsigned long long int wcstouq (const wchar_t *__restrict __nptr,
+           wchar_t **__restrict __endptr,
+           int __base) throw ();
+
+
+
+/* The concept of one static locale per category is not very well
+   thought out.  Many applications will need to process its data using
+   information from several different locales.  Another application is
+   the implementation of the internationalization handling in the
+   upcoming ISO C++ standard library.  To support this another set of
+   the functions using locale data exist which have an additional
+   argument.
+
+   Attention: all these functions are *not* standardized in any form.
+   This is a proof-of-concept implementation.  */
+
+/* Structure for reentrant locale using functions.  This is an
+   (almost) opaque type for the user level programs.  */
+
+
+/* Special versions of the functions above which take the locale to
+   use as an additional parameter.  */
+extern long int wcstol_l (const wchar_t *__restrict __nptr,
+     wchar_t **__restrict __endptr, int __base,
+     __locale_t __loc) throw ();
+
+extern unsigned long int wcstoul_l (const wchar_t *__restrict __nptr,
+        wchar_t **__restrict __endptr,
+        int __base, __locale_t __loc) throw ();
+
+__extension__
+extern long long int wcstoll_l (const wchar_t *__restrict __nptr,
+    wchar_t **__restrict __endptr,
+    int __base, __locale_t __loc) throw ();
+
+__extension__
+extern unsigned long long int wcstoull_l (const wchar_t *__restrict __nptr,
+       wchar_t **__restrict __endptr,
+       int __base, __locale_t __loc)
+     throw ();
+
+extern double wcstod_l (const wchar_t *__restrict __nptr,
+   wchar_t **__restrict __endptr, __locale_t __loc)
+     throw ();
+
+extern float wcstof_l (const wchar_t *__restrict __nptr,
+         wchar_t **__restrict __endptr, __locale_t __loc)
+     throw ();
+
+extern long double wcstold_l (const wchar_t *__restrict __nptr,
+         wchar_t **__restrict __endptr,
+         __locale_t __loc) throw ();
+
+
+
+
+/* Copy SRC to DEST, returning the address of the terminating L'\0' in
+   DEST.  */
+extern wchar_t *wcpcpy (wchar_t *__restrict __dest,
+   const wchar_t *__restrict __src) throw ();
+
+/* Copy no more than N characters of SRC to DEST, returning the address of
+   the last character written into DEST.  */
+extern wchar_t *wcpncpy (wchar_t *__restrict __dest,
+    const wchar_t *__restrict __src, size_t __n)
+     throw ();
+
+
+/* Wide character I/O functions.  */
+
+/* Like OPEN_MEMSTREAM, but the stream is wide oriented and produces
+   a wide character string.  */
+extern __FILE *open_wmemstream (wchar_t **__bufloc, size_t *__sizeloc) throw ();
+
+
+
+
+
+/* Select orientation for stream.  */
+extern int fwide (__FILE *__fp, int __mode) throw ();
+
+
+/* Write formatted output to STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */
+extern int fwprintf (__FILE *__restrict __stream,
+       const wchar_t *__restrict __format, ...)
+     /* __attribute__ ((__format__ (__wprintf__, 2, 3))) */;
+/* Write formatted output to stdout.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */
+extern int wprintf (const wchar_t *__restrict __format, ...)
+     /* __attribute__ ((__format__ (__wprintf__, 1, 2))) */;
+/* Write formatted output of at most N characters to S.  */
+extern int swprintf (wchar_t *__restrict __s, size_t __n,
+       const wchar_t *__restrict __format, ...)
+     throw () /* __attribute__ ((__format__ (__wprintf__, 3, 4))) */;
+
+/* Write formatted output to S from argument list ARG.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */
+extern int vfwprintf (__FILE *__restrict __s,
+        const wchar_t *__restrict __format,
+        __gnuc_va_list __arg)
+     /* __attribute__ ((__format__ (__wprintf__, 2, 0))) */;
+/* Write formatted output to stdout from argument list ARG.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */
+extern int vwprintf (const wchar_t *__restrict __format,
+       __gnuc_va_list __arg)
+     /* __attribute__ ((__format__ (__wprintf__, 1, 0))) */;
+/* Write formatted output of at most N character to S from argument
+   list ARG.  */
+extern int vswprintf (wchar_t *__restrict __s, size_t __n,
+        const wchar_t *__restrict __format,
+        __gnuc_va_list __arg)
+     throw () /* __attribute__ ((__format__ (__wprintf__, 3, 0))) */;
+
+
+/* Read formatted input from STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */
+extern int fwscanf (__FILE *__restrict __stream,
+      const wchar_t *__restrict __format, ...)
+     /* __attribute__ ((__format__ (__wscanf__, 2, 3))) */;
+/* Read formatted input from stdin.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */
+extern int wscanf (const wchar_t *__restrict __format, ...)
+     /* __attribute__ ((__format__ (__wscanf__, 1, 2))) */;
+/* Read formatted input from S.  */
+extern int swscanf (const wchar_t *__restrict __s,
+      const wchar_t *__restrict __format, ...)
+     throw () /* __attribute__ ((__format__ (__wscanf__, 2, 3))) */;
+# 685 "/usr/include/wchar.h" 3 4
+/* Read formatted input from S into argument list ARG.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */
+extern int vfwscanf (__FILE *__restrict __s,
+       const wchar_t *__restrict __format,
+       __gnuc_va_list __arg)
+     /* __attribute__ ((__format__ (__wscanf__, 2, 0))) */;
+/* Read formatted input from stdin into argument list ARG.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */
+extern int vwscanf (const wchar_t *__restrict __format,
+      __gnuc_va_list __arg)
+     /* __attribute__ ((__format__ (__wscanf__, 1, 0))) */;
+/* Read formatted input from S into argument list ARG.  */
+extern int vswscanf (const wchar_t *__restrict __s,
+       const wchar_t *__restrict __format,
+       __gnuc_va_list __arg)
+     throw () /* __attribute__ ((__format__ (__wscanf__, 2, 0))) */;
+# 741 "/usr/include/wchar.h" 3 4
+/* Read a character from STREAM.
+
+   These functions are possible cancellation points and therefore not
+   marked with __THROW.  */
+extern wint_t fgetwc (__FILE *__stream);
+extern wint_t getwc (__FILE *__stream);
+
+/* Read a character from stdin.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */
+extern wint_t getwchar (void);
+
+
+/* Write a character to STREAM.
+
+   These functions are possible cancellation points and therefore not
+   marked with __THROW.  */
+extern wint_t fputwc (wchar_t __wc, __FILE *__stream);
+extern wint_t putwc (wchar_t __wc, __FILE *__stream);
+
+/* Write a character to stdout.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */
+extern wint_t putwchar (wchar_t __wc);
+
+
+/* Get a newline-terminated wide character string of finite length
+   from STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */
+extern wchar_t *fgetws (wchar_t *__restrict __ws, int __n,
+   __FILE *__restrict __stream);
+
+/* Write a string to STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */
+extern int fputws (const wchar_t *__restrict __ws,
+     __FILE *__restrict __stream);
+
+
+/* Push a character back onto the input buffer of STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */
+extern wint_t ungetwc (wint_t __wc, __FILE *__stream);
+
+
+
+
+/* These are defined to be equivalent to the `char' functions defined
+   in POSIX.1:1996.
+
+   These functions are not part of POSIX and therefore no official
+   cancellation point.  But due to similarity with an POSIX interface
+   or due to the implementation they are cancellation points and
+   therefore not marked with __THROW.  */
+extern wint_t getwc_unlocked (__FILE *__stream);
+extern wint_t getwchar_unlocked (void);
+
+/* This is the wide character version of a GNU extension.
+
+   This function is not part of POSIX and therefore no official
+   cancellation point.  But due to similarity with an POSIX interface
+   or due to the implementation it is a cancellation point and
+   therefore not marked with __THROW.  */
+extern wint_t fgetwc_unlocked (__FILE *__stream);
+
+/* Faster version when locking is not necessary.
+
+   This function is not part of POSIX and therefore no official
+   cancellation point.  But due to similarity with an POSIX interface
+   or due to the implementation it is a cancellation point and
+   therefore not marked with __THROW.  */
+extern wint_t fputwc_unlocked (wchar_t __wc, __FILE *__stream);
+
+/* These are defined to be equivalent to the `char' functions defined
+   in POSIX.1:1996.
+
+   These functions are not part of POSIX and therefore no official
+   cancellation point.  But due to similarity with an POSIX interface
+   or due to the implementation they are cancellation points and
+   therefore not marked with __THROW.  */
+extern wint_t putwc_unlocked (wchar_t __wc, __FILE *__stream);
+extern wint_t putwchar_unlocked (wchar_t __wc);
+
+
+/* This function does the same as `fgetws' but does not lock the stream.
+
+   This function is not part of POSIX and therefore no official
+   cancellation point.  But due to similarity with an POSIX interface
+   or due to the implementation it is a cancellation point and
+   therefore not marked with __THROW.  */
+extern wchar_t *fgetws_unlocked (wchar_t *__restrict __ws, int __n,
+     __FILE *__restrict __stream);
+
+/* This function does the same as `fputws' but does not lock the stream.
+
+   This function is not part of POSIX and therefore no official
+   cancellation point.  But due to similarity with an POSIX interface
+   or due to the implementation it is a cancellation point and
+   therefore not marked with __THROW.  */
+extern int fputws_unlocked (const wchar_t *__restrict __ws,
+       __FILE *__restrict __stream);
+
+
+
+
+/* Format TP into S according to FORMAT.
+   Write no more than MAXSIZE wide characters and return the number
+   of wide characters written, or 0 if it would exceed MAXSIZE.  */
+extern size_t wcsftime (wchar_t *__restrict __s, size_t __maxsize,
+   const wchar_t *__restrict __format,
+   const struct tm *__restrict __tp) throw ();
+
+
+
+
+
+/* Similar to `wcsftime' but takes the information from
+   the provided locale and not the global locale.  */
+extern size_t wcsftime_l (wchar_t *__restrict __s, size_t __maxsize,
+     const wchar_t *__restrict __format,
+     const struct tm *__restrict __tp,
+     __locale_t __loc) throw ();
+
+
+/* The X/Open standard demands that most of the functions defined in
+   the <wctype.h> header must also appear here.  This is probably
+   because some X/Open members wrote their implementation before the
+   ISO C standard was published and introduced the better solution.
+   We have to provide these definitions for compliance reasons but we
+   do this nonsense only if really necessary.  */
+
+
+
+
+
+/* Define some macros helping to catch buffer overflows.  */
+# 891 "/usr/include/wchar.h" 3 4
+}
+
+
+
+
+
+/* Undefine all __need_* constants in case we are included to get those
+   constants but the whole file was already read.  */
+# 46 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwchar" 2 3
+
+
+
+
+
+// Need to do a bit of trickery here with mbstate_t as char_traits
+// assumes it is in wchar.h, regardless of wchar_t specializations.
+# 63 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwchar" 3
+namespace std
+{
+  using ::mbstate_t;
+} // namespace std
+
+// Get rid of those macros defined in <wchar.h> in lieu of real functions.
+# 136 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwchar" 3
+namespace std __attribute__ ((__visibility__ ("default")))
+{
+
+
+  using ::wint_t;
+
+  using ::btowc;
+  using ::fgetwc;
+  using ::fgetws;
+  using ::fputwc;
+  using ::fputws;
+  using ::fwide;
+  using ::fwprintf;
+  using ::fwscanf;
+  using ::getwc;
+  using ::getwchar;
+  using ::mbrlen;
+  using ::mbrtowc;
+  using ::mbsinit;
+  using ::mbsrtowcs;
+  using ::putwc;
+  using ::putwchar;
+
+  using ::swprintf;
+
+  using ::swscanf;
+  using ::ungetwc;
+  using ::vfwprintf;
+
+  using ::vfwscanf;
+
+
+  using ::vswprintf;
+
+
+  using ::vswscanf;
+
+  using ::vwprintf;
+
+  using ::vwscanf;
+
+  using ::wcrtomb;
+  using ::wcscat;
+  using ::wcscmp;
+  using ::wcscoll;
+  using ::wcscpy;
+  using ::wcscspn;
+  using ::wcsftime;
+  using ::wcslen;
+  using ::wcsncat;
+  using ::wcsncmp;
+  using ::wcsncpy;
+  using ::wcsrtombs;
+  using ::wcsspn;
+  using ::wcstod;
+
+  using ::wcstof;
+
+  using ::wcstok;
+  using ::wcstol;
+  using ::wcstoul;
+  using ::wcsxfrm;
+  using ::wctob;
+  using ::wmemcmp;
+  using ::wmemcpy;
+  using ::wmemmove;
+  using ::wmemset;
+  using ::wprintf;
+  using ::wscanf;
+  using ::wcschr;
+  using ::wcspbrk;
+  using ::wcsrchr;
+  using ::wcsstr;
+  using ::wmemchr;
+
+
+  inline wchar_t*
+  wcschr(wchar_t* __p, wchar_t __c)
+  { return wcschr(const_cast<const wchar_t*>(__p), __c); }
+
+  inline wchar_t*
+  wcspbrk(wchar_t* __s1, const wchar_t* __s2)
+  { return wcspbrk(const_cast<const wchar_t*>(__s1), __s2); }
+
+  inline wchar_t*
+  wcsrchr(wchar_t* __p, wchar_t __c)
+  { return wcsrchr(const_cast<const wchar_t*>(__p), __c); }
+
+  inline wchar_t*
+  wcsstr(wchar_t* __s1, const wchar_t* __s2)
+  { return wcsstr(const_cast<const wchar_t*>(__s1), __s2); }
+
+  inline wchar_t*
+  wmemchr(wchar_t* __p, wchar_t __c, size_t __n)
+  { return wmemchr(const_cast<const wchar_t*>(__p), __c, __n); }
+
+
+
+} // namespace
+
+
+
+
+
+
+
+namespace __gnu_cxx
+{
+
+
+
+
+
+  using ::wcstold;
+# 258 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwchar" 3
+ using ::wcstoll;
+  using ::wcstoull;
+
+} // namespace __gnu_cxx
+
+namespace std
+{
+  using ::__gnu_cxx::wcstold;
+  using ::__gnu_cxx::wcstoll;
+  using ::__gnu_cxx::wcstoull;
+} // namespace
+# 42 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/postypes.h" 2 3
+
+// XXX If <stdint.h> is really needed, make sure to define the macros
+// before including it, in order not to break <tr1/cstdint> (and <cstdint>
+// in C++0x).  Reconsider all this as soon as possible...
+# 69 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/postypes.h" 3
+namespace std __attribute__ ((__visibility__ ("default")))
+{
+
+
+  // The types streamoff, streampos and wstreampos and the class
+  // template fpos<> are described in clauses 21.1.2, 21.1.3, 27.1.2,
+  // 27.2, 27.4.1, 27.4.3 and D.6. Despite all this verbiage, the
+  // behaviour of these types is mostly implementation defined or
+  // unspecified. The behaviour in this implementation is as noted
+  // below.
+
+  /**
+   *  @brief  Type used by fpos, char_traits<char>, and char_traits<wchar_t>.
+   *
+   *  In clauses 21.1.3.1 and 27.4.1 streamoff is described as an
+   *  implementation defined type.
+   *  Note: In versions of GCC up to and including GCC 3.3, streamoff
+   *  was typedef long.
+  */
+
+  typedef long streamoff;
+# 98 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/postypes.h" 3
+ /// Integral type for I/O operation counts and buffer sizes.
+  typedef ptrdiff_t streamsize; // Signed integral type
+
+  /**
+   *  @brief  Class representing stream positions.
+   *
+   *  The standard places no requirements upon the template parameter StateT.
+   *  In this implementation StateT must be DefaultConstructible,
+   *  CopyConstructible and Assignable.  The standard only requires that fpos
+   *  should contain a member of type StateT. In this implementation it also
+   *  contains an offset stored as a signed integer.
+   *
+   *  @param  StateT  Type passed to and returned from state().
+   */
+  template<typename _StateT>
+    class fpos
+    {
+    private:
+      streamoff _M_off;
+      _StateT _M_state;
+
+    public:
+      // The standard doesn't require that fpos objects can be default
+      // constructed. This implementation provides a default
+      // constructor that initializes the offset to 0 and default
+      // constructs the state.
+      fpos()
+      : _M_off(0), _M_state() { }
+
+      // The standard requires that fpos objects can be constructed
+      // from streamoff objects using the constructor syntax, and
+      // fails to give any meaningful semantics. In this
+      // implementation implicit conversion is also allowed, and this
+      // constructor stores the streamoff as the offset and default
+      // constructs the state.
+      /// Construct position from offset.
+      fpos(streamoff __off)
+      : _M_off(__off), _M_state() { }
+
+      /// Convert to streamoff.
+      operator streamoff() const { return _M_off; }
+
+      /// Remember the value of @a st.
+      void
+      state(_StateT __st)
+      { _M_state = __st; }
+
+      /// Return the last set value of @a st.
+      _StateT
+      state() const
+      { return _M_state; }
+
+      // The standard requires that this operator must be defined, but
+      // gives no semantics. In this implementation it just adds its
+      // argument to the stored offset and returns *this.
+      /// Add offset to this position.
+      fpos&
+      operator+=(streamoff __off)
+      {
+ _M_off += __off;
+ return *this;
+      }
+
+      // The standard requires that this operator must be defined, but
+      // gives no semantics. In this implementation it just subtracts
+      // its argument from the stored offset and returns *this.
+      /// Subtract offset from this position.
+      fpos&
+      operator-=(streamoff __off)
+      {
+ _M_off -= __off;
+ return *this;
+      }
+
+      // The standard requires that this operator must be defined, but
+      // defines its semantics only in terms of operator-. In this
+      // implementation it constructs a copy of *this, adds the
+      // argument to that copy using operator+= and then returns the
+      // copy.
+      /// Add position and offset.
+      fpos
+      operator+(streamoff __off) const
+      {
+ fpos __pos(*this);
+ __pos += __off;
+ return __pos;
+      }
+
+      // The standard requires that this operator must be defined, but
+      // defines its semantics only in terms of operator+. In this
+      // implementation it constructs a copy of *this, subtracts the
+      // argument from that copy using operator-= and then returns the
+      // copy.
+      /// Subtract offset from position.
+      fpos
+      operator-(streamoff __off) const
+      {
+ fpos __pos(*this);
+ __pos -= __off;
+ return __pos;
+      }
+
+      // The standard requires that this operator must be defined, but
+      // defines its semantics only in terms of operator+. In this
+      // implementation it returns the difference between the offset
+      // stored in *this and in the argument.
+      /// Subtract position to return offset.
+      streamoff
+      operator-(const fpos& __other) const
+      { return _M_off - __other._M_off; }
+    };
+
+  // The standard only requires that operator== must be an
+  // equivalence relation. In this implementation two fpos<StateT>
+  // objects belong to the same equivalence class if the contained
+  // offsets compare equal.
+  /// Test if equivalent to another position.
+  template<typename _StateT>
+    inline bool
+    operator==(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+    { return streamoff(__lhs) == streamoff(__rhs); }
+
+  template<typename _StateT>
+    inline bool
+    operator!=(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+    { return streamoff(__lhs) != streamoff(__rhs); }
+
+  // Clauses 21.1.3.1 and 21.1.3.2 describe streampos and wstreampos
+  // as implementation defined types, but clause 27.2 requires that
+  // they must both be typedefs for fpos<mbstate_t>
+  /// File position for char streams.
+  typedef fpos<mbstate_t> streampos;
+  /// File position for wchar_t streams.
+  typedef fpos<mbstate_t> wstreampos;
+# 241 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/postypes.h" 3
+} // namespace
+# 42 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/char_traits.h" 2 3
 # 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwchar" 1 3
 // -*- C++ -*- forwarding header.
 
@@ -11880,7 +12193,617 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 } // namespace
-# 41 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ios" 2 3
+# 42 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/string" 2 3
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/allocator.h" 1 3
+// Allocators -*- C++ -*-
+
+// Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010,
+// 2011 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+/*
+ * Copyright (c) 1996-1997
+ * Silicon Graphics Computer Systems, Inc.
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Silicon Graphics makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ */
+
+/** @file bits/allocator.h
+ *  This is an internal header file, included by other library headers.
+ *  Do not attempt to use it directly. @headername{memory}
+ */
+
+
+
+
+// Define the base class to std::allocator.
+
+
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/x86_64-unknown-linux-gnu/bits/c++allocator.h" 1 3
+// Base to std::allocator -*- C++ -*-
+
+// Copyright (C) 2004, 2005, 2009, 2010 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+/** @file bits/c++allocator.h
+ *  This is an internal header file, included by other library headers.
+ *  Do not attempt to use it directly. @headername{memory}
+ */
+
+
+
+
+// Define new_allocator as the base class to std::allocator.
+
+
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ext/new_allocator.h" 1 3
+// Allocator that wraps operator new -*- C++ -*-
+
+// Copyright (C) 2001, 2002, 2003, 2004, 2005, 2009, 2010
+// Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+/** @file ext/new_allocator.h
+ *  This file is a GNU extension to the Standard C++ Library.
+ */
+
+
+
+
+
+
+
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/new" 1 3
+// The -*- C++ -*- dynamic memory management header.
+
+// Copyright (C) 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002,
+// 2003, 2004, 2005, 2006, 2007, 2009, 2010
+// Free Software Foundation
+
+// This file is part of GCC.
+//
+// GCC is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3, or (at your option)
+// any later version.
+// 
+// GCC is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+/** @file new
+ *  This is a Standard C++ Library header.
+ *
+ *  The header @c new defines several functions to manage dynamic memory and
+ *  handling memory allocation errors; see
+ *  http://gcc.gnu.org/onlinedocs/libstdc++/18_support/howto.html#4 for more.
+ */
+# 39 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/new" 3
+
+
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/exception" 1 3
+// Exception Handling support header for -*- C++ -*-
+
+// Copyright (C) 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003,
+// 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011
+// Free Software Foundation
+//
+// This file is part of GCC.
+//
+// GCC is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3, or (at your option)
+// any later version.
+//
+// GCC is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+/** @file exception
+ *  This is a Standard C++ Library header.
+ */
+# 35 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/exception" 3
+
+#pragma GCC visibility push(default)
+
+
+
+extern "C++" {
+
+namespace std
+{
+  /**
+   * @defgroup exceptions Exceptions
+   * @ingroup diagnostics
+   *
+   * Classes and functions for reporting errors via exception classes.
+   * @{
+   */
+
+  /**
+   *  @brief Base class for all library exceptions.
+   *
+   *  This is the base class for all exceptions thrown by the standard
+   *  library, and by certain language expressions.  You are free to derive
+   *  your own %exception classes, or use a different hierarchy, or to
+   *  throw non-class data (e.g., fundamental types).
+   */
+  class exception
+  {
+  public:
+    exception() throw() { }
+    virtual ~exception() throw();
+
+    /** Returns a C-style character string describing the general cause
+     *  of the current error.  */
+    virtual const char* what() const throw();
+  };
+
+  /** If an %exception is thrown which is not listed in a function's
+   *  %exception specification, one of these may be thrown.  */
+  class bad_exception : public exception
+  {
+  public:
+    bad_exception() throw() { }
+
+    // This declaration is not useless:
+    // http://gcc.gnu.org/onlinedocs/gcc-3.0.2/gcc_6.html#SEC118
+    virtual ~bad_exception() throw();
+
+    // See comment in eh_exception.cc.
+    virtual const char* what() const throw();
+  };
+
+  /// If you write a replacement %terminate handler, it must be of this type.
+  typedef void (*terminate_handler) ();
+
+  /// If you write a replacement %unexpected handler, it must be of this type.
+  typedef void (*unexpected_handler) ();
+
+  /// Takes a new handler function as an argument, returns the old function.
+  terminate_handler set_terminate(terminate_handler) throw();
+
+  /** The runtime will call this function if %exception handling must be
+   *  abandoned for any reason.  It can also be called by the user.  */
+  void terminate() throw() __attribute__ ((__noreturn__));
+
+  /// Takes a new handler function as an argument, returns the old function.
+  unexpected_handler set_unexpected(unexpected_handler) throw();
+
+  /** The runtime will call this function if an %exception is thrown which
+   *  violates the function's %exception specification.  */
+  void unexpected() __attribute__ ((__noreturn__));
+
+  /** [18.6.4]/1:  'Returns true after completing evaluation of a
+   *  throw-expression until either completing initialization of the
+   *  exception-declaration in the matching handler or entering @c unexpected()
+   *  due to the throw; or after entering @c terminate() for any reason
+   *  other than an explicit call to @c terminate().  [Note: This includes
+   *  stack unwinding [15.2].  end note]'
+   *
+   *  2: 'When @c uncaught_exception() is true, throwing an
+   *  %exception can result in a call of @c terminate()
+   *  (15.5.1).'
+   */
+  bool uncaught_exception() throw() __attribute__ ((__pure__));
+
+  // @} group exceptions
+} // namespace std
+
+namespace __gnu_cxx
+{
+
+
+  /**
+   *  @brief A replacement for the standard terminate_handler which
+   *  prints more information about the terminating exception (if any)
+   *  on stderr.
+   *
+   *  @ingroup exceptions
+   *
+   *  Call
+   *   @code
+   *     std::set_terminate(__gnu_cxx::__verbose_terminate_handler)
+   *   @endcode
+   *  to use.  For more info, see
+   *  http://gcc.gnu.org/onlinedocs/libstdc++/manual/bk01pt02ch06s02.html
+   *
+   *  In 3.4 and later, this is on by default.
+   */
+  void __verbose_terminate_handler();
+
+
+} // namespace
+
+} // extern "C++"
+
+#pragma GCC visibility pop
+# 42 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/new" 2 3
+
+#pragma GCC visibility push(default)
+
+extern "C++" {
+
+namespace std
+{
+  /**
+   *  @brief  Exception possibly thrown by @c new.
+   *  @ingroup exceptions
+   *
+   *  @c bad_alloc (or classes derived from it) is used to report allocation
+   *  errors from the throwing forms of @c new.  */
+  class bad_alloc : public exception
+  {
+  public:
+    bad_alloc() throw() { }
+
+    // This declaration is not useless:
+    // http://gcc.gnu.org/onlinedocs/gcc-3.0.2/gcc_6.html#SEC118
+    virtual ~bad_alloc() throw();
+
+    // See comment in eh_exception.cc.
+    virtual const char* what() const throw();
+  };
+
+  struct nothrow_t { };
+
+  extern const nothrow_t nothrow;
+
+  /** If you write your own error handler to be called by @c new, it must
+   *  be of this type.  */
+  typedef void (*new_handler)();
+
+  /// Takes a replacement handler as the argument, returns the
+  /// previous handler.
+  new_handler set_new_handler(new_handler) throw();
+} // namespace std
+
+//@{
+/** These are replaceable signatures:
+ *  - normal single new and delete (no arguments, throw @c bad_alloc on error)
+ *  - normal array new and delete (same)
+ *  - @c nothrow single new and delete (take a @c nothrow argument, return
+ *    @c NULL on error)
+ *  - @c nothrow array new and delete (same)
+ *
+ *  Placement new and delete signatures (take a memory address argument,
+ *  does nothing) may not be replaced by a user's program.
+*/
+void* operator new(std::size_t) throw (std::bad_alloc);
+void* operator new[](std::size_t) throw (std::bad_alloc);
+void operator delete(void*) throw();
+void operator delete[](void*) throw();
+void* operator new(std::size_t, const std::nothrow_t&) throw();
+void* operator new[](std::size_t, const std::nothrow_t&) throw();
+void operator delete(void*, const std::nothrow_t&) throw();
+void operator delete[](void*, const std::nothrow_t&) throw();
+
+// Default placement versions of operator new.
+inline void* operator new(std::size_t, void* __p) throw() { return __p; }
+inline void* operator new[](std::size_t, void* __p) throw() { return __p; }
+
+// Default placement versions of operator delete.
+inline void operator delete (void*, void*) throw() { }
+inline void operator delete[](void*, void*) throw() { }
+//@}
+} // extern "C++"
+
+#pragma GCC visibility pop
+# 35 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ext/new_allocator.h" 2 3
+
+
+
+namespace __gnu_cxx __attribute__ ((__visibility__ ("default")))
+{
+
+
+  using std::size_t;
+  using std::ptrdiff_t;
+
+  /**
+   *  @brief  An allocator that uses global new, as per [20.4].
+   *  @ingroup allocators
+   *
+   *  This is precisely the allocator defined in the C++ Standard. 
+   *    - all allocation calls operator new
+   *    - all deallocation calls operator delete
+   */
+  template<typename _Tp>
+    class new_allocator
+    {
+    public:
+      typedef size_t size_type;
+      typedef ptrdiff_t difference_type;
+      typedef _Tp* pointer;
+      typedef const _Tp* const_pointer;
+      typedef _Tp& reference;
+      typedef const _Tp& const_reference;
+      typedef _Tp value_type;
+
+      template<typename _Tp1>
+        struct rebind
+        { typedef new_allocator<_Tp1> other; };
+
+      new_allocator() throw() { }
+
+      new_allocator(const new_allocator&) throw() { }
+
+      template<typename _Tp1>
+        new_allocator(const new_allocator<_Tp1>&) throw() { }
+
+      ~new_allocator() throw() { }
+
+      pointer
+      address(reference __x) const { return std::__addressof(__x); }
+
+      const_pointer
+      address(const_reference __x) const { return std::__addressof(__x); }
+
+      // NB: __n is permitted to be 0.  The C++ standard says nothing
+      // about what the return value is when __n == 0.
+      pointer
+      allocate(size_type __n, const void* = 0)
+      {
+ if (__n > this->max_size())
+   std::__throw_bad_alloc();
+
+ return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
+      }
+
+      // __p is not permitted to be a null pointer.
+      void
+      deallocate(pointer __p, size_type)
+      { ::operator delete(__p); }
+
+      size_type
+      max_size() const throw()
+      { return size_t(-1) / sizeof(_Tp); }
+
+      // _GLIBCXX_RESOLVE_LIB_DEFECTS
+      // 402. wrong new expression in [some_] allocator::construct
+      void
+      construct(pointer __p, const _Tp& __val)
+      { ::new((void *)__p) _Tp(__val); }
+# 117 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ext/new_allocator.h" 3
+ void
+      destroy(pointer __p) { __p->~_Tp(); }
+    };
+
+  template<typename _Tp>
+    inline bool
+    operator==(const new_allocator<_Tp>&, const new_allocator<_Tp>&)
+    { return true; }
+
+  template<typename _Tp>
+    inline bool
+    operator!=(const new_allocator<_Tp>&, const new_allocator<_Tp>&)
+    { return false; }
+
+
+} // namespace
+# 35 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/x86_64-unknown-linux-gnu/bits/c++allocator.h" 2 3
+# 49 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/allocator.h" 2 3
+
+
+
+
+
+namespace std __attribute__ ((__visibility__ ("default")))
+{
+
+
+  /**
+   * @defgroup allocators Allocators
+   * @ingroup memory
+   *
+   * Classes encapsulating memory operations.
+   */
+
+  template<typename _Tp>
+    class allocator;
+
+  /// allocator<void> specialization.
+  template<>
+    class allocator<void>
+    {
+    public:
+      typedef size_t size_type;
+      typedef ptrdiff_t difference_type;
+      typedef void* pointer;
+      typedef const void* const_pointer;
+      typedef void value_type;
+
+      template<typename _Tp1>
+        struct rebind
+        { typedef allocator<_Tp1> other; };
+    };
+
+  /**
+   * @brief  The @a standard allocator, as per [20.4].
+   * @ingroup allocators
+   *
+   *  Further details:
+   *  http://gcc.gnu.org/onlinedocs/libstdc++/manual/bk01pt04ch11.html
+   */
+  template<typename _Tp>
+    class allocator: public __gnu_cxx::new_allocator<_Tp>
+    {
+   public:
+      typedef size_t size_type;
+      typedef ptrdiff_t difference_type;
+      typedef _Tp* pointer;
+      typedef const _Tp* const_pointer;
+      typedef _Tp& reference;
+      typedef const _Tp& const_reference;
+      typedef _Tp value_type;
+
+      template<typename _Tp1>
+        struct rebind
+        { typedef allocator<_Tp1> other; };
+
+      allocator() throw() { }
+
+      allocator(const allocator& __a) throw()
+      : __gnu_cxx::new_allocator<_Tp>(__a) { }
+
+      template<typename _Tp1>
+        allocator(const allocator<_Tp1>&) throw() { }
+
+      ~allocator() throw() { }
+
+      // Inherit everything else.
+    };
+
+  template<typename _T1, typename _T2>
+    inline bool
+    operator==(const allocator<_T1>&, const allocator<_T2>&)
+    { return true; }
+
+  template<typename _Tp>
+    inline bool
+    operator==(const allocator<_Tp>&, const allocator<_Tp>&)
+    { return true; }
+
+  template<typename _T1, typename _T2>
+    inline bool
+    operator!=(const allocator<_T1>&, const allocator<_T2>&)
+    { return false; }
+
+  template<typename _Tp>
+    inline bool
+    operator!=(const allocator<_Tp>&, const allocator<_Tp>&)
+    { return false; }
+
+  // Inhibit implicit instantiations for required instantiations,
+  // which are defined via explicit instantiations elsewhere.
+
+  extern template class allocator<char>;
+  extern template class allocator<wchar_t>;
+
+
+  // Undefine.
+
+
+  // To implement Option 3 of DR 431.
+  template<typename _Alloc, bool = __is_empty(_Alloc)>
+    struct __alloc_swap
+    { static void _S_do_it(_Alloc&, _Alloc&) { } };
+
+  template<typename _Alloc>
+    struct __alloc_swap<_Alloc, false>
+    {
+      static void
+      _S_do_it(_Alloc& __one, _Alloc& __two)
+      {
+ // Precondition: swappable allocators.
+ if (__one != __two)
+   swap(__one, __two);
+      }
+    };
+
+  // Optimize for stateless allocators.
+  template<typename _Alloc, bool = __is_empty(_Alloc)>
+    struct __alloc_neq
+    {
+      static bool
+      _S_do_it(const _Alloc&, const _Alloc&)
+      { return false; }
+    };
+
+  template<typename _Alloc>
+    struct __alloc_neq<_Alloc, false>
+    {
+      static bool
+      _S_do_it(const _Alloc& __one, const _Alloc& __two)
+      { return __one != __two; }
+    };
+# 237 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/allocator.h" 3
+} // namespace std
+# 43 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/string" 2 3
+
 # 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/localefwd.h" 1 3
 // Locale support -*- C++ -*-
 
@@ -12275,7 +13198,214 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 } // namespace
 # 42 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/localefwd.h" 2 3
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/iosfwd" 1 3
+// Forwarding declarations -*- C++ -*-
 
+// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005,
+// 2006, 2007, 2009, 2010
+// Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+/** @file include/iosfwd
+ *  This is a Standard C++ Library header.
+ */
+
+//
+// ISO C++ 14882: 27.2  Forward declarations
+//
+# 38 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/iosfwd" 3
+
+
+
+
+
+namespace std __attribute__ ((__visibility__ ("default")))
+{
+
+
+  /**
+   *  @defgroup io I/O
+   *
+   *  Nearly all of the I/O classes are parameterized on the type of
+   *  characters they read and write.  (The major exception is ios_base at
+   *  the top of the hierarchy.)  This is a change from pre-Standard
+   *  streams, which were not templates.
+   *
+   *  For ease of use and compatibility, all of the basic_* I/O-related
+   *  classes are given typedef names for both of the builtin character
+   *  widths (wide and narrow).  The typedefs are the same as the
+   *  pre-Standard names, for example:
+   *
+   *  @code
+   *     typedef basic_ifstream<char>  ifstream;
+   *  @endcode
+   *
+   *  Because properly forward-declaring these classes can be difficult, you
+   *  should not do it yourself.  Instead, include the &lt;iosfwd&gt;
+   *  header, which contains only declarations of all the I/O classes as
+   *  well as the typedefs.  Trying to forward-declare the typedefs
+   *  themselves (e.g., <code>class ostream;</code>) is not valid ISO C++.
+   *
+   *  For more specific declarations, see
+   *  http://gcc.gnu.org/onlinedocs/libstdc++/manual/bk01pt11ch24.html
+   *
+   *  @{
+  */
+  class ios_base;
+
+  template<typename _CharT, typename _Traits = char_traits<_CharT> >
+    class basic_ios;
+
+  template<typename _CharT, typename _Traits = char_traits<_CharT> >
+    class basic_streambuf;
+
+  template<typename _CharT, typename _Traits = char_traits<_CharT> >
+    class basic_istream;
+
+  template<typename _CharT, typename _Traits = char_traits<_CharT> >
+    class basic_ostream;
+
+  template<typename _CharT, typename _Traits = char_traits<_CharT> >
+    class basic_iostream;
+
+  template<typename _CharT, typename _Traits = char_traits<_CharT>,
+     typename _Alloc = allocator<_CharT> >
+    class basic_stringbuf;
+
+  template<typename _CharT, typename _Traits = char_traits<_CharT>,
+    typename _Alloc = allocator<_CharT> >
+    class basic_istringstream;
+
+  template<typename _CharT, typename _Traits = char_traits<_CharT>,
+    typename _Alloc = allocator<_CharT> >
+    class basic_ostringstream;
+
+  template<typename _CharT, typename _Traits = char_traits<_CharT>,
+    typename _Alloc = allocator<_CharT> >
+    class basic_stringstream;
+
+  template<typename _CharT, typename _Traits = char_traits<_CharT> >
+    class basic_filebuf;
+
+  template<typename _CharT, typename _Traits = char_traits<_CharT> >
+    class basic_ifstream;
+
+  template<typename _CharT, typename _Traits = char_traits<_CharT> >
+    class basic_ofstream;
+
+  template<typename _CharT, typename _Traits = char_traits<_CharT> >
+    class basic_fstream;
+
+  template<typename _CharT, typename _Traits = char_traits<_CharT> >
+    class istreambuf_iterator;
+
+  template<typename _CharT, typename _Traits = char_traits<_CharT> >
+    class ostreambuf_iterator;
+
+
+  /// Base class for @c char streams.
+  typedef basic_ios<char> ios;
+
+  /// Base class for @c char buffers.
+  typedef basic_streambuf<char> streambuf;
+
+  /// Base class for @c char input streams.
+  typedef basic_istream<char> istream;
+
+  /// Base class for @c char output streams.
+  typedef basic_ostream<char> ostream;
+
+  /// Base class for @c char mixed input and output streams.
+  typedef basic_iostream<char> iostream;
+
+  /// Class for @c char memory buffers.
+  typedef basic_stringbuf<char> stringbuf;
+
+  /// Class for @c char input memory streams.
+  typedef basic_istringstream<char> istringstream;
+
+  /// Class for @c char output memory streams.
+  typedef basic_ostringstream<char> ostringstream;
+
+  /// Class for @c char mixed input and output memory streams.
+  typedef basic_stringstream<char> stringstream;
+
+  /// Class for @c char file buffers.
+  typedef basic_filebuf<char> filebuf;
+
+  /// Class for @c char input file streams.
+  typedef basic_ifstream<char> ifstream;
+
+  /// Class for @c char output file streams.
+  typedef basic_ofstream<char> ofstream;
+
+  /// Class for @c char mixed input and output file streams.
+  typedef basic_fstream<char> fstream;
+
+
+  /// Base class for @c wchar_t streams.
+  typedef basic_ios<wchar_t> wios;
+
+  /// Base class for @c wchar_t buffers.
+  typedef basic_streambuf<wchar_t> wstreambuf;
+
+  /// Base class for @c wchar_t input streams.
+  typedef basic_istream<wchar_t> wistream;
+
+  /// Base class for @c wchar_t output streams.
+  typedef basic_ostream<wchar_t> wostream;
+
+  /// Base class for @c wchar_t mixed input and output streams.
+  typedef basic_iostream<wchar_t> wiostream;
+
+  /// Class for @c wchar_t memory buffers.
+  typedef basic_stringbuf<wchar_t> wstringbuf;
+
+  /// Class for @c wchar_t input memory streams.
+  typedef basic_istringstream<wchar_t> wistringstream;
+
+  /// Class for @c wchar_t output memory streams.
+  typedef basic_ostringstream<wchar_t> wostringstream;
+
+  /// Class for @c wchar_t mixed input and output memory streams.
+  typedef basic_stringstream<wchar_t> wstringstream;
+
+  /// Class for @c wchar_t file buffers.
+  typedef basic_filebuf<wchar_t> wfilebuf;
+
+  /// Class for @c wchar_t input file streams.
+  typedef basic_ifstream<wchar_t> wifstream;
+
+  /// Class for @c wchar_t output file streams.
+  typedef basic_ofstream<wchar_t> wofstream;
+
+  /// Class for @c wchar_t mixed input and output file streams.
+  typedef basic_fstream<wchar_t> wfstream;
+
+  /** @}  */
+
+
+} // namespace
+# 43 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/localefwd.h" 2 3
 # 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cctype" 1 3
 // -*- C++ -*- forwarding header.
 
@@ -12677,12 +13807,197 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 } // namespace
-# 42 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ios" 2 3
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/ios_base.h" 1 3
-// Iostreams base classes -*- C++ -*-
+# 45 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/string" 2 3
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/ostream_insert.h" 1 3
+// Helpers for ostream inserters -*- C++ -*-
 
-// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005,
-// 2006, 2007, 2008, 2009, 2010
+// Copyright (C) 2007, 2008, 2009, 2010, 2011 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+/** @file bits/ostream_insert.h
+ *  This is an internal header file, included by other library headers.
+ *  Do not attempt to use it directly. @headername{ostream}
+ */
+# 33 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/ostream_insert.h" 3
+
+
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/cxxabi_forced.h" 1 3
+// cxxabi.h subset for cancellation -*- C++ -*-
+
+// Copyright (C) 2007, 2009, 2010, 2011 Free Software Foundation, Inc.
+//
+// This file is part of GCC.
+//
+// GCC is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3, or (at your option)
+// any later version.
+// 
+// GCC is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+/** @file bits/cxxabi_forced.h
+ *  This is an internal header file, included by other library headers.
+ *  Do not attempt to use it directly. @headername{cxxabi.h}
+ */
+# 34 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/cxxabi_forced.h" 3
+
+#pragma GCC visibility push(default)
+
+
+namespace __cxxabiv1
+{
+  /** 
+   *  @brief Thrown as part of forced unwinding.
+   *  @ingroup exceptions
+   *
+   *  A magic placeholder class that can be caught by reference to
+   *  recognize forced unwinding.
+   */
+# 47 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/cxxabi_forced.h"
+class __forced_unwind
+  {
+            ~__forced_unwind() throw();
+
+    // Prevent catch by value.
+# 53 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/cxxabi_forced.h"
+ };
+# 54 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/cxxabi_forced.h"
+
+}
+
+
+#pragma GCC visibility pop
+# 36 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/ostream_insert.h" 2 3
+
+namespace std __attribute__ ((__visibility__ ("default")))
+{
+
+
+  template<typename _CharT, typename _Traits>
+    inline void
+    __ostream_write(basic_ostream<_CharT, _Traits>& __out,
+      const _CharT* __s, streamsize __n)
+    {
+      typedef basic_ostream<_CharT, _Traits> __ostream_type;
+      typedef typename __ostream_type::ios_base __ios_base;
+
+      const streamsize __put = __out.rdbuf()->sputn(__s, __n);
+      if (__put != __n)
+ __out.setstate(__ios_base::badbit);
+    }
+
+  template<typename _CharT, typename _Traits>
+    inline void
+    __ostream_fill(basic_ostream<_CharT, _Traits>& __out, streamsize __n)
+    {
+      typedef basic_ostream<_CharT, _Traits> __ostream_type;
+      typedef typename __ostream_type::ios_base __ios_base;
+
+      const _CharT __c = __out.fill();
+      for (; __n > 0; --__n)
+ {
+   const typename _Traits::int_type __put = __out.rdbuf()->sputc(__c);
+   if (_Traits::eq_int_type(__put, _Traits::eof()))
+     {
+       __out.setstate(__ios_base::badbit);
+       break;
+     }
+ }
+    }
+
+  template<typename _CharT, typename _Traits>
+    basic_ostream<_CharT, _Traits>&
+    __ostream_insert(basic_ostream<_CharT, _Traits>& __out,
+       const _CharT* __s, streamsize __n)
+    {
+      typedef basic_ostream<_CharT, _Traits> __ostream_type;
+      typedef typename __ostream_type::ios_base __ios_base;
+
+      typename __ostream_type::sentry __cerb(__out);
+      if (__cerb)
+ {
+   if (true)
+     {
+       const streamsize __w = __out.width();
+       if (__w > __n)
+  {
+    const bool __left = ((__out.flags()
+     & __ios_base::adjustfield)
+           == __ios_base::left);
+    if (!__left)
+      __ostream_fill(__out, __w - __n);
+    if (__out.good())
+      __ostream_write(__out, __s, __n);
+    if (__left && __out.good())
+      __ostream_fill(__out, __w - __n);
+  }
+       else
+  __ostream_write(__out, __s, __n);
+       __out.width(0);
+     }
+   if (false)
+     {
+       __out._M_setstate(__ios_base::badbit);
+                              ;
+     }
+   if (false)
+     { __out._M_setstate(__ios_base::badbit); }
+ }
+      return __out;
+    }
+
+  // Inhibit implicit instantiations for required instantiations,
+  // which are defined via explicit instantiations elsewhere.
+
+  extern template ostream& __ostream_insert(ostream&, const char*, streamsize);
+
+
+  extern template wostream& __ostream_insert(wostream&, const wchar_t*,
+          streamsize);
+
+
+
+
+} // namespace std
+# 46 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/string" 2 3
+
+
+
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/stl_function.h" 1 3
+// Functor implementations -*- C++ -*-
+
+// Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2009, 2010, 2011
 // Free Software Foundation, Inc.
 //
 // This file is part of the GNU ISO C++ Library.  This library is free
@@ -12705,15 +14020,944 @@ namespace std __attribute__ ((__visibility__ ("default")))
 // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
 // <http://www.gnu.org/licenses/>.
 
-/** @file bits/ios_base.h
+/*
+ *
+ * Copyright (c) 1994
+ * Hewlett-Packard Company
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Hewlett-Packard Company makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ *
+ *
+ * Copyright (c) 1996-1998
+ * Silicon Graphics Computer Systems, Inc.
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Silicon Graphics makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ */
+
+/** @file bits/stl_function.h
  *  This is an internal header file, included by other library headers.
- *  Do not attempt to use it directly. @headername{ios}
+ *  Do not attempt to use it directly. @headername{functional}
+ */
+
+
+
+
+namespace std __attribute__ ((__visibility__ ("default")))
+{
+
+
+  // 20.3.1 base classes
+  /** @defgroup functors Function Objects
+   * @ingroup utilities
+   *
+   *  Function objects, or @e functors, are objects with an @c operator()
+   *  defined and accessible.  They can be passed as arguments to algorithm
+   *  templates and used in place of a function pointer.  Not only is the
+   *  resulting expressiveness of the library increased, but the generated
+   *  code can be more efficient than what you might write by hand.  When we
+   *  refer to @a functors, then, generally we include function pointers in
+   *  the description as well.
+   *
+   *  Often, functors are only created as temporaries passed to algorithm
+   *  calls, rather than being created as named variables.
+   *
+   *  Two examples taken from the standard itself follow.  To perform a
+   *  by-element addition of two vectors @c a and @c b containing @c double,
+   *  and put the result in @c a, use
+   *  \code
+   *  transform (a.begin(), a.end(), b.begin(), a.begin(), plus<double>());
+   *  \endcode
+   *  To negate every element in @c a, use
+   *  \code
+   *  transform(a.begin(), a.end(), a.begin(), negate<double>());
+   *  \endcode
+   *  The addition and negation functions will be inlined directly.
+   *
+   *  The standard functors are derived from structs named @c unary_function
+   *  and @c binary_function.  These two classes contain nothing but typedefs,
+   *  to aid in generic (template) programming.  If you write your own
+   *  functors, you might consider doing the same.
+   *
+   *  @{
+   */
+  /**
+   *  This is one of the @link functors functor base classes@endlink.
+   */
+  template<typename _Arg, typename _Result>
+    struct unary_function
+    {
+      /// @c argument_type is the type of the argument
+      typedef _Arg argument_type;
+
+      /// @c result_type is the return type
+      typedef _Result result_type;
+    };
+
+  /**
+   *  This is one of the @link functors functor base classes@endlink.
+   */
+  template<typename _Arg1, typename _Arg2, typename _Result>
+    struct binary_function
+    {
+      /// @c first_argument_type is the type of the first argument
+      typedef _Arg1 first_argument_type;
+
+      /// @c second_argument_type is the type of the second argument
+      typedef _Arg2 second_argument_type;
+
+      /// @c result_type is the return type
+      typedef _Result result_type;
+    };
+  /** @}  */
+
+  // 20.3.2 arithmetic
+  /** @defgroup arithmetic_functors Arithmetic Classes
+   * @ingroup functors
+   *
+   *  Because basic math often needs to be done during an algorithm,
+   *  the library provides functors for those operations.  See the
+   *  documentation for @link functors the base classes@endlink
+   *  for examples of their use.
+   *
+   *  @{
+   */
+  /// One of the @link arithmetic_functors math functors@endlink.
+  template<typename _Tp>
+    struct plus : public binary_function<_Tp, _Tp, _Tp>
+    {
+      _Tp
+      operator()(const _Tp& __x, const _Tp& __y) const
+      { return __x + __y; }
+    };
+
+  /// One of the @link arithmetic_functors math functors@endlink.
+  template<typename _Tp>
+    struct minus : public binary_function<_Tp, _Tp, _Tp>
+    {
+      _Tp
+      operator()(const _Tp& __x, const _Tp& __y) const
+      { return __x - __y; }
+    };
+
+  /// One of the @link arithmetic_functors math functors@endlink.
+  template<typename _Tp>
+    struct multiplies : public binary_function<_Tp, _Tp, _Tp>
+    {
+      _Tp
+      operator()(const _Tp& __x, const _Tp& __y) const
+      { return __x * __y; }
+    };
+
+  /// One of the @link arithmetic_functors math functors@endlink.
+  template<typename _Tp>
+    struct divides : public binary_function<_Tp, _Tp, _Tp>
+    {
+      _Tp
+      operator()(const _Tp& __x, const _Tp& __y) const
+      { return __x / __y; }
+    };
+
+  /// One of the @link arithmetic_functors math functors@endlink.
+  template<typename _Tp>
+    struct modulus : public binary_function<_Tp, _Tp, _Tp>
+    {
+      _Tp
+      operator()(const _Tp& __x, const _Tp& __y) const
+      { return __x % __y; }
+    };
+
+  /// One of the @link arithmetic_functors math functors@endlink.
+  template<typename _Tp>
+    struct negate : public unary_function<_Tp, _Tp>
+    {
+      _Tp
+      operator()(const _Tp& __x) const
+      { return -__x; }
+    };
+  /** @}  */
+
+  // 20.3.3 comparisons
+  /** @defgroup comparison_functors Comparison Classes
+   * @ingroup functors
+   *
+   *  The library provides six wrapper functors for all the basic comparisons
+   *  in C++, like @c <.
+   *
+   *  @{
+   */
+  /// One of the @link comparison_functors comparison functors@endlink.
+  template<typename _Tp>
+    struct equal_to : public binary_function<_Tp, _Tp, bool>
+    {
+      bool
+      operator()(const _Tp& __x, const _Tp& __y) const
+      { return __x == __y; }
+    };
+
+  /// One of the @link comparison_functors comparison functors@endlink.
+  template<typename _Tp>
+    struct not_equal_to : public binary_function<_Tp, _Tp, bool>
+    {
+      bool
+      operator()(const _Tp& __x, const _Tp& __y) const
+      { return __x != __y; }
+    };
+
+  /// One of the @link comparison_functors comparison functors@endlink.
+  template<typename _Tp>
+    struct greater : public binary_function<_Tp, _Tp, bool>
+    {
+      bool
+      operator()(const _Tp& __x, const _Tp& __y) const
+      { return __x > __y; }
+    };
+
+  /// One of the @link comparison_functors comparison functors@endlink.
+  template<typename _Tp>
+    struct less : public binary_function<_Tp, _Tp, bool>
+    {
+      bool
+      operator()(const _Tp& __x, const _Tp& __y) const
+      { return __x < __y; }
+    };
+
+  /// One of the @link comparison_functors comparison functors@endlink.
+  template<typename _Tp>
+    struct greater_equal : public binary_function<_Tp, _Tp, bool>
+    {
+      bool
+      operator()(const _Tp& __x, const _Tp& __y) const
+      { return __x >= __y; }
+    };
+
+  /// One of the @link comparison_functors comparison functors@endlink.
+  template<typename _Tp>
+    struct less_equal : public binary_function<_Tp, _Tp, bool>
+    {
+      bool
+      operator()(const _Tp& __x, const _Tp& __y) const
+      { return __x <= __y; }
+    };
+  /** @}  */
+
+  // 20.3.4 logical operations
+  /** @defgroup logical_functors Boolean Operations Classes
+   * @ingroup functors
+   *
+   *  Here are wrapper functors for Boolean operations: @c &&, @c ||,
+   *  and @c !.
+   *
+   *  @{
+   */
+  /// One of the @link logical_functors Boolean operations functors@endlink.
+  template<typename _Tp>
+    struct logical_and : public binary_function<_Tp, _Tp, bool>
+    {
+      bool
+      operator()(const _Tp& __x, const _Tp& __y) const
+      { return __x && __y; }
+    };
+
+  /// One of the @link logical_functors Boolean operations functors@endlink.
+  template<typename _Tp>
+    struct logical_or : public binary_function<_Tp, _Tp, bool>
+    {
+      bool
+      operator()(const _Tp& __x, const _Tp& __y) const
+      { return __x || __y; }
+    };
+
+  /// One of the @link logical_functors Boolean operations functors@endlink.
+  template<typename _Tp>
+    struct logical_not : public unary_function<_Tp, bool>
+    {
+      bool
+      operator()(const _Tp& __x) const
+      { return !__x; }
+    };
+  /** @}  */
+
+  // _GLIBCXX_RESOLVE_LIB_DEFECTS
+  // DR 660. Missing Bitwise Operations.
+  template<typename _Tp>
+    struct bit_and : public binary_function<_Tp, _Tp, _Tp>
+    {
+      _Tp
+      operator()(const _Tp& __x, const _Tp& __y) const
+      { return __x & __y; }
+    };
+
+  template<typename _Tp>
+    struct bit_or : public binary_function<_Tp, _Tp, _Tp>
+    {
+      _Tp
+      operator()(const _Tp& __x, const _Tp& __y) const
+      { return __x | __y; }
+    };
+
+  template<typename _Tp>
+    struct bit_xor : public binary_function<_Tp, _Tp, _Tp>
+    {
+      _Tp
+      operator()(const _Tp& __x, const _Tp& __y) const
+      { return __x ^ __y; }
+    };
+
+  // 20.3.5 negators
+  /** @defgroup negators Negators
+   * @ingroup functors
+   *
+   *  The functions @c not1 and @c not2 each take a predicate functor
+   *  and return an instance of @c unary_negate or
+   *  @c binary_negate, respectively.  These classes are functors whose
+   *  @c operator() performs the stored predicate function and then returns
+   *  the negation of the result.
+   *
+   *  For example, given a vector of integers and a trivial predicate,
+   *  \code
+   *  struct IntGreaterThanThree
+   *    : public std::unary_function<int, bool>
+   *  {
+   *      bool operator() (int x) { return x > 3; }
+   *  };
+   *
+   *  std::find_if (v.begin(), v.end(), not1(IntGreaterThanThree()));
+   *  \endcode
+   *  The call to @c find_if will locate the first index (i) of @c v for which
+   *  <code>!(v[i] > 3)</code> is true.
+   *
+   *  The not1/unary_negate combination works on predicates taking a single
+   *  argument.  The not2/binary_negate combination works on predicates which
+   *  take two arguments.
+   *
+   *  @{
+   */
+  /// One of the @link negators negation functors@endlink.
+  template<typename _Predicate>
+    class unary_negate
+    : public unary_function<typename _Predicate::argument_type, bool>
+    {
+    protected:
+      _Predicate _M_pred;
+
+    public:
+      explicit
+      unary_negate(const _Predicate& __x) : _M_pred(__x) { }
+
+      bool
+      operator()(const typename _Predicate::argument_type& __x) const
+      { return !_M_pred(__x); }
+    };
+
+  /// One of the @link negators negation functors@endlink.
+  template<typename _Predicate>
+    inline unary_negate<_Predicate>
+    not1(const _Predicate& __pred)
+    { return unary_negate<_Predicate>(__pred); }
+
+  /// One of the @link negators negation functors@endlink.
+  template<typename _Predicate>
+    class binary_negate
+    : public binary_function<typename _Predicate::first_argument_type,
+        typename _Predicate::second_argument_type, bool>
+    {
+    protected:
+      _Predicate _M_pred;
+
+    public:
+      explicit
+      binary_negate(const _Predicate& __x) : _M_pred(__x) { }
+
+      bool
+      operator()(const typename _Predicate::first_argument_type& __x,
+   const typename _Predicate::second_argument_type& __y) const
+      { return !_M_pred(__x, __y); }
+    };
+
+  /// One of the @link negators negation functors@endlink.
+  template<typename _Predicate>
+    inline binary_negate<_Predicate>
+    not2(const _Predicate& __pred)
+    { return binary_negate<_Predicate>(__pred); }
+  /** @}  */
+
+  // 20.3.7 adaptors pointers functions
+  /** @defgroup pointer_adaptors Adaptors for pointers to functions
+   * @ingroup functors
+   *
+   *  The advantage of function objects over pointers to functions is that
+   *  the objects in the standard library declare nested typedefs describing
+   *  their argument and result types with uniform names (e.g., @c result_type
+   *  from the base classes @c unary_function and @c binary_function).
+   *  Sometimes those typedefs are required, not just optional.
+   *
+   *  Adaptors are provided to turn pointers to unary (single-argument) and
+   *  binary (double-argument) functions into function objects.  The
+   *  long-winded functor @c pointer_to_unary_function is constructed with a
+   *  function pointer @c f, and its @c operator() called with argument @c x
+   *  returns @c f(x).  The functor @c pointer_to_binary_function does the same
+   *  thing, but with a double-argument @c f and @c operator().
+   *
+   *  The function @c ptr_fun takes a pointer-to-function @c f and constructs
+   *  an instance of the appropriate functor.
+   *
+   *  @{
+   */
+  /// One of the @link pointer_adaptors adaptors for function pointers@endlink.
+  template<typename _Arg, typename _Result>
+    class pointer_to_unary_function : public unary_function<_Arg, _Result>
+    {
+    protected:
+      _Result (*_M_ptr)(_Arg);
+
+    public:
+      pointer_to_unary_function() { }
+
+      explicit
+      pointer_to_unary_function(_Result (*__x)(_Arg))
+      : _M_ptr(__x) { }
+
+      _Result
+      operator()(_Arg __x) const
+      { return _M_ptr(__x); }
+    };
+
+  /// One of the @link pointer_adaptors adaptors for function pointers@endlink.
+  template<typename _Arg, typename _Result>
+    inline pointer_to_unary_function<_Arg, _Result>
+    ptr_fun(_Result (*__x)(_Arg))
+    { return pointer_to_unary_function<_Arg, _Result>(__x); }
+
+  /// One of the @link pointer_adaptors adaptors for function pointers@endlink.
+  template<typename _Arg1, typename _Arg2, typename _Result>
+    class pointer_to_binary_function
+    : public binary_function<_Arg1, _Arg2, _Result>
+    {
+    protected:
+      _Result (*_M_ptr)(_Arg1, _Arg2);
+
+    public:
+      pointer_to_binary_function() { }
+
+      explicit
+      pointer_to_binary_function(_Result (*__x)(_Arg1, _Arg2))
+      : _M_ptr(__x) { }
+
+      _Result
+      operator()(_Arg1 __x, _Arg2 __y) const
+      { return _M_ptr(__x, __y); }
+    };
+
+  /// One of the @link pointer_adaptors adaptors for function pointers@endlink.
+  template<typename _Arg1, typename _Arg2, typename _Result>
+    inline pointer_to_binary_function<_Arg1, _Arg2, _Result>
+    ptr_fun(_Result (*__x)(_Arg1, _Arg2))
+    { return pointer_to_binary_function<_Arg1, _Arg2, _Result>(__x); }
+  /** @}  */
+
+  template<typename _Tp>
+    struct _Identity : public unary_function<_Tp,_Tp>
+    {
+      _Tp&
+      operator()(_Tp& __x) const
+      { return __x; }
+
+      const _Tp&
+      operator()(const _Tp& __x) const
+      { return __x; }
+    };
+
+  template<typename _Pair>
+    struct _Select1st : public unary_function<_Pair,
+           typename _Pair::first_type>
+    {
+      typename _Pair::first_type&
+      operator()(_Pair& __x) const
+      { return __x.first; }
+
+      const typename _Pair::first_type&
+      operator()(const _Pair& __x) const
+      { return __x.first; }
+# 508 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/stl_function.h" 3
+ };
+
+  template<typename _Pair>
+    struct _Select2nd : public unary_function<_Pair,
+           typename _Pair::second_type>
+    {
+      typename _Pair::second_type&
+      operator()(_Pair& __x) const
+      { return __x.second; }
+
+      const typename _Pair::second_type&
+      operator()(const _Pair& __x) const
+      { return __x.second; }
+    };
+
+  // 20.3.8 adaptors pointers members
+  /** @defgroup memory_adaptors Adaptors for pointers to members
+   * @ingroup functors
+   *
+   *  There are a total of 8 = 2^3 function objects in this family.
+   *   (1) Member functions taking no arguments vs member functions taking
+   *        one argument.
+   *   (2) Call through pointer vs call through reference.
+   *   (3) Const vs non-const member function.
+   *
+   *  All of this complexity is in the function objects themselves.  You can
+   *   ignore it by using the helper function mem_fun and mem_fun_ref,
+   *   which create whichever type of adaptor is appropriate.
+   *
+   *  @{
+   */
+  /// One of the @link memory_adaptors adaptors for member
+  /// pointers@endlink.
+  template<typename _Ret, typename _Tp>
+    class mem_fun_t : public unary_function<_Tp*, _Ret>
+    {
+    public:
+      explicit
+      mem_fun_t(_Ret (_Tp::*__pf)())
+      : _M_f(__pf) { }
+
+      _Ret
+      operator()(_Tp* __p) const
+      { return (__p->*_M_f)(); }
+
+    private:
+      _Ret (_Tp::*_M_f)();
+    };
+
+  /// One of the @link memory_adaptors adaptors for member
+  /// pointers@endlink.
+  template<typename _Ret, typename _Tp>
+    class const_mem_fun_t : public unary_function<const _Tp*, _Ret>
+    {
+    public:
+      explicit
+      const_mem_fun_t(_Ret (_Tp::*__pf)() const)
+      : _M_f(__pf) { }
+
+      _Ret
+      operator()(const _Tp* __p) const
+      { return (__p->*_M_f)(); }
+
+    private:
+      _Ret (_Tp::*_M_f)() const;
+    };
+
+  /// One of the @link memory_adaptors adaptors for member
+  /// pointers@endlink.
+  template<typename _Ret, typename _Tp>
+    class mem_fun_ref_t : public unary_function<_Tp, _Ret>
+    {
+    public:
+      explicit
+      mem_fun_ref_t(_Ret (_Tp::*__pf)())
+      : _M_f(__pf) { }
+
+      _Ret
+      operator()(_Tp& __r) const
+      { return (__r.*_M_f)(); }
+
+    private:
+      _Ret (_Tp::*_M_f)();
+  };
+
+  /// One of the @link memory_adaptors adaptors for member
+  /// pointers@endlink.
+  template<typename _Ret, typename _Tp>
+    class const_mem_fun_ref_t : public unary_function<_Tp, _Ret>
+    {
+    public:
+      explicit
+      const_mem_fun_ref_t(_Ret (_Tp::*__pf)() const)
+      : _M_f(__pf) { }
+
+      _Ret
+      operator()(const _Tp& __r) const
+      { return (__r.*_M_f)(); }
+
+    private:
+      _Ret (_Tp::*_M_f)() const;
+    };
+
+  /// One of the @link memory_adaptors adaptors for member
+  /// pointers@endlink.
+  template<typename _Ret, typename _Tp, typename _Arg>
+    class mem_fun1_t : public binary_function<_Tp*, _Arg, _Ret>
+    {
+    public:
+      explicit
+      mem_fun1_t(_Ret (_Tp::*__pf)(_Arg))
+      : _M_f(__pf) { }
+
+      _Ret
+      operator()(_Tp* __p, _Arg __x) const
+      { return (__p->*_M_f)(__x); }
+
+    private:
+      _Ret (_Tp::*_M_f)(_Arg);
+    };
+
+  /// One of the @link memory_adaptors adaptors for member
+  /// pointers@endlink.
+  template<typename _Ret, typename _Tp, typename _Arg>
+    class const_mem_fun1_t : public binary_function<const _Tp*, _Arg, _Ret>
+    {
+    public:
+      explicit
+      const_mem_fun1_t(_Ret (_Tp::*__pf)(_Arg) const)
+      : _M_f(__pf) { }
+
+      _Ret
+      operator()(const _Tp* __p, _Arg __x) const
+      { return (__p->*_M_f)(__x); }
+
+    private:
+      _Ret (_Tp::*_M_f)(_Arg) const;
+    };
+
+  /// One of the @link memory_adaptors adaptors for member
+  /// pointers@endlink.
+  template<typename _Ret, typename _Tp, typename _Arg>
+    class mem_fun1_ref_t : public binary_function<_Tp, _Arg, _Ret>
+    {
+    public:
+      explicit
+      mem_fun1_ref_t(_Ret (_Tp::*__pf)(_Arg))
+      : _M_f(__pf) { }
+
+      _Ret
+      operator()(_Tp& __r, _Arg __x) const
+      { return (__r.*_M_f)(__x); }
+
+    private:
+      _Ret (_Tp::*_M_f)(_Arg);
+    };
+
+  /// One of the @link memory_adaptors adaptors for member
+  /// pointers@endlink.
+  template<typename _Ret, typename _Tp, typename _Arg>
+    class const_mem_fun1_ref_t : public binary_function<_Tp, _Arg, _Ret>
+    {
+    public:
+      explicit
+      const_mem_fun1_ref_t(_Ret (_Tp::*__pf)(_Arg) const)
+      : _M_f(__pf) { }
+
+      _Ret
+      operator()(const _Tp& __r, _Arg __x) const
+      { return (__r.*_M_f)(__x); }
+
+    private:
+      _Ret (_Tp::*_M_f)(_Arg) const;
+    };
+
+  // Mem_fun adaptor helper functions.  There are only two:
+  // mem_fun and mem_fun_ref.
+  template<typename _Ret, typename _Tp>
+    inline mem_fun_t<_Ret, _Tp>
+    mem_fun(_Ret (_Tp::*__f)())
+    { return mem_fun_t<_Ret, _Tp>(__f); }
+
+  template<typename _Ret, typename _Tp>
+    inline const_mem_fun_t<_Ret, _Tp>
+    mem_fun(_Ret (_Tp::*__f)() const)
+    { return const_mem_fun_t<_Ret, _Tp>(__f); }
+
+  template<typename _Ret, typename _Tp>
+    inline mem_fun_ref_t<_Ret, _Tp>
+    mem_fun_ref(_Ret (_Tp::*__f)())
+    { return mem_fun_ref_t<_Ret, _Tp>(__f); }
+
+  template<typename _Ret, typename _Tp>
+    inline const_mem_fun_ref_t<_Ret, _Tp>
+    mem_fun_ref(_Ret (_Tp::*__f)() const)
+    { return const_mem_fun_ref_t<_Ret, _Tp>(__f); }
+
+  template<typename _Ret, typename _Tp, typename _Arg>
+    inline mem_fun1_t<_Ret, _Tp, _Arg>
+    mem_fun(_Ret (_Tp::*__f)(_Arg))
+    { return mem_fun1_t<_Ret, _Tp, _Arg>(__f); }
+
+  template<typename _Ret, typename _Tp, typename _Arg>
+    inline const_mem_fun1_t<_Ret, _Tp, _Arg>
+    mem_fun(_Ret (_Tp::*__f)(_Arg) const)
+    { return const_mem_fun1_t<_Ret, _Tp, _Arg>(__f); }
+
+  template<typename _Ret, typename _Tp, typename _Arg>
+    inline mem_fun1_ref_t<_Ret, _Tp, _Arg>
+    mem_fun_ref(_Ret (_Tp::*__f)(_Arg))
+    { return mem_fun1_ref_t<_Ret, _Tp, _Arg>(__f); }
+
+  template<typename _Ret, typename _Tp, typename _Arg>
+    inline const_mem_fun1_ref_t<_Ret, _Tp, _Arg>
+    mem_fun_ref(_Ret (_Tp::*__f)(_Arg) const)
+    { return const_mem_fun1_ref_t<_Ret, _Tp, _Arg>(__f); }
+
+  /** @}  */
+
+
+} // namespace
+
+
+
+
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/backward/binders.h" 1 3
+// Functor implementations -*- C++ -*-
+
+// Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2009, 2010, 2011
+// Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+/*
+ *
+ * Copyright (c) 1994
+ * Hewlett-Packard Company
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Hewlett-Packard Company makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ *
+ *
+ * Copyright (c) 1996-1998
+ * Silicon Graphics Computer Systems, Inc.
+ *
+ * Permission to use, copy, modify, distribute and sell this software
+ * and its documentation for any purpose is hereby granted without fee,
+ * provided that the above copyright notice appear in all copies and
+ * that both that copyright notice and this permission notice appear
+ * in supporting documentation.  Silicon Graphics makes no
+ * representations about the suitability of this software for any
+ * purpose.  It is provided "as is" without express or implied warranty.
+ */
+
+/** @file backward/binders.h
+ *  This is an internal header file, included by other library headers.
+ *  Do not attempt to use it directly. @headername{functional}
+ */
+
+
+
+
+namespace std __attribute__ ((__visibility__ ("default")))
+{
+
+
+  // 20.3.6 binders
+  /** @defgroup binders Binder Classes
+   * @ingroup functors
+   *
+   *  Binders turn functions/functors with two arguments into functors
+   *  with a single argument, storing an argument to be applied later.
+   *  For example, a variable @c B of type @c binder1st is constructed
+   *  from a functor @c f and an argument @c x. Later, B's @c
+   *  operator() is called with a single argument @c y. The return
+   *  value is the value of @c f(x,y). @c B can be @a called with
+   *  various arguments (y1, y2, ...) and will in turn call @c
+   *  f(x,y1), @c f(x,y2), ...
+   *
+   *  The function @c bind1st is provided to save some typing. It takes the
+   *  function and an argument as parameters, and returns an instance of
+   *  @c binder1st.
+   *
+   *  The type @c binder2nd and its creator function @c bind2nd do the same
+   *  thing, but the stored argument is passed as the second parameter instead
+   *  of the first, e.g., @c bind2nd(std::minus<float>,1.3) will create a
+   *  functor whose @c operator() accepts a floating-point number, subtracts
+   *  1.3 from it, and returns the result. (If @c bind1st had been used,
+   *  the functor would perform <em>1.3 - x</em> instead.
+   *
+   *  Creator-wrapper functions like @c bind1st are intended to be used in
+   *  calling algorithms. Their return values will be temporary objects.
+   *  (The goal is to not require you to type names like
+   *  @c std::binder1st<std::plus<int>> for declaring a variable to hold the
+   *  return value from @c bind1st(std::plus<int>,5).
+   *
+   *  These become more useful when combined with the composition functions.
+   *
+   *  @{
+   */
+  /// One of the @link binders binder functors@endlink.
+  template<typename _Operation>
+    class binder1st
+    : public unary_function<typename _Operation::second_argument_type,
+       typename _Operation::result_type>
+    {
+    protected:
+      _Operation op;
+      typename _Operation::first_argument_type value;
+
+    public:
+      binder1st(const _Operation& __x,
+  const typename _Operation::first_argument_type& __y)
+      : op(__x), value(__y) { }
+
+      typename _Operation::result_type
+      operator()(const typename _Operation::second_argument_type& __x) const
+      { return op(value, __x); }
+
+      // _GLIBCXX_RESOLVE_LIB_DEFECTS
+      // 109.  Missing binders for non-const sequence elements
+      typename _Operation::result_type
+      operator()(typename _Operation::second_argument_type& __x) const
+      { return op(value, __x); }
+    } ;
+
+  /// One of the @link binders binder functors@endlink.
+  template<typename _Operation, typename _Tp>
+    inline binder1st<_Operation>
+    bind1st(const _Operation& __fn, const _Tp& __x)
+    {
+      typedef typename _Operation::first_argument_type _Arg1_type;
+      return binder1st<_Operation>(__fn, _Arg1_type(__x));
+    }
+
+  /// One of the @link binders binder functors@endlink.
+  template<typename _Operation>
+    class binder2nd
+    : public unary_function<typename _Operation::first_argument_type,
+       typename _Operation::result_type>
+    {
+    protected:
+      _Operation op;
+      typename _Operation::second_argument_type value;
+
+    public:
+      binder2nd(const _Operation& __x,
+  const typename _Operation::second_argument_type& __y)
+      : op(__x), value(__y) { }
+
+      typename _Operation::result_type
+      operator()(const typename _Operation::first_argument_type& __x) const
+      { return op(__x, value); }
+
+      // _GLIBCXX_RESOLVE_LIB_DEFECTS
+      // 109.  Missing binders for non-const sequence elements
+      typename _Operation::result_type
+      operator()(typename _Operation::first_argument_type& __x) const
+      { return op(__x, value); }
+    } ;
+
+  /// One of the @link binders binder functors@endlink.
+  template<typename _Operation, typename _Tp>
+    inline binder2nd<_Operation>
+    bind2nd(const _Operation& __fn, const _Tp& __x)
+    {
+      typedef typename _Operation::second_argument_type _Arg2_type;
+      return binder2nd<_Operation>(__fn, _Arg2_type(__x));
+    }
+  /** @}  */
+
+
+} // namespace
+# 732 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/stl_function.h" 2 3
+# 50 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/string" 2 3
+
+
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/range_access.h" 1 3
+// <range_access.h> -*- C++ -*-
+
+// Copyright (C) 2010 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+/** @file bits/range_access.h
+ *  This is an internal header file, included by other library headers.
+ *  Do not attempt to use it directly. @headername{iterator}
+ */
+# 33 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/range_access.h" 3
+# 53 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/string" 2 3
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/basic_string.h" 1 3
+// Components for manipulating sequences of characters -*- C++ -*-
+
+// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005,
+// 2006, 2007, 2008, 2009, 2010, 2011
+// Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+/** @file bits/basic_string.h
+ *  This is an internal header file, included by other library headers.
+ *  Do not attempt to use it directly. @headername{string}
  */
 
 //
-// ISO C++ 14882: 27.4  Iostreams base classes
+// ISO C++ 14882: 21 Strings library
 //
-# 39 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/ios_base.h" 3
+# 39 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/basic_string.h" 3
 
 # 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ext/atomicity.h" 1 3
 // Support for atomic operations -*- C++ -*-
@@ -17134,1701 +19378,7 @@ namespace __gnu_cxx __attribute__ ((__visibility__ ("default")))
 // Even if the CPU doesn't need a memory barrier, we need to ensure
 // that the compiler doesn't reorder memory accesses across the
 // barriers.
-# 41 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/ios_base.h" 2 3
-
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/locale_classes.h" 1 3
-// Locale support -*- C++ -*-
-
-// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005,
-// 2006, 2007, 2008, 2009, 2010, 2011
-// Free Software Foundation, Inc.
-//
-// This file is part of the GNU ISO C++ Library.  This library is free
-// software; you can redistribute it and/or modify it under the
-// terms of the GNU General Public License as published by the
-// Free Software Foundation; either version 3, or (at your option)
-// any later version.
-
-// This library is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-/** @file bits/locale_classes.h
- *  This is an internal header file, included by other library headers.
- *  Do not attempt to use it directly. @headername{locale}
- */
-
-//
-// ISO C++ 14882: 22.1  Locales
-//
-# 39 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/locale_classes.h" 3
-
-
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/string" 1 3
-// Components for manipulating sequences of characters -*- C++ -*-
-
-// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004,
-// 2005, 2006, 2007, 2009, 2010, 2011
-// Free Software Foundation, Inc.
-//
-// This file is part of the GNU ISO C++ Library.  This library is free
-// software; you can redistribute it and/or modify it under the
-// terms of the GNU General Public License as published by the
-// Free Software Foundation; either version 3, or (at your option)
-// any later version.
-
-// This library is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-/** @file include/string
- *  This is a Standard C++ Library header.
- */
-
-//
-// ISO C++ 14882: 21  Strings library
-//
-# 38 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/string" 3
-
-
-
-
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/allocator.h" 1 3
-// Allocators -*- C++ -*-
-
-// Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010,
-// 2011 Free Software Foundation, Inc.
-//
-// This file is part of the GNU ISO C++ Library.  This library is free
-// software; you can redistribute it and/or modify it under the
-// terms of the GNU General Public License as published by the
-// Free Software Foundation; either version 3, or (at your option)
-// any later version.
-
-// This library is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-/*
- * Copyright (c) 1996-1997
- * Silicon Graphics Computer Systems, Inc.
- *
- * Permission to use, copy, modify, distribute and sell this software
- * and its documentation for any purpose is hereby granted without fee,
- * provided that the above copyright notice appear in all copies and
- * that both that copyright notice and this permission notice appear
- * in supporting documentation.  Silicon Graphics makes no
- * representations about the suitability of this software for any
- * purpose.  It is provided "as is" without express or implied warranty.
- */
-
-/** @file bits/allocator.h
- *  This is an internal header file, included by other library headers.
- *  Do not attempt to use it directly. @headername{memory}
- */
-
-
-
-
-// Define the base class to std::allocator.
-
-
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/x86_64-unknown-linux-gnu/bits/c++allocator.h" 1 3
-// Base to std::allocator -*- C++ -*-
-
-// Copyright (C) 2004, 2005, 2009, 2010 Free Software Foundation, Inc.
-//
-// This file is part of the GNU ISO C++ Library.  This library is free
-// software; you can redistribute it and/or modify it under the
-// terms of the GNU General Public License as published by the
-// Free Software Foundation; either version 3, or (at your option)
-// any later version.
-
-// This library is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-/** @file bits/c++allocator.h
- *  This is an internal header file, included by other library headers.
- *  Do not attempt to use it directly. @headername{memory}
- */
-
-
-
-
-// Define new_allocator as the base class to std::allocator.
-
-
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ext/new_allocator.h" 1 3
-// Allocator that wraps operator new -*- C++ -*-
-
-// Copyright (C) 2001, 2002, 2003, 2004, 2005, 2009, 2010
-// Free Software Foundation, Inc.
-//
-// This file is part of the GNU ISO C++ Library.  This library is free
-// software; you can redistribute it and/or modify it under the
-// terms of the GNU General Public License as published by the
-// Free Software Foundation; either version 3, or (at your option)
-// any later version.
-
-// This library is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-/** @file ext/new_allocator.h
- *  This file is a GNU extension to the Standard C++ Library.
- */
-
-
-
-
-
-
-
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/new" 1 3
-// The -*- C++ -*- dynamic memory management header.
-
-// Copyright (C) 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002,
-// 2003, 2004, 2005, 2006, 2007, 2009, 2010
-// Free Software Foundation
-
-// This file is part of GCC.
-//
-// GCC is free software; you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation; either version 3, or (at your option)
-// any later version.
-// 
-// GCC is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-// 
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-/** @file new
- *  This is a Standard C++ Library header.
- *
- *  The header @c new defines several functions to manage dynamic memory and
- *  handling memory allocation errors; see
- *  http://gcc.gnu.org/onlinedocs/libstdc++/18_support/howto.html#4 for more.
- */
-# 39 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/new" 3
-
-
-
-
-#pragma GCC visibility push(default)
-
-extern "C++" {
-
-namespace std
-{
-  /**
-   *  @brief  Exception possibly thrown by @c new.
-   *  @ingroup exceptions
-   *
-   *  @c bad_alloc (or classes derived from it) is used to report allocation
-   *  errors from the throwing forms of @c new.  */
-  class bad_alloc : public exception
-  {
-  public:
-    bad_alloc() throw() { }
-
-    // This declaration is not useless:
-    // http://gcc.gnu.org/onlinedocs/gcc-3.0.2/gcc_6.html#SEC118
-    virtual ~bad_alloc() throw();
-
-    // See comment in eh_exception.cc.
-    virtual const char* what() const throw();
-  };
-
-  struct nothrow_t { };
-
-  extern const nothrow_t nothrow;
-
-  /** If you write your own error handler to be called by @c new, it must
-   *  be of this type.  */
-  typedef void (*new_handler)();
-
-  /// Takes a replacement handler as the argument, returns the
-  /// previous handler.
-  new_handler set_new_handler(new_handler) throw();
-} // namespace std
-
-//@{
-/** These are replaceable signatures:
- *  - normal single new and delete (no arguments, throw @c bad_alloc on error)
- *  - normal array new and delete (same)
- *  - @c nothrow single new and delete (take a @c nothrow argument, return
- *    @c NULL on error)
- *  - @c nothrow array new and delete (same)
- *
- *  Placement new and delete signatures (take a memory address argument,
- *  does nothing) may not be replaced by a user's program.
-*/
-void* operator new(std::size_t) throw (std::bad_alloc);
-void* operator new[](std::size_t) throw (std::bad_alloc);
-void operator delete(void*) throw();
-void operator delete[](void*) throw();
-void* operator new(std::size_t, const std::nothrow_t&) throw();
-void* operator new[](std::size_t, const std::nothrow_t&) throw();
-void operator delete(void*, const std::nothrow_t&) throw();
-void operator delete[](void*, const std::nothrow_t&) throw();
-
-// Default placement versions of operator new.
-inline void* operator new(std::size_t, void* __p) throw() { return __p; }
-inline void* operator new[](std::size_t, void* __p) throw() { return __p; }
-
-// Default placement versions of operator delete.
-inline void operator delete (void*, void*) throw() { }
-inline void operator delete[](void*, void*) throw() { }
-//@}
-} // extern "C++"
-
-#pragma GCC visibility pop
-# 35 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ext/new_allocator.h" 2 3
-
-
-
-namespace __gnu_cxx __attribute__ ((__visibility__ ("default")))
-{
-
-
-  using std::size_t;
-  using std::ptrdiff_t;
-
-  /**
-   *  @brief  An allocator that uses global new, as per [20.4].
-   *  @ingroup allocators
-   *
-   *  This is precisely the allocator defined in the C++ Standard. 
-   *    - all allocation calls operator new
-   *    - all deallocation calls operator delete
-   */
-  template<typename _Tp>
-    class new_allocator
-    {
-    public:
-      typedef size_t size_type;
-      typedef ptrdiff_t difference_type;
-      typedef _Tp* pointer;
-      typedef const _Tp* const_pointer;
-      typedef _Tp& reference;
-      typedef const _Tp& const_reference;
-      typedef _Tp value_type;
-
-      template<typename _Tp1>
-        struct rebind
-        { typedef new_allocator<_Tp1> other; };
-
-      new_allocator() throw() { }
-
-      new_allocator(const new_allocator&) throw() { }
-
-      template<typename _Tp1>
-        new_allocator(const new_allocator<_Tp1>&) throw() { }
-
-      ~new_allocator() throw() { }
-
-      pointer
-      address(reference __x) const { return std::__addressof(__x); }
-
-      const_pointer
-      address(const_reference __x) const { return std::__addressof(__x); }
-
-      // NB: __n is permitted to be 0.  The C++ standard says nothing
-      // about what the return value is when __n == 0.
-      pointer
-      allocate(size_type __n, const void* = 0)
-      {
- if (__n > this->max_size())
-   std::__throw_bad_alloc();
-
- return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
-      }
-
-      // __p is not permitted to be a null pointer.
-      void
-      deallocate(pointer __p, size_type)
-      { ::operator delete(__p); }
-
-      size_type
-      max_size() const throw()
-      { return size_t(-1) / sizeof(_Tp); }
-
-      // _GLIBCXX_RESOLVE_LIB_DEFECTS
-      // 402. wrong new expression in [some_] allocator::construct
-      void
-      construct(pointer __p, const _Tp& __val)
-      { ::new((void *)__p) _Tp(__val); }
-# 117 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ext/new_allocator.h" 3
- void
-      destroy(pointer __p) { __p->~_Tp(); }
-    };
-
-  template<typename _Tp>
-    inline bool
-    operator==(const new_allocator<_Tp>&, const new_allocator<_Tp>&)
-    { return true; }
-
-  template<typename _Tp>
-    inline bool
-    operator!=(const new_allocator<_Tp>&, const new_allocator<_Tp>&)
-    { return false; }
-
-
-} // namespace
-# 35 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/x86_64-unknown-linux-gnu/bits/c++allocator.h" 2 3
-# 49 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/allocator.h" 2 3
-
-
-
-
-
-namespace std __attribute__ ((__visibility__ ("default")))
-{
-
-
-  /**
-   * @defgroup allocators Allocators
-   * @ingroup memory
-   *
-   * Classes encapsulating memory operations.
-   */
-
-  template<typename _Tp>
-    class allocator;
-
-  /// allocator<void> specialization.
-  template<>
-    class allocator<void>
-    {
-    public:
-      typedef size_t size_type;
-      typedef ptrdiff_t difference_type;
-      typedef void* pointer;
-      typedef const void* const_pointer;
-      typedef void value_type;
-
-      template<typename _Tp1>
-        struct rebind
-        { typedef allocator<_Tp1> other; };
-    };
-
-  /**
-   * @brief  The @a standard allocator, as per [20.4].
-   * @ingroup allocators
-   *
-   *  Further details:
-   *  http://gcc.gnu.org/onlinedocs/libstdc++/manual/bk01pt04ch11.html
-   */
-  template<typename _Tp>
-    class allocator: public __gnu_cxx::new_allocator<_Tp>
-    {
-   public:
-      typedef size_t size_type;
-      typedef ptrdiff_t difference_type;
-      typedef _Tp* pointer;
-      typedef const _Tp* const_pointer;
-      typedef _Tp& reference;
-      typedef const _Tp& const_reference;
-      typedef _Tp value_type;
-
-      template<typename _Tp1>
-        struct rebind
-        { typedef allocator<_Tp1> other; };
-
-      allocator() throw() { }
-
-      allocator(const allocator& __a) throw()
-      : __gnu_cxx::new_allocator<_Tp>(__a) { }
-
-      template<typename _Tp1>
-        allocator(const allocator<_Tp1>&) throw() { }
-
-      ~allocator() throw() { }
-
-      // Inherit everything else.
-    };
-
-  template<typename _T1, typename _T2>
-    inline bool
-    operator==(const allocator<_T1>&, const allocator<_T2>&)
-    { return true; }
-
-  template<typename _Tp>
-    inline bool
-    operator==(const allocator<_Tp>&, const allocator<_Tp>&)
-    { return true; }
-
-  template<typename _T1, typename _T2>
-    inline bool
-    operator!=(const allocator<_T1>&, const allocator<_T2>&)
-    { return false; }
-
-  template<typename _Tp>
-    inline bool
-    operator!=(const allocator<_Tp>&, const allocator<_Tp>&)
-    { return false; }
-
-  // Inhibit implicit instantiations for required instantiations,
-  // which are defined via explicit instantiations elsewhere.
-
-  extern template class allocator<char>;
-  extern template class allocator<wchar_t>;
-
-
-  // Undefine.
-
-
-  // To implement Option 3 of DR 431.
-  template<typename _Alloc, bool = __is_empty(_Alloc)>
-    struct __alloc_swap
-    { static void _S_do_it(_Alloc&, _Alloc&) { } };
-
-  template<typename _Alloc>
-    struct __alloc_swap<_Alloc, false>
-    {
-      static void
-      _S_do_it(_Alloc& __one, _Alloc& __two)
-      {
- // Precondition: swappable allocators.
- if (__one != __two)
-   swap(__one, __two);
-      }
-    };
-
-  // Optimize for stateless allocators.
-  template<typename _Alloc, bool = __is_empty(_Alloc)>
-    struct __alloc_neq
-    {
-      static bool
-      _S_do_it(const _Alloc&, const _Alloc&)
-      { return false; }
-    };
-
-  template<typename _Alloc>
-    struct __alloc_neq<_Alloc, false>
-    {
-      static bool
-      _S_do_it(const _Alloc& __one, const _Alloc& __two)
-      { return __one != __two; }
-    };
-# 237 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/allocator.h" 3
-} // namespace std
-# 43 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/string" 2 3
-
-
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/ostream_insert.h" 1 3
-// Helpers for ostream inserters -*- C++ -*-
-
-// Copyright (C) 2007, 2008, 2009, 2010, 2011 Free Software Foundation, Inc.
-//
-// This file is part of the GNU ISO C++ Library.  This library is free
-// software; you can redistribute it and/or modify it under the
-// terms of the GNU General Public License as published by the
-// Free Software Foundation; either version 3, or (at your option)
-// any later version.
-
-// This library is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-/** @file bits/ostream_insert.h
- *  This is an internal header file, included by other library headers.
- *  Do not attempt to use it directly. @headername{ostream}
- */
-# 33 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/ostream_insert.h" 3
-
-
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/cxxabi_forced.h" 1 3
-// cxxabi.h subset for cancellation -*- C++ -*-
-
-// Copyright (C) 2007, 2009, 2010, 2011 Free Software Foundation, Inc.
-//
-// This file is part of GCC.
-//
-// GCC is free software; you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation; either version 3, or (at your option)
-// any later version.
-// 
-// GCC is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-// 
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-/** @file bits/cxxabi_forced.h
- *  This is an internal header file, included by other library headers.
- *  Do not attempt to use it directly. @headername{cxxabi.h}
- */
-# 34 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/cxxabi_forced.h" 3
-
-#pragma GCC visibility push(default)
-
-
-namespace __cxxabiv1
-{
-  /** 
-   *  @brief Thrown as part of forced unwinding.
-   *  @ingroup exceptions
-   *
-   *  A magic placeholder class that can be caught by reference to
-   *  recognize forced unwinding.
-   */
-# 47 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/cxxabi_forced.h"
-class __forced_unwind
-  {
-            ~__forced_unwind() throw();
-
-    // Prevent catch by value.
-# 53 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/cxxabi_forced.h"
- };
-# 54 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/cxxabi_forced.h"
-
-}
-
-
-#pragma GCC visibility pop
-# 36 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/ostream_insert.h" 2 3
-
-namespace std __attribute__ ((__visibility__ ("default")))
-{
-
-
-  template<typename _CharT, typename _Traits>
-    inline void
-    __ostream_write(basic_ostream<_CharT, _Traits>& __out,
-      const _CharT* __s, streamsize __n)
-    {
-      typedef basic_ostream<_CharT, _Traits> __ostream_type;
-      typedef typename __ostream_type::ios_base __ios_base;
-
-      const streamsize __put = __out.rdbuf()->sputn(__s, __n);
-      if (__put != __n)
- __out.setstate(__ios_base::badbit);
-    }
-
-  template<typename _CharT, typename _Traits>
-    inline void
-    __ostream_fill(basic_ostream<_CharT, _Traits>& __out, streamsize __n)
-    {
-      typedef basic_ostream<_CharT, _Traits> __ostream_type;
-      typedef typename __ostream_type::ios_base __ios_base;
-
-      const _CharT __c = __out.fill();
-      for (; __n > 0; --__n)
- {
-   const typename _Traits::int_type __put = __out.rdbuf()->sputc(__c);
-   if (_Traits::eq_int_type(__put, _Traits::eof()))
-     {
-       __out.setstate(__ios_base::badbit);
-       break;
-     }
- }
-    }
-
-  template<typename _CharT, typename _Traits>
-    basic_ostream<_CharT, _Traits>&
-    __ostream_insert(basic_ostream<_CharT, _Traits>& __out,
-       const _CharT* __s, streamsize __n)
-    {
-      typedef basic_ostream<_CharT, _Traits> __ostream_type;
-      typedef typename __ostream_type::ios_base __ios_base;
-
-      typename __ostream_type::sentry __cerb(__out);
-      if (__cerb)
- {
-   if (true)
-     {
-       const streamsize __w = __out.width();
-       if (__w > __n)
-  {
-    const bool __left = ((__out.flags()
-     & __ios_base::adjustfield)
-           == __ios_base::left);
-    if (!__left)
-      __ostream_fill(__out, __w - __n);
-    if (__out.good())
-      __ostream_write(__out, __s, __n);
-    if (__left && __out.good())
-      __ostream_fill(__out, __w - __n);
-  }
-       else
-  __ostream_write(__out, __s, __n);
-       __out.width(0);
-     }
-   if (false)
-     {
-       __out._M_setstate(__ios_base::badbit);
-                              ;
-     }
-   if (false)
-     { __out._M_setstate(__ios_base::badbit); }
- }
-      return __out;
-    }
-
-  // Inhibit implicit instantiations for required instantiations,
-  // which are defined via explicit instantiations elsewhere.
-
-  extern template ostream& __ostream_insert(ostream&, const char*, streamsize);
-
-
-  extern template wostream& __ostream_insert(wostream&, const wchar_t*,
-          streamsize);
-
-
-
-
-} // namespace std
-# 46 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/string" 2 3
-
-
-
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/stl_function.h" 1 3
-// Functor implementations -*- C++ -*-
-
-// Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2009, 2010, 2011
-// Free Software Foundation, Inc.
-//
-// This file is part of the GNU ISO C++ Library.  This library is free
-// software; you can redistribute it and/or modify it under the
-// terms of the GNU General Public License as published by the
-// Free Software Foundation; either version 3, or (at your option)
-// any later version.
-
-// This library is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-/*
- *
- * Copyright (c) 1994
- * Hewlett-Packard Company
- *
- * Permission to use, copy, modify, distribute and sell this software
- * and its documentation for any purpose is hereby granted without fee,
- * provided that the above copyright notice appear in all copies and
- * that both that copyright notice and this permission notice appear
- * in supporting documentation.  Hewlett-Packard Company makes no
- * representations about the suitability of this software for any
- * purpose.  It is provided "as is" without express or implied warranty.
- *
- *
- * Copyright (c) 1996-1998
- * Silicon Graphics Computer Systems, Inc.
- *
- * Permission to use, copy, modify, distribute and sell this software
- * and its documentation for any purpose is hereby granted without fee,
- * provided that the above copyright notice appear in all copies and
- * that both that copyright notice and this permission notice appear
- * in supporting documentation.  Silicon Graphics makes no
- * representations about the suitability of this software for any
- * purpose.  It is provided "as is" without express or implied warranty.
- */
-
-/** @file bits/stl_function.h
- *  This is an internal header file, included by other library headers.
- *  Do not attempt to use it directly. @headername{functional}
- */
-
-
-
-
-namespace std __attribute__ ((__visibility__ ("default")))
-{
-
-
-  // 20.3.1 base classes
-  /** @defgroup functors Function Objects
-   * @ingroup utilities
-   *
-   *  Function objects, or @e functors, are objects with an @c operator()
-   *  defined and accessible.  They can be passed as arguments to algorithm
-   *  templates and used in place of a function pointer.  Not only is the
-   *  resulting expressiveness of the library increased, but the generated
-   *  code can be more efficient than what you might write by hand.  When we
-   *  refer to @a functors, then, generally we include function pointers in
-   *  the description as well.
-   *
-   *  Often, functors are only created as temporaries passed to algorithm
-   *  calls, rather than being created as named variables.
-   *
-   *  Two examples taken from the standard itself follow.  To perform a
-   *  by-element addition of two vectors @c a and @c b containing @c double,
-   *  and put the result in @c a, use
-   *  \code
-   *  transform (a.begin(), a.end(), b.begin(), a.begin(), plus<double>());
-   *  \endcode
-   *  To negate every element in @c a, use
-   *  \code
-   *  transform(a.begin(), a.end(), a.begin(), negate<double>());
-   *  \endcode
-   *  The addition and negation functions will be inlined directly.
-   *
-   *  The standard functors are derived from structs named @c unary_function
-   *  and @c binary_function.  These two classes contain nothing but typedefs,
-   *  to aid in generic (template) programming.  If you write your own
-   *  functors, you might consider doing the same.
-   *
-   *  @{
-   */
-  /**
-   *  This is one of the @link functors functor base classes@endlink.
-   */
-  template<typename _Arg, typename _Result>
-    struct unary_function
-    {
-      /// @c argument_type is the type of the argument
-      typedef _Arg argument_type;
-
-      /// @c result_type is the return type
-      typedef _Result result_type;
-    };
-
-  /**
-   *  This is one of the @link functors functor base classes@endlink.
-   */
-  template<typename _Arg1, typename _Arg2, typename _Result>
-    struct binary_function
-    {
-      /// @c first_argument_type is the type of the first argument
-      typedef _Arg1 first_argument_type;
-
-      /// @c second_argument_type is the type of the second argument
-      typedef _Arg2 second_argument_type;
-
-      /// @c result_type is the return type
-      typedef _Result result_type;
-    };
-  /** @}  */
-
-  // 20.3.2 arithmetic
-  /** @defgroup arithmetic_functors Arithmetic Classes
-   * @ingroup functors
-   *
-   *  Because basic math often needs to be done during an algorithm,
-   *  the library provides functors for those operations.  See the
-   *  documentation for @link functors the base classes@endlink
-   *  for examples of their use.
-   *
-   *  @{
-   */
-  /// One of the @link arithmetic_functors math functors@endlink.
-  template<typename _Tp>
-    struct plus : public binary_function<_Tp, _Tp, _Tp>
-    {
-      _Tp
-      operator()(const _Tp& __x, const _Tp& __y) const
-      { return __x + __y; }
-    };
-
-  /// One of the @link arithmetic_functors math functors@endlink.
-  template<typename _Tp>
-    struct minus : public binary_function<_Tp, _Tp, _Tp>
-    {
-      _Tp
-      operator()(const _Tp& __x, const _Tp& __y) const
-      { return __x - __y; }
-    };
-
-  /// One of the @link arithmetic_functors math functors@endlink.
-  template<typename _Tp>
-    struct multiplies : public binary_function<_Tp, _Tp, _Tp>
-    {
-      _Tp
-      operator()(const _Tp& __x, const _Tp& __y) const
-      { return __x * __y; }
-    };
-
-  /// One of the @link arithmetic_functors math functors@endlink.
-  template<typename _Tp>
-    struct divides : public binary_function<_Tp, _Tp, _Tp>
-    {
-      _Tp
-      operator()(const _Tp& __x, const _Tp& __y) const
-      { return __x / __y; }
-    };
-
-  /// One of the @link arithmetic_functors math functors@endlink.
-  template<typename _Tp>
-    struct modulus : public binary_function<_Tp, _Tp, _Tp>
-    {
-      _Tp
-      operator()(const _Tp& __x, const _Tp& __y) const
-      { return __x % __y; }
-    };
-
-  /// One of the @link arithmetic_functors math functors@endlink.
-  template<typename _Tp>
-    struct negate : public unary_function<_Tp, _Tp>
-    {
-      _Tp
-      operator()(const _Tp& __x) const
-      { return -__x; }
-    };
-  /** @}  */
-
-  // 20.3.3 comparisons
-  /** @defgroup comparison_functors Comparison Classes
-   * @ingroup functors
-   *
-   *  The library provides six wrapper functors for all the basic comparisons
-   *  in C++, like @c <.
-   *
-   *  @{
-   */
-  /// One of the @link comparison_functors comparison functors@endlink.
-  template<typename _Tp>
-    struct equal_to : public binary_function<_Tp, _Tp, bool>
-    {
-      bool
-      operator()(const _Tp& __x, const _Tp& __y) const
-      { return __x == __y; }
-    };
-
-  /// One of the @link comparison_functors comparison functors@endlink.
-  template<typename _Tp>
-    struct not_equal_to : public binary_function<_Tp, _Tp, bool>
-    {
-      bool
-      operator()(const _Tp& __x, const _Tp& __y) const
-      { return __x != __y; }
-    };
-
-  /// One of the @link comparison_functors comparison functors@endlink.
-  template<typename _Tp>
-    struct greater : public binary_function<_Tp, _Tp, bool>
-    {
-      bool
-      operator()(const _Tp& __x, const _Tp& __y) const
-      { return __x > __y; }
-    };
-
-  /// One of the @link comparison_functors comparison functors@endlink.
-  template<typename _Tp>
-    struct less : public binary_function<_Tp, _Tp, bool>
-    {
-      bool
-      operator()(const _Tp& __x, const _Tp& __y) const
-      { return __x < __y; }
-    };
-
-  /// One of the @link comparison_functors comparison functors@endlink.
-  template<typename _Tp>
-    struct greater_equal : public binary_function<_Tp, _Tp, bool>
-    {
-      bool
-      operator()(const _Tp& __x, const _Tp& __y) const
-      { return __x >= __y; }
-    };
-
-  /// One of the @link comparison_functors comparison functors@endlink.
-  template<typename _Tp>
-    struct less_equal : public binary_function<_Tp, _Tp, bool>
-    {
-      bool
-      operator()(const _Tp& __x, const _Tp& __y) const
-      { return __x <= __y; }
-    };
-  /** @}  */
-
-  // 20.3.4 logical operations
-  /** @defgroup logical_functors Boolean Operations Classes
-   * @ingroup functors
-   *
-   *  Here are wrapper functors for Boolean operations: @c &&, @c ||,
-   *  and @c !.
-   *
-   *  @{
-   */
-  /// One of the @link logical_functors Boolean operations functors@endlink.
-  template<typename _Tp>
-    struct logical_and : public binary_function<_Tp, _Tp, bool>
-    {
-      bool
-      operator()(const _Tp& __x, const _Tp& __y) const
-      { return __x && __y; }
-    };
-
-  /// One of the @link logical_functors Boolean operations functors@endlink.
-  template<typename _Tp>
-    struct logical_or : public binary_function<_Tp, _Tp, bool>
-    {
-      bool
-      operator()(const _Tp& __x, const _Tp& __y) const
-      { return __x || __y; }
-    };
-
-  /// One of the @link logical_functors Boolean operations functors@endlink.
-  template<typename _Tp>
-    struct logical_not : public unary_function<_Tp, bool>
-    {
-      bool
-      operator()(const _Tp& __x) const
-      { return !__x; }
-    };
-  /** @}  */
-
-  // _GLIBCXX_RESOLVE_LIB_DEFECTS
-  // DR 660. Missing Bitwise Operations.
-  template<typename _Tp>
-    struct bit_and : public binary_function<_Tp, _Tp, _Tp>
-    {
-      _Tp
-      operator()(const _Tp& __x, const _Tp& __y) const
-      { return __x & __y; }
-    };
-
-  template<typename _Tp>
-    struct bit_or : public binary_function<_Tp, _Tp, _Tp>
-    {
-      _Tp
-      operator()(const _Tp& __x, const _Tp& __y) const
-      { return __x | __y; }
-    };
-
-  template<typename _Tp>
-    struct bit_xor : public binary_function<_Tp, _Tp, _Tp>
-    {
-      _Tp
-      operator()(const _Tp& __x, const _Tp& __y) const
-      { return __x ^ __y; }
-    };
-
-  // 20.3.5 negators
-  /** @defgroup negators Negators
-   * @ingroup functors
-   *
-   *  The functions @c not1 and @c not2 each take a predicate functor
-   *  and return an instance of @c unary_negate or
-   *  @c binary_negate, respectively.  These classes are functors whose
-   *  @c operator() performs the stored predicate function and then returns
-   *  the negation of the result.
-   *
-   *  For example, given a vector of integers and a trivial predicate,
-   *  \code
-   *  struct IntGreaterThanThree
-   *    : public std::unary_function<int, bool>
-   *  {
-   *      bool operator() (int x) { return x > 3; }
-   *  };
-   *
-   *  std::find_if (v.begin(), v.end(), not1(IntGreaterThanThree()));
-   *  \endcode
-   *  The call to @c find_if will locate the first index (i) of @c v for which
-   *  <code>!(v[i] > 3)</code> is true.
-   *
-   *  The not1/unary_negate combination works on predicates taking a single
-   *  argument.  The not2/binary_negate combination works on predicates which
-   *  take two arguments.
-   *
-   *  @{
-   */
-  /// One of the @link negators negation functors@endlink.
-  template<typename _Predicate>
-    class unary_negate
-    : public unary_function<typename _Predicate::argument_type, bool>
-    {
-    protected:
-      _Predicate _M_pred;
-
-    public:
-      explicit
-      unary_negate(const _Predicate& __x) : _M_pred(__x) { }
-
-      bool
-      operator()(const typename _Predicate::argument_type& __x) const
-      { return !_M_pred(__x); }
-    };
-
-  /// One of the @link negators negation functors@endlink.
-  template<typename _Predicate>
-    inline unary_negate<_Predicate>
-    not1(const _Predicate& __pred)
-    { return unary_negate<_Predicate>(__pred); }
-
-  /// One of the @link negators negation functors@endlink.
-  template<typename _Predicate>
-    class binary_negate
-    : public binary_function<typename _Predicate::first_argument_type,
-        typename _Predicate::second_argument_type, bool>
-    {
-    protected:
-      _Predicate _M_pred;
-
-    public:
-      explicit
-      binary_negate(const _Predicate& __x) : _M_pred(__x) { }
-
-      bool
-      operator()(const typename _Predicate::first_argument_type& __x,
-   const typename _Predicate::second_argument_type& __y) const
-      { return !_M_pred(__x, __y); }
-    };
-
-  /// One of the @link negators negation functors@endlink.
-  template<typename _Predicate>
-    inline binary_negate<_Predicate>
-    not2(const _Predicate& __pred)
-    { return binary_negate<_Predicate>(__pred); }
-  /** @}  */
-
-  // 20.3.7 adaptors pointers functions
-  /** @defgroup pointer_adaptors Adaptors for pointers to functions
-   * @ingroup functors
-   *
-   *  The advantage of function objects over pointers to functions is that
-   *  the objects in the standard library declare nested typedefs describing
-   *  their argument and result types with uniform names (e.g., @c result_type
-   *  from the base classes @c unary_function and @c binary_function).
-   *  Sometimes those typedefs are required, not just optional.
-   *
-   *  Adaptors are provided to turn pointers to unary (single-argument) and
-   *  binary (double-argument) functions into function objects.  The
-   *  long-winded functor @c pointer_to_unary_function is constructed with a
-   *  function pointer @c f, and its @c operator() called with argument @c x
-   *  returns @c f(x).  The functor @c pointer_to_binary_function does the same
-   *  thing, but with a double-argument @c f and @c operator().
-   *
-   *  The function @c ptr_fun takes a pointer-to-function @c f and constructs
-   *  an instance of the appropriate functor.
-   *
-   *  @{
-   */
-  /// One of the @link pointer_adaptors adaptors for function pointers@endlink.
-  template<typename _Arg, typename _Result>
-    class pointer_to_unary_function : public unary_function<_Arg, _Result>
-    {
-    protected:
-      _Result (*_M_ptr)(_Arg);
-
-    public:
-      pointer_to_unary_function() { }
-
-      explicit
-      pointer_to_unary_function(_Result (*__x)(_Arg))
-      : _M_ptr(__x) { }
-
-      _Result
-      operator()(_Arg __x) const
-      { return _M_ptr(__x); }
-    };
-
-  /// One of the @link pointer_adaptors adaptors for function pointers@endlink.
-  template<typename _Arg, typename _Result>
-    inline pointer_to_unary_function<_Arg, _Result>
-    ptr_fun(_Result (*__x)(_Arg))
-    { return pointer_to_unary_function<_Arg, _Result>(__x); }
-
-  /// One of the @link pointer_adaptors adaptors for function pointers@endlink.
-  template<typename _Arg1, typename _Arg2, typename _Result>
-    class pointer_to_binary_function
-    : public binary_function<_Arg1, _Arg2, _Result>
-    {
-    protected:
-      _Result (*_M_ptr)(_Arg1, _Arg2);
-
-    public:
-      pointer_to_binary_function() { }
-
-      explicit
-      pointer_to_binary_function(_Result (*__x)(_Arg1, _Arg2))
-      : _M_ptr(__x) { }
-
-      _Result
-      operator()(_Arg1 __x, _Arg2 __y) const
-      { return _M_ptr(__x, __y); }
-    };
-
-  /// One of the @link pointer_adaptors adaptors for function pointers@endlink.
-  template<typename _Arg1, typename _Arg2, typename _Result>
-    inline pointer_to_binary_function<_Arg1, _Arg2, _Result>
-    ptr_fun(_Result (*__x)(_Arg1, _Arg2))
-    { return pointer_to_binary_function<_Arg1, _Arg2, _Result>(__x); }
-  /** @}  */
-
-  template<typename _Tp>
-    struct _Identity : public unary_function<_Tp,_Tp>
-    {
-      _Tp&
-      operator()(_Tp& __x) const
-      { return __x; }
-
-      const _Tp&
-      operator()(const _Tp& __x) const
-      { return __x; }
-    };
-
-  template<typename _Pair>
-    struct _Select1st : public unary_function<_Pair,
-           typename _Pair::first_type>
-    {
-      typename _Pair::first_type&
-      operator()(_Pair& __x) const
-      { return __x.first; }
-
-      const typename _Pair::first_type&
-      operator()(const _Pair& __x) const
-      { return __x.first; }
-# 508 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/stl_function.h" 3
- };
-
-  template<typename _Pair>
-    struct _Select2nd : public unary_function<_Pair,
-           typename _Pair::second_type>
-    {
-      typename _Pair::second_type&
-      operator()(_Pair& __x) const
-      { return __x.second; }
-
-      const typename _Pair::second_type&
-      operator()(const _Pair& __x) const
-      { return __x.second; }
-    };
-
-  // 20.3.8 adaptors pointers members
-  /** @defgroup memory_adaptors Adaptors for pointers to members
-   * @ingroup functors
-   *
-   *  There are a total of 8 = 2^3 function objects in this family.
-   *   (1) Member functions taking no arguments vs member functions taking
-   *        one argument.
-   *   (2) Call through pointer vs call through reference.
-   *   (3) Const vs non-const member function.
-   *
-   *  All of this complexity is in the function objects themselves.  You can
-   *   ignore it by using the helper function mem_fun and mem_fun_ref,
-   *   which create whichever type of adaptor is appropriate.
-   *
-   *  @{
-   */
-  /// One of the @link memory_adaptors adaptors for member
-  /// pointers@endlink.
-  template<typename _Ret, typename _Tp>
-    class mem_fun_t : public unary_function<_Tp*, _Ret>
-    {
-    public:
-      explicit
-      mem_fun_t(_Ret (_Tp::*__pf)())
-      : _M_f(__pf) { }
-
-      _Ret
-      operator()(_Tp* __p) const
-      { return (__p->*_M_f)(); }
-
-    private:
-      _Ret (_Tp::*_M_f)();
-    };
-
-  /// One of the @link memory_adaptors adaptors for member
-  /// pointers@endlink.
-  template<typename _Ret, typename _Tp>
-    class const_mem_fun_t : public unary_function<const _Tp*, _Ret>
-    {
-    public:
-      explicit
-      const_mem_fun_t(_Ret (_Tp::*__pf)() const)
-      : _M_f(__pf) { }
-
-      _Ret
-      operator()(const _Tp* __p) const
-      { return (__p->*_M_f)(); }
-
-    private:
-      _Ret (_Tp::*_M_f)() const;
-    };
-
-  /// One of the @link memory_adaptors adaptors for member
-  /// pointers@endlink.
-  template<typename _Ret, typename _Tp>
-    class mem_fun_ref_t : public unary_function<_Tp, _Ret>
-    {
-    public:
-      explicit
-      mem_fun_ref_t(_Ret (_Tp::*__pf)())
-      : _M_f(__pf) { }
-
-      _Ret
-      operator()(_Tp& __r) const
-      { return (__r.*_M_f)(); }
-
-    private:
-      _Ret (_Tp::*_M_f)();
-  };
-
-  /// One of the @link memory_adaptors adaptors for member
-  /// pointers@endlink.
-  template<typename _Ret, typename _Tp>
-    class const_mem_fun_ref_t : public unary_function<_Tp, _Ret>
-    {
-    public:
-      explicit
-      const_mem_fun_ref_t(_Ret (_Tp::*__pf)() const)
-      : _M_f(__pf) { }
-
-      _Ret
-      operator()(const _Tp& __r) const
-      { return (__r.*_M_f)(); }
-
-    private:
-      _Ret (_Tp::*_M_f)() const;
-    };
-
-  /// One of the @link memory_adaptors adaptors for member
-  /// pointers@endlink.
-  template<typename _Ret, typename _Tp, typename _Arg>
-    class mem_fun1_t : public binary_function<_Tp*, _Arg, _Ret>
-    {
-    public:
-      explicit
-      mem_fun1_t(_Ret (_Tp::*__pf)(_Arg))
-      : _M_f(__pf) { }
-
-      _Ret
-      operator()(_Tp* __p, _Arg __x) const
-      { return (__p->*_M_f)(__x); }
-
-    private:
-      _Ret (_Tp::*_M_f)(_Arg);
-    };
-
-  /// One of the @link memory_adaptors adaptors for member
-  /// pointers@endlink.
-  template<typename _Ret, typename _Tp, typename _Arg>
-    class const_mem_fun1_t : public binary_function<const _Tp*, _Arg, _Ret>
-    {
-    public:
-      explicit
-      const_mem_fun1_t(_Ret (_Tp::*__pf)(_Arg) const)
-      : _M_f(__pf) { }
-
-      _Ret
-      operator()(const _Tp* __p, _Arg __x) const
-      { return (__p->*_M_f)(__x); }
-
-    private:
-      _Ret (_Tp::*_M_f)(_Arg) const;
-    };
-
-  /// One of the @link memory_adaptors adaptors for member
-  /// pointers@endlink.
-  template<typename _Ret, typename _Tp, typename _Arg>
-    class mem_fun1_ref_t : public binary_function<_Tp, _Arg, _Ret>
-    {
-    public:
-      explicit
-      mem_fun1_ref_t(_Ret (_Tp::*__pf)(_Arg))
-      : _M_f(__pf) { }
-
-      _Ret
-      operator()(_Tp& __r, _Arg __x) const
-      { return (__r.*_M_f)(__x); }
-
-    private:
-      _Ret (_Tp::*_M_f)(_Arg);
-    };
-
-  /// One of the @link memory_adaptors adaptors for member
-  /// pointers@endlink.
-  template<typename _Ret, typename _Tp, typename _Arg>
-    class const_mem_fun1_ref_t : public binary_function<_Tp, _Arg, _Ret>
-    {
-    public:
-      explicit
-      const_mem_fun1_ref_t(_Ret (_Tp::*__pf)(_Arg) const)
-      : _M_f(__pf) { }
-
-      _Ret
-      operator()(const _Tp& __r, _Arg __x) const
-      { return (__r.*_M_f)(__x); }
-
-    private:
-      _Ret (_Tp::*_M_f)(_Arg) const;
-    };
-
-  // Mem_fun adaptor helper functions.  There are only two:
-  // mem_fun and mem_fun_ref.
-  template<typename _Ret, typename _Tp>
-    inline mem_fun_t<_Ret, _Tp>
-    mem_fun(_Ret (_Tp::*__f)())
-    { return mem_fun_t<_Ret, _Tp>(__f); }
-
-  template<typename _Ret, typename _Tp>
-    inline const_mem_fun_t<_Ret, _Tp>
-    mem_fun(_Ret (_Tp::*__f)() const)
-    { return const_mem_fun_t<_Ret, _Tp>(__f); }
-
-  template<typename _Ret, typename _Tp>
-    inline mem_fun_ref_t<_Ret, _Tp>
-    mem_fun_ref(_Ret (_Tp::*__f)())
-    { return mem_fun_ref_t<_Ret, _Tp>(__f); }
-
-  template<typename _Ret, typename _Tp>
-    inline const_mem_fun_ref_t<_Ret, _Tp>
-    mem_fun_ref(_Ret (_Tp::*__f)() const)
-    { return const_mem_fun_ref_t<_Ret, _Tp>(__f); }
-
-  template<typename _Ret, typename _Tp, typename _Arg>
-    inline mem_fun1_t<_Ret, _Tp, _Arg>
-    mem_fun(_Ret (_Tp::*__f)(_Arg))
-    { return mem_fun1_t<_Ret, _Tp, _Arg>(__f); }
-
-  template<typename _Ret, typename _Tp, typename _Arg>
-    inline const_mem_fun1_t<_Ret, _Tp, _Arg>
-    mem_fun(_Ret (_Tp::*__f)(_Arg) const)
-    { return const_mem_fun1_t<_Ret, _Tp, _Arg>(__f); }
-
-  template<typename _Ret, typename _Tp, typename _Arg>
-    inline mem_fun1_ref_t<_Ret, _Tp, _Arg>
-    mem_fun_ref(_Ret (_Tp::*__f)(_Arg))
-    { return mem_fun1_ref_t<_Ret, _Tp, _Arg>(__f); }
-
-  template<typename _Ret, typename _Tp, typename _Arg>
-    inline const_mem_fun1_ref_t<_Ret, _Tp, _Arg>
-    mem_fun_ref(_Ret (_Tp::*__f)(_Arg) const)
-    { return const_mem_fun1_ref_t<_Ret, _Tp, _Arg>(__f); }
-
-  /** @}  */
-
-
-} // namespace
-
-
-
-
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/backward/binders.h" 1 3
-// Functor implementations -*- C++ -*-
-
-// Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2009, 2010, 2011
-// Free Software Foundation, Inc.
-//
-// This file is part of the GNU ISO C++ Library.  This library is free
-// software; you can redistribute it and/or modify it under the
-// terms of the GNU General Public License as published by the
-// Free Software Foundation; either version 3, or (at your option)
-// any later version.
-
-// This library is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-/*
- *
- * Copyright (c) 1994
- * Hewlett-Packard Company
- *
- * Permission to use, copy, modify, distribute and sell this software
- * and its documentation for any purpose is hereby granted without fee,
- * provided that the above copyright notice appear in all copies and
- * that both that copyright notice and this permission notice appear
- * in supporting documentation.  Hewlett-Packard Company makes no
- * representations about the suitability of this software for any
- * purpose.  It is provided "as is" without express or implied warranty.
- *
- *
- * Copyright (c) 1996-1998
- * Silicon Graphics Computer Systems, Inc.
- *
- * Permission to use, copy, modify, distribute and sell this software
- * and its documentation for any purpose is hereby granted without fee,
- * provided that the above copyright notice appear in all copies and
- * that both that copyright notice and this permission notice appear
- * in supporting documentation.  Silicon Graphics makes no
- * representations about the suitability of this software for any
- * purpose.  It is provided "as is" without express or implied warranty.
- */
-
-/** @file backward/binders.h
- *  This is an internal header file, included by other library headers.
- *  Do not attempt to use it directly. @headername{functional}
- */
-
-
-
-
-namespace std __attribute__ ((__visibility__ ("default")))
-{
-
-
-  // 20.3.6 binders
-  /** @defgroup binders Binder Classes
-   * @ingroup functors
-   *
-   *  Binders turn functions/functors with two arguments into functors
-   *  with a single argument, storing an argument to be applied later.
-   *  For example, a variable @c B of type @c binder1st is constructed
-   *  from a functor @c f and an argument @c x. Later, B's @c
-   *  operator() is called with a single argument @c y. The return
-   *  value is the value of @c f(x,y). @c B can be @a called with
-   *  various arguments (y1, y2, ...) and will in turn call @c
-   *  f(x,y1), @c f(x,y2), ...
-   *
-   *  The function @c bind1st is provided to save some typing. It takes the
-   *  function and an argument as parameters, and returns an instance of
-   *  @c binder1st.
-   *
-   *  The type @c binder2nd and its creator function @c bind2nd do the same
-   *  thing, but the stored argument is passed as the second parameter instead
-   *  of the first, e.g., @c bind2nd(std::minus<float>,1.3) will create a
-   *  functor whose @c operator() accepts a floating-point number, subtracts
-   *  1.3 from it, and returns the result. (If @c bind1st had been used,
-   *  the functor would perform <em>1.3 - x</em> instead.
-   *
-   *  Creator-wrapper functions like @c bind1st are intended to be used in
-   *  calling algorithms. Their return values will be temporary objects.
-   *  (The goal is to not require you to type names like
-   *  @c std::binder1st<std::plus<int>> for declaring a variable to hold the
-   *  return value from @c bind1st(std::plus<int>,5).
-   *
-   *  These become more useful when combined with the composition functions.
-   *
-   *  @{
-   */
-  /// One of the @link binders binder functors@endlink.
-  template<typename _Operation>
-    class binder1st
-    : public unary_function<typename _Operation::second_argument_type,
-       typename _Operation::result_type>
-    {
-    protected:
-      _Operation op;
-      typename _Operation::first_argument_type value;
-
-    public:
-      binder1st(const _Operation& __x,
-  const typename _Operation::first_argument_type& __y)
-      : op(__x), value(__y) { }
-
-      typename _Operation::result_type
-      operator()(const typename _Operation::second_argument_type& __x) const
-      { return op(value, __x); }
-
-      // _GLIBCXX_RESOLVE_LIB_DEFECTS
-      // 109.  Missing binders for non-const sequence elements
-      typename _Operation::result_type
-      operator()(typename _Operation::second_argument_type& __x) const
-      { return op(value, __x); }
-    } ;
-
-  /// One of the @link binders binder functors@endlink.
-  template<typename _Operation, typename _Tp>
-    inline binder1st<_Operation>
-    bind1st(const _Operation& __fn, const _Tp& __x)
-    {
-      typedef typename _Operation::first_argument_type _Arg1_type;
-      return binder1st<_Operation>(__fn, _Arg1_type(__x));
-    }
-
-  /// One of the @link binders binder functors@endlink.
-  template<typename _Operation>
-    class binder2nd
-    : public unary_function<typename _Operation::first_argument_type,
-       typename _Operation::result_type>
-    {
-    protected:
-      _Operation op;
-      typename _Operation::second_argument_type value;
-
-    public:
-      binder2nd(const _Operation& __x,
-  const typename _Operation::second_argument_type& __y)
-      : op(__x), value(__y) { }
-
-      typename _Operation::result_type
-      operator()(const typename _Operation::first_argument_type& __x) const
-      { return op(__x, value); }
-
-      // _GLIBCXX_RESOLVE_LIB_DEFECTS
-      // 109.  Missing binders for non-const sequence elements
-      typename _Operation::result_type
-      operator()(typename _Operation::first_argument_type& __x) const
-      { return op(__x, value); }
-    } ;
-
-  /// One of the @link binders binder functors@endlink.
-  template<typename _Operation, typename _Tp>
-    inline binder2nd<_Operation>
-    bind2nd(const _Operation& __fn, const _Tp& __x)
-    {
-      typedef typename _Operation::second_argument_type _Arg2_type;
-      return binder2nd<_Operation>(__fn, _Arg2_type(__x));
-    }
-  /** @}  */
-
-
-} // namespace
-# 732 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/stl_function.h" 2 3
-# 50 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/string" 2 3
-
-
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/range_access.h" 1 3
-// <range_access.h> -*- C++ -*-
-
-// Copyright (C) 2010 Free Software Foundation, Inc.
-//
-// This file is part of the GNU ISO C++ Library.  This library is free
-// software; you can redistribute it and/or modify it under the
-// terms of the GNU General Public License as published by the
-// Free Software Foundation; either version 3, or (at your option)
-// any later version.
-
-// This library is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-/** @file bits/range_access.h
- *  This is an internal header file, included by other library headers.
- *  Do not attempt to use it directly. @headername{iterator}
- */
-# 33 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/range_access.h" 3
-# 53 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/string" 2 3
-# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/basic_string.h" 1 3
-// Components for manipulating sequences of characters -*- C++ -*-
-
-// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005,
-// 2006, 2007, 2008, 2009, 2010, 2011
-// Free Software Foundation, Inc.
-//
-// This file is part of the GNU ISO C++ Library.  This library is free
-// software; you can redistribute it and/or modify it under the
-// terms of the GNU General Public License as published by the
-// Free Software Foundation; either version 3, or (at your option)
-// any later version.
-
-// This library is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-/** @file bits/basic_string.h
- *  This is an internal header file, included by other library headers.
- *  Do not attempt to use it directly. @headername{string}
- */
-
-//
-// ISO C++ 14882: 21 Strings library
-//
-# 39 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/basic_string.h" 3
-
-
+# 41 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/basic_string.h" 2 3
 
 # 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/initializer_list" 1 3
 // std::initializer_list support -*- C++ -*-
@@ -22456,7 +23006,317 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 } // namespace std
 # 55 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/string" 2 3
-# 42 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/locale_classes.h" 2 3
+# 7 "/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigUnsignedInABase.hh" 2
+
+/*
+ * A BigUnsignedInABase object represents a nonnegative integer of size limited
+ * only by available memory, represented in a user-specified base that can fit
+ * in an `unsigned short' (most can, and this saves memory).
+ *
+ * BigUnsignedInABase is intended as an intermediary class with little
+ * functionality of its own.  BigUnsignedInABase objects can be constructed
+ * from, and converted to, BigUnsigneds (requiring multiplication, mods, etc.)
+ * and `std::string's (by switching digit values for appropriate characters).
+ *
+ * BigUnsignedInABase is similar to BigUnsigned.  Note the following:
+ *
+ * (1) They represent the number in exactly the same way, except that
+ * BigUnsignedInABase uses ``digits'' (or Digit) where BigUnsigned uses
+ * ``blocks'' (or Blk).
+ *
+ * (2) Both use the management features of NumberlikeArray.  (In fact, my desire
+ * to add a BigUnsignedInABase class without duplicating a lot of code led me to
+ * introduce NumberlikeArray.)
+ *
+ * (3) The only arithmetic operation supported by BigUnsignedInABase is an
+ * equality test.  Use BigUnsigned for arithmetic.
+ */
+
+class BigUnsignedInABase : protected NumberlikeArray<unsigned short> {
+
+public:
+ // The digits of a BigUnsignedInABase are unsigned shorts.
+ typedef unsigned short Digit;
+ // That's also the type of a base.
+ typedef Digit Base;
+
+protected:
+ // The base in which this BigUnsignedInABase is expressed
+ Base base;
+
+ // Creates a BigUnsignedInABase with a capacity; for internal use.
+ BigUnsignedInABase(int, Index c) : NumberlikeArray<Digit>(0, c) {}
+
+ // Decreases len to eliminate any leading zero digits.
+ void zapLeadingZeros() {
+  while (len > 0 && blk[len - 1] == 0)
+   len--;
+ }
+
+public:
+ // Constructs zero in base 2.
+ BigUnsignedInABase() : NumberlikeArray<Digit>(), base(2) {}
+
+ // Copy constructor
+ BigUnsignedInABase(const BigUnsignedInABase &x) : NumberlikeArray<Digit>(x), base(x.base) {}
+
+ // Assignment operator
+ void operator =(const BigUnsignedInABase &x) {
+  NumberlikeArray<Digit>::operator =(x);
+  base = x.base;
+ }
+
+ // Constructor that copies from a given array of digits.
+ BigUnsignedInABase(const Digit *d, Index l, Base base);
+
+ // Destructor.  NumberlikeArray does the delete for us.
+ ~BigUnsignedInABase() {}
+
+ // LINKS TO BIGUNSIGNED
+ BigUnsignedInABase(const BigUnsigned &x, Base base);
+ operator BigUnsigned() const;
+
+ /* LINKS TO STRINGS
+	 *
+	 * These use the symbols ``0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'' to
+	 * represent digits of 0 through 35.  When parsing strings, lowercase is
+	 * also accepted.
+	 *
+	 * All string representations are big-endian (big-place-value digits
+	 * first).  (Computer scientists have adopted zero-based counting; why
+	 * can't they tolerate little-endian numbers?)
+	 *
+	 * No string representation has a ``base indicator'' like ``0x''.
+	 *
+	 * An exception is made for zero: it is converted to ``0'' and not the
+	 * empty string.
+	 *
+	 * If you want different conventions, write your own routines to go
+	 * between BigUnsignedInABase and strings.  It's not hard.
+	 */
+ operator std::string() const;
+ BigUnsignedInABase(const std::string &s, Base base);
+
+public:
+
+ // ACCESSORS
+ Base getBase() const { return base; }
+
+ // Expose these from NumberlikeArray directly.
+ NumberlikeArray<Digit>::getCapacity;
+ NumberlikeArray<Digit>::getLength;
+
+ /* Returns the requested digit, or 0 if it is beyond the length (as if
+	 * the number had 0s infinitely to the left). */
+ Digit getDigit(Index i) const { return i >= len ? 0 : blk[i]; }
+
+ // The number is zero if and only if the canonical length is zero.
+ bool isZero() const { return NumberlikeArray<Digit>::isEmpty(); }
+
+ /* Equality test.  For the purposes of this test, two BigUnsignedInABase
+	 * values must have the same base to be equal. */
+ bool operator ==(const BigUnsignedInABase &x) const {
+  return base == x.base && NumberlikeArray<Digit>::operator ==(x);
+ }
+ bool operator !=(const BigUnsignedInABase &x) const { return !operator ==(x); }
+
+};
+# 8 "/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigIntegerLibrary.hh" 2
+# 1 "/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigIntegerUtils.hh" 1
+
+
+
+
+
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/iostream" 1 3
+// Standard iostream objects -*- C++ -*-
+
+// Copyright (C) 1997, 1998, 1999, 2001, 2002, 2005, 2008, 2009, 2010
+// Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+/** @file include/iostream
+ *  This is a Standard C++ Library header.
+ */
+
+//
+// ISO C++ 14882: 27.3  Standard iostream objects
+//
+# 37 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/iostream" 3
+
+
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ostream" 1 3
+// Output streams -*- C++ -*-
+
+// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005,
+// 2006, 2007, 2008, 2009, 2010, 2011
+// Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+/** @file include/ostream
+ *  This is a Standard C++ Library header.
+ */
+
+//
+// ISO C++ 14882: 27.6.2  Output streams
+//
+# 38 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ostream" 3
+
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ios" 1 3
+// Iostreams base classes -*- C++ -*-
+
+// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004,
+// 2005, 2006, 2007, 2009, 2010 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+/** @file include/ios
+ *  This is a Standard C++ Library header.
+ */
+
+//
+// ISO C++ 14882: 27.4  Iostreams base classes
+//
+# 37 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/ios" 3
+
+
+
+
+
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/ios_base.h" 1 3
+// Iostreams base classes -*- C++ -*-
+
+// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005,
+// 2006, 2007, 2008, 2009, 2010
+// Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+/** @file bits/ios_base.h
+ *  This is an internal header file, included by other library headers.
+ *  Do not attempt to use it directly. @headername{ios}
+ */
+
+//
+// ISO C++ 14882: 27.4  Iostreams base classes
+//
+# 39 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/ios_base.h" 3
+
+
+
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/locale_classes.h" 1 3
+// Locale support -*- C++ -*-
+
+// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005,
+// 2006, 2007, 2008, 2009, 2010, 2011
+// Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+/** @file bits/locale_classes.h
+ *  This is an internal header file, included by other library headers.
+ *  Do not attempt to use it directly. @headername{locale}
+ */
+
+//
+// ISO C++ 14882: 22.1  Locales
+//
+# 39 "/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/locale_classes.h" 3
+
+
+
 
 
 namespace std __attribute__ ((__visibility__ ("default")))
@@ -33884,7 +34744,181 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 } // namespace
-# 69 "/home/Xilinx/Vivado_HLS/2016.2/common/technology/autopilot/ap_int_syn.h" 2
+# 7 "/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigIntegerUtils.hh" 2
+
+/* This file provides:
+ * - Convenient std::string <-> BigUnsigned/BigInteger conversion routines
+ * - std::ostream << operators for BigUnsigned/BigInteger */
+
+// std::string conversion routines.  Base 10 only.
+std::string bigUnsignedToString(const BigUnsigned &x);
+std::string bigIntegerToString(const BigInteger &x);
+BigUnsigned stringToBigUnsigned(const std::string &s);
+BigInteger stringToBigInteger(const std::string &s);
+
+// Creates a BigInteger from data such as `char's; read below for details.
+template <class T>
+BigInteger dataToBigInteger(const T* data, BigInteger::Index length, BigInteger::Sign sign);
+
+// Outputs x to os, obeying the flags `dec', `hex', `bin', and `showbase'.
+std::ostream &operator <<(std::ostream &os, const BigUnsigned &x);
+
+// Outputs x to os, obeying the flags `dec', `hex', `bin', and `showbase'.
+// My somewhat arbitrary policy: a negative sign comes before a base indicator (like -0xFF).
+std::ostream &operator <<(std::ostream &os, const BigInteger &x);
+
+// BEGIN TEMPLATE DEFINITIONS.
+
+/*
+ * Converts binary data to a BigInteger.
+ * Pass an array `data', its length, and the desired sign.
+ *
+ * Elements of `data' may be of any type `T' that has the following
+ * two properties (this includes almost all integral types):
+ *
+ * (1) `sizeof(T)' correctly gives the amount of binary data in one
+ * value of `T' and is a factor of `sizeof(Blk)'.
+ *
+ * (2) When a value of `T' is casted to a `Blk', the low bytes of
+ * the result contain the desired binary data.
+ */
+template <class T>
+BigInteger dataToBigInteger(const T* data, BigInteger::Index length, BigInteger::Sign sign) {
+ // really ceiling(numBytes / sizeof(BigInteger::Blk))
+ unsigned int pieceSizeInBits = 8 * sizeof(T);
+ unsigned int piecesPerBlock = sizeof(BigInteger::Blk) / sizeof(T);
+ unsigned int numBlocks = (length + piecesPerBlock - 1) / piecesPerBlock;
+
+ // Allocate our block array
+ BigInteger::Blk *blocks = new BigInteger::Blk[numBlocks];
+
+ BigInteger::Index blockNum, pieceNum, pieceNumHere;
+
+ // Convert
+ for (blockNum = 0, pieceNum = 0; blockNum < numBlocks; blockNum++) {
+  BigInteger::Blk curBlock = 0;
+  for (pieceNumHere = 0; pieceNumHere < piecesPerBlock && pieceNum < length;
+   pieceNumHere++, pieceNum++)
+   curBlock |= (BigInteger::Blk(data[pieceNum]) << (pieceSizeInBits * pieceNumHere));
+  blocks[blockNum] = curBlock;
+ }
+
+ // Create the BigInteger.
+ BigInteger x(blocks, numBlocks, sign);
+
+ delete [] blocks;
+ return x;
+}
+# 9 "/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/./BigIntegerLibrary.hh" 2
+# 6 "BigInt/solution1/main.cpp" 2
+
+
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/common/technology/autopilot/ap_int.h" 1
+// -*- c++ -*-
+/*
+#-  (c) Copyright 2011-2016 Xilinx, Inc. All rights reserved.
+#-
+#-  This file contains confidential and proprietary information
+#-  of Xilinx, Inc. and is protected under U.S. and
+#-  international copyright and other intellectual property
+#-  laws.
+#-
+#-  DISCLAIMER
+#-  This disclaimer is not a license and does not grant any
+#-  rights to the materials distributed herewith. Except as
+#-  otherwise provided in a valid license issued to you by
+#-  Xilinx, and to the maximum extent permitted by applicable
+#-  law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
+#-  WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
+#-  AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
+#-  BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
+#-  INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
+#-  (2) Xilinx shall not be liable (whether in contract or tort,
+#-  including negligence, or under any other theory of
+#-  liability) for any loss or damage of any kind or nature
+#-  related to, arising under or in connection with these
+#-  materials, including for any direct, or any indirect,
+#-  special, incidental, or consequential loss or damage
+#-  (including loss of data, profits, goodwill, or any type of
+#-  loss or damage suffered as a result of any action brought
+#-  by a third party) even if such damage or loss was
+#-  reasonably foreseeable or Xilinx had been advised of the
+#-  possibility of the same.
+#-
+#-  CRITICAL APPLICATIONS
+#-  Xilinx products are not designed or intended to be fail-
+#-  safe, or for use in any application requiring fail-safe
+#-  performance, such as life-support or safety devices or
+#-  systems, Class III medical devices, nuclear facilities,
+#-  applications related to the deployment of airbags, or any
+#-  other applications that could lead to death, personal
+#-  injury, or severe property or environmental damage
+#-  (individually and collectively, "Critical
+#-  Applications"). Customer assumes the sole risk and
+#-  liability of any use of Xilinx products in Critical
+#-  Applications, subject only to applicable laws and
+#-  regulations governing limitations on product liability.
+#-
+#-  THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
+#-  PART OF THIS FILE AT ALL TIMES. 
+#- ************************************************************************
+
+ *
+ */
+# 60 "/home/Xilinx/Vivado_HLS/2016.2/common/technology/autopilot/ap_int.h"
+# 1 "/home/Xilinx/Vivado_HLS/2016.2/common/technology/autopilot/ap_int_syn.h" 1
+/* -*- c++ -*-*/
+/*
+#-  (c) Copyright 2011-2016 Xilinx, Inc. All rights reserved.
+#-
+#-  This file contains confidential and proprietary information
+#-  of Xilinx, Inc. and is protected under U.S. and
+#-  international copyright and other intellectual property
+#-  laws.
+#-
+#-  DISCLAIMER
+#-  This disclaimer is not a license and does not grant any
+#-  rights to the materials distributed herewith. Except as
+#-  otherwise provided in a valid license issued to you by
+#-  Xilinx, and to the maximum extent permitted by applicable
+#-  law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
+#-  WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
+#-  AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
+#-  BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
+#-  INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
+#-  (2) Xilinx shall not be liable (whether in contract or tort,
+#-  including negligence, or under any other theory of
+#-  liability) for any loss or damage of any kind or nature
+#-  related to, arising under or in connection with these
+#-  materials, including for any direct, or any indirect,
+#-  special, incidental, or consequential loss or damage
+#-  (including loss of data, profits, goodwill, or any type of
+#-  loss or damage suffered as a result of any action brought
+#-  by a third party) even if such damage or loss was
+#-  reasonably foreseeable or Xilinx had been advised of the
+#-  possibility of the same.
+#-
+#-  CRITICAL APPLICATIONS
+#-  Xilinx products are not designed or intended to be fail-
+#-  safe, or for use in any application requiring fail-safe
+#-  performance, such as life-support or safety devices or
+#-  systems, Class III medical devices, nuclear facilities,
+#-  applications related to the deployment of airbags, or any
+#-  other applications that could lead to death, personal
+#-  injury, or severe property or environmental damage
+#-  (individually and collectively, "Critical
+#-  Applications"). Customer assumes the sole risk and
+#-  liability of any use of Xilinx products in Critical
+#-  Applications, subject only to applicable laws and
+#-  regulations governing limitations on product liability.
+#-
+#-  THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
+#-  PART OF THIS FILE AT ALL TIMES. 
+#- ************************************************************************
+
+ *
+ */
+# 69 "/home/Xilinx/Vivado_HLS/2016.2/common/technology/autopilot/ap_int_syn.h"
 extern "C" {
 
 # 1 "/usr/include/math.h" 1 3 4
@@ -45553,17 +46587,55 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 
 
 // XSIP watermark, do not delete 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689
-# 8 "BigInt/solution1/main.cpp" 2
+# 9 "BigInt/solution1/main.cpp" 2
 
-typedef ap_uint<2048> uintMem;
+typedef ap_uint<2048> uint2048;
 
-void bigint_math(uintMem number1, uintMem number2, uintMem* output){
 
-_ssdm_op_SpecInterface(0, "s_axilite", 0, 0, 0, 0, "PERIPH_BUS", "", "", 0, 0, 0, 0, "");
-_ssdm_op_SpecInterface(&number1, "s_axilite", 0, 0, 0, 0, "PERIPH_BUS", "", "", 0, 0, 0, 0, "");
-_ssdm_op_SpecInterface(&number2, "s_axilite", 0, 0, 0, 0, "PERIPH_BUS", "", "", 0, 0, 0, 0, "");
-_ssdm_op_SpecInterface(output, "s_axilite", 0, 0, 0, 0, "PERIPH_BUS", "", "", 0, 0, 0, 0, "");
+//Chars are 2048 bit binary values.
+void bigint_math(unsigned char number1[256], unsigned char number2[256]){_ssdm_SpecArrayDimSize(number1,256);_ssdm_SpecArrayDimSize(number2,256);
+//
+//	#pragma HLS INTERFACE s_axilite port=return bundle=PERIPH_BUS
+//	#pragma HLS INTERFACE s_axilite port=number1 bundle=PERIPH_BUS
+//	#pragma HLS INTERFACE s_axilite port=number2 bundle=PERIPH_BUS
+//	#pragma HLS INTERFACE s_axilite port=output bundle=PERIPH_BUS
 
- *output = number1 ^ number2;
 
+ BigInteger a = 0;
+ BigInteger b = 0;
+
+ for(int i = 0; i < 256; i++){
+   int val1(number1[i]);
+   int val2(number2[i]);
+   a = a + (val1 << 8*i);
+   b = b + (val2 << 8*i);
+
+ }
+
+ BigInteger c = a+b;
 }
+
+
+
+//
+////Chars are 2048 bit binary values.
+//void bigint_math(unsigned char number1[256], unsigned char number2[256], uint2048* output){
+//
+//	#pragma HLS INTERFACE s_axilite port=return bundle=PERIPH_BUS
+//	#pragma HLS INTERFACE s_axilite port=number1 bundle=PERIPH_BUS
+//	#pragma HLS INTERFACE s_axilite port=number2 bundle=PERIPH_BUS
+//	#pragma HLS INTERFACE s_axilite port=output bundle=PERIPH_BUS
+//
+//	uint2048 temp1 = 0;
+//	uint2048 temp2 = 0;
+//
+//	for(int i = 0; i < 256; i++){
+//		ap_uint<8> val1(number1[i]);
+//		ap_uint<8> val2(number2[i]);
+//		temp1 = temp1.concat(val1);
+//		temp2 = temp2.concat(val2);
+//	}
+//
+//	*output = temp1 * temp2;
+//
+//}

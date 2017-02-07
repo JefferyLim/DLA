@@ -11,7 +11,7 @@ use IEEE.NUMERIC_STD.all;
 
 entity bigint_math_PERIPH_BUS_s_axi is
 generic (
-    C_S_AXI_ADDR_WIDTH    : INTEGER := 10;
+    C_S_AXI_ADDR_WIDTH    : INTEGER := 11;
     C_S_AXI_DATA_WIDTH    : INTEGER := 32);
 port (
     -- axi4 lite slave signals
@@ -41,8 +41,12 @@ port (
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
     ap_idle               :in   STD_LOGIC;
-    number1_V             :out  STD_LOGIC_VECTOR(2047 downto 0);
-    number2_V             :out  STD_LOGIC_VECTOR(2047 downto 0);
+    number1_address0      :in   STD_LOGIC_VECTOR(7 downto 0);
+    number1_ce0           :in   STD_LOGIC;
+    number1_q0            :out  STD_LOGIC_VECTOR(7 downto 0);
+    number2_address0      :in   STD_LOGIC_VECTOR(7 downto 0);
+    number2_ce0           :in   STD_LOGIC;
+    number2_q0            :out  STD_LOGIC_VECTOR(7 downto 0);
     output_V              :in   STD_LOGIC_VECTOR(2047 downto 0);
     output_V_ap_vld       :in   STD_LOGIC
 );
@@ -50,7 +54,7 @@ end entity bigint_math_PERIPH_BUS_s_axi;
 
 -- ------------------------Address Info-------------------
 -- 0x000 : Control signals
---         bit 0  - ap_start (Read/Write/SC)
+--         bit 0  - ap_start (Read/Write/COH)
 --         bit 1  - ap_done (Read/COR)
 --         bit 2  - ap_idle (Read)
 --         bit 3  - ap_ready (Read)
@@ -61,604 +65,234 @@ end entity bigint_math_PERIPH_BUS_s_axi;
 --         others - reserved
 -- 0x008 : IP Interrupt Enable Register (Read/Write)
 --         bit 0  - Channel 0 (ap_done)
+--         bit 1  - Channel 1 (ap_ready)
 --         others - reserved
 -- 0x00c : IP Interrupt Status Register (Read/TOW)
 --         bit 0  - Channel 0 (ap_done)
+--         bit 1  - Channel 1 (ap_ready)
 --         others - reserved
--- 0x010 : Data signal of number1_V
---         bit 31~0 - number1_V[31:0] (Read/Write)
--- 0x014 : Data signal of number1_V
---         bit 31~0 - number1_V[63:32] (Read/Write)
--- 0x018 : Data signal of number1_V
---         bit 31~0 - number1_V[95:64] (Read/Write)
--- 0x01c : Data signal of number1_V
---         bit 31~0 - number1_V[127:96] (Read/Write)
--- 0x020 : Data signal of number1_V
---         bit 31~0 - number1_V[159:128] (Read/Write)
--- 0x024 : Data signal of number1_V
---         bit 31~0 - number1_V[191:160] (Read/Write)
--- 0x028 : Data signal of number1_V
---         bit 31~0 - number1_V[223:192] (Read/Write)
--- 0x02c : Data signal of number1_V
---         bit 31~0 - number1_V[255:224] (Read/Write)
--- 0x030 : Data signal of number1_V
---         bit 31~0 - number1_V[287:256] (Read/Write)
--- 0x034 : Data signal of number1_V
---         bit 31~0 - number1_V[319:288] (Read/Write)
--- 0x038 : Data signal of number1_V
---         bit 31~0 - number1_V[351:320] (Read/Write)
--- 0x03c : Data signal of number1_V
---         bit 31~0 - number1_V[383:352] (Read/Write)
--- 0x040 : Data signal of number1_V
---         bit 31~0 - number1_V[415:384] (Read/Write)
--- 0x044 : Data signal of number1_V
---         bit 31~0 - number1_V[447:416] (Read/Write)
--- 0x048 : Data signal of number1_V
---         bit 31~0 - number1_V[479:448] (Read/Write)
--- 0x04c : Data signal of number1_V
---         bit 31~0 - number1_V[511:480] (Read/Write)
--- 0x050 : Data signal of number1_V
---         bit 31~0 - number1_V[543:512] (Read/Write)
--- 0x054 : Data signal of number1_V
---         bit 31~0 - number1_V[575:544] (Read/Write)
--- 0x058 : Data signal of number1_V
---         bit 31~0 - number1_V[607:576] (Read/Write)
--- 0x05c : Data signal of number1_V
---         bit 31~0 - number1_V[639:608] (Read/Write)
--- 0x060 : Data signal of number1_V
---         bit 31~0 - number1_V[671:640] (Read/Write)
--- 0x064 : Data signal of number1_V
---         bit 31~0 - number1_V[703:672] (Read/Write)
--- 0x068 : Data signal of number1_V
---         bit 31~0 - number1_V[735:704] (Read/Write)
--- 0x06c : Data signal of number1_V
---         bit 31~0 - number1_V[767:736] (Read/Write)
--- 0x070 : Data signal of number1_V
---         bit 31~0 - number1_V[799:768] (Read/Write)
--- 0x074 : Data signal of number1_V
---         bit 31~0 - number1_V[831:800] (Read/Write)
--- 0x078 : Data signal of number1_V
---         bit 31~0 - number1_V[863:832] (Read/Write)
--- 0x07c : Data signal of number1_V
---         bit 31~0 - number1_V[895:864] (Read/Write)
--- 0x080 : Data signal of number1_V
---         bit 31~0 - number1_V[927:896] (Read/Write)
--- 0x084 : Data signal of number1_V
---         bit 31~0 - number1_V[959:928] (Read/Write)
--- 0x088 : Data signal of number1_V
---         bit 31~0 - number1_V[991:960] (Read/Write)
--- 0x08c : Data signal of number1_V
---         bit 31~0 - number1_V[1023:992] (Read/Write)
--- 0x090 : Data signal of number1_V
---         bit 31~0 - number1_V[1055:1024] (Read/Write)
--- 0x094 : Data signal of number1_V
---         bit 31~0 - number1_V[1087:1056] (Read/Write)
--- 0x098 : Data signal of number1_V
---         bit 31~0 - number1_V[1119:1088] (Read/Write)
--- 0x09c : Data signal of number1_V
---         bit 31~0 - number1_V[1151:1120] (Read/Write)
--- 0x0a0 : Data signal of number1_V
---         bit 31~0 - number1_V[1183:1152] (Read/Write)
--- 0x0a4 : Data signal of number1_V
---         bit 31~0 - number1_V[1215:1184] (Read/Write)
--- 0x0a8 : Data signal of number1_V
---         bit 31~0 - number1_V[1247:1216] (Read/Write)
--- 0x0ac : Data signal of number1_V
---         bit 31~0 - number1_V[1279:1248] (Read/Write)
--- 0x0b0 : Data signal of number1_V
---         bit 31~0 - number1_V[1311:1280] (Read/Write)
--- 0x0b4 : Data signal of number1_V
---         bit 31~0 - number1_V[1343:1312] (Read/Write)
--- 0x0b8 : Data signal of number1_V
---         bit 31~0 - number1_V[1375:1344] (Read/Write)
--- 0x0bc : Data signal of number1_V
---         bit 31~0 - number1_V[1407:1376] (Read/Write)
--- 0x0c0 : Data signal of number1_V
---         bit 31~0 - number1_V[1439:1408] (Read/Write)
--- 0x0c4 : Data signal of number1_V
---         bit 31~0 - number1_V[1471:1440] (Read/Write)
--- 0x0c8 : Data signal of number1_V
---         bit 31~0 - number1_V[1503:1472] (Read/Write)
--- 0x0cc : Data signal of number1_V
---         bit 31~0 - number1_V[1535:1504] (Read/Write)
--- 0x0d0 : Data signal of number1_V
---         bit 31~0 - number1_V[1567:1536] (Read/Write)
--- 0x0d4 : Data signal of number1_V
---         bit 31~0 - number1_V[1599:1568] (Read/Write)
--- 0x0d8 : Data signal of number1_V
---         bit 31~0 - number1_V[1631:1600] (Read/Write)
--- 0x0dc : Data signal of number1_V
---         bit 31~0 - number1_V[1663:1632] (Read/Write)
--- 0x0e0 : Data signal of number1_V
---         bit 31~0 - number1_V[1695:1664] (Read/Write)
--- 0x0e4 : Data signal of number1_V
---         bit 31~0 - number1_V[1727:1696] (Read/Write)
--- 0x0e8 : Data signal of number1_V
---         bit 31~0 - number1_V[1759:1728] (Read/Write)
--- 0x0ec : Data signal of number1_V
---         bit 31~0 - number1_V[1791:1760] (Read/Write)
--- 0x0f0 : Data signal of number1_V
---         bit 31~0 - number1_V[1823:1792] (Read/Write)
--- 0x0f4 : Data signal of number1_V
---         bit 31~0 - number1_V[1855:1824] (Read/Write)
--- 0x0f8 : Data signal of number1_V
---         bit 31~0 - number1_V[1887:1856] (Read/Write)
--- 0x0fc : Data signal of number1_V
---         bit 31~0 - number1_V[1919:1888] (Read/Write)
--- 0x100 : Data signal of number1_V
---         bit 31~0 - number1_V[1951:1920] (Read/Write)
--- 0x104 : Data signal of number1_V
---         bit 31~0 - number1_V[1983:1952] (Read/Write)
--- 0x108 : Data signal of number1_V
---         bit 31~0 - number1_V[2015:1984] (Read/Write)
--- 0x10c : Data signal of number1_V
---         bit 31~0 - number1_V[2047:2016] (Read/Write)
--- 0x110 : reserved
--- 0x114 : Data signal of number2_V
---         bit 31~0 - number2_V[31:0] (Read/Write)
--- 0x118 : Data signal of number2_V
---         bit 31~0 - number2_V[63:32] (Read/Write)
--- 0x11c : Data signal of number2_V
---         bit 31~0 - number2_V[95:64] (Read/Write)
--- 0x120 : Data signal of number2_V
---         bit 31~0 - number2_V[127:96] (Read/Write)
--- 0x124 : Data signal of number2_V
---         bit 31~0 - number2_V[159:128] (Read/Write)
--- 0x128 : Data signal of number2_V
---         bit 31~0 - number2_V[191:160] (Read/Write)
--- 0x12c : Data signal of number2_V
---         bit 31~0 - number2_V[223:192] (Read/Write)
--- 0x130 : Data signal of number2_V
---         bit 31~0 - number2_V[255:224] (Read/Write)
--- 0x134 : Data signal of number2_V
---         bit 31~0 - number2_V[287:256] (Read/Write)
--- 0x138 : Data signal of number2_V
---         bit 31~0 - number2_V[319:288] (Read/Write)
--- 0x13c : Data signal of number2_V
---         bit 31~0 - number2_V[351:320] (Read/Write)
--- 0x140 : Data signal of number2_V
---         bit 31~0 - number2_V[383:352] (Read/Write)
--- 0x144 : Data signal of number2_V
---         bit 31~0 - number2_V[415:384] (Read/Write)
--- 0x148 : Data signal of number2_V
---         bit 31~0 - number2_V[447:416] (Read/Write)
--- 0x14c : Data signal of number2_V
---         bit 31~0 - number2_V[479:448] (Read/Write)
--- 0x150 : Data signal of number2_V
---         bit 31~0 - number2_V[511:480] (Read/Write)
--- 0x154 : Data signal of number2_V
---         bit 31~0 - number2_V[543:512] (Read/Write)
--- 0x158 : Data signal of number2_V
---         bit 31~0 - number2_V[575:544] (Read/Write)
--- 0x15c : Data signal of number2_V
---         bit 31~0 - number2_V[607:576] (Read/Write)
--- 0x160 : Data signal of number2_V
---         bit 31~0 - number2_V[639:608] (Read/Write)
--- 0x164 : Data signal of number2_V
---         bit 31~0 - number2_V[671:640] (Read/Write)
--- 0x168 : Data signal of number2_V
---         bit 31~0 - number2_V[703:672] (Read/Write)
--- 0x16c : Data signal of number2_V
---         bit 31~0 - number2_V[735:704] (Read/Write)
--- 0x170 : Data signal of number2_V
---         bit 31~0 - number2_V[767:736] (Read/Write)
--- 0x174 : Data signal of number2_V
---         bit 31~0 - number2_V[799:768] (Read/Write)
--- 0x178 : Data signal of number2_V
---         bit 31~0 - number2_V[831:800] (Read/Write)
--- 0x17c : Data signal of number2_V
---         bit 31~0 - number2_V[863:832] (Read/Write)
--- 0x180 : Data signal of number2_V
---         bit 31~0 - number2_V[895:864] (Read/Write)
--- 0x184 : Data signal of number2_V
---         bit 31~0 - number2_V[927:896] (Read/Write)
--- 0x188 : Data signal of number2_V
---         bit 31~0 - number2_V[959:928] (Read/Write)
--- 0x18c : Data signal of number2_V
---         bit 31~0 - number2_V[991:960] (Read/Write)
--- 0x190 : Data signal of number2_V
---         bit 31~0 - number2_V[1023:992] (Read/Write)
--- 0x194 : Data signal of number2_V
---         bit 31~0 - number2_V[1055:1024] (Read/Write)
--- 0x198 : Data signal of number2_V
---         bit 31~0 - number2_V[1087:1056] (Read/Write)
--- 0x19c : Data signal of number2_V
---         bit 31~0 - number2_V[1119:1088] (Read/Write)
--- 0x1a0 : Data signal of number2_V
---         bit 31~0 - number2_V[1151:1120] (Read/Write)
--- 0x1a4 : Data signal of number2_V
---         bit 31~0 - number2_V[1183:1152] (Read/Write)
--- 0x1a8 : Data signal of number2_V
---         bit 31~0 - number2_V[1215:1184] (Read/Write)
--- 0x1ac : Data signal of number2_V
---         bit 31~0 - number2_V[1247:1216] (Read/Write)
--- 0x1b0 : Data signal of number2_V
---         bit 31~0 - number2_V[1279:1248] (Read/Write)
--- 0x1b4 : Data signal of number2_V
---         bit 31~0 - number2_V[1311:1280] (Read/Write)
--- 0x1b8 : Data signal of number2_V
---         bit 31~0 - number2_V[1343:1312] (Read/Write)
--- 0x1bc : Data signal of number2_V
---         bit 31~0 - number2_V[1375:1344] (Read/Write)
--- 0x1c0 : Data signal of number2_V
---         bit 31~0 - number2_V[1407:1376] (Read/Write)
--- 0x1c4 : Data signal of number2_V
---         bit 31~0 - number2_V[1439:1408] (Read/Write)
--- 0x1c8 : Data signal of number2_V
---         bit 31~0 - number2_V[1471:1440] (Read/Write)
--- 0x1cc : Data signal of number2_V
---         bit 31~0 - number2_V[1503:1472] (Read/Write)
--- 0x1d0 : Data signal of number2_V
---         bit 31~0 - number2_V[1535:1504] (Read/Write)
--- 0x1d4 : Data signal of number2_V
---         bit 31~0 - number2_V[1567:1536] (Read/Write)
--- 0x1d8 : Data signal of number2_V
---         bit 31~0 - number2_V[1599:1568] (Read/Write)
--- 0x1dc : Data signal of number2_V
---         bit 31~0 - number2_V[1631:1600] (Read/Write)
--- 0x1e0 : Data signal of number2_V
---         bit 31~0 - number2_V[1663:1632] (Read/Write)
--- 0x1e4 : Data signal of number2_V
---         bit 31~0 - number2_V[1695:1664] (Read/Write)
--- 0x1e8 : Data signal of number2_V
---         bit 31~0 - number2_V[1727:1696] (Read/Write)
--- 0x1ec : Data signal of number2_V
---         bit 31~0 - number2_V[1759:1728] (Read/Write)
--- 0x1f0 : Data signal of number2_V
---         bit 31~0 - number2_V[1791:1760] (Read/Write)
--- 0x1f4 : Data signal of number2_V
---         bit 31~0 - number2_V[1823:1792] (Read/Write)
--- 0x1f8 : Data signal of number2_V
---         bit 31~0 - number2_V[1855:1824] (Read/Write)
--- 0x1fc : Data signal of number2_V
---         bit 31~0 - number2_V[1887:1856] (Read/Write)
--- 0x200 : Data signal of number2_V
---         bit 31~0 - number2_V[1919:1888] (Read/Write)
--- 0x204 : Data signal of number2_V
---         bit 31~0 - number2_V[1951:1920] (Read/Write)
--- 0x208 : Data signal of number2_V
---         bit 31~0 - number2_V[1983:1952] (Read/Write)
--- 0x20c : Data signal of number2_V
---         bit 31~0 - number2_V[2015:1984] (Read/Write)
--- 0x210 : Data signal of number2_V
---         bit 31~0 - number2_V[2047:2016] (Read/Write)
--- 0x214 : reserved
--- 0x218 : Data signal of output_V
---         bit 31~0 - output_V[31:0] (Read)
--- 0x21c : Data signal of output_V
---         bit 31~0 - output_V[63:32] (Read)
--- 0x220 : Data signal of output_V
---         bit 31~0 - output_V[95:64] (Read)
--- 0x224 : Data signal of output_V
---         bit 31~0 - output_V[127:96] (Read)
--- 0x228 : Data signal of output_V
---         bit 31~0 - output_V[159:128] (Read)
--- 0x22c : Data signal of output_V
---         bit 31~0 - output_V[191:160] (Read)
--- 0x230 : Data signal of output_V
---         bit 31~0 - output_V[223:192] (Read)
--- 0x234 : Data signal of output_V
---         bit 31~0 - output_V[255:224] (Read)
--- 0x238 : Data signal of output_V
---         bit 31~0 - output_V[287:256] (Read)
--- 0x23c : Data signal of output_V
---         bit 31~0 - output_V[319:288] (Read)
--- 0x240 : Data signal of output_V
---         bit 31~0 - output_V[351:320] (Read)
--- 0x244 : Data signal of output_V
---         bit 31~0 - output_V[383:352] (Read)
--- 0x248 : Data signal of output_V
---         bit 31~0 - output_V[415:384] (Read)
--- 0x24c : Data signal of output_V
---         bit 31~0 - output_V[447:416] (Read)
--- 0x250 : Data signal of output_V
---         bit 31~0 - output_V[479:448] (Read)
--- 0x254 : Data signal of output_V
---         bit 31~0 - output_V[511:480] (Read)
--- 0x258 : Data signal of output_V
---         bit 31~0 - output_V[543:512] (Read)
--- 0x25c : Data signal of output_V
---         bit 31~0 - output_V[575:544] (Read)
--- 0x260 : Data signal of output_V
---         bit 31~0 - output_V[607:576] (Read)
--- 0x264 : Data signal of output_V
---         bit 31~0 - output_V[639:608] (Read)
--- 0x268 : Data signal of output_V
---         bit 31~0 - output_V[671:640] (Read)
--- 0x26c : Data signal of output_V
---         bit 31~0 - output_V[703:672] (Read)
--- 0x270 : Data signal of output_V
---         bit 31~0 - output_V[735:704] (Read)
--- 0x274 : Data signal of output_V
---         bit 31~0 - output_V[767:736] (Read)
--- 0x278 : Data signal of output_V
---         bit 31~0 - output_V[799:768] (Read)
--- 0x27c : Data signal of output_V
---         bit 31~0 - output_V[831:800] (Read)
--- 0x280 : Data signal of output_V
---         bit 31~0 - output_V[863:832] (Read)
--- 0x284 : Data signal of output_V
---         bit 31~0 - output_V[895:864] (Read)
--- 0x288 : Data signal of output_V
---         bit 31~0 - output_V[927:896] (Read)
--- 0x28c : Data signal of output_V
---         bit 31~0 - output_V[959:928] (Read)
--- 0x290 : Data signal of output_V
---         bit 31~0 - output_V[991:960] (Read)
--- 0x294 : Data signal of output_V
---         bit 31~0 - output_V[1023:992] (Read)
--- 0x298 : Data signal of output_V
---         bit 31~0 - output_V[1055:1024] (Read)
--- 0x29c : Data signal of output_V
---         bit 31~0 - output_V[1087:1056] (Read)
--- 0x2a0 : Data signal of output_V
---         bit 31~0 - output_V[1119:1088] (Read)
--- 0x2a4 : Data signal of output_V
---         bit 31~0 - output_V[1151:1120] (Read)
--- 0x2a8 : Data signal of output_V
---         bit 31~0 - output_V[1183:1152] (Read)
--- 0x2ac : Data signal of output_V
---         bit 31~0 - output_V[1215:1184] (Read)
--- 0x2b0 : Data signal of output_V
---         bit 31~0 - output_V[1247:1216] (Read)
--- 0x2b4 : Data signal of output_V
---         bit 31~0 - output_V[1279:1248] (Read)
--- 0x2b8 : Data signal of output_V
---         bit 31~0 - output_V[1311:1280] (Read)
--- 0x2bc : Data signal of output_V
---         bit 31~0 - output_V[1343:1312] (Read)
--- 0x2c0 : Data signal of output_V
---         bit 31~0 - output_V[1375:1344] (Read)
--- 0x2c4 : Data signal of output_V
---         bit 31~0 - output_V[1407:1376] (Read)
--- 0x2c8 : Data signal of output_V
---         bit 31~0 - output_V[1439:1408] (Read)
--- 0x2cc : Data signal of output_V
---         bit 31~0 - output_V[1471:1440] (Read)
--- 0x2d0 : Data signal of output_V
---         bit 31~0 - output_V[1503:1472] (Read)
--- 0x2d4 : Data signal of output_V
---         bit 31~0 - output_V[1535:1504] (Read)
--- 0x2d8 : Data signal of output_V
---         bit 31~0 - output_V[1567:1536] (Read)
--- 0x2dc : Data signal of output_V
---         bit 31~0 - output_V[1599:1568] (Read)
--- 0x2e0 : Data signal of output_V
---         bit 31~0 - output_V[1631:1600] (Read)
--- 0x2e4 : Data signal of output_V
---         bit 31~0 - output_V[1663:1632] (Read)
--- 0x2e8 : Data signal of output_V
---         bit 31~0 - output_V[1695:1664] (Read)
--- 0x2ec : Data signal of output_V
---         bit 31~0 - output_V[1727:1696] (Read)
--- 0x2f0 : Data signal of output_V
---         bit 31~0 - output_V[1759:1728] (Read)
--- 0x2f4 : Data signal of output_V
---         bit 31~0 - output_V[1791:1760] (Read)
--- 0x2f8 : Data signal of output_V
---         bit 31~0 - output_V[1823:1792] (Read)
--- 0x2fc : Data signal of output_V
---         bit 31~0 - output_V[1855:1824] (Read)
 -- 0x300 : Data signal of output_V
---         bit 31~0 - output_V[1887:1856] (Read)
+--         bit 31~0 - output_V[31:0] (Read)
 -- 0x304 : Data signal of output_V
---         bit 31~0 - output_V[1919:1888] (Read)
+--         bit 31~0 - output_V[63:32] (Read)
 -- 0x308 : Data signal of output_V
---         bit 31~0 - output_V[1951:1920] (Read)
+--         bit 31~0 - output_V[95:64] (Read)
 -- 0x30c : Data signal of output_V
---         bit 31~0 - output_V[1983:1952] (Read)
+--         bit 31~0 - output_V[127:96] (Read)
 -- 0x310 : Data signal of output_V
---         bit 31~0 - output_V[2015:1984] (Read)
+--         bit 31~0 - output_V[159:128] (Read)
 -- 0x314 : Data signal of output_V
+--         bit 31~0 - output_V[191:160] (Read)
+-- 0x318 : Data signal of output_V
+--         bit 31~0 - output_V[223:192] (Read)
+-- 0x31c : Data signal of output_V
+--         bit 31~0 - output_V[255:224] (Read)
+-- 0x320 : Data signal of output_V
+--         bit 31~0 - output_V[287:256] (Read)
+-- 0x324 : Data signal of output_V
+--         bit 31~0 - output_V[319:288] (Read)
+-- 0x328 : Data signal of output_V
+--         bit 31~0 - output_V[351:320] (Read)
+-- 0x32c : Data signal of output_V
+--         bit 31~0 - output_V[383:352] (Read)
+-- 0x330 : Data signal of output_V
+--         bit 31~0 - output_V[415:384] (Read)
+-- 0x334 : Data signal of output_V
+--         bit 31~0 - output_V[447:416] (Read)
+-- 0x338 : Data signal of output_V
+--         bit 31~0 - output_V[479:448] (Read)
+-- 0x33c : Data signal of output_V
+--         bit 31~0 - output_V[511:480] (Read)
+-- 0x340 : Data signal of output_V
+--         bit 31~0 - output_V[543:512] (Read)
+-- 0x344 : Data signal of output_V
+--         bit 31~0 - output_V[575:544] (Read)
+-- 0x348 : Data signal of output_V
+--         bit 31~0 - output_V[607:576] (Read)
+-- 0x34c : Data signal of output_V
+--         bit 31~0 - output_V[639:608] (Read)
+-- 0x350 : Data signal of output_V
+--         bit 31~0 - output_V[671:640] (Read)
+-- 0x354 : Data signal of output_V
+--         bit 31~0 - output_V[703:672] (Read)
+-- 0x358 : Data signal of output_V
+--         bit 31~0 - output_V[735:704] (Read)
+-- 0x35c : Data signal of output_V
+--         bit 31~0 - output_V[767:736] (Read)
+-- 0x360 : Data signal of output_V
+--         bit 31~0 - output_V[799:768] (Read)
+-- 0x364 : Data signal of output_V
+--         bit 31~0 - output_V[831:800] (Read)
+-- 0x368 : Data signal of output_V
+--         bit 31~0 - output_V[863:832] (Read)
+-- 0x36c : Data signal of output_V
+--         bit 31~0 - output_V[895:864] (Read)
+-- 0x370 : Data signal of output_V
+--         bit 31~0 - output_V[927:896] (Read)
+-- 0x374 : Data signal of output_V
+--         bit 31~0 - output_V[959:928] (Read)
+-- 0x378 : Data signal of output_V
+--         bit 31~0 - output_V[991:960] (Read)
+-- 0x37c : Data signal of output_V
+--         bit 31~0 - output_V[1023:992] (Read)
+-- 0x380 : Data signal of output_V
+--         bit 31~0 - output_V[1055:1024] (Read)
+-- 0x384 : Data signal of output_V
+--         bit 31~0 - output_V[1087:1056] (Read)
+-- 0x388 : Data signal of output_V
+--         bit 31~0 - output_V[1119:1088] (Read)
+-- 0x38c : Data signal of output_V
+--         bit 31~0 - output_V[1151:1120] (Read)
+-- 0x390 : Data signal of output_V
+--         bit 31~0 - output_V[1183:1152] (Read)
+-- 0x394 : Data signal of output_V
+--         bit 31~0 - output_V[1215:1184] (Read)
+-- 0x398 : Data signal of output_V
+--         bit 31~0 - output_V[1247:1216] (Read)
+-- 0x39c : Data signal of output_V
+--         bit 31~0 - output_V[1279:1248] (Read)
+-- 0x3a0 : Data signal of output_V
+--         bit 31~0 - output_V[1311:1280] (Read)
+-- 0x3a4 : Data signal of output_V
+--         bit 31~0 - output_V[1343:1312] (Read)
+-- 0x3a8 : Data signal of output_V
+--         bit 31~0 - output_V[1375:1344] (Read)
+-- 0x3ac : Data signal of output_V
+--         bit 31~0 - output_V[1407:1376] (Read)
+-- 0x3b0 : Data signal of output_V
+--         bit 31~0 - output_V[1439:1408] (Read)
+-- 0x3b4 : Data signal of output_V
+--         bit 31~0 - output_V[1471:1440] (Read)
+-- 0x3b8 : Data signal of output_V
+--         bit 31~0 - output_V[1503:1472] (Read)
+-- 0x3bc : Data signal of output_V
+--         bit 31~0 - output_V[1535:1504] (Read)
+-- 0x3c0 : Data signal of output_V
+--         bit 31~0 - output_V[1567:1536] (Read)
+-- 0x3c4 : Data signal of output_V
+--         bit 31~0 - output_V[1599:1568] (Read)
+-- 0x3c8 : Data signal of output_V
+--         bit 31~0 - output_V[1631:1600] (Read)
+-- 0x3cc : Data signal of output_V
+--         bit 31~0 - output_V[1663:1632] (Read)
+-- 0x3d0 : Data signal of output_V
+--         bit 31~0 - output_V[1695:1664] (Read)
+-- 0x3d4 : Data signal of output_V
+--         bit 31~0 - output_V[1727:1696] (Read)
+-- 0x3d8 : Data signal of output_V
+--         bit 31~0 - output_V[1759:1728] (Read)
+-- 0x3dc : Data signal of output_V
+--         bit 31~0 - output_V[1791:1760] (Read)
+-- 0x3e0 : Data signal of output_V
+--         bit 31~0 - output_V[1823:1792] (Read)
+-- 0x3e4 : Data signal of output_V
+--         bit 31~0 - output_V[1855:1824] (Read)
+-- 0x3e8 : Data signal of output_V
+--         bit 31~0 - output_V[1887:1856] (Read)
+-- 0x3ec : Data signal of output_V
+--         bit 31~0 - output_V[1919:1888] (Read)
+-- 0x3f0 : Data signal of output_V
+--         bit 31~0 - output_V[1951:1920] (Read)
+-- 0x3f4 : Data signal of output_V
+--         bit 31~0 - output_V[1983:1952] (Read)
+-- 0x3f8 : Data signal of output_V
+--         bit 31~0 - output_V[2015:1984] (Read)
+-- 0x3fc : Data signal of output_V
 --         bit 31~0 - output_V[2047:2016] (Read)
--- 0x318 : Control signal of output_V
+-- 0x400 : Control signal of output_V
 --         bit 0  - output_V_ap_vld (Read/COR)
 --         others - reserved
+-- 0x100 ~
+-- 0x1ff : Memory 'number1' (64 * 8b)
+--         Word n : bit [ 7: 0] - number1[4n]
+--                  bit [15: 8] - number1[4n+1]
+--                  bit [23:16] - number1[4n+2]
+--                  bit [31:24] - number1[4n+3]
+-- 0x200 ~
+-- 0x2ff : Memory 'number2' (64 * 8b)
+--         Word n : bit [ 7: 0] - number2[4n]
+--                  bit [15: 8] - number2[4n+1]
+--                  bit [23:16] - number2[4n+2]
+--                  bit [31:24] - number2[4n+3]
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of bigint_math_PERIPH_BUS_s_axi is
     type states is (wridle, wrdata, wrresp, rdidle, rddata);  -- read and write fsm states
     signal wstate, wnext, rstate, rnext: states;
-    constant ADDR_AP_CTRL           : INTEGER := 16#000#;
-    constant ADDR_GIE               : INTEGER := 16#004#;
-    constant ADDR_IER               : INTEGER := 16#008#;
-    constant ADDR_ISR               : INTEGER := 16#00c#;
-    constant ADDR_NUMBER1_V_DATA_0  : INTEGER := 16#010#;
-    constant ADDR_NUMBER1_V_DATA_1  : INTEGER := 16#014#;
-    constant ADDR_NUMBER1_V_DATA_2  : INTEGER := 16#018#;
-    constant ADDR_NUMBER1_V_DATA_3  : INTEGER := 16#01c#;
-    constant ADDR_NUMBER1_V_DATA_4  : INTEGER := 16#020#;
-    constant ADDR_NUMBER1_V_DATA_5  : INTEGER := 16#024#;
-    constant ADDR_NUMBER1_V_DATA_6  : INTEGER := 16#028#;
-    constant ADDR_NUMBER1_V_DATA_7  : INTEGER := 16#02c#;
-    constant ADDR_NUMBER1_V_DATA_8  : INTEGER := 16#030#;
-    constant ADDR_NUMBER1_V_DATA_9  : INTEGER := 16#034#;
-    constant ADDR_NUMBER1_V_DATA_10 : INTEGER := 16#038#;
-    constant ADDR_NUMBER1_V_DATA_11 : INTEGER := 16#03c#;
-    constant ADDR_NUMBER1_V_DATA_12 : INTEGER := 16#040#;
-    constant ADDR_NUMBER1_V_DATA_13 : INTEGER := 16#044#;
-    constant ADDR_NUMBER1_V_DATA_14 : INTEGER := 16#048#;
-    constant ADDR_NUMBER1_V_DATA_15 : INTEGER := 16#04c#;
-    constant ADDR_NUMBER1_V_DATA_16 : INTEGER := 16#050#;
-    constant ADDR_NUMBER1_V_DATA_17 : INTEGER := 16#054#;
-    constant ADDR_NUMBER1_V_DATA_18 : INTEGER := 16#058#;
-    constant ADDR_NUMBER1_V_DATA_19 : INTEGER := 16#05c#;
-    constant ADDR_NUMBER1_V_DATA_20 : INTEGER := 16#060#;
-    constant ADDR_NUMBER1_V_DATA_21 : INTEGER := 16#064#;
-    constant ADDR_NUMBER1_V_DATA_22 : INTEGER := 16#068#;
-    constant ADDR_NUMBER1_V_DATA_23 : INTEGER := 16#06c#;
-    constant ADDR_NUMBER1_V_DATA_24 : INTEGER := 16#070#;
-    constant ADDR_NUMBER1_V_DATA_25 : INTEGER := 16#074#;
-    constant ADDR_NUMBER1_V_DATA_26 : INTEGER := 16#078#;
-    constant ADDR_NUMBER1_V_DATA_27 : INTEGER := 16#07c#;
-    constant ADDR_NUMBER1_V_DATA_28 : INTEGER := 16#080#;
-    constant ADDR_NUMBER1_V_DATA_29 : INTEGER := 16#084#;
-    constant ADDR_NUMBER1_V_DATA_30 : INTEGER := 16#088#;
-    constant ADDR_NUMBER1_V_DATA_31 : INTEGER := 16#08c#;
-    constant ADDR_NUMBER1_V_DATA_32 : INTEGER := 16#090#;
-    constant ADDR_NUMBER1_V_DATA_33 : INTEGER := 16#094#;
-    constant ADDR_NUMBER1_V_DATA_34 : INTEGER := 16#098#;
-    constant ADDR_NUMBER1_V_DATA_35 : INTEGER := 16#09c#;
-    constant ADDR_NUMBER1_V_DATA_36 : INTEGER := 16#0a0#;
-    constant ADDR_NUMBER1_V_DATA_37 : INTEGER := 16#0a4#;
-    constant ADDR_NUMBER1_V_DATA_38 : INTEGER := 16#0a8#;
-    constant ADDR_NUMBER1_V_DATA_39 : INTEGER := 16#0ac#;
-    constant ADDR_NUMBER1_V_DATA_40 : INTEGER := 16#0b0#;
-    constant ADDR_NUMBER1_V_DATA_41 : INTEGER := 16#0b4#;
-    constant ADDR_NUMBER1_V_DATA_42 : INTEGER := 16#0b8#;
-    constant ADDR_NUMBER1_V_DATA_43 : INTEGER := 16#0bc#;
-    constant ADDR_NUMBER1_V_DATA_44 : INTEGER := 16#0c0#;
-    constant ADDR_NUMBER1_V_DATA_45 : INTEGER := 16#0c4#;
-    constant ADDR_NUMBER1_V_DATA_46 : INTEGER := 16#0c8#;
-    constant ADDR_NUMBER1_V_DATA_47 : INTEGER := 16#0cc#;
-    constant ADDR_NUMBER1_V_DATA_48 : INTEGER := 16#0d0#;
-    constant ADDR_NUMBER1_V_DATA_49 : INTEGER := 16#0d4#;
-    constant ADDR_NUMBER1_V_DATA_50 : INTEGER := 16#0d8#;
-    constant ADDR_NUMBER1_V_DATA_51 : INTEGER := 16#0dc#;
-    constant ADDR_NUMBER1_V_DATA_52 : INTEGER := 16#0e0#;
-    constant ADDR_NUMBER1_V_DATA_53 : INTEGER := 16#0e4#;
-    constant ADDR_NUMBER1_V_DATA_54 : INTEGER := 16#0e8#;
-    constant ADDR_NUMBER1_V_DATA_55 : INTEGER := 16#0ec#;
-    constant ADDR_NUMBER1_V_DATA_56 : INTEGER := 16#0f0#;
-    constant ADDR_NUMBER1_V_DATA_57 : INTEGER := 16#0f4#;
-    constant ADDR_NUMBER1_V_DATA_58 : INTEGER := 16#0f8#;
-    constant ADDR_NUMBER1_V_DATA_59 : INTEGER := 16#0fc#;
-    constant ADDR_NUMBER1_V_DATA_60 : INTEGER := 16#100#;
-    constant ADDR_NUMBER1_V_DATA_61 : INTEGER := 16#104#;
-    constant ADDR_NUMBER1_V_DATA_62 : INTEGER := 16#108#;
-    constant ADDR_NUMBER1_V_DATA_63 : INTEGER := 16#10c#;
-    constant ADDR_NUMBER1_V_CTRL    : INTEGER := 16#110#;
-    constant ADDR_NUMBER2_V_DATA_0  : INTEGER := 16#114#;
-    constant ADDR_NUMBER2_V_DATA_1  : INTEGER := 16#118#;
-    constant ADDR_NUMBER2_V_DATA_2  : INTEGER := 16#11c#;
-    constant ADDR_NUMBER2_V_DATA_3  : INTEGER := 16#120#;
-    constant ADDR_NUMBER2_V_DATA_4  : INTEGER := 16#124#;
-    constant ADDR_NUMBER2_V_DATA_5  : INTEGER := 16#128#;
-    constant ADDR_NUMBER2_V_DATA_6  : INTEGER := 16#12c#;
-    constant ADDR_NUMBER2_V_DATA_7  : INTEGER := 16#130#;
-    constant ADDR_NUMBER2_V_DATA_8  : INTEGER := 16#134#;
-    constant ADDR_NUMBER2_V_DATA_9  : INTEGER := 16#138#;
-    constant ADDR_NUMBER2_V_DATA_10 : INTEGER := 16#13c#;
-    constant ADDR_NUMBER2_V_DATA_11 : INTEGER := 16#140#;
-    constant ADDR_NUMBER2_V_DATA_12 : INTEGER := 16#144#;
-    constant ADDR_NUMBER2_V_DATA_13 : INTEGER := 16#148#;
-    constant ADDR_NUMBER2_V_DATA_14 : INTEGER := 16#14c#;
-    constant ADDR_NUMBER2_V_DATA_15 : INTEGER := 16#150#;
-    constant ADDR_NUMBER2_V_DATA_16 : INTEGER := 16#154#;
-    constant ADDR_NUMBER2_V_DATA_17 : INTEGER := 16#158#;
-    constant ADDR_NUMBER2_V_DATA_18 : INTEGER := 16#15c#;
-    constant ADDR_NUMBER2_V_DATA_19 : INTEGER := 16#160#;
-    constant ADDR_NUMBER2_V_DATA_20 : INTEGER := 16#164#;
-    constant ADDR_NUMBER2_V_DATA_21 : INTEGER := 16#168#;
-    constant ADDR_NUMBER2_V_DATA_22 : INTEGER := 16#16c#;
-    constant ADDR_NUMBER2_V_DATA_23 : INTEGER := 16#170#;
-    constant ADDR_NUMBER2_V_DATA_24 : INTEGER := 16#174#;
-    constant ADDR_NUMBER2_V_DATA_25 : INTEGER := 16#178#;
-    constant ADDR_NUMBER2_V_DATA_26 : INTEGER := 16#17c#;
-    constant ADDR_NUMBER2_V_DATA_27 : INTEGER := 16#180#;
-    constant ADDR_NUMBER2_V_DATA_28 : INTEGER := 16#184#;
-    constant ADDR_NUMBER2_V_DATA_29 : INTEGER := 16#188#;
-    constant ADDR_NUMBER2_V_DATA_30 : INTEGER := 16#18c#;
-    constant ADDR_NUMBER2_V_DATA_31 : INTEGER := 16#190#;
-    constant ADDR_NUMBER2_V_DATA_32 : INTEGER := 16#194#;
-    constant ADDR_NUMBER2_V_DATA_33 : INTEGER := 16#198#;
-    constant ADDR_NUMBER2_V_DATA_34 : INTEGER := 16#19c#;
-    constant ADDR_NUMBER2_V_DATA_35 : INTEGER := 16#1a0#;
-    constant ADDR_NUMBER2_V_DATA_36 : INTEGER := 16#1a4#;
-    constant ADDR_NUMBER2_V_DATA_37 : INTEGER := 16#1a8#;
-    constant ADDR_NUMBER2_V_DATA_38 : INTEGER := 16#1ac#;
-    constant ADDR_NUMBER2_V_DATA_39 : INTEGER := 16#1b0#;
-    constant ADDR_NUMBER2_V_DATA_40 : INTEGER := 16#1b4#;
-    constant ADDR_NUMBER2_V_DATA_41 : INTEGER := 16#1b8#;
-    constant ADDR_NUMBER2_V_DATA_42 : INTEGER := 16#1bc#;
-    constant ADDR_NUMBER2_V_DATA_43 : INTEGER := 16#1c0#;
-    constant ADDR_NUMBER2_V_DATA_44 : INTEGER := 16#1c4#;
-    constant ADDR_NUMBER2_V_DATA_45 : INTEGER := 16#1c8#;
-    constant ADDR_NUMBER2_V_DATA_46 : INTEGER := 16#1cc#;
-    constant ADDR_NUMBER2_V_DATA_47 : INTEGER := 16#1d0#;
-    constant ADDR_NUMBER2_V_DATA_48 : INTEGER := 16#1d4#;
-    constant ADDR_NUMBER2_V_DATA_49 : INTEGER := 16#1d8#;
-    constant ADDR_NUMBER2_V_DATA_50 : INTEGER := 16#1dc#;
-    constant ADDR_NUMBER2_V_DATA_51 : INTEGER := 16#1e0#;
-    constant ADDR_NUMBER2_V_DATA_52 : INTEGER := 16#1e4#;
-    constant ADDR_NUMBER2_V_DATA_53 : INTEGER := 16#1e8#;
-    constant ADDR_NUMBER2_V_DATA_54 : INTEGER := 16#1ec#;
-    constant ADDR_NUMBER2_V_DATA_55 : INTEGER := 16#1f0#;
-    constant ADDR_NUMBER2_V_DATA_56 : INTEGER := 16#1f4#;
-    constant ADDR_NUMBER2_V_DATA_57 : INTEGER := 16#1f8#;
-    constant ADDR_NUMBER2_V_DATA_58 : INTEGER := 16#1fc#;
-    constant ADDR_NUMBER2_V_DATA_59 : INTEGER := 16#200#;
-    constant ADDR_NUMBER2_V_DATA_60 : INTEGER := 16#204#;
-    constant ADDR_NUMBER2_V_DATA_61 : INTEGER := 16#208#;
-    constant ADDR_NUMBER2_V_DATA_62 : INTEGER := 16#20c#;
-    constant ADDR_NUMBER2_V_DATA_63 : INTEGER := 16#210#;
-    constant ADDR_NUMBER2_V_CTRL    : INTEGER := 16#214#;
-    constant ADDR_OUTPUT_V_DATA_0   : INTEGER := 16#218#;
-    constant ADDR_OUTPUT_V_DATA_1   : INTEGER := 16#21c#;
-    constant ADDR_OUTPUT_V_DATA_2   : INTEGER := 16#220#;
-    constant ADDR_OUTPUT_V_DATA_3   : INTEGER := 16#224#;
-    constant ADDR_OUTPUT_V_DATA_4   : INTEGER := 16#228#;
-    constant ADDR_OUTPUT_V_DATA_5   : INTEGER := 16#22c#;
-    constant ADDR_OUTPUT_V_DATA_6   : INTEGER := 16#230#;
-    constant ADDR_OUTPUT_V_DATA_7   : INTEGER := 16#234#;
-    constant ADDR_OUTPUT_V_DATA_8   : INTEGER := 16#238#;
-    constant ADDR_OUTPUT_V_DATA_9   : INTEGER := 16#23c#;
-    constant ADDR_OUTPUT_V_DATA_10  : INTEGER := 16#240#;
-    constant ADDR_OUTPUT_V_DATA_11  : INTEGER := 16#244#;
-    constant ADDR_OUTPUT_V_DATA_12  : INTEGER := 16#248#;
-    constant ADDR_OUTPUT_V_DATA_13  : INTEGER := 16#24c#;
-    constant ADDR_OUTPUT_V_DATA_14  : INTEGER := 16#250#;
-    constant ADDR_OUTPUT_V_DATA_15  : INTEGER := 16#254#;
-    constant ADDR_OUTPUT_V_DATA_16  : INTEGER := 16#258#;
-    constant ADDR_OUTPUT_V_DATA_17  : INTEGER := 16#25c#;
-    constant ADDR_OUTPUT_V_DATA_18  : INTEGER := 16#260#;
-    constant ADDR_OUTPUT_V_DATA_19  : INTEGER := 16#264#;
-    constant ADDR_OUTPUT_V_DATA_20  : INTEGER := 16#268#;
-    constant ADDR_OUTPUT_V_DATA_21  : INTEGER := 16#26c#;
-    constant ADDR_OUTPUT_V_DATA_22  : INTEGER := 16#270#;
-    constant ADDR_OUTPUT_V_DATA_23  : INTEGER := 16#274#;
-    constant ADDR_OUTPUT_V_DATA_24  : INTEGER := 16#278#;
-    constant ADDR_OUTPUT_V_DATA_25  : INTEGER := 16#27c#;
-    constant ADDR_OUTPUT_V_DATA_26  : INTEGER := 16#280#;
-    constant ADDR_OUTPUT_V_DATA_27  : INTEGER := 16#284#;
-    constant ADDR_OUTPUT_V_DATA_28  : INTEGER := 16#288#;
-    constant ADDR_OUTPUT_V_DATA_29  : INTEGER := 16#28c#;
-    constant ADDR_OUTPUT_V_DATA_30  : INTEGER := 16#290#;
-    constant ADDR_OUTPUT_V_DATA_31  : INTEGER := 16#294#;
-    constant ADDR_OUTPUT_V_DATA_32  : INTEGER := 16#298#;
-    constant ADDR_OUTPUT_V_DATA_33  : INTEGER := 16#29c#;
-    constant ADDR_OUTPUT_V_DATA_34  : INTEGER := 16#2a0#;
-    constant ADDR_OUTPUT_V_DATA_35  : INTEGER := 16#2a4#;
-    constant ADDR_OUTPUT_V_DATA_36  : INTEGER := 16#2a8#;
-    constant ADDR_OUTPUT_V_DATA_37  : INTEGER := 16#2ac#;
-    constant ADDR_OUTPUT_V_DATA_38  : INTEGER := 16#2b0#;
-    constant ADDR_OUTPUT_V_DATA_39  : INTEGER := 16#2b4#;
-    constant ADDR_OUTPUT_V_DATA_40  : INTEGER := 16#2b8#;
-    constant ADDR_OUTPUT_V_DATA_41  : INTEGER := 16#2bc#;
-    constant ADDR_OUTPUT_V_DATA_42  : INTEGER := 16#2c0#;
-    constant ADDR_OUTPUT_V_DATA_43  : INTEGER := 16#2c4#;
-    constant ADDR_OUTPUT_V_DATA_44  : INTEGER := 16#2c8#;
-    constant ADDR_OUTPUT_V_DATA_45  : INTEGER := 16#2cc#;
-    constant ADDR_OUTPUT_V_DATA_46  : INTEGER := 16#2d0#;
-    constant ADDR_OUTPUT_V_DATA_47  : INTEGER := 16#2d4#;
-    constant ADDR_OUTPUT_V_DATA_48  : INTEGER := 16#2d8#;
-    constant ADDR_OUTPUT_V_DATA_49  : INTEGER := 16#2dc#;
-    constant ADDR_OUTPUT_V_DATA_50  : INTEGER := 16#2e0#;
-    constant ADDR_OUTPUT_V_DATA_51  : INTEGER := 16#2e4#;
-    constant ADDR_OUTPUT_V_DATA_52  : INTEGER := 16#2e8#;
-    constant ADDR_OUTPUT_V_DATA_53  : INTEGER := 16#2ec#;
-    constant ADDR_OUTPUT_V_DATA_54  : INTEGER := 16#2f0#;
-    constant ADDR_OUTPUT_V_DATA_55  : INTEGER := 16#2f4#;
-    constant ADDR_OUTPUT_V_DATA_56  : INTEGER := 16#2f8#;
-    constant ADDR_OUTPUT_V_DATA_57  : INTEGER := 16#2fc#;
-    constant ADDR_OUTPUT_V_DATA_58  : INTEGER := 16#300#;
-    constant ADDR_OUTPUT_V_DATA_59  : INTEGER := 16#304#;
-    constant ADDR_OUTPUT_V_DATA_60  : INTEGER := 16#308#;
-    constant ADDR_OUTPUT_V_DATA_61  : INTEGER := 16#30c#;
-    constant ADDR_OUTPUT_V_DATA_62  : INTEGER := 16#310#;
-    constant ADDR_OUTPUT_V_DATA_63  : INTEGER := 16#314#;
-    constant ADDR_OUTPUT_V_CTRL     : INTEGER := 16#318#;
-    constant ADDR_BITS         : INTEGER := 10;
+    constant ADDR_AP_CTRL          : INTEGER := 16#000#;
+    constant ADDR_GIE              : INTEGER := 16#004#;
+    constant ADDR_IER              : INTEGER := 16#008#;
+    constant ADDR_ISR              : INTEGER := 16#00c#;
+    constant ADDR_OUTPUT_V_DATA_0  : INTEGER := 16#300#;
+    constant ADDR_OUTPUT_V_DATA_1  : INTEGER := 16#304#;
+    constant ADDR_OUTPUT_V_DATA_2  : INTEGER := 16#308#;
+    constant ADDR_OUTPUT_V_DATA_3  : INTEGER := 16#30c#;
+    constant ADDR_OUTPUT_V_DATA_4  : INTEGER := 16#310#;
+    constant ADDR_OUTPUT_V_DATA_5  : INTEGER := 16#314#;
+    constant ADDR_OUTPUT_V_DATA_6  : INTEGER := 16#318#;
+    constant ADDR_OUTPUT_V_DATA_7  : INTEGER := 16#31c#;
+    constant ADDR_OUTPUT_V_DATA_8  : INTEGER := 16#320#;
+    constant ADDR_OUTPUT_V_DATA_9  : INTEGER := 16#324#;
+    constant ADDR_OUTPUT_V_DATA_10 : INTEGER := 16#328#;
+    constant ADDR_OUTPUT_V_DATA_11 : INTEGER := 16#32c#;
+    constant ADDR_OUTPUT_V_DATA_12 : INTEGER := 16#330#;
+    constant ADDR_OUTPUT_V_DATA_13 : INTEGER := 16#334#;
+    constant ADDR_OUTPUT_V_DATA_14 : INTEGER := 16#338#;
+    constant ADDR_OUTPUT_V_DATA_15 : INTEGER := 16#33c#;
+    constant ADDR_OUTPUT_V_DATA_16 : INTEGER := 16#340#;
+    constant ADDR_OUTPUT_V_DATA_17 : INTEGER := 16#344#;
+    constant ADDR_OUTPUT_V_DATA_18 : INTEGER := 16#348#;
+    constant ADDR_OUTPUT_V_DATA_19 : INTEGER := 16#34c#;
+    constant ADDR_OUTPUT_V_DATA_20 : INTEGER := 16#350#;
+    constant ADDR_OUTPUT_V_DATA_21 : INTEGER := 16#354#;
+    constant ADDR_OUTPUT_V_DATA_22 : INTEGER := 16#358#;
+    constant ADDR_OUTPUT_V_DATA_23 : INTEGER := 16#35c#;
+    constant ADDR_OUTPUT_V_DATA_24 : INTEGER := 16#360#;
+    constant ADDR_OUTPUT_V_DATA_25 : INTEGER := 16#364#;
+    constant ADDR_OUTPUT_V_DATA_26 : INTEGER := 16#368#;
+    constant ADDR_OUTPUT_V_DATA_27 : INTEGER := 16#36c#;
+    constant ADDR_OUTPUT_V_DATA_28 : INTEGER := 16#370#;
+    constant ADDR_OUTPUT_V_DATA_29 : INTEGER := 16#374#;
+    constant ADDR_OUTPUT_V_DATA_30 : INTEGER := 16#378#;
+    constant ADDR_OUTPUT_V_DATA_31 : INTEGER := 16#37c#;
+    constant ADDR_OUTPUT_V_DATA_32 : INTEGER := 16#380#;
+    constant ADDR_OUTPUT_V_DATA_33 : INTEGER := 16#384#;
+    constant ADDR_OUTPUT_V_DATA_34 : INTEGER := 16#388#;
+    constant ADDR_OUTPUT_V_DATA_35 : INTEGER := 16#38c#;
+    constant ADDR_OUTPUT_V_DATA_36 : INTEGER := 16#390#;
+    constant ADDR_OUTPUT_V_DATA_37 : INTEGER := 16#394#;
+    constant ADDR_OUTPUT_V_DATA_38 : INTEGER := 16#398#;
+    constant ADDR_OUTPUT_V_DATA_39 : INTEGER := 16#39c#;
+    constant ADDR_OUTPUT_V_DATA_40 : INTEGER := 16#3a0#;
+    constant ADDR_OUTPUT_V_DATA_41 : INTEGER := 16#3a4#;
+    constant ADDR_OUTPUT_V_DATA_42 : INTEGER := 16#3a8#;
+    constant ADDR_OUTPUT_V_DATA_43 : INTEGER := 16#3ac#;
+    constant ADDR_OUTPUT_V_DATA_44 : INTEGER := 16#3b0#;
+    constant ADDR_OUTPUT_V_DATA_45 : INTEGER := 16#3b4#;
+    constant ADDR_OUTPUT_V_DATA_46 : INTEGER := 16#3b8#;
+    constant ADDR_OUTPUT_V_DATA_47 : INTEGER := 16#3bc#;
+    constant ADDR_OUTPUT_V_DATA_48 : INTEGER := 16#3c0#;
+    constant ADDR_OUTPUT_V_DATA_49 : INTEGER := 16#3c4#;
+    constant ADDR_OUTPUT_V_DATA_50 : INTEGER := 16#3c8#;
+    constant ADDR_OUTPUT_V_DATA_51 : INTEGER := 16#3cc#;
+    constant ADDR_OUTPUT_V_DATA_52 : INTEGER := 16#3d0#;
+    constant ADDR_OUTPUT_V_DATA_53 : INTEGER := 16#3d4#;
+    constant ADDR_OUTPUT_V_DATA_54 : INTEGER := 16#3d8#;
+    constant ADDR_OUTPUT_V_DATA_55 : INTEGER := 16#3dc#;
+    constant ADDR_OUTPUT_V_DATA_56 : INTEGER := 16#3e0#;
+    constant ADDR_OUTPUT_V_DATA_57 : INTEGER := 16#3e4#;
+    constant ADDR_OUTPUT_V_DATA_58 : INTEGER := 16#3e8#;
+    constant ADDR_OUTPUT_V_DATA_59 : INTEGER := 16#3ec#;
+    constant ADDR_OUTPUT_V_DATA_60 : INTEGER := 16#3f0#;
+    constant ADDR_OUTPUT_V_DATA_61 : INTEGER := 16#3f4#;
+    constant ADDR_OUTPUT_V_DATA_62 : INTEGER := 16#3f8#;
+    constant ADDR_OUTPUT_V_DATA_63 : INTEGER := 16#3fc#;
+    constant ADDR_OUTPUT_V_CTRL    : INTEGER := 16#400#;
+    constant ADDR_NUMBER1_BASE     : INTEGER := 16#100#;
+    constant ADDR_NUMBER1_HIGH     : INTEGER := 16#1ff#;
+    constant ADDR_NUMBER2_BASE     : INTEGER := 16#200#;
+    constant ADDR_NUMBER2_HIGH     : INTEGER := 16#2ff#;
+    constant ADDR_BITS         : INTEGER := 11;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
     signal wmask               : UNSIGNED(31 downto 0);
@@ -678,16 +312,120 @@ architecture behave of bigint_math_PERIPH_BUS_s_axi is
     signal int_ap_start        : STD_LOGIC;
     signal int_auto_restart    : STD_LOGIC;
     signal int_gie             : STD_LOGIC;
-    signal int_ier             : STD_LOGIC;
-    signal int_isr             : STD_LOGIC;
-    signal int_number1_V       : UNSIGNED(2047 downto 0);
-    signal int_number2_V       : UNSIGNED(2047 downto 0);
+    signal int_ier             : UNSIGNED(1 downto 0);
+    signal int_isr             : UNSIGNED(1 downto 0);
     signal int_output_V        : UNSIGNED(2047 downto 0);
     signal int_output_V_ap_vld : STD_LOGIC;
+    -- memory signals
+    signal int_number1_address0 : UNSIGNED(5 downto 0);
+    signal int_number1_ce0     : STD_LOGIC;
+    signal int_number1_we0     : STD_LOGIC;
+    signal int_number1_be0     : UNSIGNED(3 downto 0);
+    signal int_number1_d0      : UNSIGNED(31 downto 0);
+    signal int_number1_q0      : UNSIGNED(31 downto 0);
+    signal int_number1_address1 : UNSIGNED(5 downto 0);
+    signal int_number1_ce1     : STD_LOGIC;
+    signal int_number1_we1     : STD_LOGIC;
+    signal int_number1_be1     : UNSIGNED(3 downto 0);
+    signal int_number1_d1      : UNSIGNED(31 downto 0);
+    signal int_number1_q1      : UNSIGNED(31 downto 0);
+    signal int_number1_read    : STD_LOGIC;
+    signal int_number1_write   : STD_LOGIC;
+    signal int_number1_shift   : UNSIGNED(1 downto 0);
+    signal int_number2_address0 : UNSIGNED(5 downto 0);
+    signal int_number2_ce0     : STD_LOGIC;
+    signal int_number2_we0     : STD_LOGIC;
+    signal int_number2_be0     : UNSIGNED(3 downto 0);
+    signal int_number2_d0      : UNSIGNED(31 downto 0);
+    signal int_number2_q0      : UNSIGNED(31 downto 0);
+    signal int_number2_address1 : UNSIGNED(5 downto 0);
+    signal int_number2_ce1     : STD_LOGIC;
+    signal int_number2_we1     : STD_LOGIC;
+    signal int_number2_be1     : UNSIGNED(3 downto 0);
+    signal int_number2_d1      : UNSIGNED(31 downto 0);
+    signal int_number2_q1      : UNSIGNED(31 downto 0);
+    signal int_number2_read    : STD_LOGIC;
+    signal int_number2_write   : STD_LOGIC;
+    signal int_number2_shift   : UNSIGNED(1 downto 0);
 
+    component bigint_math_PERIPH_BUS_s_axi_ram is
+        generic (
+            BYTES   : INTEGER :=4;
+            DEPTH   : INTEGER :=256;
+            AWIDTH  : INTEGER :=8);
+        port (
+            clk0    : in  STD_LOGIC;
+            address0: in  UNSIGNED(AWIDTH-1 downto 0);
+            ce0     : in  STD_LOGIC;
+            we0     : in  STD_LOGIC;
+            be0     : in  UNSIGNED(BYTES-1 downto 0);
+            d0      : in  UNSIGNED(BYTES*8-1 downto 0);
+            q0      : out UNSIGNED(BYTES*8-1 downto 0);
+            clk1    : in  STD_LOGIC;
+            address1: in  UNSIGNED(AWIDTH-1 downto 0);
+            ce1     : in  STD_LOGIC;
+            we1     : in  STD_LOGIC;
+            be1     : in  UNSIGNED(BYTES-1 downto 0);
+            d1      : in  UNSIGNED(BYTES*8-1 downto 0);
+            q1      : out UNSIGNED(BYTES*8-1 downto 0));
+    end component bigint_math_PERIPH_BUS_s_axi_ram;
+
+    function log2 (x : INTEGER) return INTEGER is
+        variable n, m : INTEGER;
+    begin
+        n := 1;
+        m := 2;
+        while m < x loop
+            n := n + 1;
+            m := m * 2;
+        end loop;
+        return n;
+    end function log2;
 
 begin
 -- ----------------------- Instantiation------------------
+-- int_number1
+int_number1 : bigint_math_PERIPH_BUS_s_axi_ram
+generic map (
+     BYTES    => 4,
+     DEPTH    => 64,
+     AWIDTH   => log2(64))
+port map (
+     clk0     => ACLK,
+     address0 => int_number1_address0,
+     ce0      => int_number1_ce0,
+     we0      => int_number1_we0,
+     be0      => int_number1_be0,
+     d0       => int_number1_d0,
+     q0       => int_number1_q0,
+     clk1     => ACLK,
+     address1 => int_number1_address1,
+     ce1      => int_number1_ce1,
+     we1      => int_number1_we1,
+     be1      => int_number1_be1,
+     d1       => int_number1_d1,
+     q1       => int_number1_q1);
+-- int_number2
+int_number2 : bigint_math_PERIPH_BUS_s_axi_ram
+generic map (
+     BYTES    => 4,
+     DEPTH    => 64,
+     AWIDTH   => log2(64))
+port map (
+     clk0     => ACLK,
+     address0 => int_number2_address0,
+     ce0      => int_number2_ce0,
+     we0      => int_number2_we0,
+     be0      => int_number2_be0,
+     d0       => int_number2_d0,
+     q0       => int_number2_q0,
+     clk1     => ACLK,
+     address1 => int_number2_address1,
+     ce1      => int_number2_ce1,
+     we1      => int_number2_we1,
+     be1      => int_number2_be1,
+     d1       => int_number2_d1,
+     q1       => int_number2_q1);
 
 -- ----------------------- AXI WRITE ---------------------
     AWREADY_t <=  '1' when wstate = wridle else '0';
@@ -754,7 +492,7 @@ begin
     ARREADY <= ARREADY_t;
     RDATA   <= STD_LOGIC_VECTOR(rdata_data);
     RRESP   <= "00";  -- OKAY
-    RVALID_t  <= '1' when (rstate = rddata) else '0';
+    RVALID_t  <= '1' when (rstate = rddata) and (int_number1_read = '0') and (int_number2_read = '0') else '0';
     RVALID    <= RVALID_t;
     ar_hs   <= ARVALID and ARREADY_t;
     raddr   <= UNSIGNED(ARADDR(ADDR_BITS-1 downto 0));
@@ -802,265 +540,9 @@ begin
                     when ADDR_GIE =>
                         rdata_data <= (0 => int_gie, others => '0');
                     when ADDR_IER =>
-                        rdata_data <= (0 => int_ier, others => '0');
+                        rdata_data <= (1 => int_ier(1), 0 => int_ier(0), others => '0');
                     when ADDR_ISR =>
-                        rdata_data <= (0 => int_isr, others => '0');
-                    when ADDR_NUMBER1_V_DATA_0 =>
-                        rdata_data <= RESIZE(int_number1_V(31 downto 0), 32);
-                    when ADDR_NUMBER1_V_DATA_1 =>
-                        rdata_data <= RESIZE(int_number1_V(63 downto 32), 32);
-                    when ADDR_NUMBER1_V_DATA_2 =>
-                        rdata_data <= RESIZE(int_number1_V(95 downto 64), 32);
-                    when ADDR_NUMBER1_V_DATA_3 =>
-                        rdata_data <= RESIZE(int_number1_V(127 downto 96), 32);
-                    when ADDR_NUMBER1_V_DATA_4 =>
-                        rdata_data <= RESIZE(int_number1_V(159 downto 128), 32);
-                    when ADDR_NUMBER1_V_DATA_5 =>
-                        rdata_data <= RESIZE(int_number1_V(191 downto 160), 32);
-                    when ADDR_NUMBER1_V_DATA_6 =>
-                        rdata_data <= RESIZE(int_number1_V(223 downto 192), 32);
-                    when ADDR_NUMBER1_V_DATA_7 =>
-                        rdata_data <= RESIZE(int_number1_V(255 downto 224), 32);
-                    when ADDR_NUMBER1_V_DATA_8 =>
-                        rdata_data <= RESIZE(int_number1_V(287 downto 256), 32);
-                    when ADDR_NUMBER1_V_DATA_9 =>
-                        rdata_data <= RESIZE(int_number1_V(319 downto 288), 32);
-                    when ADDR_NUMBER1_V_DATA_10 =>
-                        rdata_data <= RESIZE(int_number1_V(351 downto 320), 32);
-                    when ADDR_NUMBER1_V_DATA_11 =>
-                        rdata_data <= RESIZE(int_number1_V(383 downto 352), 32);
-                    when ADDR_NUMBER1_V_DATA_12 =>
-                        rdata_data <= RESIZE(int_number1_V(415 downto 384), 32);
-                    when ADDR_NUMBER1_V_DATA_13 =>
-                        rdata_data <= RESIZE(int_number1_V(447 downto 416), 32);
-                    when ADDR_NUMBER1_V_DATA_14 =>
-                        rdata_data <= RESIZE(int_number1_V(479 downto 448), 32);
-                    when ADDR_NUMBER1_V_DATA_15 =>
-                        rdata_data <= RESIZE(int_number1_V(511 downto 480), 32);
-                    when ADDR_NUMBER1_V_DATA_16 =>
-                        rdata_data <= RESIZE(int_number1_V(543 downto 512), 32);
-                    when ADDR_NUMBER1_V_DATA_17 =>
-                        rdata_data <= RESIZE(int_number1_V(575 downto 544), 32);
-                    when ADDR_NUMBER1_V_DATA_18 =>
-                        rdata_data <= RESIZE(int_number1_V(607 downto 576), 32);
-                    when ADDR_NUMBER1_V_DATA_19 =>
-                        rdata_data <= RESIZE(int_number1_V(639 downto 608), 32);
-                    when ADDR_NUMBER1_V_DATA_20 =>
-                        rdata_data <= RESIZE(int_number1_V(671 downto 640), 32);
-                    when ADDR_NUMBER1_V_DATA_21 =>
-                        rdata_data <= RESIZE(int_number1_V(703 downto 672), 32);
-                    when ADDR_NUMBER1_V_DATA_22 =>
-                        rdata_data <= RESIZE(int_number1_V(735 downto 704), 32);
-                    when ADDR_NUMBER1_V_DATA_23 =>
-                        rdata_data <= RESIZE(int_number1_V(767 downto 736), 32);
-                    when ADDR_NUMBER1_V_DATA_24 =>
-                        rdata_data <= RESIZE(int_number1_V(799 downto 768), 32);
-                    when ADDR_NUMBER1_V_DATA_25 =>
-                        rdata_data <= RESIZE(int_number1_V(831 downto 800), 32);
-                    when ADDR_NUMBER1_V_DATA_26 =>
-                        rdata_data <= RESIZE(int_number1_V(863 downto 832), 32);
-                    when ADDR_NUMBER1_V_DATA_27 =>
-                        rdata_data <= RESIZE(int_number1_V(895 downto 864), 32);
-                    when ADDR_NUMBER1_V_DATA_28 =>
-                        rdata_data <= RESIZE(int_number1_V(927 downto 896), 32);
-                    when ADDR_NUMBER1_V_DATA_29 =>
-                        rdata_data <= RESIZE(int_number1_V(959 downto 928), 32);
-                    when ADDR_NUMBER1_V_DATA_30 =>
-                        rdata_data <= RESIZE(int_number1_V(991 downto 960), 32);
-                    when ADDR_NUMBER1_V_DATA_31 =>
-                        rdata_data <= RESIZE(int_number1_V(1023 downto 992), 32);
-                    when ADDR_NUMBER1_V_DATA_32 =>
-                        rdata_data <= RESIZE(int_number1_V(1055 downto 1024), 32);
-                    when ADDR_NUMBER1_V_DATA_33 =>
-                        rdata_data <= RESIZE(int_number1_V(1087 downto 1056), 32);
-                    when ADDR_NUMBER1_V_DATA_34 =>
-                        rdata_data <= RESIZE(int_number1_V(1119 downto 1088), 32);
-                    when ADDR_NUMBER1_V_DATA_35 =>
-                        rdata_data <= RESIZE(int_number1_V(1151 downto 1120), 32);
-                    when ADDR_NUMBER1_V_DATA_36 =>
-                        rdata_data <= RESIZE(int_number1_V(1183 downto 1152), 32);
-                    when ADDR_NUMBER1_V_DATA_37 =>
-                        rdata_data <= RESIZE(int_number1_V(1215 downto 1184), 32);
-                    when ADDR_NUMBER1_V_DATA_38 =>
-                        rdata_data <= RESIZE(int_number1_V(1247 downto 1216), 32);
-                    when ADDR_NUMBER1_V_DATA_39 =>
-                        rdata_data <= RESIZE(int_number1_V(1279 downto 1248), 32);
-                    when ADDR_NUMBER1_V_DATA_40 =>
-                        rdata_data <= RESIZE(int_number1_V(1311 downto 1280), 32);
-                    when ADDR_NUMBER1_V_DATA_41 =>
-                        rdata_data <= RESIZE(int_number1_V(1343 downto 1312), 32);
-                    when ADDR_NUMBER1_V_DATA_42 =>
-                        rdata_data <= RESIZE(int_number1_V(1375 downto 1344), 32);
-                    when ADDR_NUMBER1_V_DATA_43 =>
-                        rdata_data <= RESIZE(int_number1_V(1407 downto 1376), 32);
-                    when ADDR_NUMBER1_V_DATA_44 =>
-                        rdata_data <= RESIZE(int_number1_V(1439 downto 1408), 32);
-                    when ADDR_NUMBER1_V_DATA_45 =>
-                        rdata_data <= RESIZE(int_number1_V(1471 downto 1440), 32);
-                    when ADDR_NUMBER1_V_DATA_46 =>
-                        rdata_data <= RESIZE(int_number1_V(1503 downto 1472), 32);
-                    when ADDR_NUMBER1_V_DATA_47 =>
-                        rdata_data <= RESIZE(int_number1_V(1535 downto 1504), 32);
-                    when ADDR_NUMBER1_V_DATA_48 =>
-                        rdata_data <= RESIZE(int_number1_V(1567 downto 1536), 32);
-                    when ADDR_NUMBER1_V_DATA_49 =>
-                        rdata_data <= RESIZE(int_number1_V(1599 downto 1568), 32);
-                    when ADDR_NUMBER1_V_DATA_50 =>
-                        rdata_data <= RESIZE(int_number1_V(1631 downto 1600), 32);
-                    when ADDR_NUMBER1_V_DATA_51 =>
-                        rdata_data <= RESIZE(int_number1_V(1663 downto 1632), 32);
-                    when ADDR_NUMBER1_V_DATA_52 =>
-                        rdata_data <= RESIZE(int_number1_V(1695 downto 1664), 32);
-                    when ADDR_NUMBER1_V_DATA_53 =>
-                        rdata_data <= RESIZE(int_number1_V(1727 downto 1696), 32);
-                    when ADDR_NUMBER1_V_DATA_54 =>
-                        rdata_data <= RESIZE(int_number1_V(1759 downto 1728), 32);
-                    when ADDR_NUMBER1_V_DATA_55 =>
-                        rdata_data <= RESIZE(int_number1_V(1791 downto 1760), 32);
-                    when ADDR_NUMBER1_V_DATA_56 =>
-                        rdata_data <= RESIZE(int_number1_V(1823 downto 1792), 32);
-                    when ADDR_NUMBER1_V_DATA_57 =>
-                        rdata_data <= RESIZE(int_number1_V(1855 downto 1824), 32);
-                    when ADDR_NUMBER1_V_DATA_58 =>
-                        rdata_data <= RESIZE(int_number1_V(1887 downto 1856), 32);
-                    when ADDR_NUMBER1_V_DATA_59 =>
-                        rdata_data <= RESIZE(int_number1_V(1919 downto 1888), 32);
-                    when ADDR_NUMBER1_V_DATA_60 =>
-                        rdata_data <= RESIZE(int_number1_V(1951 downto 1920), 32);
-                    when ADDR_NUMBER1_V_DATA_61 =>
-                        rdata_data <= RESIZE(int_number1_V(1983 downto 1952), 32);
-                    when ADDR_NUMBER1_V_DATA_62 =>
-                        rdata_data <= RESIZE(int_number1_V(2015 downto 1984), 32);
-                    when ADDR_NUMBER1_V_DATA_63 =>
-                        rdata_data <= RESIZE(int_number1_V(2047 downto 2016), 32);
-                    when ADDR_NUMBER2_V_DATA_0 =>
-                        rdata_data <= RESIZE(int_number2_V(31 downto 0), 32);
-                    when ADDR_NUMBER2_V_DATA_1 =>
-                        rdata_data <= RESIZE(int_number2_V(63 downto 32), 32);
-                    when ADDR_NUMBER2_V_DATA_2 =>
-                        rdata_data <= RESIZE(int_number2_V(95 downto 64), 32);
-                    when ADDR_NUMBER2_V_DATA_3 =>
-                        rdata_data <= RESIZE(int_number2_V(127 downto 96), 32);
-                    when ADDR_NUMBER2_V_DATA_4 =>
-                        rdata_data <= RESIZE(int_number2_V(159 downto 128), 32);
-                    when ADDR_NUMBER2_V_DATA_5 =>
-                        rdata_data <= RESIZE(int_number2_V(191 downto 160), 32);
-                    when ADDR_NUMBER2_V_DATA_6 =>
-                        rdata_data <= RESIZE(int_number2_V(223 downto 192), 32);
-                    when ADDR_NUMBER2_V_DATA_7 =>
-                        rdata_data <= RESIZE(int_number2_V(255 downto 224), 32);
-                    when ADDR_NUMBER2_V_DATA_8 =>
-                        rdata_data <= RESIZE(int_number2_V(287 downto 256), 32);
-                    when ADDR_NUMBER2_V_DATA_9 =>
-                        rdata_data <= RESIZE(int_number2_V(319 downto 288), 32);
-                    when ADDR_NUMBER2_V_DATA_10 =>
-                        rdata_data <= RESIZE(int_number2_V(351 downto 320), 32);
-                    when ADDR_NUMBER2_V_DATA_11 =>
-                        rdata_data <= RESIZE(int_number2_V(383 downto 352), 32);
-                    when ADDR_NUMBER2_V_DATA_12 =>
-                        rdata_data <= RESIZE(int_number2_V(415 downto 384), 32);
-                    when ADDR_NUMBER2_V_DATA_13 =>
-                        rdata_data <= RESIZE(int_number2_V(447 downto 416), 32);
-                    when ADDR_NUMBER2_V_DATA_14 =>
-                        rdata_data <= RESIZE(int_number2_V(479 downto 448), 32);
-                    when ADDR_NUMBER2_V_DATA_15 =>
-                        rdata_data <= RESIZE(int_number2_V(511 downto 480), 32);
-                    when ADDR_NUMBER2_V_DATA_16 =>
-                        rdata_data <= RESIZE(int_number2_V(543 downto 512), 32);
-                    when ADDR_NUMBER2_V_DATA_17 =>
-                        rdata_data <= RESIZE(int_number2_V(575 downto 544), 32);
-                    when ADDR_NUMBER2_V_DATA_18 =>
-                        rdata_data <= RESIZE(int_number2_V(607 downto 576), 32);
-                    when ADDR_NUMBER2_V_DATA_19 =>
-                        rdata_data <= RESIZE(int_number2_V(639 downto 608), 32);
-                    when ADDR_NUMBER2_V_DATA_20 =>
-                        rdata_data <= RESIZE(int_number2_V(671 downto 640), 32);
-                    when ADDR_NUMBER2_V_DATA_21 =>
-                        rdata_data <= RESIZE(int_number2_V(703 downto 672), 32);
-                    when ADDR_NUMBER2_V_DATA_22 =>
-                        rdata_data <= RESIZE(int_number2_V(735 downto 704), 32);
-                    when ADDR_NUMBER2_V_DATA_23 =>
-                        rdata_data <= RESIZE(int_number2_V(767 downto 736), 32);
-                    when ADDR_NUMBER2_V_DATA_24 =>
-                        rdata_data <= RESIZE(int_number2_V(799 downto 768), 32);
-                    when ADDR_NUMBER2_V_DATA_25 =>
-                        rdata_data <= RESIZE(int_number2_V(831 downto 800), 32);
-                    when ADDR_NUMBER2_V_DATA_26 =>
-                        rdata_data <= RESIZE(int_number2_V(863 downto 832), 32);
-                    when ADDR_NUMBER2_V_DATA_27 =>
-                        rdata_data <= RESIZE(int_number2_V(895 downto 864), 32);
-                    when ADDR_NUMBER2_V_DATA_28 =>
-                        rdata_data <= RESIZE(int_number2_V(927 downto 896), 32);
-                    when ADDR_NUMBER2_V_DATA_29 =>
-                        rdata_data <= RESIZE(int_number2_V(959 downto 928), 32);
-                    when ADDR_NUMBER2_V_DATA_30 =>
-                        rdata_data <= RESIZE(int_number2_V(991 downto 960), 32);
-                    when ADDR_NUMBER2_V_DATA_31 =>
-                        rdata_data <= RESIZE(int_number2_V(1023 downto 992), 32);
-                    when ADDR_NUMBER2_V_DATA_32 =>
-                        rdata_data <= RESIZE(int_number2_V(1055 downto 1024), 32);
-                    when ADDR_NUMBER2_V_DATA_33 =>
-                        rdata_data <= RESIZE(int_number2_V(1087 downto 1056), 32);
-                    when ADDR_NUMBER2_V_DATA_34 =>
-                        rdata_data <= RESIZE(int_number2_V(1119 downto 1088), 32);
-                    when ADDR_NUMBER2_V_DATA_35 =>
-                        rdata_data <= RESIZE(int_number2_V(1151 downto 1120), 32);
-                    when ADDR_NUMBER2_V_DATA_36 =>
-                        rdata_data <= RESIZE(int_number2_V(1183 downto 1152), 32);
-                    when ADDR_NUMBER2_V_DATA_37 =>
-                        rdata_data <= RESIZE(int_number2_V(1215 downto 1184), 32);
-                    when ADDR_NUMBER2_V_DATA_38 =>
-                        rdata_data <= RESIZE(int_number2_V(1247 downto 1216), 32);
-                    when ADDR_NUMBER2_V_DATA_39 =>
-                        rdata_data <= RESIZE(int_number2_V(1279 downto 1248), 32);
-                    when ADDR_NUMBER2_V_DATA_40 =>
-                        rdata_data <= RESIZE(int_number2_V(1311 downto 1280), 32);
-                    when ADDR_NUMBER2_V_DATA_41 =>
-                        rdata_data <= RESIZE(int_number2_V(1343 downto 1312), 32);
-                    when ADDR_NUMBER2_V_DATA_42 =>
-                        rdata_data <= RESIZE(int_number2_V(1375 downto 1344), 32);
-                    when ADDR_NUMBER2_V_DATA_43 =>
-                        rdata_data <= RESIZE(int_number2_V(1407 downto 1376), 32);
-                    when ADDR_NUMBER2_V_DATA_44 =>
-                        rdata_data <= RESIZE(int_number2_V(1439 downto 1408), 32);
-                    when ADDR_NUMBER2_V_DATA_45 =>
-                        rdata_data <= RESIZE(int_number2_V(1471 downto 1440), 32);
-                    when ADDR_NUMBER2_V_DATA_46 =>
-                        rdata_data <= RESIZE(int_number2_V(1503 downto 1472), 32);
-                    when ADDR_NUMBER2_V_DATA_47 =>
-                        rdata_data <= RESIZE(int_number2_V(1535 downto 1504), 32);
-                    when ADDR_NUMBER2_V_DATA_48 =>
-                        rdata_data <= RESIZE(int_number2_V(1567 downto 1536), 32);
-                    when ADDR_NUMBER2_V_DATA_49 =>
-                        rdata_data <= RESIZE(int_number2_V(1599 downto 1568), 32);
-                    when ADDR_NUMBER2_V_DATA_50 =>
-                        rdata_data <= RESIZE(int_number2_V(1631 downto 1600), 32);
-                    when ADDR_NUMBER2_V_DATA_51 =>
-                        rdata_data <= RESIZE(int_number2_V(1663 downto 1632), 32);
-                    when ADDR_NUMBER2_V_DATA_52 =>
-                        rdata_data <= RESIZE(int_number2_V(1695 downto 1664), 32);
-                    when ADDR_NUMBER2_V_DATA_53 =>
-                        rdata_data <= RESIZE(int_number2_V(1727 downto 1696), 32);
-                    when ADDR_NUMBER2_V_DATA_54 =>
-                        rdata_data <= RESIZE(int_number2_V(1759 downto 1728), 32);
-                    when ADDR_NUMBER2_V_DATA_55 =>
-                        rdata_data <= RESIZE(int_number2_V(1791 downto 1760), 32);
-                    when ADDR_NUMBER2_V_DATA_56 =>
-                        rdata_data <= RESIZE(int_number2_V(1823 downto 1792), 32);
-                    when ADDR_NUMBER2_V_DATA_57 =>
-                        rdata_data <= RESIZE(int_number2_V(1855 downto 1824), 32);
-                    when ADDR_NUMBER2_V_DATA_58 =>
-                        rdata_data <= RESIZE(int_number2_V(1887 downto 1856), 32);
-                    when ADDR_NUMBER2_V_DATA_59 =>
-                        rdata_data <= RESIZE(int_number2_V(1919 downto 1888), 32);
-                    when ADDR_NUMBER2_V_DATA_60 =>
-                        rdata_data <= RESIZE(int_number2_V(1951 downto 1920), 32);
-                    when ADDR_NUMBER2_V_DATA_61 =>
-                        rdata_data <= RESIZE(int_number2_V(1983 downto 1952), 32);
-                    when ADDR_NUMBER2_V_DATA_62 =>
-                        rdata_data <= RESIZE(int_number2_V(2015 downto 1984), 32);
-                    when ADDR_NUMBER2_V_DATA_63 =>
-                        rdata_data <= RESIZE(int_number2_V(2047 downto 2016), 32);
+                        rdata_data <= (1 => int_isr(1), 0 => int_isr(0), others => '0');
                     when ADDR_OUTPUT_V_DATA_0 =>
                         rdata_data <= RESIZE(int_output_V(31 downto 0), 32);
                     when ADDR_OUTPUT_V_DATA_1 =>
@@ -1194,18 +676,20 @@ begin
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
+                elsif (int_number1_read = '1') then
+                    rdata_data <= int_number1_q1;
+                elsif (int_number2_read = '1') then
+                    rdata_data <= int_number2_q1;
                 end if;
             end if;
         end if;
     end process;
 
 -- ----------------------- Register logic ----------------
-    interrupt            <= int_gie and int_isr;
+    interrupt            <= int_gie and (int_isr(0) or int_isr(1));
     ap_start             <= int_ap_start;
     int_ap_idle          <= ap_idle;
     int_ap_ready         <= ap_ready;
-    number1_V            <= STD_LOGIC_VECTOR(int_number1_V);
-    number2_V            <= STD_LOGIC_VECTOR(int_number2_V);
 
     process (ACLK)
     begin
@@ -1215,10 +699,8 @@ begin
             elsif (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_AP_CTRL and WSTRB(0) = '1' and WDATA(0) = '1') then
                     int_ap_start <= '1';
-                elsif (ap_done = '1' and int_auto_restart = '1') then
-                    int_ap_start <= '1'; -- auto restart
-                else
-                    int_ap_start <= '0'; -- self clear
+                elsif (int_ap_ready = '1') then
+                    int_ap_start <= int_auto_restart; -- clear on handshake/auto restart
                 end if;
             end if;
         end if;
@@ -1269,10 +751,10 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_ier <= '0';
+                int_ier <= "00";
             elsif (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_IER and WSTRB(0) = '1') then
-                    int_ier <= WDATA(0);
+                    int_ier <= UNSIGNED(WDATA(1 downto 0));
                 end if;
             end if;
         end if;
@@ -1282,12 +764,12 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_isr <= '0';
+                int_isr(0) <= '0';
             elsif (ACLK_EN = '1') then
-                if (int_ier = '1' and ap_done = '1') then
-                    int_isr <= '1';
+                if (int_ier(0) = '1' and ap_done = '1') then
+                    int_isr(0) <= '1';
                 elsif (w_hs = '1' and waddr = ADDR_ISR and WSTRB(0) = '1') then
-                    int_isr <= int_isr xor WDATA(0); -- toggle on write
+                    int_isr(0) <= int_isr(0) xor WDATA(0); -- toggle on write
                 end if;
             end if;
         end if;
@@ -1296,1406 +778,13 @@ begin
     process (ACLK)
     begin
         if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_0) then
-                    int_number1_V(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(31 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_1) then
-                    int_number1_V(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(63 downto 32));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_2) then
-                    int_number1_V(95 downto 64) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(95 downto 64));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_3) then
-                    int_number1_V(127 downto 96) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(127 downto 96));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_4) then
-                    int_number1_V(159 downto 128) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(159 downto 128));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_5) then
-                    int_number1_V(191 downto 160) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(191 downto 160));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_6) then
-                    int_number1_V(223 downto 192) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(223 downto 192));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_7) then
-                    int_number1_V(255 downto 224) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(255 downto 224));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_8) then
-                    int_number1_V(287 downto 256) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(287 downto 256));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_9) then
-                    int_number1_V(319 downto 288) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(319 downto 288));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_10) then
-                    int_number1_V(351 downto 320) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(351 downto 320));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_11) then
-                    int_number1_V(383 downto 352) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(383 downto 352));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_12) then
-                    int_number1_V(415 downto 384) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(415 downto 384));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_13) then
-                    int_number1_V(447 downto 416) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(447 downto 416));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_14) then
-                    int_number1_V(479 downto 448) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(479 downto 448));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_15) then
-                    int_number1_V(511 downto 480) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(511 downto 480));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_16) then
-                    int_number1_V(543 downto 512) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(543 downto 512));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_17) then
-                    int_number1_V(575 downto 544) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(575 downto 544));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_18) then
-                    int_number1_V(607 downto 576) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(607 downto 576));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_19) then
-                    int_number1_V(639 downto 608) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(639 downto 608));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_20) then
-                    int_number1_V(671 downto 640) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(671 downto 640));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_21) then
-                    int_number1_V(703 downto 672) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(703 downto 672));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_22) then
-                    int_number1_V(735 downto 704) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(735 downto 704));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_23) then
-                    int_number1_V(767 downto 736) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(767 downto 736));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_24) then
-                    int_number1_V(799 downto 768) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(799 downto 768));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_25) then
-                    int_number1_V(831 downto 800) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(831 downto 800));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_26) then
-                    int_number1_V(863 downto 832) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(863 downto 832));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_27) then
-                    int_number1_V(895 downto 864) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(895 downto 864));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_28) then
-                    int_number1_V(927 downto 896) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(927 downto 896));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_29) then
-                    int_number1_V(959 downto 928) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(959 downto 928));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_30) then
-                    int_number1_V(991 downto 960) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(991 downto 960));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_31) then
-                    int_number1_V(1023 downto 992) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1023 downto 992));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_32) then
-                    int_number1_V(1055 downto 1024) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1055 downto 1024));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_33) then
-                    int_number1_V(1087 downto 1056) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1087 downto 1056));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_34) then
-                    int_number1_V(1119 downto 1088) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1119 downto 1088));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_35) then
-                    int_number1_V(1151 downto 1120) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1151 downto 1120));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_36) then
-                    int_number1_V(1183 downto 1152) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1183 downto 1152));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_37) then
-                    int_number1_V(1215 downto 1184) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1215 downto 1184));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_38) then
-                    int_number1_V(1247 downto 1216) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1247 downto 1216));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_39) then
-                    int_number1_V(1279 downto 1248) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1279 downto 1248));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_40) then
-                    int_number1_V(1311 downto 1280) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1311 downto 1280));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_41) then
-                    int_number1_V(1343 downto 1312) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1343 downto 1312));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_42) then
-                    int_number1_V(1375 downto 1344) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1375 downto 1344));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_43) then
-                    int_number1_V(1407 downto 1376) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1407 downto 1376));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_44) then
-                    int_number1_V(1439 downto 1408) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1439 downto 1408));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_45) then
-                    int_number1_V(1471 downto 1440) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1471 downto 1440));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_46) then
-                    int_number1_V(1503 downto 1472) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1503 downto 1472));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_47) then
-                    int_number1_V(1535 downto 1504) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1535 downto 1504));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_48) then
-                    int_number1_V(1567 downto 1536) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1567 downto 1536));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_49) then
-                    int_number1_V(1599 downto 1568) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1599 downto 1568));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_50) then
-                    int_number1_V(1631 downto 1600) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1631 downto 1600));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_51) then
-                    int_number1_V(1663 downto 1632) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1663 downto 1632));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_52) then
-                    int_number1_V(1695 downto 1664) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1695 downto 1664));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_53) then
-                    int_number1_V(1727 downto 1696) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1727 downto 1696));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_54) then
-                    int_number1_V(1759 downto 1728) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1759 downto 1728));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_55) then
-                    int_number1_V(1791 downto 1760) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1791 downto 1760));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_56) then
-                    int_number1_V(1823 downto 1792) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1823 downto 1792));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_57) then
-                    int_number1_V(1855 downto 1824) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1855 downto 1824));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_58) then
-                    int_number1_V(1887 downto 1856) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1887 downto 1856));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_59) then
-                    int_number1_V(1919 downto 1888) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1919 downto 1888));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_60) then
-                    int_number1_V(1951 downto 1920) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1951 downto 1920));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_61) then
-                    int_number1_V(1983 downto 1952) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(1983 downto 1952));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_62) then
-                    int_number1_V(2015 downto 1984) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(2015 downto 1984));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER1_V_DATA_63) then
-                    int_number1_V(2047 downto 2016) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number1_V(2047 downto 2016));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_0) then
-                    int_number2_V(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(31 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_1) then
-                    int_number2_V(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(63 downto 32));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_2) then
-                    int_number2_V(95 downto 64) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(95 downto 64));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_3) then
-                    int_number2_V(127 downto 96) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(127 downto 96));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_4) then
-                    int_number2_V(159 downto 128) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(159 downto 128));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_5) then
-                    int_number2_V(191 downto 160) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(191 downto 160));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_6) then
-                    int_number2_V(223 downto 192) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(223 downto 192));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_7) then
-                    int_number2_V(255 downto 224) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(255 downto 224));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_8) then
-                    int_number2_V(287 downto 256) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(287 downto 256));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_9) then
-                    int_number2_V(319 downto 288) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(319 downto 288));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_10) then
-                    int_number2_V(351 downto 320) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(351 downto 320));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_11) then
-                    int_number2_V(383 downto 352) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(383 downto 352));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_12) then
-                    int_number2_V(415 downto 384) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(415 downto 384));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_13) then
-                    int_number2_V(447 downto 416) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(447 downto 416));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_14) then
-                    int_number2_V(479 downto 448) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(479 downto 448));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_15) then
-                    int_number2_V(511 downto 480) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(511 downto 480));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_16) then
-                    int_number2_V(543 downto 512) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(543 downto 512));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_17) then
-                    int_number2_V(575 downto 544) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(575 downto 544));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_18) then
-                    int_number2_V(607 downto 576) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(607 downto 576));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_19) then
-                    int_number2_V(639 downto 608) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(639 downto 608));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_20) then
-                    int_number2_V(671 downto 640) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(671 downto 640));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_21) then
-                    int_number2_V(703 downto 672) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(703 downto 672));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_22) then
-                    int_number2_V(735 downto 704) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(735 downto 704));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_23) then
-                    int_number2_V(767 downto 736) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(767 downto 736));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_24) then
-                    int_number2_V(799 downto 768) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(799 downto 768));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_25) then
-                    int_number2_V(831 downto 800) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(831 downto 800));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_26) then
-                    int_number2_V(863 downto 832) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(863 downto 832));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_27) then
-                    int_number2_V(895 downto 864) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(895 downto 864));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_28) then
-                    int_number2_V(927 downto 896) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(927 downto 896));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_29) then
-                    int_number2_V(959 downto 928) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(959 downto 928));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_30) then
-                    int_number2_V(991 downto 960) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(991 downto 960));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_31) then
-                    int_number2_V(1023 downto 992) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1023 downto 992));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_32) then
-                    int_number2_V(1055 downto 1024) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1055 downto 1024));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_33) then
-                    int_number2_V(1087 downto 1056) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1087 downto 1056));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_34) then
-                    int_number2_V(1119 downto 1088) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1119 downto 1088));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_35) then
-                    int_number2_V(1151 downto 1120) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1151 downto 1120));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_36) then
-                    int_number2_V(1183 downto 1152) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1183 downto 1152));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_37) then
-                    int_number2_V(1215 downto 1184) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1215 downto 1184));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_38) then
-                    int_number2_V(1247 downto 1216) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1247 downto 1216));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_39) then
-                    int_number2_V(1279 downto 1248) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1279 downto 1248));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_40) then
-                    int_number2_V(1311 downto 1280) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1311 downto 1280));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_41) then
-                    int_number2_V(1343 downto 1312) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1343 downto 1312));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_42) then
-                    int_number2_V(1375 downto 1344) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1375 downto 1344));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_43) then
-                    int_number2_V(1407 downto 1376) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1407 downto 1376));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_44) then
-                    int_number2_V(1439 downto 1408) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1439 downto 1408));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_45) then
-                    int_number2_V(1471 downto 1440) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1471 downto 1440));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_46) then
-                    int_number2_V(1503 downto 1472) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1503 downto 1472));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_47) then
-                    int_number2_V(1535 downto 1504) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1535 downto 1504));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_48) then
-                    int_number2_V(1567 downto 1536) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1567 downto 1536));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_49) then
-                    int_number2_V(1599 downto 1568) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1599 downto 1568));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_50) then
-                    int_number2_V(1631 downto 1600) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1631 downto 1600));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_51) then
-                    int_number2_V(1663 downto 1632) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1663 downto 1632));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_52) then
-                    int_number2_V(1695 downto 1664) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1695 downto 1664));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_53) then
-                    int_number2_V(1727 downto 1696) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1727 downto 1696));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_54) then
-                    int_number2_V(1759 downto 1728) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1759 downto 1728));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_55) then
-                    int_number2_V(1791 downto 1760) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1791 downto 1760));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_56) then
-                    int_number2_V(1823 downto 1792) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1823 downto 1792));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_57) then
-                    int_number2_V(1855 downto 1824) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1855 downto 1824));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_58) then
-                    int_number2_V(1887 downto 1856) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1887 downto 1856));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_59) then
-                    int_number2_V(1919 downto 1888) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1919 downto 1888));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_60) then
-                    int_number2_V(1951 downto 1920) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1951 downto 1920));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_61) then
-                    int_number2_V(1983 downto 1952) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(1983 downto 1952));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_62) then
-                    int_number2_V(2015 downto 1984) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(2015 downto 1984));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_NUMBER2_V_DATA_63) then
-                    int_number2_V(2047 downto 2016) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_number2_V(2047 downto 2016));
+            if (ARESET = '1') then
+                int_isr(1) <= '0';
+            elsif (ACLK_EN = '1') then
+                if (int_ier(1) = '1' and ap_ready = '1') then
+                    int_isr(1) <= '1';
+                elsif (w_hs = '1' and waddr = ADDR_ISR and WSTRB(0) = '1') then
+                    int_isr(1) <= int_isr(1) xor WDATA(1); -- toggle on write
                 end if;
             end if;
         end if;
@@ -2731,5 +820,216 @@ begin
 
 
 -- ----------------------- Memory logic ------------------
+    -- number1
+    int_number1_address0 <= SHIFT_RIGHT(UNSIGNED(number1_address0), 2)(5 downto 0);
+    int_number1_ce0      <= number1_ce0;
+    int_number1_we0      <= '0';
+    int_number1_be0      <= (others => '0');
+    int_number1_d0       <= (others => '0');
+    number1_q0           <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_number1_q0, TO_INTEGER(int_number1_shift) * 8)(7 downto 0));
+    int_number1_address1 <= raddr(7 downto 2) when ar_hs = '1' else waddr(7 downto 2);
+    int_number1_ce1      <= '1' when ar_hs = '1' or (int_number1_write = '1' and WVALID  = '1') else '0';
+    int_number1_we1      <= '1' when int_number1_write = '1' and WVALID = '1' else '0';
+    int_number1_be1      <= UNSIGNED(WSTRB);
+    int_number1_d1       <= UNSIGNED(WDATA);
+    -- number2
+    int_number2_address0 <= SHIFT_RIGHT(UNSIGNED(number2_address0), 2)(5 downto 0);
+    int_number2_ce0      <= number2_ce0;
+    int_number2_we0      <= '0';
+    int_number2_be0      <= (others => '0');
+    int_number2_d0       <= (others => '0');
+    number2_q0           <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_number2_q0, TO_INTEGER(int_number2_shift) * 8)(7 downto 0));
+    int_number2_address1 <= raddr(7 downto 2) when ar_hs = '1' else waddr(7 downto 2);
+    int_number2_ce1      <= '1' when ar_hs = '1' or (int_number2_write = '1' and WVALID  = '1') else '0';
+    int_number2_we1      <= '1' when int_number2_write = '1' and WVALID = '1' else '0';
+    int_number2_be1      <= UNSIGNED(WSTRB);
+    int_number2_d1       <= UNSIGNED(WDATA);
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_number1_read <= '0';
+            elsif (ACLK_EN = '1') then
+                if (ar_hs = '1' and raddr >= ADDR_NUMBER1_BASE and raddr <= ADDR_NUMBER1_HIGH) then
+                    int_number1_read <= '1';
+                else
+                    int_number1_read <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_number1_write <= '0';
+            elsif (ACLK_EN = '1') then
+                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_NUMBER1_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_NUMBER1_HIGH) then
+                    int_number1_write <= '1';
+                elsif (WVALID = '1') then
+                    int_number1_write <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (number1_ce0 = '1') then
+                    int_number1_shift <= UNSIGNED(number1_address0(1 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_number2_read <= '0';
+            elsif (ACLK_EN = '1') then
+                if (ar_hs = '1' and raddr >= ADDR_NUMBER2_BASE and raddr <= ADDR_NUMBER2_HIGH) then
+                    int_number2_read <= '1';
+                else
+                    int_number2_read <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_number2_write <= '0';
+            elsif (ACLK_EN = '1') then
+                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_NUMBER2_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_NUMBER2_HIGH) then
+                    int_number2_write <= '1';
+                elsif (WVALID = '1') then
+                    int_number2_write <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (number2_ce0 = '1') then
+                    int_number2_shift <= UNSIGNED(number2_address0(1 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
 
 end architecture behave;
+
+library IEEE;
+USE IEEE.std_logic_1164.all;
+USE IEEE.numeric_std.all;
+
+entity bigint_math_PERIPH_BUS_s_axi_ram is
+    generic (
+        BYTES   : INTEGER :=4;
+        DEPTH   : INTEGER :=256;
+        AWIDTH  : INTEGER :=8);
+    port (
+        clk0    : in  STD_LOGIC;
+        address0: in  UNSIGNED(AWIDTH-1 downto 0);
+        ce0     : in  STD_LOGIC;
+        we0     : in  STD_LOGIC;
+        be0     : in  UNSIGNED(BYTES-1 downto 0);
+        d0      : in  UNSIGNED(BYTES*8-1 downto 0);
+        q0      : out UNSIGNED(BYTES*8-1 downto 0);
+        clk1    : in  STD_LOGIC;
+        address1: in  UNSIGNED(AWIDTH-1 downto 0);
+        ce1     : in  STD_LOGIC;
+        we1     : in  STD_LOGIC;
+        be1     : in  UNSIGNED(BYTES-1 downto 0);
+        d1      : in  UNSIGNED(BYTES*8-1 downto 0);
+        q1      : out UNSIGNED(BYTES*8-1 downto 0));
+
+end entity bigint_math_PERIPH_BUS_s_axi_ram;
+
+architecture behave of bigint_math_PERIPH_BUS_s_axi_ram is
+    signal address0_tmp : UNSIGNED(AWIDTH-1 downto 0);
+    signal address1_tmp : UNSIGNED(AWIDTH-1 downto 0);
+    type RAM_T is array (0 to DEPTH - 1) of UNSIGNED(BYTES*8 - 1 downto 0);
+    shared variable mem : RAM_T := (others => (others => '0'));
+begin
+
+    process (address0)
+    begin
+    address0_tmp <= address0;
+    --synthesis translate_off
+          if (address0 > DEPTH-1) then
+              address0_tmp <= (others => '0');
+          else
+              address0_tmp <= address0;
+          end if;
+    --synthesis translate_on
+    end process;
+
+    process (address1)
+    begin
+    address1_tmp <= address1;
+    --synthesis translate_off
+          if (address1 > DEPTH-1) then
+              address1_tmp <= (others => '0');
+          else
+              address1_tmp <= address1;
+          end if;
+    --synthesis translate_on
+    end process;
+
+    --read port 0
+    process (clk0) begin
+        if (clk0'event and clk0 = '1') then
+            if (ce0 = '1') then
+                q0 <= mem(to_integer(address0_tmp));
+            end if;
+        end if;
+    end process;
+
+    --read port 1
+    process (clk1) begin
+        if (clk1'event and clk1 = '1') then
+            if (ce1 = '1') then
+                q1 <= mem(to_integer(address1_tmp));
+            end if;
+        end if;
+    end process;
+
+    gen_write : for i in 0 to BYTES - 1 generate
+    begin
+        --write port 0
+        process (clk0)
+        begin
+            if (clk0'event and clk0 = '1') then
+                if (ce0 = '1' and we0 = '1' and be0(i) = '1') then
+                    mem(to_integer(address0_tmp))(8*i+7 downto 8*i) := d0(8*i+7 downto 8*i);
+                end if;
+            end if;
+        end process;
+
+        --write port 1
+        process (clk1)
+        begin
+            if (clk1'event and clk1 = '1') then
+                if (ce1 = '1' and we1 = '1' and be1(i) = '1') then
+                    mem(to_integer(address1_tmp))(8*i+7 downto 8*i) := d1(8*i+7 downto 8*i);
+                end if;
+            end if;
+        end process;
+
+    end generate;
+
+end architecture behave;
+
+

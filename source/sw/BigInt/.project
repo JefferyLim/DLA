@@ -37,19 +37,34 @@
 			<location>/home/linux/Documents/DLA/source/sw/BigInt/.apc/.tb</location>
 		</link>
 		<link>
-			<name>.reference/ap_int.h</name>
-			<type>1</type>
-			<location>/home/Xilinx/Vivado_HLS/2016.2/include/ap_int.h</location>
-		</link>
-		<link>
-			<name>.reference/ap_int_syn.h</name>
-			<type>1</type>
-			<location>/home/Xilinx/Vivado_HLS/2016.2/common/technology/autopilot/ap_int_syn.h</location>
-		</link>
-		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
 			<location>/home/linux/Documents/DLA/source/sw/BigInt/solution1/.tcls</location>
+		</link>
+		<link>
+			<name>source/BigInteger.cc</name>
+			<type>1</type>
+			<location>/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/BigInteger.cc</location>
+		</link>
+		<link>
+			<name>source/BigIntegerAlgorithms.cc</name>
+			<type>1</type>
+			<location>/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/BigIntegerAlgorithms.cc</location>
+		</link>
+		<link>
+			<name>source/BigIntegerUtils.cc</name>
+			<type>1</type>
+			<location>/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/BigIntegerUtils.cc</location>
+		</link>
+		<link>
+			<name>source/BigUnsigned.cc</name>
+			<type>1</type>
+			<location>/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/BigUnsigned.cc</location>
+		</link>
+		<link>
+			<name>source/BigUnsignedInABase.cc</name>
+			<type>1</type>
+			<location>/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/BigUnsignedInABase.cc</location>
 		</link>
 		<link>
 			<name>source/main.cpp</name>

@@ -13131,3 +13131,3447 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SESSION 2017-02-01 15:37:17.730 -----------------------------------------------
+eclipse.buildId=2016.2
+java.version=1.8.0_66
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -data /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:41.246
+!MESSAGE XSDB Command: [::hsi::utils::init_repo], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:47.035
+!MESSAGE XSDB command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:47.154
+!MESSAGE XSDB Command: [::hsi::utils::add_repo "/home/linux/Documents/Xilinx/device-tree-xlnx"], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:47.357
+!MESSAGE XSDB command with result: [::hsi::utils::add_repo "/home/linux/Documents/Xilinx/device-tree-xlnx"], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:48.417
+!MESSAGE XSDB Command: [::hsi::utils::openhw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.264
+!MESSAGE XSDB command with result: [::hsi::utils::openhw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.320
+!MESSAGE XSDB Command: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.340
+!MESSAGE XSDB command with result: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.341
+!MESSAGE XSDB Command: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.346
+!MESSAGE XSDB command with result: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "device_tree",
+"osver": "",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.350
+!MESSAGE XSDB Command: [hsi::utils::get_supported_os -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.374
+!MESSAGE XSDB command with result: [hsi::utils::get_supported_os -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf], Result: [null, {"ps7_cortexa9_0": {"device_tree": {"name": "device_tree",
+"version": "",
+"desc": "Generate flat device tree",
+"compilerflags": "",
+"linkerflags": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/device_tree",
+},
+"freertos823_xilinx_v1_1": {"name": "freertos823_xilinx",
+"version": "1.1",
+"desc": "FreeRTOS is a market leading open source RTOS",
+"compilerflags": "",
+"linkerflags": "-Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/ThirdParty/bsp/freertos823_xilinx_v1_1",
+},
+"standalone_v5_5": {"name": "standalone",
+"version": "5.5",
+"desc": "Standalone is a simple, low-level software layer. It provides access to basic processor features such as caches, interrupts and exceptions as well as the basic features of a hosted environment, such as standard input and output, profiling, abort and exit.",
+"compilerflags": "",
+"linkerflags": "-Wl,--start-group,-lxil,-lgcc,-lc,--end-group",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/lib/bsp/standalone_v5_5",
+},
+},
+"ps7_cortexa9_1": {"device_tree": {"name": "device_tree",
+"version": "",
+"desc": "Generate flat device tree",
+"compilerflags": "",
+"linkerflags": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/device_tree",
+},
+"freertos823_xilinx_v1_1": {"name": "freertos823_xilinx",
+"version": "1.1",
+"desc": "FreeRTOS is a market leading open source RTOS",
+"compilerflags": "",
+"linkerflags": "-Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/ThirdParty/bsp/freertos823_xilinx_v1_1",
+},
+"standalone_v5_5": {"name": "standalone",
+"version": "5.5",
+"desc": "Standalone is a simple, low-level software layer. It provides access to basic processor features such as caches, interrupts and exceptions as well as the basic features of a hosted environment, such as standard input and output, profiling, abort and exit.",
+"compilerflags": "",
+"linkerflags": "-Wl,--start-group,-lxil,-lgcc,-lc,--end-group",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/lib/bsp/standalone_v5_5",
+},
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.405
+!MESSAGE XSDB Command: [::hsi::utils::get_connected_periphs /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf ps7_cortexa9_0], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.409
+!MESSAGE XSDB command with result: [::hsi::utils::get_connected_periphs /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf ps7_cortexa9_0], Result: [null, bigint_math_0 ps7_afi_0 ps7_afi_1 ps7_afi_2 ps7_afi_3 ps7_coresight_comp_0 ps7_ddr_0 ps7_ddrc_0 ps7_dev_cfg_0 ps7_dma_ns ps7_dma_s ps7_ethernet_0 ps7_globaltimer_0 ps7_gpio_0 ps7_gpv_0 ps7_intc_dist_0 ps7_iop_bus_config_0 ps7_l2cachec_0 ps7_ocmc_0 ps7_pl310_0 ps7_pmu_0 ps7_qspi_0 ps7_qspi_linear_0 ps7_ram_0 ps7_ram_1 ps7_scuc_0 ps7_scugic_0 ps7_scutimer_0 ps7_scuwdt_0 ps7_sd_0 ps7_slcr_0 ps7_ttc_1 ps7_uart_1 ps7_wdt_0 ps7_xadc_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.410
+!MESSAGE XSDB Command: [::hsi::utils::get_drivers_for_sw -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.424
+!MESSAGE XSDB command with result: [::hsi::utils::get_drivers_for_sw -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, {"bigint_math_0": {"name": "generic",
+"ver": "",
+},
+"ps7_afi_0": {"name": "generic",
+"ver": "",
+},
+"ps7_afi_1": {"name": "generic",
+"ver": "",
+},
+"ps7_afi_2": {"name": "generic",
+"ver": "",
+},
+"ps7_afi_3": {"name": "generic",
+"ver": "",
+},
+"ps7_coresight_comp_0": {"name": "generic",
+"ver": "",
+},
+"ps7_ddr_0": {"name": "ddrps",
+"ver": "",
+},
+"ps7_ddrc_0": {"name": "ddrcps",
+"ver": "",
+},
+"ps7_dev_cfg_0": {"name": "devcfg",
+"ver": "",
+},
+"ps7_dma_ns": {"name": "none",
+"ver": "",
+},
+"ps7_dma_s": {"name": "dmaps",
+"ver": "",
+},
+"ps7_ethernet_0": {"name": "emacps",
+"ver": "",
+},
+"ps7_globaltimer_0": {"name": "globaltimerps",
+"ver": "",
+},
+"ps7_gpio_0": {"name": "gpiops",
+"ver": "",
+},
+"ps7_gpv_0": {"name": "generic",
+"ver": "",
+},
+"ps7_intc_dist_0": {"name": "generic",
+"ver": "",
+},
+"ps7_iop_bus_config_0": {"name": "generic",
+"ver": "",
+},
+"ps7_l2cachec_0": {"name": "generic",
+"ver": "",
+},
+"ps7_ocmc_0": {"name": "ocmcps",
+"ver": "",
+},
+"ps7_pl310_0": {"name": "pl310ps",
+"ver": "",
+},
+"ps7_pmu_0": {"name": "pmups",
+"ver": "",
+},
+"ps7_qspi_0": {"name": "qspips",
+"ver": "",
+},
+"ps7_qspi_linear_0": {"name": "generic",
+"ver": "",
+},
+"ps7_ram_0": {"name": "ramps",
+"ver": "",
+},
+"ps7_ram_1": {"name": "none",
+"ver": "",
+},
+"ps7_scuc_0": {"name": "generic",
+"ver": "",
+},
+"ps7_scugic_0": {"name": "scugic",
+"ver": "",
+},
+"ps7_scutimer_0": {"name": "scutimer",
+"ver": "",
+},
+"ps7_scuwdt_0": {"name": "scuwdt",
+"ver": "",
+},
+"ps7_sd_0": {"name": "generic",
+"ver": "",
+},
+"ps7_slcr_0": {"name": "slcrps",
+"ver": "",
+},
+"ps7_ttc_1": {"name": "ttcps",
+"ver": "",
+},
+"ps7_uart_1": {"name": "uartps",
+"ver": "",
+},
+"ps7_wdt_0": {"name": "wdtps",
+"ver": "",
+},
+"ps7_xadc_0": {"name": "xadcps",
+"ver": "",
+},
+"ps7_cortexa9_0": {"name": "cpu_cortexa9",
+"ver": "",
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.428
+!MESSAGE XSDB Command: [hsi::utils::get_drivers_for_hw -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.740
+!MESSAGE XSDB command with result: [hsi::utils::get_drivers_for_hw -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf], Result: [null, {"bigint_math_0": {"version": "1.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"bigint_math_v1_0": {"name": "bigint_math",
+"version": "1.0",
+"repo": "/home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/drivers/bigint_math_v1_0",
+},
+},
+},
+"processing_system7_0": {"version": "5.5",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"processing_system7_0_axi_periph": {"version": "2.1",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"rst_processing_system7_0_100M": {"version": "5.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"ps7_clockc_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"ps7_uart_1": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"uartps": {"name": "uartps",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/uartps",
+},
+"uartps_v3_1": {"name": "uartps",
+"version": "3.1",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/uartps_v3_1",
+},
+},
+},
+"ps7_pl310_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"pl310ps": {"name": "pl310ps",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/pl310ps",
+},
+},
+},
+"ps7_pmu_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"pmups": {"name": "pmups",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/pmups",
+},
+},
+},
+"ps7_qspi_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"qspips": {"name": "qspips",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/qspips",
+},
+"qspips_v3_3": {"name": "qspips",
+"version": "3.3",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/qspips_v3_3",
+},
+},
+},
+"ps7_qspi_linear_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"ps7_axi_interconnect_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"ps7_cortexa9_0": {"version": "5.2",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"cpu_cortexa9": {"name": "cpu_cortexa9",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/cpu_cortexa9",
+},
+"cpu_cortexa9_v2_2": {"name": "cpu_cortexa9",
+"version": "2.2",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/cpu_cortexa9_v2_2",
+},
+},
+},
+"ps7_cortexa9_1": {"version": "5.2",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"cpu_cortexa9": {"name": "cpu_cortexa9",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/cpu_cortexa9",
+},
+"cpu_cortexa9_v2_2": {"name": "cpu_cortexa9",
+"version": "2.2",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/cpu_cortexa9_v2_2",
+},
+},
+},
+"ps7_ddr_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"ddrcps": {"name": "ddrcps",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/ddrcps",
+},
+"ddrps": {"name": "ddrps",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/ddrps",
+},
+"ddrps_v1_0": {"name": "ddrps",
+"version": "1.0",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/ddrps_v1_0",
+},
+},
+},
+"ps7_ethernet_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"emacps": {"name": "emacps",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/emacps",
+},
+"emacps_v3_2": {"name": "emacps",
+"version": "3.2",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/emacps_v3_2",
+},
+},
+},
+"ps7_sd_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"sdps": {"name": "sdps",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/sdps",
+},
+"sdps_v2_8": {"name": "sdps",
+"version": "2.8",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/sdps_v2_8",
+},
+},
+},
+"ps7_ttc_1": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"ttcps": {"name": "ttcps",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/ttcps",
+},
+"ttcps_v3_1": {"name": "ttcps",
+"version": "3.1",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/ttcps_v3_1",
+},
+},
+},
+"ps7_wdt_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"wdtps": {"name": "wdtps",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/wdtps",
+},
+"wdtps_v3_0": {"name": "wdtps",
+"version": "3.0",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/wdtps_v3_0",
+},
+},
+},
+"ps7_gpio_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"gpiops": {"name": "gpiops",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/gpiops",
+},
+"gpiops_v3_1": {"name": "gpiops",
+"version": "3.1",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/gpiops_v3_1",
+},
+},
+},
+"ps7_ddrc_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"ddrcps": {"name": "ddrcps",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/ddrcps",
+},
+},
+},
+"ps7_dev_cfg_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"devcfg": {"name": "devcfg",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/devcfg",
+},
+"devcfg_v3_4": {"name": "devcfg",
+"version": "3.4",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/devcfg_v3_4",
+},
+},
+},
+"ps7_xadc_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"xadcps": {"name": "xadcps",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/xadcps",
+},
+"xadcps_v2_2": {"name": "xadcps",
+"version": "2.2",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/xadcps_v2_2",
+},
+},
+},
+"ps7_ocmc_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"ocmcps": {"name": "ocmcps",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/ocmcps",
+},
+},
+},
+"ps7_coresight_comp_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"coresightps_dcc_v1_2": {"name": "coresightps_dcc",
+"version": "1.2",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/coresightps_dcc_v1_2",
+},
+},
+},
+"ps7_gpv_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"ps7_scuc_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"ps7_globaltimer_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"globaltimerps": {"name": "globaltimerps",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/globaltimerps",
+},
+},
+},
+"ps7_intc_dist_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"ps7_l2cachec_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"ps7_dma_s": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"dmaps": {"name": "dmaps",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/dmaps",
+},
+"dmaps_v2_1": {"name": "dmaps",
+"version": "2.1",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/dmaps_v2_1",
+},
+},
+},
+"ps7_iop_bus_config_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"ps7_ram_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"ramps": {"name": "ramps",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/ramps",
+},
+},
+},
+"ps7_ram_1": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"ramps": {"name": "ramps",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/ramps",
+},
+},
+},
+"ps7_scugic_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"scugic": {"name": "scugic",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/scugic",
+},
+"scugic_v3_3": {"name": "scugic",
+"version": "3.3",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/scugic_v3_3",
+},
+},
+},
+"ps7_scutimer_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"scutimer": {"name": "scutimer",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/scutimer",
+},
+"scutimer_v2_1": {"name": "scutimer",
+"version": "2.1",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/scutimer_v2_1",
+},
+},
+},
+"ps7_scuwdt_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"scuwdt": {"name": "scuwdt",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/scuwdt",
+},
+"scuwdt_v2_1": {"name": "scuwdt",
+"version": "2.1",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/scuwdt_v2_1",
+},
+},
+},
+"ps7_slcr_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"slcrps": {"name": "slcrps",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/slcrps",
+},
+},
+},
+"ps7_dma_ns": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"dmaps": {"name": "dmaps",
+"version": "",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/dmaps",
+},
+"dmaps_v2_1": {"name": "dmaps",
+"version": "2.1",
+"repo": "/home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/dmaps_v2_1",
+},
+},
+},
+"ps7_afi_0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"ps7_afi_1": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"ps7_afi_2": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"ps7_afi_3": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"ps7_m_axi_gp0": {"version": "1.00.a",
+"driver_info": {"generic": {"name": "generic",
+"version": "{} 2.0",
+"repo": "/home/linux/Documents/Xilinx/device-tree-xlnx/generic /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.745
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.754
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.755
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.764
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.765
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.770
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.771
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.780
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.781
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.789
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.790
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.797
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.797
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.803
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.804
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.812
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.813
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.822
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.823
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.831
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.832
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.841
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.842
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.850
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.851
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.858
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.860
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.867
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.868
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.878
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.879
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.886
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.887
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.896
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.897
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.904
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.905
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.911
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.912
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.919
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.920
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.927
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.927
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.933
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.934
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.940
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.941
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.948
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.949
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.956
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.957
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:54.966
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:55.179
+!MESSAGE XSDB Command: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:55.182
+!MESSAGE XSDB command with result: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:55.183
+!MESSAGE XSDB Command: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:55.185
+!MESSAGE XSDB command with result: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "device_tree",
+"osver": "",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:55.198
+!MESSAGE XSDB Command: [::hsi::utils::get_libs_from_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:55.200
+!MESSAGE XSDB command with result: [::hsi::utils::get_libs_from_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:55.204
+!MESSAGE XSDB Command: [::hsi::utils::closesw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:37:55.206
+!MESSAGE XSDB command with result: [::hsi::utils::closesw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:01.857
+!MESSAGE XSDB Command: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:01.876
+!MESSAGE XSDB command with result: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:01.877
+!MESSAGE XSDB Command: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:01.881
+!MESSAGE XSDB command with result: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "5.5",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:01.897
+!MESSAGE XSDB Command: [::hsi::utils::get_libs_from_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:01.900
+!MESSAGE XSDB command with result: [::hsi::utils::get_libs_from_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, xilffs xilrsa]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:01.901
+!MESSAGE XSDB Command: [::hsi::utils::get_sw_libs -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:01.905
+!MESSAGE XSDB command with result: [::hsi::utils::get_sw_libs -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, {"xilffs": "3.3",
+"xilrsa": "1.2",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:01.906
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilffs" && VERSION == "3.3"  && TYPE == "LIBRARY"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:01.915
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilffs" && VERSION == "3.3"  && TYPE == "LIBRARY"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/lib/sw_services/xilffs_v3_3]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:01.916
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilrsa" && VERSION == "1.2"  && TYPE == "LIBRARY"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:01.924
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilrsa" && VERSION == "1.2"  && TYPE == "LIBRARY"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/lib/sw_services/xilrsa_v1_2]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:01.938
+!MESSAGE XSDB Command: [::hsi::utils::get_drivers_for_sw -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:01.955
+!MESSAGE XSDB command with result: [::hsi::utils::get_drivers_for_sw -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, {"bigint_math_0": {"name": "bigint_math",
+"ver": "1.0",
+},
+"ps7_afi_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_afi_1": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_afi_2": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_afi_3": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_coresight_comp_0": {"name": "coresightps_dcc",
+"ver": "1.2",
+},
+"ps7_ddr_0": {"name": "ddrps",
+"ver": "1.0",
+},
+"ps7_ddrc_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_dev_cfg_0": {"name": "devcfg",
+"ver": "3.4",
+},
+"ps7_dma_ns": {"name": "dmaps",
+"ver": "2.1",
+},
+"ps7_dma_s": {"name": "dmaps",
+"ver": "2.1",
+},
+"ps7_ethernet_0": {"name": "emacps",
+"ver": "3.2",
+},
+"ps7_globaltimer_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_gpio_0": {"name": "gpiops",
+"ver": "3.1",
+},
+"ps7_gpv_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_intc_dist_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_iop_bus_config_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_l2cachec_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ocmc_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_pl310_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_pmu_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_qspi_0": {"name": "qspips",
+"ver": "3.3",
+},
+"ps7_qspi_linear_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ram_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ram_1": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_scuc_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_scugic_0": {"name": "scugic",
+"ver": "3.3",
+},
+"ps7_scutimer_0": {"name": "scutimer",
+"ver": "2.1",
+},
+"ps7_scuwdt_0": {"name": "scuwdt",
+"ver": "2.1",
+},
+"ps7_sd_0": {"name": "sdps",
+"ver": "2.8",
+},
+"ps7_slcr_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ttc_1": {"name": "ttcps",
+"ver": "3.1",
+},
+"ps7_uart_1": {"name": "uartps",
+"ver": "3.1",
+},
+"ps7_wdt_0": {"name": "wdtps",
+"ver": "3.0",
+},
+"ps7_xadc_0": {"name": "xadcps",
+"ver": "2.2",
+},
+"ps7_cortexa9_0": {"name": "cpu_cortexa9",
+"ver": "2.2",
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:01.956
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:01.966
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:02.147
+!MESSAGE XSDB Command: [::hsi::utils::closesw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:02.150
+!MESSAGE XSDB command with result: [::hsi::utils::closesw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.080
+!MESSAGE XSDB Command: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.086
+!MESSAGE XSDB command with result: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.090
+!MESSAGE XSDB Command: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.093
+!MESSAGE XSDB command with result: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "5.5",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.097
+!MESSAGE XSDB Command: [::hsi::utils::get_libs_from_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.099
+!MESSAGE XSDB command with result: [::hsi::utils::get_libs_from_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, xilffs xilrsa]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.099
+!MESSAGE XSDB Command: [::hsi::utils::get_sw_libs -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.102
+!MESSAGE XSDB command with result: [::hsi::utils::get_sw_libs -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, {"xilffs": "3.3",
+"xilrsa": "1.2",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.103
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilffs" && VERSION == "3.3"  && TYPE == "LIBRARY"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.112
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilffs" && VERSION == "3.3"  && TYPE == "LIBRARY"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/lib/sw_services/xilffs_v3_3]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.114
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilrsa" && VERSION == "1.2"  && TYPE == "LIBRARY"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.121
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilrsa" && VERSION == "1.2"  && TYPE == "LIBRARY"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/lib/sw_services/xilrsa_v1_2]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.122
+!MESSAGE XSDB Command: [::hsi::utils::get_drivers_for_sw -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.138
+!MESSAGE XSDB command with result: [::hsi::utils::get_drivers_for_sw -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, {"bigint_math_0": {"name": "bigint_math",
+"ver": "1.0",
+},
+"ps7_afi_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_afi_1": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_afi_2": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_afi_3": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_coresight_comp_0": {"name": "coresightps_dcc",
+"ver": "1.2",
+},
+"ps7_ddr_0": {"name": "ddrps",
+"ver": "1.0",
+},
+"ps7_ddrc_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_dev_cfg_0": {"name": "devcfg",
+"ver": "3.4",
+},
+"ps7_dma_ns": {"name": "dmaps",
+"ver": "2.1",
+},
+"ps7_dma_s": {"name": "dmaps",
+"ver": "2.1",
+},
+"ps7_ethernet_0": {"name": "emacps",
+"ver": "3.2",
+},
+"ps7_globaltimer_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_gpio_0": {"name": "gpiops",
+"ver": "3.1",
+},
+"ps7_gpv_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_intc_dist_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_iop_bus_config_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_l2cachec_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ocmc_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_pl310_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_pmu_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_qspi_0": {"name": "qspips",
+"ver": "3.3",
+},
+"ps7_qspi_linear_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ram_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ram_1": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_scuc_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_scugic_0": {"name": "scugic",
+"ver": "3.3",
+},
+"ps7_scutimer_0": {"name": "scutimer",
+"ver": "2.1",
+},
+"ps7_scuwdt_0": {"name": "scuwdt",
+"ver": "2.1",
+},
+"ps7_sd_0": {"name": "sdps",
+"ver": "2.8",
+},
+"ps7_slcr_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ttc_1": {"name": "ttcps",
+"ver": "3.1",
+},
+"ps7_uart_1": {"name": "uartps",
+"ver": "3.1",
+},
+"ps7_wdt_0": {"name": "wdtps",
+"ver": "3.0",
+},
+"ps7_xadc_0": {"name": "xadcps",
+"ver": "2.2",
+},
+"ps7_cortexa9_0": {"name": "cpu_cortexa9",
+"ver": "2.2",
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.139
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.145
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.147
+!MESSAGE XSDB Command: [::hsi::utils::closesw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.149
+!MESSAGE XSDB command with result: [::hsi::utils::closesw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.159
+!MESSAGE XSDB Command: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.166
+!MESSAGE XSDB command with result: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.167
+!MESSAGE XSDB Command: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.170
+!MESSAGE XSDB command with result: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "5.5",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.171
+!MESSAGE XSDB Command: [::hsi::utils::get_libs_from_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.174
+!MESSAGE XSDB command with result: [::hsi::utils::get_libs_from_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, xilffs xilrsa]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.175
+!MESSAGE XSDB Command: [::hsi::utils::get_sw_libs -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.185
+!MESSAGE XSDB command with result: [::hsi::utils::get_sw_libs -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, {"xilffs": "3.3",
+"xilrsa": "1.2",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.192
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilffs" && VERSION == "3.3"  && TYPE == "LIBRARY"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.198
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilffs" && VERSION == "3.3"  && TYPE == "LIBRARY"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/lib/sw_services/xilffs_v3_3]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.199
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilrsa" && VERSION == "1.2"  && TYPE == "LIBRARY"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.210
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilrsa" && VERSION == "1.2"  && TYPE == "LIBRARY"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/lib/sw_services/xilrsa_v1_2]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.211
+!MESSAGE XSDB Command: [::hsi::utils::get_drivers_for_sw -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.232
+!MESSAGE XSDB command with result: [::hsi::utils::get_drivers_for_sw -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, {"bigint_math_0": {"name": "bigint_math",
+"ver": "1.0",
+},
+"ps7_afi_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_afi_1": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_afi_2": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_afi_3": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_coresight_comp_0": {"name": "coresightps_dcc",
+"ver": "1.2",
+},
+"ps7_ddr_0": {"name": "ddrps",
+"ver": "1.0",
+},
+"ps7_ddrc_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_dev_cfg_0": {"name": "devcfg",
+"ver": "3.4",
+},
+"ps7_dma_ns": {"name": "dmaps",
+"ver": "2.1",
+},
+"ps7_dma_s": {"name": "dmaps",
+"ver": "2.1",
+},
+"ps7_ethernet_0": {"name": "emacps",
+"ver": "3.2",
+},
+"ps7_globaltimer_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_gpio_0": {"name": "gpiops",
+"ver": "3.1",
+},
+"ps7_gpv_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_intc_dist_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_iop_bus_config_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_l2cachec_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ocmc_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_pl310_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_pmu_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_qspi_0": {"name": "qspips",
+"ver": "3.3",
+},
+"ps7_qspi_linear_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ram_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ram_1": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_scuc_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_scugic_0": {"name": "scugic",
+"ver": "3.3",
+},
+"ps7_scutimer_0": {"name": "scutimer",
+"ver": "2.1",
+},
+"ps7_scuwdt_0": {"name": "scuwdt",
+"ver": "2.1",
+},
+"ps7_sd_0": {"name": "sdps",
+"ver": "2.8",
+},
+"ps7_slcr_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ttc_1": {"name": "ttcps",
+"ver": "3.1",
+},
+"ps7_uart_1": {"name": "uartps",
+"ver": "3.1",
+},
+"ps7_wdt_0": {"name": "wdtps",
+"ver": "3.0",
+},
+"ps7_xadc_0": {"name": "xadcps",
+"ver": "2.2",
+},
+"ps7_cortexa9_0": {"name": "cpu_cortexa9",
+"ver": "2.2",
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.234
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.244
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.246
+!MESSAGE XSDB Command: [::hsi::utils::closesw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.251
+!MESSAGE XSDB command with result: [::hsi::utils::closesw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.391
+!MESSAGE XSDB Command: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss ], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.398
+!MESSAGE XSDB command with result: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss ], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.406
+!MESSAGE XSDB Command: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.409
+!MESSAGE XSDB command with result: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "device_tree",
+"osver": "",
+}]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:04.410
+!MESSAGE XSDB Command: [::hsi::utils::generate_bsp_sources /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:10.709
+!MESSAGE XSDB command with result: [::hsi::utils::generate_bsp_sources /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:10.878
+!MESSAGE XSDB Command: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:10.881
+!MESSAGE XSDB command with result: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:10.882
+!MESSAGE XSDB Command: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:10.885
+!MESSAGE XSDB command with result: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "device_tree",
+"osver": "",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:10.916
+!MESSAGE XSDB Command: [::hsi::utils::get_libs_from_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:10.926
+!MESSAGE XSDB command with result: [::hsi::utils::get_libs_from_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:11.003
+!MESSAGE XSDB Command: [::hsi::utils::closesw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:11.007
+!MESSAGE XSDB command with result: [::hsi::utils::closesw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:11.499
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.core.CommandLauncher.printCommandLine(CommandLauncher.java:287)
+	at org.eclipse.cdt.core.CommandLauncher.waitAndRead(CommandLauncher.java:250)
+	at org.eclipse.cdt.internal.core.BuildRunnerHelper.build(BuildRunnerHelper.java:273)
+	at org.eclipse.cdt.make.core.MakeBuilder.invokeMake(MakeBuilder.java:219)
+	at org.eclipse.cdt.make.core.MakeBuilder.build(MakeBuilder.java:108)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:11.542
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:11.585
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.closeConsoleOutputStream(ConsoleOutputSniffer.java:160)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.close(ConsoleOutputSniffer.java:68)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.close(ProcessClosure.java:98)
+	at org.eclipse.cdt.internal.core.ProcessClosure.isAlive(ProcessClosure.java:193)
+	at org.eclipse.cdt.core.CommandLauncher.waitAndRead(CommandLauncher.java:259)
+	at org.eclipse.cdt.internal.core.BuildRunnerHelper.build(BuildRunnerHelper.java:273)
+	at org.eclipse.cdt.make.core.MakeBuilder.invokeMake(MakeBuilder.java:219)
+	at org.eclipse.cdt.make.core.MakeBuilder.build(MakeBuilder.java:108)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.437
+!MESSAGE XSDB Command: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.444
+!MESSAGE XSDB command with result: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.444
+!MESSAGE XSDB Command: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.448
+!MESSAGE XSDB command with result: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "5.5",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.489
+!MESSAGE XSDB Command: [::hsi::utils::get_drivers_for_sw -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.500
+!MESSAGE XSDB command with result: [::hsi::utils::get_drivers_for_sw -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, {"bigint_math_0": {"name": "bigint_math",
+"ver": "1.0",
+},
+"ps7_afi_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_afi_1": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_afi_2": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_afi_3": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_coresight_comp_0": {"name": "coresightps_dcc",
+"ver": "1.2",
+},
+"ps7_ddr_0": {"name": "ddrps",
+"ver": "1.0",
+},
+"ps7_ddrc_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_dev_cfg_0": {"name": "devcfg",
+"ver": "3.4",
+},
+"ps7_dma_ns": {"name": "dmaps",
+"ver": "2.1",
+},
+"ps7_dma_s": {"name": "dmaps",
+"ver": "2.1",
+},
+"ps7_ethernet_0": {"name": "emacps",
+"ver": "3.2",
+},
+"ps7_globaltimer_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_gpio_0": {"name": "gpiops",
+"ver": "3.1",
+},
+"ps7_gpv_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_intc_dist_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_iop_bus_config_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_l2cachec_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ocmc_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_pl310_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_pmu_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_qspi_0": {"name": "qspips",
+"ver": "3.3",
+},
+"ps7_qspi_linear_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ram_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ram_1": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_scuc_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_scugic_0": {"name": "scugic",
+"ver": "3.3",
+},
+"ps7_scutimer_0": {"name": "scutimer",
+"ver": "2.1",
+},
+"ps7_scuwdt_0": {"name": "scuwdt",
+"ver": "2.1",
+},
+"ps7_sd_0": {"name": "sdps",
+"ver": "2.8",
+},
+"ps7_slcr_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ttc_1": {"name": "ttcps",
+"ver": "3.1",
+},
+"ps7_uart_1": {"name": "uartps",
+"ver": "3.1",
+},
+"ps7_wdt_0": {"name": "wdtps",
+"ver": "3.0",
+},
+"ps7_xadc_0": {"name": "xadcps",
+"ver": "2.2",
+},
+"ps7_cortexa9_0": {"name": "cpu_cortexa9",
+"ver": "2.2",
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.501
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.506
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.507
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.515
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.516
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.521
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.522
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.529
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.530
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.537
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.538
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.547
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.548
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.555
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.556
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.562
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.563
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.572
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.573
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.580
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.580
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.586
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.586
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.592
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.592
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.597
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.598
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.608
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.609
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.616
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.617
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.624
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.625
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.631
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.632
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.639
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.702
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.715
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.716
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.722
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.723
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.728
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.729
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.736
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.737
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.744
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.744
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.751
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.752
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.757
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.757
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.762
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.763
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.772
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.772
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.780
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.781
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.790
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.790
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.797
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.797
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.803
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.803
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.808
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.809
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.816
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.817
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.825
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.826
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.833
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.834
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:17.844
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == "2.0"  && TYPE == "DRIVER"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:18.164
+!MESSAGE XSDB Command: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:18.166
+!MESSAGE XSDB command with result: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:18.167
+!MESSAGE XSDB Command: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:18.171
+!MESSAGE XSDB command with result: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "5.5",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:18.190
+!MESSAGE XSDB Command: [::hsi::utils::get_libs_from_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:18.193
+!MESSAGE XSDB command with result: [::hsi::utils::get_libs_from_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, xilffs xilrsa]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:18.194
+!MESSAGE XSDB Command: [::hsi::utils::get_sw_libs -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:18.199
+!MESSAGE XSDB command with result: [::hsi::utils::get_sw_libs -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, {"xilffs": "3.3",
+"xilrsa": "1.2",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:18.204
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilffs" && VERSION == "3.3"  && TYPE == "LIBRARY"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:18.211
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilffs" && VERSION == "3.3"  && TYPE == "LIBRARY"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/lib/sw_services/xilffs_v3_3]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:18.214
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilffs" && VERSION == "3.3"  && TYPE == "LIBRARY"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:18.222
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilffs" && VERSION == "3.3"  && TYPE == "LIBRARY"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/lib/sw_services/xilffs_v3_3]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:18.231
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilrsa" && VERSION == "1.2"  && TYPE == "LIBRARY"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:18.239
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilrsa" && VERSION == "1.2"  && TYPE == "LIBRARY"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/lib/sw_services/xilrsa_v1_2]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:18.242
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilrsa" && VERSION == "1.2"  && TYPE == "LIBRARY"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:18.251
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilrsa" && VERSION == "1.2"  && TYPE == "LIBRARY"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/lib/sw_services/xilrsa_v1_2]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:18.254
+!MESSAGE XSDB Command: [::hsi::utils::closesw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:18.257
+!MESSAGE XSDB command with result: [::hsi::utils::closesw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:35.418
+!MESSAGE XSDB Command: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss ], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:35.453
+!MESSAGE XSDB command with result: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss ], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:35.459
+!MESSAGE XSDB Command: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:35.473
+!MESSAGE XSDB command with result: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "5.5",
+}]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:35.616
+!MESSAGE XSDB Command: [::hsi::utils::generate_bsp_sources /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:38.752
+!MESSAGE XSDB command with result: [::hsi::utils::generate_bsp_sources /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:39.018
+!MESSAGE XSDB Command: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:39.024
+!MESSAGE XSDB command with result: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:39.025
+!MESSAGE XSDB Command: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:39.033
+!MESSAGE XSDB command with result: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "5.5",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:39.101
+!MESSAGE XSDB Command: [::hsi::utils::get_libs_from_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:39.104
+!MESSAGE XSDB command with result: [::hsi::utils::get_libs_from_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, xilffs xilrsa]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:39.105
+!MESSAGE XSDB Command: [::hsi::utils::get_sw_libs -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:39.108
+!MESSAGE XSDB command with result: [::hsi::utils::get_sw_libs -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, {"xilffs": "3.3",
+"xilrsa": "1.2",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:39.114
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilffs" && VERSION == "3.3"  && TYPE == "LIBRARY"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:39.121
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilffs" && VERSION == "3.3"  && TYPE == "LIBRARY"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/lib/sw_services/xilffs_v3_3]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:39.129
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilffs" && VERSION == "3.3"  && TYPE == "LIBRARY"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:39.136
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilffs" && VERSION == "3.3"  && TYPE == "LIBRARY"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/lib/sw_services/xilffs_v3_3]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:39.146
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilrsa" && VERSION == "1.2"  && TYPE == "LIBRARY"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:39.152
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilrsa" && VERSION == "1.2"  && TYPE == "LIBRARY"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/lib/sw_services/xilrsa_v1_2]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:39.155
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilrsa" && VERSION == "1.2"  && TYPE == "LIBRARY"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:39.163
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xilrsa" && VERSION == "1.2"  && TYPE == "LIBRARY"}]], Result: [null, /home/Xilinx/SDK/2016.2/data/embeddedsw/lib/sw_services/xilrsa_v1_2]. Thread: main
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.276
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.core.CommandLauncher.printCommandLine(CommandLauncher.java:287)
+	at org.eclipse.cdt.core.CommandLauncher.waitAndRead(CommandLauncher.java:250)
+	at org.eclipse.cdt.internal.core.BuildRunnerHelper.build(BuildRunnerHelper.java:273)
+	at org.eclipse.cdt.make.core.MakeBuilder.invokeMake(MakeBuilder.java:219)
+	at org.eclipse.cdt.make.core.MakeBuilder.build(MakeBuilder.java:108)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:39.307
+!MESSAGE XSDB Command: [::hsi::utils::closesw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:39.309
+!MESSAGE XSDB command with result: [::hsi::utils::closesw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/zynq_bsp/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.321
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.332
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.364
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.368
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.392
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.397
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.407
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.418
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.454
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.460
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.476
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.479
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.484
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.491
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.525
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.529
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.586
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.591
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.621
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.625
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.699
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.702
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.741
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.765
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.787
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.791
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.798
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.802
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.814
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.817
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.850
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.854
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.859
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.863
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.869
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.872
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.877
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.882
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.885
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.889
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.892
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.896
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:39.897
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:42.105
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:42.128
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:42.133
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:42.141
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:42.186
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:42.191
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:42.206
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:42.207
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:42.212
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:42.212
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:42.216
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:42.221
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:42.226
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:42.672
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:42.678
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:42.679
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:43.168
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:43.174
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:43.179
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:43.862
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:43.868
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:43.869
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:44.497
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:44.502
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:44.510
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:45.051
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:45.056
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:45.057
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:45.488
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:45.493
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:45.498
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:45.729
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:45.732
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:45.741
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:45.952
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:45.957
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:45.964
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:46.575
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:46.580
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:46.589
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:48.884
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:48.887
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:48.887
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:49.183
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:49.187
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:49.191
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:49.753
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:49.759
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:49.764
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:50.226
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:50.231
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:50.238
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:51.417
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:51.431
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:51.432
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:53.473
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:53.479
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:53.490
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:57)
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-02-01 15:38:53.534
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.closeConsoleOutputStream(ConsoleOutputSniffer.java:160)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.close(ConsoleOutputSniffer.java:68)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.close(ProcessClosure.java:98)
+	at org.eclipse.cdt.internal.core.ProcessClosure.isAlive(ProcessClosure.java:193)
+	at org.eclipse.cdt.core.CommandLauncher.waitAndRead(CommandLauncher.java:259)
+	at org.eclipse.cdt.internal.core.BuildRunnerHelper.build(BuildRunnerHelper.java:273)
+	at org.eclipse.cdt.make.core.MakeBuilder.invokeMake(MakeBuilder.java:219)
+	at org.eclipse.cdt.make.core.MakeBuilder.build(MakeBuilder.java:108)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:56.248
+!MESSAGE XSDB Command: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:56.264
+!MESSAGE XSDB command with result: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:56.265
+!MESSAGE XSDB Command: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:56.275
+!MESSAGE XSDB command with result: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "device_tree",
+"osver": "",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:56.283
+!MESSAGE XSDB Command: [::hsi::utils::get_libs_from_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:56.287
+!MESSAGE XSDB command with result: [::hsi::utils::get_libs_from_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:56.294
+!MESSAGE XSDB Command: [::hsi::utils::get_sw_libs -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:56.299
+!MESSAGE XSDB command with result: [::hsi::utils::get_sw_libs -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, {}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:56.300
+!MESSAGE XSDB Command: [::hsi::utils::get_drivers_for_sw -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:56.325
+!MESSAGE XSDB command with result: [::hsi::utils::get_drivers_for_sw -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, {"bigint_math_0": {"name": "generic",
+"ver": "",
+},
+"ps7_afi_0": {"name": "generic",
+"ver": "",
+},
+"ps7_afi_1": {"name": "generic",
+"ver": "",
+},
+"ps7_afi_2": {"name": "generic",
+"ver": "",
+},
+"ps7_afi_3": {"name": "generic",
+"ver": "",
+},
+"ps7_coresight_comp_0": {"name": "generic",
+"ver": "",
+},
+"ps7_ddr_0": {"name": "ddrps",
+"ver": "",
+},
+"ps7_ddrc_0": {"name": "ddrcps",
+"ver": "",
+},
+"ps7_dev_cfg_0": {"name": "devcfg",
+"ver": "",
+},
+"ps7_dma_ns": {"name": "none",
+"ver": "",
+},
+"ps7_dma_s": {"name": "dmaps",
+"ver": "",
+},
+"ps7_ethernet_0": {"name": "emacps",
+"ver": "",
+},
+"ps7_globaltimer_0": {"name": "globaltimerps",
+"ver": "",
+},
+"ps7_gpio_0": {"name": "gpiops",
+"ver": "",
+},
+"ps7_gpv_0": {"name": "generic",
+"ver": "",
+},
+"ps7_intc_dist_0": {"name": "generic",
+"ver": "",
+},
+"ps7_iop_bus_config_0": {"name": "generic",
+"ver": "",
+},
+"ps7_l2cachec_0": {"name": "generic",
+"ver": "",
+},
+"ps7_ocmc_0": {"name": "ocmcps",
+"ver": "",
+},
+"ps7_pl310_0": {"name": "pl310ps",
+"ver": "",
+},
+"ps7_pmu_0": {"name": "pmups",
+"ver": "",
+},
+"ps7_qspi_0": {"name": "qspips",
+"ver": "",
+},
+"ps7_qspi_linear_0": {"name": "generic",
+"ver": "",
+},
+"ps7_ram_0": {"name": "ramps",
+"ver": "",
+},
+"ps7_ram_1": {"name": "none",
+"ver": "",
+},
+"ps7_scuc_0": {"name": "generic",
+"ver": "",
+},
+"ps7_scugic_0": {"name": "scugic",
+"ver": "",
+},
+"ps7_scutimer_0": {"name": "scutimer",
+"ver": "",
+},
+"ps7_scuwdt_0": {"name": "scuwdt",
+"ver": "",
+},
+"ps7_sd_0": {"name": "generic",
+"ver": "",
+},
+"ps7_slcr_0": {"name": "slcrps",
+"ver": "",
+},
+"ps7_ttc_1": {"name": "ttcps",
+"ver": "",
+},
+"ps7_uart_1": {"name": "uartps",
+"ver": "",
+},
+"ps7_wdt_0": {"name": "wdtps",
+"ver": "",
+},
+"ps7_xadc_0": {"name": "xadcps",
+"ver": "",
+},
+"ps7_cortexa9_0": {"name": "cpu_cortexa9",
+"ver": "",
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:56.328
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:56.341
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:56.343
+!MESSAGE XSDB Command: [::hsi::utils::closesw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:38:56.346
+!MESSAGE XSDB command with result: [::hsi::utils::closesw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:49:45.792
+!MESSAGE XSDB Command: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:49:45.800
+!MESSAGE XSDB command with result: [ ::hsi::utils::set_current_hw_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:49:45.801
+!MESSAGE XSDB Command: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:49:45.804
+!MESSAGE XSDB command with result: [::hsi::utils::get_hw_sw_details -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "device_tree",
+"osver": "",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:49:45.805
+!MESSAGE XSDB Command: [::hsi::utils::get_libs_from_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:49:45.807
+!MESSAGE XSDB command with result: [::hsi::utils::get_libs_from_sw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:49:45.808
+!MESSAGE XSDB Command: [::hsi::utils::get_sw_libs -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:49:45.811
+!MESSAGE XSDB command with result: [::hsi::utils::get_sw_libs -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, {}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:49:45.812
+!MESSAGE XSDB Command: [::hsi::utils::get_drivers_for_sw -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:49:45.824
+!MESSAGE XSDB command with result: [::hsi::utils::get_drivers_for_sw -json /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/system.hdf /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, {"bigint_math_0": {"name": "generic",
+"ver": "",
+},
+"ps7_afi_0": {"name": "generic",
+"ver": "",
+},
+"ps7_afi_1": {"name": "generic",
+"ver": "",
+},
+"ps7_afi_2": {"name": "generic",
+"ver": "",
+},
+"ps7_afi_3": {"name": "generic",
+"ver": "",
+},
+"ps7_coresight_comp_0": {"name": "generic",
+"ver": "",
+},
+"ps7_ddr_0": {"name": "ddrps",
+"ver": "",
+},
+"ps7_ddrc_0": {"name": "ddrcps",
+"ver": "",
+},
+"ps7_dev_cfg_0": {"name": "devcfg",
+"ver": "",
+},
+"ps7_dma_ns": {"name": "none",
+"ver": "",
+},
+"ps7_dma_s": {"name": "dmaps",
+"ver": "",
+},
+"ps7_ethernet_0": {"name": "emacps",
+"ver": "",
+},
+"ps7_globaltimer_0": {"name": "globaltimerps",
+"ver": "",
+},
+"ps7_gpio_0": {"name": "gpiops",
+"ver": "",
+},
+"ps7_gpv_0": {"name": "generic",
+"ver": "",
+},
+"ps7_intc_dist_0": {"name": "generic",
+"ver": "",
+},
+"ps7_iop_bus_config_0": {"name": "generic",
+"ver": "",
+},
+"ps7_l2cachec_0": {"name": "generic",
+"ver": "",
+},
+"ps7_ocmc_0": {"name": "ocmcps",
+"ver": "",
+},
+"ps7_pl310_0": {"name": "pl310ps",
+"ver": "",
+},
+"ps7_pmu_0": {"name": "pmups",
+"ver": "",
+},
+"ps7_qspi_0": {"name": "qspips",
+"ver": "",
+},
+"ps7_qspi_linear_0": {"name": "generic",
+"ver": "",
+},
+"ps7_ram_0": {"name": "ramps",
+"ver": "",
+},
+"ps7_ram_1": {"name": "none",
+"ver": "",
+},
+"ps7_scuc_0": {"name": "generic",
+"ver": "",
+},
+"ps7_scugic_0": {"name": "scugic",
+"ver": "",
+},
+"ps7_scutimer_0": {"name": "scutimer",
+"ver": "",
+},
+"ps7_scuwdt_0": {"name": "scuwdt",
+"ver": "",
+},
+"ps7_sd_0": {"name": "generic",
+"ver": "",
+},
+"ps7_slcr_0": {"name": "slcrps",
+"ver": "",
+},
+"ps7_ttc_1": {"name": "ttcps",
+"ver": "",
+},
+"ps7_uart_1": {"name": "uartps",
+"ver": "",
+},
+"ps7_wdt_0": {"name": "wdtps",
+"ver": "",
+},
+"ps7_xadc_0": {"name": "xadcps",
+"ver": "",
+},
+"ps7_cortexa9_0": {"name": "cpu_cortexa9",
+"ver": "",
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:49:45.825
+!MESSAGE XSDB Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:49:45.834
+!MESSAGE XSDB command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "generic" && VERSION == ""  && TYPE == "DRIVER"}]], Result: [null, /home/linux/Documents/Xilinx/device-tree-xlnx/generic]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:49:45.835
+!MESSAGE XSDB Command: [::hsi::utils::closesw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2017-02-01 15:49:45.837
+!MESSAGE XSDB command with result: [::hsi::utils::closesw /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/devicetree/system.mss], Result: [null, ]. Thread: main

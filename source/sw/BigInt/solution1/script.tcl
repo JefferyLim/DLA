@@ -5,7 +5,12 @@
 ############################################################
 open_project BigInt
 set_top bigint_math
-add_files BigInt/solution1/main.cpp
+add_files BigInt/solution1/main.cpp -cflags "-I/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/"
+add_files BigInt/solution1/bigint/BigUnsignedInABase.cc -cflags "-I/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/"
+add_files BigInt/solution1/bigint/BigUnsigned.cc -cflags "-I/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/"
+add_files BigInt/solution1/bigint/BigIntegerUtils.cc -cflags "-I/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/"
+add_files BigInt/solution1/bigint/BigIntegerAlgorithms.cc -cflags "-I/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/"
+add_files BigInt/solution1/bigint/BigInteger.cc -cflags "-I/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/"
 open_solution "solution1"
 set_part {xc7z020clg484-1} -tool vivado
 create_clock -period 10 -name default

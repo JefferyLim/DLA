@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date         : Tue Jan 24 22:05:23 2017
+| Date         : Wed Feb  1 19:01:54 2017
 | Host         : linux-Inspiron-5565 running 64-bit Ubuntu 14.04.5 LTS
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
@@ -27,20 +27,20 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+----------------------------+------+-------+-----------+-------+
-|          Site Type         | Used | Fixed | Available | Util% |
-+----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 6574 |     0 |     53200 | 12.36 |
-|   LUT as Logic             | 6504 |     0 |     53200 | 12.23 |
-|   LUT as Memory            |   70 |     0 |     17400 |  0.40 |
-|     LUT as Distributed RAM |    0 |     0 |           |       |
-|     LUT as Shift Register  |   70 |     0 |           |       |
-| Slice Registers            | 6837 |     0 |    106400 |  6.43 |
-|   Register as Flip Flop    | 6837 |     0 |    106400 |  6.43 |
-|   Register as Latch        |    0 |     0 |    106400 |  0.00 |
-| F7 Muxes                   |  746 |     0 |     26600 |  2.80 |
-| F8 Muxes                   |  357 |     0 |     13300 |  2.68 |
-+----------------------------+------+-------+-----------+-------+
++----------------------------+-------+-------+-----------+-------+
+|          Site Type         |  Used | Fixed | Available | Util% |
++----------------------------+-------+-------+-----------+-------+
+| Slice LUTs*                |  7740 |     0 |     53200 | 14.55 |
+|   LUT as Logic             |  3573 |     0 |     53200 |  6.72 |
+|   LUT as Memory            |  4167 |     0 |     17400 | 23.95 |
+|     LUT as Distributed RAM |     0 |     0 |           |       |
+|     LUT as Shift Register  |  4167 |     0 |           |       |
+| Slice Registers            | 19290 |     0 |    106400 | 18.13 |
+|   Register as Flip Flop    | 19290 |     0 |    106400 | 18.13 |
+|   Register as Latch        |     0 |     0 |    106400 |  0.00 |
+| F7 Muxes                   |   276 |     0 |     26600 |  1.04 |
+| F8 Muxes                   |   128 |     0 |     13300 |  0.96 |
++----------------------------+-------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
 
@@ -58,21 +58,22 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 55    |          Yes |         Set |            - |
-| 6782  |          Yes |       Reset |            - |
+| 54    |          Yes |         Set |            - |
+| 19236 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
 2. Memory
 ---------
 
-+----------------+------+-------+-----------+-------+
-|    Site Type   | Used | Fixed | Available | Util% |
-+----------------+------+-------+-----------+-------+
-| Block RAM Tile |    0 |     0 |       140 |  0.00 |
-|   RAMB36/FIFO* |    0 |     0 |       140 |  0.00 |
-|   RAMB18       |    0 |     0 |       280 |  0.00 |
-+----------------+------+-------+-----------+-------+
++-------------------+------+-------+-----------+-------+
+|     Site Type     | Used | Fixed | Available | Util% |
++-------------------+------+-------+-----------+-------+
+| Block RAM Tile    |    2 |     0 |       140 |  1.43 |
+|   RAMB36/FIFO*    |    2 |     0 |       140 |  1.43 |
+|     RAMB36E1 only |    2 |       |           |       |
+|   RAMB18          |    0 |     0 |       280 |  0.00 |
++-------------------+------+-------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
 
 
@@ -145,27 +146,28 @@ Table of Contents
 7. Primitives
 -------------
 
-+----------+------+----------------------+
-| Ref Name | Used |  Functional Category |
-+----------+------+----------------------+
-| FDRE     | 6782 |         Flop & Latch |
-| LUT3     | 4387 |                  LUT |
-| LUT2     | 2081 |                  LUT |
-| LUT6     | 1784 |                  LUT |
-| MUXF7    |  746 |                MuxFx |
-| MUXF8    |  357 |                MuxFx |
-| LUT5     |  197 |                  LUT |
-| BIBUF    |  130 |                   IO |
-| LUT1     |  124 |                  LUT |
-| LUT4     |  118 |                  LUT |
-| FDSE     |   55 |         Flop & Latch |
-| SRLC32E  |   47 |   Distributed Memory |
-| SRL16E   |   23 |   Distributed Memory |
-| CARRY4   |   18 |           CarryLogic |
-| OBUFT    |    6 |                   IO |
-| BUFG     |    4 |                Clock |
-| PS7      |    1 | Specialized Resource |
-+----------+------+----------------------+
++----------+-------+----------------------+
+| Ref Name |  Used |  Functional Category |
++----------+-------+----------------------+
+| FDRE     | 19236 |         Flop & Latch |
+| SRL16E   |  4120 |   Distributed Memory |
+| LUT2     |  2690 |                  LUT |
+| LUT6     |   775 |                  LUT |
+| CARRY4   |   538 |           CarryLogic |
+| LUT3     |   319 |                  LUT |
+| MUXF7    |   276 |                MuxFx |
+| BIBUF    |   130 |                   IO |
+| MUXF8    |   128 |                MuxFx |
+| LUT1     |   125 |                  LUT |
+| LUT5     |    81 |                  LUT |
+| LUT4     |    60 |                  LUT |
+| FDSE     |    54 |         Flop & Latch |
+| SRLC32E  |    47 |   Distributed Memory |
+| OBUFT    |     6 |                   IO |
+| BUFG     |     4 |                Clock |
+| RAMB36E1 |     2 |         Block Memory |
+| PS7      |     1 | Specialized Resource |
++----------+-------+----------------------+
 
 
 8. Black Boxes

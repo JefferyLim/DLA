@@ -15,8 +15,8 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==xc7z020_process
 # IP: bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_2/xc7z020_rst_processing_system7_0_100M_2.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==xc7z020_rst_processing_system7_0_100M_2 || ORIG_REF_NAME==xc7z020_rst_processing_system7_0_100M_2}]
 
-# IP: bd/xc7z020/ip/xc7z020_bigint_math_0_0/xc7z020_bigint_math_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==xc7z020_bigint_math_0_0 || ORIG_REF_NAME==xc7z020_bigint_math_0_0}]
+# IP: bd/xc7z020/ip/xc7z020_bigint_math_0_1/xc7z020_bigint_math_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==xc7z020_bigint_math_0_1 || ORIG_REF_NAME==xc7z020_bigint_math_0_1}]
 
 # IP: bd/xc7z020/ip/xc7z020_auto_pc_0/xc7z020_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==xc7z020_auto_pc_0 || ORIG_REF_NAME==xc7z020_auto_pc_0}]
@@ -32,7 +32,7 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 
 # XDC: bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_2/xc7z020_rst_processing_system7_0_100M_2_ooc.xdc
 
-# XDC: bd/xc7z020/ip/xc7z020_bigint_math_0_0/constraints/bigint_math_ooc.xdc
+# XDC: bd/xc7z020/ip/xc7z020_bigint_math_0_1/constraints/bigint_math_ooc.xdc
 
 # XDC: bd/xc7z020/ip/xc7z020_auto_pc_0/xc7z020_auto_pc_0_ooc.xdc
 

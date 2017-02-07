@@ -1474,7 +1474,7 @@ preplace port clk_50Mhz -pg 1 -y 500 -defaultsOSRD
 preplace port clk_125Mhz -pg 1 -y 480 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -y 260 -defaultsOSRD
 preplace port clk_200Mhz -pg 1 -y 460 -defaultsOSRD
-preplace inst bigint_math_0 -pg 1 -lvl 3 -y 160 -defaultsOSRD
+preplace inst bigint_math_0 -pg 1 -lvl 3 -y 110 -defaultsOSRD
 preplace inst rst_processing_system7_0_100M -pg 1 -lvl 1 -y 110 -defaultsOSRD
 preplace inst processing_system7_0_axi_periph -pg 1 -lvl 2 -y 110 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 1 -y 380 -defaultsOSRD
@@ -1482,14 +1482,14 @@ preplace netloc processing_system7_0_DDR 1 1 3 NJ 240 NJ 240 NJ
 preplace netloc processing_system7_0_FCLK_CLK3 1 1 3 NJ 470 NJ 470 NJ
 preplace netloc processing_system7_0_axi_periph_M00_AXI 1 2 1 790
 preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 470
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 10 0 430
-preplace netloc rst_processing_system7_0_100M_peripheral_aresetn 1 1 2 450 230 NJ
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 20 20 430
+preplace netloc rst_processing_system7_0_100M_peripheral_aresetn 1 1 2 450 230 790
 preplace netloc processing_system7_0_FIXED_IO 1 1 3 NJ 260 NJ 260 NJ
 preplace netloc rst_processing_system7_0_100M_interconnect_aresetn 1 1 1 440
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 20 460 250 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 10 10 460 -10 800
 preplace netloc processing_system7_0_FCLK_CLK1 1 1 3 NJ 430 NJ 430 NJ
 preplace netloc processing_system7_0_FCLK_CLK2 1 1 3 NJ 450 NJ 450 NJ
-levelinfo -pg 1 -10 230 640 970 1170 -top -20 -bot 580
+levelinfo -pg 1 -10 230 640 970 1170 -top -30 -bot 580
 ",
 }
 

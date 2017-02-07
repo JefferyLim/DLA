@@ -2,6 +2,11 @@
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
     <originFiles name="main.cpp" path="/home/linux/Documents/DLA/source/sw/BigInt/solution1/main.cpp"/>
+    <originFiles name="BigUnsignedInABase.cc" path="/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/BigUnsignedInABase.cc"/>
+    <originFiles name="BigUnsigned.cc" path="/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/BigUnsigned.cc"/>
+    <originFiles name="BigIntegerUtils.cc" path="/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/BigIntegerUtils.cc"/>
+    <originFiles name="BigIntegerAlgorithms.cc" path="/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/BigIntegerAlgorithms.cc"/>
+    <originFiles name="BigInteger.cc" path="/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/BigInteger.cc"/>
   </source>
   <testbench/>
 </autopilotfilemapping:AutoPilotFileMapping>

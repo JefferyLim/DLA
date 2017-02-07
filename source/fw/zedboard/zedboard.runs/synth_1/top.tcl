@@ -21,7 +21,7 @@ set_property used_in_implementation false [get_files -all /home/linux/Documents/
 set_property used_in_implementation false [get_files -all /home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_2/xc7z020_rst_processing_system7_0_100M_2_board.xdc]
 set_property used_in_implementation false [get_files -all /home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_2/xc7z020_rst_processing_system7_0_100M_2.xdc]
 set_property used_in_implementation false [get_files -all /home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_2/xc7z020_rst_processing_system7_0_100M_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_bigint_math_0_0/constraints/bigint_math_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_bigint_math_0_1/constraints/bigint_math_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_auto_pc_0/xc7z020_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/xc7z020_ooc.xdc]
 set_property is_locked true [get_files /home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/xc7z020.bd]

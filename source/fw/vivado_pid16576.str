@@ -1,0 +1,281 @@
+/*
+
+Vivado v2016.2 (64-bit)
+SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+Process ID: 16576
+
+Current time: 	2/15/17 9:21:45 PM MST
+Time zone: 	Mountain Standard Time (America/Denver)
+
+OS: NAME="Ubuntu"
+Version: 4.4.0-62-generic
+Architecture: amd64
+Available processors (cores): 4
+
+DISPLAY: :0
+Screen size: 1366x768
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	/home/Xilinx/Vivado/2016.2/tps/lnx64/jre
+
+User name: 	linux
+User home directory: /home/linux
+User working directory: /home/linux/Documents/DLA/source/fw
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI Base root directory: /home/Xilinx/Vivado
+RDI Data directory: /home/Xilinx/Vivado/2016.2/data
+RDI Bin directory: /home/Xilinx/Vivado/2016.2/bin
+
+Vivado preferences path: /home/linux/.Xilinx/Vivado/2016.2/vivado.ini
+Vivado layouts directory: /home/linux/.Xilinx/Vivado/2016.2/layouts
+
+GUI allocated memory:	193 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 4,841 MB
+
+*/
+
+// TclEventType: START_GUI
+// [GUI Memory]: 9 MB (+7057kb) [00:00:10]
+// [Engine Memory]: 4,771 MB (+4851714kb) [00:00:10]
+// Tcl Message: start_gui 
+// [GUI Memory]: 32 MB (+23423kb) [00:00:26]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,841 MB. GUI used memory: 22 MB. Current time: 2/15/17 9:21:48 PM MST
+selectList(PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, "/home/linux/Documents/DLA/source/fw/zedboard/zedboard.xpr", 0); // q:v (JViewport:JComponent, cv:JFrame)
+// bL:g (cv:JFrame):  Open Project : addNotify
+// Opening Vivado Project: /home/linux/Documents/DLA/source/fw/zedboard/zedboard.xpr. Version: Vivado v2016.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project /home/linux/Documents/DLA/source/fw/zedboard/zedboard.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,888 MB. GUI used memory: 22 MB. Current time: 2/15/17 9:22:28 PM MST
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 43 MB (+10107kb) [00:01:14]
+// [GUI Memory]: 46 MB (+914kb) [00:01:18]
+// [GUI Memory]: 53 MB (+4700kb) [00:01:18]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: open_project /home/linux/Documents/DLA/source/fw/zedboard/zedboard.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/linux/Documents/DLA/source/sw'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/Xilinx/Vivado/2016.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 59 MB (+3014kb) [00:01:20]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: zedboard; location: /home/linux/Documents/DLA/source/fw/zedboard; part: xc7z020clg484-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:26 ; elapsed = 00:00:16 . Memory (MB): peak = 5848.180 ; gain = 114.477 ; free physical = 276 ; free virtual = 10260 
+// Elapsed time: 17 seconds
+dismissDialog("Open Project"); // bL:g (cv:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Open Block Design]", 7, false); // x:Y (w:G, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_BLOCK_DESIGN
+// bL:g (cv:JFrame):  Open Block Design : addNotify
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_PROPERTY_CHANGE
+// Tcl Message: open_bd_design {/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/xc7z020.bd} 
+// Tcl Message: Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0 
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// Tcl Message: Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_processing_system7_0_100M Adding cell -- xilinx.com:hls:bigint_math:1.0 - bigint_math_0 Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc Successfully read diagram <xc7z020> from BD file </home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/xc7z020.bd> 
+// TclEventType: RSB_OPEN_DIAGRAM
+// [Engine Memory]: 5,027 MB (+18028kb) [00:01:39]
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,042 MB. GUI used memory: 35 MB. Current time: 2/15/17 9:22:58 PM MST
+// TclEventType: RSB_LOCK_CHANGE
+// 'bs' command handler elapsed time: 7 seconds
+dismissDialog("Open Block Design"); // bL:g (cv:JFrame)
+// Elapsed time: 15 seconds
+selectButton(PAResourceQtoS.SystemTab_REPORT_IP_STATUS, "Report IP Status"); // i:l (JPanel:JComponent, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_IP_STATUS
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+// bL:g (cv:JFrame):  Report IP Status : addNotify
+dismissDialog("Report IP Status"); // bL:g (cv:JFrame)
+ // selectButton(PAResourceItoN.IPStatusTablePanel_MORE_INFO, "Upgrade IP"); // N:i (C:as, cv:JFrame)
+selectTreeTable(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "/bigint_math_0 ; true ; xc7z020_bigint_math_0_1 [Bigint_math] (IP revision change) ; xc7z020_bigint_math_0_1 [Bigint_math] (IP revision change) ;  ; Bigint_math ; 1.0 (Rev. 1702011851) ; 1.0 (Rev. 1702152120) ; xc7z020_bigint_math_0_1 [Bigint_math] (IP revision change) ; xc7z020clg484-1", 1, "xc7z020_bigint_math_0_1 [Bigint_math] (IP revision change)", 3, false); // C:as (JViewport:JComponent, cv:JFrame)
+// PAPropertyPanels.initPanels (bigint_math_0) elapsed time: 0.2s
+ // selectButton(PAResourceItoN.IPStatusTablePanel_MORE_INFO, (String) null); // N:i (C:as, cv:JFrame)
+selectTreeTable(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "/bigint_math_0 ; true ; xc7z020_bigint_math_0_1 [Bigint_math] (IP revision change) ; xc7z020_bigint_math_0_1 [Bigint_math] (IP revision change) ;  ; Bigint_math ; 1.0 (Rev. 1702011851) ; 1.0 (Rev. 1702152120) ; xc7z020_bigint_math_0_1 [Bigint_math] (IP revision change) ; xc7z020clg484-1", 1, "xc7z020_bigint_math_0_1 [Bigint_math] (IP revision change)", 3, false); // C:as (JViewport:JComponent, cv:JFrame)
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a:JButton (JPanel:JComponent, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+// bL:g (cv:JFrame):  Upgrade IP : addNotify
+// Tcl Message: export_ip_user_files -of_objects [get_ips  xc7z020_bigint_math_0_1] -no_script -reset -quiet 
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: upgrade_ip -vlnv xilinx.com:hls:bigint_math:1.0 [get_ips  xc7z020_bigint_math_0_1] -log ip_upgrade.log 
+// Tcl Message: Upgrading '/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/xc7z020.bd' 
+// Tcl Message: INFO: [IP_Flow 19-3422] Upgraded xc7z020_bigint_math_0_1 (Bigint_math 1.0) from revision 1702011851 to revision 1702152120 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: Wrote  : </home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/xc7z020.bd>  
+// Tcl Message: INFO: [Coretcl 2-1525] Wrote upgrade log to '/home/linux/Documents/DLA/source/fw/zedboard/ip_upgrade.log'. 
+// a:a (cv:JFrame): Critical Messages: addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// aD:x (cv:JFrame): Generate Output Products: addNotify
+// Elapsed time: 12 seconds
+selectButton("PAResourceTtoZ.UpgradeIP_IP_UPGRADE_COMPLETED_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a:JButton (JPanel:JComponent, aD:x)
+// bL:g (cv:JFrame):  Managing Output Products : addNotify
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// Tcl Message: generate_target all [get_files  /home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/xc7z020.bd] 
+// HMemoryUtils.trashcanNow. Engine heap size: 5,062 MB. GUI used memory: 37 MB. Current time: 2/15/17 9:23:38 PM MST
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: Verilog Output written to : /home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/hdl/xc7z020.v Verilog Output written to : /home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/hdl/xc7z020_wrapper.v Wrote  : </home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/xc7z020.bd>  
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_100M . INFO: [BD 41-1029] Generation completed for the IP Integrator block bigint_math_0 . 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/s00_couplers/auto_pc . 
+// Tcl Message: Exporting to file /home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/hw_handoff/xc7z020.hwh 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: Generated Block Design Tcl file /home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/hw_handoff/xc7z020_bd.tcl Generated Hardware Definition File /home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/hdl/xc7z020.hwdef 
+// Tcl Message: generate_target: Time (s): cpu = 00:00:15 ; elapsed = 00:00:14 . Memory (MB): peak = 6024.297 ; gain = 98.508 ; free physical = 127 ; free virtual = 10081 
+// Tcl Message: export_ip_user_files -of_objects [get_files /home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/xc7z020.bd] -no_script -force -quiet 
+// TclEventType: PROJECT_CHANGE
+// Tcl Message: export_simulation -of_objects [get_files /home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/xc7z020.bd] -directory /home/linux/Documents/DLA/source/fw/zedboard/zedboard.ip_user_files/sim_scripts -ip_user_files_dir /home/linux/Documents/DLA/source/fw/zedboard/zedboard.ip_user_files -ipstatic_source_dir /home/linux/Documents/DLA/source/fw/zedboard/zedboard.ip_user_files/ipstatic -force -quiet 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 62 seconds
+selectButton("PAResourceQtoS.SimpleOutputProductDialog_GENERATION_OF_OUTPUT_PRODUCTS_COMPLETED_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // i:a (JPanel:JComponent, a:a)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // i:a (JPanel:JComponent, a:a)
+dismissDialog("Critical Messages"); // a:a (cv:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug]", 23, true); // x:Y (w:G, cv:JFrame) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Bitstream Settings]", 24, false); // x:Y (w:G, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bL:g (cv:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// [GUI Memory]: 65 MB (+3192kb) [00:03:24]
+dismissDialog("Resetting Runs"); // bL:g (cv:JFrame)
+// TclEventType: RUN_LAUNCH
+// bL:g (cv:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 2 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Feb 15 21:24:54 2017] Launched synth_1... Run output will be captured here: /home/linux/Documents/DLA/source/fw/zedboard/zedboard.runs/synth_1/runme.log [Wed Feb 15 21:24:54 2017] Launched impl_1... Run output will be captured here: /home/linux/Documents/DLA/source/fw/zedboard/zedboard.runs/impl_1/runme.log 
+// Tcl Message: launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 6066.863 ; gain = 42.566 ; free physical = 136 ; free virtual = 9796 
+// Elapsed time: 11 seconds
+dismissDialog("Generate Bitstream"); // bL:g (cv:JFrame)
+// [GUI Memory]: 68 MB (+598kb) [00:05:34]
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// [GUI Memory]: 73 MB (+1396kb) [00:08:58]
+// [GUI Memory]: 77 MB (+477kb) [00:09:13]
+// TclEventType: RUN_COMPLETED
+// ap:G (cv:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 567 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, ap:G)
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, ap:G)
+dismissDialog("Bitstream Generation Completed"); // ap:G (cv:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,156 MB. GUI used memory: 40 MB. Current time: 2/15/17 9:34:24 PM MST
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, "Open Recent Project"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // af:JMenuItem (JPopupMenu:JComponent, cv:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// af:x (cv:JFrame): Export Hardware: addNotify
+selectCheckBox(PAResourceItoN.NewExportHardwareDialog_INCLUDE_BITSTREAM, "Include bitstream", true); // h:JCheckBox (JPanel:JComponent, af:x): TRUE
+selectCheckBox(PAResourceItoN.NewExportHardwareDialog_INCLUDE_BITSTREAM, "Include bitstream", true); // h:JCheckBox (JPanel:JComponent, af:x): TRUE
+selectComboBox(PAResourceItoN.NewExportHardwareDialog_EXPORT_TO, "Choose Location...", 1); // f:JComboBox (JPanel:JComponent, af:x)
+setFolderChooser("/home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0");
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, af:x)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, af:x)
+// 'n' command handler elapsed time: 13 seconds
+selectButton("PAResourceItoN.NewExportHardwareDialog_EXPORTED_FILE_FOR_THIS_MODULE_WAS_Yes", "Yes"); // JButton:AbstractButton (JPanel:JComponent, U:JDialog)
+dismissDialog("Export Hardware"); // af:x (cv:JFrame)
+// Tcl Message: file copy -force /home/linux/Documents/DLA/source/fw/zedboard/zedboard.runs/impl_1/top.sysdef /home/linux/Documents/DLA/source/fw/zedboard/zedboard.sdk/top_hw_platform_0/top.hdf  
+// HMemoryUtils.trashcanNow. Engine heap size: 5,156 MB. GUI used memory: 39 MB. Current time: 2/15/17 10:04:24 PM MST
+// [GUI Memory]: 81 MB (+269kb) [00:53:30]
+// HMemoryUtils.trashcanNow. Engine heap size: 5,156 MB. GUI used memory: 35 MB. Current time: 2/15/17 10:34:24 PM MST

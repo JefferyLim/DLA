@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:hls:bigint_math:1.0
-// IP Revision: 1702011851
+// IP Revision: 1702152120
 
 (* X_CORE_INFO = "bigint_math,Vivado 2016.2" *)
 (* CHECK_LICENSE_TYPE = "xc7z020_bigint_math_0_1,bigint_math,{}" *)
-(* CORE_GENERATION_INFO = "xc7z020_bigint_math_0_1,bigint_math,{x_ipProduct=Vivado 2016.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=bigint_math,x_ipVersion=1.0,x_ipCoreRevision=1702011851,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_PERIPH_BUS_ADDR_WIDTH=11,C_S_AXI_PERIPH_BUS_DATA_WIDTH=32}" *)
+(* CORE_GENERATION_INFO = "xc7z020_bigint_math_0_1,bigint_math,{x_ipProduct=Vivado 2016.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=bigint_math,x_ipVersion=1.0,x_ipCoreRevision=1702152120,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_PERIPH_BUS_ADDR_WIDTH=10,C_S_AXI_PERIPH_BUS_DATA_WIDTH=32}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module xc7z020_bigint_math_0_1 (
   s_axi_PERIPH_BUS_AWADDR,
@@ -78,7 +78,7 @@ module xc7z020_bigint_math_0_1 (
 );
 
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_PERIPH_BUS AWADDR" *)
-input wire [10 : 0] s_axi_PERIPH_BUS_AWADDR;
+input wire [9 : 0] s_axi_PERIPH_BUS_AWADDR;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_PERIPH_BUS AWVALID" *)
 input wire s_axi_PERIPH_BUS_AWVALID;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_PERIPH_BUS AWREADY" *)
@@ -98,7 +98,7 @@ output wire s_axi_PERIPH_BUS_BVALID;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_PERIPH_BUS BREADY" *)
 input wire s_axi_PERIPH_BUS_BREADY;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_PERIPH_BUS ARADDR" *)
-input wire [10 : 0] s_axi_PERIPH_BUS_ARADDR;
+input wire [9 : 0] s_axi_PERIPH_BUS_ARADDR;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_PERIPH_BUS ARVALID" *)
 input wire s_axi_PERIPH_BUS_ARVALID;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_PERIPH_BUS ARREADY" *)
@@ -119,7 +119,7 @@ input wire ap_rst_n;
 output wire interrupt;
 
   bigint_math #(
-    .C_S_AXI_PERIPH_BUS_ADDR_WIDTH(11),
+    .C_S_AXI_PERIPH_BUS_ADDR_WIDTH(10),
     .C_S_AXI_PERIPH_BUS_DATA_WIDTH(32)
   ) inst (
     .s_axi_PERIPH_BUS_AWADDR(s_axi_PERIPH_BUS_AWADDR),

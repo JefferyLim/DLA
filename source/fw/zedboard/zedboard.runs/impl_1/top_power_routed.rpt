@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date             : Wed Feb  1 19:19:24 2017
+| Date             : Wed Feb 15 21:32:07 2017
 | Host             : linux-Inspiron-5565 running 64-bit Ubuntu 14.04.5 LTS
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+--------+
-| Total On-Chip Power (W)  | 1.837  |
-| Dynamic (W)              | 1.676  |
-| Device Static (W)        | 0.161  |
+| Total On-Chip Power (W)  | 1.719  |
+| Dynamic (W)              | 1.561  |
+| Device Static (W)        | 0.158  |
 | Effective TJA (C/W)      | 11.5   |
-| Max Ambient (C)          | 63.8   |
-| Junction Temperature (C) | 46.2   |
+| Max Ambient (C)          | 65.2   |
+| Junction Temperature (C) | 44.8   |
 | Confidence Level         | Medium |
 | Setting File             | ---    |
 | Simulation Activity File | ---    |
@@ -49,19 +49,19 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.044 |        6 |       --- |             --- |
-| Slice Logic             |     0.038 |    28387 |       --- |             --- |
-|   LUT as Shift Register |     0.015 |     2149 |     17400 |           12.35 |
-|   LUT as Logic          |     0.013 |     3442 |     53200 |            6.47 |
-|   Register              |     0.007 |    19183 |    106400 |           18.03 |
-|   CARRY4                |     0.003 |      538 |     13300 |            4.05 |
-|   F7/F8 Muxes           |    <0.001 |      404 |     53200 |            0.76 |
-|   Others                |     0.000 |      213 |       --- |             --- |
-| Signals                 |     0.059 |    20503 |       --- |             --- |
-| Block RAM               |     0.006 |        2 |       140 |            1.43 |
+| Clocks                  |     0.005 |        6 |       --- |             --- |
+| Slice Logic             |     0.006 |     2218 |       --- |             --- |
+|   LUT as Logic          |     0.005 |      775 |     53200 |            1.46 |
+|   Register              |    <0.001 |      953 |    106400 |            0.90 |
+|   CARRY4                |    <0.001 |       42 |     13300 |            0.32 |
+|   F7/F8 Muxes           |    <0.001 |       21 |     53200 |            0.04 |
+|   LUT as Shift Register |    <0.001 |       68 |     17400 |            0.39 |
+|   Others                |     0.000 |      193 |       --- |             --- |
+| Signals                 |     0.008 |     1855 |       --- |             --- |
+| Block RAM               |     0.014 |        3 |       140 |            2.14 |
 | PS7                     |     1.529 |        1 |       --- |             --- |
-| Static Power            |     0.161 |          |           |                 |
-| Total                   |     1.837 |          |           |                 |
+| Static Power            |     0.158 |          |           |                 |
+| Total                   |     1.719 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,7 +71,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.163 |       0.147 |      0.016 |
+| Vccint    |       1.000 |     0.046 |       0.031 |      0.015 |
 | Vccaux    |       1.800 |     0.021 |       0.000 |      0.021 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -80,11 +80,11 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.002 |       0.000 |      0.001 |
+| Vccbram   |       1.000 |     0.002 |       0.001 |      0.001 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.750 |       0.718 |      0.032 |
+| Vccpint   |       1.000 |     0.748 |       0.718 |      0.030 |
 | Vccpaux   |       1.800 |     0.061 |       0.051 |      0.010 |
 | Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.459 |       0.457 |      0.002 |
@@ -144,61 +144,51 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+-------------------------------------------------------------+-----------+
-| Name                                                        | Power (W) |
-+-------------------------------------------------------------+-----------+
-| top                                                         |     1.676 |
-|   xc7z020_i                                                 |     1.676 |
-|     bigint_math_0                                           |     0.139 |
-|       inst                                                  |     0.138 |
-|         bigint_math_PERIPH_BUS_s_axi_U                      |     0.016 |
-|           int_number1                                       |     0.004 |
-|           int_number2                                       |     0.004 |
-|         bigint_math_add_2048ns_2048ns_2048_9_U1             |     0.081 |
-|           bigint_math_add_2048ns_2048ns_2048_9_AddSubnS_0_U |     0.081 |
-|             u0                                              |     0.001 |
-|             u1                                              |     0.002 |
-|             u2                                              |     0.002 |
-|             u3                                              |     0.002 |
-|             u4                                              |     0.002 |
-|             u5                                              |     0.002 |
-|             u6                                              |     0.001 |
-|             u7                                              |    <0.001 |
-|             u8                                              |    <0.001 |
-|     processing_system7_0                                    |     1.529 |
-|       inst                                                  |     1.529 |
-|     processing_system7_0_axi_periph                         |     0.008 |
-|       s00_couplers                                          |     0.008 |
-|         auto_pc                                             |     0.008 |
-|           inst                                              |     0.008 |
-|             gen_axilite.gen_b2s_conv.axilite_b2s            |     0.008 |
-|               RD.ar_channel_0                               |     0.004 |
-|                 ar_cmd_fsm_0                                |    <0.001 |
-|                 cmd_translator_0                            |     0.003 |
-|                   incr_cmd_0                                |    <0.001 |
-|                   wrap_cmd_0                                |     0.003 |
-|               RD.r_channel_0                                |     0.001 |
-|                 rd_data_fifo_0                              |    <0.001 |
-|                 transaction_fifo_0                          |    <0.001 |
-|               SI_REG                                        |     0.001 |
-|                 ar_pipe                                     |    <0.001 |
-|                 aw_pipe                                     |    <0.001 |
-|                 b_pipe                                      |    <0.001 |
-|                 r_pipe                                      |    <0.001 |
-|               WR.aw_channel_0                               |     0.001 |
-|                 aw_cmd_fsm_0                                |    <0.001 |
-|                 cmd_translator_0                            |    <0.001 |
-|                   incr_cmd_0                                |    <0.001 |
-|                   wrap_cmd_0                                |    <0.001 |
-|               WR.b_channel_0                                |    <0.001 |
-|                 bid_fifo_0                                  |    <0.001 |
-|                 bresp_fifo_0                                |    <0.001 |
-|     rst_processing_system7_0_100M                           |    <0.001 |
-|       U0                                                    |    <0.001 |
-|         EXT_LPF                                             |    <0.001 |
-|           ACTIVE_LOW_EXT.ACT_LO_EXT                         |    <0.001 |
-|         SEQ                                                 |    <0.001 |
-|           SEQ_COUNTER                                       |    <0.001 |
-+-------------------------------------------------------------+-----------+
++--------------------------------------------------+-----------+
+| Name                                             | Power (W) |
++--------------------------------------------------+-----------+
+| top                                              |     1.561 |
+|   xc7z020_i                                      |     1.561 |
+|     bigint_math_0                                |     0.025 |
+|       inst                                       |     0.023 |
+|         bigint_math_PERIPH_BUS_s_axi_U           |     0.019 |
+|           int_a                                  |     0.005 |
+|           int_b                                  |     0.005 |
+|           int_c                                  |     0.007 |
+|     processing_system7_0                         |     1.529 |
+|       inst                                       |     1.529 |
+|     processing_system7_0_axi_periph              |     0.007 |
+|       s00_couplers                               |     0.007 |
+|         auto_pc                                  |     0.007 |
+|           inst                                   |     0.007 |
+|             gen_axilite.gen_b2s_conv.axilite_b2s |     0.007 |
+|               RD.ar_channel_0                    |     0.002 |
+|                 ar_cmd_fsm_0                     |    <0.001 |
+|                 cmd_translator_0                 |    <0.001 |
+|                   incr_cmd_0                     |    <0.001 |
+|                   wrap_cmd_0                     |    <0.001 |
+|               RD.r_channel_0                     |     0.001 |
+|                 rd_data_fifo_0                   |    <0.001 |
+|                 transaction_fifo_0               |    <0.001 |
+|               SI_REG                             |     0.002 |
+|                 ar_pipe                          |    <0.001 |
+|                 aw_pipe                          |    <0.001 |
+|                 b_pipe                           |    <0.001 |
+|                 r_pipe                           |    <0.001 |
+|               WR.aw_channel_0                    |     0.002 |
+|                 aw_cmd_fsm_0                     |    <0.001 |
+|                 cmd_translator_0                 |    <0.001 |
+|                   incr_cmd_0                     |    <0.001 |
+|                   wrap_cmd_0                     |    <0.001 |
+|               WR.b_channel_0                     |    <0.001 |
+|                 bid_fifo_0                       |    <0.001 |
+|                 bresp_fifo_0                     |    <0.001 |
+|     rst_processing_system7_0_100M                |    <0.001 |
+|       U0                                         |    <0.001 |
+|         EXT_LPF                                  |    <0.001 |
+|           ACTIVE_LOW_EXT.ACT_LO_EXT              |    <0.001 |
+|         SEQ                                      |    <0.001 |
+|           SEQ_COUNTER                            |    <0.001 |
++--------------------------------------------------+-----------+
 
 

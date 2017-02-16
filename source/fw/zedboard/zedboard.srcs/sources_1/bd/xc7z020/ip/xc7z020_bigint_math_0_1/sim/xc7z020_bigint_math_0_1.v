@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:hls:bigint_math:1.0
-// IP Revision: 1702011851
+// IP Revision: 1702152120
 
 `timescale 1ns/1ps
 
@@ -77,7 +77,7 @@ module xc7z020_bigint_math_0_1 (
 );
 
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_PERIPH_BUS AWADDR" *)
-input wire [10 : 0] s_axi_PERIPH_BUS_AWADDR;
+input wire [9 : 0] s_axi_PERIPH_BUS_AWADDR;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_PERIPH_BUS AWVALID" *)
 input wire s_axi_PERIPH_BUS_AWVALID;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_PERIPH_BUS AWREADY" *)
@@ -97,7 +97,7 @@ output wire s_axi_PERIPH_BUS_BVALID;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_PERIPH_BUS BREADY" *)
 input wire s_axi_PERIPH_BUS_BREADY;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_PERIPH_BUS ARADDR" *)
-input wire [10 : 0] s_axi_PERIPH_BUS_ARADDR;
+input wire [9 : 0] s_axi_PERIPH_BUS_ARADDR;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_PERIPH_BUS ARVALID" *)
 input wire s_axi_PERIPH_BUS_ARVALID;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_PERIPH_BUS ARREADY" *)
@@ -118,7 +118,7 @@ input wire ap_rst_n;
 output wire interrupt;
 
   bigint_math #(
-    .C_S_AXI_PERIPH_BUS_ADDR_WIDTH(11),
+    .C_S_AXI_PERIPH_BUS_ADDR_WIDTH(10),
     .C_S_AXI_PERIPH_BUS_DATA_WIDTH(32)
   ) inst (
     .s_axi_PERIPH_BUS_AWADDR(s_axi_PERIPH_BUS_AWADDR),

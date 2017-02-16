@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-//Date        : Wed Feb  1 18:52:57 2017
+//Date        : Wed Feb 15 21:23:44 2017
 //Host        : linux-Inspiron-5565 running 64-bit Ubuntu 14.04.5 LTS
 //Command     : generate_target xc7z020.bd
 //Design      : xc7z020
@@ -445,10 +445,10 @@ module xc7z020
   xc7z020_bigint_math_0_1 bigint_math_0
        (.ap_clk(processing_system7_0_FCLK_CLK0),
         .ap_rst_n(rst_processing_system7_0_100M_peripheral_aresetn),
-        .s_axi_PERIPH_BUS_ARADDR(processing_system7_0_axi_periph_M00_AXI_ARADDR[10:0]),
+        .s_axi_PERIPH_BUS_ARADDR(processing_system7_0_axi_periph_M00_AXI_ARADDR[9:0]),
         .s_axi_PERIPH_BUS_ARREADY(processing_system7_0_axi_periph_M00_AXI_ARREADY),
         .s_axi_PERIPH_BUS_ARVALID(processing_system7_0_axi_periph_M00_AXI_ARVALID),
-        .s_axi_PERIPH_BUS_AWADDR(processing_system7_0_axi_periph_M00_AXI_AWADDR[10:0]),
+        .s_axi_PERIPH_BUS_AWADDR(processing_system7_0_axi_periph_M00_AXI_AWADDR[9:0]),
         .s_axi_PERIPH_BUS_AWREADY(processing_system7_0_axi_periph_M00_AXI_AWREADY),
         .s_axi_PERIPH_BUS_AWVALID(processing_system7_0_axi_periph_M00_AXI_AWVALID),
         .s_axi_PERIPH_BUS_BREADY(processing_system7_0_axi_periph_M00_AXI_BREADY),

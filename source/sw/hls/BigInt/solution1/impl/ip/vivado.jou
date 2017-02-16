@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Wed Feb 15 21:20:33 2017
+# Process ID: 16538
+# Current directory: /home/linux/Documents/DLA/source/sw/hls/BigInt/solution1/impl/ip
+# Command line: vivado -notrace -mode batch -source run_ippack.tcl
+# Log file: /home/linux/Documents/DLA/source/sw/hls/BigInt/solution1/impl/ip/vivado.log
+# Journal file: /home/linux/Documents/DLA/source/sw/hls/BigInt/solution1/impl/ip/vivado.jou
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace

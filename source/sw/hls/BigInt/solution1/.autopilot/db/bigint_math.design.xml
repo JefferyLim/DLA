@@ -16,49 +16,49 @@
 <EstimatedClockPeriod>8.10</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>147970</Best-caseLatency>
-<Average-caseLatency>147970</Average-caseLatency>
-<Worst-caseLatency>147970</Worst-caseLatency>
-<PipelineInitiationInterval>147971</PipelineInitiationInterval>
+<Best-caseLatency>4295081860</Best-caseLatency>
+<Average-caseLatency>4295081860</Average-caseLatency>
+<Worst-caseLatency>4295081860</Worst-caseLatency>
+<PipelineInitiationInterval>4295081861</PipelineInitiationInterval>
 <PipelineType>none</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <Loop1>
 <Name>Loop 1</Name>
-<TripCount>256</TripCount>
-<Latency>256</Latency>
-<IterationLatency>1</IterationLatency>
-<PipelineDepth>1</PipelineDepth>
+<TripCount>128</TripCount>
+<Latency>115072</Latency>
+<IterationLatency>899</IterationLatency>
+<PipelineDepth>899</PipelineDepth>
+<Loop1.1>
+<Name>Loop 1.1</Name>
+<TripCount>128</TripCount>
+<Latency>896</Latency>
+<IterationLatency>7</IterationLatency>
+<PipelineDepth>7</PipelineDepth>
+</Loop1.1>
 </Loop1>
 <Loop2>
 <Name>Loop 2</Name>
-<TripCount>128</TripCount>
-<Latency>147712</Latency>
-<IterationLatency>1154</IterationLatency>
-<PipelineDepth>1154</PipelineDepth>
-<Loop2.1>
-<Name>Loop 2.1</Name>
-<TripCount>128</TripCount>
-<Latency>1152</Latency>
-<IterationLatency>9</IterationLatency>
-<PipelineDepth>9</PipelineDepth>
-</Loop2.1>
+<TripCount>2147483393</TripCount>
+<Latency>4294966786</Latency>
+<IterationLatency>2</IterationLatency>
+<PipelineDepth>2</PipelineDepth>
 </Loop2>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<BRAM_18K>6</BRAM_18K>
+<BRAM_18K>5</BRAM_18K>
 <DSP48E>2</DSP48E>
-<FF>442</FF>
-<LUT>439</LUT>
+<FF>6544</FF>
+<LUT>6590</LUT>
 </Resources>
 </AreaEstimates>
 <InterfaceSummary>
 <RtlPorts>
 <name>s_axi_PERIPH_BUS_AWVALID</name>
 <Object>PERIPH_BUS</Object>
-<Type>array</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -71,7 +71,7 @@
 <RtlPorts>
 <name>s_axi_PERIPH_BUS_AWREADY</name>
 <Object>PERIPH_BUS</Object>
-<Type>array</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -84,7 +84,7 @@
 <RtlPorts>
 <name>s_axi_PERIPH_BUS_AWADDR</name>
 <Object>PERIPH_BUS</Object>
-<Type>array</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -97,7 +97,7 @@
 <RtlPorts>
 <name>s_axi_PERIPH_BUS_WVALID</name>
 <Object>PERIPH_BUS</Object>
-<Type>array</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -110,7 +110,7 @@
 <RtlPorts>
 <name>s_axi_PERIPH_BUS_WREADY</name>
 <Object>PERIPH_BUS</Object>
-<Type>array</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -123,7 +123,7 @@
 <RtlPorts>
 <name>s_axi_PERIPH_BUS_WDATA</name>
 <Object>PERIPH_BUS</Object>
-<Type>array</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -136,7 +136,7 @@
 <RtlPorts>
 <name>s_axi_PERIPH_BUS_WSTRB</name>
 <Object>PERIPH_BUS</Object>
-<Type>array</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -149,7 +149,7 @@
 <RtlPorts>
 <name>s_axi_PERIPH_BUS_ARVALID</name>
 <Object>PERIPH_BUS</Object>
-<Type>array</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -162,7 +162,7 @@
 <RtlPorts>
 <name>s_axi_PERIPH_BUS_ARREADY</name>
 <Object>PERIPH_BUS</Object>
-<Type>array</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -175,7 +175,7 @@
 <RtlPorts>
 <name>s_axi_PERIPH_BUS_ARADDR</name>
 <Object>PERIPH_BUS</Object>
-<Type>array</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -188,7 +188,7 @@
 <RtlPorts>
 <name>s_axi_PERIPH_BUS_RVALID</name>
 <Object>PERIPH_BUS</Object>
-<Type>array</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -201,7 +201,7 @@
 <RtlPorts>
 <name>s_axi_PERIPH_BUS_RREADY</name>
 <Object>PERIPH_BUS</Object>
-<Type>array</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -214,7 +214,7 @@
 <RtlPorts>
 <name>s_axi_PERIPH_BUS_RDATA</name>
 <Object>PERIPH_BUS</Object>
-<Type>array</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -227,7 +227,7 @@
 <RtlPorts>
 <name>s_axi_PERIPH_BUS_RRESP</name>
 <Object>PERIPH_BUS</Object>
-<Type>array</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -240,7 +240,7 @@
 <RtlPorts>
 <name>s_axi_PERIPH_BUS_BVALID</name>
 <Object>PERIPH_BUS</Object>
-<Type>array</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -253,7 +253,7 @@
 <RtlPorts>
 <name>s_axi_PERIPH_BUS_BREADY</name>
 <Object>PERIPH_BUS</Object>
-<Type>array</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -266,7 +266,7 @@
 <RtlPorts>
 <name>s_axi_PERIPH_BUS_BRESP</name>
 <Object>PERIPH_BUS</Object>
-<Type>array</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>

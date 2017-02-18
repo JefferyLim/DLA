@@ -1,3 +1,0 @@
-encrypt_add_512ns_512ns_512_3
-encrypt_PERIPH_BUS_s_axi
-encrypt

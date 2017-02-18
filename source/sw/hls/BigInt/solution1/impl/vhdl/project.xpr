@@ -6,7 +6,7 @@
 <Project Version="7" Minor="14" Path="/home/linux/Documents/DLA/source/sw/hls/BigInt/solution1/impl/vhdl/project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="d8be587e20c440ba9de6e702fdf284e8"/>
+    <Option Name="Id" Val="575aa9b3012d49f5bfdc81c768d101b7"/>
     <Option Name="Part" Val="xc7z020clg484-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -43,6 +43,12 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PPRDIR/bigint_math_c.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/bigint_math_PERIPH_BUS_s_axi.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>

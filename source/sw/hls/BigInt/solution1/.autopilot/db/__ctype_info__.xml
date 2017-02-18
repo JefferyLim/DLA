@@ -20,11 +20,11 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>c</name>
+<name>output_V</name>
 <CType>
-<TypeName>unsigned char</TypeName>
-<TypeWidth>8</TypeWidth>
-<PhysicalWidth>8</PhysicalWidth>
+<TypeName>ap_uint 2048</TypeName>
+<TypeWidth>2048</TypeWidth>
+<PhysicalWidth>2048</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>

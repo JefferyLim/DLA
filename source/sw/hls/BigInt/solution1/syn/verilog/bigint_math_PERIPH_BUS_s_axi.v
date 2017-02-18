@@ -44,11 +44,8 @@ module bigint_math_PERIPH_BUS_s_axi
     input  wire [6:0]                    b_address0,
     input  wire                          b_ce0,
     output wire [7:0]                    b_q0,
-    input  wire [7:0]                    c_address0,
-    input  wire                          c_ce0,
-    input  wire                          c_we0,
-    input  wire [7:0]                    c_d0,
-    output wire [7:0]                    c_q0
+    input  wire [2047:0]                 output_V,
+    input  wire                          output_V_ap_vld
 );
 //------------------------Address Info-------------------
 // 0x000 : Control signals
@@ -69,6 +66,137 @@ module bigint_math_PERIPH_BUS_s_axi
 //         bit 0  - Channel 0 (ap_done)
 //         bit 1  - Channel 1 (ap_ready)
 //         others - reserved
+// 0x180 : Data signal of output_V
+//         bit 31~0 - output_V[31:0] (Read)
+// 0x184 : Data signal of output_V
+//         bit 31~0 - output_V[63:32] (Read)
+// 0x188 : Data signal of output_V
+//         bit 31~0 - output_V[95:64] (Read)
+// 0x18c : Data signal of output_V
+//         bit 31~0 - output_V[127:96] (Read)
+// 0x190 : Data signal of output_V
+//         bit 31~0 - output_V[159:128] (Read)
+// 0x194 : Data signal of output_V
+//         bit 31~0 - output_V[191:160] (Read)
+// 0x198 : Data signal of output_V
+//         bit 31~0 - output_V[223:192] (Read)
+// 0x19c : Data signal of output_V
+//         bit 31~0 - output_V[255:224] (Read)
+// 0x1a0 : Data signal of output_V
+//         bit 31~0 - output_V[287:256] (Read)
+// 0x1a4 : Data signal of output_V
+//         bit 31~0 - output_V[319:288] (Read)
+// 0x1a8 : Data signal of output_V
+//         bit 31~0 - output_V[351:320] (Read)
+// 0x1ac : Data signal of output_V
+//         bit 31~0 - output_V[383:352] (Read)
+// 0x1b0 : Data signal of output_V
+//         bit 31~0 - output_V[415:384] (Read)
+// 0x1b4 : Data signal of output_V
+//         bit 31~0 - output_V[447:416] (Read)
+// 0x1b8 : Data signal of output_V
+//         bit 31~0 - output_V[479:448] (Read)
+// 0x1bc : Data signal of output_V
+//         bit 31~0 - output_V[511:480] (Read)
+// 0x1c0 : Data signal of output_V
+//         bit 31~0 - output_V[543:512] (Read)
+// 0x1c4 : Data signal of output_V
+//         bit 31~0 - output_V[575:544] (Read)
+// 0x1c8 : Data signal of output_V
+//         bit 31~0 - output_V[607:576] (Read)
+// 0x1cc : Data signal of output_V
+//         bit 31~0 - output_V[639:608] (Read)
+// 0x1d0 : Data signal of output_V
+//         bit 31~0 - output_V[671:640] (Read)
+// 0x1d4 : Data signal of output_V
+//         bit 31~0 - output_V[703:672] (Read)
+// 0x1d8 : Data signal of output_V
+//         bit 31~0 - output_V[735:704] (Read)
+// 0x1dc : Data signal of output_V
+//         bit 31~0 - output_V[767:736] (Read)
+// 0x1e0 : Data signal of output_V
+//         bit 31~0 - output_V[799:768] (Read)
+// 0x1e4 : Data signal of output_V
+//         bit 31~0 - output_V[831:800] (Read)
+// 0x1e8 : Data signal of output_V
+//         bit 31~0 - output_V[863:832] (Read)
+// 0x1ec : Data signal of output_V
+//         bit 31~0 - output_V[895:864] (Read)
+// 0x1f0 : Data signal of output_V
+//         bit 31~0 - output_V[927:896] (Read)
+// 0x1f4 : Data signal of output_V
+//         bit 31~0 - output_V[959:928] (Read)
+// 0x1f8 : Data signal of output_V
+//         bit 31~0 - output_V[991:960] (Read)
+// 0x1fc : Data signal of output_V
+//         bit 31~0 - output_V[1023:992] (Read)
+// 0x200 : Data signal of output_V
+//         bit 31~0 - output_V[1055:1024] (Read)
+// 0x204 : Data signal of output_V
+//         bit 31~0 - output_V[1087:1056] (Read)
+// 0x208 : Data signal of output_V
+//         bit 31~0 - output_V[1119:1088] (Read)
+// 0x20c : Data signal of output_V
+//         bit 31~0 - output_V[1151:1120] (Read)
+// 0x210 : Data signal of output_V
+//         bit 31~0 - output_V[1183:1152] (Read)
+// 0x214 : Data signal of output_V
+//         bit 31~0 - output_V[1215:1184] (Read)
+// 0x218 : Data signal of output_V
+//         bit 31~0 - output_V[1247:1216] (Read)
+// 0x21c : Data signal of output_V
+//         bit 31~0 - output_V[1279:1248] (Read)
+// 0x220 : Data signal of output_V
+//         bit 31~0 - output_V[1311:1280] (Read)
+// 0x224 : Data signal of output_V
+//         bit 31~0 - output_V[1343:1312] (Read)
+// 0x228 : Data signal of output_V
+//         bit 31~0 - output_V[1375:1344] (Read)
+// 0x22c : Data signal of output_V
+//         bit 31~0 - output_V[1407:1376] (Read)
+// 0x230 : Data signal of output_V
+//         bit 31~0 - output_V[1439:1408] (Read)
+// 0x234 : Data signal of output_V
+//         bit 31~0 - output_V[1471:1440] (Read)
+// 0x238 : Data signal of output_V
+//         bit 31~0 - output_V[1503:1472] (Read)
+// 0x23c : Data signal of output_V
+//         bit 31~0 - output_V[1535:1504] (Read)
+// 0x240 : Data signal of output_V
+//         bit 31~0 - output_V[1567:1536] (Read)
+// 0x244 : Data signal of output_V
+//         bit 31~0 - output_V[1599:1568] (Read)
+// 0x248 : Data signal of output_V
+//         bit 31~0 - output_V[1631:1600] (Read)
+// 0x24c : Data signal of output_V
+//         bit 31~0 - output_V[1663:1632] (Read)
+// 0x250 : Data signal of output_V
+//         bit 31~0 - output_V[1695:1664] (Read)
+// 0x254 : Data signal of output_V
+//         bit 31~0 - output_V[1727:1696] (Read)
+// 0x258 : Data signal of output_V
+//         bit 31~0 - output_V[1759:1728] (Read)
+// 0x25c : Data signal of output_V
+//         bit 31~0 - output_V[1791:1760] (Read)
+// 0x260 : Data signal of output_V
+//         bit 31~0 - output_V[1823:1792] (Read)
+// 0x264 : Data signal of output_V
+//         bit 31~0 - output_V[1855:1824] (Read)
+// 0x268 : Data signal of output_V
+//         bit 31~0 - output_V[1887:1856] (Read)
+// 0x26c : Data signal of output_V
+//         bit 31~0 - output_V[1919:1888] (Read)
+// 0x270 : Data signal of output_V
+//         bit 31~0 - output_V[1951:1920] (Read)
+// 0x274 : Data signal of output_V
+//         bit 31~0 - output_V[1983:1952] (Read)
+// 0x278 : Data signal of output_V
+//         bit 31~0 - output_V[2015:1984] (Read)
+// 0x27c : Data signal of output_V
+//         bit 31~0 - output_V[2047:2016] (Read)
+// 0x280 : Control signal of output_V
+//         bit 0  - output_V_ap_vld (Read/COR)
+//         others - reserved
 // 0x080 ~
 // 0x0ff : Memory 'a' (32 * 8b)
 //         Word n : bit [ 7: 0] - a[4n]
@@ -81,31 +209,88 @@ module bigint_math_PERIPH_BUS_s_axi
 //                  bit [15: 8] - b[4n+1]
 //                  bit [23:16] - b[4n+2]
 //                  bit [31:24] - b[4n+3]
-// 0x200 ~
-// 0x2ff : Memory 'c' (64 * 8b)
-//         Word n : bit [ 7: 0] - c[4n]
-//                  bit [15: 8] - c[4n+1]
-//                  bit [23:16] - c[4n+2]
-//                  bit [31:24] - c[4n+3]
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL = 10'h000,
-    ADDR_GIE     = 10'h004,
-    ADDR_IER     = 10'h008,
-    ADDR_ISR     = 10'h00c,
-    ADDR_A_BASE  = 10'h080,
-    ADDR_A_HIGH  = 10'h0ff,
-    ADDR_B_BASE  = 10'h100,
-    ADDR_B_HIGH  = 10'h17f,
-    ADDR_C_BASE  = 10'h200,
-    ADDR_C_HIGH  = 10'h2ff,
-    WRIDLE       = 2'd0,
-    WRDATA       = 2'd1,
-    WRRESP       = 2'd2,
-    RDIDLE       = 2'd0,
-    RDDATA       = 2'd1,
+    ADDR_AP_CTRL          = 10'h000,
+    ADDR_GIE              = 10'h004,
+    ADDR_IER              = 10'h008,
+    ADDR_ISR              = 10'h00c,
+    ADDR_OUTPUT_V_DATA_0  = 10'h180,
+    ADDR_OUTPUT_V_DATA_1  = 10'h184,
+    ADDR_OUTPUT_V_DATA_2  = 10'h188,
+    ADDR_OUTPUT_V_DATA_3  = 10'h18c,
+    ADDR_OUTPUT_V_DATA_4  = 10'h190,
+    ADDR_OUTPUT_V_DATA_5  = 10'h194,
+    ADDR_OUTPUT_V_DATA_6  = 10'h198,
+    ADDR_OUTPUT_V_DATA_7  = 10'h19c,
+    ADDR_OUTPUT_V_DATA_8  = 10'h1a0,
+    ADDR_OUTPUT_V_DATA_9  = 10'h1a4,
+    ADDR_OUTPUT_V_DATA_10 = 10'h1a8,
+    ADDR_OUTPUT_V_DATA_11 = 10'h1ac,
+    ADDR_OUTPUT_V_DATA_12 = 10'h1b0,
+    ADDR_OUTPUT_V_DATA_13 = 10'h1b4,
+    ADDR_OUTPUT_V_DATA_14 = 10'h1b8,
+    ADDR_OUTPUT_V_DATA_15 = 10'h1bc,
+    ADDR_OUTPUT_V_DATA_16 = 10'h1c0,
+    ADDR_OUTPUT_V_DATA_17 = 10'h1c4,
+    ADDR_OUTPUT_V_DATA_18 = 10'h1c8,
+    ADDR_OUTPUT_V_DATA_19 = 10'h1cc,
+    ADDR_OUTPUT_V_DATA_20 = 10'h1d0,
+    ADDR_OUTPUT_V_DATA_21 = 10'h1d4,
+    ADDR_OUTPUT_V_DATA_22 = 10'h1d8,
+    ADDR_OUTPUT_V_DATA_23 = 10'h1dc,
+    ADDR_OUTPUT_V_DATA_24 = 10'h1e0,
+    ADDR_OUTPUT_V_DATA_25 = 10'h1e4,
+    ADDR_OUTPUT_V_DATA_26 = 10'h1e8,
+    ADDR_OUTPUT_V_DATA_27 = 10'h1ec,
+    ADDR_OUTPUT_V_DATA_28 = 10'h1f0,
+    ADDR_OUTPUT_V_DATA_29 = 10'h1f4,
+    ADDR_OUTPUT_V_DATA_30 = 10'h1f8,
+    ADDR_OUTPUT_V_DATA_31 = 10'h1fc,
+    ADDR_OUTPUT_V_DATA_32 = 10'h200,
+    ADDR_OUTPUT_V_DATA_33 = 10'h204,
+    ADDR_OUTPUT_V_DATA_34 = 10'h208,
+    ADDR_OUTPUT_V_DATA_35 = 10'h20c,
+    ADDR_OUTPUT_V_DATA_36 = 10'h210,
+    ADDR_OUTPUT_V_DATA_37 = 10'h214,
+    ADDR_OUTPUT_V_DATA_38 = 10'h218,
+    ADDR_OUTPUT_V_DATA_39 = 10'h21c,
+    ADDR_OUTPUT_V_DATA_40 = 10'h220,
+    ADDR_OUTPUT_V_DATA_41 = 10'h224,
+    ADDR_OUTPUT_V_DATA_42 = 10'h228,
+    ADDR_OUTPUT_V_DATA_43 = 10'h22c,
+    ADDR_OUTPUT_V_DATA_44 = 10'h230,
+    ADDR_OUTPUT_V_DATA_45 = 10'h234,
+    ADDR_OUTPUT_V_DATA_46 = 10'h238,
+    ADDR_OUTPUT_V_DATA_47 = 10'h23c,
+    ADDR_OUTPUT_V_DATA_48 = 10'h240,
+    ADDR_OUTPUT_V_DATA_49 = 10'h244,
+    ADDR_OUTPUT_V_DATA_50 = 10'h248,
+    ADDR_OUTPUT_V_DATA_51 = 10'h24c,
+    ADDR_OUTPUT_V_DATA_52 = 10'h250,
+    ADDR_OUTPUT_V_DATA_53 = 10'h254,
+    ADDR_OUTPUT_V_DATA_54 = 10'h258,
+    ADDR_OUTPUT_V_DATA_55 = 10'h25c,
+    ADDR_OUTPUT_V_DATA_56 = 10'h260,
+    ADDR_OUTPUT_V_DATA_57 = 10'h264,
+    ADDR_OUTPUT_V_DATA_58 = 10'h268,
+    ADDR_OUTPUT_V_DATA_59 = 10'h26c,
+    ADDR_OUTPUT_V_DATA_60 = 10'h270,
+    ADDR_OUTPUT_V_DATA_61 = 10'h274,
+    ADDR_OUTPUT_V_DATA_62 = 10'h278,
+    ADDR_OUTPUT_V_DATA_63 = 10'h27c,
+    ADDR_OUTPUT_V_CTRL    = 10'h280,
+    ADDR_A_BASE           = 10'h080,
+    ADDR_A_HIGH           = 10'h0ff,
+    ADDR_B_BASE           = 10'h100,
+    ADDR_B_HIGH           = 10'h17f,
+    WRIDLE                = 2'd0,
+    WRDATA                = 2'd1,
+    WRRESP                = 2'd2,
+    RDIDLE                = 2'd0,
+    RDDATA                = 2'd1,
     ADDR_BITS         = 10;
 
 //------------------------Local signal-------------------
@@ -129,6 +314,8 @@ localparam
     reg                           int_gie;
     reg  [1:0]                    int_ier;
     reg  [1:0]                    int_isr;
+    reg  [2047:0]                 int_output_V;
+    reg                           int_output_V_ap_vld;
     // memory signals
     wire [4:0]                    int_a_address0;
     wire                          int_a_ce0;
@@ -160,21 +347,6 @@ localparam
     reg                           int_b_read;
     reg                           int_b_write;
     reg  [1:0]                    int_b_shift;
-    wire [5:0]                    int_c_address0;
-    wire                          int_c_ce0;
-    wire                          int_c_we0;
-    wire [3:0]                    int_c_be0;
-    wire [31:0]                   int_c_d0;
-    wire [31:0]                   int_c_q0;
-    wire [5:0]                    int_c_address1;
-    wire                          int_c_ce1;
-    wire                          int_c_we1;
-    wire [3:0]                    int_c_be1;
-    wire [31:0]                   int_c_d1;
-    wire [31:0]                   int_c_q1;
-    reg                           int_c_read;
-    reg                           int_c_write;
-    reg  [1:0]                    int_c_shift;
 
 //------------------------Instantiation------------------
 // int_a
@@ -216,26 +388,6 @@ bigint_math_PERIPH_BUS_s_axi_ram #(
     .be1      ( int_b_be1 ),
     .d1       ( int_b_d1 ),
     .q1       ( int_b_q1 )
-);
-// int_c
-bigint_math_PERIPH_BUS_s_axi_ram #(
-    .BYTES    ( 4 ),
-    .DEPTH    ( 64 )
-) int_c (
-    .clk0     ( ACLK ),
-    .address0 ( int_c_address0 ),
-    .ce0      ( int_c_ce0 ),
-    .we0      ( int_c_we0 ),
-    .be0      ( int_c_be0 ),
-    .d0       ( int_c_d0 ),
-    .q0       ( int_c_q0 ),
-    .clk1     ( ACLK ),
-    .address1 ( int_c_address1 ),
-    .ce1      ( int_c_ce1 ),
-    .we1      ( int_c_we1 ),
-    .be1      ( int_c_be1 ),
-    .d1       ( int_c_d1 ),
-    .q1       ( int_c_q1 )
 );
 
 //------------------------AXI write fsm------------------
@@ -290,7 +442,7 @@ end
 assign ARREADY = (rstate == RDIDLE);
 assign RDATA   = rdata;
 assign RRESP   = 2'b00;  // OKAY
-assign RVALID  = (rstate == RDDATA) & !int_a_read & !int_b_read & !int_c_read;
+assign RVALID  = (rstate == RDDATA) & !int_a_read & !int_b_read;
 assign ar_hs   = ARVALID & ARREADY;
 assign raddr   = ARADDR[ADDR_BITS-1:0];
 
@@ -342,6 +494,201 @@ always @(posedge ACLK) begin
                 ADDR_ISR: begin
                     rdata <= int_isr;
                 end
+                ADDR_OUTPUT_V_DATA_0: begin
+                    rdata <= int_output_V[31:0];
+                end
+                ADDR_OUTPUT_V_DATA_1: begin
+                    rdata <= int_output_V[63:32];
+                end
+                ADDR_OUTPUT_V_DATA_2: begin
+                    rdata <= int_output_V[95:64];
+                end
+                ADDR_OUTPUT_V_DATA_3: begin
+                    rdata <= int_output_V[127:96];
+                end
+                ADDR_OUTPUT_V_DATA_4: begin
+                    rdata <= int_output_V[159:128];
+                end
+                ADDR_OUTPUT_V_DATA_5: begin
+                    rdata <= int_output_V[191:160];
+                end
+                ADDR_OUTPUT_V_DATA_6: begin
+                    rdata <= int_output_V[223:192];
+                end
+                ADDR_OUTPUT_V_DATA_7: begin
+                    rdata <= int_output_V[255:224];
+                end
+                ADDR_OUTPUT_V_DATA_8: begin
+                    rdata <= int_output_V[287:256];
+                end
+                ADDR_OUTPUT_V_DATA_9: begin
+                    rdata <= int_output_V[319:288];
+                end
+                ADDR_OUTPUT_V_DATA_10: begin
+                    rdata <= int_output_V[351:320];
+                end
+                ADDR_OUTPUT_V_DATA_11: begin
+                    rdata <= int_output_V[383:352];
+                end
+                ADDR_OUTPUT_V_DATA_12: begin
+                    rdata <= int_output_V[415:384];
+                end
+                ADDR_OUTPUT_V_DATA_13: begin
+                    rdata <= int_output_V[447:416];
+                end
+                ADDR_OUTPUT_V_DATA_14: begin
+                    rdata <= int_output_V[479:448];
+                end
+                ADDR_OUTPUT_V_DATA_15: begin
+                    rdata <= int_output_V[511:480];
+                end
+                ADDR_OUTPUT_V_DATA_16: begin
+                    rdata <= int_output_V[543:512];
+                end
+                ADDR_OUTPUT_V_DATA_17: begin
+                    rdata <= int_output_V[575:544];
+                end
+                ADDR_OUTPUT_V_DATA_18: begin
+                    rdata <= int_output_V[607:576];
+                end
+                ADDR_OUTPUT_V_DATA_19: begin
+                    rdata <= int_output_V[639:608];
+                end
+                ADDR_OUTPUT_V_DATA_20: begin
+                    rdata <= int_output_V[671:640];
+                end
+                ADDR_OUTPUT_V_DATA_21: begin
+                    rdata <= int_output_V[703:672];
+                end
+                ADDR_OUTPUT_V_DATA_22: begin
+                    rdata <= int_output_V[735:704];
+                end
+                ADDR_OUTPUT_V_DATA_23: begin
+                    rdata <= int_output_V[767:736];
+                end
+                ADDR_OUTPUT_V_DATA_24: begin
+                    rdata <= int_output_V[799:768];
+                end
+                ADDR_OUTPUT_V_DATA_25: begin
+                    rdata <= int_output_V[831:800];
+                end
+                ADDR_OUTPUT_V_DATA_26: begin
+                    rdata <= int_output_V[863:832];
+                end
+                ADDR_OUTPUT_V_DATA_27: begin
+                    rdata <= int_output_V[895:864];
+                end
+                ADDR_OUTPUT_V_DATA_28: begin
+                    rdata <= int_output_V[927:896];
+                end
+                ADDR_OUTPUT_V_DATA_29: begin
+                    rdata <= int_output_V[959:928];
+                end
+                ADDR_OUTPUT_V_DATA_30: begin
+                    rdata <= int_output_V[991:960];
+                end
+                ADDR_OUTPUT_V_DATA_31: begin
+                    rdata <= int_output_V[1023:992];
+                end
+                ADDR_OUTPUT_V_DATA_32: begin
+                    rdata <= int_output_V[1055:1024];
+                end
+                ADDR_OUTPUT_V_DATA_33: begin
+                    rdata <= int_output_V[1087:1056];
+                end
+                ADDR_OUTPUT_V_DATA_34: begin
+                    rdata <= int_output_V[1119:1088];
+                end
+                ADDR_OUTPUT_V_DATA_35: begin
+                    rdata <= int_output_V[1151:1120];
+                end
+                ADDR_OUTPUT_V_DATA_36: begin
+                    rdata <= int_output_V[1183:1152];
+                end
+                ADDR_OUTPUT_V_DATA_37: begin
+                    rdata <= int_output_V[1215:1184];
+                end
+                ADDR_OUTPUT_V_DATA_38: begin
+                    rdata <= int_output_V[1247:1216];
+                end
+                ADDR_OUTPUT_V_DATA_39: begin
+                    rdata <= int_output_V[1279:1248];
+                end
+                ADDR_OUTPUT_V_DATA_40: begin
+                    rdata <= int_output_V[1311:1280];
+                end
+                ADDR_OUTPUT_V_DATA_41: begin
+                    rdata <= int_output_V[1343:1312];
+                end
+                ADDR_OUTPUT_V_DATA_42: begin
+                    rdata <= int_output_V[1375:1344];
+                end
+                ADDR_OUTPUT_V_DATA_43: begin
+                    rdata <= int_output_V[1407:1376];
+                end
+                ADDR_OUTPUT_V_DATA_44: begin
+                    rdata <= int_output_V[1439:1408];
+                end
+                ADDR_OUTPUT_V_DATA_45: begin
+                    rdata <= int_output_V[1471:1440];
+                end
+                ADDR_OUTPUT_V_DATA_46: begin
+                    rdata <= int_output_V[1503:1472];
+                end
+                ADDR_OUTPUT_V_DATA_47: begin
+                    rdata <= int_output_V[1535:1504];
+                end
+                ADDR_OUTPUT_V_DATA_48: begin
+                    rdata <= int_output_V[1567:1536];
+                end
+                ADDR_OUTPUT_V_DATA_49: begin
+                    rdata <= int_output_V[1599:1568];
+                end
+                ADDR_OUTPUT_V_DATA_50: begin
+                    rdata <= int_output_V[1631:1600];
+                end
+                ADDR_OUTPUT_V_DATA_51: begin
+                    rdata <= int_output_V[1663:1632];
+                end
+                ADDR_OUTPUT_V_DATA_52: begin
+                    rdata <= int_output_V[1695:1664];
+                end
+                ADDR_OUTPUT_V_DATA_53: begin
+                    rdata <= int_output_V[1727:1696];
+                end
+                ADDR_OUTPUT_V_DATA_54: begin
+                    rdata <= int_output_V[1759:1728];
+                end
+                ADDR_OUTPUT_V_DATA_55: begin
+                    rdata <= int_output_V[1791:1760];
+                end
+                ADDR_OUTPUT_V_DATA_56: begin
+                    rdata <= int_output_V[1823:1792];
+                end
+                ADDR_OUTPUT_V_DATA_57: begin
+                    rdata <= int_output_V[1855:1824];
+                end
+                ADDR_OUTPUT_V_DATA_58: begin
+                    rdata <= int_output_V[1887:1856];
+                end
+                ADDR_OUTPUT_V_DATA_59: begin
+                    rdata <= int_output_V[1919:1888];
+                end
+                ADDR_OUTPUT_V_DATA_60: begin
+                    rdata <= int_output_V[1951:1920];
+                end
+                ADDR_OUTPUT_V_DATA_61: begin
+                    rdata <= int_output_V[1983:1952];
+                end
+                ADDR_OUTPUT_V_DATA_62: begin
+                    rdata <= int_output_V[2015:1984];
+                end
+                ADDR_OUTPUT_V_DATA_63: begin
+                    rdata <= int_output_V[2047:2016];
+                end
+                ADDR_OUTPUT_V_CTRL: begin
+                    rdata[0] <= int_output_V_ap_vld;
+                end
             endcase
         end
         else if (int_a_read) begin
@@ -349,9 +696,6 @@ always @(posedge ACLK) begin
         end
         else if (int_b_read) begin
             rdata <= int_b_q1;
-        end
-        else if (int_c_read) begin
-            rdata <= int_c_q1;
         end
     end
 end
@@ -440,6 +784,28 @@ always @(posedge ACLK) begin
     end
 end
 
+// int_output_V
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_output_V <= 0;
+    else if (ACLK_EN) begin
+        if (output_V_ap_vld)
+            int_output_V <= output_V;
+    end
+end
+
+// int_output_V_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_output_V_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (output_V_ap_vld)
+            int_output_V_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_OUTPUT_V_CTRL)
+            int_output_V_ap_vld <= 1'b0; // clear on read
+    end
+end
+
 
 //------------------------Memory logic-------------------
 // a
@@ -466,18 +832,6 @@ assign int_b_ce1      = ar_hs | (int_b_write & WVALID);
 assign int_b_we1      = int_b_write & WVALID;
 assign int_b_be1      = WSTRB;
 assign int_b_d1       = WDATA;
-// c
-assign int_c_address0 = c_address0 >> 2;
-assign int_c_ce0      = c_ce0;
-assign int_c_we0      = c_we0;
-assign int_c_be0      = 1 << c_address0[1:0];
-assign int_c_d0       = {4{c_d0}};
-assign c_q0           = int_c_q0 >> (int_c_shift * 8);
-assign int_c_address1 = ar_hs? raddr[7:2] : waddr[7:2];
-assign int_c_ce1      = ar_hs | (int_c_write & WVALID);
-assign int_c_we1      = int_c_write & WVALID;
-assign int_c_be1      = WSTRB;
-assign int_c_d1       = WDATA;
 // int_a_read
 always @(posedge ACLK) begin
     if (ARESET)
@@ -539,38 +893,6 @@ always @(posedge ACLK) begin
     if (ACLK_EN) begin
         if (b_ce0)
             int_b_shift <= b_address0[1:0];
-    end
-end
-
-// int_c_read
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_c_read <= 1'b0;
-    else if (ACLK_EN) begin
-        if (ar_hs && raddr >= ADDR_C_BASE && raddr <= ADDR_C_HIGH)
-            int_c_read <= 1'b1;
-        else
-            int_c_read <= 1'b0;
-    end
-end
-
-// int_c_write
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_c_write <= 1'b0;
-    else if (ACLK_EN) begin
-        if (aw_hs && AWADDR[ADDR_BITS-1:0] >= ADDR_C_BASE && AWADDR[ADDR_BITS-1:0] <= ADDR_C_HIGH)
-            int_c_write <= 1'b1;
-        else if (WVALID)
-            int_c_write <= 1'b0;
-    end
-end
-
-// int_c_shift
-always @(posedge ACLK) begin
-    if (ACLK_EN) begin
-        if (c_ce0)
-            int_c_shift <= c_address0[1:0];
     end
 end
 

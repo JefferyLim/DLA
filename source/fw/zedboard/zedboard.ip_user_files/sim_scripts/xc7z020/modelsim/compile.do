@@ -67,6 +67,7 @@ vlog -work xil_defaultlib -64 -incr "+incdir+../../../ipstatic/axi_infrastructur
 "../../../bd/xc7z020/hdl/xc7z020.v" \
 "../../../ipstatic/bigint_math_v1_0/hdl/verilog/bigint_math_PERIPH_BUS_s_axi.v" \
 "../../../ipstatic/bigint_math_v1_0/hdl/verilog/bigint_math.v" \
+"../../../ipstatic/bigint_math_v1_0/hdl/verilog/bigint_math_c.v" \
 "../../../bd/xc7z020/ip/xc7z020_bigint_math_0_1/sim/xc7z020_bigint_math_0_1.v" \
 
 vlog -work generic_baseblocks_v2_1_0 -64 -incr "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \

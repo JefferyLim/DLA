@@ -12,15 +12,14 @@ source top.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/linux/Documents/DLA/source/sw'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/Xilinx/Vivado/2016.2/data/ip'.
-add_files: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 988.652 ; gain = 25.055 ; free physical = 180 ; free virtual = 9669
 Command: synth_design -top top -part xc7z020clg484-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 17675 
+INFO: Helper process launched with PID 21989 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1078.230 ; gain = 189.191 ; free physical = 155 ; free virtual = 9587
+Starting RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1079.227 ; gain = 190.191 ; free physical = 3267 ; free virtual = 12178
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-1090] 'xc7z020_wrapper' is not compiled in library work [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/new/top.vhd:16]
 INFO: [Synth 8-638] synthesizing module 'top' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/new/top.vhd:50]
@@ -46,26 +45,26 @@ INFO: [Synth 8-638] synthesizing module 'bigint_math' [/home/linux/Documents/DLA
 	Parameter C_S_AXI_PERIPH_BUS_ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter ap_const_lv32_5 bound to: 5 - type: integer 
-	Parameter ap_const_lv32_9 bound to: 9 - type: integer 
+	Parameter ap_const_lv32_8 bound to: 8 - type: integer 
 	Parameter ap_const_lv32_1 bound to: 1 - type: integer 
 	Parameter ap_const_lv32_2 bound to: 2 - type: integer 
 	Parameter ap_const_lv32_3 bound to: 3 - type: integer 
 	Parameter ap_const_lv32_4 bound to: 4 - type: integer 
-	Parameter ap_const_lv32_6 bound to: 6 - type: integer 
-	Parameter ap_const_lv32_8 bound to: 8 - type: integer 
-	Parameter ap_const_lv32_A bound to: 10 - type: integer 
-	Parameter ap_const_lv9_0 bound to: 9'b000000000 
-	Parameter ap_const_lv8_0 bound to: 8'b00000000 
-	Parameter ap_const_lv32_B bound to: 11 - type: integer 
 	Parameter ap_const_lv32_7 bound to: 7 - type: integer 
-	Parameter ap_const_lv8_1 bound to: 8'b00000001 
-	Parameter ap_const_lv9_100 bound to: 9'b100000000 
-	Parameter ap_const_lv9_1 bound to: 9'b000000001 
+	Parameter ap_const_lv32_A bound to: 10 - type: integer 
+	Parameter ap_const_lv32_B bound to: 11 - type: integer 
+	Parameter ap_const_lv8_0 bound to: 8'b00000000 
+	Parameter ap_const_lv32_9 bound to: 9 - type: integer 
+	Parameter ap_const_lv2048_lc_1 bound to: 2048'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_const_lv32_FF bound to: 255 - type: integer 
+	Parameter ap_const_lv32_6 bound to: 6 - type: integer 
 	Parameter ap_const_lv8_80 bound to: 8'b10000000 
-	Parameter ap_const_lv8_FF bound to: 8'b11111111 
+	Parameter ap_const_lv8_1 bound to: 8'b00000001 
 	Parameter ap_const_lv8_7F bound to: 8'b01111111 
+	Parameter ap_const_lv8_FF bound to: 8'b11111111 
 	Parameter ap_const_lv32_F bound to: 15 - type: integer 
 	Parameter ap_const_lv9_1FE bound to: 9'b111111110 
+	Parameter ap_const_lv32_80000000 bound to: -2147483648 - type: integer 
 	Parameter C_S_AXI_PERIPH_BUS_WSTRB_WIDTH bound to: 4 - type: integer 
 	Parameter C_S_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
 INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math.v:102]
@@ -76,32 +75,101 @@ INFO: [Synth 8-638] synthesizing module 'bigint_math_PERIPH_BUS_s_axi' [/home/li
 	Parameter ADDR_GIE bound to: 10'b0000000100 
 	Parameter ADDR_IER bound to: 10'b0000001000 
 	Parameter ADDR_ISR bound to: 10'b0000001100 
+	Parameter ADDR_OUTPUT_V_DATA_0 bound to: 10'b0110000000 
+	Parameter ADDR_OUTPUT_V_DATA_1 bound to: 10'b0110000100 
+	Parameter ADDR_OUTPUT_V_DATA_2 bound to: 10'b0110001000 
+	Parameter ADDR_OUTPUT_V_DATA_3 bound to: 10'b0110001100 
+	Parameter ADDR_OUTPUT_V_DATA_4 bound to: 10'b0110010000 
+	Parameter ADDR_OUTPUT_V_DATA_5 bound to: 10'b0110010100 
+	Parameter ADDR_OUTPUT_V_DATA_6 bound to: 10'b0110011000 
+	Parameter ADDR_OUTPUT_V_DATA_7 bound to: 10'b0110011100 
+	Parameter ADDR_OUTPUT_V_DATA_8 bound to: 10'b0110100000 
+	Parameter ADDR_OUTPUT_V_DATA_9 bound to: 10'b0110100100 
+	Parameter ADDR_OUTPUT_V_DATA_10 bound to: 10'b0110101000 
+	Parameter ADDR_OUTPUT_V_DATA_11 bound to: 10'b0110101100 
+	Parameter ADDR_OUTPUT_V_DATA_12 bound to: 10'b0110110000 
+	Parameter ADDR_OUTPUT_V_DATA_13 bound to: 10'b0110110100 
+	Parameter ADDR_OUTPUT_V_DATA_14 bound to: 10'b0110111000 
+	Parameter ADDR_OUTPUT_V_DATA_15 bound to: 10'b0110111100 
+	Parameter ADDR_OUTPUT_V_DATA_16 bound to: 10'b0111000000 
+	Parameter ADDR_OUTPUT_V_DATA_17 bound to: 10'b0111000100 
+	Parameter ADDR_OUTPUT_V_DATA_18 bound to: 10'b0111001000 
+	Parameter ADDR_OUTPUT_V_DATA_19 bound to: 10'b0111001100 
+	Parameter ADDR_OUTPUT_V_DATA_20 bound to: 10'b0111010000 
+	Parameter ADDR_OUTPUT_V_DATA_21 bound to: 10'b0111010100 
+	Parameter ADDR_OUTPUT_V_DATA_22 bound to: 10'b0111011000 
+	Parameter ADDR_OUTPUT_V_DATA_23 bound to: 10'b0111011100 
+	Parameter ADDR_OUTPUT_V_DATA_24 bound to: 10'b0111100000 
+	Parameter ADDR_OUTPUT_V_DATA_25 bound to: 10'b0111100100 
+	Parameter ADDR_OUTPUT_V_DATA_26 bound to: 10'b0111101000 
+	Parameter ADDR_OUTPUT_V_DATA_27 bound to: 10'b0111101100 
+	Parameter ADDR_OUTPUT_V_DATA_28 bound to: 10'b0111110000 
+	Parameter ADDR_OUTPUT_V_DATA_29 bound to: 10'b0111110100 
+	Parameter ADDR_OUTPUT_V_DATA_30 bound to: 10'b0111111000 
+	Parameter ADDR_OUTPUT_V_DATA_31 bound to: 10'b0111111100 
+	Parameter ADDR_OUTPUT_V_DATA_32 bound to: 10'b1000000000 
+	Parameter ADDR_OUTPUT_V_DATA_33 bound to: 10'b1000000100 
+	Parameter ADDR_OUTPUT_V_DATA_34 bound to: 10'b1000001000 
+	Parameter ADDR_OUTPUT_V_DATA_35 bound to: 10'b1000001100 
+	Parameter ADDR_OUTPUT_V_DATA_36 bound to: 10'b1000010000 
+	Parameter ADDR_OUTPUT_V_DATA_37 bound to: 10'b1000010100 
+	Parameter ADDR_OUTPUT_V_DATA_38 bound to: 10'b1000011000 
+	Parameter ADDR_OUTPUT_V_DATA_39 bound to: 10'b1000011100 
+	Parameter ADDR_OUTPUT_V_DATA_40 bound to: 10'b1000100000 
+	Parameter ADDR_OUTPUT_V_DATA_41 bound to: 10'b1000100100 
+	Parameter ADDR_OUTPUT_V_DATA_42 bound to: 10'b1000101000 
+	Parameter ADDR_OUTPUT_V_DATA_43 bound to: 10'b1000101100 
+	Parameter ADDR_OUTPUT_V_DATA_44 bound to: 10'b1000110000 
+	Parameter ADDR_OUTPUT_V_DATA_45 bound to: 10'b1000110100 
+	Parameter ADDR_OUTPUT_V_DATA_46 bound to: 10'b1000111000 
+	Parameter ADDR_OUTPUT_V_DATA_47 bound to: 10'b1000111100 
+	Parameter ADDR_OUTPUT_V_DATA_48 bound to: 10'b1001000000 
+	Parameter ADDR_OUTPUT_V_DATA_49 bound to: 10'b1001000100 
+	Parameter ADDR_OUTPUT_V_DATA_50 bound to: 10'b1001001000 
+	Parameter ADDR_OUTPUT_V_DATA_51 bound to: 10'b1001001100 
+	Parameter ADDR_OUTPUT_V_DATA_52 bound to: 10'b1001010000 
+	Parameter ADDR_OUTPUT_V_DATA_53 bound to: 10'b1001010100 
+	Parameter ADDR_OUTPUT_V_DATA_54 bound to: 10'b1001011000 
+	Parameter ADDR_OUTPUT_V_DATA_55 bound to: 10'b1001011100 
+	Parameter ADDR_OUTPUT_V_DATA_56 bound to: 10'b1001100000 
+	Parameter ADDR_OUTPUT_V_DATA_57 bound to: 10'b1001100100 
+	Parameter ADDR_OUTPUT_V_DATA_58 bound to: 10'b1001101000 
+	Parameter ADDR_OUTPUT_V_DATA_59 bound to: 10'b1001101100 
+	Parameter ADDR_OUTPUT_V_DATA_60 bound to: 10'b1001110000 
+	Parameter ADDR_OUTPUT_V_DATA_61 bound to: 10'b1001110100 
+	Parameter ADDR_OUTPUT_V_DATA_62 bound to: 10'b1001111000 
+	Parameter ADDR_OUTPUT_V_DATA_63 bound to: 10'b1001111100 
+	Parameter ADDR_OUTPUT_V_CTRL bound to: 10'b1010000000 
 	Parameter ADDR_A_BASE bound to: 10'b0010000000 
 	Parameter ADDR_A_HIGH bound to: 10'b0011111111 
 	Parameter ADDR_B_BASE bound to: 10'b0100000000 
 	Parameter ADDR_B_HIGH bound to: 10'b0101111111 
-	Parameter ADDR_C_BASE bound to: 10'b1000000000 
-	Parameter ADDR_C_HIGH bound to: 10'b1011111111 
 	Parameter WRIDLE bound to: 2'b00 
 	Parameter WRDATA bound to: 2'b01 
 	Parameter WRRESP bound to: 2'b10 
 	Parameter RDIDLE bound to: 2'b00 
 	Parameter RDDATA bound to: 2'b01 
 	Parameter ADDR_BITS bound to: 10 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'bigint_math_PERIPH_BUS_s_axi_ram' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_PERIPH_BUS_s_axi.v:583]
+INFO: [Synth 8-638] synthesizing module 'bigint_math_PERIPH_BUS_s_axi_ram' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_PERIPH_BUS_s_axi.v:905]
 	Parameter BYTES bound to: 4 - type: integer 
 	Parameter DEPTH bound to: 32 - type: integer 
 	Parameter AWIDTH bound to: 5 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'bigint_math_PERIPH_BUS_s_axi_ram' (1#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_PERIPH_BUS_s_axi.v:583]
-INFO: [Synth 8-638] synthesizing module 'bigint_math_PERIPH_BUS_s_axi_ram__parameterized0' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_PERIPH_BUS_s_axi.v:583]
-	Parameter BYTES bound to: 4 - type: integer 
-	Parameter DEPTH bound to: 64 - type: integer 
-	Parameter AWIDTH bound to: 6 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'bigint_math_PERIPH_BUS_s_axi_ram__parameterized0' (1#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_PERIPH_BUS_s_axi.v:583]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_PERIPH_BUS_s_axi.v:328]
+INFO: [Synth 8-256] done synthesizing module 'bigint_math_PERIPH_BUS_s_axi_ram' (1#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_PERIPH_BUS_s_axi.v:905]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_PERIPH_BUS_s_axi.v:480]
 INFO: [Synth 8-256] done synthesizing module 'bigint_math_PERIPH_BUS_s_axi' (2#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_PERIPH_BUS_s_axi.v:9]
-INFO: [Synth 8-256] done synthesizing module 'bigint_math' (3#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math.v:12]
-INFO: [Synth 8-256] done synthesizing module 'xc7z020_bigint_math_0_1' (4#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_bigint_math_0_1/synth/xc7z020_bigint_math_0_1.v:57]
+INFO: [Synth 8-638] synthesizing module 'bigint_math_c' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_c.v:66]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 256 - type: integer 
+	Parameter AddressWidth bound to: 8 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'bigint_math_c_ram' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_c.v:9]
+	Parameter DWIDTH bound to: 8 - type: integer 
+	Parameter AWIDTH bound to: 8 - type: integer 
+	Parameter MEM_SIZE bound to: 256 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_c.v:27]
+INFO: [Synth 8-256] done synthesizing module 'bigint_math_c_ram' (3#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_c.v:9]
+INFO: [Synth 8-256] done synthesizing module 'bigint_math_c' (4#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_c.v:66]
+INFO: [Synth 8-256] done synthesizing module 'bigint_math' (5#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math.v:12]
+INFO: [Synth 8-256] done synthesizing module 'xc7z020_bigint_math_0_1' (6#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_bigint_math_0_1/synth/xc7z020_bigint_math_0_1.v:57]
 WARNING: [Synth 8-350] instance 'bigint_math_0' of module 'xc7z020_bigint_math_0_1' requires 20 connections, but only 19 given [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/hdl/xc7z020.v:445]
 INFO: [Synth 8-638] synthesizing module 'xc7z020_processing_system7_0_1' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_processing_system7_0_1/synth/xc7z020_processing_system7_0_1.v:59]
 INFO: [Synth 8-638] synthesizing module 'processing_system7_v5_5_processing_system7' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_processing_system7_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:156]
@@ -162,14 +230,14 @@ INFO: [Synth 8-638] synthesizing module 'processing_system7_v5_5_processing_syst
 INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_processing_system7_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:1338]
 INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_processing_system7_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:1339]
 INFO: [Synth 8-638] synthesizing module 'BUFG' [/home/Xilinx/Vivado/2016.2/scripts/rt/data/unisim_comp.v:607]
-INFO: [Synth 8-256] done synthesizing module 'BUFG' (5#1) [/home/Xilinx/Vivado/2016.2/scripts/rt/data/unisim_comp.v:607]
+INFO: [Synth 8-256] done synthesizing module 'BUFG' (7#1) [/home/Xilinx/Vivado/2016.2/scripts/rt/data/unisim_comp.v:607]
 INFO: [Synth 8-638] synthesizing module 'BIBUF' [/home/Xilinx/Vivado/2016.2/scripts/rt/data/unisim_comp.v:268]
-INFO: [Synth 8-256] done synthesizing module 'BIBUF' (6#1) [/home/Xilinx/Vivado/2016.2/scripts/rt/data/unisim_comp.v:268]
+INFO: [Synth 8-256] done synthesizing module 'BIBUF' (8#1) [/home/Xilinx/Vivado/2016.2/scripts/rt/data/unisim_comp.v:268]
 INFO: [Synth 8-638] synthesizing module 'PS7' [/home/Xilinx/Vivado/2016.2/scripts/rt/data/unisim_comp.v:33164]
-INFO: [Synth 8-256] done synthesizing module 'PS7' (7#1) [/home/Xilinx/Vivado/2016.2/scripts/rt/data/unisim_comp.v:33164]
-INFO: [Synth 8-256] done synthesizing module 'processing_system7_v5_5_processing_system7' (8#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_processing_system7_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:156]
+INFO: [Synth 8-256] done synthesizing module 'PS7' (9#1) [/home/Xilinx/Vivado/2016.2/scripts/rt/data/unisim_comp.v:33164]
+INFO: [Synth 8-256] done synthesizing module 'processing_system7_v5_5_processing_system7' (10#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_processing_system7_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:156]
 WARNING: [Synth 8-350] instance 'inst' of module 'processing_system7_v5_5_processing_system7' requires 685 connections, but only 672 given [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_processing_system7_0_1/synth/xc7z020_processing_system7_0_1.v:323]
-INFO: [Synth 8-256] done synthesizing module 'xc7z020_processing_system7_0_1' (9#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_processing_system7_0_1/synth/xc7z020_processing_system7_0_1.v:59]
+INFO: [Synth 8-256] done synthesizing module 'xc7z020_processing_system7_0_1' (11#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_processing_system7_0_1/synth/xc7z020_processing_system7_0_1.v:59]
 WARNING: [Synth 8-350] instance 'processing_system7_0' of module 'xc7z020_processing_system7_0_1' requires 70 connections, but only 66 given [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/hdl/xc7z020.v:465]
 INFO: [Synth 8-638] synthesizing module 'xc7z020_processing_system7_0_axi_periph_1' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/hdl/xc7z020.v:604]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_WJDTZ8' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/hdl/xc7z020.v:12]
@@ -218,20 +286,20 @@ INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_9_b2s_cmd_t
 INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_9_b2s_incr_cmd' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_incr_cmd.v:11]
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter L_AXI_ADDR_LOW_BIT bound to: 12 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_incr_cmd' (10#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_incr_cmd.v:11]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_incr_cmd' (12#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_incr_cmd.v:11]
 INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_9_b2s_wrap_cmd' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_wrap_cmd.v:11]
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter L_AXI_ADDR_LOW_BIT bound to: 12 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_wrap_cmd' (11#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_wrap_cmd.v:11]
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_cmd_translator' (12#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_cmd_translator.v:17]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_wrap_cmd' (13#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_wrap_cmd.v:11]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_cmd_translator' (14#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_cmd_translator.v:17]
 INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_9_b2s_wr_cmd_fsm' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_wr_cmd_fsm.v:10]
 	Parameter SM_IDLE bound to: 2'b00 
 	Parameter SM_CMD_EN bound to: 2'b01 
 	Parameter SM_CMD_ACCEPTED bound to: 2'b10 
 	Parameter SM_DONE_WAIT bound to: 2'b11 
 INFO: [Synth 8-226] default block is never used [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_wr_cmd_fsm.v:64]
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_wr_cmd_fsm' (13#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_wr_cmd_fsm.v:10]
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_aw_channel' (14#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_aw_channel.v:5]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_wr_cmd_fsm' (15#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_wr_cmd_fsm.v:10]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_aw_channel' (16#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_aw_channel.v:5]
 INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_9_b2s_b_channel' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_b_channel.v:10]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter LP_RESP_OKAY bound to: 2'b00 
@@ -252,7 +320,7 @@ INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_9_b2s_simpl
 	Parameter C_EMPTY_PRE bound to: 2'b00 
 	Parameter C_FULL bound to: 2'b10 
 	Parameter C_FULL_PRE bound to: 2'b01 
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_simple_fifo' (15#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_simple_fifo.v:9]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_simple_fifo' (17#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_simple_fifo.v:9]
 INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_9_b2s_simple_fifo__parameterized0' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_simple_fifo.v:9]
 	Parameter C_WIDTH bound to: 2 - type: integer 
 	Parameter C_AWIDTH bound to: 2 - type: integer 
@@ -261,8 +329,8 @@ INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_9_b2s_simpl
 	Parameter C_EMPTY_PRE bound to: 2'b00 
 	Parameter C_FULL bound to: 2'b10 
 	Parameter C_FULL_PRE bound to: 2'b01 
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_simple_fifo__parameterized0' (15#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_simple_fifo.v:9]
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_b_channel' (16#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_b_channel.v:10]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_simple_fifo__parameterized0' (17#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_simple_fifo.v:9]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_b_channel' (18#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_b_channel.v:10]
 INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_9_b2s_ar_channel' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_ar_channel.v:5]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -272,8 +340,8 @@ INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_9_b2s_rd_cm
 	Parameter SM_CMD_ACCEPTED bound to: 2'b10 
 	Parameter SM_DONE bound to: 2'b11 
 INFO: [Synth 8-226] default block is never used [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_rd_cmd_fsm.v:72]
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_rd_cmd_fsm' (17#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_rd_cmd_fsm.v:10]
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_ar_channel' (18#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_ar_channel.v:5]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_rd_cmd_fsm' (19#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_rd_cmd_fsm.v:10]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_ar_channel' (20#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_ar_channel.v:5]
 INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_9_b2s_r_channel' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_r_channel.v:21]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 32 - type: integer 
@@ -291,7 +359,7 @@ INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_9_b2s_simpl
 	Parameter C_EMPTY_PRE bound to: 5'b00000 
 	Parameter C_FULL bound to: 5'b11110 
 	Parameter C_FULL_PRE bound to: 5'b11010 
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_simple_fifo__parameterized1' (18#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_simple_fifo.v:9]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_simple_fifo__parameterized1' (20#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_simple_fifo.v:9]
 INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_9_b2s_simple_fifo__parameterized2' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_simple_fifo.v:9]
 	Parameter C_WIDTH bound to: 13 - type: integer 
 	Parameter C_AWIDTH bound to: 5 - type: integer 
@@ -300,8 +368,8 @@ INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_9_b2s_simpl
 	Parameter C_EMPTY_PRE bound to: 5'b00000 
 	Parameter C_FULL bound to: 5'b11110 
 	Parameter C_FULL_PRE bound to: 5'b11010 
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_simple_fifo__parameterized2' (18#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_simple_fifo.v:9]
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_r_channel' (19#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_r_channel.v:21]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_simple_fifo__parameterized2' (20#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_simple_fifo.v:9]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s_r_channel' (21#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s_r_channel.v:21]
 INFO: [Synth 8-638] synthesizing module 'axi_register_slice_v2_1_9_axi_register_slice' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axi_register_slice.v:64]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
@@ -487,27 +555,27 @@ INFO: [Synth 8-638] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' [
 	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (20#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_axi2vector.v:60]
+INFO: [Synth 8-256] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (22#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_axi2vector.v:60]
 INFO: [Synth 8-638] synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 66 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice' (21#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
+INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice' (23#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
 INFO: [Synth 8-638] synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized0' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 49 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized0' (21#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
+INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized0' (23#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
 INFO: [Synth 8-638] synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized1' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 14 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized1' (21#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
+INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized1' (23#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
 INFO: [Synth 8-638] synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized2' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 47 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized2' (21#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
+INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized2' (23#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
 INFO: [Synth 8-638] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_vector2axi.v:60]
 	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
@@ -600,8 +668,8 @@ INFO: [Synth 8-638] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [
 	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (22#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_vector2axi.v:60]
-INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axi_register_slice' (23#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axi_register_slice.v:64]
+INFO: [Synth 8-256] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (24#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_vector2axi.v:60]
+INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axi_register_slice' (25#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axi_register_slice.v:64]
 INFO: [Synth 8-638] synthesizing module 'axi_register_slice_v2_1_9_axi_register_slice__parameterized0' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axi_register_slice.v:64]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
@@ -787,32 +855,32 @@ INFO: [Synth 8-638] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__p
 	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' (23#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_axi2vector.v:60]
+INFO: [Synth 8-256] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' (25#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_axi2vector.v:60]
 INFO: [Synth 8-638] synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized3' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 35 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized3' (23#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
+INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized3' (25#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
 INFO: [Synth 8-638] synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized4' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 36 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized4' (23#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
+INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized4' (25#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
 INFO: [Synth 8-638] synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized5' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 2 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized5' (23#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
+INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized5' (25#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
 INFO: [Synth 8-638] synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized6' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 35 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized6' (23#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
+INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized6' (25#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
 INFO: [Synth 8-638] synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized7' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 34 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized7' (23#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
+INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axic_register_slice__parameterized7' (25#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:85]
 INFO: [Synth 8-638] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_vector2axi.v:60]
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -905,14 +973,14 @@ INFO: [Synth 8-638] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__p
 	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' (23#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_vector2axi.v:60]
-INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axi_register_slice__parameterized0' (23#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axi_register_slice.v:64]
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s' (24#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s.v:39]
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_axi_protocol_converter' (25#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_axi_protocol_converter.v:62]
-INFO: [Synth 8-256] done synthesizing module 'xc7z020_auto_pc_0' (26#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_auto_pc_0/synth/xc7z020_auto_pc_0.v:58]
+INFO: [Synth 8-256] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' (25#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_vector2axi.v:60]
+INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_9_axi_register_slice__parameterized0' (25#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axi_register_slice.v:64]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_b2s' (26#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_b2s.v:39]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_9_axi_protocol_converter' (27#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_axi_protocol_converter.v:62]
+INFO: [Synth 8-256] done synthesizing module 'xc7z020_auto_pc_0' (28#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_auto_pc_0/synth/xc7z020_auto_pc_0.v:58]
 WARNING: [Synth 8-350] instance 'auto_pc' of module 'xc7z020_auto_pc_0' requires 59 connections, but only 57 given [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/hdl/xc7z020.v:247]
-INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_WJDTZ8' (27#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/hdl/xc7z020.v:12]
-INFO: [Synth 8-256] done synthesizing module 'xc7z020_processing_system7_0_axi_periph_1' (28#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/hdl/xc7z020.v:604]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_WJDTZ8' (29#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/hdl/xc7z020.v:12]
+INFO: [Synth 8-256] done synthesizing module 'xc7z020_processing_system7_0_axi_periph_1' (30#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/hdl/xc7z020.v:604]
 INFO: [Synth 8-638] synthesizing module 'xc7z020_rst_processing_system7_0_100M_2' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_2/synth/xc7z020_rst_processing_system7_0_100M_2.vhd:71]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
@@ -942,7 +1010,7 @@ INFO: [Synth 8-638] synthesizing module 'lpf' [/home/linux/Documents/DLA/source/
 INFO: [Synth 8-3491] module 'SRL16' declared at '/home/Xilinx/Vivado/2016.2/scripts/rt/data/unisim_comp.v:43294' bound to instance 'POR_SRL_I' of component 'SRL16' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/proc_sys_reset_v5_0/hdl/src/vhdl/lpf.vhd:190]
 INFO: [Synth 8-638] synthesizing module 'SRL16' [/home/Xilinx/Vivado/2016.2/scripts/rt/data/unisim_comp.v:43294]
 	Parameter INIT bound to: 16'b0000000000000000 
-INFO: [Synth 8-256] done synthesizing module 'SRL16' (29#1) [/home/Xilinx/Vivado/2016.2/scripts/rt/data/unisim_comp.v:43294]
+INFO: [Synth 8-256] done synthesizing module 'SRL16' (31#1) [/home/Xilinx/Vivado/2016.2/scripts/rt/data/unisim_comp.v:43294]
 INFO: [Synth 8-638] synthesizing module 'cdc_sync' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/lib_cdc_v1_0/hdl/src/vhdl/cdc_sync.vhd:106]
 	Parameter C_CDC_TYPE bound to: 1 - type: integer 
 	Parameter C_RESET_STATE bound to: 0 - type: integer 
@@ -962,24 +1030,24 @@ INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_o
 INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5' to cell 'FDR' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/lib_cdc_v1_0/hdl/src/vhdl/cdc_sync.vhd:574]
 	Parameter INIT bound to: 1'b0 
 INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6' to cell 'FDR' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/lib_cdc_v1_0/hdl/src/vhdl/cdc_sync.vhd:584]
-INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (30#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/lib_cdc_v1_0/hdl/src/vhdl/cdc_sync.vhd:106]
-INFO: [Synth 8-256] done synthesizing module 'lpf' (31#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/proc_sys_reset_v5_0/hdl/src/vhdl/lpf.vhd:138]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (32#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/lib_cdc_v1_0/hdl/src/vhdl/cdc_sync.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'lpf' (33#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/proc_sys_reset_v5_0/hdl/src/vhdl/lpf.vhd:138]
 INFO: [Synth 8-638] synthesizing module 'sequence_psr' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/proc_sys_reset_v5_0/hdl/src/vhdl/sequence_psr.vhd:146]
 INFO: [Synth 8-638] synthesizing module 'upcnt_n' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/proc_sys_reset_v5_0/hdl/src/vhdl/upcnt_n.vhd:125]
 	Parameter C_SIZE bound to: 6 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (32#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/proc_sys_reset_v5_0/hdl/src/vhdl/upcnt_n.vhd:125]
-INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (33#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/proc_sys_reset_v5_0/hdl/src/vhdl/sequence_psr.vhd:146]
-INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (34#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/proc_sys_reset_v5_0/hdl/src/vhdl/proc_sys_reset.vhd:199]
-INFO: [Synth 8-256] done synthesizing module 'xc7z020_rst_processing_system7_0_100M_2' (35#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_2/synth/xc7z020_rst_processing_system7_0_100M_2.vhd:71]
+INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (34#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/proc_sys_reset_v5_0/hdl/src/vhdl/upcnt_n.vhd:125]
+INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (35#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/proc_sys_reset_v5_0/hdl/src/vhdl/sequence_psr.vhd:146]
+INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (36#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/proc_sys_reset_v5_0/hdl/src/vhdl/proc_sys_reset.vhd:199]
+INFO: [Synth 8-256] done synthesizing module 'xc7z020_rst_processing_system7_0_100M_2' (37#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_rst_processing_system7_0_100M_2/synth/xc7z020_rst_processing_system7_0_100M_2.vhd:71]
 WARNING: [Synth 8-350] instance 'rst_processing_system7_0_100M' of module 'xc7z020_rst_processing_system7_0_100M_2' requires 10 connections, but only 7 given [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/hdl/xc7z020.v:594]
-INFO: [Synth 8-256] done synthesizing module 'xc7z020' (36#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/hdl/xc7z020.v:308]
+INFO: [Synth 8-256] done synthesizing module 'xc7z020' (38#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/hdl/xc7z020.v:308]
 WARNING: [Synth 8-3848] Net LD0 in module/entity top does not have driver. [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/new/top.vhd:41]
 WARNING: [Synth 8-3848] Net LD1 in module/entity top does not have driver. [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/new/top.vhd:42]
 WARNING: [Synth 8-3848] Net LD2 in module/entity top does not have driver. [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/new/top.vhd:43]
 WARNING: [Synth 8-3848] Net LD3 in module/entity top does not have driver. [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/new/top.vhd:44]
 WARNING: [Synth 8-3848] Net LD4 in module/entity top does not have driver. [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/new/top.vhd:45]
 WARNING: [Synth 8-3848] Net LD5 in module/entity top does not have driver. [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/new/top.vhd:46]
-INFO: [Synth 8-256] done synthesizing module 'top' (37#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/new/top.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'top' (39#1) [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/new/top.vhd:50]
 WARNING: [Synth 8-3331] design cdc_sync has unconnected port prmry_aclk
 WARNING: [Synth 8-3331] design cdc_sync has unconnected port prmry_resetn
 WARNING: [Synth 8-3331] design cdc_sync has unconnected port prmry_vect_in[1]
@@ -1082,7 +1150,7 @@ WARNING: [Synth 8-3331] design axi_protocol_converter_v2_1_9_b2s_rd_cmd_fsm has 
 WARNING: [Synth 8-3331] design axi_protocol_converter_v2_1_9_b2s_rd_cmd_fsm has unconnected port s_arlen[2]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 1209.676 ; gain = 320.637 ; free physical = 153 ; free virtual = 9479
+Finished RTL Elaboration : Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 1210.672 ; gain = 321.637 ; free physical = 3152 ; free virtual = 12044
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1092,7 +1160,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:19 ; elapsed = 00:01:22 . Memory (MB): peak = 1209.676 ; gain = 320.637 ; free physical = 152 ; free virtual = 9479
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:09 ; elapsed = 00:01:11 . Memory (MB): peak = 1210.672 ; gain = 321.637 ; free physical = 3152 ; free virtual = 12044
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -1425,16 +1493,16 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   FDR => FDRE: 12 instances
   SRL16 => SRL16E: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1469.020 ; gain = 0.000 ; free physical = 126 ; free virtual = 9373
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1495.016 ; gain = 0.000 ; free physical = 3002 ; free virtual = 11895
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:35 ; elapsed = 00:02:21 . Memory (MB): peak = 1469.023 ; gain = 579.984 ; free physical = 125 ; free virtual = 9373
+Finished Constraint Validation : Time (s): cpu = 00:01:27 ; elapsed = 00:02:09 . Memory (MB): peak = 1495.020 ; gain = 605.984 ; free physical = 3003 ; free virtual = 11896
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:35 ; elapsed = 00:02:21 . Memory (MB): peak = 1469.023 ; gain = 579.984 ; free physical = 125 ; free virtual = 9373
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:27 ; elapsed = 00:02:09 . Memory (MB): peak = 1495.020 ; gain = 605.984 ; free physical = 3003 ; free virtual = 11896
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -1448,25 +1516,27 @@ Applied set_property DONT_TOUCH = true for xc7z020_i/processing_system7_0_axi_pe
 Applied set_property DONT_TOUCH = true for xc7z020_i/processing_system7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for xc7z020_i/rst_processing_system7_0_100M. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:36 ; elapsed = 00:02:22 . Memory (MB): peak = 1469.023 ; gain = 579.984 ; free physical = 125 ; free virtual = 9373
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:27 ; elapsed = 00:02:09 . Memory (MB): peak = 1495.020 ; gain = 605.984 ; free physical = 3003 ; free virtual = 11896
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4471] merging register 'k_1_reg_461_reg[7:0]' into 'c_addr_3_reg_466_reg[7:0]' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math.v:308]
+INFO: [Synth 8-4471] merging register 'k_1_reg_502_reg[7:0]' into 'c_addr_3_reg_507_reg[7:0]' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math.v:352]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math.v:264]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math.v:269]
 INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
-INFO: [Synth 8-5546] ROM "exitcond1_fu_207_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "exitcond2_fu_190_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "exitcond_fu_236_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "exitcond1_fu_207_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "exitcond2_fu_190_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "exitcond_fu_236_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "exitcond_fu_401_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "exitcond1_fu_212_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond2_fu_245_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "exitcond_fu_401_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "exitcond1_fu_212_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond2_fu_245_p2" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-4471] merging register 'seq_cnt_en_reg' into 'from_sys_reg' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/proc_sys_reset_v5_0/hdl/src/vhdl/sequence_psr.vhd:222]
 INFO: [Synth 8-3971] The signal gen_write[1].mem_reg was recognized as a true dual port RAM template.
-INFO: [Synth 8-3971] The signal gen_write[1].mem_reg was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal ram_reg was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:39 ; elapsed = 00:02:25 . Memory (MB): peak = 1469.023 ; gain = 579.984 ; free physical = 120 ; free virtual = 9368
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:33 ; elapsed = 00:02:15 . Memory (MB): peak = 1495.020 ; gain = 605.984 ; free physical = 2989 ; free virtual = 11882
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1477,11 +1547,15 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-3538] Detected potentially large (wide) register int_output_V_reg [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_PERIPH_BUS_s_axi.v:790]
+INFO: [Synth 8-3538] Detected potentially large (wide) register tmp_2_reg_530_reg [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math.v:373]
+INFO: [Synth 8-3538] Detected potentially large (wide) register p_Repl2_1_reg_184_reg [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math.v:250]
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input     32 Bit       Adders := 1     
 	   2 Input     12 Bit       Adders := 6     
 	   2 Input     10 Bit       Adders := 2     
-	   2 Input      9 Bit       Adders := 5     
+	   2 Input      9 Bit       Adders := 4     
 	   2 Input      8 Bit       Adders := 7     
 	   2 Input      6 Bit       Adders := 3     
 	   2 Input      5 Bit       Adders := 4     
@@ -1491,38 +1565,38 @@ Detailed RTL Component Info :
 	   2 Input      8 Bit         XORs := 1     
 	   2 Input      1 Bit         XORs := 2     
 +---Registers : 
+	             2048 Bit    Registers := 2     
+	             2040 Bit    Registers := 1     
 	               66 Bit    Registers := 4     
 	               47 Bit    Registers := 2     
 	               32 Bit    Registers := 7     
 	               14 Bit    Registers := 2     
 	               12 Bit    Registers := 8     
 	               10 Bit    Registers := 1     
-	                9 Bit    Registers := 3     
-	                8 Bit    Registers := 17    
-	                7 Bit    Registers := 1     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 18    
 	                6 Bit    Registers := 1     
 	                5 Bit    Registers := 4     
 	                4 Bit    Registers := 6     
 	                3 Bit    Registers := 3     
 	                2 Bit    Registers := 11    
-	                1 Bit    Registers := 56    
+	                1 Bit    Registers := 55    
 +---RAMs : 
 	               2K Bit         RAMs := 1     
 	             1024 Bit         RAMs := 2     
 +---Muxes : 
 	   2 Input     66 Bit        Muxes := 4     
 	   2 Input     47 Bit        Muxes := 2     
-	   5 Input     32 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 12    
+	   2 Input     32 Bit        Muxes := 10    
 	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 5     
 	  13 Input     12 Bit        Muxes := 1     
-	   2 Input     12 Bit        Muxes := 4     
+	   2 Input     11 Bit        Muxes := 1     
 	   2 Input      9 Bit        Muxes := 4     
-	   2 Input      8 Bit        Muxes := 4     
-	   2 Input      6 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 7     
+	   2 Input      6 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 6     
-	   2 Input      4 Bit        Muxes := 19    
-	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 18    
 	   6 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 9     
 	   4 Input      2 Bit        Muxes := 1     
@@ -1534,6 +1608,9 @@ Finished RTL Component Statistics
 ---------------------------------------------------------------------------------
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-3538] Detected potentially large (wide) register int_output_V_reg [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_PERIPH_BUS_s_axi.v:790]
+INFO: [Synth 8-3538] Detected potentially large (wide) register tmp_2_reg_530_reg [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math.v:373]
+INFO: [Synth 8-3538] Detected potentially large (wide) register p_Repl2_1_reg_184_reg [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math.v:250]
 Hierarchical RTL Component report 
 Module bigint_math_PERIPH_BUS_s_axi_ram 
 Detailed RTL Component Info : 
@@ -1541,49 +1618,50 @@ Detailed RTL Component Info :
 	               32 Bit    Registers := 2     
 +---RAMs : 
 	             1024 Bit         RAMs := 1     
-Module bigint_math_PERIPH_BUS_s_axi_ram__parameterized0 
-Detailed RTL Component Info : 
-+---Registers : 
-	               32 Bit    Registers := 2     
-+---RAMs : 
-	               2K Bit         RAMs := 1     
 Module bigint_math_PERIPH_BUS_s_axi 
 Detailed RTL Component Info : 
 +---XORs : 
 	   2 Input      1 Bit         XORs := 2     
 +---Registers : 
+	             2048 Bit    Registers := 1     
 	               32 Bit    Registers := 1     
 	               10 Bit    Registers := 1     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 13    
+	                1 Bit    Registers := 12    
 +---Muxes : 
-	   5 Input     32 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 4     
-	   2 Input      6 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
 	   2 Input      5 Bit        Muxes := 1     
 	   6 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 8     
+Module bigint_math_c_ram 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
++---RAMs : 
+	               2K Bit         RAMs := 1     
 Module bigint_math 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      9 Bit       Adders := 3     
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 2     
 	   2 Input      8 Bit       Adders := 6     
 +---XORs : 
 	   2 Input      8 Bit         XORs := 1     
 +---Registers : 
+	             2048 Bit    Registers := 1     
+	             2040 Bit    Registers := 1     
+	               32 Bit    Registers := 2     
 	               12 Bit    Registers := 1     
-	                9 Bit    Registers := 1     
-	                8 Bit    Registers := 15    
-	                7 Bit    Registers := 1     
+	                8 Bit    Registers := 14    
 	                1 Bit    Registers := 2     
 +---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
 	  13 Input     12 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 4     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 7     
 	   2 Input      5 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 5     
 Module axi_protocol_converter_v2_1_9_b2s_incr_cmd 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1753,23 +1831,19 @@ BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:01:40 ; elapsed = 00:02:26 . Memory (MB): peak = 1469.023 ; gain = 579.984 ; free physical = 121 ; free virtual = 9369
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:01:33 ; elapsed = 00:02:15 . Memory (MB): peak = 1495.020 ; gain = 605.984 ; free physical = 2989 ; free virtual = 11882
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4471] merging register 'inst/a_load_reg_425_reg[7:0]' into 'inst/a_load_reg_425_reg[7:0]' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math.v:287]
-INFO: [Synth 8-4471] merging register 'inst/b_load_reg_419_reg[7:0]' into 'inst/b_load_reg_419_reg[7:0]' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math.v:288]
-INFO: [Synth 8-4471] merging register 'inst/a_load_reg_425_reg[7:0]' into 'inst/a_load_reg_425_reg[7:0]' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math.v:287]
-INFO: [Synth 8-4471] merging register 'inst/reg_186_reg[7:0]' into 'inst/reg_186_reg[7:0]' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math.v:340]
-INFO: [Synth 8-4471] merging register 'inst/b_load_reg_419_reg[7:0]' into 'inst/b_load_reg_419_reg[7:0]' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math.v:288]
-INFO: [Synth 8-5546] ROM "inst/exitcond_fu_236_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "inst/exitcond2_fu_190_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-4471] merging register 'inst/a_load_reg_470_reg[7:0]' into 'inst/a_load_reg_470_reg[7:0]' [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math.v:331]
+INFO: [Synth 8-5546] ROM "inst/exitcond2_fu_245_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inst/exitcond1_fu_212_p2" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw_pipe/m_payload_i_reg' and it is trimmed from '66' to '62' bits. [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:318]
 INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar_pipe/m_payload_i_reg' and it is trimmed from '66' to '62' bits. [/home/linux/Documents/DLA/source/fw/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ipshared/xilinx.com/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:318]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:01:42 ; elapsed = 00:02:29 . Memory (MB): peak = 1469.023 ; gain = 579.984 ; free physical = 120 ; free virtual = 9369
+Finished Cross Boundary Optimization : Time (s): cpu = 00:01:40 ; elapsed = 00:02:22 . Memory (MB): peak = 1495.020 ; gain = 605.984 ; free physical = 2971 ; free virtual = 11872
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:01:42 ; elapsed = 00:02:29 . Memory (MB): peak = 1469.023 ; gain = 579.984 ; free physical = 120 ; free virtual = 9369
+Finished Parallel Reinference  : Time (s): cpu = 00:01:40 ; elapsed = 00:02:22 . Memory (MB): peak = 1495.020 ; gain = 605.984 ; free physical = 2971 ; free virtual = 11872
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -1778,7 +1852,7 @@ Report RTL Partitions:
 +-+--------------+------------+----------+
 INFO: [Synth 8-3971] The signal inst/bigint_math_PERIPH_BUS_s_axi_U/int_a/gen_write[1].mem_reg was recognized as a true dual port RAM template.
 INFO: [Synth 8-3971] The signal inst/bigint_math_PERIPH_BUS_s_axi_U/int_b/gen_write[1].mem_reg was recognized as a true dual port RAM template.
-INFO: [Synth 8-3971] The signal inst/bigint_math_PERIPH_BUS_s_axi_U/int_c/gen_write[1].mem_reg was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal inst/c_U/bigint_math_c_ram_U/ram_reg was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
@@ -1789,7 +1863,7 @@ Block RAM: Preliminary Mapping  Report (see note below)
 +---------------------------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 |bigint_math_PERIPH_BUS_s_axi_ram | gen_write[1].mem_reg | 32 x 32(READ_FIRST)    | W | R | 32 x 32(READ_FIRST)    | W | R | Port A and B     | 0      | 1      | 
 |bigint_math_PERIPH_BUS_s_axi_ram | gen_write[1].mem_reg | 32 x 32(READ_FIRST)    | W | R | 32 x 32(READ_FIRST)    | W | R | Port A and B     | 0      | 1      | 
-|bigint_math_PERIPH_BUS_s_axi_ram | gen_write[1].mem_reg | 64 x 32(READ_FIRST)    | W | R | 64 x 32(READ_FIRST)    | W | R | Port A and B     | 0      | 1      | 
+|bigint_math_c_ram                | ram_reg              | 256 x 8(WRITE_FIRST)   | W | R | 256 x 8(WRITE_FIRST)   | W | R | Port A and B     | 1      | 0      | 
 +---------------------------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
@@ -1799,7 +1873,25 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 Start Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance 'xc7z020_i/bigint_math_0/inst/bigint_math_PERIPH_BUS_s_axi_U/int_a_shift_reg[0]' (FDE) to 'xc7z020_i/bigint_math_0/inst/j_1_reg_409_reg[0]'
+INFO: [Synth 8-3886] merging instance 'xc7z020_i/bigint_math_0/inst/bigint_math_PERIPH_BUS_s_axi_U/int_b_shift_reg[0]' (FDE) to 'xc7z020_i/bigint_math_0/inst/i_2_reg_432_reg[0]'
+INFO: [Synth 8-3886] merging instance 'xc7z020_i/bigint_math_0/inst/bigint_math_PERIPH_BUS_s_axi_U/int_a_shift_reg[0]' (FDE) to 'xc7z020_i/bigint_math_0/inst/j_1_reg_460_reg[0]'
+INFO: [Synth 8-3886] merging instance 'xc7z020_i/bigint_math_0/inst/tmp_2_cast_reg_452_reg[0]' (FDE) to 'xc7z020_i/bigint_math_0/inst/b_load_reg_447_reg[0]'
+INFO: [Synth 8-3886] merging instance 'xc7z020_i/bigint_math_0/inst/tmp_2_cast_reg_452_reg[1]' (FDE) to 'xc7z020_i/bigint_math_0/inst/b_load_reg_447_reg[1]'
+INFO: [Synth 8-3886] merging instance 'xc7z020_i/bigint_math_0/inst/tmp_2_cast_reg_452_reg[2]' (FDE) to 'xc7z020_i/bigint_math_0/inst/b_load_reg_447_reg[2]'
+INFO: [Synth 8-3886] merging instance 'xc7z020_i/bigint_math_0/inst/tmp_2_cast_reg_452_reg[3]' (FDE) to 'xc7z020_i/bigint_math_0/inst/b_load_reg_447_reg[3]'
+INFO: [Synth 8-3886] merging instance 'xc7z020_i/bigint_math_0/inst/tmp_2_cast_reg_452_reg[4]' (FDE) to 'xc7z020_i/bigint_math_0/inst/b_load_reg_447_reg[4]'
+INFO: [Synth 8-3886] merging instance 'xc7z020_i/bigint_math_0/inst/tmp_2_cast_reg_452_reg[5]' (FDE) to 'xc7z020_i/bigint_math_0/inst/b_load_reg_447_reg[5]'
+INFO: [Synth 8-3886] merging instance 'xc7z020_i/bigint_math_0/inst/tmp_2_cast_reg_452_reg[6]' (FDE) to 'xc7z020_i/bigint_math_0/inst/b_load_reg_447_reg[6]'
+INFO: [Synth 8-3886] merging instance 'xc7z020_i/bigint_math_0/inst/tmp_2_cast_reg_452_reg[7]' (FDE) to 'xc7z020_i/bigint_math_0/inst/b_load_reg_447_reg[7]'
+INFO: [Synth 8-3332] Sequential element (inst/tmp_2_cast_reg_452_reg[0]) is unused and will be removed from module xc7z020_bigint_math_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/tmp_2_cast_reg_452_reg[1]) is unused and will be removed from module xc7z020_bigint_math_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/tmp_2_cast_reg_452_reg[2]) is unused and will be removed from module xc7z020_bigint_math_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/tmp_2_cast_reg_452_reg[3]) is unused and will be removed from module xc7z020_bigint_math_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/tmp_2_cast_reg_452_reg[4]) is unused and will be removed from module xc7z020_bigint_math_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/tmp_2_cast_reg_452_reg[5]) is unused and will be removed from module xc7z020_bigint_math_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/tmp_2_cast_reg_452_reg[6]) is unused and will be removed from module xc7z020_bigint_math_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/tmp_2_cast_reg_452_reg[7]) is unused and will be removed from module xc7z020_bigint_math_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/bigint_math_PERIPH_BUS_s_axi_U/int_b_shift_reg[0]) is unused and will be removed from module xc7z020_bigint_math_0_1.
 INFO: [Synth 8-3332] Sequential element (inst/bigint_math_PERIPH_BUS_s_axi_U/int_a_shift_reg[0]) is unused and will be removed from module xc7z020_bigint_math_0_1.
 INFO: [Synth 8-3886] merging instance 'xc7z020_i/processing_system7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r_pipe/aresetn_d_reg[0]' (FDR) to 'xc7z020_i/processing_system7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/b_pipe/aresetn_d_reg[0]'
 INFO: [Synth 8-3886] merging instance 'xc7z020_i/processing_system7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/b_pipe/aresetn_d_reg[0]' (FDR) to 'xc7z020_i/processing_system7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw_pipe/aresetn_d_reg[0]'
@@ -1858,9 +1950,9 @@ WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GE
 WARNING: [Synth 8-3332] Sequential element (SEQ/bsr_dec_reg[1]) is unused and will be removed from module proc_sys_reset.
 WARNING: [Synth 8-3332] Sequential element (SEQ/pr_dec_reg[1]) is unused and will be removed from module proc_sys_reset.
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:01:52 ; elapsed = 00:02:39 . Memory (MB): peak = 1469.027 ; gain = 579.988 ; free physical = 130 ; free virtual = 9345
+Finished Area Optimization : Time (s): cpu = 00:02:06 ; elapsed = 00:02:49 . Memory (MB): peak = 1495.023 ; gain = 605.988 ; free physical = 2894 ; free virtual = 11806
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:01:52 ; elapsed = 00:02:39 . Memory (MB): peak = 1469.027 ; gain = 579.988 ; free physical = 130 ; free virtual = 9345
+Finished Parallel Area Optimization  : Time (s): cpu = 00:02:06 ; elapsed = 00:02:49 . Memory (MB): peak = 1495.023 ; gain = 605.988 ; free physical = 2894 ; free virtual = 11806
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -1874,10 +1966,11 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:18 ; elapsed = 00:03:05 . Memory (MB): peak = 1632.020 ; gain = 742.980 ; free physical = 150 ; free virtual = 9162
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:25 ; elapsed = 00:03:09 . Memory (MB): peak = 1670.016 ; gain = 780.980 ; free physical = 2719 ; free virtual = 11630
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-3971] The signal inst/c_U/bigint_math_c_ram_U/ram_reg was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:22 ; elapsed = 00:03:09 . Memory (MB): peak = 1671.316 ; gain = 782.277 ; free physical = 115 ; free virtual = 9124
+Finished Timing Optimization : Time (s): cpu = 00:02:47 ; elapsed = 00:03:31 . Memory (MB): peak = 1807.594 ; gain = 918.559 ; free physical = 2582 ; free virtual = 11493
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1892,25 +1985,23 @@ INFO: [Synth 8-3332] Sequential element (inst/gen_axilite.gen_b2s_conv.axilite_b
 INFO: [Synth 8-3332] Sequential element (inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/cmd_translator_0/wrap_cmd_0/axlen_cnt_reg[4]) is unused and will be removed from module xc7z020_auto_pc_0.
 INFO: [Synth 8-3332] Sequential element (inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.ar_channel_0/cmd_translator_0/incr_cmd_0/axlen_cnt_reg[8]) is unused and will be removed from module xc7z020_auto_pc_0.
 INFO: [Synth 8-3332] Sequential element (inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.ar_channel_0/cmd_translator_0/wrap_cmd_0/axlen_cnt_reg[4]) is unused and will be removed from module xc7z020_auto_pc_0.
-INFO: [Synth 8-3886] merging instance 'xc7z020_i/bigint_math_0/insti_4_1241' (FD) to 'xc7z020_i/bigint_math_0/insti_4_1240'
-INFO: [Synth 8-3332] Sequential element (insti_4_1241) is unused and will be removed from module xc7z020_bigint_math_0_1.
 INFO: [Synth 8-4480] The timing for the instance inst/bigint_math_PERIPH_BUS_s_axi_U/int_a/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance inst/bigint_math_PERIPH_BUS_s_axi_U/int_a/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance inst/bigint_math_PERIPH_BUS_s_axi_U/int_b/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance inst/bigint_math_PERIPH_BUS_s_axi_U/int_b/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance inst/bigint_math_PERIPH_BUS_s_axi_U/int_c/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance inst/bigint_math_PERIPH_BUS_s_axi_U/int_c/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/c_U/bigint_math_c_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/c_U/bigint_math_c_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:29 ; elapsed = 00:03:17 . Memory (MB): peak = 1680.332 ; gain = 791.293 ; free physical = 120 ; free virtual = 9119
+Finished Technology Mapping : Time (s): cpu = 00:03:04 ; elapsed = 00:03:47 . Memory (MB): peak = 1807.594 ; gain = 918.559 ; free physical = 2574 ; free virtual = 11486
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:02:29 ; elapsed = 00:03:17 . Memory (MB): peak = 1680.332 ; gain = 791.293 ; free physical = 120 ; free virtual = 9119
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:03:04 ; elapsed = 00:03:47 . Memory (MB): peak = 1807.594 ; gain = 918.559 ; free physical = 2574 ; free virtual = 11486
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:02:29 ; elapsed = 00:03:17 . Memory (MB): peak = 1680.332 ; gain = 791.293 ; free physical = 120 ; free virtual = 9119
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:03:04 ; elapsed = 00:03:47 . Memory (MB): peak = 1807.594 ; gain = 918.559 ; free physical = 2574 ; free virtual = 11486
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -1944,7 +2035,7 @@ INFO: [Synth 8-4618] Found max_fanout attribute set to 20 on net \inst/gen_axili
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:33 ; elapsed = 00:03:20 . Memory (MB): peak = 1680.332 ; gain = 791.293 ; free physical = 119 ; free virtual = 9117
+Finished IO Insertion : Time (s): cpu = 00:03:07 ; elapsed = 00:03:50 . Memory (MB): peak = 1807.594 ; gain = 918.559 ; free physical = 2575 ; free virtual = 11486
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1957,7 +2048,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:33 ; elapsed = 00:03:20 . Memory (MB): peak = 1680.332 ; gain = 791.293 ; free physical = 119 ; free virtual = 9117
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:07 ; elapsed = 00:03:51 . Memory (MB): peak = 1807.594 ; gain = 918.559 ; free physical = 2575 ; free virtual = 11486
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1969,25 +2060,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:34 ; elapsed = 00:03:21 . Memory (MB): peak = 1680.332 ; gain = 791.293 ; free physical = 119 ; free virtual = 9117
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:08 ; elapsed = 00:03:52 . Memory (MB): peak = 1807.594 ; gain = 918.559 ; free physical = 2575 ; free virtual = 11487
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:34 ; elapsed = 00:03:21 . Memory (MB): peak = 1680.332 ; gain = 791.293 ; free physical = 119 ; free virtual = 9117
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:08 ; elapsed = 00:03:52 . Memory (MB): peak = 1807.594 ; gain = 918.559 ; free physical = 2575 ; free virtual = 11487
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:34 ; elapsed = 00:03:21 . Memory (MB): peak = 1680.332 ; gain = 791.293 ; free physical = 119 ; free virtual = 9117
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:09 ; elapsed = 00:03:53 . Memory (MB): peak = 1807.594 ; gain = 918.559 ; free physical = 2575 ; free virtual = 11487
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:34 ; elapsed = 00:03:21 . Memory (MB): peak = 1680.332 ; gain = 791.293 ; free physical = 119 ; free virtual = 9117
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:09 ; elapsed = 00:03:53 . Memory (MB): peak = 1807.594 ; gain = 918.559 ; free physical = 2575 ; free virtual = 11487
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2022,81 +2113,84 @@ Report Cell Usage:
 +------+---------+------+
 |1     |BIBUF    |   130|
 |2     |BUFG     |     4|
-|3     |CARRY4   |    42|
-|4     |LUT1     |   174|
-|5     |LUT2     |   108|
+|3     |CARRY4   |    48|
+|4     |LUT1     |   204|
+|5     |LUT2     |    89|
 |6     |LUT3     |   325|
-|7     |LUT4     |    86|
-|8     |LUT5     |   179|
-|9     |LUT6     |   270|
-|10    |MUXF7    |    21|
-|11    |PS7      |     1|
-|12    |RAMB36E1 |     3|
-|13    |SRL16    |     1|
-|14    |SRL16E   |    22|
-|15    |SRLC32E  |    47|
-|16    |FDR      |     8|
-|17    |FDRE     |   996|
-|18    |FDSE     |    56|
-|19    |OBUFT    |     6|
+|7     |LUT4     |    99|
+|8     |LUT5     |   412|
+|9     |LUT6     |   777|
+|10    |MUXF7    |   143|
+|11    |MUXF8    |    63|
+|12    |PS7      |     1|
+|13    |RAMB18E1 |     1|
+|14    |RAMB36E1 |     2|
+|15    |SRL16    |     1|
+|16    |SRL16E   |    22|
+|17    |SRLC32E  |    47|
+|18    |FDR      |     8|
+|19    |FDRE     |  7087|
+|20    |FDSE     |    64|
+|21    |OBUFT    |     6|
 +------+---------+------+
 
 Report Instance Areas: 
 +------+---------------------------------------------------+--------------------------------------------------------------+------+
 |      |Instance                                           |Module                                                        |Cells |
 +------+---------------------------------------------------+--------------------------------------------------------------+------+
-|1     |top                                                |                                                              |  2479|
-|2     |  xc7z020_i                                        |xc7z020                                                       |  2473|
-|3     |    bigint_math_0                                  |xc7z020_bigint_math_0_1                                       |   969|
-|4     |      inst                                         |bigint_math                                                   |   772|
-|5     |        bigint_math_PERIPH_BUS_s_axi_U             |bigint_math_PERIPH_BUS_s_axi                                  |   392|
-|6     |          int_a                                    |bigint_math_PERIPH_BUS_s_axi_ram                              |    47|
-|7     |          int_b                                    |bigint_math_PERIPH_BUS_s_axi_ram_5                            |    37|
-|8     |          int_c                                    |bigint_math_PERIPH_BUS_s_axi_ram__parameterized0              |   145|
-|9     |    processing_system7_0                           |xc7z020_processing_system7_0_1                                |   247|
-|10    |      inst                                         |processing_system7_v5_5_processing_system7                    |   247|
-|11    |    processing_system7_0_axi_periph                |xc7z020_processing_system7_0_axi_periph_1                     |  1191|
-|12    |      s00_couplers                                 |s00_couplers_imp_WJDTZ8                                       |  1191|
-|13    |        auto_pc                                    |xc7z020_auto_pc_0                                             |  1191|
-|14    |          inst                                     |axi_protocol_converter_v2_1_9_axi_protocol_converter          |  1191|
-|15    |            \gen_axilite.gen_b2s_conv.axilite_b2s  |axi_protocol_converter_v2_1_9_b2s                             |  1191|
-|16    |              \RD.ar_channel_0                     |axi_protocol_converter_v2_1_9_b2s_ar_channel                  |   181|
-|17    |                ar_cmd_fsm_0                       |axi_protocol_converter_v2_1_9_b2s_rd_cmd_fsm                  |    27|
-|18    |                cmd_translator_0                   |axi_protocol_converter_v2_1_9_b2s_cmd_translator_2            |   142|
-|19    |                  incr_cmd_0                       |axi_protocol_converter_v2_1_9_b2s_incr_cmd_3                  |    48|
-|20    |                  wrap_cmd_0                       |axi_protocol_converter_v2_1_9_b2s_wrap_cmd_4                  |    89|
-|21    |              \RD.r_channel_0                      |axi_protocol_converter_v2_1_9_b2s_r_channel                   |   124|
-|22    |                rd_data_fifo_0                     |axi_protocol_converter_v2_1_9_b2s_simple_fifo__parameterized1 |    72|
-|23    |                transaction_fifo_0                 |axi_protocol_converter_v2_1_9_b2s_simple_fifo__parameterized2 |    38|
-|24    |              SI_REG                               |axi_register_slice_v2_1_9_axi_register_slice                  |   627|
-|25    |                ar_pipe                            |axi_register_slice_v2_1_9_axic_register_slice                 |   217|
-|26    |                aw_pipe                            |axi_register_slice_v2_1_9_axic_register_slice_1               |   216|
-|27    |                b_pipe                             |axi_register_slice_v2_1_9_axic_register_slice__parameterized1 |    48|
-|28    |                r_pipe                             |axi_register_slice_v2_1_9_axic_register_slice__parameterized2 |   146|
-|29    |              \WR.aw_channel_0                     |axi_protocol_converter_v2_1_9_b2s_aw_channel                  |   187|
-|30    |                aw_cmd_fsm_0                       |axi_protocol_converter_v2_1_9_b2s_wr_cmd_fsm                  |    33|
-|31    |                cmd_translator_0                   |axi_protocol_converter_v2_1_9_b2s_cmd_translator              |   138|
-|32    |                  incr_cmd_0                       |axi_protocol_converter_v2_1_9_b2s_incr_cmd                    |    46|
-|33    |                  wrap_cmd_0                       |axi_protocol_converter_v2_1_9_b2s_wrap_cmd                    |    88|
-|34    |              \WR.b_channel_0                      |axi_protocol_converter_v2_1_9_b2s_b_channel                   |    70|
-|35    |                bid_fifo_0                         |axi_protocol_converter_v2_1_9_b2s_simple_fifo                 |    38|
-|36    |                bresp_fifo_0                       |axi_protocol_converter_v2_1_9_b2s_simple_fifo__parameterized0 |     8|
-|37    |    rst_processing_system7_0_100M                  |xc7z020_rst_processing_system7_0_100M_2                       |    66|
-|38    |      U0                                           |proc_sys_reset                                                |    66|
-|39    |        EXT_LPF                                    |lpf                                                           |    23|
-|40    |          \ACTIVE_LOW_AUX.ACT_LO_AUX               |cdc_sync                                                      |     6|
-|41    |          \ACTIVE_LOW_EXT.ACT_LO_EXT               |cdc_sync_0                                                    |     6|
-|42    |        SEQ                                        |sequence_psr                                                  |    38|
-|43    |          SEQ_COUNTER                              |upcnt_n                                                       |    13|
+|1     |top                                                |                                                              |  9533|
+|2     |  xc7z020_i                                        |xc7z020                                                       |  9527|
+|3     |    bigint_math_0                                  |xc7z020_bigint_math_0_1                                       |  8023|
+|4     |      inst                                         |bigint_math                                                   |  8023|
+|5     |        bigint_math_PERIPH_BUS_s_axi_U             |bigint_math_PERIPH_BUS_s_axi                                  |  3266|
+|6     |          int_a                                    |bigint_math_PERIPH_BUS_s_axi_ram                              |    74|
+|7     |          int_b                                    |bigint_math_PERIPH_BUS_s_axi_ram_5                            |    15|
+|8     |        c_U                                        |bigint_math_c                                                 |    81|
+|9     |          bigint_math_c_ram_U                      |bigint_math_c_ram                                             |    81|
+|10    |    processing_system7_0                           |xc7z020_processing_system7_0_1                                |   247|
+|11    |      inst                                         |processing_system7_v5_5_processing_system7                    |   247|
+|12    |    processing_system7_0_axi_periph                |xc7z020_processing_system7_0_axi_periph_1                     |  1191|
+|13    |      s00_couplers                                 |s00_couplers_imp_WJDTZ8                                       |  1191|
+|14    |        auto_pc                                    |xc7z020_auto_pc_0                                             |  1191|
+|15    |          inst                                     |axi_protocol_converter_v2_1_9_axi_protocol_converter          |  1191|
+|16    |            \gen_axilite.gen_b2s_conv.axilite_b2s  |axi_protocol_converter_v2_1_9_b2s                             |  1191|
+|17    |              \RD.ar_channel_0                     |axi_protocol_converter_v2_1_9_b2s_ar_channel                  |   181|
+|18    |                ar_cmd_fsm_0                       |axi_protocol_converter_v2_1_9_b2s_rd_cmd_fsm                  |    27|
+|19    |                cmd_translator_0                   |axi_protocol_converter_v2_1_9_b2s_cmd_translator_2            |   142|
+|20    |                  incr_cmd_0                       |axi_protocol_converter_v2_1_9_b2s_incr_cmd_3                  |    48|
+|21    |                  wrap_cmd_0                       |axi_protocol_converter_v2_1_9_b2s_wrap_cmd_4                  |    89|
+|22    |              \RD.r_channel_0                      |axi_protocol_converter_v2_1_9_b2s_r_channel                   |   124|
+|23    |                rd_data_fifo_0                     |axi_protocol_converter_v2_1_9_b2s_simple_fifo__parameterized1 |    72|
+|24    |                transaction_fifo_0                 |axi_protocol_converter_v2_1_9_b2s_simple_fifo__parameterized2 |    38|
+|25    |              SI_REG                               |axi_register_slice_v2_1_9_axi_register_slice                  |   627|
+|26    |                ar_pipe                            |axi_register_slice_v2_1_9_axic_register_slice                 |   217|
+|27    |                aw_pipe                            |axi_register_slice_v2_1_9_axic_register_slice_1               |   216|
+|28    |                b_pipe                             |axi_register_slice_v2_1_9_axic_register_slice__parameterized1 |    48|
+|29    |                r_pipe                             |axi_register_slice_v2_1_9_axic_register_slice__parameterized2 |   146|
+|30    |              \WR.aw_channel_0                     |axi_protocol_converter_v2_1_9_b2s_aw_channel                  |   187|
+|31    |                aw_cmd_fsm_0                       |axi_protocol_converter_v2_1_9_b2s_wr_cmd_fsm                  |    33|
+|32    |                cmd_translator_0                   |axi_protocol_converter_v2_1_9_b2s_cmd_translator              |   138|
+|33    |                  incr_cmd_0                       |axi_protocol_converter_v2_1_9_b2s_incr_cmd                    |    46|
+|34    |                  wrap_cmd_0                       |axi_protocol_converter_v2_1_9_b2s_wrap_cmd                    |    88|
+|35    |              \WR.b_channel_0                      |axi_protocol_converter_v2_1_9_b2s_b_channel                   |    70|
+|36    |                bid_fifo_0                         |axi_protocol_converter_v2_1_9_b2s_simple_fifo                 |    38|
+|37    |                bresp_fifo_0                       |axi_protocol_converter_v2_1_9_b2s_simple_fifo__parameterized0 |     8|
+|38    |    rst_processing_system7_0_100M                  |xc7z020_rst_processing_system7_0_100M_2                       |    66|
+|39    |      U0                                           |proc_sys_reset                                                |    66|
+|40    |        EXT_LPF                                    |lpf                                                           |    23|
+|41    |          \ACTIVE_LOW_AUX.ACT_LO_AUX               |cdc_sync                                                      |     6|
+|42    |          \ACTIVE_LOW_EXT.ACT_LO_EXT               |cdc_sync_0                                                    |     6|
+|43    |        SEQ                                        |sequence_psr                                                  |    38|
+|44    |          SEQ_COUNTER                              |upcnt_n                                                       |    13|
 +------+---------------------------------------------------+--------------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:34 ; elapsed = 00:03:21 . Memory (MB): peak = 1680.332 ; gain = 791.293 ; free physical = 119 ; free virtual = 9117
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:09 ; elapsed = 00:03:53 . Memory (MB): peak = 1807.594 ; gain = 918.559 ; free physical = 2575 ; free virtual = 11487
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 128 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:12 ; elapsed = 00:02:15 . Memory (MB): peak = 1680.332 ; gain = 419.754 ; free physical = 119 ; free virtual = 9117
-Synthesis Optimization Complete : Time (s): cpu = 00:02:34 ; elapsed = 00:03:21 . Memory (MB): peak = 1680.340 ; gain = 791.301 ; free physical = 120 ; free virtual = 9118
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:50 ; elapsed = 00:02:54 . Memory (MB): peak = 1807.594 ; gain = 521.020 ; free physical = 2575 ; free virtual = 11487
+Synthesis Optimization Complete : Time (s): cpu = 00:03:09 ; elapsed = 00:03:53 . Memory (MB): peak = 1807.602 ; gain = 918.566 ; free physical = 2577 ; free virtual = 11488
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 54 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 60 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -2106,8 +2200,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   SRL16 => SRL16E: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-248 Infos, 218 Warnings, 100 Critical Warnings and 0 Errors encountered.
+272 Infos, 218 Warnings, 100 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:26 ; elapsed = 00:03:12 . Memory (MB): peak = 1680.340 ; gain = 691.688 ; free physical = 119 ; free virtual = 9120
-report_utilization: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.48 . Memory (MB): peak = 1712.352 ; gain = 0.000 ; free physical = 149 ; free virtual = 9120
-INFO: [Common 17-206] Exiting Vivado at Wed Feb 15 21:28:23 2017...
+synth_design: Time (s): cpu = 00:03:08 ; elapsed = 00:03:51 . Memory (MB): peak = 1807.602 ; gain = 818.953 ; free physical = 2570 ; free virtual = 11482
+report_utilization: Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.28 . Memory (MB): peak = 1839.613 ; gain = 0.000 ; free physical = 2568 ; free virtual = 11481
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 15 23:04:49 2017...

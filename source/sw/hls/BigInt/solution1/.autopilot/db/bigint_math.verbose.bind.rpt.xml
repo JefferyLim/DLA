@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'bigint_math'" level="0">
-<item name = "Date">Wed Feb 15 21:19:56 2017
+<item name = "Date">Wed Feb 15 22:56:34 2017
 </item>
 <item name = "Version">2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)</item>
 <item name = "Project">BigInt</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">147970, 147970, 147971, 147971, none</column>
+<column name="">4295081860, 4295081860, 4295081861, 4295081861, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,9 +35,9 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">256, 256, 1, -, -, 256, no</column>
-<column name="- Loop 2">147712, 147712, 1154, -, -, 128, no</column>
-<column name=" + Loop 2.1">1152, 1152, 9, -, -, 128, no</column>
+<column name="- Loop 1">115072, 115072, 899, -, -, 128, no</column>
+<column name=" + Loop 1.1">896, 896, 7, -, -, 128, no</column>
+<column name="- Loop 2">4294966786, 4294966786, 2, -, -, 2147483393, no</column>
 </table>
 </item>
 </section>

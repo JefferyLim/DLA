@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="bigint_math" xd:componentRef="bigint_math" xd:initiationInterval="147971" xd:clockPeriod="10.000000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="bigint_math" xd:componentRef="bigint_math" xd:initiationInterval="x" xd:clockPeriod="10.000000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
   <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_PERIPH_BUS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
   <xd:arg xd:name="a[]" xd:originalName="a" xd:direction="in" xd:interfaceRef="s_axi_PERIPH_BUS" xd:busTypeRef="axilite" xd:offset="0x80" xd:arraySize="128" xd:dataWidth="8"/>
   <xd:arg xd:name="b[]" xd:originalName="b" xd:direction="in" xd:interfaceRef="s_axi_PERIPH_BUS" xd:busTypeRef="axilite" xd:offset="0x100" xd:arraySize="128" xd:dataWidth="8"/>
-  <xd:arg xd:name="c[]" xd:originalName="c" xd:direction="inout" xd:interfaceRef="s_axi_PERIPH_BUS" xd:busTypeRef="axilite" xd:offset="0x200" xd:arraySize="256" xd:dataWidth="8"/>
-  <xd:latencyEstimates xd:best-case="147970" xd:worst-case="147970" xd:average-case="147970"/>
-  <xd:resourceEstimates xd:LUT="439" xd:FF="442" xd:BRAM="6" xd:DSP="2"/>
+  <xd:arg xd:name="*(output)" xd:originalName="output" xd:direction="out" xd:interfaceRef="s_axi_PERIPH_BUS" xd:busTypeRef="axilite" xd:offset="0x180" xd:statusOffset="0x280" xd:handshakeRef="ap_vld" xd:dataWidth="2048"/>
+  <xd:latencyEstimates xd:best-case="4295081860" xd:worst-case="4295081860" xd:average-case="4295081860"/>
+  <xd:resourceEstimates xd:LUT="6590" xd:FF="6544" xd:BRAM="5" xd:DSP="2"/>
 </xd:acceleratorMap>

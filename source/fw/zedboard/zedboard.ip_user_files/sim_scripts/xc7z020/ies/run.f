@@ -42,6 +42,7 @@
   "../../../bd/xc7z020/hdl/xc7z020.v" \
   "../../../ipstatic/bigint_math_v1_0/hdl/verilog/bigint_math_PERIPH_BUS_s_axi.v" \
   "../../../ipstatic/bigint_math_v1_0/hdl/verilog/bigint_math.v" \
+  "../../../ipstatic/bigint_math_v1_0/hdl/verilog/bigint_math_c.v" \
   "../../../bd/xc7z020/ip/xc7z020_bigint_math_0_1/sim/xc7z020_bigint_math_0_1.v" \
 -endlib
 -makelib ies/generic_baseblocks_v2_1_0 \

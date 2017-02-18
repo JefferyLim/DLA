@@ -47,11 +47,8 @@ port (
     b_address0            :in   STD_LOGIC_VECTOR(6 downto 0);
     b_ce0                 :in   STD_LOGIC;
     b_q0                  :out  STD_LOGIC_VECTOR(7 downto 0);
-    c_address0            :in   STD_LOGIC_VECTOR(7 downto 0);
-    c_ce0                 :in   STD_LOGIC;
-    c_we0                 :in   STD_LOGIC;
-    c_d0                  :in   STD_LOGIC_VECTOR(7 downto 0);
-    c_q0                  :out  STD_LOGIC_VECTOR(7 downto 0)
+    output_V              :in   STD_LOGIC_VECTOR(2047 downto 0);
+    output_V_ap_vld       :in   STD_LOGIC
 );
 end entity bigint_math_PERIPH_BUS_s_axi;
 
@@ -74,6 +71,137 @@ end entity bigint_math_PERIPH_BUS_s_axi;
 --         bit 0  - Channel 0 (ap_done)
 --         bit 1  - Channel 1 (ap_ready)
 --         others - reserved
+-- 0x180 : Data signal of output_V
+--         bit 31~0 - output_V[31:0] (Read)
+-- 0x184 : Data signal of output_V
+--         bit 31~0 - output_V[63:32] (Read)
+-- 0x188 : Data signal of output_V
+--         bit 31~0 - output_V[95:64] (Read)
+-- 0x18c : Data signal of output_V
+--         bit 31~0 - output_V[127:96] (Read)
+-- 0x190 : Data signal of output_V
+--         bit 31~0 - output_V[159:128] (Read)
+-- 0x194 : Data signal of output_V
+--         bit 31~0 - output_V[191:160] (Read)
+-- 0x198 : Data signal of output_V
+--         bit 31~0 - output_V[223:192] (Read)
+-- 0x19c : Data signal of output_V
+--         bit 31~0 - output_V[255:224] (Read)
+-- 0x1a0 : Data signal of output_V
+--         bit 31~0 - output_V[287:256] (Read)
+-- 0x1a4 : Data signal of output_V
+--         bit 31~0 - output_V[319:288] (Read)
+-- 0x1a8 : Data signal of output_V
+--         bit 31~0 - output_V[351:320] (Read)
+-- 0x1ac : Data signal of output_V
+--         bit 31~0 - output_V[383:352] (Read)
+-- 0x1b0 : Data signal of output_V
+--         bit 31~0 - output_V[415:384] (Read)
+-- 0x1b4 : Data signal of output_V
+--         bit 31~0 - output_V[447:416] (Read)
+-- 0x1b8 : Data signal of output_V
+--         bit 31~0 - output_V[479:448] (Read)
+-- 0x1bc : Data signal of output_V
+--         bit 31~0 - output_V[511:480] (Read)
+-- 0x1c0 : Data signal of output_V
+--         bit 31~0 - output_V[543:512] (Read)
+-- 0x1c4 : Data signal of output_V
+--         bit 31~0 - output_V[575:544] (Read)
+-- 0x1c8 : Data signal of output_V
+--         bit 31~0 - output_V[607:576] (Read)
+-- 0x1cc : Data signal of output_V
+--         bit 31~0 - output_V[639:608] (Read)
+-- 0x1d0 : Data signal of output_V
+--         bit 31~0 - output_V[671:640] (Read)
+-- 0x1d4 : Data signal of output_V
+--         bit 31~0 - output_V[703:672] (Read)
+-- 0x1d8 : Data signal of output_V
+--         bit 31~0 - output_V[735:704] (Read)
+-- 0x1dc : Data signal of output_V
+--         bit 31~0 - output_V[767:736] (Read)
+-- 0x1e0 : Data signal of output_V
+--         bit 31~0 - output_V[799:768] (Read)
+-- 0x1e4 : Data signal of output_V
+--         bit 31~0 - output_V[831:800] (Read)
+-- 0x1e8 : Data signal of output_V
+--         bit 31~0 - output_V[863:832] (Read)
+-- 0x1ec : Data signal of output_V
+--         bit 31~0 - output_V[895:864] (Read)
+-- 0x1f0 : Data signal of output_V
+--         bit 31~0 - output_V[927:896] (Read)
+-- 0x1f4 : Data signal of output_V
+--         bit 31~0 - output_V[959:928] (Read)
+-- 0x1f8 : Data signal of output_V
+--         bit 31~0 - output_V[991:960] (Read)
+-- 0x1fc : Data signal of output_V
+--         bit 31~0 - output_V[1023:992] (Read)
+-- 0x200 : Data signal of output_V
+--         bit 31~0 - output_V[1055:1024] (Read)
+-- 0x204 : Data signal of output_V
+--         bit 31~0 - output_V[1087:1056] (Read)
+-- 0x208 : Data signal of output_V
+--         bit 31~0 - output_V[1119:1088] (Read)
+-- 0x20c : Data signal of output_V
+--         bit 31~0 - output_V[1151:1120] (Read)
+-- 0x210 : Data signal of output_V
+--         bit 31~0 - output_V[1183:1152] (Read)
+-- 0x214 : Data signal of output_V
+--         bit 31~0 - output_V[1215:1184] (Read)
+-- 0x218 : Data signal of output_V
+--         bit 31~0 - output_V[1247:1216] (Read)
+-- 0x21c : Data signal of output_V
+--         bit 31~0 - output_V[1279:1248] (Read)
+-- 0x220 : Data signal of output_V
+--         bit 31~0 - output_V[1311:1280] (Read)
+-- 0x224 : Data signal of output_V
+--         bit 31~0 - output_V[1343:1312] (Read)
+-- 0x228 : Data signal of output_V
+--         bit 31~0 - output_V[1375:1344] (Read)
+-- 0x22c : Data signal of output_V
+--         bit 31~0 - output_V[1407:1376] (Read)
+-- 0x230 : Data signal of output_V
+--         bit 31~0 - output_V[1439:1408] (Read)
+-- 0x234 : Data signal of output_V
+--         bit 31~0 - output_V[1471:1440] (Read)
+-- 0x238 : Data signal of output_V
+--         bit 31~0 - output_V[1503:1472] (Read)
+-- 0x23c : Data signal of output_V
+--         bit 31~0 - output_V[1535:1504] (Read)
+-- 0x240 : Data signal of output_V
+--         bit 31~0 - output_V[1567:1536] (Read)
+-- 0x244 : Data signal of output_V
+--         bit 31~0 - output_V[1599:1568] (Read)
+-- 0x248 : Data signal of output_V
+--         bit 31~0 - output_V[1631:1600] (Read)
+-- 0x24c : Data signal of output_V
+--         bit 31~0 - output_V[1663:1632] (Read)
+-- 0x250 : Data signal of output_V
+--         bit 31~0 - output_V[1695:1664] (Read)
+-- 0x254 : Data signal of output_V
+--         bit 31~0 - output_V[1727:1696] (Read)
+-- 0x258 : Data signal of output_V
+--         bit 31~0 - output_V[1759:1728] (Read)
+-- 0x25c : Data signal of output_V
+--         bit 31~0 - output_V[1791:1760] (Read)
+-- 0x260 : Data signal of output_V
+--         bit 31~0 - output_V[1823:1792] (Read)
+-- 0x264 : Data signal of output_V
+--         bit 31~0 - output_V[1855:1824] (Read)
+-- 0x268 : Data signal of output_V
+--         bit 31~0 - output_V[1887:1856] (Read)
+-- 0x26c : Data signal of output_V
+--         bit 31~0 - output_V[1919:1888] (Read)
+-- 0x270 : Data signal of output_V
+--         bit 31~0 - output_V[1951:1920] (Read)
+-- 0x274 : Data signal of output_V
+--         bit 31~0 - output_V[1983:1952] (Read)
+-- 0x278 : Data signal of output_V
+--         bit 31~0 - output_V[2015:1984] (Read)
+-- 0x27c : Data signal of output_V
+--         bit 31~0 - output_V[2047:2016] (Read)
+-- 0x280 : Control signal of output_V
+--         bit 0  - output_V_ap_vld (Read/COR)
+--         others - reserved
 -- 0x080 ~
 -- 0x0ff : Memory 'a' (32 * 8b)
 --         Word n : bit [ 7: 0] - a[4n]
@@ -86,27 +214,84 @@ end entity bigint_math_PERIPH_BUS_s_axi;
 --                  bit [15: 8] - b[4n+1]
 --                  bit [23:16] - b[4n+2]
 --                  bit [31:24] - b[4n+3]
--- 0x200 ~
--- 0x2ff : Memory 'c' (64 * 8b)
---         Word n : bit [ 7: 0] - c[4n]
---                  bit [15: 8] - c[4n+1]
---                  bit [23:16] - c[4n+2]
---                  bit [31:24] - c[4n+3]
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of bigint_math_PERIPH_BUS_s_axi is
     type states is (wridle, wrdata, wrresp, rdidle, rddata);  -- read and write fsm states
     signal wstate, wnext, rstate, rnext: states;
-    constant ADDR_AP_CTRL : INTEGER := 16#000#;
-    constant ADDR_GIE     : INTEGER := 16#004#;
-    constant ADDR_IER     : INTEGER := 16#008#;
-    constant ADDR_ISR     : INTEGER := 16#00c#;
-    constant ADDR_A_BASE  : INTEGER := 16#080#;
-    constant ADDR_A_HIGH  : INTEGER := 16#0ff#;
-    constant ADDR_B_BASE  : INTEGER := 16#100#;
-    constant ADDR_B_HIGH  : INTEGER := 16#17f#;
-    constant ADDR_C_BASE  : INTEGER := 16#200#;
-    constant ADDR_C_HIGH  : INTEGER := 16#2ff#;
+    constant ADDR_AP_CTRL          : INTEGER := 16#000#;
+    constant ADDR_GIE              : INTEGER := 16#004#;
+    constant ADDR_IER              : INTEGER := 16#008#;
+    constant ADDR_ISR              : INTEGER := 16#00c#;
+    constant ADDR_OUTPUT_V_DATA_0  : INTEGER := 16#180#;
+    constant ADDR_OUTPUT_V_DATA_1  : INTEGER := 16#184#;
+    constant ADDR_OUTPUT_V_DATA_2  : INTEGER := 16#188#;
+    constant ADDR_OUTPUT_V_DATA_3  : INTEGER := 16#18c#;
+    constant ADDR_OUTPUT_V_DATA_4  : INTEGER := 16#190#;
+    constant ADDR_OUTPUT_V_DATA_5  : INTEGER := 16#194#;
+    constant ADDR_OUTPUT_V_DATA_6  : INTEGER := 16#198#;
+    constant ADDR_OUTPUT_V_DATA_7  : INTEGER := 16#19c#;
+    constant ADDR_OUTPUT_V_DATA_8  : INTEGER := 16#1a0#;
+    constant ADDR_OUTPUT_V_DATA_9  : INTEGER := 16#1a4#;
+    constant ADDR_OUTPUT_V_DATA_10 : INTEGER := 16#1a8#;
+    constant ADDR_OUTPUT_V_DATA_11 : INTEGER := 16#1ac#;
+    constant ADDR_OUTPUT_V_DATA_12 : INTEGER := 16#1b0#;
+    constant ADDR_OUTPUT_V_DATA_13 : INTEGER := 16#1b4#;
+    constant ADDR_OUTPUT_V_DATA_14 : INTEGER := 16#1b8#;
+    constant ADDR_OUTPUT_V_DATA_15 : INTEGER := 16#1bc#;
+    constant ADDR_OUTPUT_V_DATA_16 : INTEGER := 16#1c0#;
+    constant ADDR_OUTPUT_V_DATA_17 : INTEGER := 16#1c4#;
+    constant ADDR_OUTPUT_V_DATA_18 : INTEGER := 16#1c8#;
+    constant ADDR_OUTPUT_V_DATA_19 : INTEGER := 16#1cc#;
+    constant ADDR_OUTPUT_V_DATA_20 : INTEGER := 16#1d0#;
+    constant ADDR_OUTPUT_V_DATA_21 : INTEGER := 16#1d4#;
+    constant ADDR_OUTPUT_V_DATA_22 : INTEGER := 16#1d8#;
+    constant ADDR_OUTPUT_V_DATA_23 : INTEGER := 16#1dc#;
+    constant ADDR_OUTPUT_V_DATA_24 : INTEGER := 16#1e0#;
+    constant ADDR_OUTPUT_V_DATA_25 : INTEGER := 16#1e4#;
+    constant ADDR_OUTPUT_V_DATA_26 : INTEGER := 16#1e8#;
+    constant ADDR_OUTPUT_V_DATA_27 : INTEGER := 16#1ec#;
+    constant ADDR_OUTPUT_V_DATA_28 : INTEGER := 16#1f0#;
+    constant ADDR_OUTPUT_V_DATA_29 : INTEGER := 16#1f4#;
+    constant ADDR_OUTPUT_V_DATA_30 : INTEGER := 16#1f8#;
+    constant ADDR_OUTPUT_V_DATA_31 : INTEGER := 16#1fc#;
+    constant ADDR_OUTPUT_V_DATA_32 : INTEGER := 16#200#;
+    constant ADDR_OUTPUT_V_DATA_33 : INTEGER := 16#204#;
+    constant ADDR_OUTPUT_V_DATA_34 : INTEGER := 16#208#;
+    constant ADDR_OUTPUT_V_DATA_35 : INTEGER := 16#20c#;
+    constant ADDR_OUTPUT_V_DATA_36 : INTEGER := 16#210#;
+    constant ADDR_OUTPUT_V_DATA_37 : INTEGER := 16#214#;
+    constant ADDR_OUTPUT_V_DATA_38 : INTEGER := 16#218#;
+    constant ADDR_OUTPUT_V_DATA_39 : INTEGER := 16#21c#;
+    constant ADDR_OUTPUT_V_DATA_40 : INTEGER := 16#220#;
+    constant ADDR_OUTPUT_V_DATA_41 : INTEGER := 16#224#;
+    constant ADDR_OUTPUT_V_DATA_42 : INTEGER := 16#228#;
+    constant ADDR_OUTPUT_V_DATA_43 : INTEGER := 16#22c#;
+    constant ADDR_OUTPUT_V_DATA_44 : INTEGER := 16#230#;
+    constant ADDR_OUTPUT_V_DATA_45 : INTEGER := 16#234#;
+    constant ADDR_OUTPUT_V_DATA_46 : INTEGER := 16#238#;
+    constant ADDR_OUTPUT_V_DATA_47 : INTEGER := 16#23c#;
+    constant ADDR_OUTPUT_V_DATA_48 : INTEGER := 16#240#;
+    constant ADDR_OUTPUT_V_DATA_49 : INTEGER := 16#244#;
+    constant ADDR_OUTPUT_V_DATA_50 : INTEGER := 16#248#;
+    constant ADDR_OUTPUT_V_DATA_51 : INTEGER := 16#24c#;
+    constant ADDR_OUTPUT_V_DATA_52 : INTEGER := 16#250#;
+    constant ADDR_OUTPUT_V_DATA_53 : INTEGER := 16#254#;
+    constant ADDR_OUTPUT_V_DATA_54 : INTEGER := 16#258#;
+    constant ADDR_OUTPUT_V_DATA_55 : INTEGER := 16#25c#;
+    constant ADDR_OUTPUT_V_DATA_56 : INTEGER := 16#260#;
+    constant ADDR_OUTPUT_V_DATA_57 : INTEGER := 16#264#;
+    constant ADDR_OUTPUT_V_DATA_58 : INTEGER := 16#268#;
+    constant ADDR_OUTPUT_V_DATA_59 : INTEGER := 16#26c#;
+    constant ADDR_OUTPUT_V_DATA_60 : INTEGER := 16#270#;
+    constant ADDR_OUTPUT_V_DATA_61 : INTEGER := 16#274#;
+    constant ADDR_OUTPUT_V_DATA_62 : INTEGER := 16#278#;
+    constant ADDR_OUTPUT_V_DATA_63 : INTEGER := 16#27c#;
+    constant ADDR_OUTPUT_V_CTRL    : INTEGER := 16#280#;
+    constant ADDR_A_BASE           : INTEGER := 16#080#;
+    constant ADDR_A_HIGH           : INTEGER := 16#0ff#;
+    constant ADDR_B_BASE           : INTEGER := 16#100#;
+    constant ADDR_B_HIGH           : INTEGER := 16#17f#;
     constant ADDR_BITS         : INTEGER := 10;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -129,6 +314,8 @@ architecture behave of bigint_math_PERIPH_BUS_s_axi is
     signal int_gie             : STD_LOGIC;
     signal int_ier             : UNSIGNED(1 downto 0);
     signal int_isr             : UNSIGNED(1 downto 0);
+    signal int_output_V        : UNSIGNED(2047 downto 0);
+    signal int_output_V_ap_vld : STD_LOGIC;
     -- memory signals
     signal int_a_address0      : UNSIGNED(4 downto 0);
     signal int_a_ce0           : STD_LOGIC;
@@ -160,21 +347,6 @@ architecture behave of bigint_math_PERIPH_BUS_s_axi is
     signal int_b_read          : STD_LOGIC;
     signal int_b_write         : STD_LOGIC;
     signal int_b_shift         : UNSIGNED(1 downto 0);
-    signal int_c_address0      : UNSIGNED(5 downto 0);
-    signal int_c_ce0           : STD_LOGIC;
-    signal int_c_we0           : STD_LOGIC;
-    signal int_c_be0           : UNSIGNED(3 downto 0);
-    signal int_c_d0            : UNSIGNED(31 downto 0);
-    signal int_c_q0            : UNSIGNED(31 downto 0);
-    signal int_c_address1      : UNSIGNED(5 downto 0);
-    signal int_c_ce1           : STD_LOGIC;
-    signal int_c_we1           : STD_LOGIC;
-    signal int_c_be1           : UNSIGNED(3 downto 0);
-    signal int_c_d1            : UNSIGNED(31 downto 0);
-    signal int_c_q1            : UNSIGNED(31 downto 0);
-    signal int_c_read          : STD_LOGIC;
-    signal int_c_write         : STD_LOGIC;
-    signal int_c_shift         : UNSIGNED(1 downto 0);
 
     component bigint_math_PERIPH_BUS_s_axi_ram is
         generic (
@@ -254,27 +426,6 @@ port map (
      be1      => int_b_be1,
      d1       => int_b_d1,
      q1       => int_b_q1);
--- int_c
-int_c : bigint_math_PERIPH_BUS_s_axi_ram
-generic map (
-     BYTES    => 4,
-     DEPTH    => 64,
-     AWIDTH   => log2(64))
-port map (
-     clk0     => ACLK,
-     address0 => int_c_address0,
-     ce0      => int_c_ce0,
-     we0      => int_c_we0,
-     be0      => int_c_be0,
-     d0       => int_c_d0,
-     q0       => int_c_q0,
-     clk1     => ACLK,
-     address1 => int_c_address1,
-     ce1      => int_c_ce1,
-     we1      => int_c_we1,
-     be1      => int_c_be1,
-     d1       => int_c_d1,
-     q1       => int_c_q1);
 
 -- ----------------------- AXI WRITE ---------------------
     AWREADY_t <=  '1' when wstate = wridle else '0';
@@ -341,7 +492,7 @@ port map (
     ARREADY <= ARREADY_t;
     RDATA   <= STD_LOGIC_VECTOR(rdata_data);
     RRESP   <= "00";  -- OKAY
-    RVALID_t  <= '1' when (rstate = rddata) and (int_a_read = '0') and (int_b_read = '0') and (int_c_read = '0') else '0';
+    RVALID_t  <= '1' when (rstate = rddata) and (int_a_read = '0') and (int_b_read = '0') else '0';
     RVALID    <= RVALID_t;
     ar_hs   <= ARVALID and ARREADY_t;
     raddr   <= UNSIGNED(ARADDR(ADDR_BITS-1 downto 0));
@@ -392,6 +543,136 @@ port map (
                         rdata_data <= (1 => int_ier(1), 0 => int_ier(0), others => '0');
                     when ADDR_ISR =>
                         rdata_data <= (1 => int_isr(1), 0 => int_isr(0), others => '0');
+                    when ADDR_OUTPUT_V_DATA_0 =>
+                        rdata_data <= RESIZE(int_output_V(31 downto 0), 32);
+                    when ADDR_OUTPUT_V_DATA_1 =>
+                        rdata_data <= RESIZE(int_output_V(63 downto 32), 32);
+                    when ADDR_OUTPUT_V_DATA_2 =>
+                        rdata_data <= RESIZE(int_output_V(95 downto 64), 32);
+                    when ADDR_OUTPUT_V_DATA_3 =>
+                        rdata_data <= RESIZE(int_output_V(127 downto 96), 32);
+                    when ADDR_OUTPUT_V_DATA_4 =>
+                        rdata_data <= RESIZE(int_output_V(159 downto 128), 32);
+                    when ADDR_OUTPUT_V_DATA_5 =>
+                        rdata_data <= RESIZE(int_output_V(191 downto 160), 32);
+                    when ADDR_OUTPUT_V_DATA_6 =>
+                        rdata_data <= RESIZE(int_output_V(223 downto 192), 32);
+                    when ADDR_OUTPUT_V_DATA_7 =>
+                        rdata_data <= RESIZE(int_output_V(255 downto 224), 32);
+                    when ADDR_OUTPUT_V_DATA_8 =>
+                        rdata_data <= RESIZE(int_output_V(287 downto 256), 32);
+                    when ADDR_OUTPUT_V_DATA_9 =>
+                        rdata_data <= RESIZE(int_output_V(319 downto 288), 32);
+                    when ADDR_OUTPUT_V_DATA_10 =>
+                        rdata_data <= RESIZE(int_output_V(351 downto 320), 32);
+                    when ADDR_OUTPUT_V_DATA_11 =>
+                        rdata_data <= RESIZE(int_output_V(383 downto 352), 32);
+                    when ADDR_OUTPUT_V_DATA_12 =>
+                        rdata_data <= RESIZE(int_output_V(415 downto 384), 32);
+                    when ADDR_OUTPUT_V_DATA_13 =>
+                        rdata_data <= RESIZE(int_output_V(447 downto 416), 32);
+                    when ADDR_OUTPUT_V_DATA_14 =>
+                        rdata_data <= RESIZE(int_output_V(479 downto 448), 32);
+                    when ADDR_OUTPUT_V_DATA_15 =>
+                        rdata_data <= RESIZE(int_output_V(511 downto 480), 32);
+                    when ADDR_OUTPUT_V_DATA_16 =>
+                        rdata_data <= RESIZE(int_output_V(543 downto 512), 32);
+                    when ADDR_OUTPUT_V_DATA_17 =>
+                        rdata_data <= RESIZE(int_output_V(575 downto 544), 32);
+                    when ADDR_OUTPUT_V_DATA_18 =>
+                        rdata_data <= RESIZE(int_output_V(607 downto 576), 32);
+                    when ADDR_OUTPUT_V_DATA_19 =>
+                        rdata_data <= RESIZE(int_output_V(639 downto 608), 32);
+                    when ADDR_OUTPUT_V_DATA_20 =>
+                        rdata_data <= RESIZE(int_output_V(671 downto 640), 32);
+                    when ADDR_OUTPUT_V_DATA_21 =>
+                        rdata_data <= RESIZE(int_output_V(703 downto 672), 32);
+                    when ADDR_OUTPUT_V_DATA_22 =>
+                        rdata_data <= RESIZE(int_output_V(735 downto 704), 32);
+                    when ADDR_OUTPUT_V_DATA_23 =>
+                        rdata_data <= RESIZE(int_output_V(767 downto 736), 32);
+                    when ADDR_OUTPUT_V_DATA_24 =>
+                        rdata_data <= RESIZE(int_output_V(799 downto 768), 32);
+                    when ADDR_OUTPUT_V_DATA_25 =>
+                        rdata_data <= RESIZE(int_output_V(831 downto 800), 32);
+                    when ADDR_OUTPUT_V_DATA_26 =>
+                        rdata_data <= RESIZE(int_output_V(863 downto 832), 32);
+                    when ADDR_OUTPUT_V_DATA_27 =>
+                        rdata_data <= RESIZE(int_output_V(895 downto 864), 32);
+                    when ADDR_OUTPUT_V_DATA_28 =>
+                        rdata_data <= RESIZE(int_output_V(927 downto 896), 32);
+                    when ADDR_OUTPUT_V_DATA_29 =>
+                        rdata_data <= RESIZE(int_output_V(959 downto 928), 32);
+                    when ADDR_OUTPUT_V_DATA_30 =>
+                        rdata_data <= RESIZE(int_output_V(991 downto 960), 32);
+                    when ADDR_OUTPUT_V_DATA_31 =>
+                        rdata_data <= RESIZE(int_output_V(1023 downto 992), 32);
+                    when ADDR_OUTPUT_V_DATA_32 =>
+                        rdata_data <= RESIZE(int_output_V(1055 downto 1024), 32);
+                    when ADDR_OUTPUT_V_DATA_33 =>
+                        rdata_data <= RESIZE(int_output_V(1087 downto 1056), 32);
+                    when ADDR_OUTPUT_V_DATA_34 =>
+                        rdata_data <= RESIZE(int_output_V(1119 downto 1088), 32);
+                    when ADDR_OUTPUT_V_DATA_35 =>
+                        rdata_data <= RESIZE(int_output_V(1151 downto 1120), 32);
+                    when ADDR_OUTPUT_V_DATA_36 =>
+                        rdata_data <= RESIZE(int_output_V(1183 downto 1152), 32);
+                    when ADDR_OUTPUT_V_DATA_37 =>
+                        rdata_data <= RESIZE(int_output_V(1215 downto 1184), 32);
+                    when ADDR_OUTPUT_V_DATA_38 =>
+                        rdata_data <= RESIZE(int_output_V(1247 downto 1216), 32);
+                    when ADDR_OUTPUT_V_DATA_39 =>
+                        rdata_data <= RESIZE(int_output_V(1279 downto 1248), 32);
+                    when ADDR_OUTPUT_V_DATA_40 =>
+                        rdata_data <= RESIZE(int_output_V(1311 downto 1280), 32);
+                    when ADDR_OUTPUT_V_DATA_41 =>
+                        rdata_data <= RESIZE(int_output_V(1343 downto 1312), 32);
+                    when ADDR_OUTPUT_V_DATA_42 =>
+                        rdata_data <= RESIZE(int_output_V(1375 downto 1344), 32);
+                    when ADDR_OUTPUT_V_DATA_43 =>
+                        rdata_data <= RESIZE(int_output_V(1407 downto 1376), 32);
+                    when ADDR_OUTPUT_V_DATA_44 =>
+                        rdata_data <= RESIZE(int_output_V(1439 downto 1408), 32);
+                    when ADDR_OUTPUT_V_DATA_45 =>
+                        rdata_data <= RESIZE(int_output_V(1471 downto 1440), 32);
+                    when ADDR_OUTPUT_V_DATA_46 =>
+                        rdata_data <= RESIZE(int_output_V(1503 downto 1472), 32);
+                    when ADDR_OUTPUT_V_DATA_47 =>
+                        rdata_data <= RESIZE(int_output_V(1535 downto 1504), 32);
+                    when ADDR_OUTPUT_V_DATA_48 =>
+                        rdata_data <= RESIZE(int_output_V(1567 downto 1536), 32);
+                    when ADDR_OUTPUT_V_DATA_49 =>
+                        rdata_data <= RESIZE(int_output_V(1599 downto 1568), 32);
+                    when ADDR_OUTPUT_V_DATA_50 =>
+                        rdata_data <= RESIZE(int_output_V(1631 downto 1600), 32);
+                    when ADDR_OUTPUT_V_DATA_51 =>
+                        rdata_data <= RESIZE(int_output_V(1663 downto 1632), 32);
+                    when ADDR_OUTPUT_V_DATA_52 =>
+                        rdata_data <= RESIZE(int_output_V(1695 downto 1664), 32);
+                    when ADDR_OUTPUT_V_DATA_53 =>
+                        rdata_data <= RESIZE(int_output_V(1727 downto 1696), 32);
+                    when ADDR_OUTPUT_V_DATA_54 =>
+                        rdata_data <= RESIZE(int_output_V(1759 downto 1728), 32);
+                    when ADDR_OUTPUT_V_DATA_55 =>
+                        rdata_data <= RESIZE(int_output_V(1791 downto 1760), 32);
+                    when ADDR_OUTPUT_V_DATA_56 =>
+                        rdata_data <= RESIZE(int_output_V(1823 downto 1792), 32);
+                    when ADDR_OUTPUT_V_DATA_57 =>
+                        rdata_data <= RESIZE(int_output_V(1855 downto 1824), 32);
+                    when ADDR_OUTPUT_V_DATA_58 =>
+                        rdata_data <= RESIZE(int_output_V(1887 downto 1856), 32);
+                    when ADDR_OUTPUT_V_DATA_59 =>
+                        rdata_data <= RESIZE(int_output_V(1919 downto 1888), 32);
+                    when ADDR_OUTPUT_V_DATA_60 =>
+                        rdata_data <= RESIZE(int_output_V(1951 downto 1920), 32);
+                    when ADDR_OUTPUT_V_DATA_61 =>
+                        rdata_data <= RESIZE(int_output_V(1983 downto 1952), 32);
+                    when ADDR_OUTPUT_V_DATA_62 =>
+                        rdata_data <= RESIZE(int_output_V(2015 downto 1984), 32);
+                    when ADDR_OUTPUT_V_DATA_63 =>
+                        rdata_data <= RESIZE(int_output_V(2047 downto 2016), 32);
+                    when ADDR_OUTPUT_V_CTRL =>
+                        rdata_data <= (0 => int_output_V_ap_vld, others => '0');
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
@@ -399,8 +680,6 @@ port map (
                     rdata_data <= int_a_q1;
                 elsif (int_b_read = '1') then
                     rdata_data <= int_b_q1;
-                elsif (int_c_read = '1') then
-                    rdata_data <= int_c_q1;
                 end if;
             end if;
         end if;
@@ -511,6 +790,34 @@ port map (
         end if;
     end process;
 
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_output_V <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (output_V_ap_vld = '1') then
+                    int_output_V <= UNSIGNED(output_V); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_output_V_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (output_V_ap_vld = '1') then
+                    int_output_V_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_OUTPUT_V_CTRL) then
+                    int_output_V_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
 
 -- ----------------------- Memory logic ------------------
     -- a
@@ -537,18 +844,6 @@ port map (
     int_b_we1            <= '1' when int_b_write = '1' and WVALID = '1' else '0';
     int_b_be1            <= UNSIGNED(WSTRB);
     int_b_d1             <= UNSIGNED(WDATA);
-    -- c
-    int_c_address0       <= SHIFT_RIGHT(UNSIGNED(c_address0), 2)(5 downto 0);
-    int_c_ce0            <= c_ce0;
-    int_c_we0            <= c_we0;
-    int_c_be0            <= SHIFT_LEFT(TO_UNSIGNED(1, 4), TO_INTEGER(UNSIGNED(c_address0(1 downto 0))));
-    int_c_d0             <= UNSIGNED(c_d0) & UNSIGNED(c_d0) & UNSIGNED(c_d0) & UNSIGNED(c_d0);
-    c_q0                 <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_c_q0, TO_INTEGER(int_c_shift) * 8)(7 downto 0));
-    int_c_address1       <= raddr(7 downto 2) when ar_hs = '1' else waddr(7 downto 2);
-    int_c_ce1            <= '1' when ar_hs = '1' or (int_c_write = '1' and WVALID  = '1') else '0';
-    int_c_we1            <= '1' when int_c_write = '1' and WVALID = '1' else '0';
-    int_c_be1            <= UNSIGNED(WSTRB);
-    int_c_d1             <= UNSIGNED(WDATA);
 
     process (ACLK)
     begin
@@ -627,47 +922,6 @@ port map (
             if (ACLK_EN = '1') then
                 if (b_ce0 = '1') then
                     int_b_shift <= UNSIGNED(b_address0(1 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_c_read <= '0';
-            elsif (ACLK_EN = '1') then
-                if (ar_hs = '1' and raddr >= ADDR_C_BASE and raddr <= ADDR_C_HIGH) then
-                    int_c_read <= '1';
-                else
-                    int_c_read <= '0';
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_c_write <= '0';
-            elsif (ACLK_EN = '1') then
-                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_C_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_C_HIGH) then
-                    int_c_write <= '1';
-                elsif (WVALID = '1') then
-                    int_c_write <= '0';
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (c_ce0 = '1') then
-                    int_c_shift <= UNSIGNED(c_address0(1 downto 0));
                 end if;
             end if;
         end if;

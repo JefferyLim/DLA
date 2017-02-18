@@ -1,33 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "ap_utils.h"
-//
-//#include "BigIntegerLibrary.hh"
-//
-//#define AP_INT_MAX_W 4096
-//#include "ap_int.h"
-//
-//typedef ap_uint<2048>  uint2048;
+
+#define AP_INT_MAX_W 4096
+#include "ap_int.h"
+
+typedef ap_uint<2048>  uint2048;
+
 #define inBit 128
 #define outBit 256
 
 //Chars are 2048 bit binary values.
-void bigint_math(unsigned char a[128], unsigned char b[128], unsigned char c[256]){
-//
+void bigint_math(unsigned char a[128], unsigned char b[128], uint2048 *output){
+
 	#pragma HLS INTERFACE s_axilite port=return bundle=PERIPH_BUS
 	#pragma HLS INTERFACE s_axilite port=a bundle=PERIPH_BUS
 	#pragma HLS INTERFACE s_axilite port=b bundle=PERIPH_BUS
-	#pragma HLS INTERFACE s_axilite port=c bundle=PERIPH_BUS
+	#pragma HLS INTERFACE s_axilite port=output bundle=PERIPH_BUS
 
 	unsigned char prod;
 	unsigned char carry;
+
+	unsigned char c[256];
+
 	int i = 0;
 	int j = 0;
 	int k = inBit * 2 - 1;
-
-	for(i = 0; i < outBit; i++){
-		c[i] = 0;
-	}
 
 	for(i = 0; i < inBit; i++){
 		k = outBit - 1 - i;
@@ -51,12 +49,20 @@ void bigint_math(unsigned char a[128], unsigned char b[128], unsigned char c[256
 		}
 	}
 
+	uint2048 temp1 = 0;
+		for(int i = 255; i >= 0; i++){
+			ap_uint<8> val1(c[i]);
+			temp1 = temp1.concat(val1);
+		}
+
+	*output = temp1;
 }
 
 
 
-//
-////Chars are 2048 bit binary values.
+//Attempt to only use the ap_uint library that HLS provides.
+//Takes way too much utilization and cannot be implemented on an FPGA
+
 //void bigint_math(unsigned char number1[256], unsigned char number2[256], uint2048* output){
 //
 //	#pragma HLS INTERFACE s_axilite port=return bundle=PERIPH_BUS

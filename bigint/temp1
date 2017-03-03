@@ -1,0 +1,245 @@
+
+//a - b
+int bigint_sub(unsigned char a[], unsigned char b[], unsigned char c[], int aL, int bL, int cL){
+	
+	//Counter to iterate through multiplication table
+	int i = 0;
+	int j = 0;
+
+	//Keeps track of output array
+	int k = 0;
+
+	unsigned char tempA[cL];
+	unsigned char tempB[cL];
+
+	unsigned char carry[cL];
+	
+	bigint_zero(tempA, cL);
+	bigint_zero(tempB, cL);
+
+	bigint_zero(carry, cL);
+	
+	for(i = (cL-aL); i < cL; i++){
+		tempA[i] = a[i - (cL-aL)];
+	}
+
+	for(i = (cL-bL); i < cL; i++){
+		tempB[i] = b[i - (cL-bL)];
+	}
+
+	bigint_zero(c, cL);
+	for(i = cL-1; i >= 0; i--){
+		if(tempA[i] < tempB[i]){
+			if(tempA[i-1] == 0){
+				j = i-1;
+				while(tempA[j] == 0){
+					j--;
+					if(j == -1){
+						return -1;
+					}
+				}
+
+				tempA[j] -= 1;
+				j++;
+				while(j != i-1){
+					tempA[j] = 0xFF;
+					j++;
+				}
+				
+				tempA[i-1] = 0xFF;
+				carry[i] += 1;
+							
+			}else{	
+				tempA[i-1] -= 1;
+				carry[i] += 1;
+			}		
+		}
+
+		c[i] = ((carry[i] << 16) + tempA[i]) - tempB[i];					
+	}
+
+	return 1;
+}
+
+
+//All unsigned char are assumed to be: 0 -> MSB and 127 -> LSB 
+void bigint_mul(unsigned char a[], unsigned char b[], unsigned char c[], int aL, int bL, int cL){
+
+
+	//Product and Carry
+	unsigned char prod;	
+	unsigned char carry;
+	
+	//placeholder
+	unsigned char d[cL];
+
+	unsigned char temp1[aL];
+	unsigned char temp2[bL];
+
+	//Counter to iterate through multiplication table
+	int i = 0;
+	int j = 0;
+
+	//Keeps track of output array
+	int k = 0;
+	
+
+	bigint_zero(temp1, aL);
+	bigint_zero(temp2, bL);
+
+	
+	for(i = 0; i < aL; i++){
+		temp1[i] = a[i];
+	}
+
+	for(i = 0; i < bL; i++){
+		temp2[i] = b[i];
+	}
+
+
+
+	bigint_zero(c, cL);
+	bigint_zero(d, cL);
+
+	//Iterate through the b term 
+	for(i = 0; i < bL; i++){
+
+		//Iterate through the a term
+		for(j = 0, k = cL - 1 - i; j < aL; j++, k--){	
+
+			//Find the product and the carry
+			prod = temp2[bL-1-i]*temp1[aL-1-j];
+			carry = (temp2[bL-1-i]*temp1[aL-1-j] >> 8);
+		
+			if(!(prod == 0x00 && carry == 0x00)){
+				//If the product and the output overflows, add the overflow to the next output 
+				if(d[k] + prod > 0xFF){
+					d[k-1] += ((d[k]+prod) >> 8);			
+				}
+
+				d[k] += prod;
+
+				//If the next value and the carry overflows, add the overflow to the next next output
+				if(d[k-1] + carry > 0xFF){
+					d[k-2] += ((d[k-1]+carry) >> 8);
+				}
+
+				d[k-1] += carry;
+			}
+			
+		}
+
+		
+		bigint_add(d, c, c, cL, cL, cL);
+		bigint_zero(d, cL);
+
+	}
+}
+
+//a / b
+void bigint_div(unsigned char a[], unsigned char b[], unsigned char c[], unsigned char d[], int aL, int bL, int cL, int dL){
+
+	//Counter to iterate through multiplication table
+	int i = 0;
+	int j = 0;
+
+	//Keeps track of output array
+	int k = 0;
+
+	unsigned char tempA[cL];
+	unsigned char tempB[cL];
+	unsigned char tempC[cL];
+
+	unsigned char carry[cL];
+	unsigned char one[1];
+	bigint_zero(one, 1);
+
+	one[0] = 0x01;
+	
+	bigint_zero(tempA, cL);
+	bigint_zero(tempB, cL);
+	bigint_zero(tempC, cL);
+
+	bigint_zero(carry, cL);
+	
+	for(i = (cL-aL); i < cL; i++){
+		tempA[i] = a[i - (cL-aL)];
+	}
+
+	for(i = (cL-bL); i < cL; i++){
+		tempB[i] = b[i - (cL-bL)];
+	}
+
+	bigint_zero(c, cL);
+	bigint_zero(d, cL);
+
+	while(k != -1){
+			
+		j++;
+		bigint_add(c, one, c, cL, 1, cL);
+		k = bigint_sub(tempA, tempB, tempA, cL, cL, cL);
+	}
+
+
+	j--;
+	bigint_sub(c, one, c, cL, 1, cL);
+
+	for(i = (cL-aL); i < cL; i++){
+		tempA[i] = a[i - (cL-aL)];
+	}
+
+	for(i = 0; i < j; i++){
+		k = bigint_sub(tempA, tempB, tempA, cL, cL, cL);
+	}
+
+
+	for(i = 0; i < cL; i++){
+		d[i] = tempA[i];	
+	
+	}
+	
+
+	
+
+	
+}
+
+//c = b^e (mod m)
+void bigint_modexp(unsigned char b[], unsigned char e[], unsigned char m[], unsigned char c[], int bL, int eL, int mL, int cL){
+	unsigned char loopCount[eL];
+	unsigned char quotient[cL];
+	unsigned char mod[cL];
+	bigint_zero(quotient, cL);
+	bigint_zero(mod, cL);
+
+
+	unsigned char one[1];
+	bigint_zero(one, 1);
+
+	one[0] = 0x01;
+
+	bigint_zero(loopCount, eL);
+	bigint_zero(c, cL);
+
+	int i;
+
+	
+	c[cL-1] = 0x01;
+	while(!(bigint_isEqual(loopCount,e, eL, eL))){
+		bigint_add(loopCount, one, loopCount, eL, 1, eL);
+		bigint_mul(b, c, c, bL, cL, cL);
+	}
+
+	bigint_print(c, cL);	
+	
+	bigint_div(c, m, quotient, mod, cL, mL, cL, cL);
+
+
+	for(i = 0; i < cL; i++){
+		c[i] = mod[i];
+	}
+
+
+
+}
+

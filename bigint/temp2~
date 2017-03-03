@@ -1,0 +1,98 @@
+unsigned char a[inBit];
+	unsigned char b[inBit];
+
+	unsigned int u;
+	unsigned char buff[outBit];
+	int i;
+	
+	mpz_t a1, b1, c1, d1, q1;
+
+	mpz_init(c1);
+
+	bigint_zero(a, inBit);
+	bigint_zero(b, inBit);
+
+	FILE *fp;
+
+	fp = fopen("a.txt", "r");
+	i=0;
+	while(fscanf(fp, "%2x", &u) == 1){ 
+		a[i] = u;		
+		i++;
+	}
+
+	fseek(fp, 0, SEEK_SET);
+	fscanf(fp, "%s", buff);
+	mpz_init_set_str(a1,buff, 16);
+	
+	fclose(fp);
+
+	fp = fopen("b.txt", "r");
+
+	i=0;
+	while(fscanf(fp, "%2x", &u) == 1){ 
+		b[i] = u;
+		i++;
+	}
+
+	fseek(fp, 0, SEEK_SET);
+	fscanf(fp, "%s", buff);
+	mpz_init_set_str(b1,buff, 16);
+	fclose(fp);
+
+	bigint_print(a, inBit);
+	bigint_print(b, inBit);
+	
+	printf("Multiplying:\n");	
+
+	mpz_mul(c1, a1, b1);
+
+	printf("Library Result:\n%s\n\n", mpz_get_str(NULL, 16, c1));
+	
+	printf("BigInt Result:\n");
+	unsigned char product[outBit];
+	bigint_zero(product, outBit);
+
+	bigint_mul(a,b,product, inBit, inBit, outBit);
+	bigint_print(product, outBit);
+	
+	printf("Subtraction:\n");	
+	unsigned char difference[outBit];
+	bigint_zero(difference, outBit);
+	
+	bigint_sub(a,b,difference, inBit, inBit, outBit);
+	bigint_print(difference, outBit);
+
+	printf("Division:\n");
+	unsigned char quotient[outBit];
+	unsigned char mod[outBit];	
+	bigint_zero(quotient, outBit);	
+	bigint_zero(mod, outBit);
+
+	bigint_div(a,b,quotient, mod, inBit, inBit, outBit, outBit);
+	bigint_print(quotient, outBit);
+	bigint_print(mod, outBit);
+	
+
+	printf("Exponentiation:\n");
+
+ 	mpz_pow_ui(c1, a1, 0x2);
+	
+	printf("Library Result:\n%s\n\n", mpz_get_str(NULL, 16, c1));
+	
+	
+	mpz_init_set_str(d1,"5", 16);
+	mpz_powm_ui(c1, a1, 0x2, d1);
+	
+	printf("Library Result:\n%s\n\n", mpz_get_str(NULL, 16, c1));
+	
+	unsigned char c[outBit];
+	unsigned char m[1];	
+	unsigned char d[1];	
+	bigint_zero(c, outBit);
+
+	m[0] = 0x5;
+	d[0] = 0x2;
+
+	bigint_modexp(a, d, m, c, inBit, 1, 1, outBit); 
+	bigint_print(c,outBit);	

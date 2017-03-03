@@ -115,20 +115,20 @@ int main(){
 
 	printf("bigint: Modular Exponentiation: ");
 	unsigned char c[outBit];
-	unsigned char m[1];	
+	unsigned char m[2];	
 	unsigned char d[1];	
 	bigint_zero(c, outBit);
 
-	m[0] = 0x15;
-	mpz_init_set_str(d1,"15", 16);
+	m[0] = 0xFF;
+	m[1] = 0xFF;
+	mpz_init_set_str(d1,"FFFF", 16);
 	d[0] = 0x2;
 
 	bigint_print(a, inBit);printf(" ^ ");
 	bigint_print(d, 1);printf(" mod ");
-	bigint_print(m, 1); printf(" = ");
+	bigint_print(m, 2); printf(" = ");
 
-
-	bigint_modexp(c, a, d, m,  outBit, inBit, 1, 1); 
+	bigint_modexp(c, a, d, m,  outBit, inBit, 1, 2); 
 	bigint_print(c,outBit);printf("\n");
 	
 	printf("GMP   : Modular Exponentiation: ");
@@ -287,10 +287,6 @@ int bigint_compare(unsigned char a[], unsigned char b[], int aL, int bL){
 			}
 	}
 
-	
-
-	
-
 	return 0;
 
 }
@@ -416,7 +412,6 @@ int bigint_sub(unsigned char out[], unsigned char a[], unsigned char b[], int ou
 
 void bigint_mul(unsigned char out[], unsigned char a[], unsigned char b[], int outL, int aL, int bL){
 
-
 	//Product and Carry
 	unsigned char prod;	
 	unsigned char carry;
@@ -516,30 +511,23 @@ void bigint_div(unsigned char out[], unsigned char out1[], unsigned char a[], un
 		tempB[i] = b[i - (outL-bL)];
 	}
 
+	carry[0] = 0x1;
 	bigint_zero(out, outL);
 	bigint_zero(out1, outL);
 
+	//while tempA < carry
 	while(k != -1){
 		j++;
 		bigint_add(out, out, one, outL, outL, 1);	
-		bigint_sub(tempA, tempA, tempB, outL, outL, outL);
-		k = bigint_compare(tempA, tempB, outL, outL);
+		bigint_mul(carry, tempB, out, outL, outL, outL);
+		k = bigint_compare(tempA, carry, outL, outL);
+		
 	}
 
-	
-	for(i = (outL-aL); i < outL; i++){
-		tempA[i] = a[i - (outL-aL)];
-	}
-
-	for(i = 0; i < j; i++){
-		bigint_sub(tempA, tempA, tempB, outL, outL, outL);
-	}
-
-
-	for(i = 0; i < outL; i++){
-		out1[i] = tempA[i];	
-	
-	}
+	//subtract once because tempA > carry
+	bigint_sub(out, out ,one, outL, outL, 1);
+	bigint_sub(carry, carry, tempB, outL, outL, outL);
+	bigint_sub(out1, tempA, carry, outL, outL, outL);
 	
 }
 
@@ -575,13 +563,10 @@ void bigint_modexp(unsigned char out[], unsigned char base[], unsigned char exp[
 		bigint_add(loopCount, one, loopCount, expL, 1, expL);
 		bigint_mul(out, out, base, outL, outL, baseL);
 		i = bigint_compare(loopCount, exp, expL, expL);
+		
 	}
 
-	
-	bigint_div(quotient, mod1, out, mod, outL, outL, outL, modL);
+	bigint_div(quotient, out, out, mod, outL, outL, outL, modL);
 
-	for(i = 0; i < outL; i++){
-		out[i] = mod1[i];
-	}
 
 }

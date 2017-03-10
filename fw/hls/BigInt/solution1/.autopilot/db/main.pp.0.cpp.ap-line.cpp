@@ -45499,59 +45499,92 @@ typedef ap_uint<2048> uint2048;
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
-#pragma empty_line
-//Chars are 2048 bit binary values.
-void bigint_math(unsigned char a[128], unsigned char b[128], uint2048 *output){
-#pragma empty_line
+void bigint_math(uint2048* a, unsigned char b[256], unsigned char c[256], unsigned char d[256]){
 #pragma HLS INTERFACE s_axilite port=return bundle=PERIPH_BUS
 #pragma HLS INTERFACE s_axilite port=a bundle=PERIPH_BUS
 #pragma HLS INTERFACE s_axilite port=b bundle=PERIPH_BUS
-#pragma HLS INTERFACE s_axilite port=output bundle=PERIPH_BUS
+#pragma HLS INTERFACE s_axilite port=c bundle=PERIPH_BUS
+#pragma HLS INTERFACE s_axilite port=d bundle=PERIPH_BUS
 #pragma empty_line
- unsigned char prod;
- unsigned char carry;
+ uint2048 base = 0;
+ uint2048 mod = 0;
+ uint2048 exp = 0;
 #pragma empty_line
- unsigned char c[256];
+ for(int i = 0; i < 256; i++){
+  ap_uint<8> val1(b[i]);
+  ap_uint<8> val2(c[i]);
+  ap_uint<8> val3(d[i]);
+  base = base.concat(val1);
+  exp = exp.concat(val2);
+  mod = mod.concat(val2);
+ }
 #pragma empty_line
- int i = 0;
- int j = 0;
- int k = 128 * 2 - 1;
+ *a = 1;
+ base = base % mod;
+ while(exp > 0){
+  if(exp % 2 == 1){
+   *a = (*a * base) % mod;
+  }
 #pragma empty_line
- for(i = 0; i < 128; i++){
-  k = 256 - 1 - i;
-#pragma empty_line
-  for(j = 0; j < 128; j++){
-   prod = b[128 -1-i]*a[128 -1-j];
-   carry = (b[128 -1-i]*a[128 -1-j] >> 8);
-#pragma empty_line
-   if(c[k] + prod >= 0x100){
-    c[k-1] += ((c[k]+prod) >> 8);
-   }
-#pragma empty_line
-   c[k] += prod;
-#pragma empty_line
-   if(c[k-1] + carry >= 0x100){
-    c[k-2] += ((c[k-1]+carry) >> 8);
-   }
-   c[k-1] += carry;
-#pragma empty_line
-   k--;
+  exp = exp >> 1;
+  base = (base * base) % mod;
   }
  }
 #pragma empty_line
- uint2048 temp1 = 0;
-  for(int i = 255; i >= 0; i++){
-   ap_uint<8> val1(c[i]);
-   temp1 = temp1.concat(val1);
-  }
 #pragma empty_line
- *output = temp1;
-}
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-//
 ////Chars are 2048 bit binary values.
+//void bigint_math(unsigned char a[128], unsigned char b[128], uint2048 *output){
+//
+//	#pragma HLS INTERFACE s_axilite port=return bundle=PERIPH_BUS
+//	#pragma HLS INTERFACE s_axilite port=a bundle=PERIPH_BUS
+//	#pragma HLS INTERFACE s_axilite port=b bundle=PERIPH_BUS
+//	#pragma HLS INTERFACE s_axilite port=output bundle=PERIPH_BUS
+//
+//	unsigned char prod;
+//	unsigned char carry;
+//
+//	unsigned char c[256];
+//
+//	int i = 0;
+//	int j = 0;
+//	int k = inBit * 2 - 1;
+//
+//	for(i = 0; i < inBit; i++){
+//		k = outBit - 1 - i;
+//
+//		for(j = 0; j < inBit; j++){
+//			prod = b[inBit-1-i]*a[inBit-1-j];
+//			carry = (b[inBit-1-i]*a[inBit-1-j] >> 8);
+//
+//			if(c[k] + prod >= 0x100){
+//				c[k-1] += ((c[k]+prod) >> 8);
+//			}
+//
+//			c[k] += prod;
+//
+//			if(c[k-1] + carry >= 0x100){
+//				c[k-2] += ((c[k-1]+carry) >> 8);
+//			}
+//			c[k-1] += carry;
+//
+//			k--;
+//		}
+//	}
+//
+//	uint2048 temp1 = 0;
+//		for(int i = 255; i >= 0; i++){
+//			ap_uint<8> val1(c[i]);
+//			temp1 = temp1.concat(val1);
+//		}
+//
+//	*output = temp1;
+//}
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+//Attempt to only use the ap_uint library that HLS provides.
+//Takes way too much utilization and cannot be implemented on an FPGA
+#pragma empty_line
 //void bigint_math(unsigned char number1[256], unsigned char number2[256], uint2048* output){
 //
 //	#pragma HLS INTERFACE s_axilite port=return bundle=PERIPH_BUS

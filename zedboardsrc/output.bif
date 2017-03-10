@@ -1,7 +1,7 @@
 //arch = zynq; split = false; format = BIN
 the_ROM_image:
 {
-	[bootloader]/home/linux/Documents/DLA/fw/Vivado/zedboard/zedboard.sdk/FSBL/Debug/FSBL.elf
-	/home/linux/Documents/DLA/fw/Vivado/zedboard/zedboard.sdk/top_hw_platform_0/top.bit
+	[bootloader]/home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.sdk/FSBL/Debug/FSBL.elf
+	/home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.sdk/top_hw_platform_0/top.bit
 	/home/linux/Documents/DLA/zedboardsrc/u-boot.elf
 }

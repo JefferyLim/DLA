@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="main.cpp" path="/home/linux/Documents/DLA/source/sw/hls/BigInt/solution1/main.cpp"/>
+    <originFiles name="main.cpp" path="/home/linux/Documents/DLA/fw/hls/BigInt/solution1/main.cpp"/>
+    <originFiles name="bigint.h" path="/home/linux/Documents/DLA/bigint/bigint.h"/>
+    <originFiles name="bigint.c" path="/home/linux/Documents/DLA/bigint/bigint.c"/>
   </source>
-  <testbench/>
+  <testbench>
+    <originFiles name="main.cpp" path="/home/linux/Documents/DLA/fw/hls/BigInt/solution1/main.cpp"/>
+    <originFiles name="bigint.h" path="/home/linux/Documents/DLA/bigint/bigint.h"/>
+    <originFiles name="bigint.c" path="/home/linux/Documents/DLA/bigint/bigint.c"/>
+  </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

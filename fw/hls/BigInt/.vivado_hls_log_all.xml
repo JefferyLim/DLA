@@ -11,7 +11,11 @@
   </errorLogs>
   <warningLogs>
     <logs>
-      <synLog/>
+      <synLog>
+        <logs message="WARNING: [SCHED 204-21] The critical path consists of the following:&#xA;&#x9;'urem' operation ('tmp_6', BigInt/solution1/main.cpp:36) (195 ns)" projectName="BigInt" solutionName="solution1" date="2017-03-10T09:30:37.558-0700" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-21] Estimated clock period (195ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns)." projectName="BigInt" solutionName="solution1" date="2017-03-10T09:30:37.137-0700" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-21] Estimated delay (195ns) of 'urem' operation ('tmp_6', BigInt/solution1/main.cpp:36) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns)." projectName="BigInt" solutionName="solution1" date="2017-03-10T09:30:37.046-0700" type="Warning"/>
+      </synLog>
       <simLog/>
       <mgLog/>
       <packageLog/>

@@ -1,0 +1,4 @@
+   Compiling ../../main.c in debug mode
+   Compiling ../../../../../../bigint/bigint.c in debug mode
+   Generating csim.exe
+INFO: [SIM 1] CSim file generation done with 0 errors.

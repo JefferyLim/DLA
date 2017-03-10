@@ -49,73 +49,6 @@ typedef struct {
     u32 IsReady;
 } XBigint_math;
 
-typedef struct {
-    u32 word_0;
-    u32 word_1;
-    u32 word_2;
-    u32 word_3;
-    u32 word_4;
-    u32 word_5;
-    u32 word_6;
-    u32 word_7;
-    u32 word_8;
-    u32 word_9;
-    u32 word_10;
-    u32 word_11;
-    u32 word_12;
-    u32 word_13;
-    u32 word_14;
-    u32 word_15;
-    u32 word_16;
-    u32 word_17;
-    u32 word_18;
-    u32 word_19;
-    u32 word_20;
-    u32 word_21;
-    u32 word_22;
-    u32 word_23;
-    u32 word_24;
-    u32 word_25;
-    u32 word_26;
-    u32 word_27;
-    u32 word_28;
-    u32 word_29;
-    u32 word_30;
-    u32 word_31;
-    u32 word_32;
-    u32 word_33;
-    u32 word_34;
-    u32 word_35;
-    u32 word_36;
-    u32 word_37;
-    u32 word_38;
-    u32 word_39;
-    u32 word_40;
-    u32 word_41;
-    u32 word_42;
-    u32 word_43;
-    u32 word_44;
-    u32 word_45;
-    u32 word_46;
-    u32 word_47;
-    u32 word_48;
-    u32 word_49;
-    u32 word_50;
-    u32 word_51;
-    u32 word_52;
-    u32 word_53;
-    u32 word_54;
-    u32 word_55;
-    u32 word_56;
-    u32 word_57;
-    u32 word_58;
-    u32 word_59;
-    u32 word_60;
-    u32 word_61;
-    u32 word_62;
-    u32 word_63;
-} XBigint_math_Output_v;
-
 /***************** Macros (Inline Functions) Definitions *********************/
 #ifndef __linux__
 #define XBigint_math_WriteReg(BaseAddress, RegOffset, Data) \
@@ -154,8 +87,6 @@ u32 XBigint_math_IsReady(XBigint_math *InstancePtr);
 void XBigint_math_EnableAutoRestart(XBigint_math *InstancePtr);
 void XBigint_math_DisableAutoRestart(XBigint_math *InstancePtr);
 
-XBigint_math_Output_v XBigint_math_Get_output_V(XBigint_math *InstancePtr);
-u32 XBigint_math_Get_output_V_vld(XBigint_math *InstancePtr);
 u32 XBigint_math_Get_a_BaseAddress(XBigint_math *InstancePtr);
 u32 XBigint_math_Get_a_HighAddress(XBigint_math *InstancePtr);
 u32 XBigint_math_Get_a_TotalBytes(XBigint_math *InstancePtr);
@@ -174,6 +105,24 @@ u32 XBigint_math_Write_b_Words(XBigint_math *InstancePtr, int offset, int *data,
 u32 XBigint_math_Read_b_Words(XBigint_math *InstancePtr, int offset, int *data, int length);
 u32 XBigint_math_Write_b_Bytes(XBigint_math *InstancePtr, int offset, char *data, int length);
 u32 XBigint_math_Read_b_Bytes(XBigint_math *InstancePtr, int offset, char *data, int length);
+u32 XBigint_math_Get_c_BaseAddress(XBigint_math *InstancePtr);
+u32 XBigint_math_Get_c_HighAddress(XBigint_math *InstancePtr);
+u32 XBigint_math_Get_c_TotalBytes(XBigint_math *InstancePtr);
+u32 XBigint_math_Get_c_BitWidth(XBigint_math *InstancePtr);
+u32 XBigint_math_Get_c_Depth(XBigint_math *InstancePtr);
+u32 XBigint_math_Write_c_Words(XBigint_math *InstancePtr, int offset, int *data, int length);
+u32 XBigint_math_Read_c_Words(XBigint_math *InstancePtr, int offset, int *data, int length);
+u32 XBigint_math_Write_c_Bytes(XBigint_math *InstancePtr, int offset, char *data, int length);
+u32 XBigint_math_Read_c_Bytes(XBigint_math *InstancePtr, int offset, char *data, int length);
+u32 XBigint_math_Get_d_BaseAddress(XBigint_math *InstancePtr);
+u32 XBigint_math_Get_d_HighAddress(XBigint_math *InstancePtr);
+u32 XBigint_math_Get_d_TotalBytes(XBigint_math *InstancePtr);
+u32 XBigint_math_Get_d_BitWidth(XBigint_math *InstancePtr);
+u32 XBigint_math_Get_d_Depth(XBigint_math *InstancePtr);
+u32 XBigint_math_Write_d_Words(XBigint_math *InstancePtr, int offset, int *data, int length);
+u32 XBigint_math_Read_d_Words(XBigint_math *InstancePtr, int offset, int *data, int length);
+u32 XBigint_math_Write_d_Bytes(XBigint_math *InstancePtr, int offset, char *data, int length);
+u32 XBigint_math_Read_d_Bytes(XBigint_math *InstancePtr, int offset, char *data, int length);
 
 void XBigint_math_InterruptGlobalEnable(XBigint_math *InstancePtr);
 void XBigint_math_InterruptGlobalDisable(XBigint_math *InstancePtr);

@@ -26,11 +26,14 @@
 								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.1726194176" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1214736958" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/etc"/>
-									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/source/sw/hls"/>
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/auto_cc/include"/>
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include"/>
+									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/fw/hls"/>
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/bigint"/>
+									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/source/sw/hls"/>
+									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/bigint/."/>
 								</option>
 								<option id="gnu.cpp.compiler.option.preprocessor.def.964316595" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="AESL_TB"/>
@@ -44,11 +47,14 @@
 								<option id="gnu.c.compiler.exe.debug.option.debugging.level.700669316" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.306365288" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/etc"/>
-									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/source/sw/hls"/>
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/auto_cc/include"/>
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include"/>
+									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/fw/hls"/>
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/bigint"/>
+									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/source/sw/hls"/>
+									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/bigint/."/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1304183979" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="AESL_TB"/>
@@ -80,24 +86,60 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1153214770.752226126" name="main.cpp" rcbsApplicability="disable" resourcePath="source/main.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.532325309.833010025">
-						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.532325309.833010025" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.532325309">
-							<option id="gnu.cpp.compiler.option.preprocessor.def.2100682747" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
-							<option id="gnu.cpp.compiler.option.include.paths.1595009200" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/."/>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1153214770.1263457526" name="test.c" rcbsApplicability="disable" resourcePath="testbench/test.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2145868053.454711016">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2145868053.454711016" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2145868053">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.1591679821" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.564812939" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../../../../bigint/."/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/etc"/>
-								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/source/sw/hls"/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/auto_cc/include"/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/ap_sysc"/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include"/>
+								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/fw/hls"/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/bigint/."/>
 							</option>
-							<option id="gnu.cpp.compiler.option.other.other.1099897562" name="Other flags" superClass="gnu.cpp.compiler.option.other.other"/>
-							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.442341908" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							<option id="gnu.c.compiler.option.misc.other.623819417" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.446964627" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 						</tool>
 					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1153214770.1303711520" name="bigint.c" rcbsApplicability="disable" resourcePath="testbench/bigint.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2145868053.887890302">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2145868053.887890302" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2145868053">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.1841155610" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.740992336" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../../../../bigint"/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include"/>
+								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/fw/hls"/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/bigint"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.1228570980" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1320374206" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1153214770.1747495534" name="bigint.h" rcbsApplicability="disable" resourcePath="testbench/bigint.h" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1153214770.982970897" name="bigint.c" rcbsApplicability="disable" resourcePath="source/bigint.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2145868053.600042187">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2145868053.600042187" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2145868053">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.1758375178" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.1658402572" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/bigint/."/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include"/>
+								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/fw/hls"/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/systemc/include"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.1738501388" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.2123280060" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1153214770.1937795529" name="bigint.h" rcbsApplicability="disable" resourcePath="source/bigint.h" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="solution1|source/bigint.h|source/main.cpp|source/bigint.c|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -128,11 +170,14 @@
 								<option id="gnu.cpp.compiler.exe.release.option.debugging.level.412352684" name="Debug Level" superClass="gnu.cpp.compiler.exe.release.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1401178779" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/etc"/>
-									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/source/sw/hls"/>
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/auto_cc/include"/>
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include"/>
+									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/fw/hls"/>
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/bigint"/>
+									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/source/sw/hls"/>
+									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/bigint/."/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.798234924" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
@@ -141,11 +186,14 @@
 								<option id="gnu.c.compiler.exe.release.option.debugging.level.2119070883" name="Debug Level" superClass="gnu.c.compiler.exe.release.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.574889506" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/etc"/>
-									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/source/sw/hls"/>
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/auto_cc/include"/>
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include"/>
+									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/fw/hls"/>
 									<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/bigint"/>
+									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/source/sw/hls"/>
+									<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/bigint/."/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1342036484" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
@@ -172,24 +220,60 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1342793731.351065639" name="main.cpp" rcbsApplicability="disable" resourcePath="source/main.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.316568006.373476295">
-						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.316568006.373476295" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.316568006">
-							<option id="gnu.cpp.compiler.option.preprocessor.def.866140510" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
-							<option id="gnu.cpp.compiler.option.include.paths.923528371" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/source/sw/BigInt/solution1/bigint/."/>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1342793731.1445728202" name="test.c" rcbsApplicability="disable" resourcePath="testbench/test.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.release.691179753.1055656761">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.691179753.1055656761" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release.691179753">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.1322500155" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.1052904695" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../../../../bigint/."/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/etc"/>
-								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/source/sw/hls"/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/auto_cc/include"/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/ap_sysc"/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include"/>
+								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/fw/hls"/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/bigint/."/>
 							</option>
-							<option id="gnu.cpp.compiler.option.other.other.1362089661" name="Other flags" superClass="gnu.cpp.compiler.option.other.other"/>
-							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.685765570" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							<option id="gnu.c.compiler.option.misc.other.448022584" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1380711035" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 						</tool>
 					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1342793731.1913847071" name="bigint.c" rcbsApplicability="disable" resourcePath="testbench/bigint.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.release.691179753.1125582661">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.691179753.1125582661" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release.691179753">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.1475778061" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.880885858" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../../../../bigint"/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include"/>
+								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/fw/hls"/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/bigint"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.933905636" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.202820005" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1342793731.1282645419" name="bigint.h" rcbsApplicability="disable" resourcePath="testbench/bigint.h" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1342793731.376458243" name="bigint.c" rcbsApplicability="disable" resourcePath="source/bigint.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.release.691179753.1381388072">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.691179753.1381388072" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release.691179753">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.2028660373" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.1514245784" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/bigint/."/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include"/>
+								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/fw/hls"/>
+								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/systemc/include"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.502641867" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1406326810" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1342793731.1666078446" name="bigint.h" rcbsApplicability="disable" resourcePath="source/bigint.h" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="solution1|source/bigint.h|source/main.cpp|source/bigint.c|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -215,4 +299,5 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope"/>
 </cproject>

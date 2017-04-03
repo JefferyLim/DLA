@@ -1,4 +1,4 @@
-set lang "C++"
+set lang "C"
 set moduleName "bigint_math"
 set moduleIsExternC "0"
 set rawDecl ""
@@ -9,11 +9,11 @@ set BitWidth0 "64"
 set ArrayOpt0 ""
 set Const0 "0"
 set Volatile0 "0"
-set Pointer0 "1"
+set Pointer0 "0"
 set Reference0 "0"
-set Dims0 [list 0]
+set Dims0 [list 256]
 set Interface0 "wire"
-set DataType0 "[list ap_uint 2048 ]"
+set DataType0 "unsigned char"
 set Port0 [list $PortName0 $Interface0 $DataType0 $Pointer0 $Dims0 $Const0 $Volatile0 $ArrayOpt0]
 lappend PortList $Port0
 set PortName1 "b"
@@ -54,7 +54,7 @@ set Port3 [list $PortName3 $Interface3 $DataType3 $Pointer3 $Dims3 $Const3 $Vola
 lappend PortList $Port3
 set globalAPint "" 
 set returnAPInt "" 
-set hasCPPAPInt 1 
+set hasCPPAPInt 0 
 set argAPInt "" 
 set hasCPPAPFix 0 
 set hasSCFix 0 

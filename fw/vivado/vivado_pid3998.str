@@ -1,0 +1,85 @@
+/*
+
+Vivado v2016.2 (64-bit)
+SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+Process ID: 3998
+
+Current time: 	3/18/17 3:42:32 PM MDT
+Time zone: 	Mountain Standard Time (America/Denver)
+
+OS: NAME="Ubuntu"
+Version: 4.4.0-64-generic
+Architecture: amd64
+Available processors (cores): 4
+
+DISPLAY: :0
+Screen size: 1366x768
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	/home/Xilinx/Vivado/2016.2/tps/lnx64/jre
+
+User name: 	linux
+User home directory: /home/linux
+User working directory: /home/linux/Documents/DLA/fw/vivado
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI Base root directory: /home/Xilinx/Vivado
+RDI Data directory: /home/Xilinx/Vivado/2016.2/data
+RDI Bin directory: /home/Xilinx/Vivado/2016.2/bin
+
+Vivado preferences path: /home/linux/.Xilinx/Vivado/2016.2/vivado.ini
+Vivado layouts directory: /home/linux/.Xilinx/Vivado/2016.2/layouts
+
+GUI allocated memory:	197 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 4,832 MB
+
+*/
+
+// TclEventType: START_GUI
+// [GUI Memory]: 24 MB (+22545kb) [00:00:16]
+// [Engine Memory]: 4,830 MB (+4912638kb) [00:00:16]
+// Tcl Message: start_gui 
+// [GUI Memory]: 31 MB (+6317kb) [00:00:20]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,832 MB. GUI used memory: 22 MB. Current time: 3/18/17 3:42:34 PM MDT
+// [GUI Memory]: 33 MB (+60kb) [00:19:41]
+// [GUI Memory]: 34 MB (+24kb) [00:22:21]
+// [GUI Memory]: 36 MB (+50kb) [00:26:21]
+// [GUI Memory]: 38 MB (+51kb) [00:29:51]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,833 MB. GUI used memory: 21 MB. Current time: 3/18/17 4:12:34 PM MDT
+selectList(PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, "/home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.xpr", 0); // q:v (JViewport:JComponent, cv:JFrame)
+// bL:g (cv:JFrame):  Open Project : addNotify
+// Opening Vivado Project: /home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.xpr. Version: Vivado v2016.2 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,857 MB. GUI used memory: 22 MB. Current time: 3/18/17 4:29:35 PM MDT
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project /home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 43 MB (+3532kb) [00:47:32]
+// [GUI Memory]: 53 MB (+7362kb) [00:47:36]
+// [GUI Memory]: 58 MB (+3195kb) [00:47:36]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: open_project /home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/linux/Documents/DLA/fw/hls'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/Xilinx/Vivado/2016.2/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,967 MB. GUI used memory: 34 MB. Current time: 3/18/17 4:29:51 PM MDT
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: zedboard; location: /home/linux/Documents/DLA/fw/vivado/zedboard; part: xc7z020clg484-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:32 ; elapsed = 00:00:19 . Memory (MB): peak = 5839.141 ; gain = 113.840 ; free physical = 2004 ; free virtual = 11991 
+// Elapsed time: 20 seconds
+dismissDialog("Open Project"); // bL:g (cv:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: update_compile_order -fileset sources_1 

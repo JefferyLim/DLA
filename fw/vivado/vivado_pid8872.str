@@ -1,0 +1,145 @@
+/*
+
+Vivado v2016.2 (64-bit)
+SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+Process ID: 8872
+
+Current time: 	3/22/17 7:17:51 PM MDT
+Time zone: 	Mountain Standard Time (America/Denver)
+
+OS: NAME="Ubuntu"
+Version: 4.4.0-64-generic
+Architecture: amd64
+Available processors (cores): 4
+
+DISPLAY: :0
+Screen size: 1366x768
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	/home/Xilinx/Vivado/2016.2/tps/lnx64/jre
+
+User name: 	linux
+User home directory: /home/linux
+User working directory: /home/linux/Documents/DLA/fw/vivado
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI Base root directory: /home/Xilinx/Vivado
+RDI Data directory: /home/Xilinx/Vivado/2016.2/data
+RDI Bin directory: /home/Xilinx/Vivado/2016.2/bin
+
+Vivado preferences path: /home/linux/.Xilinx/Vivado/2016.2/vivado.ini
+Vivado layouts directory: /home/linux/.Xilinx/Vivado/2016.2/layouts
+
+GUI allocated memory:	185 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 4,825 MB
+
+*/
+
+// TclEventType: START_GUI
+// [GUI Memory]: 23 MB (+22085kb) [00:00:13]
+// [Engine Memory]: 4,823 MB (+4906277kb) [00:00:13]
+// Tcl Message: start_gui 
+// [GUI Memory]: 31 MB (+6487kb) [00:00:17]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,830 MB. GUI used memory: 21 MB. Current time: 3/22/17 7:17:53 PM MDT
+selectList(PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, "/home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.xpr", 0); // q:v (JViewport:JComponent, cv:JFrame)
+// bL:g (cv:JFrame):  Open Project : addNotify
+// Opening Vivado Project: /home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.xpr. Version: Vivado v2016.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project /home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 48 MB (+16903kb) [00:00:40]
+// [GUI Memory]: 52 MB (+1062kb) [00:00:41]
+// [GUI Memory]: 60 MB (+6175kb) [00:00:43]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: open_project /home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,984 MB. GUI used memory: 34 MB. Current time: 3/22/17 7:18:19 PM MDT
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/linux/Documents/DLA/fw/hls'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/Xilinx/Vivado/2016.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: zedboard; location: /home/linux/Documents/DLA/fw/vivado/zedboard; part: xc7z020clg484-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:30 ; elapsed = 00:00:20 . Memory (MB): peak = 5856.148 ; gain = 135.500 ; free physical = 1606 ; free virtual = 12084 
+// Elapsed time: 21 seconds
+dismissDialog("Open Project"); // bL:g (cv:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 154 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_1 ; constrs_1 ; write_bitstream Complete! ; -0.11756906658411026 ; -0.11756906658411026 ; 0.03441846743226051 ; 0.0 ; 0.0 ; 0 ; 4850 ; 3958 ; 19 ; 0 ; 0 ; Sun Mar 19 10:02:23 MDT 2017 ; 00:08:14 ; Vivado Implementation Defaults (Vivado Implementation 2016) ; xc7z020clg484-1 ;  ; Default settings for Implementation.", 1, "impl_1", 0, false); // W:as (JViewport:JComponent, cv:JFrame)
+// PAPropertyPanels.initPanels (impl_1) elapsed time: 0.9s
+applyEscape(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, (String) null); // W:as (JViewport:JComponent, cv:JFrame)
+// Elapsed time: 10 seconds
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // l:JideButton (JPanel:JComponent, cv:JFrame)
+closeTask("Project Manager", "Project Manager", "DesignTask.PROJECT_SETUP");
+// Run Command: PAResourceCommand.PACommandNames_CLOSE_PROJECT
+// G:be (cv:JFrame): Close Project: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, G:be)
+dismissDialog("Close Project"); // G:be (cv:JFrame)
+// [GUI Memory]: 66 MB (+3001kb) [00:03:38]
+// Elapsed time: 84 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Open Block Design]", 7, false); // x:Y (w:G, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_BLOCK_DESIGN
+// bL:g (cv:JFrame):  Open Block Design : addNotify
+// TclEventType: LOAD_FEATURE
+// Tcl Message: open_bd_design {/home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.srcs/sources_1/bd/xc7z020/xc7z020.bd} 
+// Tcl Message: Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0 
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// Tcl Message: Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_processing_system7_0_100M Adding cell -- xilinx.com:hls:bigint_math:1.0 - bigint_math_0 Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc Successfully read diagram <xc7z020> from BD file </home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.srcs/sources_1/bd/xc7z020/xc7z020.bd> 
+// TclEventType: RSB_OPEN_DIAGRAM
+// PAPropertyPanels.initPanels (impl_1) elapsed time: 0.3s
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,052 MB. GUI used memory: 42 MB. Current time: 3/22/17 7:22:43 PM MDT
+// Tcl Message: open_bd_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 5920.367 ; gain = 60.219 ; free physical = 786 ; free virtual = 11357 
+// 'bs' command handler elapsed time: 7 seconds
+dismissDialog("Open Block Design"); // bL:g (cv:JFrame)
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cv:JFrame)
+// [GUI Memory]: 71 MB (+1504kb) [00:05:23]
+// Elapsed time: 20 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Implementation Settings]", 20, false); // x:Y (w:G, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_IMPL_SETTINGS
+// Project Settings: addNotify
+setText(PAResourceItoN.IncrementalCompilePanel_SELECT_CHECKPOINT_FILE_TO_USE_AS, (String) null); // aq:ao (ap:JPanel, k:aP)
+selectButton("CANCEL", "Cancel"); // JButton:AbstractButton (ButtonPanel:JPanel, k:aP)
+dismissDialog("Project Settings"); // k:aP (cv:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,064 MB. GUI used memory: 43 MB. Current time: 3/22/17 7:24:33 PM MDT
+// [Engine Memory]: 5,066 MB (+1152kb) [00:09:20]
+// [GUI Memory]: 76 MB (+1273kb) [00:10:30]
+// [GUI Memory]: 81 MB (+1140kb) [00:21:50]
+// HMemoryUtils.trashcanNow. Engine heap size: 5,066 MB. GUI used memory: 43 MB. Current time: 3/23/17 5:53:35 PM MDT
+// [GUI Memory]: 86 MB (+829kb) [22:45:09]
+// [GUI Memory]: 91 MB (+604kb) [22:55:29]
+// HMemoryUtils.trashcanNow. Engine heap size: 5,066 MB. GUI used memory: 44 MB. Current time: 3/23/17 6:23:36 PM MDT
+// [GUI Memory]: 95 MB (+192kb) [23:14:34]
+// HMemoryUtils.trashcanNow. Engine heap size: 5,066 MB. GUI used memory: 40 MB. Current time: 3/23/17 6:53:39 PM MDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,066 MB. GUI used memory: 40 MB. Current time: 3/24/17 10:13:39 AM MDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,066 MB. GUI used memory: 40 MB. Current time: 3/24/17 10:43:38 AM MDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,066 MB. GUI used memory: 40 MB. Current time: 3/24/17 11:13:39 AM MDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,066 MB. GUI used memory: 41 MB. Current time: 3/24/17 1:22:39 PM MDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,066 MB. GUI used memory: 40 MB. Current time: 3/24/17 1:52:38 PM MDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,066 MB. GUI used memory: 40 MB. Current time: 3/24/17 3:34:12 PM MDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,066 MB. GUI used memory: 40 MB. Current time: 3/24/17 4:04:16 PM MDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,066 MB. GUI used memory: 40 MB. Current time: 3/25/17 5:02:25 PM MDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,066 MB. GUI used memory: 40 MB. Current time: 3/25/17 5:32:26 PM MDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,066 MB. GUI used memory: 40 MB. Current time: 3/25/17 11:27:57 PM MDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,066 MB. GUI used memory: 41 MB. Current time: 3/25/17 11:58:01 PM MDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,066 MB. GUI used memory: 40 MB. Current time: 3/26/17 12:28:08 AM MDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,066 MB. GUI used memory: 40 MB. Current time: 3/26/17 9:21:44 AM MDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,066 MB. GUI used memory: 40 MB. Current time: 3/26/17 9:51:44 AM MDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,066 MB. GUI used memory: 40 MB. Current time: 3/27/17 12:02:30 AM MDT

@@ -3,16 +3,17 @@
 #define bitSize 256
 
 //Initalization of a bigint by zeroing its contents
-void bigint_zero(unsigned char in[]){
+void bigint_zero(unsigned char in[bitSize]){
 	int i;	
 	for(i = 0; i < bitSize; i++){
+
 		in[i] = 0;
 	}
 
 }
 
 //Print helper function. Doesn't print a new line
-void bigint_print(unsigned char in[]){
+void bigint_print(unsigned char in[bitSize]){
 	int i;
 	int leadingZeroFlag = 0;
 	printf("0x");
@@ -37,7 +38,7 @@ void bigint_print(unsigned char in[]){
 }
 
 //Copies components from to to
-void bigint_copy(unsigned char to[], unsigned char from[]){
+void bigint_copy(unsigned char to[bitSize], unsigned char from[bitSize]){
 	int i;
 
 	for(i = 0; i < bitSize; i++){
@@ -51,7 +52,7 @@ void bigint_copy(unsigned char to[], unsigned char from[]){
 //Returns 1 if a > b.
 //Returns 0 if a == b
 //Returns -1 if a < b
-int bigint_compare(unsigned char a[], unsigned char b[]){
+int bigint_compare(unsigned char a[bitSize], unsigned char b[bitSize]){
 	int i;
 	int flag = 0;
 
@@ -89,7 +90,7 @@ int bigint_compare(unsigned char a[], unsigned char b[]){
 }
 
 //bitwise left shift by shift amount
-void bigint_leftshift(unsigned char out[], unsigned char a[], int shift){
+void bigint_leftshift(unsigned char out[bitSize], unsigned char a[bitSize], int shift){
 	int i, j, k;
 
 	unsigned char b;
@@ -135,7 +136,7 @@ void bigint_leftshift(unsigned char out[], unsigned char a[], int shift){
 }
 
 //bitwise right shift by shift amount
-void bigint_rightshift(unsigned char out[], unsigned char a[], int shift){
+void bigint_rightshift(unsigned char out[bitSize], unsigned char a[bitSize], int shift){
 	int i, j, k;
 	unsigned char tempA[bitSize];
 	unsigned char b;
@@ -178,7 +179,7 @@ void bigint_rightshift(unsigned char out[], unsigned char a[], int shift){
 	}
 }
 
-void bigint_add(unsigned char out[], unsigned char a[], unsigned char b[]){
+void bigint_add(unsigned char out[bitSize], unsigned char a[bitSize], unsigned char b[bitSize]){
 	//Local Var
 	unsigned char sum;
 	unsigned char carry;
@@ -218,7 +219,7 @@ void bigint_add(unsigned char out[], unsigned char a[], unsigned char b[]){
 }
 
 
-void bigint_sub(unsigned char out[], unsigned char a[], unsigned char b[]){
+void bigint_sub(unsigned char out[bitSize], unsigned char a[bitSize], unsigned char b[bitSize]){
 	
 	//Counter to iterate through multiplication table
 	int i = 0;
@@ -276,7 +277,7 @@ void bigint_sub(unsigned char out[], unsigned char a[], unsigned char b[]){
 }
 
 
-void bigint_mul(unsigned char out[], unsigned char a[], unsigned char b[]){
+void bigint_mul(unsigned char out[bitSize], unsigned char a[bitSize], unsigned char b[bitSize]){
 
 	//Product and Carry
 	unsigned char prod;	
@@ -339,7 +340,7 @@ void bigint_mul(unsigned char out[], unsigned char a[], unsigned char b[]){
 }
 
 //a / b
-void bigint_div(unsigned char out[], unsigned char out1[], unsigned char a[], unsigned char b[]){
+void bigint_div(unsigned char out[bitSize], unsigned char out1[bitSize], unsigned char a[bitSize], unsigned char b[bitSize]){
 
 	//Counter to iterate through multiplication table
 	int i = 1;
@@ -388,7 +389,7 @@ void bigint_div(unsigned char out[], unsigned char out1[], unsigned char a[], un
 
 
 //a / b
-void bigint_longdiv(unsigned char out[], unsigned char out1[], unsigned char a[], unsigned char b[]){
+void bigint_longdiv(unsigned char out[bitSize], unsigned char out1[bitSize], unsigned char a[bitSize], unsigned char b[bitSize]){
 
 	//Counter to iterate through multiplication table
 	int i = 1, j = 1;
@@ -421,7 +422,6 @@ void bigint_longdiv(unsigned char out[], unsigned char out1[], unsigned char a[]
 		return;
 	}
 
-
 	if(bigint_compare(tempB, one) == 0){
 		bigint_copy(out, tempA);
 		bigint_copy(out1, zero);
@@ -432,6 +432,7 @@ void bigint_longdiv(unsigned char out[], unsigned char out1[], unsigned char a[]
 	i = bigint_compare(tempA, tempB);
 	if(i == -1){
 		bigint_copy(out1, tempA);
+		bigint_copy(out, zero);
 		return;
 	}
 
@@ -439,9 +440,7 @@ void bigint_longdiv(unsigned char out[], unsigned char out1[], unsigned char a[]
 		out[bitSize-1] = 0x01;
 		out1[bitSize-1] = 0x00;
 		return;
-	
 	}
-
 
 	int aMSB = 0;
 	int bMSB = 0;
@@ -497,17 +496,15 @@ void bigint_longdiv(unsigned char out[], unsigned char out1[], unsigned char a[]
 	bigint_zero(temp);
 	bigint_leftshift(d, tempB, bMSB-aMSB);
 
-
 	unsigned char quot[bitSize];
 	bigint_zero(quot);
 
 	unsigned char bitPlace[bitSize];
 	bigint_zero(bitPlace);
 
-
 	bigint_leftshift(bitPlace, one, bMSB-aMSB);
 
-	for(j = 0; j < bMSB-aMSB+1; j++){\
+	for(j = 0; j < bMSB-aMSB+1; j++){
 		i = bigint_compare(tempA, d);
 
 		if(i == 0 || i == 1){	
@@ -532,12 +529,6 @@ void bigint_longdiv(unsigned char out[], unsigned char out1[], unsigned char a[]
 	bigint_mul(temp, out, tempB);
 	bigint_sub(out1, a, temp);
 
-	// bigint_zero(out);
-	// bigint_rightshift(out, q, bMSB-aMSB);
-
-	// bigint_mul(temp, out, tempB);
-	// bigint_sub(out1, a, temp);
-
 
 }
 
@@ -545,7 +536,7 @@ void bigint_longdiv(unsigned char out[], unsigned char out1[], unsigned char a[]
 
 
 //c = b^e (mod m)
-void bigint_modexp(unsigned char out[], unsigned char base[], unsigned char exp[], unsigned char mod[]){
+void bigint_modexp(unsigned char out[bitSize], unsigned char base[bitSize], unsigned char exp[bitSize], unsigned char mod[bitSize]){
 	int i = 1;
 	
 	unsigned char zero[bitSize];
@@ -580,7 +571,6 @@ void bigint_modexp(unsigned char out[], unsigned char base[], unsigned char exp[
 	one[bitSize-1] = 0x01;
 	two[bitSize-1] = 0x02;
 
-
 	bigint_zero(out);
 	if(bigint_compare(mod, one) == 0){
 		return;
@@ -598,15 +588,15 @@ void bigint_modexp(unsigned char out[], unsigned char base[], unsigned char exp[
 	while(bigint_compare(tempExp, zero) == 1){
 		bigint_zero(temp);
 		bigint_zero(temp1);
-		bigint_longdiv(temp, temp1, tempExp, two); //if tempExp % 2 = 1w
+		bigint_longdiv(temp, temp1, tempExp, two); //if tempExp % 2 == 1
 
 		if(bigint_compare(temp1, one) == 0){
 			bigint_mul(temp, result, tempBase);
 
 			bigint_zero(temp1);
-			bigint_zero(temp2);
-			bigint_longdiv(temp1, temp2, temp, tempMod);
-			bigint_copy(result, temp2);
+			//bigint_zero(temp2);
+			bigint_longdiv(temp1, result, temp, tempMod);
+			//bigint_copy(result, temp2);
 		}
 
 		bigint_rightshift(temp, tempExp, 1);
@@ -617,9 +607,11 @@ void bigint_modexp(unsigned char out[], unsigned char base[], unsigned char exp[
 
 		bigint_zero(temp1);
 		bigint_zero(temp2);
-		bigint_longdiv(temp1, temp2, temp, tempMod);
-		bigint_copy(tempBase, temp2);
+		bigint_longdiv(temp1, tempBase, temp, tempMod);
+		//bigint_copy(tempBase, temp2);
 		bigint_zero(zero);
+		one[bitSize-1] = 0x01;
+		two[bitSize-1] = 0x02;
 	}
 
 	bigint_copy(out, result);

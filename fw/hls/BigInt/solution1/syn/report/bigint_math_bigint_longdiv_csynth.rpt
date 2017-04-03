@@ -1,0 +1,316 @@
+
+
+================================================================
+== Vivado HLS Report for 'bigint_math_bigint_longdiv'
+================================================================
+* Date:           Sun Mar 19 09:53:22 2017
+
+* Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
+* Project:        BigInt
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  50.00|     13.51|        6.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------------------+-------------------------------+---------+---------+---------+---------+---------+
+        |                                          |                               |      Latency      |      Interval     | Pipeline|
+        |                 Instance                 |             Module            |   min   |   max   |   min   |   max   |   Type  |
+        +------------------------------------------+-------------------------------+---------+---------+---------+---------+---------+
+        |grp_bigint_math_bigint_sub_fu_326         |bigint_math_bigint_sub         |        ?|        ?|        ?|        ?|   none  |
+        |grp_bigint_math_bigint_mul_fu_335         |bigint_math_bigint_mul         |  1184775|  1577991|  1184775|  1577991|   none  |
+        |grp_bigint_math_bigint_leftshift_fu_343   |bigint_math_bigint_leftshift   |      514|     6914|      514|     6914|   none  |
+        |grp_bigint_math_bigint_leftshift_fu_350   |bigint_math_bigint_leftshift   |      514|     6914|      514|     6914|   none  |
+        |grp_bigint_math_bigint_rightshift_fu_358  |bigint_math_bigint_rightshift  |     6914|     6914|     6914|     6914|   none  |
+        |grp_bigint_math_bigint_add_fu_364         |bigint_math_bigint_add         |     3591|     3591|     3591|     3591|   none  |
+        |grp_bigint_math_bigint_compare_fu_371     |bigint_math_bigint_compare     |      515|     1029|      515|     1029|   none  |
+        |grp_bigint_math_bigint_copy_fu_379        |bigint_math_bigint_copy        |      513|      513|      513|      513|   none  |
+        |grp_bigint_math_bigint_copy_fu_388        |bigint_math_bigint_copy        |      513|      513|      513|      513|   none  |
+        |grp_bigint_math_bigint_zero_fu_398        |bigint_math_bigint_zero        |      258|      258|      258|      258|   none  |
+        |grp_bigint_math_bigint_zero_fu_405        |bigint_math_bigint_zero        |      258|      258|      258|      258|   none  |
+        +------------------------------------------+-------------------------------+---------+---------+---------+---------+---------+
+
+        * Loop: 
+        +-------------+-----+------+----------+-----------+-----------+---------+----------+
+        |             |   Latency  | Iteration|  Initiation Interval  |   Trip  |          |
+        |  Loop Name  | min |  max |  Latency |  achieved |   target  |  Count  | Pipelined|
+        +-------------+-----+------+----------+-----------+-----------+---------+----------+
+        |- Loop 1     |    3|  3075|  3 ~ 12  |          -|          -| 1 ~ 256 |    no    |
+        | + Loop 1.1  |    1|     8|         1|          -|          -|  1 ~ 8  |    no    |
+        |- Loop 2     |    3|  3075|  3 ~ 12  |          -|          -| 1 ~ 256 |    no    |
+        | + Loop 2.1  |    1|     8|         1|          -|          -|  1 ~ 8  |    no    |
+        |- Loop 3     |    ?|     ?|         ?|          -|          -|        ?|    no    |
+        +-------------+-----+------+----------+-----------+-----------+---------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|    354|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |       10|      2|    2015|   3501|
+|Memory           |        8|      -|       0|      0|
+|Multiplexer      |        -|      -|       -|    628|
+|Register         |        -|      -|     507|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |       18|      2|    2522|   4483|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        6|   ~0  |       2|      8|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +------------------------------------------+-------------------------------+---------+-------+-----+-----+
+    |                 Instance                 |             Module            | BRAM_18K| DSP48E|  FF | LUT |
+    +------------------------------------------+-------------------------------+---------+-------+-----+-----+
+    |grp_bigint_math_bigint_add_fu_364         |bigint_math_bigint_add         |        2|      0|  179|  257|
+    |grp_bigint_math_bigint_compare_fu_371     |bigint_math_bigint_compare     |        0|      0|   93|  158|
+    |grp_bigint_math_bigint_copy_fu_379        |bigint_math_bigint_copy        |        0|      0|   30|   23|
+    |grp_bigint_math_bigint_copy_fu_388        |bigint_math_bigint_copy        |        0|      0|   30|   23|
+    |grp_bigint_math_bigint_leftshift_fu_343   |bigint_math_bigint_leftshift   |        0|      0|  292|  689|
+    |grp_bigint_math_bigint_leftshift_fu_350   |bigint_math_bigint_leftshift   |        0|      0|  292|  689|
+    |grp_bigint_math_bigint_mul_fu_335         |bigint_math_bigint_mul         |        5|      2|  424|  605|
+    |grp_bigint_math_bigint_rightshift_fu_358  |bigint_math_bigint_rightshift  |        0|      0|  206|  439|
+    |grp_bigint_math_bigint_sub_fu_326         |bigint_math_bigint_sub         |        3|      0|  447|  572|
+    |grp_bigint_math_bigint_zero_fu_398        |bigint_math_bigint_zero        |        0|      0|   11|   23|
+    |grp_bigint_math_bigint_zero_fu_405        |bigint_math_bigint_zero        |        0|      0|   11|   23|
+    +------------------------------------------+-------------------------------+---------+-------+-----+-----+
+    |Total                                     |                               |       10|      2| 2015| 3501|
+    +------------------------------------------+-------------------------------+---------+-------+-----+-----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +------------+---------------------------------+---------+---+----+------+-----+------+-------------+
+    |   Memory   |              Module             | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
+    +------------+---------------------------------+---------+---+----+------+-----+------+-------------+
+    |tempA_U     |bigint_math_bigint_add_tempA     |        1|  0|   0|   256|    8|     1|         2048|
+    |tempB_U     |bigint_math_bigint_add_tempA     |        1|  0|   0|   256|    8|     1|         2048|
+    |temp_U      |bigint_math_bigint_add_tempA     |        1|  0|   0|   256|    8|     1|         2048|
+    |d_U         |bigint_math_bigint_add_tempA     |        1|  0|   0|   256|    8|     1|         2048|
+    |quot_U      |bigint_math_bigint_add_tempA     |        1|  0|   0|   256|    8|     1|         2048|
+    |bitPlace_U  |bigint_math_bigint_add_tempA     |        1|  0|   0|   256|    8|     1|         2048|
+    |one_U       |bigint_math_bigint_longdiv_one   |        1|  0|   0|   256|    8|     1|         2048|
+    |zero_U      |bigint_math_bigint_longdiv_zero  |        1|  0|   0|   256|    8|     1|         2048|
+    +------------+---------------------------------+---------+---+----+------+-----+------+-------------+
+    |Total       |                                 |        8|  0|   0|  2048|   64|     8|        16384|
+    +------------+---------------------------------+---------+---+----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +------------------+----------+-------+---+----+------------+------------+
+    |   Variable Name  | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------+----------+-------+---+----+------------+------------+
+    |aMSB_4_fu_504_p2  |     +    |      0|  0|  32|          32|           1|
+    |aMSB_5_fu_524_p2  |     +    |      0|  0|  32|          32|           4|
+    |bMSB_4_fu_611_p2  |     +    |      0|  0|  32|          32|           1|
+    |bMSB_5_fu_631_p2  |     +    |      0|  0|  32|          32|           4|
+    |i_5_fu_436_p2     |     +    |      0|  0|   9|           9|           1|
+    |i_6_fu_543_p2     |     +    |      0|  0|   9|           9|           1|
+    |j_6_fu_465_p2     |     +    |      0|  0|   4|           4|           1|
+    |j_7_fu_572_p2     |     +    |      0|  0|   4|           4|           1|
+    |j_8_fu_666_p2     |     +    |      0|  0|  31|          31|           1|
+    |tmp_74_fu_651_p2  |     +    |      0|  0|  16|          32|          32|
+    |tmp_60_fu_482_p2  |     -    |      0|  0|   4|           3|           4|
+    |tmp_68_fu_589_p2  |     -    |      0|  0|   4|           3|           4|
+    |tmp_72_fu_637_p2  |     -    |      0|  0|  32|          32|          32|
+    |tmp_73_fu_645_p2  |     -    |      0|  0|  16|           1|          32|
+    |tmp_59_fu_477_p2  |    and   |      0|  0|   8|           8|           8|
+    |tmp_67_fu_584_p2  |    and   |      0|  0|   8|           8|           8|
+    |grp_fu_411_p2     |   icmp   |      0|  0|   1|           2|           1|
+    |tmp_54_fu_417_p2  |   icmp   |      0|  0|   1|           2|           2|
+    |tmp_57_fu_447_p2  |   icmp   |      0|  0|   3|           8|           1|
+    |tmp_62_fu_498_p2  |   icmp   |      0|  0|   3|           8|           1|
+    |tmp_63_fu_518_p2  |   icmp   |      0|  0|   1|           2|           1|
+    |tmp_65_fu_554_p2  |   icmp   |      0|  0|   3|           8|           1|
+    |tmp_70_fu_605_p2  |   icmp   |      0|  0|   3|           8|           1|
+    |tmp_71_fu_625_p2  |   icmp   |      0|  0|   1|           2|           1|
+    |tmp_75_fu_661_p2  |   icmp   |      0|  0|  11|          32|          32|
+    |tmp_58_fu_471_p2  |   lshr   |      0|  0|  15|           9|           8|
+    |tmp_61_fu_492_p2  |   lshr   |      0|  0|  12|           8|           8|
+    |tmp_66_fu_578_p2  |   lshr   |      0|  0|  15|           9|           8|
+    |tmp_69_fu_599_p2  |   lshr   |      0|  0|  12|           8|           8|
+    +------------------+----------+-------+---+----+------------+------------+
+    |Total             |          |      0|  0| 354|         378|         208|
+    +------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------------------------+----+-----------+-----+-----------+
+    |                      Name                     | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------------------------+----+-----------+-----+-----------+
+    |aMSB_1_reg_212                                 |  32|          2|   32|         64|
+    |aMSB_2_reg_223                                 |  32|          2|   32|         64|
+    |aMSB_3_reg_234                                 |  32|          2|   32|         64|
+    |aMSB_reg_189                                   |  32|          2|   32|         64|
+    |a_address0                                     |   8|          4|    8|         32|
+    |a_ce0                                          |   1|          4|    1|          4|
+    |ap_NS_fsm                                      |  78|         47|    1|         47|
+    |bMSB_1_reg_280                                 |  32|          2|   32|         64|
+    |bMSB_2_reg_291                                 |  32|          2|   32|         64|
+    |bMSB_3_reg_303                                 |  32|          2|   32|         64|
+    |bMSB_reg_257                                   |  32|          2|   32|         64|
+    |b_address0                                     |   8|          3|    8|         24|
+    |b_ce0                                          |   1|          3|    1|          3|
+    |bitPlace_address0                              |   8|          6|    8|         48|
+    |bitPlace_ce0                                   |   1|          6|    1|          6|
+    |bitPlace_d0                                    |   8|          4|    8|         32|
+    |bitPlace_we0                                   |   1|          4|    1|          4|
+    |d_address0                                     |   8|          7|    8|         56|
+    |d_ce0                                          |   1|          7|    1|          7|
+    |d_d0                                           |   8|          4|    8|         32|
+    |d_we0                                          |   1|          4|    1|          4|
+    |grp_bigint_math_bigint_compare_fu_371_a_q0     |   8|          3|    8|         24|
+    |grp_bigint_math_bigint_compare_fu_371_b_q0     |   8|          5|    8|         40|
+    |grp_bigint_math_bigint_copy_fu_379_from_q0     |   8|          6|    8|         48|
+    |grp_bigint_math_bigint_rightshift_fu_358_a_q0  |   8|          3|    8|         24|
+    |grp_bigint_math_bigint_sub_fu_326_a_q0         |   8|          3|    8|         24|
+    |grp_bigint_math_bigint_sub_fu_326_b_q0         |   8|          3|    8|         24|
+    |i5_reg_178                                     |   9|          2|    9|         18|
+    |i_1_reg_246                                    |   9|          2|    9|         18|
+    |j_1_reg_269                                    |   4|          2|    4|          8|
+    |j_2_reg_315                                    |  31|          2|   31|         62|
+    |j_reg_201                                      |   4|          2|    4|          8|
+    |one_address0                                   |   8|          3|    8|         24|
+    |one_ce0                                        |   1|          3|    1|          3|
+    |out1_address0                                  |   8|          6|    8|         48|
+    |out1_ce0                                       |   1|          6|    1|          6|
+    |out1_d0                                        |   8|          6|    8|         48|
+    |out1_we0                                       |   1|          6|    1|          6|
+    |out_r_address0                                 |   8|          6|    8|         48|
+    |out_r_ce0                                      |   1|          6|    1|          6|
+    |out_r_d0                                       |   8|          5|    8|         40|
+    |out_r_we0                                      |   1|          5|    1|          5|
+    |quot_address0                                  |   8|          5|    8|         40|
+    |quot_ce0                                       |   1|          5|    1|          5|
+    |quot_d0                                        |   8|          3|    8|         24|
+    |quot_we0                                       |   1|          3|    1|          3|
+    |tempA_address0                                 |   8|          6|    8|         48|
+    |tempA_ce0                                      |   1|          6|    1|          6|
+    |tempA_d0                                       |   8|          3|    8|         24|
+    |tempA_we0                                      |   1|          3|    1|          3|
+    |tempB_address0                                 |   8|          7|    8|         56|
+    |tempB_ce0                                      |   1|          7|    1|          7|
+    |tempB_d0                                       |   8|          3|    8|         24|
+    |tempB_we0                                      |   1|          3|    1|          3|
+    |temp_address0                                  |  16|          8|    8|         64|
+    |temp_ce0                                       |   2|          8|    1|          8|
+    |temp_d0                                        |   8|          6|    8|         48|
+    |temp_we0                                       |   1|          6|    1|          6|
+    |zero_address0                                  |   8|          3|    8|         24|
+    |zero_ce0                                       |   1|          3|    1|          3|
+    +-----------------------------------------------+----+-----------+-----+-----------+
+    |Total                                          | 628|        292|  542|       1739|
+    +-----------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------------------------+----+----+-----+-----------+
+    |                           Name                           | FF | LUT| Bits| Const Bits|
+    +----------------------------------------------------------+----+----+-----+-----------+
+    |aMSB_1_reg_212                                            |  32|   0|   32|          0|
+    |aMSB_2_reg_223                                            |  32|   0|   32|          0|
+    |aMSB_3_reg_234                                            |  32|   0|   32|          0|
+    |aMSB_reg_189                                              |  32|   0|   32|          0|
+    |a_load_reg_717                                            |   8|   0|    8|          0|
+    |ap_CS_fsm                                                 |  46|   0|   46|          0|
+    |ap_reg_grp_bigint_math_bigint_add_fu_364_ap_start         |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_compare_fu_371_ap_start     |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_copy_fu_379_ap_start        |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_copy_fu_388_ap_start        |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_leftshift_fu_343_ap_start   |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_leftshift_fu_350_ap_start   |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_mul_fu_335_ap_start         |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_rightshift_fu_358_ap_start  |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_sub_fu_326_ap_start         |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_zero_fu_398_ap_start        |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_zero_fu_405_ap_start        |   1|   0|    1|          0|
+    |bMSB_1_reg_280                                            |  32|   0|   32|          0|
+    |bMSB_2_reg_291                                            |  32|   0|   32|          0|
+    |bMSB_3_reg_303                                            |  32|   0|   32|          0|
+    |bMSB_reg_257                                              |  32|   0|   32|          0|
+    |b_load_reg_770                                            |   8|   0|    8|          0|
+    |flag_3_fu_122                                             |   1|   0|    2|          1|
+    |flag_fu_118                                               |   1|   0|    2|          1|
+    |i5_reg_178                                                |   9|   0|    9|          0|
+    |i_1_reg_246                                               |   9|   0|    9|          0|
+    |i_5_reg_707                                               |   9|   0|    9|          0|
+    |i_6_reg_760                                               |   9|   0|    9|          0|
+    |j_1_reg_269                                               |   4|   0|    4|          0|
+    |j_2_reg_315                                               |  31|   0|   31|          0|
+    |j_8_reg_816                                               |  31|   0|   31|          0|
+    |j_reg_201                                                 |   4|   0|    4|          0|
+    |tmp_11_reg_703                                            |   1|   0|    1|          0|
+    |tmp_13_reg_756                                            |   1|   0|    1|          0|
+    |tmp_53_reg_684                                            |   1|   0|    1|          0|
+    |tmp_54_reg_688                                            |   1|   0|    1|          0|
+    |tmp_55_reg_692                                            |   1|   0|    1|          0|
+    |tmp_72_reg_802                                            |  32|   0|   32|          0|
+    |tmp_74_reg_808                                            |  32|   0|   32|          0|
+    |tmp_s_reg_680                                             |   1|   0|    1|          0|
+    +----------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                     | 507|   0|  509|          2|
+    +----------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------+-----+-----+------------+----------------------------+--------------+
+|    RTL Ports   | Dir | Bits|  Protocol  |        Source Object       |    C Type    |
++----------------+-----+-----+------------+----------------------------+--------------+
+|ap_clk          |  in |    1| ap_ctrl_hs | bigint_math_bigint_longdiv | return value |
+|ap_rst          |  in |    1| ap_ctrl_hs | bigint_math_bigint_longdiv | return value |
+|ap_start        |  in |    1| ap_ctrl_hs | bigint_math_bigint_longdiv | return value |
+|ap_done         | out |    1| ap_ctrl_hs | bigint_math_bigint_longdiv | return value |
+|ap_idle         | out |    1| ap_ctrl_hs | bigint_math_bigint_longdiv | return value |
+|ap_ready        | out |    1| ap_ctrl_hs | bigint_math_bigint_longdiv | return value |
+|out_r_address0  | out |    8|  ap_memory |            out_r           |     array    |
+|out_r_ce0       | out |    1|  ap_memory |            out_r           |     array    |
+|out_r_we0       | out |    1|  ap_memory |            out_r           |     array    |
+|out_r_d0        | out |    8|  ap_memory |            out_r           |     array    |
+|out_r_q0        |  in |    8|  ap_memory |            out_r           |     array    |
+|out1_address0   | out |    8|  ap_memory |            out1            |     array    |
+|out1_ce0        | out |    1|  ap_memory |            out1            |     array    |
+|out1_we0        | out |    1|  ap_memory |            out1            |     array    |
+|out1_d0         | out |    8|  ap_memory |            out1            |     array    |
+|a_address0      | out |    8|  ap_memory |              a             |     array    |
+|a_ce0           | out |    1|  ap_memory |              a             |     array    |
+|a_q0            |  in |    8|  ap_memory |              a             |     array    |
+|b_address0      | out |    8|  ap_memory |              b             |     array    |
+|b_ce0           | out |    1|  ap_memory |              b             |     array    |
+|b_q0            |  in |    8|  ap_memory |              b             |     array    |
++----------------+-----+-----+------------+----------------------------+--------------+
+

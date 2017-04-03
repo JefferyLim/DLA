@@ -1,0 +1,925 @@
+
+
+================================================================
+== Vivado HLS Report for 'bigint_math_bigint_longdiv'
+================================================================
+* Date:           Sun Mar 19 09:53:14 2017
+
+* Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
+* Project:        BigInt
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  50.00|     13.51|        6.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+------+----------+-----------+-----------+---------+----------+
+        |             |   Latency  | Iteration|  Initiation Interval  |   Trip  |          |
+        |  Loop Name  | min |  max |  Latency |  achieved |   target  |  Count  | Pipelined|
+        +-------------+-----+------+----------+-----------+-----------+---------+----------+
+        |- Loop 1     |    3|  3075|  3 ~ 12  |          -|          -| 1 ~ 256 |    no    |
+        | + Loop 1.1  |    1|     8|         1|          -|          -|  1 ~ 8  |    no    |
+        |- Loop 2     |    3|  3075|  3 ~ 12  |          -|          -| 1 ~ 256 |    no    |
+        | + Loop 2.1  |    1|     8|         1|          -|          -|  1 ~ 8  |    no    |
+        |- Loop 3     |    ?|     ?|         ?|          -|          -|        ?|    no    |
+        +-------------+-----+------+----------+-----------+-----------+---------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 46
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / (!tmp_s)
+	43  / (tmp_s)
+7 --> 
+	8  / true
+8 --> 
+	9  / (!tmp_53)
+	46  / (tmp_53)
+9 --> 
+	10  / true
+10 --> 
+	44  / (tmp_54)
+	11  / (!tmp_54 & !tmp_55)
+	43  / (!tmp_54 & tmp_55)
+11 --> 
+	12  / (!tmp_11)
+	14  / (tmp_11)
+12 --> 
+	13  / (!tmp_57)
+	14  / (tmp_57)
+13 --> 
+	13  / (!tmp_12 & !tmp_62)
+	14  / (tmp_12) | (tmp_62)
+14 --> 
+	11  / (!tmp_11 & !tmp_63)
+	15  / (tmp_11) | (tmp_63)
+15 --> 
+	16  / (!tmp_13)
+	18  / (tmp_13)
+16 --> 
+	17  / (!tmp_65)
+	18  / (tmp_65)
+17 --> 
+	17  / (!tmp_14 & !tmp_70)
+	18  / (tmp_14) | (tmp_70)
+18 --> 
+	19  / (tmp_13) | (tmp_71)
+	15  / (!tmp_13 & !tmp_71)
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / (tmp_75)
+	39  / (!tmp_75)
+23 --> 
+	24  / (!tmp_15)
+	31  / (tmp_15)
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	22  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+44 --> 
+	45  / true
+45 --> 
+	43  / true
+46 --> 
+	43  / true
+* FSM state operations: 
+
+ <State 1>: 0.00ns
+ST_1: tempA [1/1] 0.00ns
+:6  %tempA = alloca [256 x i8], align 16
+
+ST_1: tempB [1/1] 0.00ns
+:7  %tempB = alloca [256 x i8], align 16
+
+ST_1: temp [1/1] 0.00ns
+:8  %temp = alloca [256 x i8], align 16
+
+ST_1: d [1/1] 0.00ns
+:9  %d = alloca [256 x i8], align 16
+
+ST_1: quot [1/1] 0.00ns
+:10  %quot = alloca [256 x i8], align 16
+
+ST_1: bitPlace [1/1] 0.00ns
+:11  %bitPlace = alloca [256 x i8], align 16
+
+ST_1: stg_53 [2/2] 0.00ns
+:13  call fastcc void @bigint_math_bigint_zero([256 x i8]* %tempB)
+
+
+ <State 2>: 0.00ns
+ST_2: stg_54 [1/2] 0.00ns
+:13  call fastcc void @bigint_math_bigint_zero([256 x i8]* %tempB)
+
+
+ <State 3>: 0.00ns
+ST_3: stg_55 [2/2] 0.00ns
+:12  call fastcc void @bigint_math_bigint_zero([256 x i8]* %tempA)
+
+ST_3: stg_56 [2/2] 0.00ns
+:15  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempB, [256 x i8]* %b)
+
+
+ <State 4>: 0.00ns
+ST_4: stg_57 [1/2] 0.00ns
+:12  call fastcc void @bigint_math_bigint_zero([256 x i8]* %tempA)
+
+ST_4: stg_58 [1/2] 0.00ns
+:15  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempB, [256 x i8]* %b)
+
+
+ <State 5>: 0.00ns
+ST_5: stg_59 [2/2] 0.00ns
+:14  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempA, [256 x i8]* %a)
+
+ST_5: stg_60 [2/2] 0.00ns
+:16  call fastcc void @bigint_math_bigint_zero([256 x i8]* %out_r)
+
+ST_5: stg_61 [2/2] 0.00ns
+:17  call fastcc void @bigint_math_bigint_zero([256 x i8]* %out1)
+
+ST_5: tmp [2/2] 0.00ns
+:18  %tmp = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %tempB, [256 x i8]* @zero)
+
+
+ <State 6>: 11.94ns
+ST_6: empty [1/1] 0.00ns
+:0  %empty = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* @one, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_6: empty_54 [1/1] 0.00ns
+:1  %empty_54 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %a, [1 x i8]* @p_str13, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str13, i32 -1, [1 x i8]* @p_str13, [1 x i8]* @p_str13, [1 x i8]* @p_str13, [1 x i8]* @p_str13, [1 x i8]* @p_str13)
+
+ST_6: empty_55 [1/1] 0.00ns
+:2  %empty_55 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %b, [1 x i8]* @p_str13, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str13, i32 -1, [1 x i8]* @p_str13, [1 x i8]* @p_str13, [1 x i8]* @p_str13, [1 x i8]* @p_str13, [1 x i8]* @p_str13)
+
+ST_6: empty_56 [1/1] 0.00ns
+:3  %empty_56 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* @zero, [1 x i8]* @p_str13, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str13, i32 -1, [1 x i8]* @p_str13, [1 x i8]* @p_str13, [1 x i8]* @p_str13, [1 x i8]* @p_str13, [1 x i8]* @p_str13)
+
+ST_6: empty_57 [1/1] 0.00ns
+:4  %empty_57 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %out_r, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_6: empty_58 [1/1] 0.00ns
+:5  %empty_58 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %out1, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_6: stg_69 [1/2] 0.00ns
+:14  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempA, [256 x i8]* %a)
+
+ST_6: stg_70 [1/2] 0.00ns
+:16  call fastcc void @bigint_math_bigint_zero([256 x i8]* %out_r)
+
+ST_6: stg_71 [1/2] 0.00ns
+:17  call fastcc void @bigint_math_bigint_zero([256 x i8]* %out1)
+
+ST_6: tmp [1/2] 10.58ns
+:18  %tmp = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %tempB, [256 x i8]* @zero)
+
+ST_6: tmp_s [1/1] 1.36ns
+:19  %tmp_s = icmp eq i2 %tmp, 0
+
+ST_6: empty_59 [1/1] 0.00ns
+:20  %empty_59 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %bitPlace, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_6: empty_60 [1/1] 0.00ns
+:21  %empty_60 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %quot, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_6: empty_61 [1/1] 0.00ns
+:22  %empty_61 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %temp, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_6: empty_62 [1/1] 0.00ns
+:23  %empty_62 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %d, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_6: empty_63 [1/1] 0.00ns
+:24  %empty_63 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %tempB, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_6: empty_64 [1/1] 0.00ns
+:25  %empty_64 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %tempA, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_6: stg_80 [1/1] 0.00ns
+:26  br i1 %tmp_s, label %._crit_edge, label %1
+
+
+ <State 7>: 0.00ns
+ST_7: tmp_3 [2/2] 0.00ns
+:0  %tmp_3 = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %tempB, [256 x i8]* @one)
+
+
+ <State 8>: 11.94ns
+ST_8: tmp_3 [1/2] 10.58ns
+:0  %tmp_3 = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %tempB, [256 x i8]* @one)
+
+ST_8: tmp_53 [1/1] 1.36ns
+:1  %tmp_53 = icmp eq i2 %tmp_3, 0
+
+ST_8: stg_84 [1/1] 0.00ns
+:2  br i1 %tmp_53, label %2, label %3
+
+ST_8: stg_85 [2/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_copy([256 x i8]* %out_r, [256 x i8]* %tempA)
+
+ST_8: stg_86 [2/2] 0.00ns
+:1  call fastcc void @bigint_math_bigint_copy([256 x i8]* %out1, [256 x i8]* @zero)
+
+
+ <State 9>: 0.00ns
+ST_9: i [2/2] 0.00ns
+:0  %i = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %tempA, [256 x i8]* %tempB)
+
+
+ <State 10>: 11.94ns
+ST_10: i [1/2] 10.58ns
+:0  %i = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %tempA, [256 x i8]* %tempB)
+
+ST_10: tmp_54 [1/1] 1.36ns
+:1  %tmp_54 = icmp eq i2 %i, -1
+
+ST_10: stg_90 [1/1] 0.00ns
+:2  br i1 %tmp_54, label %4, label %5
+
+ST_10: tmp_55 [1/1] 1.36ns
+:0  %tmp_55 = icmp eq i2 %i, 0
+
+ST_10: stg_92 [1/1] 0.00ns
+:1  br i1 %tmp_55, label %6, label %.preheader11.preheader
+
+ST_10: flag [1/1] 0.00ns
+.preheader11.preheader:0  %flag = alloca i2
+
+ST_10: stg_94 [1/1] 1.57ns
+.preheader11.preheader:1  store i2 0, i2* %flag
+
+ST_10: stg_95 [1/1] 1.57ns
+.preheader11.preheader:2  br label %.preheader11
+
+ST_10: out_addr [1/1] 0.00ns
+:0  %out_addr = getelementptr [256 x i8]* %out_r, i64 0, i64 255
+
+ST_10: stg_97 [1/1] 2.39ns
+:1  store i8 1, i8* %out_addr, align 1
+
+ST_10: out1_addr [1/1] 0.00ns
+:2  %out1_addr = getelementptr [256 x i8]* %out1, i64 0, i64 255
+
+ST_10: stg_99 [1/1] 2.39ns
+:3  store i8 0, i8* %out1_addr, align 1
+
+ST_10: stg_100 [1/1] 0.00ns
+:4  br label %._crit_edge
+
+
+ <State 11>: 2.39ns
+ST_11: i5 [1/1] 0.00ns
+.preheader11:0  %i5 = phi i9 [ %i_5, %10 ], [ 0, %.preheader11.preheader ]
+
+ST_11: aMSB [1/1] 0.00ns
+.preheader11:1  %aMSB = phi i32 [ %aMSB_5, %10 ], [ 0, %.preheader11.preheader ]
+
+ST_11: tmp_11 [1/1] 0.00ns
+.preheader11:2  %tmp_11 = call i1 @_ssdm_op_BitSelect.i1.i9.i32(i9 %i5, i32 8)
+
+ST_11: empty_65 [1/1] 0.00ns
+.preheader11:3  %empty_65 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 256, i64 128)
+
+ST_11: i_5 [1/1] 1.84ns
+.preheader11:4  %i_5 = add i9 %i5, 1
+
+ST_11: stg_106 [1/1] 1.57ns
+.preheader11:5  br i1 %tmp_11, label %.loopexit8, label %7
+
+ST_11: tmp_56 [1/1] 0.00ns
+:0  %tmp_56 = zext i9 %i5 to i64
+
+ST_11: a_addr [1/1] 0.00ns
+:1  %a_addr = getelementptr [256 x i8]* %a, i64 0, i64 %tmp_56
+
+ST_11: a_load [2/2] 2.39ns
+:2  %a_load = load i8* %a_addr, align 1
+
+
+ <State 12>: 5.96ns
+ST_12: a_load [1/2] 2.39ns
+:2  %a_load = load i8* %a_addr, align 1
+
+ST_12: tmp_57 [1/1] 2.00ns
+:3  %tmp_57 = icmp eq i8 %a_load, 0
+
+ST_12: stg_112 [1/1] 1.57ns
+:4  br i1 %tmp_57, label %.loopexit5, label %.preheader10
+
+
+ <State 13>: 2.81ns
+ST_13: j [1/1] 0.00ns
+.preheader10:0  %j = phi i4 [ %j_6, %9 ], [ 0, %7 ]
+
+ST_13: aMSB_1 [1/1] 0.00ns
+.preheader10:1  %aMSB_1 = phi i32 [ %aMSB_4, %9 ], [ %aMSB, %7 ]
+
+ST_13: j_cast3 [1/1] 0.00ns
+.preheader10:2  %j_cast3 = zext i4 %j to i8
+
+ST_13: tmp_12 [1/1] 0.00ns
+.preheader10:3  %tmp_12 = call i1 @_ssdm_op_BitSelect.i1.i4.i32(i4 %j, i32 3)
+
+ST_13: empty_66 [1/1] 0.00ns
+.preheader10:4  %empty_66 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 8, i64 4)
+
+ST_13: j_6 [1/1] 0.80ns
+.preheader10:5  %j_6 = add i4 %j, 1
+
+ST_13: stg_119 [1/1] 0.00ns
+.preheader10:6  br i1 %tmp_12, label %.loopexit5.loopexit, label %8
+
+ST_13: tmp_58 [1/1] 0.00ns (grouped into LUT with out node tmp_62)
+:0  %tmp_58 = lshr i8 -128, %j_cast3
+
+ST_13: tmp_59 [1/1] 0.00ns (grouped into LUT with out node tmp_62)
+:1  %tmp_59 = and i8 %tmp_58, %a_load
+
+ST_13: tmp_60 [1/1] 0.80ns
+:2  %tmp_60 = sub i4 7, %j
+
+ST_13: tmp_73_cast [1/1] 0.00ns (grouped into LUT with out node tmp_62)
+:3  %tmp_73_cast = zext i4 %tmp_60 to i8
+
+ST_13: tmp_61 [1/1] 0.00ns (grouped into LUT with out node tmp_62)
+:4  %tmp_61 = lshr i8 %tmp_59, %tmp_73_cast
+
+ST_13: tmp_62 [1/1] 2.01ns (out node of the LUT)
+:5  %tmp_62 = icmp eq i8 %tmp_61, 1
+
+ST_13: stg_126 [1/1] 0.00ns
+:6  br i1 %tmp_62, label %.loopexit5.loopexit.pre, label %9
+
+ST_13: aMSB_4 [1/1] 2.44ns
+:0  %aMSB_4 = add nsw i32 %aMSB_1, 1
+
+ST_13: stg_128 [1/1] 0.00ns
+:1  br label %.preheader10
+
+ST_13: stg_129 [1/1] 1.57ns
+.loopexit5.loopexit.pre:0  store i2 1, i2* %flag
+
+ST_13: stg_130 [1/1] 0.00ns
+.loopexit5.loopexit.pre:1  br label %.loopexit5.loopexit
+
+ST_13: stg_131 [1/1] 1.57ns
+.loopexit5.loopexit:0  br label %.loopexit5
+
+
+ <State 14>: 2.93ns
+ST_14: aMSB_2 [1/1] 0.00ns
+.loopexit5:0  %aMSB_2 = phi i32 [ %aMSB, %7 ], [ %aMSB_1, %.loopexit5.loopexit ]
+
+ST_14: flag_load [1/1] 0.00ns
+.loopexit5:1  %flag_load = load i2* %flag
+
+ST_14: tmp_63 [1/1] 1.36ns
+.loopexit5:2  %tmp_63 = icmp eq i2 %flag_load, 1
+
+ST_14: stg_135 [1/1] 1.57ns
+.loopexit5:3  br i1 %tmp_63, label %.loopexit8, label %10
+
+ST_14: aMSB_5 [1/1] 2.44ns
+:0  %aMSB_5 = add nsw i32 %aMSB_2, 8
+
+ST_14: stg_137 [1/1] 0.00ns
+:1  br label %.preheader11
+
+ST_14: aMSB_3 [1/1] 0.00ns
+.loopexit8:0  %aMSB_3 = phi i32 [ %aMSB, %.preheader11 ], [ %aMSB_2, %.loopexit5 ]
+
+ST_14: flag_3 [1/1] 0.00ns
+.loopexit8:1  %flag_3 = alloca i2
+
+ST_14: stg_140 [1/1] 1.57ns
+.loopexit8:2  store i2 0, i2* %flag_3
+
+ST_14: stg_141 [1/1] 1.57ns
+.loopexit8:3  br label %11
+
+
+ <State 15>: 2.39ns
+ST_15: i_1 [1/1] 0.00ns
+:0  %i_1 = phi i9 [ 0, %.loopexit8 ], [ %i_6, %15 ]
+
+ST_15: bMSB [1/1] 0.00ns
+:1  %bMSB = phi i32 [ 0, %.loopexit8 ], [ %bMSB_5, %15 ]
+
+ST_15: tmp_13 [1/1] 0.00ns
+:2  %tmp_13 = call i1 @_ssdm_op_BitSelect.i1.i9.i32(i9 %i_1, i32 8)
+
+ST_15: empty_67 [1/1] 0.00ns
+:3  %empty_67 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 256, i64 128)
+
+ST_15: i_6 [1/1] 1.84ns
+:4  %i_6 = add i9 %i_1, 1
+
+ST_15: stg_147 [1/1] 1.57ns
+:5  br i1 %tmp_13, label %.loopexit3, label %12
+
+ST_15: tmp_64 [1/1] 0.00ns
+:0  %tmp_64 = zext i9 %i_1 to i64
+
+ST_15: b_addr [1/1] 0.00ns
+:1  %b_addr = getelementptr [256 x i8]* %b, i64 0, i64 %tmp_64
+
+ST_15: b_load [2/2] 2.39ns
+:2  %b_load = load i8* %b_addr, align 1
+
+
+ <State 16>: 5.96ns
+ST_16: b_load [1/2] 2.39ns
+:2  %b_load = load i8* %b_addr, align 1
+
+ST_16: tmp_65 [1/1] 2.00ns
+:3  %tmp_65 = icmp eq i8 %b_load, 0
+
+ST_16: stg_153 [1/1] 1.57ns
+:4  br i1 %tmp_65, label %.loopexit, label %.preheader
+
+
+ <State 17>: 2.81ns
+ST_17: j_1 [1/1] 0.00ns
+.preheader:0  %j_1 = phi i4 [ %j_7, %14 ], [ 0, %12 ]
+
+ST_17: bMSB_1 [1/1] 0.00ns
+.preheader:1  %bMSB_1 = phi i32 [ %bMSB_4, %14 ], [ %bMSB, %12 ]
+
+ST_17: j_1_cast1 [1/1] 0.00ns
+.preheader:2  %j_1_cast1 = zext i4 %j_1 to i8
+
+ST_17: tmp_14 [1/1] 0.00ns
+.preheader:3  %tmp_14 = call i1 @_ssdm_op_BitSelect.i1.i4.i32(i4 %j_1, i32 3)
+
+ST_17: empty_68 [1/1] 0.00ns
+.preheader:4  %empty_68 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 8, i64 4)
+
+ST_17: j_7 [1/1] 0.80ns
+.preheader:5  %j_7 = add i4 %j_1, 1
+
+ST_17: stg_160 [1/1] 0.00ns
+.preheader:6  br i1 %tmp_14, label %.loopexit.loopexit, label %13
+
+ST_17: tmp_66 [1/1] 0.00ns (grouped into LUT with out node tmp_70)
+:0  %tmp_66 = lshr i8 -128, %j_1_cast1
+
+ST_17: tmp_67 [1/1] 0.00ns (grouped into LUT with out node tmp_70)
+:1  %tmp_67 = and i8 %tmp_66, %b_load
+
+ST_17: tmp_68 [1/1] 0.80ns
+:2  %tmp_68 = sub i4 7, %j_1
+
+ST_17: tmp_84_cast [1/1] 0.00ns (grouped into LUT with out node tmp_70)
+:3  %tmp_84_cast = zext i4 %tmp_68 to i8
+
+ST_17: tmp_69 [1/1] 0.00ns (grouped into LUT with out node tmp_70)
+:4  %tmp_69 = lshr i8 %tmp_67, %tmp_84_cast
+
+ST_17: tmp_70 [1/1] 2.01ns (out node of the LUT)
+:5  %tmp_70 = icmp eq i8 %tmp_69, 1
+
+ST_17: stg_167 [1/1] 0.00ns
+:6  br i1 %tmp_70, label %.loopexit.loopexit.pre, label %14
+
+ST_17: bMSB_4 [1/1] 2.44ns
+:0  %bMSB_4 = add nsw i32 %bMSB_1, 1
+
+ST_17: stg_169 [1/1] 0.00ns
+:1  br label %.preheader
+
+ST_17: stg_170 [1/1] 1.57ns
+.loopexit.loopexit.pre:0  store i2 1, i2* %flag_3
+
+ST_17: stg_171 [1/1] 0.00ns
+.loopexit.loopexit.pre:1  br label %.loopexit.loopexit
+
+ST_17: stg_172 [1/1] 1.57ns
+.loopexit.loopexit:0  br label %.loopexit
+
+
+ <State 18>: 2.93ns
+ST_18: bMSB_2 [1/1] 0.00ns
+.loopexit:0  %bMSB_2 = phi i32 [ %bMSB, %12 ], [ %bMSB_1, %.loopexit.loopexit ]
+
+ST_18: flag_3_load [1/1] 0.00ns
+.loopexit:1  %flag_3_load = load i2* %flag_3
+
+ST_18: tmp_71 [1/1] 1.36ns
+.loopexit:2  %tmp_71 = icmp eq i2 %flag_3_load, 1
+
+ST_18: stg_176 [1/1] 1.57ns
+.loopexit:3  br i1 %tmp_71, label %.loopexit3, label %15
+
+ST_18: bMSB_5 [1/1] 2.44ns
+:0  %bMSB_5 = add nsw i32 %bMSB_2, 8
+
+ST_18: stg_178 [1/1] 0.00ns
+:1  br label %11
+
+ST_18: stg_179 [2/2] 0.00ns
+.loopexit3:1  call fastcc void @bigint_math_bigint_zero([256 x i8]* %d)
+
+ST_18: stg_180 [2/2] 0.00ns
+.loopexit3:6  call fastcc void @bigint_math_bigint_zero([256 x i8]* %bitPlace)
+
+
+ <State 19>: 0.00ns
+ST_19: bMSB_3 [1/1] 0.00ns
+.loopexit3:0  %bMSB_3 = phi i32 [ %bMSB, %11 ], [ %bMSB_2, %.loopexit ]
+
+ST_19: stg_182 [1/2] 0.00ns
+.loopexit3:1  call fastcc void @bigint_math_bigint_zero([256 x i8]* %d)
+
+ST_19: stg_183 [1/2] 0.00ns
+.loopexit3:6  call fastcc void @bigint_math_bigint_zero([256 x i8]* %bitPlace)
+
+
+ <State 20>: 10.80ns
+ST_20: stg_184 [2/2] 0.00ns
+.loopexit3:2  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp)
+
+ST_20: tmp_72 [1/1] 2.44ns
+.loopexit3:3  %tmp_72 = sub nsw i32 %bMSB_3, %aMSB_3
+
+ST_20: stg_186 [2/2] 8.36ns
+.loopexit3:4  call fastcc void @bigint_math_bigint_leftshift([256 x i8]* %d, [256 x i8]* %tempB, i32 %tmp_72)
+
+ST_20: stg_187 [2/2] 0.00ns
+.loopexit3:5  call fastcc void @bigint_math_bigint_zero([256 x i8]* %quot)
+
+ST_20: stg_188 [2/2] 8.36ns
+.loopexit3:7  call fastcc void @bigint_math_bigint_leftshift([256 x i8]* %bitPlace, [256 x i8]* @one, i32 %tmp_72)
+
+ST_20: tmp_73 [1/1] 1.97ns
+.loopexit3:8  %tmp_73 = sub i32 1, %aMSB_3
+
+ST_20: tmp_74 [1/1] 1.97ns
+.loopexit3:9  %tmp_74 = add i32 %tmp_73, %bMSB_3
+
+
+ <State 21>: 1.57ns
+ST_21: stg_191 [1/2] 0.00ns
+.loopexit3:2  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp)
+
+ST_21: stg_192 [1/2] 0.00ns
+.loopexit3:4  call fastcc void @bigint_math_bigint_leftshift([256 x i8]* %d, [256 x i8]* %tempB, i32 %tmp_72)
+
+ST_21: stg_193 [1/2] 0.00ns
+.loopexit3:5  call fastcc void @bigint_math_bigint_zero([256 x i8]* %quot)
+
+ST_21: stg_194 [1/2] 0.00ns
+.loopexit3:7  call fastcc void @bigint_math_bigint_leftshift([256 x i8]* %bitPlace, [256 x i8]* @one, i32 %tmp_72)
+
+ST_21: stg_195 [1/1] 1.57ns
+.loopexit3:10  br label %16
+
+
+ <State 22>: 2.52ns
+ST_22: j_2 [1/1] 0.00ns
+:0  %j_2 = phi i31 [ 0, %.loopexit3 ], [ %j_8, %._crit_edge14 ]
+
+ST_22: j_2_cast [1/1] 0.00ns
+:1  %j_2_cast = zext i31 %j_2 to i32
+
+ST_22: tmp_75 [1/1] 2.52ns
+:2  %tmp_75 = icmp slt i32 %j_2_cast, %tmp_74
+
+ST_22: j_8 [1/1] 2.44ns
+:3  %j_8 = add i31 %j_2, 1
+
+ST_22: stg_200 [1/1] 0.00ns
+:4  br i1 %tmp_75, label %17, label %19
+
+ST_22: i_7 [2/2] 0.00ns
+:0  %i_7 = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %tempA, [256 x i8]* %d)
+
+ST_22: stg_202 [2/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_copy([256 x i8]* %out_r, [256 x i8]* %quot)
+
+
+ <State 23>: 10.58ns
+ST_23: i_7 [1/2] 10.58ns
+:0  %i_7 = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %tempA, [256 x i8]* %d)
+
+ST_23: tmp_15 [1/1] 0.00ns
+:1  %tmp_15 = call i1 @_ssdm_op_BitSelect.i1.i2.i32(i2 %i_7, i32 1)
+
+ST_23: stg_205 [1/1] 0.00ns
+:2  br i1 %tmp_15, label %._crit_edge14, label %18
+
+ST_23: stg_206 [2/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_add([256 x i8]* %temp, [256 x i8]* %quot, [256 x i8]* %bitPlace)
+
+
+ <State 24>: 0.00ns
+ST_24: stg_207 [1/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_add([256 x i8]* %temp, [256 x i8]* %quot, [256 x i8]* %bitPlace)
+
+
+ <State 25>: 0.00ns
+ST_25: stg_208 [2/2] 0.00ns
+:1  call fastcc void @bigint_math_bigint_copy([256 x i8]* %quot, [256 x i8]* %temp)
+
+
+ <State 26>: 0.00ns
+ST_26: stg_209 [1/2] 0.00ns
+:1  call fastcc void @bigint_math_bigint_copy([256 x i8]* %quot, [256 x i8]* %temp)
+
+
+ <State 27>: 0.00ns
+ST_27: stg_210 [2/2] 0.00ns
+:2  call fastcc void @bigint_math_bigint_sub([256 x i8]* %temp, [256 x i8]* %tempA, [256 x i8]* %d)
+
+
+ <State 28>: 0.00ns
+ST_28: stg_211 [1/2] 0.00ns
+:2  call fastcc void @bigint_math_bigint_sub([256 x i8]* %temp, [256 x i8]* %tempA, [256 x i8]* %d)
+
+
+ <State 29>: 0.00ns
+ST_29: stg_212 [2/2] 0.00ns
+:3  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempA, [256 x i8]* %temp)
+
+
+ <State 30>: 0.00ns
+ST_30: stg_213 [1/2] 0.00ns
+:3  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempA, [256 x i8]* %temp)
+
+ST_30: stg_214 [1/1] 0.00ns
+:4  br label %._crit_edge14
+
+
+ <State 31>: 0.00ns
+ST_31: stg_215 [2/2] 0.00ns
+._crit_edge14:0  call fastcc void @bigint_math_bigint_rightshift([256 x i8]* %temp, [256 x i8]* %bitPlace)
+
+
+ <State 32>: 0.00ns
+ST_32: stg_216 [1/2] 0.00ns
+._crit_edge14:0  call fastcc void @bigint_math_bigint_rightshift([256 x i8]* %temp, [256 x i8]* %bitPlace)
+
+
+ <State 33>: 0.00ns
+ST_33: stg_217 [2/2] 0.00ns
+._crit_edge14:1  call fastcc void @bigint_math_bigint_copy([256 x i8]* %bitPlace, [256 x i8]* %temp)
+
+
+ <State 34>: 0.00ns
+ST_34: stg_218 [1/2] 0.00ns
+._crit_edge14:1  call fastcc void @bigint_math_bigint_copy([256 x i8]* %bitPlace, [256 x i8]* %temp)
+
+
+ <State 35>: 0.00ns
+ST_35: stg_219 [2/2] 0.00ns
+._crit_edge14:2  call fastcc void @bigint_math_bigint_rightshift([256 x i8]* %temp, [256 x i8]* %d)
+
+
+ <State 36>: 0.00ns
+ST_36: stg_220 [1/2] 0.00ns
+._crit_edge14:2  call fastcc void @bigint_math_bigint_rightshift([256 x i8]* %temp, [256 x i8]* %d)
+
+
+ <State 37>: 0.00ns
+ST_37: stg_221 [2/2] 0.00ns
+._crit_edge14:3  call fastcc void @bigint_math_bigint_copy([256 x i8]* %d, [256 x i8]* %temp)
+
+
+ <State 38>: 0.00ns
+ST_38: stg_222 [1/2] 0.00ns
+._crit_edge14:3  call fastcc void @bigint_math_bigint_copy([256 x i8]* %d, [256 x i8]* %temp)
+
+ST_38: stg_223 [1/1] 0.00ns
+._crit_edge14:4  br label %16
+
+
+ <State 39>: 0.00ns
+ST_39: stg_224 [1/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_copy([256 x i8]* %out_r, [256 x i8]* %quot)
+
+
+ <State 40>: 0.00ns
+ST_40: stg_225 [2/2] 0.00ns
+:1  call fastcc void @bigint_math_bigint_mul([256 x i8]* %temp, [256 x i8]* %out_r, [256 x i8]* %tempB)
+
+
+ <State 41>: 0.00ns
+ST_41: stg_226 [1/2] 0.00ns
+:1  call fastcc void @bigint_math_bigint_mul([256 x i8]* %temp, [256 x i8]* %out_r, [256 x i8]* %tempB)
+
+
+ <State 42>: 0.00ns
+ST_42: stg_227 [2/2] 0.00ns
+:2  call fastcc void @bigint_math_bigint_sub([256 x i8]* %out1, [256 x i8]* %a, [256 x i8]* %temp)
+
+
+ <State 43>: 0.00ns
+ST_43: stg_228 [1/2] 0.00ns
+:2  call fastcc void @bigint_math_bigint_sub([256 x i8]* %out1, [256 x i8]* %a, [256 x i8]* %temp)
+
+ST_43: stg_229 [1/1] 0.00ns
+:3  br label %._crit_edge
+
+ST_43: stg_230 [1/1] 0.00ns
+._crit_edge:0  ret void
+
+
+ <State 44>: 0.00ns
+ST_44: stg_231 [2/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_copy([256 x i8]* %out1, [256 x i8]* %tempA)
+
+ST_44: stg_232 [2/2] 0.00ns
+:1  call fastcc void @bigint_math_bigint_copy([256 x i8]* %out_r, [256 x i8]* @zero)
+
+
+ <State 45>: 0.00ns
+ST_45: stg_233 [1/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_copy([256 x i8]* %out1, [256 x i8]* %tempA)
+
+ST_45: stg_234 [1/2] 0.00ns
+:1  call fastcc void @bigint_math_bigint_copy([256 x i8]* %out_r, [256 x i8]* @zero)
+
+ST_45: stg_235 [1/1] 0.00ns
+:2  br label %._crit_edge
+
+
+ <State 46>: 0.00ns
+ST_46: stg_236 [1/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_copy([256 x i8]* %out_r, [256 x i8]* %tempA)
+
+ST_46: stg_237 [1/2] 0.00ns
+:1  call fastcc void @bigint_math_bigint_copy([256 x i8]* %out1, [256 x i8]* @zero)
+
+ST_46: stg_238 [1/1] 0.00ns
+:2  br label %._crit_edge
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 50ns, clock uncertainty: 6.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

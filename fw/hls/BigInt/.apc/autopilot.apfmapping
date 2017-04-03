@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="main.cpp" path="/home/linux/Documents/DLA/fw/hls/BigInt/solution1/main.cpp"/>
+    <originFiles name="main.c" path="/home/linux/Documents/DLA/fw/hls/BigInt/solution1/main.c"/>
     <originFiles name="bigint.h" path="/home/linux/Documents/DLA/bigint/bigint.h"/>
     <originFiles name="bigint.c" path="/home/linux/Documents/DLA/bigint/bigint.c"/>
   </source>
   <testbench>
-    <originFiles name="main.cpp" path="/home/linux/Documents/DLA/fw/hls/BigInt/solution1/main.cpp"/>
-    <originFiles name="bigint.h" path="/home/linux/Documents/DLA/bigint/bigint.h"/>
+    <originFiles name="a.txt" path="/home/linux/Documents/DLA/bigint/a.txt"/>
+    <originFiles name="b.txt" path="/home/linux/Documents/DLA/bigint/b.txt"/>
     <originFiles name="bigint.c" path="/home/linux/Documents/DLA/bigint/bigint.c"/>
+    <originFiles name="bigint.h" path="/home/linux/Documents/DLA/bigint/bigint.h"/>
+    <originFiles name="main.c" path="/home/linux/Documents/DLA/fw/hls/BigInt/solution1/main.c"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

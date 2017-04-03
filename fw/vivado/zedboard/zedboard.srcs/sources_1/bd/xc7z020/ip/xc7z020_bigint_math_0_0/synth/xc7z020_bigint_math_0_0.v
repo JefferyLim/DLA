@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:hls:bigint_math:1.0
-// IP Revision: 1703091318
+// IP Revision: 1703190953
 
 (* X_CORE_INFO = "bigint_math,Vivado 2016.2" *)
 (* CHECK_LICENSE_TYPE = "xc7z020_bigint_math_0_0,bigint_math,{}" *)
-(* CORE_GENERATION_INFO = "xc7z020_bigint_math_0_0,bigint_math,{x_ipProduct=Vivado 2016.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=bigint_math,x_ipVersion=1.0,x_ipCoreRevision=1703091318,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_PERIPH_BUS_ADDR_WIDTH=11,C_S_AXI_PERIPH_BUS_DATA_WIDTH=32}" *)
+(* CORE_GENERATION_INFO = "xc7z020_bigint_math_0_0,bigint_math,{x_ipProduct=Vivado 2016.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=bigint_math,x_ipVersion=1.0,x_ipCoreRevision=1703190953,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_PERIPH_BUS_ADDR_WIDTH=11,C_S_AXI_PERIPH_BUS_DATA_WIDTH=32}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module xc7z020_bigint_math_0_0 (
   s_axi_PERIPH_BUS_AWADDR,

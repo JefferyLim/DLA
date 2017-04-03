@@ -2,11 +2,11 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Thu Mar  9 13:21:05 2017
-# Process ID: 5534
-# Current directory: /home/linux/Documents/DLA/fw/Vivado/zedboard/zedboard.runs/synth_1
+# Start of session at: Sun Mar 19 09:55:47 2017
+# Process ID: 16564
+# Current directory: /home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.runs/synth_1
 # Command line: vivado -log top.vds -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: /home/linux/Documents/DLA/fw/Vivado/zedboard/zedboard.runs/synth_1/top.vds
-# Journal file: /home/linux/Documents/DLA/fw/Vivado/zedboard/zedboard.runs/synth_1/vivado.jou
+# Log file: /home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.runs/synth_1/top.vds
+# Journal file: /home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source top.tcl -notrace

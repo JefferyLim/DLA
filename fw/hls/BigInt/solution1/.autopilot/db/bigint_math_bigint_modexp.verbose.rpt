@@ -1,0 +1,1841 @@
+
+
+================================================================
+== Vivado HLS Report for 'bigint_math_bigint_modexp'
+================================================================
+* Date:           Sun Mar 19 09:53:24 2017
+
+* Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
+* Project:        BigInt
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  50.00|     13.51|        6.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------------------+-------------------------------+---------+---------+---------+---------+---------+
+        |                                          |                               |      Latency      |      Interval     | Pipeline|
+        |                 Instance                 |             Module            |   min   |   max   |   min   |   max   |   Type  |
+        +------------------------------------------+-------------------------------+---------+---------+---------+---------+---------+
+        |grp_bigint_math_bigint_longdiv_fu_160     |bigint_math_bigint_longdiv     |        ?|        ?|        ?|        ?|   none  |
+        |grp_bigint_math_bigint_mul_fu_172         |bigint_math_bigint_mul         |  1184775|  1577991|  1184775|  1577991|   none  |
+        |grp_bigint_math_bigint_mul_1_fu_179       |bigint_math_bigint_mul_1       |  1184775|  1577991|  1184775|  1577991|   none  |
+        |grp_bigint_math_bigint_rightshift_fu_185  |bigint_math_bigint_rightshift  |     6914|     6914|     6914|     6914|   none  |
+        |grp_bigint_math_bigint_compare_fu_191     |bigint_math_bigint_compare     |      515|     1029|      515|     1029|   none  |
+        |grp_bigint_math_bigint_copy_fu_198        |bigint_math_bigint_copy        |      513|      513|      513|      513|   none  |
+        |grp_bigint_math_bigint_copy_fu_205        |bigint_math_bigint_copy        |      513|      513|      513|      513|   none  |
+        |grp_bigint_math_bigint_copy_fu_212        |bigint_math_bigint_copy        |      513|      513|      513|      513|   none  |
+        |grp_bigint_math_bigint_zero_fu_220        |bigint_math_bigint_zero        |      258|      258|      258|      258|   none  |
+        |grp_bigint_math_bigint_zero_fu_226        |bigint_math_bigint_zero        |      258|      258|      258|      258|   none  |
+        |grp_bigint_math_bigint_zero_fu_232        |bigint_math_bigint_zero        |      258|      258|      258|      258|   none  |
+        +------------------------------------------+-------------------------------+---------+---------+---------+---------+---------+
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|      2|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |       28|      6|    3792|   6436|
+|Memory           |       10|      -|       0|      0|
+|Multiplexer      |        -|      -|       -|    326|
+|Register         |        -|      -|      45|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |       38|      6|    3837|   6764|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |       13|      2|       3|     12|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +------------------------------------------+-------------------------------+---------+-------+------+------+
+    |                 Instance                 |             Module            | BRAM_18K| DSP48E|  FF  |  LUT |
+    +------------------------------------------+-------------------------------+---------+-------+------+------+
+    |grp_bigint_math_bigint_compare_fu_191     |bigint_math_bigint_compare     |        0|      0|    93|   158|
+    |grp_bigint_math_bigint_copy_fu_198        |bigint_math_bigint_copy        |        0|      0|    30|    23|
+    |grp_bigint_math_bigint_copy_fu_205        |bigint_math_bigint_copy        |        0|      0|    30|    23|
+    |grp_bigint_math_bigint_copy_fu_212        |bigint_math_bigint_copy        |        0|      0|    30|    23|
+    |grp_bigint_math_bigint_longdiv_fu_160     |bigint_math_bigint_longdiv     |       18|      2|  2522|  4483|
+    |grp_bigint_math_bigint_mul_fu_172         |bigint_math_bigint_mul         |        5|      2|   424|   605|
+    |grp_bigint_math_bigint_mul_1_fu_179       |bigint_math_bigint_mul_1       |        5|      2|   424|   613|
+    |grp_bigint_math_bigint_rightshift_fu_185  |bigint_math_bigint_rightshift  |        0|      0|   206|   439|
+    |grp_bigint_math_bigint_zero_fu_220        |bigint_math_bigint_zero        |        0|      0|    11|    23|
+    |grp_bigint_math_bigint_zero_fu_226        |bigint_math_bigint_zero        |        0|      0|    11|    23|
+    |grp_bigint_math_bigint_zero_fu_232        |bigint_math_bigint_zero        |        0|      0|    11|    23|
+    +------------------------------------------+-------------------------------+---------+-------+------+------+
+    |Total                                     |                               |       28|      6|  3792|  6436|
+    +------------------------------------------+-------------------------------+---------+-------+------+------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +------------+---------------------------------+---------+---+----+------+-----+------+-------------+
+    |   Memory   |              Module             | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
+    +------------+---------------------------------+---------+---+----+------+-----+------+-------------+
+    |zero_1_U    |bigint_math_bigint_add_tempA     |        1|  0|   0|   256|    8|     1|         2048|
+    |one_1_U     |bigint_math_bigint_add_tempA     |        1|  0|   0|   256|    8|     1|         2048|
+    |two_U       |bigint_math_bigint_add_tempA     |        1|  0|   0|   256|    8|     1|         2048|
+    |temp_U      |bigint_math_bigint_add_tempA     |        1|  0|   0|   256|    8|     1|         2048|
+    |temp1_U     |bigint_math_bigint_add_tempA     |        1|  0|   0|   256|    8|     1|         2048|
+    |tempBase_U  |bigint_math_bigint_add_tempA     |        1|  0|   0|   256|    8|     1|         2048|
+    |tempExp_U   |bigint_math_bigint_add_tempA     |        1|  0|   0|   256|    8|     1|         2048|
+    |tempMod_U   |bigint_math_bigint_add_tempA     |        1|  0|   0|   256|    8|     1|         2048|
+    |result_U    |bigint_math_bigint_add_tempA     |        1|  0|   0|   256|    8|     1|         2048|
+    |temp2_U     |bigint_math_bigint_modexp_temp2  |        1|  0|   0|   256|    8|     1|         2048|
+    +------------+---------------------------------+---------+---+----+------+-----+------+-------------+
+    |Total       |                                 |       10|  0|   0|  2560|   80|    10|        20480|
+    +------------+---------------------------------+---------+---+----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +------------------+----------+-------+---+----+------------+------------+
+    |   Variable Name  | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------+----------+-------+---+----+------------+------------+
+    |grp_fu_239_p2     |   icmp   |      0|  0|   1|           2|           1|
+    |tmp_51_fu_245_p2  |   icmp   |      0|  0|   1|           2|           1|
+    +------------------+----------+-------+---+----+------------+------------+
+    |Total             |          |      0|  0|   2|           4|           2|
+    +------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------------------------+----+-----------+-----+-----------+
+    |                      Name                      | LUT| Input Size| Bits| Total Bits|
+    +------------------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                                       |  60|         33|    1|         33|
+    |grp_bigint_math_bigint_compare_fu_191_a_q0      |   8|          4|    8|         32|
+    |grp_bigint_math_bigint_compare_fu_191_b_q0      |   8|          3|    8|         24|
+    |grp_bigint_math_bigint_copy_fu_198_from_q0      |   8|          5|    8|         40|
+    |grp_bigint_math_bigint_longdiv_fu_160_a_q0      |   8|          4|    8|         32|
+    |grp_bigint_math_bigint_longdiv_fu_160_b_q0      |   8|          3|    8|         24|
+    |grp_bigint_math_bigint_longdiv_fu_160_out_r_q0  |   8|          3|    8|         24|
+    |mod_r_address0                                  |   8|          3|    8|         24|
+    |mod_r_ce0                                       |   1|          3|    1|          3|
+    |one_1_address0                                  |   8|          5|    8|         40|
+    |one_1_ce0                                       |   1|          4|    1|          4|
+    |one_1_d0                                        |   8|          3|    8|         24|
+    |one_1_we0                                       |   1|          3|    1|          3|
+    |out_r_address0                                  |   8|          4|    8|         32|
+    |out_r_ce0                                       |   1|          4|    1|          4|
+    |out_r_d0                                        |   8|          4|    8|         32|
+    |out_r_we0                                       |   1|          4|    1|          4|
+    |result_address0                                 |   8|          6|    8|         48|
+    |result_ce0                                      |   1|          6|    1|          6|
+    |result_d0                                       |   8|          4|    8|         32|
+    |result_we0                                      |   1|          4|    1|          4|
+    |temp1_address0                                  |   8|          7|    8|         56|
+    |temp1_ce0                                       |   1|          7|    1|          7|
+    |temp1_d0                                        |   8|          5|    8|         40|
+    |temp1_we0                                       |   1|          5|    1|          5|
+    |temp2_address0                                  |   8|          3|    8|         24|
+    |temp2_ce0                                       |   1|          3|    1|          3|
+    |temp2_d0                                        |   8|          3|    8|         24|
+    |temp2_we0                                       |   1|          3|    1|          3|
+    |tempBase_address0                               |   8|          7|    8|         56|
+    |tempBase_ce0                                    |   1|          7|    1|          7|
+    |tempBase_d0                                     |   8|          4|    8|         32|
+    |tempBase_we0                                    |   1|          4|    1|          4|
+    |tempExp_address0                                |   8|          7|    8|         56|
+    |tempExp_ce0                                     |   1|          7|    1|          7|
+    |tempExp_d0                                      |   8|          4|    8|         32|
+    |tempExp_we0                                     |   1|          4|    1|          4|
+    |tempMod_address0                                |   8|          4|    8|         32|
+    |tempMod_ce0                                     |   1|          4|    1|          4|
+    |tempMod_d0                                      |   8|          3|    8|         24|
+    |tempMod_we0                                     |   1|          3|    1|          3|
+    |temp_address0                                   |  16|          9|    8|         72|
+    |temp_ce0                                        |   4|          9|    1|          9|
+    |temp_d0                                         |   8|          7|    8|         56|
+    |temp_we0                                        |   1|          7|    1|          7|
+    |two_address0                                    |   8|          5|    8|         40|
+    |two_ce0                                         |   1|          4|    1|          4|
+    |two_d0                                          |   8|          3|    8|         24|
+    |two_we0                                         |   1|          3|    1|          3|
+    |zero_1_address0                                 |   8|          4|    8|         32|
+    |zero_1_ce0                                      |   1|          4|    1|          4|
+    |zero_1_d0                                       |   8|          3|    8|         24|
+    |zero_1_we0                                      |   1|          3|    1|          3|
+    +------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                           | 326|        267|  256|       1170|
+    +------------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------------------------+----+----+-----+-----------+
+    |                           Name                           | FF | LUT| Bits| Const Bits|
+    +----------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                 |  32|   0|   32|          0|
+    |ap_reg_grp_bigint_math_bigint_compare_fu_191_ap_start     |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_copy_fu_198_ap_start        |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_copy_fu_205_ap_start        |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_copy_fu_212_ap_start        |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_longdiv_fu_160_ap_start     |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_mul_1_fu_179_ap_start       |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_mul_fu_172_ap_start         |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_rightshift_fu_185_ap_start  |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_zero_fu_220_ap_start        |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_zero_fu_226_ap_start        |   1|   0|    1|          0|
+    |ap_reg_grp_bigint_math_bigint_zero_fu_232_ap_start        |   1|   0|    1|          0|
+    |tmp_52_reg_268                                            |   1|   0|    1|          0|
+    |tmp_s_reg_256                                             |   1|   0|    1|          0|
+    +----------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                     |  45|   0|   45|          0|
+    +----------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------+-----+-----+------------+---------------------------+--------------+
+|    RTL Ports    | Dir | Bits|  Protocol  |       Source Object       |    C Type    |
++-----------------+-----+-----+------------+---------------------------+--------------+
+|ap_clk           |  in |    1| ap_ctrl_hs | bigint_math_bigint_modexp | return value |
+|ap_rst           |  in |    1| ap_ctrl_hs | bigint_math_bigint_modexp | return value |
+|ap_start         |  in |    1| ap_ctrl_hs | bigint_math_bigint_modexp | return value |
+|ap_done          | out |    1| ap_ctrl_hs | bigint_math_bigint_modexp | return value |
+|ap_idle          | out |    1| ap_ctrl_hs | bigint_math_bigint_modexp | return value |
+|ap_ready         | out |    1| ap_ctrl_hs | bigint_math_bigint_modexp | return value |
+|out_r_address0   | out |    8|  ap_memory |           out_r           |     array    |
+|out_r_ce0        | out |    1|  ap_memory |           out_r           |     array    |
+|out_r_we0        | out |    1|  ap_memory |           out_r           |     array    |
+|out_r_d0         | out |    8|  ap_memory |           out_r           |     array    |
+|base_r_address0  | out |    8|  ap_memory |           base_r          |     array    |
+|base_r_ce0       | out |    1|  ap_memory |           base_r          |     array    |
+|base_r_q0        |  in |    8|  ap_memory |           base_r          |     array    |
+|exp_address0     | out |    8|  ap_memory |            exp            |     array    |
+|exp_ce0          | out |    1|  ap_memory |            exp            |     array    |
+|exp_q0           |  in |    8|  ap_memory |            exp            |     array    |
+|mod_r_address0   | out |    8|  ap_memory |           mod_r           |     array    |
+|mod_r_ce0        | out |    1|  ap_memory |           mod_r           |     array    |
+|mod_r_q0         |  in |    8|  ap_memory |           mod_r           |     array    |
++-----------------+-----+-----+------------+---------------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 2
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 32
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / (!tmp_s)
+	32  / (tmp_s)
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / (tmp_51)
+	32  / (!tmp_51)
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / (tmp_52)
+	21  / (!tmp_52)
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	11  / true
+32 --> 
+* FSM state operations: 
+
+ <State 1>: 3.55ns
+ST_1: zero_1 [1/1] 2.39ns
+:4  %zero_1 = alloca [256 x i8], align 16
+
+ST_1: one_1 [1/1] 2.39ns
+:5  %one_1 = alloca [256 x i8], align 16
+
+ST_1: two [1/1] 2.39ns
+:6  %two = alloca [256 x i8], align 16
+
+ST_1: temp [1/1] 2.39ns
+:7  %temp = alloca [256 x i8], align 16
+
+ST_1: temp1 [1/1] 2.39ns
+:8  %temp1 = alloca [256 x i8], align 16
+
+ST_1: temp2 [1/1] 2.39ns
+:9  %temp2 = alloca [256 x i8], align 16
+
+ST_1: tempBase [1/1] 2.39ns
+:10  %tempBase = alloca [256 x i8], align 16
+
+ST_1: tempExp [1/1] 2.39ns
+:11  %tempExp = alloca [256 x i8], align 16
+
+ST_1: tempMod [1/1] 2.39ns
+:12  %tempMod = alloca [256 x i8], align 16
+
+ST_1: result [1/1] 2.39ns
+:13  %result = alloca [256 x i8], align 16
+
+ST_1: stg_43 [2/2] 0.94ns
+:20  call fastcc void @bigint_math_bigint_zero([256 x i8]* %tempBase)
+
+ST_1: stg_44 [2/2] 1.16ns
+:21  call fastcc void @bigint_math_bigint_zero([256 x i8]* %tempExp)
+
+ST_1: stg_45 [2/2] 0.00ns
+:22  call fastcc void @bigint_math_bigint_zero([256 x i8]* %tempMod)
+
+
+ <State 2>: 0.94ns
+ST_2: stg_46 [2/2] 0.94ns
+:15  call fastcc void @bigint_math_bigint_zero([256 x i8]* %one_1)
+
+ST_2: stg_47 [1/2] 0.00ns
+:20  call fastcc void @bigint_math_bigint_zero([256 x i8]* %tempBase)
+
+ST_2: stg_48 [1/2] 0.00ns
+:21  call fastcc void @bigint_math_bigint_zero([256 x i8]* %tempExp)
+
+ST_2: stg_49 [1/2] 0.00ns
+:22  call fastcc void @bigint_math_bigint_zero([256 x i8]* %tempMod)
+
+
+ <State 3>: 0.94ns
+ST_3: stg_50 [2/2] 0.94ns
+:14  call fastcc void @bigint_math_bigint_zero([256 x i8]* %zero_1)
+
+ST_3: stg_51 [1/2] 0.00ns
+:15  call fastcc void @bigint_math_bigint_zero([256 x i8]* %one_1)
+
+ST_3: stg_52 [2/2] 0.00ns
+:23  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempBase, [256 x i8]* %base_r)
+
+ST_3: stg_53 [2/2] 0.00ns
+:24  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempExp, [256 x i8]* %exp)
+
+ST_3: stg_54 [2/2] 0.00ns
+:25  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempMod, [256 x i8]* %mod_r)
+
+
+ <State 4>: 2.39ns
+ST_4: stg_55 [1/2] 0.00ns
+:14  call fastcc void @bigint_math_bigint_zero([256 x i8]* %zero_1)
+
+ST_4: stg_56 [2/2] 0.94ns
+:17  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp)
+
+ST_4: stg_57 [1/2] 0.00ns
+:23  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempBase, [256 x i8]* %base_r)
+
+ST_4: stg_58 [1/2] 0.00ns
+:24  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempExp, [256 x i8]* %exp)
+
+ST_4: stg_59 [1/2] 0.00ns
+:25  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempMod, [256 x i8]* %mod_r)
+
+ST_4: one_addr [1/1] 0.00ns
+:28  %one_addr = getelementptr inbounds [256 x i8]* %one_1, i64 0, i64 255
+
+ST_4: stg_61 [1/1] 2.39ns
+:29  store i8 1, i8* %one_addr, align 1
+
+
+ <State 5>: 1.16ns
+ST_5: stg_62 [2/2] 0.94ns
+:16  call fastcc void @bigint_math_bigint_zero([256 x i8]* %two)
+
+ST_5: stg_63 [1/2] 0.00ns
+:17  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp)
+
+ST_5: stg_64 [2/2] 1.16ns
+:18  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp1)
+
+ST_5: tmp [2/2] 0.00ns
+:33  %tmp = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %mod_r, [256 x i8]* %one_1)
+
+
+ <State 6>: 11.94ns
+ST_6: stg_66 [1/2] 0.00ns
+:16  call fastcc void @bigint_math_bigint_zero([256 x i8]* %two)
+
+ST_6: stg_67 [1/2] 0.00ns
+:18  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp1)
+
+ST_6: stg_68 [2/2] 0.94ns
+:19  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp2)
+
+ST_6: temp_addr [1/1] 0.00ns
+:26  %temp_addr = getelementptr inbounds [256 x i8]* %temp, i64 0, i64 255
+
+ST_6: stg_70 [1/1] 2.39ns
+:27  store i8 1, i8* %temp_addr, align 1
+
+ST_6: stg_71 [2/2] 1.16ns
+:32  call fastcc void @bigint_math_bigint_zero([256 x i8]* %out_r)
+
+ST_6: tmp [1/2] 10.58ns
+:33  %tmp = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %mod_r, [256 x i8]* %one_1)
+
+ST_6: tmp_s [1/1] 1.36ns
+:34  %tmp_s = icmp eq i2 %tmp, 0
+
+
+ <State 7>: 2.39ns
+ST_7: empty [1/1] 0.00ns
+:0  %empty = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %mod_r, [1 x i8]* @p_str13, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str13, i32 -1, [1 x i8]* @p_str13, [1 x i8]* @p_str13, [1 x i8]* @p_str13, [1 x i8]* @p_str13, [1 x i8]* @p_str13)
+
+ST_7: empty_37 [1/1] 0.00ns
+:1  %empty_37 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %exp, [1 x i8]* @p_str12, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str12, i32 -1, [1 x i8]* @p_str12, [1 x i8]* @p_str12, [1 x i8]* @p_str12, [1 x i8]* @p_str12, [1 x i8]* @p_str12)
+
+ST_7: empty_38 [1/1] 0.00ns
+:2  %empty_38 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %base_r, [1 x i8]* @p_str11, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str11, i32 -1, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11)
+
+ST_7: empty_39 [1/1] 0.00ns
+:3  %empty_39 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %out_r, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: stg_78 [1/2] 0.00ns
+:19  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp2)
+
+ST_7: two_addr [1/1] 0.00ns
+:30  %two_addr = getelementptr inbounds [256 x i8]* %two, i64 0, i64 255
+
+ST_7: stg_80 [1/1] 2.39ns
+:31  store i8 2, i8* %two_addr, align 1
+
+ST_7: stg_81 [1/2] 0.00ns
+:32  call fastcc void @bigint_math_bigint_zero([256 x i8]* %out_r)
+
+ST_7: empty_40 [1/1] 0.00ns
+:35  %empty_40 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %zero_1, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: empty_41 [1/1] 0.00ns
+:36  %empty_41 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %temp2, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: empty_42 [1/1] 0.00ns
+:37  %empty_42 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %temp1, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: empty_43 [1/1] 0.00ns
+:38  %empty_43 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %temp, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: empty_44 [1/1] 0.00ns
+:39  %empty_44 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %result, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: empty_45 [1/1] 0.00ns
+:40  %empty_45 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %tempMod, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: empty_46 [1/1] 0.00ns
+:41  %empty_46 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %tempExp, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: empty_47 [1/1] 0.00ns
+:42  %empty_47 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %tempBase, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: empty_48 [1/1] 0.00ns
+:43  %empty_48 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %two, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: empty_49 [1/1] 0.00ns
+:44  %empty_49 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %one_1, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: stg_92 [1/1] 0.00ns
+:45  br i1 %tmp_s, label %._crit_edge, label %1
+
+ST_7: stg_93 [2/2] 0.94ns
+:0  call fastcc void @bigint_math_bigint_zero([256 x i8]* %result)
+
+ST_7: stg_94 [2/2] 0.00ns
+:5  call fastcc void @bigint_math_bigint_longdiv([256 x i8]* %temp, [256 x i8]* %temp1, [256 x i8]* %tempBase, [256 x i8]* %tempMod)
+
+
+ <State 8>: 0.00ns
+ST_8: stg_95 [1/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_zero([256 x i8]* %result)
+
+ST_8: stg_96 [1/2] 0.00ns
+:5  call fastcc void @bigint_math_bigint_longdiv([256 x i8]* %temp, [256 x i8]* %temp1, [256 x i8]* %tempBase, [256 x i8]* %tempMod)
+
+
+ <State 9>: 0.00ns
+ST_9: stg_97 [2/2] 0.00ns
+:6  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempBase, [256 x i8]* %temp1)
+
+
+ <State 10>: 2.39ns
+ST_10: out_addr [1/1] 0.00ns
+:1  %out_addr = getelementptr [256 x i8]* %out_r, i64 0, i64 255
+
+ST_10: stg_99 [1/1] 2.39ns
+:2  store i8 1, i8* %out_addr, align 1
+
+ST_10: result_addr [1/1] 0.00ns
+:3  %result_addr = getelementptr inbounds [256 x i8]* %result, i64 0, i64 255
+
+ST_10: stg_101 [1/1] 2.39ns
+:4  store i8 1, i8* %result_addr, align 1
+
+ST_10: stg_102 [1/2] 0.00ns
+:6  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempBase, [256 x i8]* %temp1)
+
+ST_10: stg_103 [1/1] 0.00ns
+:7  br label %2
+
+
+ <State 11>: 0.00ns
+ST_11: tmp_1 [2/2] 0.00ns
+:0  %tmp_1 = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %tempExp, [256 x i8]* %zero_1)
+
+
+ <State 12>: 11.94ns
+ST_12: tmp_1 [1/2] 10.58ns
+:0  %tmp_1 = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %tempExp, [256 x i8]* %zero_1)
+
+ST_12: tmp_51 [1/1] 1.36ns
+:1  %tmp_51 = icmp eq i2 %tmp_1, 1
+
+ST_12: stg_107 [1/1] 0.00ns
+:2  br i1 %tmp_51, label %3, label %5
+
+ST_12: stg_108 [2/2] 0.94ns
+:0  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp)
+
+ST_12: stg_109 [2/2] 1.16ns
+:1  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp1)
+
+ST_12: stg_110 [2/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_copy([256 x i8]* %out_r, [256 x i8]* %result)
+
+
+ <State 13>: 0.00ns
+ST_13: stg_111 [1/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp)
+
+ST_13: stg_112 [1/2] 0.00ns
+:1  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp1)
+
+
+ <State 14>: 0.00ns
+ST_14: stg_113 [2/2] 0.00ns
+:2  call fastcc void @bigint_math_bigint_longdiv([256 x i8]* %temp, [256 x i8]* %temp1, [256 x i8]* %tempExp, [256 x i8]* %two)
+
+
+ <State 15>: 0.00ns
+ST_15: stg_114 [1/2] 0.00ns
+:2  call fastcc void @bigint_math_bigint_longdiv([256 x i8]* %temp, [256 x i8]* %temp1, [256 x i8]* %tempExp, [256 x i8]* %two)
+
+
+ <State 16>: 0.00ns
+ST_16: tmp_2 [2/2] 0.00ns
+:3  %tmp_2 = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %temp1, [256 x i8]* %one_1)
+
+
+ <State 17>: 11.94ns
+ST_17: tmp_2 [1/2] 10.58ns
+:3  %tmp_2 = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %temp1, [256 x i8]* %one_1)
+
+ST_17: tmp_52 [1/1] 1.36ns
+:4  %tmp_52 = icmp eq i2 %tmp_2, 0
+
+ST_17: stg_118 [1/1] 0.00ns
+:5  br i1 %tmp_52, label %4, label %._crit_edge1
+
+
+ <State 18>: 0.94ns
+ST_18: stg_119 [2/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_mul([256 x i8]* %temp, [256 x i8]* %result, [256 x i8]* %tempBase)
+
+ST_18: stg_120 [2/2] 0.94ns
+:1  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp1)
+
+
+ <State 19>: 0.00ns
+ST_19: stg_121 [1/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_mul([256 x i8]* %temp, [256 x i8]* %result, [256 x i8]* %tempBase)
+
+ST_19: stg_122 [1/2] 0.00ns
+:1  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp1)
+
+
+ <State 20>: 0.00ns
+ST_20: stg_123 [2/2] 0.00ns
+:2  call fastcc void @bigint_math_bigint_longdiv([256 x i8]* %temp1, [256 x i8]* %result, [256 x i8]* %temp, [256 x i8]* %tempMod)
+
+
+ <State 21>: 2.39ns
+ST_21: stg_124 [1/2] 0.00ns
+:2  call fastcc void @bigint_math_bigint_longdiv([256 x i8]* %temp1, [256 x i8]* %result, [256 x i8]* %temp, [256 x i8]* %tempMod)
+
+ST_21: stg_125 [1/1] 0.00ns
+:3  br label %._crit_edge1
+
+ST_21: stg_126 [1/1] 2.39ns
+._crit_edge1:8  store i8 1, i8* %one_addr, align 1
+
+ST_21: stg_127 [1/1] 2.39ns
+._crit_edge1:9  store i8 2, i8* %two_addr, align 1
+
+
+ <State 22>: 1.16ns
+ST_22: stg_128 [2/2] 0.00ns
+._crit_edge1:0  call fastcc void @bigint_math_bigint_rightshift([256 x i8]* %temp, [256 x i8]* %tempExp)
+
+ST_22: stg_129 [2/2] 0.94ns
+._crit_edge1:4  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp1)
+
+ST_22: stg_130 [2/2] 1.16ns
+._crit_edge1:5  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp2)
+
+ST_22: stg_131 [2/2] 0.00ns
+._crit_edge1:7  call fastcc void @bigint_math_bigint_zero([256 x i8]* %zero_1)
+
+
+ <State 23>: 0.00ns
+ST_23: stg_132 [1/2] 0.00ns
+._crit_edge1:0  call fastcc void @bigint_math_bigint_rightshift([256 x i8]* %temp, [256 x i8]* %tempExp)
+
+ST_23: stg_133 [1/2] 0.00ns
+._crit_edge1:4  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp1)
+
+ST_23: stg_134 [1/2] 0.00ns
+._crit_edge1:5  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp2)
+
+ST_23: stg_135 [1/2] 0.00ns
+._crit_edge1:7  call fastcc void @bigint_math_bigint_zero([256 x i8]* %zero_1)
+
+
+ <State 24>: 0.00ns
+ST_24: stg_136 [2/2] 0.00ns
+._crit_edge1:1  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempExp, [256 x i8]* %temp)
+
+
+ <State 25>: 0.00ns
+ST_25: stg_137 [1/2] 0.00ns
+._crit_edge1:1  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempExp, [256 x i8]* %temp)
+
+
+ <State 26>: 0.94ns
+ST_26: stg_138 [2/2] 0.94ns
+._crit_edge1:2  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp)
+
+
+ <State 27>: 0.00ns
+ST_27: stg_139 [1/2] 0.00ns
+._crit_edge1:2  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp)
+
+
+ <State 28>: 0.00ns
+ST_28: stg_140 [2/2] 0.00ns
+._crit_edge1:3  call fastcc void @bigint_math_bigint_mul.1([256 x i8]* %temp, [256 x i8]* %tempBase)
+
+
+ <State 29>: 0.00ns
+ST_29: stg_141 [1/2] 0.00ns
+._crit_edge1:3  call fastcc void @bigint_math_bigint_mul.1([256 x i8]* %temp, [256 x i8]* %tempBase)
+
+
+ <State 30>: 0.00ns
+ST_30: stg_142 [2/2] 0.00ns
+._crit_edge1:6  call fastcc void @bigint_math_bigint_longdiv([256 x i8]* %temp1, [256 x i8]* %tempBase, [256 x i8]* %temp, [256 x i8]* %tempMod)
+
+
+ <State 31>: 0.00ns
+ST_31: stg_143 [1/2] 0.00ns
+._crit_edge1:6  call fastcc void @bigint_math_bigint_longdiv([256 x i8]* %temp1, [256 x i8]* %tempBase, [256 x i8]* %temp, [256 x i8]* %tempMod)
+
+ST_31: stg_144 [1/1] 0.00ns
+._crit_edge1:10  br label %2
+
+
+ <State 32>: 0.00ns
+ST_32: stg_145 [1/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_copy([256 x i8]* %out_r, [256 x i8]* %result)
+
+ST_32: stg_146 [1/1] 0.00ns
+:1  br label %._crit_edge
+
+ST_32: stg_147 [1/1] 0.00ns
+._crit_edge:0  ret void
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is clock enabled: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ out_r]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[0]; IO mode=ap_memory:ce=0
+Port [ base_r]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ exp]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ mod_r]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ zero]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ one]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+zero_1      (alloca       ) [ 001111111111111111111111111111110]
+one_1       (alloca       ) [ 001111111111111111111111111111110]
+two         (alloca       ) [ 001111111111111111111111111111110]
+temp        (alloca       ) [ 001111111111111111111111111111110]
+temp1       (alloca       ) [ 001111111111111111111111111111110]
+temp2       (alloca       ) [ 001111111111111111111111111111110]
+tempBase    (alloca       ) [ 001111111111111111111111111111110]
+tempExp     (alloca       ) [ 001111111111111111111111111111110]
+tempMod     (alloca       ) [ 001111111111111111111111111111110]
+result      (alloca       ) [ 001111111111111111111111111111111]
+stg_47      (call         ) [ 000000000000000000000000000000000]
+stg_48      (call         ) [ 000000000000000000000000000000000]
+stg_49      (call         ) [ 000000000000000000000000000000000]
+stg_51      (call         ) [ 000000000000000000000000000000000]
+stg_55      (call         ) [ 000000000000000000000000000000000]
+stg_57      (call         ) [ 000000000000000000000000000000000]
+stg_58      (call         ) [ 000000000000000000000000000000000]
+stg_59      (call         ) [ 000000000000000000000000000000000]
+one_addr    (getelementptr) [ 000001111111111111111111111111110]
+stg_61      (store        ) [ 000000000000000000000000000000000]
+stg_63      (call         ) [ 000000000000000000000000000000000]
+stg_66      (call         ) [ 000000000000000000000000000000000]
+stg_67      (call         ) [ 000000000000000000000000000000000]
+temp_addr   (getelementptr) [ 000000000000000000000000000000000]
+stg_70      (store        ) [ 000000000000000000000000000000000]
+tmp         (call         ) [ 000000000000000000000000000000000]
+tmp_s       (icmp         ) [ 000000011111111111111111111111111]
+empty       (specmemcore  ) [ 000000000000000000000000000000000]
+empty_37    (specmemcore  ) [ 000000000000000000000000000000000]
+empty_38    (specmemcore  ) [ 000000000000000000000000000000000]
+empty_39    (specmemcore  ) [ 000000000000000000000000000000000]
+stg_78      (call         ) [ 000000000000000000000000000000000]
+two_addr    (getelementptr) [ 000000001111111111111111111111110]
+stg_80      (store        ) [ 000000000000000000000000000000000]
+stg_81      (call         ) [ 000000000000000000000000000000000]
+empty_40    (specmemcore  ) [ 000000000000000000000000000000000]
+empty_41    (specmemcore  ) [ 000000000000000000000000000000000]
+empty_42    (specmemcore  ) [ 000000000000000000000000000000000]
+empty_43    (specmemcore  ) [ 000000000000000000000000000000000]
+empty_44    (specmemcore  ) [ 000000000000000000000000000000000]
+empty_45    (specmemcore  ) [ 000000000000000000000000000000000]
+empty_46    (specmemcore  ) [ 000000000000000000000000000000000]
+empty_47    (specmemcore  ) [ 000000000000000000000000000000000]
+empty_48    (specmemcore  ) [ 000000000000000000000000000000000]
+empty_49    (specmemcore  ) [ 000000000000000000000000000000000]
+stg_92      (br           ) [ 000000000000000000000000000000000]
+stg_95      (call         ) [ 000000000000000000000000000000000]
+stg_96      (call         ) [ 000000000000000000000000000000000]
+out_addr    (getelementptr) [ 000000000000000000000000000000000]
+stg_99      (store        ) [ 000000000000000000000000000000000]
+result_addr (getelementptr) [ 000000000000000000000000000000000]
+stg_101     (store        ) [ 000000000000000000000000000000000]
+stg_102     (call         ) [ 000000000000000000000000000000000]
+stg_103     (br           ) [ 000000000000000000000000000000000]
+tmp_1       (call         ) [ 000000000000000000000000000000000]
+tmp_51      (icmp         ) [ 000000000001111111111111111111110]
+stg_107     (br           ) [ 000000000000000000000000000000000]
+stg_111     (call         ) [ 000000000000000000000000000000000]
+stg_112     (call         ) [ 000000000000000000000000000000000]
+stg_114     (call         ) [ 000000000000000000000000000000000]
+tmp_2       (call         ) [ 000000000000000000000000000000000]
+tmp_52      (icmp         ) [ 000000000001111111111111111111110]
+stg_118     (br           ) [ 000000000000000000000000000000000]
+stg_121     (call         ) [ 000000000000000000000000000000000]
+stg_122     (call         ) [ 000000000000000000000000000000000]
+stg_124     (call         ) [ 000000000000000000000000000000000]
+stg_125     (br           ) [ 000000000000000000000000000000000]
+stg_126     (store        ) [ 000000000000000000000000000000000]
+stg_127     (store        ) [ 000000000000000000000000000000000]
+stg_132     (call         ) [ 000000000000000000000000000000000]
+stg_133     (call         ) [ 000000000000000000000000000000000]
+stg_134     (call         ) [ 000000000000000000000000000000000]
+stg_135     (call         ) [ 000000000000000000000000000000000]
+stg_137     (call         ) [ 000000000000000000000000000000000]
+stg_139     (call         ) [ 000000000000000000000000000000000]
+stg_141     (call         ) [ 000000000000000000000000000000000]
+stg_143     (call         ) [ 000000000000000000000000000000000]
+stg_144     (br           ) [ 000000000000000000000000000000000]
+stg_145     (call         ) [ 000000000000000000000000000000000]
+stg_146     (br           ) [ 000000000000000000000000000000000]
+stg_147     (ret          ) [ 000000000000000000000000000000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="out_r">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="out_r"/><MemPortTyVec>0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="base_r">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="base_r"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="exp">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="exp"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="mod_r">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mod_r"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="zero">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="zero"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="one">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="one"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bigint_math_bigint_zero"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bigint_math_bigint_copy"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bigint_math_bigint_compare"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecMemCore"/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str13"/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RAM_1P_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str12"/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str11"/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1001" name="const_40">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str10"/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1001" name="const_42">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1001" name="const_44">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bigint_math_bigint_longdiv"/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1001" name="const_46">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1001" name="const_48">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bigint_math_bigint_mul"/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1001" name="const_50">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bigint_math_bigint_rightshift"/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1001" name="const_52">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bigint_math_bigint_mul.1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1004" name="zero_1_alloca_fu_54">
+<pin_list>
+<pin id="55" dir="0" index="0" bw="1" slack="0"/>
+<pin id="56" dir="1" index="1" bw="8" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="zero_1/1 "/>
+</bind>
+</comp>
+
+<comp id="58" class="1004" name="one_1_alloca_fu_58">
+<pin_list>
+<pin id="59" dir="0" index="0" bw="1" slack="0"/>
+<pin id="60" dir="1" index="1" bw="8" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="one_1/1 "/>
+</bind>
+</comp>
+
+<comp id="62" class="1004" name="two_alloca_fu_62">
+<pin_list>
+<pin id="63" dir="0" index="0" bw="1" slack="0"/>
+<pin id="64" dir="1" index="1" bw="8" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="two/1 "/>
+</bind>
+</comp>
+
+<comp id="66" class="1004" name="temp_alloca_fu_66">
+<pin_list>
+<pin id="67" dir="0" index="0" bw="1" slack="0"/>
+<pin id="68" dir="1" index="1" bw="8" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="temp/1 "/>
+</bind>
+</comp>
+
+<comp id="70" class="1004" name="temp1_alloca_fu_70">
+<pin_list>
+<pin id="71" dir="0" index="0" bw="1" slack="0"/>
+<pin id="72" dir="1" index="1" bw="8" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="temp1/1 "/>
+</bind>
+</comp>
+
+<comp id="74" class="1004" name="temp2_alloca_fu_74">
+<pin_list>
+<pin id="75" dir="0" index="0" bw="1" slack="0"/>
+<pin id="76" dir="1" index="1" bw="8" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="temp2/1 "/>
+</bind>
+</comp>
+
+<comp id="78" class="1004" name="tempBase_alloca_fu_78">
+<pin_list>
+<pin id="79" dir="0" index="0" bw="1" slack="0"/>
+<pin id="80" dir="1" index="1" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="tempBase/1 "/>
+</bind>
+</comp>
+
+<comp id="82" class="1004" name="tempExp_alloca_fu_82">
+<pin_list>
+<pin id="83" dir="0" index="0" bw="1" slack="0"/>
+<pin id="84" dir="1" index="1" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="tempExp/1 "/>
+</bind>
+</comp>
+
+<comp id="86" class="1004" name="tempMod_alloca_fu_86">
+<pin_list>
+<pin id="87" dir="0" index="0" bw="1" slack="0"/>
+<pin id="88" dir="1" index="1" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="tempMod/1 "/>
+</bind>
+</comp>
+
+<comp id="90" class="1004" name="result_alloca_fu_90">
+<pin_list>
+<pin id="91" dir="0" index="0" bw="1" slack="0"/>
+<pin id="92" dir="1" index="1" bw="8" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="result/1 "/>
+</bind>
+</comp>
+
+<comp id="94" class="1004" name="one_addr_gep_fu_94">
+<pin_list>
+<pin id="95" dir="0" index="0" bw="8" slack="2147483647"/>
+<pin id="96" dir="0" index="1" bw="1" slack="0"/>
+<pin id="97" dir="0" index="2" bw="9" slack="0"/>
+<pin id="98" dir="1" index="3" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="one_addr/4 "/>
+</bind>
+</comp>
+
+<comp id="101" class="1004" name="grp_access_fu_101">
+<pin_list>
+<pin id="102" dir="0" index="0" bw="8" slack="0"/>
+<pin id="103" dir="0" index="1" bw="8" slack="0"/>
+<pin id="104" dir="1" index="2" bw="8" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="stg_61/4 stg_126/21 "/>
+</bind>
+</comp>
+
+<comp id="107" class="1004" name="temp_addr_gep_fu_107">
+<pin_list>
+<pin id="108" dir="0" index="0" bw="8" slack="2147483647"/>
+<pin id="109" dir="0" index="1" bw="1" slack="0"/>
+<pin id="110" dir="0" index="2" bw="9" slack="0"/>
+<pin id="111" dir="1" index="3" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="temp_addr/6 "/>
+</bind>
+</comp>
+
+<comp id="114" class="1004" name="stg_70_access_fu_114">
+<pin_list>
+<pin id="115" dir="0" index="0" bw="8" slack="0"/>
+<pin id="116" dir="0" index="1" bw="8" slack="0"/>
+<pin id="117" dir="1" index="2" bw="8" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="stg_70/6 "/>
+</bind>
+</comp>
+
+<comp id="120" class="1004" name="two_addr_gep_fu_120">
+<pin_list>
+<pin id="121" dir="0" index="0" bw="8" slack="2147483647"/>
+<pin id="122" dir="0" index="1" bw="1" slack="0"/>
+<pin id="123" dir="0" index="2" bw="9" slack="0"/>
+<pin id="124" dir="1" index="3" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="two_addr/7 "/>
+</bind>
+</comp>
+
+<comp id="127" class="1004" name="grp_access_fu_127">
+<pin_list>
+<pin id="128" dir="0" index="0" bw="8" slack="0"/>
+<pin id="129" dir="0" index="1" bw="8" slack="0"/>
+<pin id="130" dir="1" index="2" bw="8" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="stg_80/7 stg_127/21 "/>
+</bind>
+</comp>
+
+<comp id="133" class="1004" name="out_addr_gep_fu_133">
+<pin_list>
+<pin id="134" dir="0" index="0" bw="8" slack="0"/>
+<pin id="135" dir="0" index="1" bw="1" slack="0"/>
+<pin id="136" dir="0" index="2" bw="9" slack="0"/>
+<pin id="137" dir="1" index="3" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="out_addr/10 "/>
+</bind>
+</comp>
+
+<comp id="141" class="1004" name="stg_99_access_fu_141">
+<pin_list>
+<pin id="142" dir="0" index="0" bw="8" slack="0"/>
+<pin id="143" dir="0" index="1" bw="8" slack="0"/>
+<pin id="144" dir="1" index="2" bw="8" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="stg_99/10 "/>
+</bind>
+</comp>
+
+<comp id="147" class="1004" name="result_addr_gep_fu_147">
+<pin_list>
+<pin id="148" dir="0" index="0" bw="8" slack="2147483647"/>
+<pin id="149" dir="0" index="1" bw="1" slack="0"/>
+<pin id="150" dir="0" index="2" bw="9" slack="0"/>
+<pin id="151" dir="1" index="3" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="result_addr/10 "/>
+</bind>
+</comp>
+
+<comp id="154" class="1004" name="stg_101_access_fu_154">
+<pin_list>
+<pin id="155" dir="0" index="0" bw="8" slack="0"/>
+<pin id="156" dir="0" index="1" bw="8" slack="0"/>
+<pin id="157" dir="1" index="2" bw="8" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="stg_101/10 "/>
+</bind>
+</comp>
+
+<comp id="160" class="1004" name="grp_bigint_math_bigint_longdiv_fu_160">
+<pin_list>
+<pin id="161" dir="0" index="0" bw="0" slack="0"/>
+<pin id="162" dir="0" index="1" bw="8" slack="2147483647"/>
+<pin id="163" dir="0" index="2" bw="8" slack="2147483647"/>
+<pin id="164" dir="0" index="3" bw="8" slack="2147483647"/>
+<pin id="165" dir="0" index="4" bw="8" slack="2147483647"/>
+<pin id="166" dir="0" index="5" bw="8" slack="0"/>
+<pin id="167" dir="0" index="6" bw="8" slack="0"/>
+<pin id="168" dir="1" index="7" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="stg_94/7 stg_113/14 stg_123/20 stg_142/30 "/>
+</bind>
+</comp>
+
+<comp id="172" class="1004" name="grp_bigint_math_bigint_mul_fu_172">
+<pin_list>
+<pin id="173" dir="0" index="0" bw="0" slack="0"/>
+<pin id="174" dir="0" index="1" bw="8" slack="2147483647"/>
+<pin id="175" dir="0" index="2" bw="8" slack="2147483647"/>
+<pin id="176" dir="0" index="3" bw="8" slack="2147483647"/>
+<pin id="177" dir="1" index="4" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="stg_119/18 "/>
+</bind>
+</comp>
+
+<comp id="179" class="1004" name="grp_bigint_math_bigint_mul_1_fu_179">
+<pin_list>
+<pin id="180" dir="0" index="0" bw="0" slack="0"/>
+<pin id="181" dir="0" index="1" bw="8" slack="2147483647"/>
+<pin id="182" dir="0" index="2" bw="8" slack="2147483647"/>
+<pin id="183" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="stg_140/28 "/>
+</bind>
+</comp>
+
+<comp id="185" class="1004" name="grp_bigint_math_bigint_rightshift_fu_185">
+<pin_list>
+<pin id="186" dir="0" index="0" bw="0" slack="0"/>
+<pin id="187" dir="0" index="1" bw="8" slack="2147483647"/>
+<pin id="188" dir="0" index="2" bw="8" slack="2147483647"/>
+<pin id="189" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="stg_128/22 "/>
+</bind>
+</comp>
+
+<comp id="191" class="1004" name="grp_bigint_math_bigint_compare_fu_191">
+<pin_list>
+<pin id="192" dir="0" index="0" bw="2" slack="0"/>
+<pin id="193" dir="0" index="1" bw="8" slack="0"/>
+<pin id="194" dir="0" index="2" bw="8" slack="2147483647"/>
+<pin id="195" dir="1" index="3" bw="2" slack="0"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="tmp/5 tmp_1/11 tmp_2/16 "/>
+</bind>
+</comp>
+
+<comp id="198" class="1004" name="grp_bigint_math_bigint_copy_fu_198">
+<pin_list>
+<pin id="199" dir="0" index="0" bw="0" slack="0"/>
+<pin id="200" dir="0" index="1" bw="8" slack="0"/>
+<pin id="201" dir="0" index="2" bw="8" slack="0"/>
+<pin id="202" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="stg_52/3 stg_97/9 stg_110/12 stg_136/24 "/>
+</bind>
+</comp>
+
+<comp id="205" class="1004" name="grp_bigint_math_bigint_copy_fu_205">
+<pin_list>
+<pin id="206" dir="0" index="0" bw="0" slack="0"/>
+<pin id="207" dir="0" index="1" bw="8" slack="2147483647"/>
+<pin id="208" dir="0" index="2" bw="8" slack="0"/>
+<pin id="209" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="stg_53/3 "/>
+</bind>
+</comp>
+
+<comp id="212" class="1004" name="grp_bigint_math_bigint_copy_fu_212">
+<pin_list>
+<pin id="213" dir="0" index="0" bw="0" slack="0"/>
+<pin id="214" dir="0" index="1" bw="8" slack="2147483647"/>
+<pin id="215" dir="0" index="2" bw="8" slack="0"/>
+<pin id="216" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="stg_54/3 "/>
+</bind>
+</comp>
+
+<comp id="220" class="1004" name="grp_bigint_math_bigint_zero_fu_220">
+<pin_list>
+<pin id="221" dir="0" index="0" bw="0" slack="0"/>
+<pin id="222" dir="0" index="1" bw="8" slack="0"/>
+<pin id="223" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="stg_43/1 stg_46/2 stg_50/3 stg_56/4 stg_62/5 stg_68/6 stg_93/7 stg_108/12 stg_120/18 stg_129/22 stg_138/26 "/>
+</bind>
+</comp>
+
+<comp id="226" class="1004" name="grp_bigint_math_bigint_zero_fu_226">
+<pin_list>
+<pin id="227" dir="0" index="0" bw="0" slack="0"/>
+<pin id="228" dir="0" index="1" bw="8" slack="0"/>
+<pin id="229" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="stg_44/1 stg_64/5 stg_71/6 stg_109/12 stg_130/22 "/>
+</bind>
+</comp>
+
+<comp id="232" class="1004" name="grp_bigint_math_bigint_zero_fu_232">
+<pin_list>
+<pin id="233" dir="0" index="0" bw="0" slack="0"/>
+<pin id="234" dir="0" index="1" bw="8" slack="0"/>
+<pin id="235" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="stg_45/1 stg_131/22 "/>
+</bind>
+</comp>
+
+<comp id="239" class="1004" name="grp_fu_239">
+<pin_list>
+<pin id="240" dir="0" index="0" bw="2" slack="0"/>
+<pin id="241" dir="0" index="1" bw="2" slack="0"/>
+<pin id="242" dir="1" index="2" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="tmp_s/6 tmp_52/17 "/>
+</bind>
+</comp>
+
+<comp id="245" class="1004" name="tmp_51_fu_245">
+<pin_list>
+<pin id="246" dir="0" index="0" bw="2" slack="0"/>
+<pin id="247" dir="0" index="1" bw="2" slack="0"/>
+<pin id="248" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="tmp_51/12 "/>
+</bind>
+</comp>
+
+<comp id="251" class="1005" name="one_addr_reg_251">
+<pin_list>
+<pin id="252" dir="0" index="0" bw="8" slack="17"/>
+<pin id="253" dir="1" index="1" bw="8" slack="17"/>
+</pin_list>
+<bind>
+<opset="one_addr "/>
+</bind>
+</comp>
+
+<comp id="256" class="1005" name="tmp_s_reg_256">
+<pin_list>
+<pin id="257" dir="0" index="0" bw="1" slack="1"/>
+<pin id="258" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_s "/>
+</bind>
+</comp>
+
+<comp id="260" class="1005" name="two_addr_reg_260">
+<pin_list>
+<pin id="261" dir="0" index="0" bw="8" slack="14"/>
+<pin id="262" dir="1" index="1" bw="8" slack="14"/>
+</pin_list>
+<bind>
+<opset="two_addr "/>
+</bind>
+</comp>
+
+<comp id="268" class="1005" name="tmp_52_reg_268">
+<pin_list>
+<pin id="269" dir="0" index="0" bw="1" slack="4"/>
+<pin id="270" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_52 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="57"><net_src comp="12" pin="0"/><net_sink comp="54" pin=0"/></net>
+
+<net id="61"><net_src comp="12" pin="0"/><net_sink comp="58" pin=0"/></net>
+
+<net id="65"><net_src comp="12" pin="0"/><net_sink comp="62" pin=0"/></net>
+
+<net id="69"><net_src comp="12" pin="0"/><net_sink comp="66" pin=0"/></net>
+
+<net id="73"><net_src comp="12" pin="0"/><net_sink comp="70" pin=0"/></net>
+
+<net id="77"><net_src comp="12" pin="0"/><net_sink comp="74" pin=0"/></net>
+
+<net id="81"><net_src comp="12" pin="0"/><net_sink comp="78" pin=0"/></net>
+
+<net id="85"><net_src comp="12" pin="0"/><net_sink comp="82" pin=0"/></net>
+
+<net id="89"><net_src comp="12" pin="0"/><net_sink comp="86" pin=0"/></net>
+
+<net id="93"><net_src comp="12" pin="0"/><net_sink comp="90" pin=0"/></net>
+
+<net id="99"><net_src comp="18" pin="0"/><net_sink comp="94" pin=1"/></net>
+
+<net id="100"><net_src comp="20" pin="0"/><net_sink comp="94" pin=2"/></net>
+
+<net id="105"><net_src comp="22" pin="0"/><net_sink comp="101" pin=1"/></net>
+
+<net id="106"><net_src comp="94" pin="3"/><net_sink comp="101" pin=0"/></net>
+
+<net id="112"><net_src comp="18" pin="0"/><net_sink comp="107" pin=1"/></net>
+
+<net id="113"><net_src comp="20" pin="0"/><net_sink comp="107" pin=2"/></net>
+
+<net id="118"><net_src comp="22" pin="0"/><net_sink comp="114" pin=1"/></net>
+
+<net id="119"><net_src comp="107" pin="3"/><net_sink comp="114" pin=0"/></net>
+
+<net id="125"><net_src comp="18" pin="0"/><net_sink comp="120" pin=1"/></net>
+
+<net id="126"><net_src comp="20" pin="0"/><net_sink comp="120" pin=2"/></net>
+
+<net id="131"><net_src comp="42" pin="0"/><net_sink comp="127" pin=1"/></net>
+
+<net id="132"><net_src comp="120" pin="3"/><net_sink comp="127" pin=0"/></net>
+
+<net id="138"><net_src comp="0" pin="0"/><net_sink comp="133" pin=0"/></net>
+
+<net id="139"><net_src comp="18" pin="0"/><net_sink comp="133" pin=1"/></net>
+
+<net id="140"><net_src comp="20" pin="0"/><net_sink comp="133" pin=2"/></net>
+
+<net id="145"><net_src comp="22" pin="0"/><net_sink comp="141" pin=1"/></net>
+
+<net id="146"><net_src comp="133" pin="3"/><net_sink comp="141" pin=0"/></net>
+
+<net id="152"><net_src comp="18" pin="0"/><net_sink comp="147" pin=1"/></net>
+
+<net id="153"><net_src comp="20" pin="0"/><net_sink comp="147" pin=2"/></net>
+
+<net id="158"><net_src comp="22" pin="0"/><net_sink comp="154" pin=1"/></net>
+
+<net id="159"><net_src comp="147" pin="3"/><net_sink comp="154" pin=0"/></net>
+
+<net id="169"><net_src comp="44" pin="0"/><net_sink comp="160" pin=0"/></net>
+
+<net id="170"><net_src comp="8" pin="0"/><net_sink comp="160" pin=5"/></net>
+
+<net id="171"><net_src comp="10" pin="0"/><net_sink comp="160" pin=6"/></net>
+
+<net id="178"><net_src comp="48" pin="0"/><net_sink comp="172" pin=0"/></net>
+
+<net id="184"><net_src comp="52" pin="0"/><net_sink comp="179" pin=0"/></net>
+
+<net id="190"><net_src comp="50" pin="0"/><net_sink comp="185" pin=0"/></net>
+
+<net id="196"><net_src comp="24" pin="0"/><net_sink comp="191" pin=0"/></net>
+
+<net id="197"><net_src comp="6" pin="0"/><net_sink comp="191" pin=1"/></net>
+
+<net id="203"><net_src comp="16" pin="0"/><net_sink comp="198" pin=0"/></net>
+
+<net id="204"><net_src comp="2" pin="0"/><net_sink comp="198" pin=2"/></net>
+
+<net id="210"><net_src comp="16" pin="0"/><net_sink comp="205" pin=0"/></net>
+
+<net id="211"><net_src comp="4" pin="0"/><net_sink comp="205" pin=2"/></net>
+
+<net id="217"><net_src comp="16" pin="0"/><net_sink comp="212" pin=0"/></net>
+
+<net id="218"><net_src comp="6" pin="0"/><net_sink comp="212" pin=2"/></net>
+
+<net id="219"><net_src comp="0" pin="0"/><net_sink comp="198" pin=1"/></net>
+
+<net id="224"><net_src comp="14" pin="0"/><net_sink comp="220" pin=0"/></net>
+
+<net id="225"><net_src comp="78" pin="1"/><net_sink comp="220" pin=1"/></net>
+
+<net id="230"><net_src comp="14" pin="0"/><net_sink comp="226" pin=0"/></net>
+
+<net id="231"><net_src comp="82" pin="1"/><net_sink comp="226" pin=1"/></net>
+
+<net id="236"><net_src comp="14" pin="0"/><net_sink comp="232" pin=0"/></net>
+
+<net id="237"><net_src comp="86" pin="1"/><net_sink comp="232" pin=1"/></net>
+
+<net id="238"><net_src comp="0" pin="0"/><net_sink comp="226" pin=1"/></net>
+
+<net id="243"><net_src comp="191" pin="3"/><net_sink comp="239" pin=0"/></net>
+
+<net id="244"><net_src comp="26" pin="0"/><net_sink comp="239" pin=1"/></net>
+
+<net id="249"><net_src comp="191" pin="3"/><net_sink comp="245" pin=0"/></net>
+
+<net id="250"><net_src comp="46" pin="0"/><net_sink comp="245" pin=1"/></net>
+
+<net id="254"><net_src comp="94" pin="3"/><net_sink comp="251" pin=0"/></net>
+
+<net id="255"><net_src comp="251" pin="1"/><net_sink comp="101" pin=0"/></net>
+
+<net id="259"><net_src comp="239" pin="2"/><net_sink comp="256" pin=0"/></net>
+
+<net id="263"><net_src comp="120" pin="3"/><net_sink comp="260" pin=0"/></net>
+
+<net id="264"><net_src comp="260" pin="1"/><net_sink comp="127" pin=0"/></net>
+
+<net id="271"><net_src comp="239" pin="2"/><net_sink comp="268" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: out_r | {6 7 10 12 32 }
+	Port: base_r | {}
+	Port: exp | {}
+	Port: mod_r | {}
+	Port: zero | {}
+	Port: one | {}
+ - Input state : 
+	Port: bigint_math_bigint_modexp : out_r | {}
+	Port: bigint_math_bigint_modexp : base_r | {3 4 }
+	Port: bigint_math_bigint_modexp : exp | {3 4 }
+	Port: bigint_math_bigint_modexp : mod_r | {3 4 5 6 }
+	Port: bigint_math_bigint_modexp : zero | {7 8 14 15 20 21 30 31 }
+	Port: bigint_math_bigint_modexp : one | {7 8 14 15 20 21 30 31 }
+  - Chain level:
+	State 1
+		stg_43 : 1
+		stg_44 : 1
+		stg_45 : 1
+	State 2
+	State 3
+	State 4
+		stg_61 : 1
+	State 5
+	State 6
+		stg_70 : 1
+		tmp_s : 1
+	State 7
+		stg_80 : 1
+	State 8
+	State 9
+	State 10
+		stg_99 : 1
+		stg_101 : 1
+	State 11
+	State 12
+		tmp_51 : 1
+		stg_107 : 2
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+		tmp_52 : 1
+		stg_118 : 2
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|------------------------------------------|---------|---------|---------|---------|---------|
+| Operation|              Functional Unit             |   BRAM  |  DSP48E |  Delay  |    FF   |   LUT   |
+|----------|------------------------------------------|---------|---------|---------|---------|---------|
+|          |   grp_bigint_math_bigint_longdiv_fu_160  |    16   |    2    | 115.149 |   4164  |   3074  |
+|          |     grp_bigint_math_bigint_mul_fu_172    |    5    |    2    |  23.026 |   719   |   428   |
+|          |    grp_bigint_math_bigint_mul_1_fu_179   |    5    |    2    |  21.455 |   719   |   420   |
+|          | grp_bigint_math_bigint_rightshift_fu_185 |    0    |    0    |  8.223  |   341   |   314   |
+|          |   grp_bigint_math_bigint_compare_fu_191  |    0    |    0    |  8.223  |   206   |   142   |
+|   call   |    grp_bigint_math_bigint_copy_fu_198    |    0    |    0    |  1.571  |    90   |    20   |
+|          |    grp_bigint_math_bigint_copy_fu_205    |    0    |    0    |  1.571  |    90   |    20   |
+|          |    grp_bigint_math_bigint_copy_fu_212    |    0    |    0    |  1.571  |    90   |    20   |
+|          |    grp_bigint_math_bigint_zero_fu_220    |    0    |    0    |    0    |    18   |    12   |
+|          |    grp_bigint_math_bigint_zero_fu_226    |    0    |    0    |    0    |    18   |    12   |
+|          |    grp_bigint_math_bigint_zero_fu_232    |    0    |    0    |    0    |    18   |    12   |
+|----------|------------------------------------------|---------|---------|---------|---------|---------|
+|   icmp   |                grp_fu_239                |    0    |    0    |    0    |    0    |    1    |
+|          |               tmp_51_fu_245              |    0    |    0    |    0    |    0    |    1    |
+|----------|------------------------------------------|---------|---------|---------|---------|---------|
+|   Total  |                                          |    26   |    6    | 180.789 |   6473  |   4476  |
+|----------|------------------------------------------|---------|---------|---------|---------|---------|
+
+Memories:
++--------+--------+--------+--------+
+|        |  BRAM  |   FF   |   LUT  |
++--------+--------+--------+--------+
+|  one_1 |    1   |    0   |    0   |
+| result |    1   |    0   |    0   |
+|  temp  |    1   |    0   |    0   |
+|  temp1 |    1   |    0   |    0   |
+|  temp2 |    1   |    0   |    0   |
+|tempBase|    1   |    0   |    0   |
+| tempExp|    1   |    0   |    0   |
+| tempMod|    1   |    0   |    0   |
+|   two  |    1   |    0   |    0   |
+| zero_1 |    1   |    0   |    0   |
++--------+--------+--------+--------+
+|  Total |   10   |    0   |    0   |
++--------+--------+--------+--------+
+
+* Register list:
++----------------+--------+
+|                |   FF   |
++----------------+--------+
+|one_addr_reg_251|    8   |
+| tmp_52_reg_268 |    1   |
+|  tmp_s_reg_256 |    1   |
+|two_addr_reg_260|    8   |
++----------------+--------+
+|      Total     |   18   |
++----------------+--------+
+
+* Multiplexer (MUX) list: 
+|------------------------------------|------|------|------|--------||---------||---------|
+|                Comp                |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|------------------------------------|------|------|------|--------||---------||---------|
+|          grp_access_fu_101         |  p0  |   2  |   8  |   16   ||    8    |
+|          grp_access_fu_127         |  p0  |   2  |   8  |   16   ||    8    |
+| grp_bigint_math_bigint_zero_fu_226 |  p1  |   2  |   8  |   16   ||    8    |
+|------------------------------------|------|------|------|--------||---------||---------|
+|                Total               |      |      |      |   48   ||  4.713  ||    24   |
+|------------------------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+--------+
+|           |  BRAM  | DSP48E |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+--------+--------+
+|  Function |   26   |    6   |   180  |  6473  |  4476  |
+|   Memory  |   10   |    -   |    -   |    0   |    0   |
+|Multiplexer|    -   |    -   |    4   |    -   |   24   |
+|  Register |    -   |    -   |    -   |   18   |    -   |
++-----------+--------+--------+--------+--------+--------+
+|   Total   |   36   |    6   |   185  |  6491  |  4500  |
++-----------+--------+--------+--------+--------+--------+

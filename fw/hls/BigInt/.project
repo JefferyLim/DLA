@@ -52,9 +52,19 @@
 			<location>/home/linux/Documents/DLA/bigint/bigint.h</location>
 		</link>
 		<link>
-			<name>source/main.cpp</name>
+			<name>source/main.c</name>
 			<type>1</type>
-			<location>/home/linux/Documents/DLA/fw/hls/BigInt/solution1/main.cpp</location>
+			<location>/home/linux/Documents/DLA/fw/hls/BigInt/solution1/main.c</location>
+		</link>
+		<link>
+			<name>testbench/a.txt</name>
+			<type>1</type>
+			<location>/home/linux/Documents/DLA/bigint/a.txt</location>
+		</link>
+		<link>
+			<name>testbench/b.txt</name>
+			<type>1</type>
+			<location>/home/linux/Documents/DLA/bigint/b.txt</location>
 		</link>
 		<link>
 			<name>testbench/bigint.c</name>
@@ -67,9 +77,9 @@
 			<location>/home/linux/Documents/DLA/bigint/bigint.h</location>
 		</link>
 		<link>
-			<name>testbench/main.cpp</name>
+			<name>testbench/main.c</name>
 			<type>1</type>
-			<location>/home/linux/Documents/DLA/fw/hls/BigInt/solution1/main.cpp</location>
+			<location>/home/linux/Documents/DLA/fw/hls/BigInt/solution1/main.c</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>

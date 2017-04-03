@@ -1,0 +1,191 @@
+/*
+
+Vivado v2016.2 (64-bit)
+SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+Process ID: 19104
+
+Current time: 	3/10/17 5:07:15 PM MST
+Time zone: 	Mountain Standard Time (America/Denver)
+
+OS: NAME="Ubuntu"
+Version: 4.4.0-64-generic
+Architecture: amd64
+Available processors (cores): 4
+
+DISPLAY: :0.0
+Screen size: 2726x768
+Screen resolution (DPI): 96
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	/home/Xilinx/Vivado/2016.2/tps/lnx64/jre
+
+User name: 	linux
+User home directory: /home/linux
+User working directory: /home/linux/Documents/DLA/fw/vivado
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI Base root directory: /home/Xilinx/Vivado
+RDI Data directory: /home/Xilinx/Vivado/2016.2/data
+RDI Bin directory: /home/Xilinx/Vivado/2016.2/bin
+
+Vivado preferences path: /home/linux/.Xilinx/Vivado/2016.2/vivado.ini
+Vivado layouts directory: /home/linux/.Xilinx/Vivado/2016.2/layouts
+
+GUI allocated memory:	188 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 4,839 MB
+
+*/
+
+// TclEventType: START_GUI
+// [GUI Memory]: 24 MB (+22988kb) [00:00:14]
+// [Engine Memory]: 4,829 MB (+4912179kb) [00:00:14]
+// Tcl Message: start_gui 
+// [GUI Memory]: 32 MB (+6356kb) [00:00:19]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,839 MB. GUI used memory: 22 MB. Current time: 3/10/17 5:07:17 PM MST
+selectList(PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, "/home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.xpr", 0); // q:v (JViewport:JComponent, cv:JFrame)
+// bL:g (cv:JFrame):  Open Project : addNotify
+// Opening Vivado Project: /home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.xpr. Version: Vivado v2016.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project /home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,861 MB. GUI used memory: 23 MB. Current time: 3/10/17 5:08:17 PM MST
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 45 MB (+12582kb) [00:01:29]
+// [GUI Memory]: 50 MB (+2960kb) [00:01:31]
+// [GUI Memory]: 57 MB (+4853kb) [00:01:35]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: open_project /home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/linux/Documents/DLA/fw/hls'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/Xilinx/Vivado/2016.2/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,985 MB. GUI used memory: 34 MB. Current time: 3/10/17 5:08:36 PM MST
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: zedboard; location: /home/linux/Documents/DLA/fw/vivado/zedboard; part: xc7z020clg484-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:36 ; elapsed = 00:00:25 . Memory (MB): peak = 5856.582 ; gain = 127.711 ; free physical = 829 ; free virtual = 10818 
+// Elapsed time: 25 seconds
+dismissDialog("Open Project"); // bL:g (cv:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 61 MB (+957kb) [00:12:19]
+// [GUI Memory]: 65 MB (+334kb) [00:21:10]
+// [GUI Memory]: 69 MB (+1215kb) [00:27:30]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,987 MB. GUI used memory: 34 MB. Current time: 3/10/17 5:38:37 PM MST
+// [GUI Memory]: 73 MB (+244kb) [00:38:45]
+// [GUI Memory]: 77 MB (+897kb) [00:54:40]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,987 MB. GUI used memory: 33 MB. Current time: 3/10/17 6:08:38 PM MST
+// [GUI Memory]: 82 MB (+287kb) [01:19:16]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,987 MB. GUI used memory: 33 MB. Current time: 3/10/17 6:38:38 PM MST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,987 MB. GUI used memory: 32 MB. Current time: 3/10/17 7:08:37 PM MST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,987 MB. GUI used memory: 31 MB. Current time: 3/10/17 7:38:38 PM MST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,987 MB. GUI used memory: 31 MB. Current time: 3/10/17 8:08:38 PM MST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,987 MB. GUI used memory: 31 MB. Current time: 3/10/17 8:38:38 PM MST
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+/*
+java.lang.ClassCastException: sun.awt.image.BufImgSurfaceData cannot be cast to sun.java2d.xr.XRSurfaceData (See /home/linux/Documents/DLA/fw/vivado/vivado_pid19104.debug)
+*/
+// HMemoryUtils.trashcanNow. Engine heap size: 4,987 MB. GUI used memory: 33 MB. Current time: 3/10/17 9:08:41 PM MST
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      

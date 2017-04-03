@@ -1,0 +1,73 @@
+set moduleName bigint_math_bigint_leftshift
+set isCombinational 0
+set isDatapathOnly 0
+set isPipelined 0
+set pipeline_type none
+set FunctionProtocol ap_ctrl_hs
+set isOneStateSeq 0
+set C_modelName {bigint_math_bigint_leftshift}
+set C_modelType { void 0 }
+set C_modelArgList {
+	{ out_r int 8 regular {array 256 { 2 } 1 1 }  }
+	{ a int 8 regular {array 256 { 1 } 1 1 }  }
+	{ shift int 32 regular  }
+}
+set C_modelArgMapList {[ 
+	{ "Name" : "out_r", "interface" : "memory", "bitwidth" : 8, "direction" : "READWRITE"} , 
+ 	{ "Name" : "a", "interface" : "memory", "bitwidth" : 8, "direction" : "READONLY"} , 
+ 	{ "Name" : "shift", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} ]}
+# RTL Port declarations: 
+set portNum 15
+set portList { 
+	{ ap_clk sc_in sc_logic 1 clock -1 } 
+	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
+	{ ap_start sc_in sc_logic 1 start -1 } 
+	{ ap_done sc_out sc_logic 1 predone -1 } 
+	{ ap_idle sc_out sc_logic 1 done -1 } 
+	{ ap_ready sc_out sc_logic 1 ready -1 } 
+	{ out_r_address0 sc_out sc_lv 8 signal 0 } 
+	{ out_r_ce0 sc_out sc_logic 1 signal 0 } 
+	{ out_r_we0 sc_out sc_logic 1 signal 0 } 
+	{ out_r_d0 sc_out sc_lv 8 signal 0 } 
+	{ out_r_q0 sc_in sc_lv 8 signal 0 } 
+	{ a_address0 sc_out sc_lv 8 signal 1 } 
+	{ a_ce0 sc_out sc_logic 1 signal 1 } 
+	{ a_q0 sc_in sc_lv 8 signal 1 } 
+	{ shift sc_in sc_lv 32 signal 2 } 
+}
+set NewPortList {[ 
+	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
+ 	{ "name": "ap_rst", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "reset", "bundle":{"name": "ap_rst", "role": "default" }} , 
+ 	{ "name": "ap_start", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "start", "bundle":{"name": "ap_start", "role": "default" }} , 
+ 	{ "name": "ap_done", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "predone", "bundle":{"name": "ap_done", "role": "default" }} , 
+ 	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
+ 	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
+ 	{ "name": "out_r_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "out_r", "role": "address0" }} , 
+ 	{ "name": "out_r_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "out_r", "role": "ce0" }} , 
+ 	{ "name": "out_r_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "out_r", "role": "we0" }} , 
+ 	{ "name": "out_r_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "out_r", "role": "d0" }} , 
+ 	{ "name": "out_r_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "out_r", "role": "q0" }} , 
+ 	{ "name": "a_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "a", "role": "address0" }} , 
+ 	{ "name": "a_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "a", "role": "ce0" }} , 
+ 	{ "name": "a_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "a", "role": "q0" }} , 
+ 	{ "name": "shift", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "shift", "role": "default" }}  ]}
+
+set RtlHierarchyInfo {[
+	{"Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : [], "CDFG" : "bigint_math_bigint_leftshift", "VariableLatency" : "1", "AlignedPipeline" : "0", "UnalignedPipeline" : "0", "ProcessNetwork" : "0", "Combinational" : "0", "ControlExist" : "1",
+		"Port" : [
+		{"Name" : "out_r", "Type" : "Memory", "Direction" : "IO", "BlockSignal" : [], "SubConnect" : []}, 
+		{"Name" : "a", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
+		{"Name" : "shift", "Type" : "None", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}],
+		"WaitState" : [],
+		"SubBlockPort" : []}]}
+
+set PerformanceInfo {[
+	{"Name" : "Latency", "Min" : "514", "Max" : "6914"}
+	, {"Name" : "Interval", "Min" : "514", "Max" : "6914"}
+]}
+
+set Spec2ImplPortList { 
+	out_r { ap_memory {  { out_r_address0 mem_address 1 8 }  { out_r_ce0 mem_ce 1 1 }  { out_r_we0 mem_we 1 1 }  { out_r_d0 mem_din 1 8 }  { out_r_q0 mem_dout 0 8 } } }
+	a { ap_memory {  { a_address0 mem_address 1 8 }  { a_ce0 mem_ce 1 1 }  { a_q0 mem_dout 0 8 } } }
+	shift { ap_none {  { shift in_data 0 32 } } }
+}

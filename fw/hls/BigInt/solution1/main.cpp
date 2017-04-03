@@ -23,23 +23,25 @@ void bigint_math(uint2048* a, unsigned char b[bitSize], unsigned char c[bitSize]
 	for(int i = 0; i < 256; i++){
 		ap_uint<8> val1(b[i]);
 		ap_uint<8> val2(c[i]);
-		ap_uint<8> val3(d[i]);
+		//ap_uint<8> val3(d[i]);
 		base = base.concat(val1);
 		exp = exp.concat(val2);
-		mod = mod.concat(val2);
+		//mod = mod.concat(val2);
 	}
 
-	*a = 1;
-	base = base % mod;
-	while(exp > 0){
-		if(exp % 2 == 1){
-			*a = (*a * base) % mod;
-		}
-
-		exp = exp >> 1;
-		base = (base * base) % mod;
-		}
-	}
+	*a = base / exp;
+}
+//	*a = 1;
+//	base = base % mod;
+//	while(exp > 0){
+//		if(exp % 2 == 1){
+//			*a = (*a * base) % mod;
+//		}
+//
+//		exp = exp >> 1;
+//		base = (base * base) % mod;
+//		}
+//	}
 
 
 ////Chars are 2048 bit binary values.

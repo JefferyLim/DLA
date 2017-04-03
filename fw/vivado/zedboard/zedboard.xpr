@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="14" Path="/home/linux/Documents/DLA/fw/Vivado/zedboard/zedboard.xpr">
+<Project Version="7" Minor="14" Path="/home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="57d03df376c84b7fa205006469cccc5c"/>
@@ -33,13 +33,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="30"/>
-    <Option Name="WTModelSimExportSim" Val="30"/>
-    <Option Name="WTQuestaExportSim" Val="30"/>
-    <Option Name="WTIesExportSim" Val="30"/>
-    <Option Name="WTVcsExportSim" Val="30"/>
-    <Option Name="WTRivieraExportSim" Val="30"/>
-    <Option Name="WTActivehdlExportSim" Val="30"/>
+    <Option Name="WTXSimExportSim" Val="39"/>
+    <Option Name="WTModelSimExportSim" Val="39"/>
+    <Option Name="WTQuestaExportSim" Val="39"/>
+    <Option Name="WTIesExportSim" Val="39"/>
+    <Option Name="WTVcsExportSim" Val="39"/>
+    <Option Name="WTRivieraExportSim" Val="39"/>
+    <Option Name="WTActivehdlExportSim" Val="39"/>
   </Configuration>
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
@@ -50,16 +50,6 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="xc7z020.bd" FileRelPathName="ip/xc7z020_processing_system7_0_axi_periph_1/xc7z020_processing_system7_0_axi_periph_1.xci"/>
-        <CompFileExtendedInfo CompFileName="xc7z020.bd" FileRelPathName="ip/xc7z020_bigint_math_0_0/xc7z020_bigint_math_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="xc7z020.bd" FileRelPathName="hdl/xc7z020.v"/>
-        <CompFileExtendedInfo CompFileName="xc7z020.bd" FileRelPathName="ip/xc7z020_rst_processing_system7_0_100M_2/xc7z020_rst_processing_system7_0_100M_2.xci"/>
-        <CompFileExtendedInfo CompFileName="xc7z020.bd" FileRelPathName="ip/xc7z020_processing_system7_0_1/xc7z020_processing_system7_0_1.xci"/>
-        <CompFileExtendedInfo CompFileName="xc7z020.bd" FileRelPathName="ip/xc7z020_auto_pc_0/xc7z020_auto_pc_0.xci"/>
-        <CompFileExtendedInfo CompFileName="xc7z020.bd" FileRelPathName="hdl/xc7z020.hwdef"/>
-        <CompFileExtendedInfo CompFileName="xc7z020.bd" FileRelPathName="hw_handoff/xc7z020_bd.tcl"/>
-        <CompFileExtendedInfo CompFileName="xc7z020.bd" FileRelPathName="hw_handoff/xc7z020.hwh"/>
-        <CompFileExtendedInfo CompFileName="xc7z020.bd" FileRelPathName="xc7z020_ooc.xdc"/>
       </File>
       <File Path="$PSRCDIR/sources_1/new/top.vhd">
         <FileInfo>
@@ -94,6 +84,7 @@
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SimMode" Val="post-implementation"/>
         <Option Name="SrcSet" Val="sources_1"/>
       </Config>
     </FileSet>

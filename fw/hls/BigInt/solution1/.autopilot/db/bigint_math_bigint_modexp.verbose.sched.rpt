@@ -1,0 +1,609 @@
+
+
+================================================================
+== Vivado HLS Report for 'bigint_math_bigint_modexp'
+================================================================
+* Date:           Sun Mar 19 09:53:16 2017
+
+* Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
+* Project:        BigInt
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  50.00|     13.51|        6.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 32
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / (!tmp_s)
+	32  / (tmp_s)
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / (tmp_51)
+	32  / (!tmp_51)
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / (tmp_52)
+	21  / (!tmp_52)
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	11  / true
+32 --> 
+* FSM state operations: 
+
+ <State 1>: 0.00ns
+ST_1: zero_1 [1/1] 0.00ns
+:4  %zero_1 = alloca [256 x i8], align 16
+
+ST_1: one_1 [1/1] 0.00ns
+:5  %one_1 = alloca [256 x i8], align 16
+
+ST_1: two [1/1] 0.00ns
+:6  %two = alloca [256 x i8], align 16
+
+ST_1: temp [1/1] 0.00ns
+:7  %temp = alloca [256 x i8], align 16
+
+ST_1: temp1 [1/1] 0.00ns
+:8  %temp1 = alloca [256 x i8], align 16
+
+ST_1: temp2 [1/1] 0.00ns
+:9  %temp2 = alloca [256 x i8], align 16
+
+ST_1: tempBase [1/1] 0.00ns
+:10  %tempBase = alloca [256 x i8], align 16
+
+ST_1: tempExp [1/1] 0.00ns
+:11  %tempExp = alloca [256 x i8], align 16
+
+ST_1: tempMod [1/1] 0.00ns
+:12  %tempMod = alloca [256 x i8], align 16
+
+ST_1: result [1/1] 0.00ns
+:13  %result = alloca [256 x i8], align 16
+
+ST_1: stg_43 [2/2] 0.00ns
+:20  call fastcc void @bigint_math_bigint_zero([256 x i8]* %tempBase)
+
+ST_1: stg_44 [2/2] 0.00ns
+:21  call fastcc void @bigint_math_bigint_zero([256 x i8]* %tempExp)
+
+ST_1: stg_45 [2/2] 0.00ns
+:22  call fastcc void @bigint_math_bigint_zero([256 x i8]* %tempMod)
+
+
+ <State 2>: 0.00ns
+ST_2: stg_46 [2/2] 0.00ns
+:15  call fastcc void @bigint_math_bigint_zero([256 x i8]* %one_1)
+
+ST_2: stg_47 [1/2] 0.00ns
+:20  call fastcc void @bigint_math_bigint_zero([256 x i8]* %tempBase)
+
+ST_2: stg_48 [1/2] 0.00ns
+:21  call fastcc void @bigint_math_bigint_zero([256 x i8]* %tempExp)
+
+ST_2: stg_49 [1/2] 0.00ns
+:22  call fastcc void @bigint_math_bigint_zero([256 x i8]* %tempMod)
+
+
+ <State 3>: 0.00ns
+ST_3: stg_50 [2/2] 0.00ns
+:14  call fastcc void @bigint_math_bigint_zero([256 x i8]* %zero_1)
+
+ST_3: stg_51 [1/2] 0.00ns
+:15  call fastcc void @bigint_math_bigint_zero([256 x i8]* %one_1)
+
+ST_3: stg_52 [2/2] 0.00ns
+:23  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempBase, [256 x i8]* %base_r)
+
+ST_3: stg_53 [2/2] 0.00ns
+:24  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempExp, [256 x i8]* %exp)
+
+ST_3: stg_54 [2/2] 0.00ns
+:25  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempMod, [256 x i8]* %mod_r)
+
+
+ <State 4>: 2.39ns
+ST_4: stg_55 [1/2] 0.00ns
+:14  call fastcc void @bigint_math_bigint_zero([256 x i8]* %zero_1)
+
+ST_4: stg_56 [2/2] 0.00ns
+:17  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp)
+
+ST_4: stg_57 [1/2] 0.00ns
+:23  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempBase, [256 x i8]* %base_r)
+
+ST_4: stg_58 [1/2] 0.00ns
+:24  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempExp, [256 x i8]* %exp)
+
+ST_4: stg_59 [1/2] 0.00ns
+:25  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempMod, [256 x i8]* %mod_r)
+
+ST_4: one_addr [1/1] 0.00ns
+:28  %one_addr = getelementptr inbounds [256 x i8]* %one_1, i64 0, i64 255
+
+ST_4: stg_61 [1/1] 2.39ns
+:29  store i8 1, i8* %one_addr, align 1
+
+
+ <State 5>: 0.00ns
+ST_5: stg_62 [2/2] 0.00ns
+:16  call fastcc void @bigint_math_bigint_zero([256 x i8]* %two)
+
+ST_5: stg_63 [1/2] 0.00ns
+:17  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp)
+
+ST_5: stg_64 [2/2] 0.00ns
+:18  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp1)
+
+ST_5: tmp [2/2] 0.00ns
+:33  %tmp = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %mod_r, [256 x i8]* %one_1)
+
+
+ <State 6>: 11.94ns
+ST_6: stg_66 [1/2] 0.00ns
+:16  call fastcc void @bigint_math_bigint_zero([256 x i8]* %two)
+
+ST_6: stg_67 [1/2] 0.00ns
+:18  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp1)
+
+ST_6: stg_68 [2/2] 0.00ns
+:19  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp2)
+
+ST_6: temp_addr [1/1] 0.00ns
+:26  %temp_addr = getelementptr inbounds [256 x i8]* %temp, i64 0, i64 255
+
+ST_6: stg_70 [1/1] 2.39ns
+:27  store i8 1, i8* %temp_addr, align 1
+
+ST_6: stg_71 [2/2] 0.00ns
+:32  call fastcc void @bigint_math_bigint_zero([256 x i8]* %out_r)
+
+ST_6: tmp [1/2] 10.58ns
+:33  %tmp = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %mod_r, [256 x i8]* %one_1)
+
+ST_6: tmp_s [1/1] 1.36ns
+:34  %tmp_s = icmp eq i2 %tmp, 0
+
+
+ <State 7>: 2.39ns
+ST_7: empty [1/1] 0.00ns
+:0  %empty = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %mod_r, [1 x i8]* @p_str13, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str13, i32 -1, [1 x i8]* @p_str13, [1 x i8]* @p_str13, [1 x i8]* @p_str13, [1 x i8]* @p_str13, [1 x i8]* @p_str13)
+
+ST_7: empty_37 [1/1] 0.00ns
+:1  %empty_37 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %exp, [1 x i8]* @p_str12, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str12, i32 -1, [1 x i8]* @p_str12, [1 x i8]* @p_str12, [1 x i8]* @p_str12, [1 x i8]* @p_str12, [1 x i8]* @p_str12)
+
+ST_7: empty_38 [1/1] 0.00ns
+:2  %empty_38 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %base_r, [1 x i8]* @p_str11, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str11, i32 -1, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11)
+
+ST_7: empty_39 [1/1] 0.00ns
+:3  %empty_39 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %out_r, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: stg_78 [1/2] 0.00ns
+:19  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp2)
+
+ST_7: two_addr [1/1] 0.00ns
+:30  %two_addr = getelementptr inbounds [256 x i8]* %two, i64 0, i64 255
+
+ST_7: stg_80 [1/1] 2.39ns
+:31  store i8 2, i8* %two_addr, align 1
+
+ST_7: stg_81 [1/2] 0.00ns
+:32  call fastcc void @bigint_math_bigint_zero([256 x i8]* %out_r)
+
+ST_7: empty_40 [1/1] 0.00ns
+:35  %empty_40 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %zero_1, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: empty_41 [1/1] 0.00ns
+:36  %empty_41 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %temp2, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: empty_42 [1/1] 0.00ns
+:37  %empty_42 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %temp1, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: empty_43 [1/1] 0.00ns
+:38  %empty_43 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %temp, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: empty_44 [1/1] 0.00ns
+:39  %empty_44 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %result, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: empty_45 [1/1] 0.00ns
+:40  %empty_45 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %tempMod, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: empty_46 [1/1] 0.00ns
+:41  %empty_46 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %tempExp, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: empty_47 [1/1] 0.00ns
+:42  %empty_47 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %tempBase, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: empty_48 [1/1] 0.00ns
+:43  %empty_48 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %two, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: empty_49 [1/1] 0.00ns
+:44  %empty_49 = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %one_1, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_7: stg_92 [1/1] 0.00ns
+:45  br i1 %tmp_s, label %._crit_edge, label %1
+
+ST_7: stg_93 [2/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_zero([256 x i8]* %result)
+
+ST_7: stg_94 [2/2] 0.00ns
+:5  call fastcc void @bigint_math_bigint_longdiv([256 x i8]* %temp, [256 x i8]* %temp1, [256 x i8]* %tempBase, [256 x i8]* %tempMod)
+
+
+ <State 8>: 0.00ns
+ST_8: stg_95 [1/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_zero([256 x i8]* %result)
+
+ST_8: stg_96 [1/2] 0.00ns
+:5  call fastcc void @bigint_math_bigint_longdiv([256 x i8]* %temp, [256 x i8]* %temp1, [256 x i8]* %tempBase, [256 x i8]* %tempMod)
+
+
+ <State 9>: 0.00ns
+ST_9: stg_97 [2/2] 0.00ns
+:6  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempBase, [256 x i8]* %temp1)
+
+
+ <State 10>: 2.39ns
+ST_10: out_addr [1/1] 0.00ns
+:1  %out_addr = getelementptr [256 x i8]* %out_r, i64 0, i64 255
+
+ST_10: stg_99 [1/1] 2.39ns
+:2  store i8 1, i8* %out_addr, align 1
+
+ST_10: result_addr [1/1] 0.00ns
+:3  %result_addr = getelementptr inbounds [256 x i8]* %result, i64 0, i64 255
+
+ST_10: stg_101 [1/1] 2.39ns
+:4  store i8 1, i8* %result_addr, align 1
+
+ST_10: stg_102 [1/2] 0.00ns
+:6  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempBase, [256 x i8]* %temp1)
+
+ST_10: stg_103 [1/1] 0.00ns
+:7  br label %2
+
+
+ <State 11>: 0.00ns
+ST_11: tmp_1 [2/2] 0.00ns
+:0  %tmp_1 = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %tempExp, [256 x i8]* %zero_1)
+
+
+ <State 12>: 11.94ns
+ST_12: tmp_1 [1/2] 10.58ns
+:0  %tmp_1 = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %tempExp, [256 x i8]* %zero_1)
+
+ST_12: tmp_51 [1/1] 1.36ns
+:1  %tmp_51 = icmp eq i2 %tmp_1, 1
+
+ST_12: stg_107 [1/1] 0.00ns
+:2  br i1 %tmp_51, label %3, label %5
+
+ST_12: stg_108 [2/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp)
+
+ST_12: stg_109 [2/2] 0.00ns
+:1  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp1)
+
+ST_12: stg_110 [2/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_copy([256 x i8]* %out_r, [256 x i8]* %result)
+
+
+ <State 13>: 0.00ns
+ST_13: stg_111 [1/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp)
+
+ST_13: stg_112 [1/2] 0.00ns
+:1  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp1)
+
+
+ <State 14>: 0.00ns
+ST_14: stg_113 [2/2] 0.00ns
+:2  call fastcc void @bigint_math_bigint_longdiv([256 x i8]* %temp, [256 x i8]* %temp1, [256 x i8]* %tempExp, [256 x i8]* %two)
+
+
+ <State 15>: 0.00ns
+ST_15: stg_114 [1/2] 0.00ns
+:2  call fastcc void @bigint_math_bigint_longdiv([256 x i8]* %temp, [256 x i8]* %temp1, [256 x i8]* %tempExp, [256 x i8]* %two)
+
+
+ <State 16>: 0.00ns
+ST_16: tmp_2 [2/2] 0.00ns
+:3  %tmp_2 = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %temp1, [256 x i8]* %one_1)
+
+
+ <State 17>: 11.94ns
+ST_17: tmp_2 [1/2] 10.58ns
+:3  %tmp_2 = call fastcc i2 @bigint_math_bigint_compare([256 x i8]* %temp1, [256 x i8]* %one_1)
+
+ST_17: tmp_52 [1/1] 1.36ns
+:4  %tmp_52 = icmp eq i2 %tmp_2, 0
+
+ST_17: stg_118 [1/1] 0.00ns
+:5  br i1 %tmp_52, label %4, label %._crit_edge1
+
+
+ <State 18>: 0.00ns
+ST_18: stg_119 [2/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_mul([256 x i8]* %temp, [256 x i8]* %result, [256 x i8]* %tempBase)
+
+ST_18: stg_120 [2/2] 0.00ns
+:1  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp1)
+
+
+ <State 19>: 0.00ns
+ST_19: stg_121 [1/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_mul([256 x i8]* %temp, [256 x i8]* %result, [256 x i8]* %tempBase)
+
+ST_19: stg_122 [1/2] 0.00ns
+:1  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp1)
+
+
+ <State 20>: 0.00ns
+ST_20: stg_123 [2/2] 0.00ns
+:2  call fastcc void @bigint_math_bigint_longdiv([256 x i8]* %temp1, [256 x i8]* %result, [256 x i8]* %temp, [256 x i8]* %tempMod)
+
+
+ <State 21>: 2.39ns
+ST_21: stg_124 [1/2] 0.00ns
+:2  call fastcc void @bigint_math_bigint_longdiv([256 x i8]* %temp1, [256 x i8]* %result, [256 x i8]* %temp, [256 x i8]* %tempMod)
+
+ST_21: stg_125 [1/1] 0.00ns
+:3  br label %._crit_edge1
+
+ST_21: stg_126 [1/1] 2.39ns
+._crit_edge1:8  store i8 1, i8* %one_addr, align 1
+
+ST_21: stg_127 [1/1] 2.39ns
+._crit_edge1:9  store i8 2, i8* %two_addr, align 1
+
+
+ <State 22>: 0.00ns
+ST_22: stg_128 [2/2] 0.00ns
+._crit_edge1:0  call fastcc void @bigint_math_bigint_rightshift([256 x i8]* %temp, [256 x i8]* %tempExp)
+
+ST_22: stg_129 [2/2] 0.00ns
+._crit_edge1:4  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp1)
+
+ST_22: stg_130 [2/2] 0.00ns
+._crit_edge1:5  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp2)
+
+ST_22: stg_131 [2/2] 0.00ns
+._crit_edge1:7  call fastcc void @bigint_math_bigint_zero([256 x i8]* %zero_1)
+
+
+ <State 23>: 0.00ns
+ST_23: stg_132 [1/2] 0.00ns
+._crit_edge1:0  call fastcc void @bigint_math_bigint_rightshift([256 x i8]* %temp, [256 x i8]* %tempExp)
+
+ST_23: stg_133 [1/2] 0.00ns
+._crit_edge1:4  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp1)
+
+ST_23: stg_134 [1/2] 0.00ns
+._crit_edge1:5  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp2)
+
+ST_23: stg_135 [1/2] 0.00ns
+._crit_edge1:7  call fastcc void @bigint_math_bigint_zero([256 x i8]* %zero_1)
+
+
+ <State 24>: 0.00ns
+ST_24: stg_136 [2/2] 0.00ns
+._crit_edge1:1  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempExp, [256 x i8]* %temp)
+
+
+ <State 25>: 0.00ns
+ST_25: stg_137 [1/2] 0.00ns
+._crit_edge1:1  call fastcc void @bigint_math_bigint_copy([256 x i8]* %tempExp, [256 x i8]* %temp)
+
+
+ <State 26>: 0.00ns
+ST_26: stg_138 [2/2] 0.00ns
+._crit_edge1:2  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp)
+
+
+ <State 27>: 0.00ns
+ST_27: stg_139 [1/2] 0.00ns
+._crit_edge1:2  call fastcc void @bigint_math_bigint_zero([256 x i8]* %temp)
+
+
+ <State 28>: 0.00ns
+ST_28: stg_140 [2/2] 0.00ns
+._crit_edge1:3  call fastcc void @bigint_math_bigint_mul.1([256 x i8]* %temp, [256 x i8]* %tempBase)
+
+
+ <State 29>: 0.00ns
+ST_29: stg_141 [1/2] 0.00ns
+._crit_edge1:3  call fastcc void @bigint_math_bigint_mul.1([256 x i8]* %temp, [256 x i8]* %tempBase)
+
+
+ <State 30>: 0.00ns
+ST_30: stg_142 [2/2] 0.00ns
+._crit_edge1:6  call fastcc void @bigint_math_bigint_longdiv([256 x i8]* %temp1, [256 x i8]* %tempBase, [256 x i8]* %temp, [256 x i8]* %tempMod)
+
+
+ <State 31>: 0.00ns
+ST_31: stg_143 [1/2] 0.00ns
+._crit_edge1:6  call fastcc void @bigint_math_bigint_longdiv([256 x i8]* %temp1, [256 x i8]* %tempBase, [256 x i8]* %temp, [256 x i8]* %tempMod)
+
+ST_31: stg_144 [1/1] 0.00ns
+._crit_edge1:10  br label %2
+
+
+ <State 32>: 0.00ns
+ST_32: stg_145 [1/2] 0.00ns
+:0  call fastcc void @bigint_math_bigint_copy([256 x i8]* %out_r, [256 x i8]* %result)
+
+ST_32: stg_146 [1/1] 0.00ns
+:1  br label %._crit_edge
+
+ST_32: stg_147 [1/1] 0.00ns
+._crit_edge:0  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 50ns, clock uncertainty: 6.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

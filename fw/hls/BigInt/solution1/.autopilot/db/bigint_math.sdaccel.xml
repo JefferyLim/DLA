@@ -1,0 +1,145 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'bigint_math'" level="0">
+<item name = "Date">Sun Mar 19 09:53:26 2017
+</item>
+<item name = "Version">2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)</item>
+<item name = "Project">BigInt</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Target clock period (ns)">50.00</item>
+<item name = "Clock uncertainty (ns)">6.25</item>
+<item name = "Estimated clock period (ns)">13.51</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_bigint_math_bigint_modexp_fu_82">bigint_math_bigint_modexp, ?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">256, 256, 1, -, -, 256, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 13</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">46, 6, 4193, 7084</column>
+<column name="Memory">-, -, -, -</column>
+<column name="Multiplexer">-, -, -, 28</column>
+<column name="Register">-, -, 13, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
+<specialColumn name="Utilization (%)">16, 2, 3, 13</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="bigint_math_PERIPH_BUS_s_axi_U">bigint_math_PERIPH_BUS_s_axi, 8, 0, 356, 320</column>
+<column name="grp_bigint_math_bigint_modexp_fu_82">bigint_math_bigint_modexp, 38, 6, 3837, 6764</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="i_fu_104_p2">+, 0, 0, 9, 9, 1</column>
+<column name="exitcond_i_fu_98_p2">icmp, 0, 0, 4, 9, 10</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="a_address0">8, 3, 8, 24</column>
+<column name="a_ce0">1, 3, 1, 3</column>
+<column name="a_d0">8, 3, 8, 24</column>
+<column name="a_we0">1, 3, 1, 3</column>
+<column name="ap_NS_fsm">1, 4, 1, 4</column>
+<column name="i_i_reg_71">9, 2, 9, 18</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">3, 0, 3, 0</column>
+<column name="ap_reg_grp_bigint_math_bigint_modexp_fu_82_ap_start">1, 0, 1, 0</column>
+<column name="i_i_reg_71">9, 0, 9, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="s_axi_PERIPH_BUS_AWVALID">in, 1, s_axi, PERIPH_BUS, array</column>
+<column name="s_axi_PERIPH_BUS_AWREADY">out, 1, s_axi, PERIPH_BUS, array</column>
+<column name="s_axi_PERIPH_BUS_AWADDR">in, 11, s_axi, PERIPH_BUS, array</column>
+<column name="s_axi_PERIPH_BUS_WVALID">in, 1, s_axi, PERIPH_BUS, array</column>
+<column name="s_axi_PERIPH_BUS_WREADY">out, 1, s_axi, PERIPH_BUS, array</column>
+<column name="s_axi_PERIPH_BUS_WDATA">in, 32, s_axi, PERIPH_BUS, array</column>
+<column name="s_axi_PERIPH_BUS_WSTRB">in, 4, s_axi, PERIPH_BUS, array</column>
+<column name="s_axi_PERIPH_BUS_ARVALID">in, 1, s_axi, PERIPH_BUS, array</column>
+<column name="s_axi_PERIPH_BUS_ARREADY">out, 1, s_axi, PERIPH_BUS, array</column>
+<column name="s_axi_PERIPH_BUS_ARADDR">in, 11, s_axi, PERIPH_BUS, array</column>
+<column name="s_axi_PERIPH_BUS_RVALID">out, 1, s_axi, PERIPH_BUS, array</column>
+<column name="s_axi_PERIPH_BUS_RREADY">in, 1, s_axi, PERIPH_BUS, array</column>
+<column name="s_axi_PERIPH_BUS_RDATA">out, 32, s_axi, PERIPH_BUS, array</column>
+<column name="s_axi_PERIPH_BUS_RRESP">out, 2, s_axi, PERIPH_BUS, array</column>
+<column name="s_axi_PERIPH_BUS_BVALID">out, 1, s_axi, PERIPH_BUS, array</column>
+<column name="s_axi_PERIPH_BUS_BREADY">in, 1, s_axi, PERIPH_BUS, array</column>
+<column name="s_axi_PERIPH_BUS_BRESP">out, 2, s_axi, PERIPH_BUS, array</column>
+<column name="ap_clk">in, 1, ap_ctrl_hs, bigint_math, return value</column>
+<column name="ap_rst_n">in, 1, ap_ctrl_hs, bigint_math, return value</column>
+<column name="interrupt">out, 1, ap_ctrl_hs, bigint_math, return value</column>
+</table>
+</item>
+</section>
+
+<section name = "Critical Path" level="0">
+<item name = "Max Delay">2.39</item>
+<item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
+<keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
+<column name="'i'">phi, 0.00, 0.00, -, -, -, -, -, -, -, -, -, -, &apos;i&apos;, ../../bigint/bigint.c:8-&gt;BigInt/solution1/main.c:14</column>
+<column name="'tmp_i', ../../bigint/bigint.c:10->BigInt/solution1/main.c:14">zext, 0.00, 0.00, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'a_addr', ../../bigint/bigint.c:10->BigInt/solution1/main.c:14">getelementptr, 0.00, 0.00, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="../../bigint/bigint.c:10->BigInt/solution1/main.c:14">store, 2.39, 2.39, , -, -, -, -, -, &apos;a&apos;, -, -, -, -</column>
+</table>
+</item>
+</section>
+</profile>

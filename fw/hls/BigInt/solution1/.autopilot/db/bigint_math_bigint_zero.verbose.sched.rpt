@@ -1,0 +1,148 @@
+
+
+================================================================
+== Vivado HLS Report for 'bigint_math_bigint_zero'
+================================================================
+* Date:           Sun Mar 19 09:53:11 2017
+
+* Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
+* Project:        BigInt
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  50.00|      2.39|        6.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  257|  257|  257|  257|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  256|  256|         1|          -|          -|   256|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 2
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	2  / (!exitcond)
+* FSM state operations: 
+
+ <State 1>: 1.57ns
+ST_1: empty [1/1] 0.00ns
+:0  %empty = call i32 (...)* @_ssdm_op_SpecMemCore([256 x i8]* %in_r, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_1: stg_4 [1/1] 1.57ns
+:1  br label %1
+
+
+ <State 2>: 2.39ns
+ST_2: i [1/1] 0.00ns
+:0  %i = phi i9 [ 0, %0 ], [ %i_1, %2 ]
+
+ST_2: exitcond [1/1] 2.03ns
+:1  %exitcond = icmp eq i9 %i, -256
+
+ST_2: empty_7 [1/1] 0.00ns
+:2  %empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 256, i64 256, i64 256)
+
+ST_2: i_1 [1/1] 1.84ns
+:3  %i_1 = add i9 %i, 1
+
+ST_2: stg_9 [1/1] 0.00ns
+:4  br i1 %exitcond, label %3, label %2
+
+ST_2: tmp [1/1] 0.00ns
+:0  %tmp = zext i9 %i to i64
+
+ST_2: in_addr [1/1] 0.00ns
+:1  %in_addr = getelementptr [256 x i8]* %in_r, i64 0, i64 %tmp
+
+ST_2: stg_12 [1/1] 2.39ns
+:2  store i8 0, i8* %in_addr, align 1
+
+ST_2: stg_13 [1/1] 0.00ns
+:3  br label %1
+
+ST_2: stg_14 [1/1] 0.00ns
+:0  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 50ns, clock uncertainty: 6.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

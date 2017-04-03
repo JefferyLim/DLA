@@ -1,5 +1,5 @@
-set_property SRC_FILE_INFO {cfile:/home/linux/Documents/DLA/fw/Vivado/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_processing_system7_0_1/xc7z020_processing_system7_0_1.xdc rfile:../../../zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_processing_system7_0_1/xc7z020_processing_system7_0_1.xdc id:1 order:EARLY scoped_inst:xc7z020_i/processing_system7_0/inst} [current_design]
-set_property SRC_FILE_INFO {cfile:/home/linux/Documents/DLA/fw/Vivado/zedboard/zedboard.srcs/sources_1/new/zedboard_master_XDC_RevC_D_v3.xdc rfile:../../../zedboard.srcs/sources_1/new/zedboard_master_XDC_RevC_D_v3.xdc id:2} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_processing_system7_0_1/xc7z020_processing_system7_0_1.xdc rfile:../../../zedboard.srcs/sources_1/bd/xc7z020/ip/xc7z020_processing_system7_0_1/xc7z020_processing_system7_0_1.xdc id:1 order:EARLY scoped_inst:xc7z020_i/processing_system7_0/inst} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/linux/Documents/DLA/fw/vivado/zedboard/zedboard.srcs/sources_1/new/zedboard_master_XDC_RevC_D_v3.xdc rfile:../../../zedboard.srcs/sources_1/new/zedboard_master_XDC_RevC_D_v3.xdc id:2} [current_design]
 set_property src_info {type:SCOPED_XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter clk_fpga_3 0.6
 set_property src_info {type:SCOPED_XDC file:1 line:24 export:INPUT save:INPUT read:READ} [current_design]

@@ -120,26 +120,27 @@
 							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1320374206" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1153214770.1747495534" name="bigint.h" rcbsApplicability="disable" resourcePath="testbench/bigint.h" toolsToInvoke=""/>
-					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1153214770.982970897" name="bigint.c" rcbsApplicability="disable" resourcePath="source/bigint.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2145868053.600042187">
-						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2145868053.600042187" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2145868053">
-							<option id="gnu.c.compiler.option.preprocessor.def.symbols.1758375178" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
-							<option id="gnu.c.compiler.option.include.paths.1658402572" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/bigint/."/>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1153214770.1880933981" name="main.c" rcbsApplicability="disable" resourcePath="testbench/main.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2145868053.1678857008">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2145868053.1678857008" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2145868053">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.1903026076" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.1663153187" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../../../../bigint"/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/etc"/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/auto_cc/include"/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/ap_sysc"/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include"/>
 								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/fw/hls"/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/bigint"/>
 							</option>
-							<option id="gnu.c.compiler.option.misc.other.1738501388" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
-							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.2123280060" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							<option id="gnu.c.compiler.option.misc.other.1742615011" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1338074397" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 						</tool>
 					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1153214770.1747495534" name="bigint.h" rcbsApplicability="disable" resourcePath="testbench/bigint.h" toolsToInvoke=""/>
 					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1153214770.1937795529" name="bigint.h" rcbsApplicability="disable" resourcePath="source/bigint.h" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="solution1|source/bigint.h|source/main.cpp|source/bigint.c|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="solution1|source/main.c|source/bigint.h|source/bigint.c|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -254,26 +255,27 @@
 							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.202820005" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1342793731.1282645419" name="bigint.h" rcbsApplicability="disable" resourcePath="testbench/bigint.h" toolsToInvoke=""/>
-					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1342793731.376458243" name="bigint.c" rcbsApplicability="disable" resourcePath="source/bigint.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.release.691179753.1381388072">
-						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.691179753.1381388072" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release.691179753">
-							<option id="gnu.c.compiler.option.preprocessor.def.symbols.2028660373" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
-							<option id="gnu.c.compiler.option.include.paths.1514245784" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/bigint/."/>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1342793731.1734462647" name="main.c" rcbsApplicability="disable" resourcePath="testbench/main.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.release.691179753.1423896074">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.691179753.1423896074" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release.691179753">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.450061195" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.1281912970" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../../../../bigint"/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/etc"/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/auto_cc/include"/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include/ap_sysc"/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/include"/>
 								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/fw/hls"/>
 								<listOptionValue builtIn="false" value="/home/Xilinx/Vivado_HLS/2016.2/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/linux/Documents/DLA/bigint"/>
 							</option>
-							<option id="gnu.c.compiler.option.misc.other.502641867" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
-							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1406326810" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							<option id="gnu.c.compiler.option.misc.other.644601641" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.334655352" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 						</tool>
 					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1342793731.1282645419" name="bigint.h" rcbsApplicability="disable" resourcePath="testbench/bigint.h" toolsToInvoke=""/>
 					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1342793731.1666078446" name="bigint.h" rcbsApplicability="disable" resourcePath="source/bigint.h" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="solution1|source/bigint.h|source/main.cpp|source/bigint.c|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="solution1|source/main.c|source/bigint.h|source/bigint.c|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

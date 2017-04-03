@@ -681,7 +681,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Mar 09 20:20:28 UTC 2017</spirit:value>
+            <spirit:value>Sun Mar 19 15:55:12 UTC 2017</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
@@ -693,7 +693,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>552ee10a</spirit:value>
+            <spirit:value>fa863375</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -712,7 +712,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Mar 09 20:20:28 UTC 2017</spirit:value>
+            <spirit:value>Sun Mar 19 15:55:12 UTC 2017</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
@@ -724,7 +724,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>552ee10a</spirit:value>
+            <spirit:value>fa863375</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -743,7 +743,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Mar 09 20:20:28 UTC 2017</spirit:value>
+            <spirit:value>Sun Mar 19 15:55:12 UTC 2017</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
@@ -755,7 +755,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>cbf983db</spirit:value>
+            <spirit:value>f4554a28</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -774,7 +774,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Mar 09 20:20:28 UTC 2017</spirit:value>
+            <spirit:value>Sun Mar 19 15:55:12 UTC 2017</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
@@ -786,7 +786,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>cbf983db</spirit:value>
+            <spirit:value>f4554a28</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -1105,7 +1105,23 @@
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_longdiv_zero_rom.dat</spirit:name>
+        <spirit:userFileType>mif</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_longdiv_zero.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_add_tempA.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_PERIPH_BUS_s_axi.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_longdiv_one.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -1117,11 +1133,7 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_sub_1.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_div_one.v</spirit:name>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_modexp.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -1133,15 +1145,23 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_longdiv_one_rom.dat</spirit:name>
+        <spirit:userFileType>mif</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_longdiv.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_compare_state.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_add_1_tempA9.v</spirit:name>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_copy.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_div.v</spirit:name>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_leftshift.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -1149,15 +1169,7 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_add_1_tempA9_rom.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_add_1.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_add_1_tempB.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -1169,8 +1181,12 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_div_one_rom.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_modexp_temp2.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_rightshift.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1184,7 +1200,26 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_longdiv_zero_rom.dat</spirit:name>
+        <spirit:userFileType>mif</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_longdiv_zero.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_add_tempA.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_PERIPH_BUS_s_axi.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_longdiv_one.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -1199,12 +1234,7 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_sub_1.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_div_one.v</spirit:name>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_modexp.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -1219,17 +1249,26 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_longdiv_one_rom.dat</spirit:name>
+        <spirit:userFileType>mif</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_longdiv.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_compare_state.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_add_1_tempA9.v</spirit:name>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_copy.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_div.v</spirit:name>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_leftshift.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -1239,16 +1278,7 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_add_1_tempA9_rom.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_add_1.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_add_1_tempB.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -1263,8 +1293,14 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_div_one_rom.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_modexp_temp2.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/xilinx.com/bigint_math_v1_0/hdl/verilog/bigint_math_bigint_rightshift.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1284,7 +1320,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>clk_period</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.clk_period" spirit:order="2">10.000000</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.clk_period" spirit:order="2">50.000000</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -1341,7 +1377,7 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>Bigint_math</xilinx:displayName>
-      <xilinx:coreRevision>1703091318</xilinx:coreRevision>
+      <xilinx:coreRevision>1703190953</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.CLK_DOMAIN" xilinx:valueSource="default_prop"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.FREQ_HZ" xilinx:valueSource="user_prop"/>

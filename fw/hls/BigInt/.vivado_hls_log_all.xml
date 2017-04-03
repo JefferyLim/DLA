@@ -12,9 +12,27 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [SCHED 204-21] The critical path consists of the following:&#xA;&#x9;'urem' operation ('tmp_6', BigInt/solution1/main.cpp:36) (195 ns)" projectName="BigInt" solutionName="solution1" date="2017-03-10T09:30:37.558-0700" type="Warning"/>
-        <logs message="WARNING: [SCHED 204-21] Estimated clock period (195ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns)." projectName="BigInt" solutionName="solution1" date="2017-03-10T09:30:37.137-0700" type="Warning"/>
-        <logs message="WARNING: [SCHED 204-21] Estimated delay (195ns) of 'urem' operation ('tmp_6', BigInt/solution1/main.cpp:36) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns)." projectName="BigInt" solutionName="solution1" date="2017-03-10T09:30:37.046-0700" type="Warning"/>
+        <logs message="WARNING: [RTMG 210-274] Memory 'bigint_math_bigint_longdiv_one' is read-only, switch it to a ROM." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:28.048-0600" type="Warning"/>
+        <logs message="WARNING: [RTMG 210-274] Memory 'bigint_math_bigint_longdiv_zero' is read-only, switch it to a ROM." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:28.006-0600" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'result' will be ignored if a simpler one can be used." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:16.867-0600" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'two' will be ignored if a simpler one can be used." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:16.830-0600" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'temp' will be ignored if a simpler one can be used." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:16.824-0600" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'one_1' will be ignored if a simpler one can be used." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:16.817-0600" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'sum' will be ignored if a simpler one can be used." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:16.372-0600" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'tempB' will be ignored if a simpler one can be used." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:16.366-0600" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'tempA' will be ignored if a simpler one can be used." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:16.357-0600" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'sum' will be ignored if a simpler one can be used." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:13.817-0600" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'tempB' will be ignored if a simpler one can be used." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:13.810-0600" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'tempA' will be ignored if a simpler one can be used." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:13.804-0600" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'tempB' will be ignored if a simpler one can be used." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:13.454-0600" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'tempA' will be ignored if a simpler one can be used." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:13.430-0600" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'carry' will be ignored if a simpler one can be used." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:12.793-0600" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'tempB' will be ignored if a simpler one can be used." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:12.788-0600" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'tempA' will be ignored if a simpler one can be used." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:12.783-0600" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'tempB' will be ignored if a simpler one can be used." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:12.478-0600" type="Warning"/>
+        <logs message="WARNING: [BIND 205-102] The specified resource core for memory 'tempA' will be ignored if a simpler one can be used." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:12.460-0600" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'bigint_math_bigint_mul.1' to 'bigint_math_bigint_mul_1'." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:11.618-0600" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'bigint_math_bigint_add.1' to 'bigint_math_bigint_add_1'." projectName="BigInt" solutionName="solution1" date="2017-03-19T09:53:11.431-0600" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>

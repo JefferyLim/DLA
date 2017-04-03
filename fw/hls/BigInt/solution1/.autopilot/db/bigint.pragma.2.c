@@ -2232,50 +2232,53 @@ extern void funlockfile (FILE *__stream) __attribute__ ((__nothrow__ ));
    several optimizing inline functions and macros.  */
 # 5 "/home/linux/Documents/DLA/bigint/./bigint.h" 2
 
+
+
 //Prints out in
-void bigint_print(unsigned char in[]);
+void bigint_print(unsigned char in[256]);
 
 //Sets in to be 0
-void bigint_zero(unsigned char in[]);
+void bigint_zero(unsigned char in[256]);
 
 //Copies contents in from and copies to to
-void bigint_copy(unsigned char to[], unsigned char from[]);
+void bigint_copy(unsigned char to[256], unsigned char from[256]);
 
 //Returns -1 if a < b. Returns 0 if a == b, Returns 1 if a > b
-int bigint_compare(unsigned char a[], unsigned char b[]);
+int bigint_compare(unsigned char a[256], unsigned char b[256]);
 
 //Shifts a << shift and puts it in out
-void bigint_leftshift(unsigned char out[], unsigned char a[], int shift);
+void bigint_leftshift(unsigned char out[256], unsigned char a[256], int shift);
 //Shifts b >> shift and puts it in out
-void bigint_rightshift(unsigned char out[], unsigned char a[], int shift);
+void bigint_rightshift(unsigned char out[256], unsigned char a[256], int shift);
 
 //out = a + b
-void bigint_add(unsigned char out[], unsigned char a[], unsigned char b[]);
+void bigint_add(unsigned char out[256], unsigned char a[256], unsigned char b[256]);
 //out = a - b
-void bigint_sub(unsigned char out[], unsigned char a[], unsigned char b[]);
+void bigint_sub(unsigned char out[256], unsigned char a[256], unsigned char b[256]);
 //out = a * b
-void bigint_mul(unsigned char out[], unsigned char a[], unsigned char b[]);
+void bigint_mul(unsigned char out[256], unsigned char a[256], unsigned char b[256]);
 //out = a / b, out1 = a % b
-void bigint_div(unsigned char out[], unsigned char out1[], unsigned char a[], unsigned char b[]);
+void bigint_div(unsigned char out[256], unsigned char out1[256], unsigned char a[256], unsigned char b[256]);
 
-void bigint_longdiv(unsigned char out[], unsigned char out1[], unsigned char a[], unsigned char b[]);
+void bigint_longdiv(unsigned char out[256], unsigned char out1[256], unsigned char a[256], unsigned char b[256]);
 //out = base ^ exp % mod
-void bigint_modexp(unsigned char out[], unsigned char base[], unsigned char exp[], unsigned char mod[]);
+void bigint_modexp(unsigned char out[256], unsigned char base[256], unsigned char exp[256], unsigned char mod[256]);
 # 2 "../../bigint/bigint.c" 2
 
 
 
 //Initalization of a bigint by zeroing its contents
-void bigint_zero(unsigned char in[]){
+void bigint_zero(unsigned char in[256]){_ssdm_SpecArrayDimSize(in,256);
  int i;
  for(i = 0; i < 256; i++){
+
   in[i] = 0;
  }
 
 }
 
 //Print helper function. Doesn't print a new line
-void bigint_print(unsigned char in[]){
+void bigint_print(unsigned char in[256]){_ssdm_SpecArrayDimSize(in,256);
  int i;
  int leadingZeroFlag = 0;
  printf("0x");
@@ -2300,7 +2303,7 @@ void bigint_print(unsigned char in[]){
 }
 
 //Copies components from to to
-void bigint_copy(unsigned char to[], unsigned char from[]){
+void bigint_copy(unsigned char to[256], unsigned char from[256]){_ssdm_SpecArrayDimSize(from,256);_ssdm_SpecArrayDimSize(to,256);
  int i;
 
  for(i = 0; i < 256; i++){
@@ -2314,7 +2317,7 @@ void bigint_copy(unsigned char to[], unsigned char from[]){
 //Returns 1 if a > b.
 //Returns 0 if a == b
 //Returns -1 if a < b
-int bigint_compare(unsigned char a[], unsigned char b[]){
+int bigint_compare(unsigned char a[256], unsigned char b[256]){_ssdm_SpecArrayDimSize(a,256);_ssdm_SpecArrayDimSize(b,256);
  int i;
  int flag = 0;
 
@@ -2352,7 +2355,7 @@ int bigint_compare(unsigned char a[], unsigned char b[]){
 }
 
 //bitwise left shift by shift amount
-void bigint_leftshift(unsigned char out[], unsigned char a[], int shift){
+void bigint_leftshift(unsigned char out[256], unsigned char a[256], int shift){_ssdm_SpecArrayDimSize(a,256);_ssdm_SpecArrayDimSize(out,256);
  int i, j, k;
 
  unsigned char b;
@@ -2398,7 +2401,7 @@ void bigint_leftshift(unsigned char out[], unsigned char a[], int shift){
 }
 
 //bitwise right shift by shift amount
-void bigint_rightshift(unsigned char out[], unsigned char a[], int shift){
+void bigint_rightshift(unsigned char out[256], unsigned char a[256], int shift){_ssdm_SpecArrayDimSize(a,256);_ssdm_SpecArrayDimSize(out,256);
  int i, j, k;
  unsigned char tempA[256];
  unsigned char b;
@@ -2441,7 +2444,7 @@ void bigint_rightshift(unsigned char out[], unsigned char a[], int shift){
  }
 }
 
-void bigint_add(unsigned char out[], unsigned char a[], unsigned char b[]){
+void bigint_add(unsigned char out[256], unsigned char a[256], unsigned char b[256]){_ssdm_SpecArrayDimSize(a,256);_ssdm_SpecArrayDimSize(b,256);_ssdm_SpecArrayDimSize(out,256);
  //Local Var
  unsigned char sum;
  unsigned char carry;
@@ -2481,7 +2484,7 @@ void bigint_add(unsigned char out[], unsigned char a[], unsigned char b[]){
 }
 
 
-void bigint_sub(unsigned char out[], unsigned char a[], unsigned char b[]){
+void bigint_sub(unsigned char out[256], unsigned char a[256], unsigned char b[256]){_ssdm_SpecArrayDimSize(a,256);_ssdm_SpecArrayDimSize(b,256);_ssdm_SpecArrayDimSize(out,256);
 
  //Counter to iterate through multiplication table
  int i = 0;
@@ -2539,7 +2542,7 @@ void bigint_sub(unsigned char out[], unsigned char a[], unsigned char b[]){
 }
 
 
-void bigint_mul(unsigned char out[], unsigned char a[], unsigned char b[]){
+void bigint_mul(unsigned char out[256], unsigned char a[256], unsigned char b[256]){_ssdm_SpecArrayDimSize(a,256);_ssdm_SpecArrayDimSize(b,256);_ssdm_SpecArrayDimSize(out,256);
 
  //Product and Carry
  unsigned char prod;
@@ -2602,7 +2605,7 @@ void bigint_mul(unsigned char out[], unsigned char a[], unsigned char b[]){
 }
 
 //a / b
-void bigint_div(unsigned char out[], unsigned char out1[], unsigned char a[], unsigned char b[]){
+void bigint_div(unsigned char out[256], unsigned char out1[256], unsigned char a[256], unsigned char b[256]){_ssdm_SpecArrayDimSize(a,256);_ssdm_SpecArrayDimSize(b,256);_ssdm_SpecArrayDimSize(out1,256);_ssdm_SpecArrayDimSize(out,256);
 
  //Counter to iterate through multiplication table
  int i = 1;
@@ -2651,7 +2654,7 @@ void bigint_div(unsigned char out[], unsigned char out1[], unsigned char a[], un
 
 
 //a / b
-void bigint_longdiv(unsigned char out[], unsigned char out1[], unsigned char a[], unsigned char b[]){
+void bigint_longdiv(unsigned char out[256], unsigned char out1[256], unsigned char a[256], unsigned char b[256]){_ssdm_SpecArrayDimSize(a,256);_ssdm_SpecArrayDimSize(b,256);_ssdm_SpecArrayDimSize(out1,256);_ssdm_SpecArrayDimSize(out,256);
 
  //Counter to iterate through multiplication table
  int i = 1, j = 1;
@@ -2684,7 +2687,6 @@ void bigint_longdiv(unsigned char out[], unsigned char out1[], unsigned char a[]
   return;
  }
 
-
  if(bigint_compare(tempB, one) == 0){
   bigint_copy(out, tempA);
   bigint_copy(out1, zero);
@@ -2695,6 +2697,7 @@ void bigint_longdiv(unsigned char out[], unsigned char out1[], unsigned char a[]
  i = bigint_compare(tempA, tempB);
  if(i == -1){
   bigint_copy(out1, tempA);
+  bigint_copy(out, zero);
   return;
  }
 
@@ -2702,9 +2705,7 @@ void bigint_longdiv(unsigned char out[], unsigned char out1[], unsigned char a[]
   out[256 -1] = 0x01;
   out1[256 -1] = 0x00;
   return;
-
  }
-
 
  int aMSB = 0;
  int bMSB = 0;
@@ -2760,18 +2761,16 @@ void bigint_longdiv(unsigned char out[], unsigned char out1[], unsigned char a[]
  bigint_zero(temp);
  bigint_leftshift(d, tempB, bMSB-aMSB);
 
-
  unsigned char quot[256];
  bigint_zero(quot);
 
  unsigned char bitPlace[256];
  bigint_zero(bitPlace);
 
-
  bigint_leftshift(bitPlace, one, bMSB-aMSB);
 
- for(j = 0; j < bMSB-aMSB+1; j++){ i = bigint_compare(tempA, d);
-
+ for(j = 0; j < bMSB-aMSB+1; j++){
+  i = bigint_compare(tempA, d);
 
   if(i == 0 || i == 1){
    bigint_add(temp, quot, bitPlace);
@@ -2795,12 +2794,6 @@ void bigint_longdiv(unsigned char out[], unsigned char out1[], unsigned char a[]
  bigint_mul(temp, out, tempB);
  bigint_sub(out1, a, temp);
 
- // bigint_zero(out);
- // bigint_rightshift(out, q, bMSB-aMSB);
-
- // bigint_mul(temp, out, tempB);
- // bigint_sub(out1, a, temp);
-
 
 }
 
@@ -2808,7 +2801,7 @@ void bigint_longdiv(unsigned char out[], unsigned char out1[], unsigned char a[]
 
 
 //c = b^e (mod m)
-void bigint_modexp(unsigned char out[], unsigned char base[], unsigned char exp[], unsigned char mod[]){
+void bigint_modexp(unsigned char out[256], unsigned char base[256], unsigned char exp[256], unsigned char mod[256]){_ssdm_SpecArrayDimSize(mod,256);_ssdm_SpecArrayDimSize(exp,256);_ssdm_SpecArrayDimSize(out,256);_ssdm_SpecArrayDimSize(base,256);
  int i = 1;
 
  unsigned char zero[256];
@@ -2843,7 +2836,6 @@ void bigint_modexp(unsigned char out[], unsigned char base[], unsigned char exp[
  one[256 -1] = 0x01;
  two[256 -1] = 0x02;
 
-
  bigint_zero(out);
  if(bigint_compare(mod, one) == 0){
   return;
@@ -2861,15 +2853,15 @@ void bigint_modexp(unsigned char out[], unsigned char base[], unsigned char exp[
  while(bigint_compare(tempExp, zero) == 1){
   bigint_zero(temp);
   bigint_zero(temp1);
-  bigint_longdiv(temp, temp1, tempExp, two); //if tempExp % 2 = 1w
+  bigint_longdiv(temp, temp1, tempExp, two); //if tempExp % 2 == 1
 
   if(bigint_compare(temp1, one) == 0){
    bigint_mul(temp, result, tempBase);
 
    bigint_zero(temp1);
-   bigint_zero(temp2);
-   bigint_longdiv(temp1, temp2, temp, tempMod);
-   bigint_copy(result, temp2);
+   //bigint_zero(temp2);
+   bigint_longdiv(temp1, result, temp, tempMod);
+   //bigint_copy(result, temp2);
   }
 
   bigint_rightshift(temp, tempExp, 1);
@@ -2880,9 +2872,11 @@ void bigint_modexp(unsigned char out[], unsigned char base[], unsigned char exp[
 
   bigint_zero(temp1);
   bigint_zero(temp2);
-  bigint_longdiv(temp1, temp2, temp, tempMod);
-  bigint_copy(tempBase, temp2);
+  bigint_longdiv(temp1, tempBase, temp, tempMod);
+  //bigint_copy(tempBase, temp2);
   bigint_zero(zero);
+  one[256 -1] = 0x01;
+  two[256 -1] = 0x02;
  }
 
  bigint_copy(out, result);

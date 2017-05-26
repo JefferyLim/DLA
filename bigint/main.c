@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <gmp.h>
 #include "bigint.h"
+#include <time.h>
 
 #define bitSize 256
 
@@ -52,58 +53,65 @@ int main(){
 	mpz_init_set_str(b1,buff, 16);
 	fclose(fp);
 
-	// printf("Addition Test: ");
-	// bigint_print(a);printf(" + ");
-	// bigint_print(b);printf(" = ");
+	printf("Addition Test: ");
+	bigint_print(a);printf(" + ");
+	bigint_print(b);printf(" = ");
 
-	// unsigned char sum[bitSize];
-	// bigint_add(sum, a, b);
-	// bigint_print(sum);printf("\n");
+	unsigned char sum[bitSize];
+	bigint_add(sum, a, b);
+	bigint_print(sum);printf("\n");
 
-	// printf("Subtraction Test: ");
-	// bigint_print(a);printf(" - ");
-	// bigint_print(b);printf(" = ");
+	printf("Subtraction Test: ");
+	bigint_print(a);printf(" - ");
+	bigint_print(b);printf(" = ");
 
-	// unsigned char diff[bitSize];
-	// bigint_sub(diff, a, b);
-	// bigint_print(diff);printf("\n\n");
+	unsigned char diff[bitSize];
+	bigint_sub(diff, a, b);
+	bigint_print(diff);printf("\n\n");
 
-	// printf("bigint: Multiplication Test: ");
-	// bigint_print(a);printf(" * ");
-	// bigint_print(b);printf(" = ");
+	printf("bigint: Multiplication Test: ");
+	bigint_print(a);printf(" * ");
+	bigint_print(b);printf(" = ");
 
-	// unsigned char prod[bitSize];
-	// bigint_mul(prod, a, b);
-	// bigint_print(prod);printf("\n\n");
+	unsigned char prod[bitSize];
+	clock_t begin = clock();
+	bigint_mul(prod, a, b);
+	clock_t end = clock();
+	printf("%f\n", (double)(end - begin) / CLOCKS_PER_SEC);
 
-	// printf("GMP   : Multiplication Test: ");
-	// bigint_print(a);printf(" * ");
-	// bigint_print(b);printf(" = ");
+	bigint_print(prod);printf("\n\n");
 
-	// mpz_mul(c1, a1, b1);
+	printf("GMP   : Multiplication Test: ");
+	bigint_print(a);printf(" * ");
+	bigint_print(b);printf(" = ");
 
-	// printf("%s\n\n", mpz_get_str(NULL, 16, c1));
+	mpz_mul(c1, a1, b1);
+
+	printf("%s\n\n", mpz_get_str(NULL, 16, c1));
 	
-	// printf("bigint: Division and Mod Test: ");
-	// bigint_print(a);printf(" / ");
-	// bigint_print(b);printf(" = ");
+	printf("bigint: Division and Mod Test: ");
+	bigint_print(a);printf(" / ");
+	bigint_print(b);printf(" = ");
 
-	// unsigned char quot[bitSize];
-	// unsigned char mod[bitSize];
-	// bigint_div(quot, mod, a, b);
-	// bigint_print(quot);printf(" R ");bigint_print(mod);printf("\n");
+	unsigned char quot[bitSize];
+	unsigned char mod[bitSize];
+	begin = clock();
+	bigint_div(quot, mod, a, b);
+	end = clock();
+	printf("%f\n", (double)(end - begin) / CLOCKS_PER_SEC);
+	bigint_print(quot);printf(" R ");bigint_print(mod);printf("\n");
 
 	
-	// printf("GMP  : Division and Mod Test: ");
-	// bigint_print(a);printf(" / ");
-	// bigint_print(b);printf(" = ");
-	// mpz_tdiv_q(c1, a1, b1);
+	printf("GMP  : Division and Mod Test: ");
+	bigint_print(a);printf(" / ");
+	bigint_print(b);printf(" = ");
+	mpz_tdiv_q(c1, a1, b1);
 
-	// printf("%s R ", mpz_get_str(NULL, 16, c1));
+	printf("%s R ", mpz_get_str(NULL, 16, c1));
 
-	// mpz_tdiv_r(c1, a1, b1);
+	mpz_tdiv_r(c1, a1, b1);
 
-	// printf("%s\n\n", mpz_get_str(NULL, 16, c1));
+	printf("%s\n\n", mpz_get_str(NULL, 16, c1));
 
 	printf("bigint: Modular Exponentiation: ");
 	unsigned char c[bitSize];
@@ -119,7 +127,10 @@ int main(){
 	bigint_print(d);printf(" mod ");
 	bigint_print(b); printf(" = \n\n");
 
+	begin = clock();
 	bigint_modexp(c, a, d, b); 
+	end = clock();
+	printf("%f\n", (double)(end - begin) / CLOCKS_PER_SEC);
 	bigint_print(c);printf("\n\n");
 
 	unsigned char *qeee = "10001";

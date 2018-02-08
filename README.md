@@ -1,4 +1,5 @@
 # DLA
+
 During the Fall 2016 to Spring 2017 school year, I was given the opportunity to work with Professor Eric Keller and Michael Coughlin on working to develop a way to verify RSA keys. This was inspired from a paper they wrote called *Apps with Hardware: Enabling Run-time Architectural Customization in Smart Phones* where the Zynq was used as a smart-phone with a reconfigurable hardware. 
 
 This was in thanks to the CU Boulder Discovery Learning Apprenticeship. 
